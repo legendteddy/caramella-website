@@ -2172,9 +2172,6 @@
                     div.className = 'wish-item';
                     div.innerHTML = `
                         <img src="${item.url}" alt="${item.alt}">
-                        <div class="wishlist-trigger active" onclick="toggleWishlist('${item.url}', '${item.alt}'); showWishlist();">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.89-8.89 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        </div>
                     `;
                     grid.appendChild(div);
                 });
@@ -2374,9 +2371,6 @@
                     // Feature 15: Lazy Loading Blur-up & Feature 12: Wishlist
                     el.innerHTML = `
                         <img src="${url}" loading="lazy" alt="${altText}" class="blur-load" onload="this.classList.add('loaded')">
-                        <div class="wishlist-trigger" onclick="event.stopPropagation(); toggleWishlist('${url}', '${altText}')" id="wish-${i}">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.89-8.89 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        </div>
                     `;
                     el.onclick = () => {
                         const lb = document.getElementById('lightbox');
