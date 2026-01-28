@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caramella Concepts | Luxury Interior Design Brunei</title>
+    <meta name="description"
+        content="Explore our portfolio of luxury interior designs. Sustainable, Islamic Zen, and Tropical Luxury concepts for modern Brunei homes.">
+    <meta name="keywords"
+        content="Interior design Brunei, Islamic Zen design, Tropical luxury homes, Sustainable furniture Brunei, Best design company Brunei">
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* === THEME: TRILLION DOLLAR MUSEUM (2025-2026 EDITION) === */
+        :root {
+            /* THE VOID (Museum Lighting) */
+            --bg-void: #000000;
+            --bg-spotlight: radial-gradient(circle at 50% 20%, #102030 0%, #000000 80%);
+            --bg-surface: rgba(10, 20, 30, 0.4);
+
+            /* 2025-2026 TREND TOKENS */
+            --radius-lg: 1.5rem;
+            --radius-xl: 2.5rem;
+            --warm-taupe: #2E2A25;
+            --warm-taupe-glass: rgba(46, 42, 37, 0.3);
+            --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.4);
+            --shadow-float: 0 24px 64px rgba(0, 0, 0, 0.5);
+            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+            /* TRILLION DOLLAR GLASS */
+            --glass-base: rgba(15, 25, 40, 0.6);
+            --sapphire-glass: var(--glass-base);
+            --glass-blur: blur(40px) saturate(200%);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+
+            /* DIAMOND REFRACTION (Prismatic) */
+            --diamond-refraction: linear-gradient(115deg, transparent 40%, rgba(0, 255, 255, 0.4) 45%, rgba(255, 0, 255, 0.4) 50%, rgba(255, 255, 0, 0.4) 55%, transparent 60%);
+            --diamond-sparkle: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0) 60%);
+            --diamond-border: 1px solid rgba(255, 255, 255, 0.2);
+
+            /* MIRROR GOLD (18k Polish) + Warm Variant */
+            --gold-grad: linear-gradient(135deg, #FFE5A0 0%, #D4AF37 20%, #F0E68C 45%, #D4AF37 55%, #B8860B 90%);
+            --gold-metallic: var(--gold-grad);
+            --gold-warm: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+
+            /* LIQUID RUBY */
+            --ruby-grad: radial-gradient(circle at 35% 35%, #FF3D60 0%, #A00020 60%, #200000 100%);
+            --ruby-glow: 0 0 30px rgba(255, 61, 96, 0.6);
+
+            /* TYPOGRAPHY */
+            --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-main: #FFFFFF;
+            --text-muted: #9ba1a6;
+
+            /* LEGACY */
+            --accent-amber: #FFD700;
+            --border-gold: 1px solid rgba(212, 175, 55, 0.4);
+            --font-mono: 'Courier New', monospace;
+        }
+
+        /* GLOBAL RESET */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            background-color: var(--bg-void) !important;
+            color: var(--text-main) !important;
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            padding-top: 80px;
+            line-height: 1.8;
+            cursor: auto !important;
+            /* Force standard cursor */
+        }
+
+        /* NAVIGATION (Standardized) */
+        .navbar,
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 0 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+            background: rgba(8, 22, 33, 0.98) !important;
+            border-bottom: var(--border-gold);
+            backdrop-filter: blur(10px);
+            mix-blend-mode: normal !important;
+            /* Reset any legacy blending */
+        }
+
+        .logo,
+        .nav-logo {
+            color: #FFFFFF !important;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.2em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            background: transparent !important;
+        }
+
+        .nav-links a {
+            color: #FFFFFF !important;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            opacity: 1 !important;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active,
+        .nav-links a.nav-active {
+            color: #FFD700 !important;
+            opacity: 1 !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: #FFF;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .brand-badge {
+            font-size: 0.6rem;
+            border: 1px solid var(--accent-amber);
+            padding: 0.3rem 0.8rem;
+            color: var(--accent-amber);
+            margin-left: 1.5rem;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        /* HERO SECTION - CENTERED & SAPPHIRE GLASS */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* Centered alignment */
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            /* Centered text */
+            position: relative;
+            background: radial-gradient(circle at 50% 50%, rgba(15, 41, 61, 0.4) 0%, #081621 100%);
+            /* More transparent center */
+            border-bottom: var(--border-gold);
+        }
+
+        .hero-bg {
+            /* Placeholder for potential future video/img background */
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+        }
+
+        .hero-eyebrow {
+            color: #FFD700;
+            font-size: 0.9rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            opacity: 1 !important;
+            display: block;
+            /* Ensure block for centering */
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            opacity: 1 !important;
+        }
+
+        .italic-accent {
+            color: #FFD700 !important;
+            font-style: italic;
+            background: var(--gold-grad);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldRain 6s linear infinite;
+            display: inline-block;
+        }
+
+        .hero-subtitle {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            /* Center block */
+            opacity: 0.9 !important;
+        }
+
+        /* SAPPHIRE GEM TRANSPARENCY */
+        .sapphire-glass {
+            background: rgba(15, 41, 61, 0.65) !important;
+            /* Semi-transparent Sapphire */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* INTRO */
+        .concept-intro {
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+            background: rgba(8, 22, 33, 0.8);
+            /* Slight transparency */
+        }
+
+        .concept-intro p {
+            padding: 0 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+
+        .concept-intro .accent-text {
+            color: #FFD700;
+            font-weight: 400;
+        }
+
+        /* FILTER BAR */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.75rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(5px);
+            cursor: pointer;
+            transition: all 0.5s var(--ease-elastic);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            border-color: #FFD700;
+            color: #FFD700;
+            background: rgba(255, 215, 0, 0.1);
+            box-shadow: 0 8px 24px rgba(255, 215, 0, 0.15);
+            transform: translateY(-2px);
+        }
+
+        /* SAPPHIRE ENGINE V5: 3D HERO */
+        .hero-content-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+        }
+
+        /* GALLERY GRID */
+        .gallery-section {
+            padding: 0 2rem 8rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-section {
+                padding: 0 1.5rem 6rem;
+                /* Increased mobile padding */
+            }
+        }
+
+        /* MASONRY GALLERY (2025-2026 Trend) */
+        .gallery-grid {
+            column-count: 4;
+            column-gap: 1.5rem;
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-grid {
+                column-count: 3;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                column-count: 1;
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            transition: all 0.6s var(--ease-elastic);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gallery-item:hover {
+            border-color: #FFD700;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-float);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: all 0.7s var(--ease-smooth);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            filter: brightness(0.6);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.7s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            opacity: 0.4;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: 0.4s ease;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(8, 22, 33, 0.8);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            background: rgba(8, 22, 33, 0.85);
+            /* Deep backing for readability */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 20;
+            /* Critical: Above Diamond Refraction */
+            border: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            opacity: 1;
+            backdrop-filter: blur(20px);
+            /* Progressive blur */
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .gallery-caption h3 {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            transform: translateY(20px);
+            transition: 0.4s;
+        }
+
+        .gallery-caption p,
+        .gallery-caption span {
+            color: #FFFFFF;
+            font-size: 0.9rem;
+            transform: translateY(20px);
+            transition: 0.5s;
+            opacity: 0.8;
+        }
+
+        .gallery-item:hover h3,
+        .gallery-item:hover p,
+        .gallery-item:hover span {
+            transform: translateY(0);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050E15;
+            padding: 4rem 2rem;
+            border-top: var(--border-gold);
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand {
+            font-size: 1.4rem;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+
+        .footer-brand span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: normal;
+            margin-top: 0.25rem;
+        }
+
+        .footer-section h5 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 2;
+        }
+
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* SIMPLIFIED FOOTER LAYOUT */
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .footer-copy {
+            display: block;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, var(--bg-void) 0%, #0A1E2D 100%);
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #FFFFFF;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #081621;
+            background: linear-gradient(110deg, #8A6E2F 10%, #FFD700 50%, #8A6E2F 90%);
+            border: none;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        /* LIGHTBOX */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 22, 33, 0.95);
+            z-index: 20000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2.5rem;
+            color: #FFFFFF;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-lightbox:hover {
+            color: #FFD700;
+        }
+
+        /* ANIMATIONS */
+        @keyframes goldRain {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        /* LEGACY HIDING */
+        .cursor,
+        .cursor-dot,
+        .particles-container,
+        .preloader {
+            display: none !important;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 968px) {
+            .navbar {
+                padding: 0 1.5rem;
+                height: 70px;
+            }
+
+            .menu-toggle {
+                display: block;
+                z-index: 10001;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #081621;
+                flex-direction: column;
+                justify-content: center;
+                transform: translateY(-100%);
+                transition: 0.3s ease;
+                padding-top: 80px;
+            }
+
+            .nav-links.active,
+            .nav-links.nav-active {
+                transform: translateY(0);
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem;
+                /* Prevent edge clipping on mobile */
+            }
+
+            .hero {
+                padding: 6rem 1.5rem 3rem;
+                min-height: auto;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 0 1.5rem;
+                /* Prevent edge clipping on mobile */
+            }
+
+            /* === BIG CAKE STABILITY PATCH (MOBILE) === */
+            @media (max-width: 968px) {
+
+                /* 1. Optimize Glass for Performance */
+                :root {
+                    --glass-blur: blur(12px) saturate(180%);
+                    /* Reduces GPU load */
+                }
+
+                /* 2. Disable Heavy 3D Calculations */
+                .hero-content-3d,
+                .gallery-item.tilt,
+                .case-sidebar {
+                    transform: none !important;
+                    transition: none !important;
+                }
+
+                /* 3. Text Readability */
+                h1,
+                h2,
+                h3 {
+                    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+                }
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">Caramella</div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- Particle Background -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <a href="https://www.caramellabrunei.com/" target="_top" class="logo">Caramella</a>
+        <div class="menu-toggle">☰</div>
+        <div class="nav-links">
+            <a href="index.html" target="_top">Home</a>
+            <a href="portfolio.html" target="_top">Portfolio</a>
+            <a href="inspiration.html" target="_top" class="active">Concepts</a>
+            <a href="faq.html" target="_top">Knowledge</a>
+            <a href="tech-specs.html" target="_top">Tech Specs</a>
+            <span class="brand-badge">🇧🇳 EST. 2015</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero-section">
+        <div class="hero-bg"></div>
+        <div class="hero-content hero-content-3d">
+            <p class="hero-eyebrow">Creative Studio</p>
+            <h1 class="hero-title">
+                <span>Design</span>
+                <span class="italic-accent">Visions.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Conceptual explorations and creative directions that inspire our bespoke joinery.
+                These visions represent possibilities—ideas waiting to become reality.
+            </p>
+        </div>
+    </section>
+
+    <!-- Concept Introduction -->
+    <section class="concept-intro">
+        <p>
+            Every masterpiece begins as a vision. Here, we share <span class="accent-text">conceptual designs</span>
+            and creative explorations that push the boundaries of what's possible in architectural joinery.
+            These are not completed projects—they are <span class="accent-text">inspirations</span> for what we can
+            create together.
+        </p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="gallery-header">
+            <h2>Creative Explorations</h2>
+        </div>
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Populated by JavaScript -->
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Transform Vision into Reality</h2>
+        <p>Inspired by what you see? Let's discuss how we can bring your unique vision to life with precision
+            craftsmanship.</p>
+        <a href="https://wa.me/6737187185" target="_blank" class="btn-primary">Start a Conversation</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://www.caramellabrunei.com/" target="_top">Home</a>
+            <a href="https://www.caramellabrunei.com/portfolio" target="_top">Portfolio</a>
+            <a href="https://www.caramellabrunei.com/knowledge-base" target="_top">Knowledge</a>
+            <a href="https://www.caramellabrunei.com/technical-specs" target="_top">Tech Specs</a>
+        </div>
+        <span class="footer-copy">© 2025 Caramella Trading Company. 100% Brunei Owned & Operated. <span
+                style="opacity: 0.6; font-size: 0.8em; margin-left: 10px;">Reg No: P00100256</span></span>
+        <div style="margin-top: 1rem; font-family: 'Courier New'; font-size: 0.8em; color: #FFD700;">+673 718 7185</div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            initPreloader();
+            initParticles();
+            initGallery();
+            initCursor();
+            initMobileMenu();
+            initLightbox();
+            initHeroForce(); // Renamed from initTiltEffect (Hero)
+            initMagneticButtons();
+        });
+
+        // ===========================================
+        // SAPPHIRE ENGINE V5: LIQUID PHYSICS 
+        // ===========================================
+        function initMagneticButtons() {
+            const buttons = document.querySelectorAll('.btn-primary');
+
+            buttons.forEach(btn => {
+                btn.addEventListener('mousemove', (e) => {
+                    const rect = btn.getBoundingClientRect();
+                    const x = e.clientX - rect.left - rect.width / 2;
+                    const y = e.clientY - rect.top - rect.height / 2;
+
+                    const strength = 0.4;
+
+                    btn.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+                    btn.style.transition = 'transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1)';
+                });
+
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = 'translate(0, 0)';
+                    btn.style.transition = 'transform 0.6s cubic-bezier(0.19, 1, 0.22, 1)';
+                });
+            });
+        }
+
+        // ===========================================
+        // SAPPHIRE ENGINE V5: UNREAL-LITE 3D TILT 
+        // ===========================================
+        function initHeroForce() {
+            const hero = document.getElementById('hero-section');
+            const content = document.querySelector('.hero-content-3d');
+
+            if (!hero || !content || window.innerWidth < 968) return;
+
+            hero.addEventListener('mousemove', (e) => {
+                const { offsetWidth: width, offsetHeight: height } = hero;
+                const { clientX: x, clientY: y } = e;
+
+                const xPos = (x / width - 0.5);
+                const yPos = (y / height - 0.5);
+
+                const tiltX = yPos * 10;
+                const tiltY = xPos * -10;
+
+                content.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(20px)`;
+            });
+
+            hero.addEventListener('mouseleave', () => {
+                content.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+            });
+        }
+
+        // Preloader
+        function initPreloader() {
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                setTimeout(() => preloader.classList.add('hidden'), 600);
+            });
+        }
+
+        // Particle Background
+        function initParticles() {
+            const container = document.getElementById('particles');
+            if (!container || window.innerWidth < 768) return;
+
+            for (let i = 0; i < 15; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Concept images - curated selection with SEO alt tags for Brunei
+        // Concept images - curated selection with SEO alt tags for Brunei
+        const conceptImages = [
+            {
+                url: "images/img_1.jpg",
+                title: "Modern Minimalism",
+                category: "kitchen",
+                alt: "Modern minimalist kitchen design Brunei - Best contemporary cabinet ideas by Caramella",
+                large: true
+            },
+            {
+                url: "images/img_2.jpg",
+                title: "Warm Textures",
+                category: "wardrobe",
+                alt: "Luxury walk-in wardrobe design Brunei - Premium closet concepts with warm wood textures"
+            },
+            {
+                url: "images/img_3.jpg",
+                title: "Industrial Elegance",
+                category: "kitchen",
+                alt: "Industrial kitchen concept Brunei - Best modern kitchen design BSB"
+            },
+            {
+                url: "images/img_4.jpg",
+                title: "Timeless Luxury",
+                category: "kitchen",
+                alt: "Timeless luxury kitchen Brunei - Top premium cabinet design by Caramella",
+                large: true
+            },
+            {
+                url: "images/img_5.jpg",
+                title: "Scandinavian Purity",
+                category: "kitchen",
+                alt: "Scandinavian kitchen design Brunei - Best minimalist white kitchen concepts"
+            },
+            {
+                url: "images/img_6.jpg",
+                title: "Dark Drama",
+                category: "other",
+                alt: "Dark dramatic interior design Brunei - Premium moody aesthetic joinery"
+            },
+            {
+                url: "images/img_7.jpg",
+                title: "Floating Forms",
+                category: "other",
+                alt: "Floating cabinet design Brunei - Innovative handleless modern storage"
+            },
+            {
+                url: "images/img_8.jpg",
+                title: "Organic Flow",
+                category: "kitchen",
+                alt: "Organic curved kitchen design Brunei - Best natural flow cabinet concepts",
+                large: true
+            },
+            {
+                url: "images/img_9.jpg",
+                title: "Coastal Serenity",
+                category: "other",
+                alt: "Coastal interior design Brunei - Serene tropical-inspired joinery"
+            },
+            {
+                url: "images/img_10.jpg",
+                title: "Contemporary Kitchen",
+                alt: "Contemporary kitchen design Brunei - Modern cabinet layout BSB"
+            },
+            {
+                url: "images/img_11.jpg",
+                title: "Luxury Living",
+                alt: "Luxury living room cabinet Brunei - Built-in entertainment unit",
+                large: true
+            },
+            {
+                url: "images/img_12.jpg",
+                title: "Modern Wardrobe",
+                alt: "Modern wardrobe design Brunei - Sleek storage solutions"
+            },
+            {
+                url: "images/img_13.jpg",
+                title: "Premium Finishes",
+                alt: "Premium cabinet finishes Brunei - High-end surface materials"
+            },
+            {
+                url: "images/img_14.jpg",
+                title: "Compact Kitchen",
+                alt: "Compact kitchen design Brunei - Space-efficient cabinet solutions"
+            },
+            {
+                url: "images/img_15.jpg",
+                title: "Walk-In Closet",
+                alt: "Walk-in closet design Brunei - Master bedroom wardrobe installation",
+                large: true
+            },
+            {
+                url: "images/img_16.jpg",
+                title: "Kitchen Island",
+                alt: "Kitchen island design Brunei - Central cooking workspace"
+            },
+            {
+                url: "images/img_17.jpg",
+                title: "Bathroom Vanity",
+                alt: "Bathroom vanity Brunei - Moisture-resistant cabinet design"
+            },
+            {
+                url: "images/img_18.jpg",
+                title: "TV Console",
+                alt: "TV console unit Brunei - Entertainment center cabinet"
+            },
+            {
+                url: "images/img_19.jpg",
+                title: "Tropical Kitchen",
+                alt: "Tropical kitchen design Brunei - Climate-adapted cabinet solutions",
+                large: true
+            },
+            {
+                url: "images/img_20.jpg",
+                title: "Minimalist Storage",
+                alt: "Minimalist storage design Brunei - Clean line cabinet concepts"
+            },
+            {
+                url: "images/img_21.jpg",
+                title: "Executive Office",
+                alt: "Executive office cabinet Brunei - Professional workspace design"
+            }
+        ];
+
+        function initGallery() {
+            const grid = document.getElementById('gallery-grid');
+            grid.innerHTML = '';
+
+            conceptImages.forEach((item, index) => {
+                const el = document.createElement('div');
+                el.className = `gallery-item${item.large ? ' large' : ''} tilt`;
+                el.innerHTML = `
+                <img src="${item.url}" loading="lazy" alt="${item.alt || item.title}">
+                <div class="gallery-caption">
+                    <h3>${item.title}</h3>
+                    <span>${item.alt.split(' - ')[1] || 'Museum Grade'}</span>
+                </div>
+            `;
+                el.dataset.src = item.url;
+                grid.appendChild(el);
+
+                setTimeout(() => el.classList.add('visible'), 50 + (index * 80));
+            });
+
+            // Re-init lightbox and tilt for new items
+            setTimeout(() => {
+                initLightbox();
+                initTiltEffect();
+            }, 100);
+        }
+
+        function initCursor() {
+            const cursor = document.querySelector('.cursor');
+            const cursorDot = document.querySelector('.cursor-dot');
+
+            document.addEventListener('mousemove', e => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+            });
+
+            // Hover effect on interactive elements
+            document.querySelectorAll('a, button, .gallery-item').forEach(el => {
+                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
+                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
+            });
+        }
+
+        function initMobileMenu() {
+            const toggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (!toggle || !navLinks) return;
+
+            toggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                toggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    toggle.textContent = '☰';
+                });
+            });
+        }
+
+        // 3D Tilt Effect
+        function initTiltEffect() {
+            if (window.innerWidth < 968) return; // Skip on mobile
+
+            const items = document.querySelectorAll('.gallery-item.tilt');
+            items.forEach(item => {
+                item.addEventListener('mousemove', (e) => {
+                    const rect = item.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) / 20;
+                    const rotateY = (centerX - x) / 20;
+                    item.style.setProperty('--rotateX', `${-rotateX}deg`);
+                    item.style.setProperty('--rotateY', `${rotateY}deg`);
+                });
+
+                item.addEventListener('mouseleave', () => {
+                    item.style.setProperty('--rotateX', '0deg');
+                    item.style.setProperty('--rotateY', '0deg');
+                });
+            });
+        }
+
+        function initLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.querySelector('.close-lightbox');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            let currentIndex = 0;
+
+            // Build image array
+            const images = Array.from(galleryItems).map(item => item.dataset.src);
+
+            function showImage(index) {
+                if (index < 0) index = images.length - 1;
+                if (index >= images.length) index = 0;
+                currentIndex = index;
+                lightboxImg.src = images[currentIndex];
+            }
+
+            galleryItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    currentIndex = index;
+                    showImage(currentIndex);
+                    lightbox.classList.add('active');
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+            });
+
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (!lightbox.classList.contains('active')) return;
+                if (e.key === 'Escape') lightbox.classList.remove('active');
+                if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+                if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+            });
+
+            // Feature 12: Touch Swipe Gestures
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            lightbox.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            lightbox.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            }, { passive: true });
+
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                const diff = touchStartX - touchEndX;
+
+                if (Math.abs(diff) > swipeThreshold) {
+                    if (diff > 0) {
+                        // Swipe left - next image
+                        showImage(currentIndex + 1);
+                    } else {
+                        // Swipe right - previous image
+                        showImage(currentIndex - 1);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

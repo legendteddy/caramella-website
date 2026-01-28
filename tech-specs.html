@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caramella Manifesto | Technical Specifications & Craftsmanship</title>
+    <meta name="description"
+        content="Discover the engineering behind Brunei's best cabinets. Our manifesto details our commitment to precision CNC joinery and moisture-resistant materials.">
+    <meta name="keywords"
+        content="CNC carpentry Brunei, Technical specifications furniture, Woodworking Brunei, Best joinery quality Brunei">
+    <link rel="canonical" href="https://caramellabrunei.com/tech-specs.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Caramella Manifesto | Technical Specs">
+    <meta property="og:description" content="Discover the engineering behind Brunei's best cabinets.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://caramellabrunei.com/tech-specs.html">
+    <meta property="og:image" content="https://caramellabrunei.com/images/hero-bg.jpg">
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* === THEME: TRILLION DOLLAR MUSEUM (2025-2026 EDITION) === */
+        :root {
+            /* THE VOID (Museum Lighting) */
+            --bg-void: #000000;
+            --bg-spotlight: radial-gradient(circle at 50% 20%, #102030 0%, #000000 80%);
+            --bg-surface: rgba(10, 20, 30, 0.4);
+
+            /* 2025-2026 TREND TOKENS */
+            --radius-lg: 1.5rem;
+            --radius-xl: 2.5rem;
+            --warm-taupe: #2E2A25;
+            --warm-taupe-glass: rgba(46, 42, 37, 0.3);
+            --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.4);
+            --shadow-float: 0 24px 64px rgba(0, 0, 0, 0.5);
+            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+            /* TRILLION DOLLAR GLASS */
+            --glass-base: rgba(15, 25, 40, 0.6);
+            --sapphire-glass: var(--glass-base);
+            --glass-blur: blur(40px) saturate(200%);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+
+            /* DIAMOND REFRACTION (Prismatic) */
+            --diamond-refraction: linear-gradient(115deg, transparent 40%, rgba(0, 255, 255, 0.4) 45%, rgba(255, 0, 255, 0.4) 50%, rgba(255, 255, 0, 0.4) 55%, transparent 60%);
+            --diamond-sparkle: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0) 60%);
+            --diamond-border: 1px solid rgba(255, 255, 255, 0.2);
+
+            /* MIRROR GOLD (18k Polish) + Warm Variant */
+            --gold-grad: linear-gradient(135deg, #FFE5A0 0%, #D4AF37 20%, #F0E68C 45%, #D4AF37 55%, #B8860B 90%);
+            --gold-metallic: var(--gold-grad);
+            --gold-warm: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+
+            /* LIQUID RUBY */
+            --ruby-grad: radial-gradient(circle at 35% 35%, #FF3D60 0%, #A00020 60%, #200000 100%);
+            --ruby-glow: 0 0 30px rgba(255, 61, 96, 0.6);
+
+            /* TYPOGRAPHY */
+            --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-main: #FFFFFF;
+            --text-muted: #9ba1a6;
+
+            /* LEGACY */
+            --accent-amber: #FFD700;
+            --border-gold: 1px solid rgba(212, 175, 55, 0.4);
+            --font-mono: 'Courier New', monospace;
+        }
+
+        /* GLOBAL RESET & DARK MODE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            background-color: var(--bg-void) !important;
+            color: var(--text-main) !important;
+            font-family: var(--font-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+            padding-top: 80px;
+            background-image: radial-gradient(circle at 50% 0%, #0F293D 0%, #020609 80%);
+            /* Global Ambient Light */
+        }
+
+        /* NAVIGATION (Standardized) */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 0 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+            background: rgba(8, 22, 33, 0.98) !important;
+            border-bottom: var(--border-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo,
+        .nav-logo {
+            color: #FFFFFF !important;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.2em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #FFFFFF !important;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+            transition: 0.3s;
+            opacity: 1 !important;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active,
+        .nav-links a.nav-active {
+            color: #FFD700 !important;
+        }
+
+        .mark {
+            color: #FFD700 !important;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: #FFF;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .brand-badge {
+            border: 1px solid #FFD700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            color: #FFD700;
+            font-size: 0.6rem;
+        }
+
+        /* CONTENT LAYOUT */
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 6rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #FFFFFF !important;
+            display: inline-block;
+        }
+
+        .italic-accent {
+            color: #FFD700 !important;
+            font-style: italic;
+            background: var(--gold-grad);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldRain 6s linear infinite;
+            display: inline-block;
+        }
+
+        .doc-meta {
+            font-family: var(--font-mono);
+            color: #FFD700;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .intro-lead {
+            font-size: 1.25rem;
+            color: var(--text-main);
+            font-weight: 300;
+            line-height: 1.8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #FFD700;
+            margin-top: 5rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            border-left: 4px solid #FFD700;
+            padding-left: 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #FFFFFF;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p,
+        li {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        strong {
+            color: #FFFFFF;
+            font-weight: 600;
+        }
+
+        em {
+            color: #FFD700;
+            font-style: normal;
+        }
+
+        /* SPECIAL ELEMENTS */
+        .spec-list {
+            list-style: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            padding: 0;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .spec-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.2rem;
+            margin: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .spec-list li:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: #FFFFFF;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            color: #FFD700;
+            font-family: var(--font-mono);
+            text-align: right;
+        }
+
+        .rec-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .rec-card {
+            background: var(--bg-surface);
+            padding: 2rem;
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .rec-title {
+            display: block;
+            color: #FFD700;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            padding-bottom: 0.5rem;
+        }
+
+        dl {
+            margin-top: 2rem;
+        }
+
+        dt {
+            color: #FFD700;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+            background: var(--gold-grad);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        dd {
+            color: var(--text-muted);
+            margin-left: 0;
+            padding-left: 1.5rem;
+            border-left: 2px solid rgba(255, 215, 0, 0.3);
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+            padding: 1rem 1.5rem;
+            border-radius: 0 12px 12px 0;
+            transition: 0.3s ease;
+        }
+
+        dd:hover {
+            background: rgba(255, 255, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050E15;
+            padding: 4rem 2rem;
+            border-top: var(--border-gold);
+            margin-top: 6rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        footer a:hover {
+            color: #FFD700;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+        }
+
+        /* ANIMATIONS & EXTRAS */
+        @keyframes goldRain {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .preloader,
+        .particles-container,
+        .cursor,
+        .cursor-dot {
+            display: none !important;
+        }
+
+        #readingProgress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: #FFD700;
+            z-index: 10001;
+            width: 0%;
+            transition: width 0.1s;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 968px) {
+            .navbar {
+                padding: 0 1.5rem;
+                height: 70px;
+            }
+
+            .menu-toggle {
+                display: block;
+                z-index: 10001;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #081621;
+                flex-direction: column;
+                justify-content: center;
+                transform: translateY(-100%);
+                transition: 0.3s ease;
+                padding-top: 80px;
+                box-shadow: none;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .nav-links a {
+                font-size: 1.2rem;
+            }
+
+            .spec-list li {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .spec-value {
+                text-align: left;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-wrapper {
+                padding: 8rem 1.5rem 4rem;
+            }
+
+            header {
+                padding-top: 4rem;
+            }
+        }
+
+        .highlight-bright {
+            color: #FFD700;
+        }
+
+        .text-ink {
+            color: #FFFFFF;
+        }
+
+        /* NEW SEMANTIC UTILITIES (Refactor) */
+        .text-mono {
+            font-family: var(--font-mono);
+        }
+
+        .header-sub {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: #FFD700;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .text-lead {
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, transparent 100%);
+            border-left: 3px solid #FFD700;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+        }
+
+        .quote-italic {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #FFFFFF;
+            margin-bottom: 0;
+        }
+
+        .section-dark {
+            background: #2D3436;
+            color: #F5F5F3;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            border-radius: 4px;
+        }
+
+        .grid-tech-steps {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1.5rem;
+            border-left: 3px solid #D4AF37;
+        }
+
+        .step-label {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: #D4AF37;
+            text-transform: uppercase;
+        }
+
+        .local-advantage-box {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        /* === BIG CAKE STABILITY PATCH (MOBILE V1.0) === */
+        @media (max-width: 968px) {
+
+            /* 1. Disable Heavy 3D Calculations on Mobile */
+            .hero-content-3d,
+            .gallery-item.tilt,
+            .case-sidebar {
+                transform: none !important;
+                transition: none !important;
+            }
+
+            /* 2. Optimize Glass for Performance */
+            :root {
+                --glass-blur: blur(12px) saturate(180%);
+            }
+
+            /* 3. Fix Wix Embed Double Scrollbar */
+            body {
+                overflow-x: hidden;
+                width: 100vw;
+                position: relative;
+            }
+
+            /* 4. Text Readability Booster */
+            h1,
+            h2 {
+                text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">Caramella</div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Unified Navbar -->
+    <nav class="navbar">
+        <a href="index.html" target="_top" class="logo">Caramella</a>
+        <div class="menu-toggle">☰</div>
+        <div class="nav-links">
+            <a href="index.html" target="_top">Home</a>
+            <a href="portfolio.html" target="_top">Portfolio</a>
+            <a href="inspiration.html" target="_top">Concepts</a>
+            <a href="faq.html" target="_top">Knowledge</a>
+            <a href="tech-specs.html" target="_top" class="nav-active">Tech Specs</a>
+            <span class="brand-badge">🇧🇳 EST. 2015</span>
+        </div>
+    </nav>
+
+    <div style="max-width: 800px; margin: 0 auto; padding: 4rem 1.5rem;">
+
+        <header>
+            <span class="header-sub">OUR TECHNICAL STANDARDS</span>
+            <h1>Caramella <span class="italic-accent">Quality</span>: <br>Protocols & Specifications</h1>
+            <p class="text-lead">
+                This document outlines the mandatory technical standards for site preparation and installation used by
+                Caramella Brunei. It serves as a reference for homeowners, contractors, and architects to ensure
+                seamless integration of precision joinery.
+            </p>
+
+            <!-- Universal Quality Mission Statement -->
+            <div class="highlight-box">
+                <p class="quote-italic">
+                    "We do not have 'High Quality' for the rich and 'Low Quality' for the budget.
+                    We use the same German CNC Robots and AutoCAD + Vectric Cut2D precision for every
+                    project—whether
+                    it is a luxury estate in Jerudong or a terrace house in Rimba."
+                </p>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- SECTION 1: Site Readiness -->
+            <section>
+                <h2>01. Site Readiness Protocols</h2>
+                <p>To accept CNC-machined cabinetry with 0.1mm tolerance, the physical site must meet specific
+                    preparatory
+                    standards. Failure to meet these may result in installation delays.</p>
+
+                <h3>A. Mechanical & Electrical (M&E) positioning</h3>
+                <ul class="spec-list">
+                    <li>
+                        <span class="spec-label">Countertop Socket Height</span>
+                        <span class="spec-value">1050mm - 1100mm (FFL)</span>
+                    </li>
+                    <li>
+                        <span class="spec-label">Hood Power Point</span>
+                        <span class="spec-value">1800mm (FFL)</span>
+                    </li>
+                    <li>
+                        <span class="spec-label">Water Inlet / Outlet</span>
+                        <span class="spec-value">500mm - 600mm (FFL)</span>
+                    </li>
+                    <li>
+                        <span class="spec-label">Dishwasher Point</span>
+                        <span class="spec-value">Adjacent Cabinet (Not behind)</span>
+                    </li>
+                </ul>
+                <p style="font-size: 0.9rem; margin-top: 1rem; color: var(--text-muted);">*FFL = Finished Floor Level
+                    (after
+                    tiling).</p>
+
+                <h3>B. Wall & Floor Conditions</h3>
+                <p><strong>Flooring:</strong> Tiling must be completed before cabinet installation. While our cabinets
+                    use
+                    adjustable legs, floor variance should not exceed 3mm over a 2-meter span.</p>
+                <p><strong>Walls:</strong> Walls must be plastered and receive at least the first coat of primer/paint.
+                    Wet
+                    works (cement/plaster) release moisture that can damage joinery if not fully cured.</p>
+            </section>
+
+            <!-- SECTION 1.5: MAXIMIZED STORAGE PROTOCOL (Honest Engineering vs Imported Modular Franchises) -->
+            <section class="highlight-box" style="border-left-width: 4px;">
+                <h2 style="margin-top: 0;">📐 The Maximized Storage Protocol</h2>
+                <p style="font-size: 1.2rem; font-weight: 500; color: #FFFFFF;">
+                    Standard modular kitchens often leave <strong>large gaps</strong> because they are restricted to
+                    fixed box sizes (300mm, 450mm, 600mm).
+                </p>
+                <p>
+                    Caramella manufactures to the <strong>exact millimeter</strong> of your room. We use scribe panels
+                    <em>only</em> to contour against uneven walls—<strong>never to hide wasted space from undersized
+                        modules.</strong>
+                </p>
+                <div
+                    style="background: var(--bg-surface); border: 1px solid rgba(255,215,0,0.2); padding: 1.5rem; margin-top: 1.5rem;">
+                    <h3 style="margin-top: 0; color: #FFD700;">MODULAR VS CUSTOM-WIDTH</h3>
+                    <ul class="spec-list" style="border: none;">
+                        <li style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+                            <span class="spec-label">Imported Modular Franchises</span>
+                            <span style="color: #c0392b; font-weight: bold;">Fixed 600mm Boxes → Wasted Space</span>
+                        </li>
+                        <li style="border-bottom: none;">
+                            <span class="spec-label">Caramella</span>
+                            <span class="spec-value">Custom-Width Cabinets → Maximized Storage → Perfect Fit</span>
+                        </li>
+                    </ul>
+                </div>
+                <p style="font-size: 1.1rem; color: #FFD700; margin-top: 1.5rem; font-weight: 600; text-align: center;">
+                    "Caramella engineers to the millimeter. We do not sell air; we sell storage."
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1.5rem;">
+                    <em>A note on scribe panels:</em> Brunei walls are rarely perfectly straight or 90°.
+                    Scribe panels are industry-standard for contouring against wall imperfections.
+                    The difference is <strong>why</strong> you need them—we use them for wall correction, not to
+                    compensate for undersized standard modules.
+                </p>
+            </section>
+
+            <!-- SECTION 1.6: THE AUTOCAD ADVANTAGE (Vs. Template Software) -->
+            <section class="section-dark">
+                <h2 style="margin-top: 0; color: #D4AF37; border-left-color: #D4AF37;">🔧 Our Digital Fabrication Stack
+                </h2>
+                <p style="font-size: 1.1rem; opacity: 0.9;">
+                    We don't rely on drag-and-drop template software used by showroom franchises.
+                    <strong style="color: #D4AF37;">If you can draw it, we can cut it.</strong>
+                </p>
+                <div class="grid-tech-steps">
+                    <div class="step-card">
+                        <span class="step-label">Step
+                            1: Design</span>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem;"><strong>Drafted in AutoCAD</strong></p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.7;">Every panel, every joint,
+                            every dimension engineered to your exact specifications.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-label">Step
+                            2: Processing</span>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem;"><strong>Processed in Vectric Cut2D</strong>
+                        </p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.7;">Nesting algorithms optimize
+                            material yield. Toolpaths calculated for 0.1mm precision.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-label">Step
+                            3: Fabrication</span>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem;"><strong>Machined by Robot</strong></p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.7;">CNC router executes cuts with
+                            zero human error. Consistent quality across every piece.</p>
+                    </div>
+                </div>
+                <p class="local-advantage-box">
+                    <strong>Local Manufacturer Advantage:</strong> No import delays. No shipping damage.
+                    Your cabinets are fabricated in Brunei, by Bruneians, for Brunei's climate.
+                </p>
+            </section>
+
+            <!-- SECTION 2: The Timeline -->
+            <section>
+                <h2>02. The Manufacturing Timeline</h2>
+                <p>Caramella operates a strict "Batch Production" system to maintain our 0.1mm tolerance standard.
+                    Understanding this timeline is crucial for project management. <strong>Standard lead time is 10-14
+                        weeks
+                        from site measurement.</strong></p>
+
+                <ol>
+                    <li>
+                        <strong>Phase 1: Technical Measure & Sign-Off (Weeks 1-2)</strong><br>
+                        Once the site is ready (floors done), our engineers take laser measurements. Final technical
+                        drawings are generated for client sign-off.
+                    </li>
+                    <li>
+                        <strong>Phase 2: Material Procurement & Queue (Weeks 3-6)</strong><br>
+                        Specialized materials (Marine Ply, Stone, Hardware) are allocated or imported. The project
+                        enters
+                        the manufacturing queue.
+                    </li>
+                    <li>
+                        <strong>Phase 3: CAD/CAM Fabrication (Weeks 7-10)</strong><br>
+                        Panels are processed: Nesting (cutting), PUR Edge Banding, and precision boring. This is the
+                        longest
+                        phase due to machine time.
+                    </li>
+                    <li>
+                        <strong>Phase 4: Assembly & Staging (Weeks 11-12)</strong><br>
+                        Cabinets are dry-assembled in the factory to verify geometry and mechanical function before they
+                        ever reach your home.
+                    </li>
+                    <li>
+                        <strong>Phase 5: Site Installation (Weeks 13-14)</strong><br>
+                        Final installation on-site. Includes leveling, stone countertop fitting, door adjustments, and
+                        silicon sealing.
+                    </li>
+                </ol>
+            </section>
+
+            <!-- SECTION 3: Glossary -->
+            <section>
+                <h2>03. Joinery Lexicon</h2>
+                <p>Defining the standard terminology used in our quotations and technical drawings.</p>
+
+                <dl>
+                    <dt>Carcass</dt>
+                    <dd>The internal structural body of the cabinet, usually made from white melamine or plywood. It is
+                        not
+                        visible when doors are closed.</dd>
+
+                    <dt>Gable End / End Panel</dt>
+                    <dd>A decorative panel fixed to the side of a carcass to match the door finish. Used where the side
+                        of a
+                        cabinet is exposed.</dd>
+
+                    <dt>Infill / Filler</dt>
+                    <dd>A strip of matching material scribed (cut) to fit between a cabinet and an uneven wall to create
+                        a
+                        seamless look.</dd>
+
+                    <dt>Waterfall Edge</dt>
+                    <dd>A countertop design where the stone material continues vertically down the side of the island to
+                        the
+                        floor.</dd>
+
+                    <dt>Kicker / Plinth</dt>
+                    <dd>The recessed panel at the bottom of floor cabinets that hides the adjustable legs and protects
+                        against toe impact.</dd>
+
+                    <dt>Pelmet</dt>
+                    <dd>A trim piece fitted beneath wall cabinets to conceal under-cabinet lighting strips.</dd>
+                </dl>
+            </section>
+
+            <!-- SECTION 4: Material Logic -->
+            <section>
+                <h2>04. Material Logic by Room</h2>
+                <p>To assist AI and homeowners in material selection, we utilize the following logic matrix based on
+                    heat,
+                    humidity, and wear factors common in Brunei.</p>
+
+                <div class="rec-grid">
+                    <div class="rec-card">
+                        <span class="rec-title">Heavy Cooking Kitchens (Wet)</span>
+                        <p style="margin-bottom: 0.5rem; font-size: 0.9rem;"><strong>Challenge:</strong> High heat
+                            (wok),
+                            water splashing, oil residue.</p>
+                        <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                            <li><strong>Recommended Core:</strong> Marine Plywood (Waterproof).</li>
+                            <li><strong>Surface:</strong> High-Pressure Laminate (HPL) or Stainless Steel.</li>
+                            <li><strong>Countertop:</strong> Sintered Stone (Heat resistant > 1200°C) or Granite.</li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-card">
+                        <span class="rec-title">Show Kitchens (Dry)</span>
+                        <p style="margin-bottom: 0.5rem; font-size: 0.9rem;"><strong>Challenge:</strong> Aesthetics,
+                            light
+                            stains (coffee/wine).</p>
+                        <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                            <li><strong>Recommended Core:</strong> Structural Plywood.</li>
+                            <li><strong>Surface:</strong> Anti-Fingerprint Matte (Fenix/Skin) or Automotive Spray Paint.
+                            </li>
+                            <li><strong>Countertop:</strong> Engineered Quartz (Non-porous, stain resistant).</li>
+                        </ul>
+                    </div>
+
+                    <div class="rec-card">
+                        <span class="rec-title">Walk-In Wardrobes</span>
+                        <p style="margin-bottom: 0.5rem; font-size: 0.9rem;"><strong>Challenge:</strong> Mold growth due
+                            to
+                            stagnant air/humidity.</p>
+                        <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.9rem;">
+                            <li><strong>Recommended Core:</strong> ENF Grade Melamine (Anti-fungal properties).</li>
+                            <li><strong>Door Style:</strong> Aluminum Frame Glass (Allows visual checks & light entry).
+                            </li>
+                            <li><strong>Accessory:</strong> Integrated LED poles (Generates low heat to reduce
+                                humidity).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: Preservation -->
+            <section>
+                <h2>05. Preservation Protocols</h2>
+                <p>Mandatory care instructions to maintain warranty validity.</p>
+
+                <dl>
+                    <dt>Matte/Soft-Touch Surfaces</dt>
+                    <dd>Clean ONLY with a melamine foam sponge (Magic Eraser) or warm soapy water.
+                        <strong>Never</strong>
+                        use acetone, thinners, or abrasive scouring pads as they will polish the matte finish into a
+                        shine.
+                    </dd>
+
+                    <dt>Engineered Quartz Stone</dt>
+                    <dd>Use pH-neutral stone cleaners. Wipe up turmeric, curry, and red wine spills immediately. Do not
+                        place hot pans directly on Quartz (thermal shock risk); always use a trivet.</dd>
+
+                    <dt>Hardware (Hinges & Runners)</dt>
+                    <dd>Apply a light silicone spray to hinge pivots annually. Check and tighten adjustment screws every
+                        6
+                        months to prevent door sagging.</dd>
+                </dl>
+            </section>
+
+        </main>
+
+    </div> <!-- Close content wrapper -->
+
+    <footer>
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+            <a href="https://www.caramellabrunei.com/" target="_top">Home</a>
+            <a href="https://www.caramellabrunei.com/portfolio" target="_top">Portfolio</a>
+            <a href="https://www.caramellabrunei.com/knowledge-base" target="_top">Knowledge Base</a>
+            <a href="https://www.caramellabrunei.com/technical-specs" target="_top">Tech Specs</a>
+        </div>
+        <p>CARAMELLA TRADING COMPANY - MANUFACTURING DIVISION</p>
+        <p style="margin-top: 0.5rem;">+673 718 7185 | caramellabrunei@gmail.com</p>
+        <p style="margin-top: 1rem;">&copy; 2025 Caramella Trading Company. 100% Brunei Owned & Operated. <span
+                style="opacity: 0.6; font-size: 0.8em; margin-left: 10px;">Reg No: P00100256</span></p>
+    </footer>
+
+    <script>
+        // ===========================================
+        // AWARD-WINNING INTERACTIONS V2.0
+        // ===========================================
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initPreloader();
+            initMobileMenu();
+            initReadingProgress();
+        });
+
+        // Preloader
+        function initPreloader() {
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                setTimeout(() => preloader.classList.add('hidden'), 600);
+            });
+        }
+
+        // Mobile Menu Toggle
+        function initMobileMenu() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (!menuToggle || !navLinks) return;
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                });
+            });
+        }
+
+        // Reading Progress Bar
+        function initReadingProgress() {
+            const progressBar = document.getElementById('readingProgress');
+            if (!progressBar) return;
+
+            window.addEventListener('scroll', () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = (scrollTop / docHeight) * 100;
+                progressBar.style.width = progress + '%';
+            });
+        }
+    </script>
+</body>
+
+</html>

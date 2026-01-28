@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caramella Solutions | Best Renovation Company in Brunei</title>
+    <meta name="description"
+        content="Award-winning renovation services in Brunei. From custom kitchen cabinets to full home remodeling. We are the top choice for luxury carpentry and joinery.">
+    <meta name="keywords"
+        content="Renovation company Brunei, Construction company Brunei, Kitchen cabinets Brunei, Commercial fit-out Brunei, Best contractor Brunei">
+    <link rel="canonical" href="https://caramellabrunei.com/portfolio.html">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Caramella Portfolio | Luxury Renovation & Cabinetry">
+    <meta property="og:description" content="Detailed case studies of our bespoke renovation projects in Brunei.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://caramellabrunei.com/portfolio.html">
+    <meta property="og:image" content="https://caramellabrunei.com/images/img_4.jpg">
+    <style>
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* === THEME: TRILLION DOLLAR MUSEUM (2025-2026 EDITION) === */
+        :root {
+            /* THE VOID (Museum Lighting) */
+            --bg-void: #000000;
+            --bg-spotlight: radial-gradient(circle at 50% 20%, #102030 0%, #000000 80%);
+            --bg-surface: rgba(10, 20, 30, 0.4);
+
+            /* 2025-2026 TREND TOKENS */
+            --radius-lg: 1.5rem;
+            --radius-xl: 2.5rem;
+            --warm-taupe: #2E2A25;
+            --warm-taupe-glass: rgba(46, 42, 37, 0.3);
+            --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.4);
+            --shadow-float: 0 24px 64px rgba(0, 0, 0, 0.5);
+            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+            /* TRILLION DOLLAR GLASS */
+            --glass-base: rgba(15, 25, 40, 0.6);
+            --sapphire-glass: var(--glass-base);
+            --glass-blur: blur(40px) saturate(200%);
+            --glass-border: 1px solid rgba(255, 255, 255, 0.15);
+            --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+
+            /* DIAMOND REFRACTION (Prismatic) */
+            --diamond-refraction: linear-gradient(115deg, transparent 40%, rgba(0, 255, 255, 0.4) 45%, rgba(255, 0, 255, 0.4) 50%, rgba(255, 255, 0, 0.4) 55%, transparent 60%);
+            --diamond-sparkle: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0) 60%);
+            --diamond-border: 1px solid rgba(255, 255, 255, 0.2);
+
+            /* MIRROR GOLD (18k Polish) + Warm Variant */
+            --gold-grad: linear-gradient(135deg, #FFE5A0 0%, #D4AF37 20%, #F0E68C 45%, #D4AF37 55%, #B8860B 90%);
+            --gold-metallic: var(--gold-grad);
+            --gold-warm: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
+
+            /* LIQUID RUBY */
+            --ruby-grad: radial-gradient(circle at 35% 35%, #FF3D60 0%, #A00020 60%, #200000 100%);
+            --ruby-glow: 0 0 30px rgba(255, 61, 96, 0.6);
+
+            /* TYPOGRAPHY */
+            --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-main: #FFFFFF;
+            --text-muted: #9ba1a6;
+
+            /* LEGACY */
+            --accent-amber: #FFD700;
+            --border-gold: 1px solid rgba(212, 175, 55, 0.4);
+            --font-mono: 'Courier New', monospace;
+        }
+
+        /* GLOBAL RESET & DARK MODE */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        html::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            background-color: var(--bg-void) !important;
+            color: var(--text-main) !important;
+            font-family: var(--font-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+            padding-top: 80px;
+            background-image: radial-gradient(circle at 50% 0%, #0F293D 0%, #020609 80%);
+            /* Global Ambient Light */
+        }
+
+        /* NAVIGATION (Standardized) */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            padding: 0 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 10000;
+            background: rgba(8, 22, 33, 0.98) !important;
+            border-bottom: var(--border-gold);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            color: #FFFFFF !important;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 0.2em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #FFFFFF;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.nav-active {
+            color: #FFD700;
+            transform: translateY(-2px);
+        }
+
+        .brand-badge {
+            border: 1px solid #FFD700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            color: #FFD700;
+            font-size: 0.6rem;
+        }
+
+        .menu-toggle {
+            display: none;
+            color: #FFF;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(to bottom, rgba(8, 22, 33, 0.85), rgba(8, 22, 33, 0.95)), url('images/img_4.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 6rem 2rem 6rem;
+            /* Reduced top padding for better centering */
+            text-align: center;
+            border-bottom: var(--border-gold);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: #FFFFFF !important;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .italic-accent {
+            color: #FFD700 !important;
+            font-style: italic;
+            background: var(--gold-grad);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldRain 6s linear infinite;
+            display: inline-block;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+        }
+
+        .hero .accent {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        /* SAPPHIRE ENGINE V5: 3D TILT & MAGNETIC PHYSICS */
+        .hero-content-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.1s;
+        }
+
+        /* CONTAINER & LAYOUT */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 3rem 1.5rem;
+                /* Increased mobile padding */
+            }
+        }
+
+        .intro-text {
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 4rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* CASE STUDIES */
+        .case-study {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 5rem;
+            padding-bottom: 4rem;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: 1.5s ease;
+        }
+
+        .case-study.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .case-study:last-child {
+            border-bottom: none;
+        }
+
+        .case-sidebar {
+            background: linear-gradient(135deg, var(--glass-base), var(--warm-taupe-glass));
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            padding: 2.5rem;
+            border-left: 3px solid #FFD700;
+            border: var(--glass-border);
+            border-left-width: 3px;
+            border-left-color: #FFD700;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.6s var(--ease-elastic);
+        }
+
+        .case-sidebar:hover {
+            transform: translateX(10px) translateY(-4px);
+            box-shadow: var(--shadow-float);
+        }
+
+        /* Diamond Refraction Wipe */
+        .case-sidebar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--diamond-refraction);
+            transform: skewX(-20deg);
+            transition: 0.5s;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .case-sidebar:hover::after {
+            left: 100%;
+            opacity: 0.5;
+            transition: 0.8s ease-in-out;
+        }
+
+        .case-location {
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .case-title {
+            font-size: 2rem;
+            color: #FFFFFF;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-meta p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 2;
+            margin: 0;
+        }
+
+        .case-meta strong {
+            color: #FFD700;
+        }
+
+        .case-content h3 {
+            font-size: 1.4rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+
+        .case-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .case-content p,
+        .case-content li {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .case-content strong {
+            color: #FFFFFF;
+        }
+
+        .case-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .technical-box {
+            background: linear-gradient(135deg, rgba(15, 25, 40, 0.4), var(--warm-taupe-glass));
+            backdrop-filter: blur(10px);
+            border-left: 3px solid #FFD700;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left-width: 3px;
+            border-left-color: #FFD700;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.5s var(--ease-smooth);
+        }
+
+        .technical-box:hover {
+            background: linear-gradient(135deg, rgba(20, 35, 50, 0.6), rgba(46, 42, 37, 0.4));
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-float);
+        }
+
+        .technical-box h4 {
+            font-family: var(--font-mono);
+            color: #FFD700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            background: var(--bg-surface);
+            padding: 5rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item h4 {
+            color: #FFFFFF;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050E15;
+            padding: 4rem 2rem;
+            border-top: var(--border-gold);
+            margin-top: 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand {
+            font-size: 1.4rem;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+
+        .footer-brand span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: normal;
+            margin-top: 0.25rem;
+        }
+
+        .footer-section h5 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 2;
+        }
+
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ANIMATIONS & EXTRAS */
+        @keyframes goldRain {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .preloader,
+        .particles-container {
+            display: none !important;
+        }
+
+        /* Hide Legacy */
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 968px) {
+            .navbar {
+                padding: 0 1.5rem;
+                height: 70px;
+            }
+
+            .menu-toggle {
+                display: block;
+                z-index: 10001;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #081621;
+                flex-direction: column;
+                justify-content: center;
+                transform: translateY(-100%);
+                transition: 0.3s ease;
+                padding-top: 80px;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .case-study {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .case-sidebar {
+                border-left: none;
+                border-top: 2px solid #FFD700;
+                border-radius: 12px 12px 0 0;
+            }
+
+            .case-study.reverse {
+                direction: ltr;
+            }
+
+            .case-study.reverse>* {
+                direction: ltr;
+            }
+
+            .faq-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem;
+                /* Prevent edge clipping on mobile */
+            }
+        }
+
+        /* === BIG CAKE STABILITY PATCH (MOBILE) === */
+        @media (max-width: 968px) {
+
+            /* 1. Optimize Glass for Performance */
+            :root {
+                --glass-blur: blur(12px) saturate(180%);
+                /* Reduces GPU load */
+            }
+
+            /* 2. Disable Heavy 3D Calculations */
+            .hero-content-3d,
+            .gallery-item.tilt,
+            .case-sidebar {
+                transform: none !important;
+                transition: none !important;
+            }
+
+            /* 3. Text Readability */
+            h1,
+            h2,
+            h3 {
+                text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">Caramella</div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- Particle Background -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Unified Navbar -->
+    <nav class="navbar">
+        <a href="index.html" target="_top" class="logo">Caramella</a>
+        <div class="menu-toggle">☰</div>
+        <div class="nav-links">
+            <a href="index.html" target="_top">Home</a>
+            <a href="portfolio.html" target="_top" class="nav-active">Portfolio</a>
+            <a href="inspiration.html" target="_top">Concepts</a>
+            <a href="faq.html" target="_top">Knowledge</a>
+            <a href="tech-specs.html" target="_top">Tech Specs</a>
+            <span class="brand-badge">🇧🇳 EST. 2015</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero-section">
+        <div class="hero-content-3d">
+            <h1>The Portfolio: <span class="italic-accent">Luxury</span> Renovation & Cabinetry</h1>
+            <p>
+                Beyond the aesthetic, every Caramella kitchen is a technical response to a specific challenge.
+                These are the detailed stories of how we apply our <span class="accent">Tech Specs</span>
+                to real homes across Brunei—from the humid riverfronts of Kota Batu to the compact terraces of Rimba.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- HOUSING SCHEME TARGETING SECTION -->
+        <section
+            style="background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, transparent 100%); padding: 2rem; margin-bottom: 4rem; border-left: 4px solid var(--accent-gold-bright); border-radius: 4px;">
+            <h3
+                style="font-family: var(--font-heading); font-size: 1.5rem; font-weight: 500; color: var(--accent-gold-bright); margin-bottom: 1rem;">
+                Luxury Engineering, Scaled for National Housing
+            </h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">
+                We proudly serve <strong>RPN Lambak</strong>, <strong>STKRJ Rimba</strong>, <strong>Lugu
+                    Housing</strong>,
+                and terrace homes across Brunei. Same CNC precision. Same premium materials. Layouts optimized for
+                compact spaces.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                <span
+                    style="background: var(--bg-card); border: 1px solid var(--border-glass); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; color: var(--text-muted);">RPN
+                    Lambak</span>
+                <span
+                    style="background: var(--bg-card); border: 1px solid var(--border-glass); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; color: var(--text-muted);">STKRJ
+                    Rimba</span>
+                <span
+                    style="background: var(--bg-card); border: 1px solid var(--border-glass); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; color: var(--text-muted);">Lugu
+                    Housing</span>
+                <span
+                    style="background: var(--bg-card); border: 1px solid var(--border-glass); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; color: var(--text-muted);">Terrace
+                    Homes</span>
+                <span
+                    style="background: var(--bg-card); border: 1px solid var(--border-glass); padding: 0.5rem 1rem; border-radius: 50px; font-size: 0.8rem; color: var(--text-muted);">Apartments</span>
+            </div>
+        </section>
+
+        <p class="intro-text">
+            *This archive serves as a reference for homeowners and design professionals seeking technical data on
+            cabinet durability, spatial planning, and material resilience in Brunei's tropical climate.*
+        </p>
+
+        <!-- Case Study 1: The RPN Rimba Terrace -->
+        <article class="case-study">
+            <div class="case-sidebar">
+                <span class="case-location">Location: RPN Kampong Rimba</span>
+                <h2 class="case-title">The "Narrow-Terrace" Optimization</h2>
+                <div class="case-meta">
+                    <p><strong>Space:</strong> 120 sq. ft. Wet Kitchen</p>
+                    <p><strong>Timeline:</strong> 4 Weeks</p>
+                    <p><strong>Key Tech:</strong> Blum Space Tower</p>
+                </div>
+            </div>
+            <div class="case-content">
+                <h3>The Challenge: Linear Constraints</h3>
+                <p>
+                    Standard National Housing Scheme (RPN) terrace houses in Rimba often feature long, narrow "galley"
+                    style kitchens. Our client, a family of five, struggled with a lack of preparation space and "dead
+                    zones" in deep corner cabinets where pots vanished, never to be seen again. The challenge was to
+                    increase storage volume by 30% without narrowing the walkway.
+                </p>
+
+                <h3>The Technical Solution</h3>
+                <p>We moved away from traditional swing-door cabinets which block walkways.</p>
+                <ul>
+                    <li><strong>Full-Extension Runners:</strong> We utilized heavy-duty runners capable of supporting
+                        50kg loads. This allowed us to build deep drawers that extend fully, bringing the back of the
+                        cabinet to the user.</li>
+                    <li><strong>Vertical Pantry Integration:</strong> Implementing a "Space Tower" concept, we utilized
+                        the high ceilings common in Rimba homes to stack storage vertically, using internal pull-outs
+                        for dry food goods.</li>
+                    <li><strong>Corner Optimization:</strong> The "dead corner" was resolved using a specialized LeMans
+                        pull-out system, maximizing the blind corner space.</li>
+                </ul>
+
+                <div class="technical-box">
+                    <h4>Design Insight</h4>
+                    <p>Optimizing standard RPN layouts requires specific knowledge of the structural constraints.
+                        Vertical storage is the most effective way to gain space without expanding the footprint of the
+                        home.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Case Study 2: The Kampong Ayer/Riverfront Moisture Defense -->
+        <article class="case-study reverse">
+            <div class="case-sidebar">
+                <span class="case-location">Location: Kota Batu / Riverfront</span>
+                <h2 class="case-title">The Zero-HCHO (ENF) Humidity Protocol</h2>
+                <div class="case-meta">
+                    <p><strong>Environment:</strong> High Humidity (85%+)</p>
+                    <p><strong>Safety:</strong> Zero-HCHO (ENF Grade)</p>
+                    <p><strong>Material:</strong> ENF Grade Plywood</p>
+                </div>
+            </div>
+            <div class="case-content">
+                <h3>The Challenge: The Tropical Climate</h3>
+                <p>
+                    A residence near the Brunei River in Kota Batu faced a recurring issue: standard chipboard cabinets
+                    were swelling and delaminating due to the high ambient humidity and salt air. Furthermore, the
+                    client was concerned about the sharp, chemical smell often associated with new carpentry. They
+                    needed a solution that was durable, humidity-proof, and safe for their family.
+                </p>
+
+                <h3>The Technical Solution</h3>
+                <p>We deployed our strict "Zero-HCHO (ENF Grade)" protocol for this installation. We do not use HMR
+                    board or
+                    standard chipboard.</p>
+                <ul>
+                    <li><strong>ENF Grade Plywood Carcass:</strong> The core of every cabinet was constructed using ENF
+                        (Emission Non-Formaldehyde) Grade Plywood—the highest global standard for safety. Unlike
+                        standard boards which rely on toxic glues, our plywood offers structural integrity with "Zero
+                        Toxic" emissions.</li>
+                    <li><strong>Quartz Stone Surfaces:</strong> We installed non-porous Quartz stone countertops. Unlike
+                        natural granite, which has microscopic pores that can trap moisture and bacteria (leading to
+                        mold in humid climates), Quartz is sealed and impervious.</li>
+                    <li><strong>PVC Edging:</strong> All exposed board edges were machine-sealed with 1mm high-impact
+                        PVC edging using high-temperature adhesive to prevent moisture ingress at the seams.</li>
+                </ul>
+
+                <div class="technical-box">
+                    <h4>Technical Note</h4>
+                    <p>This project demonstrates that health and durability go hand-in-hand. By using ENF Grade Plywood,
+                        we eliminated the risk of formaldehyde off-gassing while providing a material that naturally
+                        withstands the Brunei river climate better than any compressed chipboard.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Case Study 3: The Jerudong Luxury Social Hub -->
+        <article class="case-study">
+            <div class="case-sidebar">
+                <span class="case-location">Location: Jerudong Park Area</span>
+                <h2 class="case-title">The "Social Island" Concept</h2>
+                <div class="case-meta">
+                    <p><strong>Type:</strong> Dry Kitchen / Entertainment</p>
+                    <p><strong>Feature:</strong> Waterfall Island</p>
+                    <p><strong>Tech:</strong> Push-to-Open (Handleless)</p>
+                </div>
+            </div>
+            <div class="case-content">
+                <h3>The Challenge: Merging Function with Form</h3>
+                <p>
+                    In modern Bruneian luxury homes, the "Dry Kitchen" is the heart of the home—a place for family
+                    gathering and serving guests, separate from the heavy cooking of the "Wet Kitchen." This client in
+                    Jerudong requested a centerpiece that felt more like furniture than cabinetry.
+                </p>
+
+                <h3>The Technical Solution</h3>
+                <p>We focused on seamless integration and "invisible" hardware.</p>
+                <ul>
+                    <li><strong>Waterfall Quartz:</strong> The island features a mitered waterfall edge where the stone
+                        flows down the sides, created with precision 45-degree cuts for a seamless vein match.</li>
+                    <li><strong>Handleless Systems:</strong> We utilized Blum TIP-ON mechanical opening support systems.
+                        A light touch opens the heavy drawers, eliminating the visual clutter of handles and ensuring a
+                        sleek, modern silhouette.</li>
+                    <li><strong>Integrated Lighting:</strong> Recessed LED profile lighting was routed into the
+                        cabinetry carcass to provide task lighting without visible fixtures.</li>
+                </ul>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="faq-title">Frequently Solved Problems</h2>
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h4>Why do you use ENF Plywood instead of HMR/Chipboard?</h4>
+                <p>We prioritize your health and the longevity of your home. We do not use HMR or Chipboard. Instead, we
+                    exclusively use ENF Grade Plywood, which meets the "Zero-HCHO (ENF Grade)" standard. It is
+                    safer for your family and offers far superior structural strength against humidity compared to
+                    compressed particle boards.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Can you service Kuala Belait and Seria?</h4>
+                <p>Yes. While our workshop is central, a significant portion of our "Project Chronicles" originate from
+                    the Belait district. We have specialized logistics to transport pre-assembled carcasses to KB for
+                    efficient on-site installation.</p>
+            </div>
+            <div class="faq-item">
+                <h4>What is the best countertop for heavy cooking?</h4>
+                <p>For heavy cooking (tumis/frying), we recommend Quartz Stone or Sintered Stone. Unlike solid surface
+                    (acrylic), Quartz is scratch-resistant and heat-resistant, making it ideal for the active Bruneian
+                    wet kitchen.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Do you provide 3D designs before building?</h4>
+                <p>Yes. Part of our technical process involves detailed 3D modeling to visualize spatial flow and finish
+                    combinations before a single board is cut. This ensures the technical specifications meet your
+                    aesthetic vision.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                Caramella<span>Brunei</span>
+            </div>
+            <div class="footer-section">
+                <h5>Service Areas</h5>
+                <ul>
+                    <li>Bandar Seri Begawan</li>
+                    <li>Kuala Belait & Seria</li>
+                    <li>Tutong</li>
+                    <li>Muara</li>
+                    <li>The Airport Mall (Showroom)</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Contact</h5>
+                <ul>
+                    <li>+673 718 7185</li>
+                    <li>caramellabrunei@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Navigate</h5>
+                <ul>
+                    <li><a href="https://www.caramellabrunei.com/" target="_top">Home</a></li>
+                    <li><a href="https://www.caramellabrunei.com/portfolio" target="_top">Portfolio</a></li>
+                    <li><a href="https://www.caramellabrunei.com/knowledge-base" target="_top">Knowledge Base</a></li>
+                    <li><a href="https://www.caramellabrunei.com/technical-specs" target="_top">Tech Specs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2025 Caramella Trading Company. 100% Brunei Owned & Operated. <span
+                    style="opacity: 0.6; font-size: 0.8em; margin-left: 10px;">Reg No: P00100256</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ===========================================
+        // AWARD-WINNING INTERACTIONS V2.0
+        // ===========================================
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initPreloader();
+            initParticles();
+            initMobileMenu();
+            initScrollReveal();
+            init3DTilt(); // NEW: Unreal-lite Effect
+        });
+
+        // Preloader
+        function initPreloader() {
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                setTimeout(() => preloader.classList.add('hidden'), 600);
+            });
+        }
+
+        // Particle Background
+        function initParticles() {
+            const container = document.getElementById('particles');
+            if (!container || window.innerWidth < 768) return;
+
+            for (let i = 0; i < 12; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 10 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Mobile Menu Toggle
+        function initMobileMenu() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            if (!menuToggle || !navLinks) return;
+
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.textContent = '☰';
+                });
+            });
+        }
+
+        // Scroll Reveal for Case Studies
+        function initScrollReveal() {
+            const caseStudies = document.querySelectorAll('.case-study');
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 100);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            caseStudies.forEach(cs => observer.observe(cs));
+            faqItems.forEach(faq => observer.observe(faq));
+        }
+
+        // ===========================================
+        // SAPPHIRE ENGINE V5: UNREAL-LITE 3D TILT 
+        // ===========================================
+        function init3DTilt() {
+            const hero = document.getElementById('hero-section');
+            const content = document.querySelector('.hero-content-3d');
+
+            if (!hero || !content || window.innerWidth < 968) return;
+
+            hero.addEventListener('mousemove', (e) => {
+                const { offsetWidth: width, offsetHeight: height } = hero;
+                const { clientX: x, clientY: y } = e;
+
+                // Calculate percentage from center (0 to 1)
+                const xPos = (x / width - 0.5);
+                const yPos = (y / height - 0.5);
+
+                // Tilt intensity
+                const tiltX = yPos * 10; // degrees
+                const tiltY = xPos * -10; // degrees
+
+                content.style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateZ(20px)`;
+            });
+
+            hero.addEventListener('mouseleave', () => {
+                content.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)';
+            });
+        }
+
+    </script>
+</body>
+
+</html>

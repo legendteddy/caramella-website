@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Design Not Found | Caramella</title>
+    <style>
+        body {
+            background-color: #000;
+            background-image: radial-gradient(circle at 50% 20%, #102030 0%, #000000 80%);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* ORB ANIMATIONS REUSED */
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.6;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 100, 255, 0.1);
+            top: -10%;
+            left: -10%;
+        }
+
+        .orb-2 {
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 215, 0, 0.1);
+            bottom: 10%;
+            right: 10%;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(20px, 40px);
+            }
+        }
+
+        /* CONTENT */
+        .container {
+            position: relative;
+            z-index: 10;
+            padding: 2rem;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 8rem;
+            margin: 0;
+            background: linear-gradient(90deg, #B8860B 0%, #FFD700 25%, #FFFFFF 50%, #FFD700 75%, #B8860B 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            letter-spacing: -5px;
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 200% center;
+            }
+
+            100% {
+                background-position: -200% center;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        p {
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            color: #FFD700;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-home:hover {
+            background: #FFD700;
+            color: #000;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* PARTICLES */
+        .particle {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <div class="container">
+        <h1>404</h1>
+        <div class="subtitle">Design Not Conceptualized</div>
+        <p>
+            The asset you are looking for resides in a dimension we have not yet built.
+            <br>Return to our showroom to view available collections.
+        </p>
+        <a href="index.html" class="btn-home">Return Home</a>
+    </div>
+
+    <script>
+        // Simple Particle System
+        function createParticles() {
+            const count = 50;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                const size = Math.random() * 2;
+                p.style.width = size + 'px';
+                p.style.height = size + 'px';
+                p.style.left = Math.random() * 100 + 'vw';
+                p.style.top = Math.random() * 100 + 'vh';
+                p.style.opacity = Math.random() * 0.5;
+                p.style.animation = `float ${10 + Math.random() * 20}s infinite linear`;
+                document.body.appendChild(p);
+            }
+        }
+        createParticles();
+    </script>
+</body>
+
+</html>
