@@ -1517,3 +1517,21 @@
         .hero {
             background-attachment: fixed !important;
         }
+/* === BIG CAKE STABILITY PATCH (MOBILE) === */
+@media (max-width: 968px) {
+    /* 1. Optimize Glass for Performance */
+    :root {
+        --glass-blur: blur(12px) saturate(180%);
+    }
+    /* 2. Disable Heavy 3D Calculations */
+    .hero-content-3d,
+    .gallery-item.tilt,
+    .case-sidebar {
+        transform: none !important;
+        transition: none !important;
+    }
+    /* 3. Text Readability */
+    h1, h2, h3 {
+        text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    }
+}
