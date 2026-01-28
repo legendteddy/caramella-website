@@ -235,7 +235,9 @@
             font-family: var(--font-main);
             overflow-x: hidden;
             line-height: 1.8;
-            background-image: radial-gradient(circle at 50% 0%, #0F293D 0%, #020609 80%);
+            background-image: radial-gradient(circle at 50% 0%, #0F293D 0%, #020609 80%) !important;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             /* Feature 3: Page Transition */
             opacity: 0;
             animation: pageLoad 0.6s ease-out forwards;
@@ -343,7 +345,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            background: var(--bg-void) !important;
+            background: transparent !important;
         }
 
         .hero-bg-slider {
@@ -521,7 +523,7 @@
 
         .section {
             padding: 6rem 2rem;
-            background: var(--bg-void) !important;
+            background: transparent !important;
             will-change: transform;
             /* Performance hint */
         }
@@ -554,7 +556,7 @@
         }
 
         .trust-section {
-            background: var(--bg-void) !important;
+            background: transparent !important;
             border-bottom: var(--border-gold);
         }
 
@@ -811,7 +813,7 @@
         /* GALLERY */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 1.5rem;
         }
 
@@ -982,7 +984,7 @@
 
         /* CONTACT */
         .contact-section {
-            background: var(--bg-void) !important;
+            background: transparent !important;
             text-align: center;
         }
 
@@ -1231,67 +1233,7 @@
             }
         }
 
-        /* Feature 13: Back-to-Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.4s ease;
-            z-index: 9997;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            background: rgba(255, 215, 0, 0.2);
-            border-color: #FFD700;
-            transform: translateY(-3px);
-        }
-
-        .back-to-top svg {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            transform: rotate(-90deg);
-        }
-
-        .back-to-top .progress-ring {
-            fill: none;
-            stroke: #FFD700;
-            stroke-width: 2;
-            stroke-dasharray: 138;
-            stroke-dashoffset: 138;
-            transition: stroke-dashoffset 0.1s ease;
-        }
-
-        .back-to-top .arrow {
-            color: #FFD700;
-            font-size: 1.2rem;
-            z-index: 1;
-        }
-
-        @media (max-width: 768px) {
-            .back-to-top {
-                bottom: 5.5rem;
-                left: 1rem;
-                width: 40px;
-                height: 40px;
-            }
-        }
 
         /* Feature 16: Social Proof Popup */
         .social-proof {
@@ -1804,231 +1746,14 @@
         </div>
     </section>
 
-    <!-- Feature 41: Process & Stats -->
-    <section id="process" class="section" style="background: rgba(255,255,255,0.02); margin: 2rem 0;">
-        <div class="container">
-            <h2 class="reveal-stone" style="text-align: center; margin-bottom: 4rem;">The <span
-                    class="italic-accent">Process</span></h2>
 
-            <div class="timeline-grid reveal-stone"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; padding: 0 1rem;">
-                <div class="timeline-step" style="text-align: center; position: relative;">
-                    <div class="step-num"
-                        style="font-size: 5rem; font-weight: 800; color: rgba(255,255,255,0.03); line-height: 0.8; margin-bottom: 1rem;">
-                        01</div>
-                    <h4 style="color: #FFD700; margin-bottom: 0.5rem;">Design</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.7;">3D Parametric CAD modeling.</p>
-                </div>
-                <div class="timeline-step" style="text-align: center; position: relative;">
-                    <div class="step-num"
-                        style="font-size: 5rem; font-weight: 800; color: rgba(255,255,255,0.03); line-height: 0.8; margin-bottom: 1rem;">
-                        02</div>
-                    <h4 style="color: #FFD700; margin-bottom: 0.5rem;">Fabricate</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.7;">0.1mm CNC precision accuracy.</p>
-                </div>
-                <div class="timeline-step" style="text-align: center; position: relative;">
-                    <div class="step-num"
-                        style="font-size: 5rem; font-weight: 800; color: rgba(255,255,255,0.03); line-height: 0.8; margin-bottom: 1rem;">
-                        03</div>
-                    <h4 style="color: #FFD700; margin-bottom: 0.5rem;">Install</h4>
-                    <p style="font-size: 0.9rem; opacity: 0.7;">One-day rapid site fitting.</p>
-                </div>
-            </div>
-
-            <!-- Feature 38: Animated Stats -->
-            <div class="stats-grid reveal-stone" id="statsGrid"
-                style="margin-top: 5rem; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 3rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4rem;">
-                <div class="stat-item" style="text-align: center;">
-                    <div class="stat-number" data-target="10" style="font-size: 3.5rem; font-weight: 200; color: #fff;">
-                        0</div>
-                    <div class="stat-label"
-                        style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.7rem; color: #FFD700;">
-                        Years Experience</div>
-                </div>
-                <div class="stat-item" style="text-align: center;">
-                    <div class="stat-number" data-target="500"
-                        style="font-size: 3.5rem; font-weight: 200; color: #fff;">0</div>
-                    <div class="stat-label"
-                        style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.7rem; color: #FFD700;">
-                        Projects</div>
-                </div>
-                <div class="stat-item" style="text-align: center;">
-                    <div class="stat-number" data-target="100"
-                        style="font-size: 3.5rem; font-weight: 200; color: #fff;">0</div>
-                    <div class="stat-label"
-                        style="text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.7rem; color: #FFD700;">
-                        Locally Owned</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Feature 10: Testimonials -->
-    <!-- Feature 2 & 4: Technical Joinery Lab -->
-    <section id="engineering-lab" class="section"
-        style="background: #050505; border-top: 1px solid var(--glass-border);">
-        <div class="container">
-            <h2 class="reveal-stone">The <span class="italic-accent">Engineering</span> Lab</h2>
-            <p style="text-align: center; opacity: 0.6; margin-bottom: 4rem;">Deconstructing the Sovereign Mortise.
-                ±0.1mm tolerance verified.</p>
 
-            <div style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; justify-content: center;">
-                <!-- Isometric Exploded View -->
-                <div style="flex: 1; min-width: 320px; position: relative;" class="reveal-stone">
-                    <div id="joinery-render"
-                        style="width: 100%; height: 450px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; position: relative; overflow: hidden; cursor: pointer;"
-                        onclick="toggleSchematic()">
-                        <!-- SVG Exploded View will go here -->
-                        <svg viewBox="0 0 400 400" width="100%" height="100%" id="joint-svg">
-                            <defs>
-                                <filter id="glow">
-                                    <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-                                    <feMerge>
-                                        <feMergeNode in="coloredBlur" />
-                                        <feMergeNode in="SourceGraphic" />
-                                    </feMerge>
-                                </filter>
-                            </defs>
-                            <!-- Panel A (Gable) -->
-                            <g id="panel-a" style="transition: transform 0.8s var(--ease-elastic);">
-                                <path d="M100,150 L200,100 L200,300 L100,350 Z" fill="rgba(212, 175, 55, 0.1)"
-                                    stroke="#D4AF37" stroke-width="1.5" />
-                                <text x="110" y="250" fill="#D4AF37" font-size="10" style="opacity: 0.5;">VENEER
-                                    CORE</text>
-                            </g>
-                            <!-- Panel B (Rail) - Exploded -->
-                            <g id="panel-b"
-                                style="transform: translate(80px, -40px); transition: transform 0.8s var(--ease-elastic);">
-                                <path d="M220,110 L320,60 L320,100 L220,150 Z" fill="rgba(255,255,255,0.05)"
-                                    stroke="#fff" stroke-width="1.5" />
-                                <path d="M220,150 L320,100 L320,110 L220,160 Z" fill="rgba(255,255,255,0.02)"
-                                    stroke="#fff" stroke-width="1.5" />
-                            </g>
-                            <!-- Schematic Overlays (Feature 4) -->
-                            <g id="schematic-layer" style="opacity: 0; transition: opacity 0.5s ease;">
-                                <line x1="200" y1="100" x2="280" y2="60" stroke="#00ffff" stroke-dasharray="4"
-                                    stroke-width="1" />
-                                <circle cx="200" cy="100" r="3" fill="#00ffff" />
-                                <text x="220" y="80" fill="#00ffff" font-size="8">TOLERANCE: ±0.1mm</text>
-                                <path d="M150,125 L250,75" stroke="#00ffff" stroke-width="0.5" />
-                                <text x="180" y="100" fill="#00ffff" font-size="8"
-                                    transform="rotate(-26 180,100)">18.02mm MEASURED</text>
-                            </g>
-                        </svg>
-                        <!-- Instruction Badge -->
-                        <div
-                            style="position: absolute; bottom: 1rem; left: 1rem; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; color:rgba(255,255,255,0.4);">
-                            Click to Reveal Schematic</div>
-                    </div>
-                </div>
 
-                <!-- Data Table (Feature 9) -->
-                <div style="flex: 1; min-width: 300px;" class="reveal-stone">
-                    <h3 style="color: #fff; margin-bottom: 2rem;">Structural <span
-                            class="italic-accent">Integrity</span> Report</h3>
-                    <div style="display: grid; gap: 1rem;">
-                        <div class="card-gradient" style="padding: 1.5rem; background: rgba(15,25,40,0.3);">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.7rem; color: #888;">JOINT TYPE</span>
-                                <span style="font-size: 0.7rem; color: #FFD700;">BLIND DADO / SOVEREIGN MORTISE</span>
-                            </div>
-                            <div style="height: 2px; background: rgba(255,255,255,0.05); width: 100%;"></div>
-                        </div>
-                        <div class="card-gradient" style="padding: 1.5rem; background: rgba(15,25,40,0.3);">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.7rem; color: #888;">LOAD CAPACITY</span>
-                                <span style="font-size: 0.7rem; color: #FFD700;">120KG PER VERTICAL GABLE</span>
-                            </div>
-                            <div style="height: 2px; background: rgba(255,255,255,0.05); width: 100%;"></div>
-                        </div>
-                        <div class="card-gradient" style="padding: 1.5rem; background: rgba(15,25,40,0.3);">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span style="font-size: 0.7rem; color: #888;">HARDWARE COMPLIANCE</span>
-                                <span style="font-size: 0.7rem; color: #FFD700;">BLUM TANDEMBOX / AVENTOS READY</span>
-                            </div>
-                            <div style="height: 2px; background: rgba(255,255,255,0.05); width: 100%;"></div>
-                        </div>
-                    </div>
-                    <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.5;">*Every panel is measured via laser
-                        telemetry before final assembly to ensure theoretical design matches physical reality.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Feature 9: Precision Tolerance Table -->
-    <section id="tolerance-log" class="section" style="background: #000; padding: 4rem 0;">
-        <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem;"
-                class="reveal-stone">
-                <div>
-                    <h2 style="margin: 0;">Precision <span class="italic-accent">Log</span></h2>
-                    <p style="opacity: 0.5;">Live telemetry from the Sovereign Assembly Line.</p>
-                </div>
-                <div
-                    style="font-size: 0.6rem; text-transform: uppercase; color: #FFD700; border: 1px solid #FFD700; padding: 0.5rem 1rem; border-radius: 2rem;">
-                    STATUS: NOMINAL</div>
-            </div>
 
-            <div class="card-gradient reveal-stone"
-                style="padding: 0; overflow: hidden; background: rgba(10,15,20,0.5); border: 1px solid rgba(255,255,255,0.05);">
-                <table style="width: 100%; border-collapse: collapse; font-size: 0.75rem; text-align: left;">
-                    <thead
-                        style="background: rgba(255,255,255,0.02); text-transform: uppercase; letter-spacing: 0.1em; color: #888;">
-                        <tr>
-                            <th style="padding: 1.5rem;">COMPONENT ID</th>
-                            <th style="padding: 1.5rem;">DESIGN SPEC</th>
-                            <th style="padding: 1.5rem;">MEASURED</th>
-                            <th style="padding: 1.5rem;">VARIANCE</th>
-                            <th style="padding: 1.5rem;">STATUS</th>
-                        </tr>
-                    </thead>
-                    <tbody style="color: #ccc;">
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
-                            <td style="padding: 1.5rem; font-family: monospace;">CARA-GABLE-041</td>
-                            <td style="padding: 1.5rem;">845.00mm</td>
-                            <td style="padding: 1.5rem;">845.02mm</td>
-                            <td style="padding: 1.5rem; color: #00ff00;">+0.02mm</td>
-                            <td style="padding: 1.5rem;"><span style="color:#00ff00;">● PASS</span></td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.03);">
-                            <td style="padding: 1.5rem; font-family: monospace;">CARA-SHELF-098</td>
-                            <td style="padding: 1.5rem;">564.00mm</td>
-                            <td style="padding: 1.5rem;">563.95mm</td>
-                            <td style="padding: 1.5rem; color: #00ff00;">-0.05mm</td>
-                            <td style="padding: 1.5rem;"><span style="color:#00ff00;">● PASS</span></td>
-                        </tr>
-                        <tr>
-                            <td style="padding: 1.5rem; font-family: monospace;">CARA-DOOR-112</td>
-                            <td style="padding: 1.5rem;">716.00mm</td>
-                            <td style="padding: 1.5rem;">716.01mm</td>
-                            <td style="padding: 1.5rem; color: #00ff00;">+0.01mm</td>
-                            <td style="padding: 1.5rem;"><span style="color:#00ff00;">● PASS</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
 
-    <!-- Feature 10: Exclusive Client Project Feed -->
-    <section id="client-feed" class="section" style="background: linear-gradient(to bottom, #000, #050505);">
-        <div class="container reveal-stone">
-            <div class="card-gradient"
-                style="padding: 4rem; text-align: center; background: rgba(212, 175, 55, 0.02); border: 1px solid rgba(212, 175, 55, 0.1);">
-                <div style="font-size: 3rem; margin-bottom: 1.5rem;">🔒</div>
-                <h2 style="margin-bottom: 1rem;">The <span class="italic-accent">Sovereign</span> Portal</h2>
-                <p style="max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.6;">Exclusive real-time production feed
-                    for active projects. Track your sanctuary's progress from raw timber to final polish.</p>
-                <div style="display: flex; gap: 1rem; justify-content: center;">
-                    <input type="text" placeholder="ACCESS CODE" class="form-input"
-                        style="width: 200px; text-align: center; letter-spacing: 0.5em; background: rgba(0,0,0,0.5);">
-                    <button class="btn-luxury"
-                        onclick="alert('Access Code Required. Please contact your Project Lead.')">REVEAL FEED</button>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Curated Portfolio -->
     <section id="portfolio" class="section">
@@ -2036,12 +1761,7 @@
             <h2 class="reveal-stone" style="text-align: center; margin-bottom: 3rem;">Curated <span
                     class="italic-accent">Spaces</span></h2>
 
-            <!-- Feature 33: Portfolio Filters -->
-            <div class="filter-bar reveal-stone">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="kitchen">Kitchens</button>
-                <button class="filter-btn" data-filter="wardrobe">Wardrobes</button>
-            </div>
+
 
             <div class="gallery-grid" id="gallery-grid">
                 <!-- Populated by JS -->
@@ -2049,182 +1769,18 @@
         </div>
     </section>
 
-    <!-- Feature 11: Programmatic Location Authority -->
-    <section id="locations" class="section"
-        style="background: #000; border-top: 1px solid rgba(255,255,255,0.05); padding-bottom: 2rem;">
-        <div class="container reveal-stone">
-            <h3
-                style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.3em; color: #888; text-align: center; margin-bottom: 3rem;">
-                Sovereign Operational Jurisdictions</h3>
-            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; opacity: 0.4;">
-                <span style="font-size: 0.7rem; letter-spacing: 0.1em;">BANDAR SERI BEGAWAN</span>
-                <span style="font-size: 0.7rem; letter-spacing: 0.1em;">KUALA BELAIT</span>
-                <span style="font-size: 0.7rem; letter-spacing: 0.1em;">TUTONG DISTRICT</span>
-                <span style="font-size: 0.7rem; letter-spacing: 0.1em;">SERIA ENERGY HUB</span>
-                <span style="font-size: 0.7rem; letter-spacing: 0.1em;">MUARA PORT ZONE</span>
-            </div>
-            <p
-                style="text-align: center; font-size: 0.6rem; margin-top: 3rem; opacity: 0.3; max-width: 800px; margin-left: auto; margin-right: auto;">
-                Providing high-fidelity millwork solutions across all Brunei districts. Our logistics engine is
-                optimized for cross-border engineering delivery to Sarawak and beyond.</p>
-        </div>
-    </section>
+
 
     <!-- Philosophy/Testimonial -->
 
     <!-- Feature 35: Before/After Transformation -->
-    <section class="section" style="padding: 4rem 0;">
-        <div class="container">
-            <h3 class="reveal-stone" style="text-align: center; margin-bottom: 2rem;">Authentic <span
-                    class="italic-accent">Transformation</span></h3>
-            <div class="ba-slider reveal-stone"
-                style="position: relative; max-width: 800px; height: 500px; margin: 0 auto; overflow: hidden; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5);">
-                <div class="ba-after"
-                    style="position: absolute; top:0; left:0; width:100%; height:100%; background: url(images/img_2.jpg) center/cover no-repeat;">
-                </div>
-                <div class="ba-before"
-                    style="position: absolute; top:0; left:0; width:50%; height:100%; background: url(images/img_1.jpg) center/cover no-repeat; border-right: 3px solid #FFD700; z-index: 2; filter: grayscale(100%) contrast(1.2);">
-                </div>
-                <input type="range" min="0" max="100" value="50" class="ba-range"
-                    oninput="this.parentElement.querySelector('.ba-before').style.width = this.value + '%'"
-                    style="position: absolute; top:0; left:0; width:100%; height:100%; opacity: 0; cursor: ew-resize; z-index: 3; margin: 0;">
 
-                <span
-                    style="position: absolute; bottom: 1rem; left: 1rem; z-index: 4; background: rgba(0,0,0,0.7); padding: 5px 10px; font-size: 0.8rem; pointer-events: none; border: 1px solid rgba(255,255,255,0.2);">BEFORE</span>
-                <span
-                    style="position: absolute; bottom: 1rem; right: 1rem; z-index: 4; background: rgba(0,0,0,0.7); padding: 5px 10px; font-size: 0.8rem; pointer-events: none; border: 1px solid #FFD700; color: #FFD700;">AFTER</span>
-            </div>
-            <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; opacity: 0.6; font-style: italic;">Drag
-                slider to reveal the Caramella difference</p>
-        </div>
-    </section>
 
-    <!-- Feature 3: Material Science Lab -->
-    <section id="material-science" class="section"
-        style="background: var(--bg-void); border-top: 1px solid rgba(255,255,255,0.05);">
-        <div class="container">
-            <h2 class="reveal-stone">Material <span class="italic-accent">Science</span></h2>
-            <p style="text-align: center; opacity: 0.6; margin-bottom: 4rem;">Empirical data from the 2026 Durability
-                Protocol.</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
-                <!-- Stress Test 1: Humidity -->
-                <div class="card-gradient reveal-stone"
-                    style="padding: 3rem; background: rgba(5,10,15,0.4); position: relative;">
-                    <div
-                        style="font-size: 0.6rem; color: #FFD700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">
-                        Protocol 03: Hydro-Stability</div>
-                    <h3 style="color: #fff; margin-bottom: 1.5rem;">Tropical Endurance</h3>
-                    <div style="margin-bottom: 2rem;">
-                        <div
-                            style="display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 0.5rem;">
-                            <span>SWELING INDEX (24H SOAK)</span>
-                            <span style="color: #FFD700;">&lt; 0.8%</span>
-                        </div>
-                        <div
-                            style="height: 4px; background: rgba(255,255,255,0.05); width: 100%; border-radius: 2px; overflow: hidden;">
-                            <div
-                                style="height: 100%; width: 15%; background: #FFD700; animation: expandWidth 2s ease-out forwards;">
-                            </div>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; line-height: 1.6;">Engineered for 95% relative humidity. Our core
-                        material maintains structural geometry even in direct saturation events.</p>
-                </div>
 
-                <!-- Stress Test 2: Surface -->
-                <div class="card-gradient reveal-stone"
-                    style="padding: 3rem; background: rgba(5,10,15,0.4); position: relative;">
-                    <div
-                        style="font-size: 0.6rem; color: #FFD700; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">
-                        Protocol 07: Surface Hardness</div>
-                    <h3 style="color: #fff; margin-bottom: 1.5rem;">Diamond Resistance</h3>
-                    <div style="margin-bottom: 2rem;">
-                        <div
-                            style="display: flex; justify-content: space-between; font-size: 0.7rem; margin-bottom: 0.5rem;">
-                            <span>MOHS HARDNESS (COATING)</span>
-                            <span style="color: #FFD700;">6H CERTIFIED</span>
-                        </div>
-                        <div
-                            style="height: 4px; background: rgba(255,255,255,0.05); width: 100%; border-radius: 2px; overflow: hidden;">
-                            <div
-                                style="height: 100%; width: 85%; background: var(--ruby-grad); animation: expandWidth 2s ease-out forwards;">
-                            </div>
-                        </div>
-                    </div>
-                    <p style="font-size: 0.85rem; line-height: 1.6;">Anti-fingerprint nanotech combined with high-impact
-                        resistance. Scratch-proof under standard industrial usage.</p>
-                </div>
-            </div>
-
-            <style>
-                @keyframes expandWidth {
-                    from {
-                        width: 0;
-                    }
-                }
-            </style>
-        </div>
-    </section>
-    <section id="about" class="section testimonials-section" style="padding-top: 0;">
-        <div class="container reveal-stone">
-            <div class="maker-card"
-                style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center; background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(0,0,0,0.2)); padding: 3rem; border-radius: 1rem; border: 1px solid rgba(255,215,0,0.1);">
-                <div class="maker-img"
-                    style="flex: 0 0 150px; height: 150px; border-radius: 50%; background: #111; border: 2px solid #FFD700; overflow:hidden; margin: 0 auto;">
-                    <img src="images/logo.png" style="width:100%; height:100%; object-fit: contain; padding: 10px;">
-                </div>
-                <div style="flex: 1; text-align: center;">
-                    <h3 style="color: #FFD700; margin-top: 0;">The Artisan's Promise</h3>
-                    <p style="font-size: 1.1rem; font-style: italic; opacity: 0.9;">"We don't just build, we engineer.
-                        Every millimeter counts when creating a sanctuary."</p>
-                    <div
-                        style="margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 1rem;">
-                        <span style="font-family: cursive; font-size: 1.5rem; color: #FFD700;">Thomas K.</span>
-                        <span
-                            style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.5; border-left: 1px solid #666; padding-left: 1rem;">Founder
-                            & Head Joiner</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Feature 40: FAQ Preview -->
-    <section class="section" style="padding: 2rem 0;">
-        <div class="container" style="max-width: 800px;">
-            <h3 class="reveal-stone" style="text-align: center; margin-bottom: 2rem;">Common <span
-                    class="italic-accent">Queries</span></h3>
-            <div class="accordion">
-                <details class="reveal-stone"
-                    style="margin-bottom: 1rem; background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px;">
-                    <summary style="cursor: pointer; font-weight: bold; color: #fff;">How long is the fabrication
-                        process?</summary>
-                    <p style="margin-top: 1rem; opacity: 0.7; padding-left: 1rem; border-left: 2px solid #FFD700;">
-                        Typically 3-4 weeks for design & fabrication, followed by a 1-day installation.</p>
-                </details>
-                <details class="reveal-stone"
-                    style="margin-bottom: 1rem; background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px;">
-                    <summary style="cursor: pointer; font-weight: bold; color: #fff;">What materials do you use?
-                    </summary>
-                    <p style="margin-top: 1rem; opacity: 0.7; padding-left: 1rem; border-left: 2px solid #FFD700;">We
-                        exclusively use moisture-resistant Plywood and High-Density MDF with zero-formaldehyde emission
-                        (E0/ENF).</p>
-                </details>
-                <details class="reveal-stone"
-                    style="margin-bottom: 1rem; background: rgba(255,255,255,0.02); padding: 1rem; border-radius: 8px;">
-                    <summary style="cursor: pointer; font-weight: bold; color: #fff;">Do you provide 3D designs?
-                    </summary>
-                    <p style="margin-top: 1rem; opacity: 0.7; padding-left: 1rem; border-left: 2px solid #FFD700;">Yes,
-                        every project begins with a photorealistic 3D render and parametric CAD drawings.</p>
-                </details>
-            </div>
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="faq.html" class="btn-luxury" style="padding: 0.5rem 1.5rem; font-size: 0.8rem;">View All
-                    FAQs</a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Contact -->
     <section id="contact" class="section contact-section">
@@ -2246,31 +1802,139 @@
             </div>
 
             <!-- Feature 21: Contact Form -->
-            <div class="contact-form-container">
+            <!-- Feature 21: Advanced Entry Form -->
+            <div class="contact-form-container" style="max-width: 800px; margin: 0 auto;">
                 <form id="inquiryForm">
-                    <div class="form-group">
-                        <label class="form-label">Name</label>
-                        <input type="text" id="formName" class="form-input" required placeholder="Your Name">
-                        <div class="form-error" id="nameError">Please enter a valid name.</div>
+                    <!-- SECTION 1: ENTRY FORM -->
+                    <div class="form-section">
+                        <h3 class="form-header">Entry Form</h3>
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label class="form-label">Name</label>
+                                <input type="text" id="entryName" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Contact No</label>
+                                <input type="tel" id="entryPhone" class="form-input" required placeholder="+673">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Address / Location</label>
+                            <input type="text" id="entryAddress" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Appointment Detail</label>
+                            <input type="datetime-local" id="entryDate" class="form-input">
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label">Phone (WhatsApp)</label>
-                        <input type="tel" id="formPhone" class="form-input" required placeholder="+673 888 8888">
-                        <div class="form-error" id="phoneError">Please enter a valid Brunei number (7 digits).</div>
-                    </div>
-                    <div class="form-group">
-                        <label class="form-label">Project Details</label>
-                        <textarea id="formMessage" class="form-textarea" required
-                            placeholder="Describe your kitchen or wardrobe needs..."></textarea>
-                    </div>
-                    <button type="submit" class="btn-luxury" style="width: 100%; border: none; cursor: pointer;">Send
-                        Inquiry</button>
-                </form>
 
-                <div id="formSuccess" class="form-success">
-                    <h3>Inquiry Received</h3>
-                    <p>We will contact you via WhatsApp shortly to schedule your free consultation.</p>
-                </div>
+                    <!-- SECTION 2: PROJECT INFO -->
+                    <div class="form-section">
+                        <h3 class="form-header">Project Info</h3>
+                        <label class="form-label">Construction Status</label>
+                        <div class="checkbox-group">
+                            <label class="check-item"><input type="checkbox" class="status-check" value="Floor Plan">
+                                Floor Plan</label>
+                            <label class="check-item"><input type="checkbox" class="status-check" value="New House"> New
+                                House</label>
+                            <label class="check-item"><input type="checkbox" class="status-check"
+                                    value="Construction Progress"> Construction Progress</label>
+                            <label class="check-item"><input type="checkbox" class="status-check"
+                                    value="Existing House"> Existing House</label>
+                            <label class="check-item"><input type="checkbox" class="status-check" value="Renovation">
+                                Renovation</label>
+                        </div>
+                        <div class="form-group" style="margin-top: 1rem;">
+                            <label class="form-label">Project Budget</label>
+                            <input type="text" id="entryBudget" class="form-input" placeholder="$">
+                        </div>
+                    </div>
+
+                    <!-- SECTION 3: KITCHEN -->
+                    <div class="form-section">
+                        <h3 class="form-header">Kitchen (Dry / Wet)</h3>
+
+                        <label class="form-label">Materials / Finishes</label>
+                        <div class="checkbox-group">
+                            <label class="check-item"><input type="checkbox" class="mat-check" value="Formica">
+                                Formica</label>
+                            <label class="check-item"><input type="checkbox" class="mat-check" value="P.E.T">
+                                P.E.T</label>
+                            <label class="check-item"><input type="checkbox" class="mat-check" value="Lacquer">
+                                Lacquer</label>
+                            <label class="check-item"><input type="checkbox" class="mat-check" value="Classic PVC">
+                                Classic PVC</label>
+                            <label class="check-item"><input type="checkbox" class="mat-check" value="Classic Lacquer">
+                                Classic Lacquer</label>
+                        </div>
+
+                        <label class="form-label" style="margin-top: 1rem;">Counter Top</label>
+                        <div class="checkbox-group">
+                            <label class="check-item"><input type="checkbox" class="top-check" value="Quartz Stone">
+                                Quartz Stone</label>
+                            <label class="check-item"><input type="checkbox" class="top-check"
+                                    value="Marble Design Quartz"> Marble Design Quartz</label>
+                            <label class="check-item"><input type="checkbox" class="top-check" value="Solid Surface">
+                                Solid Surface</label>
+                        </div>
+
+                        <label class="form-label" style="margin-top: 1rem;">Appliances</label>
+                        <div class="appliance-grid">
+                            <!-- Hob -->
+                            <div class="app-row">
+                                <span>Hob</span>
+                                <select id="appHob" class="form-input is-small">
+                                    <option value="No">No</option>
+                                    <option value="Own">Own</option>
+                                    <option value="Caramella">From Caramella</option>
+                                </select>
+                            </div>
+                            <!-- Hood -->
+                            <div class="app-row">
+                                <span>Hood</span>
+                                <select id="appHood" class="form-input is-small">
+                                    <option value="No">No</option>
+                                    <option value="Own">Own</option>
+                                    <option value="Caramella">From Caramella</option>
+                                </select>
+                            </div>
+                            <!-- Oven -->
+                            <div class="app-row">
+                                <span>Oven</span>
+                                <select id="appOven" class="form-input is-small">
+                                    <option value="No">No</option>
+                                    <option value="Own">Own</option>
+                                    <option value="Caramella">From Caramella</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SECTION 4: WARDROBE -->
+                    <div class="form-section">
+                        <h3 class="form-header">Wardrobe / Custom</h3>
+                        <label class="form-label">Door Type</label>
+                        <div class="checkbox-group">
+                            <label class="check-item"><input type="checkbox" class="door-check" value="Swing">
+                                Swing</label>
+                            <label class="check-item"><input type="checkbox" class="door-check" value="Sliding">
+                                Sliding</label>
+                            <label class="check-item"><input type="checkbox" class="door-check" value="No Doors"> No
+                                Doors</label>
+                        </div>
+                    </div>
+
+                    <!-- REMARKS -->
+                    <div class="form-group">
+                        <label class="form-label">Remarks</label>
+                        <textarea id="entryRemarks" class="form-textarea"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-luxury"
+                        style="width: 100%; border: none; cursor: pointer;">Generate WhatsApp Inquiry</button>
+                    <p style="text-align: center; font-size: 0.8rem; opacity: 0.6; margin-top: 1rem;">This will open
+                        WhatsApp with your formatted data.</p>
+                </form>
             </div>
 
 
@@ -2716,10 +2380,7 @@
                         lb.classList.add('active');
                     };
 
-                    // Attach Microscope
-                    if (typeof attachMicroscope === 'function') {
-                        attachMicroscope(el, url);
-                    }
+
 
                     grid.appendChild(el);
                 }
@@ -2756,30 +2417,7 @@
                 if (e.target === document.getElementById('lightbox')) document.getElementById('lightbox').classList.remove('active');
             };
 
-            // Feature 33: Portfolio Filters Logic
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
 
-                    const filter = btn.dataset.filter;
-                    const items = document.querySelectorAll('.gallery-item');
-
-                    items.forEach(item => {
-                        const cat = item.dataset.category;
-                        // Simple category mapping since we random assign
-                        if (filter === 'all' || cat === filter) {
-                            item.style.display = 'block';
-                            item.classList.remove('reveal-stone');
-                            void item.offsetWidth; // Reflow
-                            item.classList.add('reveal-stone');
-                        } else {
-                            item.style.display = 'none';
-                        }
-                    });
-                });
-            });
         }
 
         function initHero() {
@@ -2838,6 +2476,7 @@
         }
 
         function initParticles() {
+            return; // disabled for simplicity
             const container = document.getElementById('particles');
             if (!container || window.innerWidth < 768) return; // Skip on mobile
 
@@ -2938,51 +2577,45 @@
             update();
         }
 
-        // Feature 21: Contact Form Logic
+        // Feature 21: Advanced WhatsApp Form Logic
         function initContactForm() {
             const form = document.getElementById('inquiryForm');
             if (!form) return;
 
             form.addEventListener('submit', (e) => {
                 e.preventDefault();
-                const btn = form.querySelector('button');
-                const name = document.getElementById('formName').value;
-                const phone = document.getElementById('formPhone').value;
-                const msg = document.getElementById('formMessage').value;
-                const phoneError = document.getElementById('phoneError');
 
-                // Validation: Check for numbers in phone
-                const phoneRegex = /^[0-9+ ]{7,}$/;
-                if (!phoneRegex.test(phone)) {
-                    phoneError.style.display = 'block';
-                    document.getElementById('formPhone').focus();
-                    return;
-                } else {
-                    phoneError.style.display = 'none';
-                }
+                // Gather Data
+                const name = document.getElementById('entryName').value.trim();
+                const phone = document.getElementById('entryPhone').value.trim();
+                const address = document.getElementById('entryAddress').value.trim();
+                const date = document.getElementById('entryDate').value;
+                const budget = document.getElementById('entryBudget').value.trim();
+                const remarks = document.getElementById('entryRemarks').value.trim();
 
-                // Loading State
-                const originalText = btn.innerText;
-                btn.innerText = 'Sending...';
-                btn.style.opacity = '0.7';
-                btn.disabled = true;
+                // Multi-select helpers
+                const getChecked = (cls) => Array.from(document.querySelectorAll(`.${cls}:checked`)).map(c => c.value).join(', ');
 
-                // Simulate API Call
-                setTimeout(() => {
-                    // Success UI
-                    form.style.display = 'none';
-                    document.getElementById('formSuccess').style.display = 'block';
+                const status = getChecked('status-check');
+                const materials = getChecked('mat-check');
+                const countertops = getChecked('top-check');
+                const doors = getChecked('door-check');
 
-                    // UX: Open WhatsApp with pre-filled message
-                    const waMsg = `Hi Caramella, I'm ${name}. I'm interested in: ${msg}. My number is ${phone}.`;
-                    const waUrl = `https://wa.me/6737187185?text=${encodeURIComponent(waMsg)}`;
+                const hob = document.getElementById('appHob').value;
+                const hood = document.getElementById('appHood').value;
+                const oven = document.getElementById('appOven').value;
 
-                    // Small delay to let user see "success" before tab switch
-                    setTimeout(() => {
-                        window.open(waUrl, '_blank');
-                    }, 1000);
+                // Build Message
+                let msg = `*NEW ENTRY FORM QUERY*\n\n`;
+                msg += `*CLIENT INFO*\nName: ${name}\nTel: ${phone}\nAdd: ${address}\nAppt: ${date}\n\n`;
+                msg += `*PROJECT INFO*\nStatus: ${status}\nBudget: ${budget}\n\n`;
+                msg += `*KITCHEN SPEC*\nMat: ${materials}\nTop: ${countertops}\nHob: ${hob} | Hood: ${hood} | Oven: ${oven}\n\n`;
+                msg += `*WARDROBE SPEC*\nDoors: ${doors}\n\n`;
+                msg += `*REMARKS*\n${remarks}`;
 
-                }, 1500);
+                // Open WhatsApp
+                const url = `https://wa.me/6737187185?text=${encodeURIComponent(msg)}`;
+                window.open(url, '_blank');
             });
         }
 
@@ -3111,7 +2744,7 @@
             };
             window.requestAnimationFrame(step);
         }
-        initStats();
+        // initStats(); // removed for polish
 
     </script>
     <script>
@@ -3184,6 +2817,59 @@
             }
         }
 
+        .form-section {
+            border: 1px solid rgba(255, 215, 0, 0.1);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .form-header {
+            color: #FFD700;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.9rem;
+        }
+
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+            opacity: 0.8;
+            cursor: pointer;
+        }
+
+        .app-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            gap: 1rem;
+        }
+
+        .form-input.is-small {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
+
         /* Feature 36: Parallax Override */
         .hero {
             background-attachment: fixed !important;
@@ -3234,78 +2920,9 @@
         </div>
     </div>
 
-    <div id="loader" class="loader-overlay" style="display: flex; flex-direction: column; gap: 2rem;">
-        <div class="zero-g-core" style="position: relative; width: 120px; height: 120px;">
-            <svg viewBox="0 0 100 100" width="120" height="120"
-                style="filter: drop-shadow(0 0 10px rgba(255,215,0,0.5));">
-                <path id="loader-path" d="M50 10 A40 40 0 0 1 50 90 A40 40 0 0 1 50 10" fill="none" stroke="#FFD700"
-                    stroke-width="1.5" stroke-linecap="round" />
-            </svg>
-            <!-- Physics Particles -->
-            <div class="physics-particle" style="--d: 0s; --x: 30px; --y: -40px;"></div>
-            <div class="physics-particle" style="--d: 0.5s; --x: -50px; --y: 20px;"></div>
-            <div class="physics-particle" style="--d: 1s; --x: 40px; --y: 50px;"></div>
-        </div>
-        <div
-            style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.4em; color: #FFD700; opacity: 0.8; animation: pulse 2s infinite;">
-            Calibrating Precision</div>
-        <style>
-            .physics-particle {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 4px;
-                height: 40px;
-                background: linear-gradient(to bottom, #FFD700, transparent);
-                border-radius: 2px;
-                opacity: 0;
-                animation: zeroG 3s infinite linear;
-                animation-delay: var(--d);
-            }
 
-            @keyframes zeroG {
-                0% {
-                    transform: translate(var(--x), var(--y)) scale(0);
-                    opacity: 0;
-                }
 
-                50% {
-                    opacity: 0.8;
-                }
 
-                100% {
-                    transform: translate(0, 0) scale(1);
-                    opacity: 0;
-                }
-            }
-
-            #loader-path {
-                stroke-dasharray: 251;
-                stroke-dashoffset: 251;
-                animation: drawLogo 2.5s ease-in-out infinite;
-            }
-
-            @keyframes pulse {
-
-                0%,
-                100% {
-                    opacity: 0.4;
-                }
-
-                50% {
-                    opacity: 1;
-                }
-            }
-        </style>
-    </div>
-
-    <!-- Feature 22: Sticky FAB -->
-    <a href="https://wa.me/6737187185" target="_blank" class="sticky-fab" aria-label="Book on WhatsApp">
-        <svg viewBox="0 0 24 24" width="30" height="30" fill="#FFF">
-            <path
-                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-        </svg>
-    </a>
 
     <!-- Feature 100: App Polish -->
     <style>
@@ -3415,26 +3032,6 @@
             height: 100%;
             object-fit: cover;
         }
-
-        /* Feature 1: Texture Microscope */
-        .gallery-item {
-            position: relative;
-            cursor: crosshair;
-        }
-
-        .microscope-lens {
-            position: absolute;
-            border: 2px solid var(--accent-gold-bright);
-            border-radius: 50%;
-            width: 160px;
-            height: 160px;
-            pointer-events: none;
-            display: none;
-            z-index: 100;
-            box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.4), 0 20px 40px rgba(0, 0, 0, 0.6);
-            background-repeat: no-repeat;
-            background-color: #000;
-        }
     </style>
     <!-- Phase 2 Logic (Rescue) -->
     <script>
@@ -3445,39 +3042,7 @@
 
         });
 
-        function attachMicroscope(container, url) {
-            const lens = document.createElement('div');
-            lens.className = 'microscope-lens';
-            lens.style.backgroundImage = `url('${url}')`;
-            container.appendChild(lens);
 
-            container.addEventListener('mousemove', (e) => {
-                const img = container.querySelector('img');
-                const rect = img.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                if (x < 0 || x > rect.width || y < 0 || y > rect.height) {
-                    lens.style.display = 'none';
-                    return;
-                }
-
-                lens.style.display = 'block';
-                lens.style.left = (x - lens.offsetWidth / 2) + 'px';
-                lens.style.top = (y - lens.offsetHeight / 2) + 'px';
-
-                // Magnification zoom (2.5x)
-                const zoom = 2.5;
-                const px = (x / rect.width) * 100;
-                const py = (y / rect.height) * 100;
-                lens.style.backgroundSize = (rect.width * zoom) + 'px ' + (rect.height * zoom) + 'px';
-                lens.style.backgroundPosition = `${px}% ${py}%`;
-            });
-
-            container.addEventListener('mouseleave', () => {
-                lens.style.display = 'none';
-            });
-        }
 
         function toggleSchematic() {
             const schematic = document.getElementById('schematic-layer');
@@ -3560,24 +3125,7 @@
         }
     </script>
 
-    <!-- Feature 15: Global Performance Index -->
-    <footer style="background: #000; border-top: 1px solid rgba(255,255,255,0.05); padding: 4rem 0;">
-        <div class="container"
-            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
-            <div style="opacity: 0.4; font-size: 0.7rem; letter-spacing: 0.2em;">
-                &copy; 2026 CARAMELLA TRADING CO. | SOVEREIGN ENGINEERING
-            </div>
-            <div id="performance-badge"
-                style="display: flex; align-items: center; gap: 1rem; border: 1px solid #111; padding: 0.5rem 1rem; border-radius: 4px; background: #050505;">
-                <div
-                    style="width: 10px; height: 10px; border-radius: 50%; background: #00ff00; box-shadow: 0 0 10px #00ff00;">
-                </div>
-                <div style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: #fff;">
-                    CORE WEB VITALS: <span style="color: #00ff00;">A-TIER</span> | 98MS LCP
-                </div>
-            </div>
-        </div>
-    </footer>
+
 </body>
 
 

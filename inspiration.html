@@ -89,6 +89,9 @@
             padding-top: 80px;
             line-height: 1.8;
             cursor: auto !important;
+            background-image: radial-gradient(circle at 50% 0%, #0F293D 0%, #020609 80%) !important;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             /* Force standard cursor */
         }
 
@@ -175,7 +178,7 @@
             text-align: center;
             /* Centered text */
             position: relative;
-            background: radial-gradient(circle at 50% 50%, rgba(15, 41, 61, 0.4) 0%, #081621 100%);
+            background: transparent !important;
             /* More transparent center */
             border-bottom: var(--border-gold);
         }
@@ -242,7 +245,7 @@
             padding: 4rem 2rem;
             text-align: center;
             border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-            background: rgba(8, 22, 33, 0.8);
+            background: transparent !important;
             /* Slight transparency */
         }
 
@@ -553,7 +556,7 @@
         .cta-section {
             text-align: center;
             padding: 6rem 2rem;
-            background: linear-gradient(180deg, var(--bg-void) 0%, #0A1E2D 100%);
+            background: transparent !important;
             border-top: 1px solid rgba(255, 215, 0, 0.1);
         }
 
@@ -724,6 +727,7 @@
                     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
                 }
             }
+        }
     </style>
 </head>
 

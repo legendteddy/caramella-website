@@ -43,7 +43,8 @@
             /* TRILLION DOLLAR GLASS */
             --glass-base: rgba(15, 25, 40, 0.6);
             --sapphire-glass: var(--glass-base);
-            --glass-blur: blur(40px) saturate(200%);
+            --glass-blur: blur(20px) saturate(180%);
+            /* lighter on mobile */
             --glass-border: 1px solid rgba(255, 255, 255, 0.15);
             --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
 
@@ -95,7 +96,9 @@
             line-height: 1.8;
             overflow-x: hidden;
             padding-top: 80px;
-            background-image: radial-gradient(circle at 50% 0%, #0F293D 0%, #020609 80%);
+            background-image: radial-gradient(circle at 50% 0%, #0F293D 0%, #020609 80%) !important;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
             /* Global Ambient Light */
         }
 
@@ -602,18 +605,17 @@
             <a href="inspiration.html" target="_top">Concepts</a>
             <a href="faq.html" target="_top">Knowledge</a>
             <a href="tech-specs.html" target="_top">Tech Specs</a>
-            <span class="brand-badge">🇧🇳 EST. 2015</span>
+            <!-- <span class="brand-badge">🇧🇳 EST. 2015</span> -->
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero" id="hero-section">
         <div class="hero-content-3d">
-            <h1>The Portfolio: <span class="italic-accent">Luxury</span> Renovation & Cabinetry</h1>
+            <h1>Your Dream Kitchen Starts Here <span class="italic-accent">in Brunei</span></h1>
             <p>
-                Beyond the aesthetic, every Caramella kitchen is a technical response to a specific challenge.
-                These are the detailed stories of how we apply our <span class="accent">Tech Specs</span>
-                to real homes across Brunei—from the humid riverfronts of Kota Batu to the compact terraces of Rimba.
+                Imagine luxury cabinets that transform your home. See how we've created 600+ dream spaces. Ready to
+                renovate?
             </p>
         </div>
     </header>
@@ -856,8 +858,8 @@
         // ===========================================
 
         document.addEventListener('DOMContentLoaded', () => {
-            initPreloader();
-            initParticles();
+            // initPreloader(); // removed for clean load
+            // initParticles(); // removed for clean load
             initMobileMenu();
             initScrollReveal();
             init3DTilt(); // NEW: Unreal-lite Effect
@@ -932,7 +934,7 @@
             const hero = document.getElementById('hero-section');
             const content = document.querySelector('.hero-content-3d');
 
-            if (!hero || !content || window.innerWidth < 968) return;
+            if (!hero || !content || window.innerWidth < 1200 || 'ontouchstart' in window) return; // disable on touch/mobile
 
             hero.addEventListener('mousemove', (e) => {
                 const { offsetWidth: width, offsetHeight: height } = hero;
