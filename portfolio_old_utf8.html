@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caramella Solutions | Best Renovation Company in Brunei</title>
+    <title>Caramella Brunei | Portfolio & Bespoke Projects</title>
     <meta name="description"
-        content="Award-winning renovation services in Brunei. From custom kitchen cabinets to full home remodeling. We are the top choice for luxury carpentry and joinery.">
+        content="Explore our portfolio of luxury renovations in Brunei. From custom kitchen cabinets to full home remodeling. We are the top choice for luxury carpentry and joinery.">
     <meta name="keywords"
         content="Renovation company Brunei, Construction company Brunei, Kitchen cabinets Brunei, Commercial fit-out Brunei, Best contractor Brunei">
-    <link rel="canonical" href="https://caramellabrunei.com/portfolio.html">
+    <link rel="canonical" href="https://www.caramellabrunei.com/portfolio.html">
     <!-- Open Graph -->
-    <meta property="og:title" content="Caramella Portfolio | Luxury Renovation & Cabinetry">
+    <meta property="og:title" content="Caramella Brunei | Portfolio">
     <meta property="og:description" content="Detailed case studies of our bespoke renovation projects in Brunei.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://caramellabrunei.com/portfolio.html">
-    <meta property="og:image" content="https://caramellabrunei.com/images/img_4.jpg">
+    <meta property="og:url" content="https://www.caramellabrunei.com/portfolio.html">
+    <meta property="og:image" content="https://www.caramellabrunei.com/images/img_4.jpg">
     <style>
         body {
             overflow-x: hidden;
@@ -399,7 +399,13 @@
             font-weight: 600;
         }
 
-        /* .faq-grid handled above/below with specific rules */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
 
         .faq-item h4 {
             color: #FFFFFF;
@@ -427,18 +433,6 @@
             gap: 3rem;
             max-width: 1100px;
             margin: 0 auto 3rem;
-            width: 100%;
-            /* Ensure width */
-        }
-
-        /* Ensure FAQ Grid matches desktop */
-        .faq-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            width: 100%;
         }
 
         .footer-brand {
@@ -606,11 +600,12 @@
         <a href="https://www.caramellabrunei.com/" target="_top" class="logo">Caramella</a>
         <button class="menu-toggle" aria-label="Toggle Navigation"
             style="background: none; border: none;">&#9776;</button>
-        <div class="nav-links" style="justify-content: space-evenly;">
+        <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="portfolio.html" class="nav-active">Portfolio</a>
             <a href="inspiration.html">Concepts</a>
             <a href="faq.html">Knowledge</a>
+            <a href="#" onclick="openCalc(); return false;">Estimate</a>
             <a href="https://wa.me/6737187185" target="_blank">Inquire</a>
             <span
                 style="font-size: 0.6rem; border: 1px solid #FFD700; padding: 0.3rem 0.8rem; color: #FFD700; margin-left: 2rem; border-radius: 50px;">&#127463;&#127475;
@@ -863,7 +858,7 @@
             </div>
         </div>
         <div class="footer-copyright">
-            <p>&copy; 2025 Caramella Trading Company. 100% Brunei Owned & Operated. <span
+            <p>┬® 2025 Caramella Trading Company. 100% Brunei Owned & Operated. <span
                     style="opacity: 0.6; font-size: 0.8em; margin-left: 10px;">Reg No: P00100256</span></p>
         </div>
     </footer>

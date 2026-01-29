@@ -317,27 +317,28 @@
             }
         }
 
-        /* MASONRY GALLERY (2025-2026 Trend) */
+        /* CSS GRID GALLERY (Consistent 4-column layout) */
         .gallery-grid {
-            column-count: 4;
-            column-gap: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
         }
 
         @media (max-width: 1200px) {
             .gallery-grid {
-                column-count: 3;
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         @media (max-width: 768px) {
             .gallery-grid {
-                column-count: 2;
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 480px) {
             .gallery-grid {
-                column-count: 1;
+                grid-template-columns: 1fr;
             }
         }
 
@@ -751,12 +752,11 @@
         <a href="https://www.caramellabrunei.com/" target="_top" class="logo">Caramella</a>
         <button class="menu-toggle" aria-label="Toggle Navigation"
             style="background: none; border: none;">&#9776;</button>
-        <div class="nav-links">
+        <div class="nav-links" style="justify-content: space-evenly;">
             <a href="index.html">Home</a>
             <a href="portfolio.html">Portfolio</a>
             <a href="inspiration.html" class="nav-active">Concepts</a>
             <a href="faq.html">Knowledge</a>
-            <a href="#" onclick="openCalc(); return false;">Estimate</a>
             <a href="https://wa.me/6737187185" target="_blank">Inquire</a>
             <span
                 style="font-size: 0.6rem; border: 1px solid #FFD700; padding: 0.3rem 0.8rem; color: #FFD700; margin-left: 2rem; border-radius: 50px;">&#127463;&#127475;
