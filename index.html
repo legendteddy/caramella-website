@@ -299,8 +299,11 @@
 
         .nav-links {
             display: flex;
-            gap: 3rem;
+            flex: 1;
+            gap: 2rem;
             align-items: center;
+            justify-content: flex-end;
+            margin-left: 4rem;
         }
 
         .nav-links a {
@@ -308,9 +311,11 @@
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 0.15em;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             transition: 0.3s;
             opacity: 1 !important;
+            padding: 0.5rem 1rem;
+            white-space: nowrap;
         }
 
         .nav-links a:hover,
