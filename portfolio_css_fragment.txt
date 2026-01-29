@@ -1,0 +1,300 @@
+﻿            opacity: 0.5;
+            transition: 0.8s ease-in-out;
+        }
+
+        .case-location {
+            font-family: var(--font-mono);
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .case-title {
+            font-size: 2rem;
+            color: #FFFFFF;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .case-meta p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            line-height: 2;
+            margin: 0;
+        }
+
+        .case-meta strong {
+            color: #FFD700;
+        }
+
+        .case-content h3 {
+            font-size: 1.4rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            font-weight: 600;
+        }
+
+        .case-content h3:first-child {
+            margin-top: 0;
+        }
+
+        .case-content p,
+        .case-content li {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .case-content strong {
+            color: #FFFFFF;
+        }
+
+        .case-content ul {
+            padding-left: 1.5rem;
+        }
+
+        .technical-box {
+            background: linear-gradient(135deg, rgba(15, 25, 40, 0.4), var(--warm-taupe-glass));
+            backdrop-filter: blur(10px);
+            border-left: 3px solid #FFD700;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left-width: 3px;
+            border-left-color: #FFD700;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            transition: all 0.5s var(--ease-smooth);
+        }
+
+        .technical-box:hover {
+            background: linear-gradient(135deg, rgba(20, 35, 50, 0.6), rgba(46, 42, 37, 0.4));
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-float);
+        }
+
+        .technical-box h4 {
+            font-family: var(--font-mono);
+            color: #FFD700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            background: var(--bg-surface);
+            padding: 5rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .faq-item h4 {
+            color: #FFFFFF;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #050E15;
+            padding: 4rem 2rem;
+            border-top: var(--border-gold);
+            margin-top: 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand {
+            font-size: 1.4rem;
+            color: #FFF;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+
+        .footer-brand span {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            letter-spacing: normal;
+            margin-top: 0.25rem;
+        }
+
+        .footer-section h5 {
+            color: #FFD700;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 2;
+        }
+
+        .footer-section a {
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* ANIMATIONS & EXTRAS */
+        @keyframes goldRain {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .preloader,
+        .particles-container {
+            display: none !important;
+        }
+
+        /* Hide Legacy */
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 968px) {
+            .navbar {
+                padding: 0 1.5rem;
+                height: 70px;
+            }
+
+            .menu-toggle {
+                display: block;
+                z-index: 10001;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #081621;
+                flex-direction: column;
+                justify-content: center;
+                transform: translateY(-100%);
+                transition: 0.3s ease;
+                padding-top: 80px;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .case-study {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .case-sidebar {
+                border-left: none;
+                border-top: 2px solid #FFD700;
+                border-radius: 12px 12px 0 0;
+            }
+
+            .case-study.reverse {
+                direction: ltr;
+            }
+
+            .case-study.reverse>* {
+                direction: ltr;
+            }
+
+            .faq-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+                padding: 0 1.5rem;
+                /* Prevent edge clipping on mobile */
+            }
+        }
+
+        /* === BIG CAKE STABILITY PATCH (MOBILE) === */
+        @media (max-width: 968px) {
+
+            /* 1. Optimize Glass for Performance */
+            :root {
+                --glass-blur: blur(12px) saturate(180%);
+                /* Reduces GPU load */
+            }
+
+            /* 2. Disable Heavy 3D Calculations */
+            .hero-content-3d,
+            .gallery-item.tilt,
+            .case-sidebar {
+                transform: none !important;
+                transition: none !important;
+            }
+
+            /* 3. Text Readability */
+            h1,
+            h2,
+            h3 {
+                text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">Caramella</div>
+        <div class="preloader-bar"></div>
+    </div>
+
+    <!-- Particle Background -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Unified Navbar -->
+    <nav class="navbar">
+        <a href="https://www.caramellabrunei.com/" target="_top" class="logo">Caramella</a>
