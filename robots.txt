@@ -1,4 +1,22 @@
+# Allow all crawlers
 User-agent: *
 Allow: /
 
+# Explicitly welcome AI Bots
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Sitemap Location
 Sitemap: https://www.caramellabrunei.com/sitemap.xml
