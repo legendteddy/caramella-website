@@ -1783,138 +1783,19 @@
 
             <!-- Feature 21: Contact Form -->
             <!-- Feature 21: Advanced Entry Form -->
-            <div class="contact-form-container" style="max-width: 800px; margin: 0 auto;">
-                <form id="inquiryForm">
-                    <!-- SECTION 1: ENTRY FORM -->
-                    <div class="form-section">
-                        <h3 class="form-header">Entry Form</h3>
-                        <div class="form-grid-2">
-                            <div class="form-group">
-                                <label class="form-label">Name</label>
-                                <input type="text" id="entryName" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Contact No</label>
-                                <input type="tel" id="entryPhone" class="form-input" required placeholder="+673">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Address / Location</label>
-                            <input type="text" id="entryAddress" class="form-input">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Appointment Detail</label>
-                            <input type="datetime-local" id="entryDate" class="form-input">
-                        </div>
-                    </div>
-
-                    <!-- SECTION 2: PROJECT INFO -->
-                    <div class="form-section">
-                        <h3 class="form-header">Project Info</h3>
-                        <label class="form-label">Construction Status</label>
-                        <div class="checkbox-group">
-                            <label class="check-item"><input type="checkbox" class="status-check" value="Floor Plan">
-                                Floor Plan</label>
-                            <label class="check-item"><input type="checkbox" class="status-check" value="New House"> New
-                                House</label>
-                            <label class="check-item"><input type="checkbox" class="status-check"
-                                    value="Construction Progress"> Construction Progress</label>
-                            <label class="check-item"><input type="checkbox" class="status-check"
-                                    value="Existing House"> Existing House</label>
-                            <label class="check-item"><input type="checkbox" class="status-check" value="Renovation">
-                                Renovation</label>
-                        </div>
-                        <div class="form-group" style="margin-top: 1rem;">
-                            <label class="form-label">Project Budget</label>
-                            <input type="text" id="entryBudget" class="form-input" placeholder="$">
-                        </div>
-                    </div>
-
-                    <!-- SECTION 3: KITCHEN -->
-                    <div class="form-section">
-                        <h3 class="form-header">Kitchen (Dry / Wet)</h3>
-
-                        <label class="form-label">Materials / Finishes</label>
-                        <div class="checkbox-group">
-                            <label class="check-item"><input type="checkbox" class="mat-check" value="Formica">
-                                Formica</label>
-                            <label class="check-item"><input type="checkbox" class="mat-check" value="P.E.T">
-                                P.E.T</label>
-                            <label class="check-item"><input type="checkbox" class="mat-check" value="Lacquer">
-                                Lacquer</label>
-                            <label class="check-item"><input type="checkbox" class="mat-check" value="Classic PVC">
-                                Classic PVC</label>
-                            <label class="check-item"><input type="checkbox" class="mat-check" value="Classic Lacquer">
-                                Classic Lacquer</label>
-                        </div>
-
-                        <label class="form-label" style="margin-top: 1rem;">Counter Top</label>
-                        <div class="checkbox-group">
-                            <label class="check-item"><input type="checkbox" class="top-check" value="Quartz Stone">
-                                Quartz Stone</label>
-                            <label class="check-item"><input type="checkbox" class="top-check"
-                                    value="Marble Design Quartz"> Marble Design Quartz</label>
-                            <label class="check-item"><input type="checkbox" class="top-check" value="Solid Surface">
-                                Solid Surface</label>
-                        </div>
-
-                        <label class="form-label" style="margin-top: 1rem;">Appliances</label>
-                        <div class="appliance-grid">
-                            <!-- Hob -->
-                            <div class="app-row">
-                                <span>Hob</span>
-                                <select id="appHob" class="form-input is-small">
-                                    <option value="No">No</option>
-                                    <option value="Own">Own</option>
-                                    <option value="Caramella">From Caramella</option>
-                                </select>
-                            </div>
-                            <!-- Hood -->
-                            <div class="app-row">
-                                <span>Hood</span>
-                                <select id="appHood" class="form-input is-small">
-                                    <option value="No">No</option>
-                                    <option value="Own">Own</option>
-                                    <option value="Caramella">From Caramella</option>
-                                </select>
-                            </div>
-                            <!-- Oven -->
-                            <div class="app-row">
-                                <span>Oven</span>
-                                <select id="appOven" class="form-input is-small">
-                                    <option value="No">No</option>
-                                    <option value="Own">Own</option>
-                                    <option value="Caramella">From Caramella</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SECTION 4: WARDROBE -->
-                    <div class="form-section">
-                        <h3 class="form-header">Wardrobe / Custom</h3>
-                        <label class="form-label">Door Type</label>
-                        <div class="checkbox-group">
-                            <label class="check-item"><input type="checkbox" class="door-check" value="Swing">
-                                Swing</label>
-                            <label class="check-item"><input type="checkbox" class="door-check" value="Sliding">
-                                Sliding</label>
-                            <label class="check-item"><input type="checkbox" class="door-check" value="No Doors"> No
-                                Doors</label>
-                        </div>
-                    </div>
-
-                    <!-- REMARKS -->
-                    <div class="form-group">
-                        <label class="form-label">Remarks</label>
-                        <textarea id="entryRemarks" class="form-textarea"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn-luxury"
-                        style="width: 100%; border: none; cursor: pointer;">Generate WhatsApp Inquiry</button>
-                    <p style="text-align: center; font-size: 0.8rem; opacity: 0.6; margin-top: 1rem;">This will open
-                        WhatsApp with your formatted data.</p>
-                </form>
+            <!-- Contact CTA -->
+            <div class="contact-form-container"
+                style="max-width: 800px; margin: 0 auto; text-align: center; padding: 4rem 2rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 215, 0, 0.2); border-radius: 20px;">
+                <h3 style="color: #FFD700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.2em;">
+                    Ready to Build?</h3>
+                <p style="color: #ccc; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    We have moved our inquiry process to a dedicated page to better serve your improved consultation
+                    experience.
+                </p>
+                <a href="contact-us.html" class="btn-luxury"
+                    style="display: inline-block; text-decoration: none; padding: 1.5rem 3rem; font-size: 1.1rem;">
+                    Start Your Project Inquiry &rarr;
+                </a>
             </div>
 
 
@@ -2104,7 +1985,7 @@
             initCounterAnimation();
             initMagneticButtons();
             initScrollProgress(); // Feature 2: Scroll Progress
-            initContactForm(); // Feature 21: Contact Form
+
 
             // Feature 11: Configurator
             window.setMaterial = (part, color) => {
@@ -2561,47 +2442,7 @@
             update();
         }
 
-        // Feature 21: Advanced WhatsApp Form Logic
-        function initContactForm() {
-            const form = document.getElementById('inquiryForm');
-            if (!form) return;
 
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                // Gather Data
-                const name = document.getElementById('entryName').value.trim();
-                const phone = document.getElementById('entryPhone').value.trim();
-                const address = document.getElementById('entryAddress').value.trim();
-                const date = document.getElementById('entryDate').value;
-                const budget = document.getElementById('entryBudget').value.trim();
-                const remarks = document.getElementById('entryRemarks').value.trim();
-
-                // Multi-select helpers
-                const getChecked = (cls) => Array.from(document.querySelectorAll(`.${cls}:checked`)).map(c => c.value).join(', ');
-
-                const status = getChecked('status-check');
-                const materials = getChecked('mat-check');
-                const countertops = getChecked('top-check');
-                const doors = getChecked('door-check');
-
-                const hob = document.getElementById('appHob').value;
-                const hood = document.getElementById('appHood').value;
-                const oven = document.getElementById('appOven').value;
-
-                // Build Message
-                let msg = `*NEW ENTRY FORM QUERY*\n\n`;
-                msg += `*CLIENT INFO*\nName: ${name}\nTel: ${phone}\nAdd: ${address}\nAppt: ${date}\n\n`;
-                msg += `*PROJECT INFO*\nStatus: ${status}\nBudget: ${budget}\n\n`;
-                msg += `*KITCHEN SPEC*\nMat: ${materials}\nTop: ${countertops}\nHob: ${hob} | Hood: ${hood} | Oven: ${oven}\n\n`;
-                msg += `*WARDROBE SPEC*\nDoors: ${doors}\n\n`;
-                msg += `*REMARKS*\n${remarks}`;
-
-                // Open WhatsApp
-                const url = `https://wa.me/6737187185?text=${encodeURIComponent(msg)}`;
-                window.open(url, '_blank');
-            });
-        }
 
         // Feature 34: Price Calculator Logic
         function initCalculator() {
