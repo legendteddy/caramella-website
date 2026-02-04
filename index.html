@@ -1801,56 +1801,14 @@
         // AWARD-WINNING INTERACTIONS V2.0
         // ===========================================
 
-        // Feature 49: Robust Error Handling
-        window.onerror = function (msg, url, line, col, error) {
-            console.warn("[Caramella System] Handled:", msg);
-            return false;
-        };
-
         document.addEventListener('DOMContentLoaded', () => {
-            // Phase 2 Logic
-            // F42: Greeting
-            const h = new Date().getHours();
-            const greet = h < 12 ? 'Good Morning' : h < 18 ? 'Good Afternoon' : 'Good Evening';
-            const gEl = document.getElementById('greeting');
-            if (gEl) gEl.innerText = greet + ", BRUNEI";
-
-            // F2: Toggle
-            window.toggleTheme = () => {
-                document.body.classList.toggle('light-mode');
-                const btn = document.querySelector('.nav-btn');
-                if (btn) btn.innerHTML = document.body.classList.contains('light-mode') ? '&#9728;' : '&#9790;';
-            };
-
-            // F10: Haptics
-            if (navigator.vibrate) {
-                document.querySelectorAll('button, a').forEach(b => {
-                    b.addEventListener('pointerdown', () => navigator.vibrate(5));
-                });
-            }
-
-            // Feature 50: System Ready Badge
-            console.log("%c CARAMELLA BRUNEI %c SYSTEM ONLINE ", "background: #FFD700; color: #000; font-weight: bold; padding: 5px;", "background: #111; color: #fff; padding: 5px;");
-
-            initPreloader();
-            initParticles();
+            // Keep startup focused on visible homepage behavior only.
             initGallery();
             initHero();
             initAnimations();
-            initAwardCursor();
             initCounterAnimation();
             initMagneticButtons();
-            initScrollProgress(); // Feature 2: Scroll Progress
-
-
-            // Feature 11: Configurator
-            window.setMaterial = (part, color) => {
-                const el = document.querySelector(`.${part}-part`);
-                if (el) {
-                    el.style.fill = color;
-                    if (navigator.vibrate) navigator.vibrate(10);
-                }
-            };
+            initScrollProgress();
 
             // Feature 12: Wishlist System
             let wishlist = JSON.parse(localStorage.getItem('caramella_wishlist') || '[]');
@@ -1908,14 +1866,6 @@
             updateWishlistUI();
         });
 
-        // Preloader
-        function initPreloader() {
-            const preloader = document.getElementById('preloader');
-            if (!preloader) return;
-            window.addEventListener('load', () => {
-                setTimeout(() => preloader.classList.add('hidden'), 800);
-            });
-        }
         // Auto-update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -1931,48 +1881,6 @@
                 progressBar.style.width = scrollPercent + '%';
             });
         }
-
-        // Feature 10: Testimonial Carousel
-        function initTestimonials() {
-            const cards = document.querySelectorAll('.testimonial-card');
-            const dots = document.querySelectorAll('.testimonial-dot');
-            if (cards.length === 0) return;
-
-            let currentIndex = 0;
-
-            function showTestimonial(index) {
-                cards.forEach((card, i) => {
-                    card.classList.remove('active', 'prev');
-                    if (i === index) {
-                        card.classList.add('active');
-                    } else if (i < index || (index === 0 && i === cards.length - 1)) {
-                        card.classList.add('prev');
-                    }
-                });
-
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-            }
-
-            // Auto-rotate every 5 seconds
-            setInterval(() => {
-                currentIndex = (currentIndex + 1) % cards.length;
-                showTestimonial(currentIndex);
-            }, 5000);
-
-            // Click on dots
-            dots.forEach((dot, i) => {
-                dot.addEventListener('click', () => {
-                    currentIndex = i;
-                    showTestimonial(currentIndex);
-                });
-            });
-        }
-
-        // Initialize testimonials
-        initTestimonials();
-
 
         // Feature 13: Back-to-Top Button with Progress Ring
         function initBackToTop() {
@@ -2005,24 +1913,6 @@
             });
         }
         initBackToTop();
-
-        // Feature 14: Cookie Consent Logic
-        function initCookieBanner() {
-            const banner = document.getElementById('cookieBanner');
-            const btn = document.getElementById('acceptCookies');
-            if (!banner || localStorage.getItem('cookiesAccepted')) return;
-
-            // Show after 3s
-            setTimeout(() => {
-                banner.classList.add('visible');
-            }, 3000);
-
-            btn.addEventListener('click', () => {
-                banner.classList.remove('visible');
-                localStorage.setItem('cookiesAccepted', 'true');
-            });
-        }
-        initCookieBanner();
 
         // Feature 16: Dynamic Social Proof
 
@@ -2194,44 +2084,6 @@
             }, { threshold: 0.1 });
 
             document.querySelectorAll('.reveal-stone').forEach(el => obs.observe(el));
-        }
-
-        function initParticles() {
-            return; // disabled for simplicity
-            const container = document.getElementById('particles');
-            if (!container || window.innerWidth < 768) return; // Skip on mobile
-
-            const particleCount = 15;
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 10 + 's';
-                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-                particle.style.width = (2 + Math.random() * 4) + 'px';
-                particle.style.height = particle.style.width;
-                container.appendChild(particle);
-            }
-        }
-
-        function initAwardCursor() {
-            const cursor = document.querySelector('.cursor');
-            const cursorDot = document.querySelector('.cursor-dot');
-            if (!cursor || window.innerWidth < 968) return; // Skip on mobile/tablet
-
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                cursorDot.style.left = e.clientX + 'px';
-                cursorDot.style.top = e.clientY + 'px';
-            });
-
-            const hoverElements = document.querySelectorAll('a, button, .gallery-item, .service-box');
-            hoverElements.forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-            });
         }
 
         // Animated Counters for Trust Numbers
