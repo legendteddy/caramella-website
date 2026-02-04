@@ -486,7 +486,7 @@
                 --glass-blur: blur(12px) saturate(180%);
             }
 
-            /* 3. Fix Wix Embed Double Scrollbar */
+            /* 3. Prevent horizontal overflow on mobile */
             body {
                 overflow-x: hidden;
                 width: 100vw;
@@ -504,13 +504,6 @@
 </head>
 
 <body>
-
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-logo">Caramella</div>
-        <div class="preloader-bar"></div>
-    </div>
-
     <!-- Reading Progress Bar -->
     <div class="reading-progress" id="readingProgress"></div>
 
@@ -837,17 +830,8 @@
         // ===========================================
 
         document.addEventListener('DOMContentLoaded', () => {
-            initPreloader();
             initReadingProgress();
         });
-
-        // Preloader
-        function initPreloader() {
-            const preloader = document.getElementById('preloader');
-            window.addEventListener('load', () => {
-                setTimeout(() => preloader.classList.add('hidden'), 600);
-            });
-        }
         // Reading Progress Bar
         function initReadingProgress() {
             const progressBar = document.getElementById('readingProgress');

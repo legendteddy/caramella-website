@@ -698,19 +698,6 @@
 
 <body>
 
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-logo">Caramella</div>
-        <div class="preloader-bar"></div>
-    </div>
-
-    <!-- Particle Background -->
-    <div class="particles-container" id="particles"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
-
     <!-- Navigation -->
     <nav class="navbar" aria-label="Primary">
         <a href="index.html" class="logo">Caramella</a>
@@ -790,10 +777,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            initPreloader();
-            initParticles();
             initGallery();
-            initCursor();
             initLightbox();
             initHeroForce(); // Renamed from initTiltEffect (Hero)
             initMagneticButtons();
@@ -849,30 +833,6 @@
             hero.addEventListener('mouseleave', () => {
                 content.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateZ(0)';
             });
-        }
-
-        // Preloader
-        function initPreloader() {
-            const preloader = document.getElementById('preloader');
-            window.addEventListener('load', () => {
-                setTimeout(() => preloader.classList.add('hidden'), 600);
-            });
-        }
-
-        // Particle Background
-        function initParticles() {
-            const container = document.getElementById('particles');
-            if (!container || window.innerWidth < 768) return;
-
-            for (let i = 0; i < 15; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 10 + 's';
-                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-                container.appendChild(particle);
-            }
         }
 
         // Concept images - curated selection with SEO alt tags for Brunei
@@ -1008,7 +968,7 @@
                 const el = document.createElement('div');
                 el.className = `gallery-item${item.large ? ' large' : ''} tilt`;
                 el.innerHTML = `
-                <img src="${item.url}" loading="lazy" alt="${item.alt || item.title}">
+                <img src="${item.url}" loading="lazy" decoding="async" width="640" height="480" alt="${item.alt || item.title}">
             `;
                 el.dataset.src = item.url;
                 grid.appendChild(el);
@@ -1021,24 +981,6 @@
                 initLightbox();
                 initTiltEffect();
             }, 100);
-        }
-
-        function initCursor() {
-            const cursor = document.querySelector('.cursor');
-            const cursorDot = document.querySelector('.cursor-dot');
-
-            document.addEventListener('mousemove', e => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                cursorDot.style.left = e.clientX + 'px';
-                cursorDot.style.top = e.clientY + 'px';
-            });
-
-            // Hover effect on interactive elements
-            document.querySelectorAll('a, button, .gallery-item').forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
-                el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-            });
         }
 
         // 3D Tilt Effect
