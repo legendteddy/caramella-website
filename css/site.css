@@ -56,6 +56,7 @@ h3 {
 .navbar .menu-toggle {
     width: 44px;
     height: 44px;
+    padding: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -67,6 +68,8 @@ h3 {
     -webkit-text-fill-color: #5f6872 !important;
     font-size: 0;
     line-height: 1;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .navbar .menu-toggle:hover {
@@ -99,15 +102,16 @@ h3 {
     height: 2px;
     border-radius: 2px;
     background: currentColor;
-    transition: transform 0.22s ease, top 0.22s ease;
+    top: 0;
+    transition: transform 0.22s ease;
 }
 
 .navbar .menu-toggle .menu-icon::before {
-    top: -6px;
+    transform: translateY(-6px);
 }
 
 .navbar .menu-toggle .menu-icon::after {
-    top: 6px;
+    transform: translateY(6px);
 }
 
 .navbar .menu-toggle.is-open .menu-icon {
@@ -115,12 +119,10 @@ h3 {
 }
 
 .navbar .menu-toggle.is-open .menu-icon::before {
-    top: 0;
     transform: rotate(45deg);
 }
 
 .navbar .menu-toggle.is-open .menu-icon::after {
-    top: 0;
     transform: rotate(-45deg);
 }
 
