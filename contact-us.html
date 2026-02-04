@@ -30,6 +30,28 @@
     <link rel="icon" href="images/logo.png" type="image/png">
     <meta name="theme-color" content="#000000">
 
+    <!-- Flatpickr (Dark/Gold Theme) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css">
+    <style>
+        .flatpickr-calendar.dark {
+            background: #081621;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+        }
+
+        .flatpickr-day.selected {
+            background: #FFD700;
+            border-color: #FFD700;
+            color: #000;
+        }
+
+        .flatpickr-time input:hover,
+        .flatpickr-time .flatpickr-am-pm:hover {
+            background: #0f293d;
+        }
+    </style>
+
     <style>
         /* === THEME: TRILLION DOLLAR MUSEUM === */
         :root {
@@ -444,6 +466,12 @@
                 transform: translateY(0);
             }
         }
+
+        /* Fix Select Option Contrast Globally */
+        select option {
+            background-color: #081621;
+            color: #FFFFFF;
+        }
     </style>
 </head>
 
@@ -528,9 +556,18 @@
                             <input type="text" id="entryAddress" class="form-input">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Appointment Detail</label>
-                            <input type="datetime-local" id="entryDate" class="form-input">
+                            <label class="form-label">Preferred Appointment</label>
+                            <div class="form-grid-2" style="gap: 1rem; margin-bottom: 0;">
+                                <input type="text" id="entryDate" class="form-input" placeholder="Select Date"
+                                    style="cursor: pointer; background: rgba(255, 215, 0, 0.05); border-color: rgba(255, 215, 0, 0.3);">
+                                <select id="entrySlot" class="form-input" style="cursor: pointer;">
+                                    <option value="Morning">Morning (9am - 12pm)</option>
+                                    <option value="Afternoon">Afternoon (2pm - 5pm)</option>
+                                </select>
+                            </div>
                         </div>
+
+
                     </div>
 
                     <!-- SECTION 2: PROJECT INFO -->
@@ -647,7 +684,39 @@
     </footer>
 
     <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script>
+        // Flatpickr Init (Caramella Specific Holidays 2026)
+        // REF: Internal Memo 2026 (Office & Factory)
+        const caramellaClosedDates = [
+            // FIXED DATES
+            "2026-01-01", // New Year
+            "2026-02-23", // National Day
+            "2026-05-27", // Eid Al-Adha (Tentative)
+            "2026-06-17", // Islamic New Year
+            "2026-07-15", // Sultan's Birthday
+            "2026-08-25", // Maulud Nabi
+
+            // CHINESE NEW YEAR (4 Days)
+            "2026-02-17", "2026-02-18", "2026-02-19", "2026-02-20",
+
+            // HARI RAYA AIDIL FITRI (6 Days - Starts 21st March)
+            "2026-03-21", "2026-03-22", "2026-03-23",
+            "2026-03-24", "2026-03-25", "2026-03-26"
+        ];
+
+        flatpickr("#entryDate", {
+            enableTime: false,
+            dateFormat: "Y-m-d",
+            disableMobile: "true",
+            disable: [
+                function (date) {
+                    return (date.getDay() === 0); // Disable Sundays
+                },
+                ...caramellaClosedDates
+            ],
+            locale: { firstDayOfWeek: 1 }
+        });
         // Auto-update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
@@ -676,6 +745,7 @@
             const phone = document.getElementById('entryPhone').value.trim();
             const address = document.getElementById('entryAddress').value.trim();
             const date = document.getElementById('entryDate').value;
+            const slot = document.getElementById('entrySlot').value;
             const budget = document.getElementById('entryBudget').value.trim();
             const remarks = document.getElementById('entryRemarks').value.trim();
 
@@ -701,7 +771,7 @@
             body += `Name: ${name}\n`;
             body += `Phone: ${phone}\n`;
             body += `Address: ${address}\n`;
-            body += `Preferred Appointment: ${date}\n\n`;
+            body += `Preferred Appointment: ${date} (${slot})\n\n`;
             body += `PROJECT DETAILS\n`;
             body += `Construction Status: ${status}\n`;
             body += `Budget: ${budget}\n\n`;
