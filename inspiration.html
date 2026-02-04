@@ -652,52 +652,6 @@
 
         /* MOBILE OPTIMIZATION */
         @media (max-width: 968px) {
-            .navbar {
-                padding: 0 1.5rem;
-                height: 70px;
-                background: #081621 !important;
-                -webkit-backdrop-filter: none;
-                backdrop-filter: none;
-            }
-
-            .menu-toggle {
-                display: block;
-                z-index: 10001;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
-                background: #081621 !important;
-                -webkit-backdrop-filter: none;
-                backdrop-filter: none;
-                flex-direction: column;
-                justify-content: center;
-                transform: translateY(-100%);
-                transition: 0.3s ease;
-                padding-top: 80px;
-                z-index: 10000;
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-            }
-
-            .nav-links.active,
-            .nav-links.nav-active {
-                transform: translateY(0);
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-            }
-
-            .nav-est {
-                margin-left: 0;
-                margin-top: 0.5rem;
-            }
-
             .gallery-grid {
                 grid-template-columns: 1fr;
                 padding: 0 1.5rem;
