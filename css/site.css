@@ -7,6 +7,8 @@
 :root {
     /* Most pages load Inter, but inline tokens still reference Outfit. */
     --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --nav-height: 80px;
+    --nav-pad-x: clamp(1rem, 3.2vw, 2.25rem);
 }
 
 body {
@@ -31,6 +33,16 @@ h3 {
 }
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    padding: 0 var(--nav-pad-x);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
     background: rgba(8, 22, 33, 0.94) !important;
     border-bottom: 1px solid rgba(212, 175, 55, 0.28) !important;
     backdrop-filter: blur(10px);
@@ -38,15 +50,33 @@ h3 {
 }
 
 .navbar .logo {
+    color: #fff !important;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
     letter-spacing: 0.14em;
     font-weight: 700;
 }
 
+.navbar .nav-links {
+    display: flex;
+    flex: 1;
+    gap: clamp(0.9rem, 2.2vw, 1.6rem);
+    align-items: center;
+    justify-content: flex-end;
+    margin-left: clamp(1rem, 2.2vw, 2.2rem);
+    background: transparent !important;
+}
+
 .navbar .nav-links a {
+    color: #fff !important;
+    text-decoration: none;
     letter-spacing: 0.02em;
     font-weight: 500;
     text-transform: none !important;
     font-size: 0.86rem;
+    white-space: nowrap;
+    padding: 0.35rem 0.6rem;
 }
 
 .navbar .nav-est {
@@ -204,6 +234,8 @@ img {
 
 @media (max-width: 968px) {
     .navbar {
+        height: 70px;
+        padding: 0 1rem;
         background: #081621 !important;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
