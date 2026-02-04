@@ -16,14 +16,14 @@
 
         function closeMenu() {
             navLinks.classList.remove('active');
-            menuToggle.textContent = '\u2630';
+            menuToggle.textContent = '\u2261';
             menuToggle.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('menu-open');
         }
 
         function openMenu() {
             navLinks.classList.add('active');
-            menuToggle.textContent = '\u2715';
+            menuToggle.textContent = '\u00D7';
             menuToggle.setAttribute('aria-expanded', 'true');
             document.body.classList.add('menu-open');
         }
