@@ -304,19 +304,9 @@
             position: absolute;
             inset: 0;
             z-index: 0;
-        }
-
-        .hero-slide {
-            position: absolute;
-            inset: 0;
             background-size: cover;
             background-position: center;
-            opacity: 0;
-            transition: opacity 2s ease;
-        }
-
-        .hero-slide.active {
-            opacity: 1;
+            background-image: url('images/img_4.jpg');
         }
 
         .hero-overlay {
@@ -1310,9 +1300,8 @@
         <div class="hero-content">
             <div class="hero-badge">Unit 22, Ground Floor, The Airport Mall</div>
             <p class="hero-subtitle">Brunei Darussalam</p>
-            <!-- PRIMARY KEYWORD TARGET: Cabinet Maker Brunei -->
             <h1>
-                Brunei's Premier<br><span class="italic-accent">Cabinet Maker &<br>Joinery</span>
+                Custom Cabinetry<br><span class="italic-accent">& Joinery for Brunei</span>
             </h1>
         </div>
     </header>
@@ -1323,11 +1312,11 @@
             <div class="trust-grid reveal-stone">
                 <div class="trust-item">
                     <span class="trust-number">10+</span>
-                    <span class="trust-label">Years of Mastery</span>
+                    <span class="trust-label">Years in Brunei</span>
                 </div>
                 <div class="trust-item">
                     <span class="trust-number">600+</span>
-                    <span class="trust-label">Bespoke Projects</span>
+                    <span class="trust-label">Completed Projects</span>
                 </div>
 
                 <div class="trust-item">
@@ -1363,11 +1352,10 @@
         style="border-top: 1px solid var(--glass-border); background: linear-gradient(to bottom, rgba(15, 17, 21, 0.65), rgba(8, 9, 11, 0.65)), url('images/hero-bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
             <div style="flex: 1; min-width: 300px;">
-                <h3 style="color: var(--accent-amber); margin-bottom: 1rem;">Not Just Designed. <br><em
-                        style="color:#fff;">Calculated.</em></h3>
-                <p>Unlike franchises that import standard boxes, we calculate every joint in AutoCAD before we cut.
-                    Zero
-                    filler panels. Zero gaps. Engineered specifically for Brunei's humidity.</p>
+                <h3 style="color: var(--accent-amber); margin-bottom: 1rem;">Designed for Real Homes. <br><em
+                        style="color:#fff;">Built to Last.</em></h3>
+                <p>Every cabinet is measured to your exact layout before fabrication. The result is cleaner fit,
+                    better day-to-day use, and materials selected for Brunei's humid climate.</p>
             </div>
             <div
                 style="flex: 1; font-family: var(--font-body); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary-light); background: rgba(255, 255, 255, 0.03); border-left: 2px solid var(--accent-amber); backdrop-filter: blur(5px); padding: 2rem;">
@@ -1395,20 +1383,18 @@
             <div class="services-grid reveal-stone">
                 <div class="service-card card-gradient">
                     <h3>Culinary Architecture</h3>
-                    <p>Bespoke kitchen systems engineered for both heavy cooking and visual silence. Featuring Blum
-                        ergonomic hardware and premium quartz surfacing.</p>
+                    <p>Custom kitchen systems built for practical workflow, storage efficiency, and long-term
+                        durability with trusted hardware.</p>
                 </div>
                 <div class="service-card card-gradient">
                     <h3>Sartorial Collections</h3>
-                    <p>Walk-in wardrobes that rival luxury boutiques. Glass-fronted displays, integrated lighting,
-                        and
-                        velvet-lined organization for your attire.</p>
+                    <p>Walk-in and built-in wardrobes planned around your daily routine, with clean organization and
+                        durable finishes.</p>
                 </div>
                 <div class="service-card card-gradient">
                     <h3>Spatial Joinery</h3>
-                    <p>Architectural wall cladding, hidden doorways, and floating consoles that transform the
-                        structural
-                        feel of your residence.</p>
+                    <p>Built-in wall panels, media consoles, and custom joinery details that give each space a
+                        cohesive, architectural finish.</p>
                 </div>
             </div>
         </div>
@@ -1474,15 +1460,14 @@
             <!-- Contact CTA -->
             <div class="contact-form-container"
                 style="max-width: 800px; margin: 0 auto; text-align: center; padding: 4rem 2rem; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 215, 0, 0.2); border-radius: 20px;">
-                <h3 style="color: #FFD700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.2em;">
-                    Ready to Build?</h3>
+                <h3 style="color: #FFD700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.16em;">
+                    Ready to Start?</h3>
                 <p style="color: #ccc; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                    We have moved our inquiry process to a dedicated page to better serve your improved consultation
-                    experience.
+                    Share your layout, timeline, and goals. Our team will review and reply with clear next steps.
                 </p>
                 <a href="contact-us.html" class="btn-luxury"
                     style="display: inline-block; text-decoration: none; padding: 1.5rem 3rem; font-size: 1.1rem;">
-                    Start Your Project Inquiry &rarr;
+                    Open Project Inquiry &rarr;
                 </a>
             </div>
 
@@ -1560,7 +1545,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Keep startup focused on visible homepage behavior only.
             initGallery();
-            initHero();
             initAnimations();
             initCounterAnimation();
             initMagneticButtons();
@@ -1731,36 +1715,6 @@
             };
 
 
-        }
-
-        function initHero() {
-            const container = document.querySelector('.hero-bg-slider');
-            // User-selected premium showcase images
-            const slides = [
-                "images/img_4.jpg",
-                "images/img_1.jpg",
-                "images/img_2.jpg",
-                "images/img_3.jpg"
-            ];
-
-            const img = new Image();
-            img.src = slides[0];
-            img.onload = () => {
-                slides.forEach((url, i) => {
-                    const d = document.createElement('div');
-                    d.className = `hero-slide ${i === 0 ? 'active' : ''}`;
-                    d.style.backgroundImage = `url('${url}')`;
-                    container.appendChild(d);
-                });
-
-                let cur = 0;
-                setInterval(() => {
-                    const els = document.querySelectorAll('.hero-slide');
-                    els[cur].classList.remove('active');
-                    cur = (cur + 1) % els.length;
-                    els[cur].classList.add('active');
-                }, 8000); // Calm: 6000ms -> 8000ms for contemplative viewing
-            };
         }
 
         function initRefraction() {
