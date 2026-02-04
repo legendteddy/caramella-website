@@ -13,6 +13,18 @@ p {
     color: rgba(243, 245, 247, 0.88);
 }
 
+h1,
+h2,
+h3 {
+    letter-spacing: -0.01em;
+}
+
+.container {
+    width: min(1120px, calc(100% - 3rem));
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .navbar {
     background: rgba(8, 22, 33, 0.94) !important;
     border-bottom: 1px solid rgba(212, 175, 55, 0.28) !important;
@@ -53,6 +65,14 @@ section {
     scroll-margin-top: 88px;
 }
 
+.hero p,
+.hero .hero-subtitle,
+.hero .hero-description {
+    max-width: 62ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .btn-primary,
 button.btn-primary {
     border-radius: 999px !important;
@@ -85,6 +105,10 @@ textarea:focus-visible {
 .whatsapp-float {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22) !important;
     border: 1px solid rgba(212, 175, 55, 0.35) !important;
+}
+
+footer {
+    border-top: 1px solid rgba(212, 175, 55, 0.22) !important;
 }
 
 img {
