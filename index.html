@@ -36,7 +36,7 @@
 
     <!-- Feature 28: PWA Manifest & Icons -->
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="images/logo.png" type="image/png">
+    <link rel="icon" href="images/img_1.jpg" type="image/jpeg">
     <meta name="theme-color" content="#000000">
 
     <!-- Feature 20: Open Graph Social Share Cards -->
@@ -65,7 +65,7 @@
       "@type": "HomeAndConstructionBusiness",
       "name": "Caramella Trading Co.",
       "alternateName": "Caramella Brunei",
-      "image": "https://www.caramellabrunei.com/images/logo.png",
+      "image": "https://www.caramellabrunei.com/images/img_1.jpg",
       "@id": "https://www.caramellabrunei.com",
       "url": "https://www.caramellabrunei.com",
       "telephone": "+6737187185",
@@ -1603,12 +1603,12 @@
         <svg viewBox="0 0 48 48">
             <circle class="progress-ring" cx="24" cy="24" r="22"></circle>
         </svg>
-        <span class="arrow">Ôåæ</span>
+        <span class="arrow">&#8593;</span>
     </button>
 
     <!-- Feature 16: Social Proof Popup -->
     <div class="social-proof" id="socialProof">
-        <div class="social-proof-icon">ÔÜí</div>
+        <div class="social-proof-icon">&#128276;</div>
         <div class="social-proof-content">
             <div class="social-proof-title" id="sp-title">New Request</div>
             <div class="social-proof-meta" id="sp-meta">Someone in Bandar just requested a quote</div>
@@ -1991,7 +1991,7 @@
             window.toggleTheme = () => {
                 document.body.classList.toggle('light-mode');
                 const btn = document.querySelector('.nav-btn');
-                if (btn) btn.innerHTML = document.body.classList.contains('light-mode') ? '­ƒîÖ' : 'ÔÿÇ';
+                if (btn) btn.innerHTML = document.body.classList.contains('light-mode') ? '&#9728;' : '&#9790;';
             };
 
             // F10: Haptics
@@ -2341,7 +2341,7 @@
                     els[cur].classList.remove('active');
                     cur = (cur + 1) % els.length;
                     els[cur].classList.add('active');
-                }, 8000); // Calm: 6000ms ├óÔÇáÔÇÖ 8000ms for contemplative viewing
+                }, 8000); // Calm: 6000ms -> 8000ms for contemplative viewing
             };
         }
 
@@ -2487,7 +2487,7 @@
 
             const target = parseInt(numMatch[0]);
             let current = 0;
-            const duration = 4000; // Calm: 2000ms ├óÔÇáÔÇÖ 4000ms for gentle counting
+            const duration = 4000; // Calm: 2000ms -> 4000ms for gentle counting
             const step = target / (duration / 16);
 
             function update() {
@@ -2765,24 +2765,24 @@
     <nav class="mobile-bottom-nav">
         <div class="nav-items">
             <a href="index.html" class="nav-item active">
-                <span class="nav-icon">­ƒÅá</span>
+                <span class="nav-icon">&#127968;</span>
                 <span>Home</span>
             </a>
             <a href="portfolio.html" class="nav-item">
-                <span class="nav-icon">­ƒôü</span>
+                <span class="nav-icon">&#128736;</span>
                 <span>Work</span>
             </a>
             <a href="inspiration.html" class="nav-item">
-                <span class="nav-icon">­ƒÆí</span>
+                <span class="nav-icon">&#128161;</span>
                 <span>Ideas</span>
             </a>
             <a href="#" onclick="showWishlist(); return false;" class="nav-item">
-                <span class="nav-icon">ÔØñ´©Å</span>
+                <span class="nav-icon">&#10084;</span>
                 <span id="wish-count-badge" class="nav-badge" style="display:none; top: 5px; right: 5px;">0</span>
                 <span>Shortlist</span>
             </a>
             <a href="https://wa.me/6737187185" target="_blank" rel="noopener noreferrer" class="nav-item">
-                <span class="nav-icon">­ƒÆ¼</span>
+                <span class="nav-icon">&#128172;</span>
                 <span>Chat</span>
             </a>
         </div>
