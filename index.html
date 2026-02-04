@@ -1617,80 +1617,6 @@
         <img class="lightbox-content" id="lightbox-img">
     </div>
 
-    <!-- Feature 8: Structural Valuation Engine -->
-    <div id="calcModal" class="lightbox">
-        <div class="calc-container"
-            style="background: #050505; padding: 3rem; border-radius: 1.5rem; max-width: 600px; margin: auto; position: relative; border: 1px solid rgba(255,215,0,0.3); width: 95%; box-shadow: 0 40px 100px rgba(0,0,0,0.9);">
-            <span class="close-calc"
-                style="position: absolute; top: 1.5rem; right: 1.5rem; cursor: pointer; font-size: 2rem; color: #fff; opacity: 0.5;">&times;</span>
-            <h3
-                style="color: #FFD700; margin-top: 0; text-align: center; margin-bottom: 2rem; letter-spacing: 0.3em; text-transform: uppercase; font-size: 1rem;">
-                Structural <span class="italic-accent">Valuation</span> Engine</h3>
-
-            <div style="display: grid; gap: 1.5rem;">
-                <!-- Type Selection -->
-                <div>
-                    <label class="form-label">System Architecture</label>
-                    <div class="filter-bar" style="justify-content: start; gap: 0.5rem; margin-bottom: 0;">
-                        <button class="filter-btn active calc-type" style="flex: 1;" data-value="kitchen">Culinary
-                            Architecture</button>
-                        <button class="filter-btn calc-type" style="flex: 1;" data-value="wardrobe">Sartorial
-                            Living</button>
-                    </div>
-                </div>
-
-                <!-- Material Grade -->
-                <div>
-                    <label class="form-label">Material Core Grade</label>
-                    <select id="calcMaterial" class="form-input" onchange="calculate()">
-                        <option value="1.0">Sovereign Ply-Core (Standard)</option>
-                        <option value="1.25">ENF V3 Nano-Core (Premium)</option>
-                        <option value="1.5">Zero-Formaldehyde Solid-Ply (Elite)</option>
-                    </select>
-                </div>
-
-                <!-- Hardware Tier -->
-                <div>
-                    <label class="form-label">Hardware Logic</label>
-                    <select id="calcHardware" class="form-input" onchange="calculate()">
-                        <option value="150">Hettich / Basic Soft-Close</option>
-                        <option value="350">Blum Onyx / Full Servo-Drive</option>
-                        <option value="600">Grass Vionaro / Bespoke Italian</option>
-                    </select>
-                </div>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                    <div>
-                        <label class="form-label">Planar Length (FT)</label>
-                        <input type="number" id="calcLength" class="form-input" value="10" min="5"
-                            oninput="calculate()">
-                    </div>
-                    <div id="countertopSection">
-                        <label class="form-label">Surface Material</label>
-                        <select id="calcCounter" class="form-input" onchange="calculate()">
-                            <option value="0">None</option>
-                            <option value="250">Quartz V1</option>
-                            <option value="450">Sintered Stone V2</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="calc-result"
-                    style="text-align: center; margin-top: 1rem; padding: 2rem; border: 1px solid rgba(255,215,0,0.1); border-radius: 1rem; background: rgba(255,215,0,0.02);">
-                    <div
-                        style="font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; color: #888; margin-bottom: 0.5rem;">
-                        Engineering Asset Value</div>
-                    <div id="calcPrice" style="font-size: 2.5rem; color: #FFD700; font-weight: 700;">$4,250 - $4,800
-                    </div>
-                    <div style="font-size: 0.6rem; color: #555; margin-top: 1rem; text-transform: uppercase;">Includes
-                        CNC Fabrication & Technical Installation</div>
-                </div>
-
-                <button class="btn-luxury" style="width: 100%;" id="calcBookBtn">Calibrate Final Spec</button>
-            </div>
-        </div>
-    </div>
-
     <script>
         // ===========================================
         // AWARD-WINNING INTERACTIONS V2.0
@@ -1876,10 +1802,10 @@
             const container = document.querySelector('.hero-bg-slider');
             // User-selected premium showcase images
             const slides = [
-                "https://static.wixstatic.com/media/0bdd38_0780da52ffb64b20a389602f32b546a8~mv2.jpg",
-                "https://static.wixstatic.com/media/0bdd38_adee565ffe4c4239811a64c1e88ba479~mv2.jpg",
-                "https://static.wixstatic.com/media/0bdd38_3b842e104b9a4ac8bdd9f6ec840e8f1b~mv2.jpg",
-                "https://static.wixstatic.com/media/0bdd38_6320f0df73fc4ced9aa1f0eb0c816244~mv2.jpg"
+                "images/img_4.jpg",
+                "images/img_1.jpg",
+                "images/img_2.jpg",
+                "images/img_3.jpg"
             ];
 
             const img = new Image();
@@ -1963,99 +1889,6 @@
                 }
             }
             update();
-        }
-
-
-
-        // Feature 34: Price Calculator Logic
-        function initCalculator() {
-            const modal = document.getElementById('calcModal');
-            if (!modal) return;
-
-            // Buttons
-            const types = document.querySelectorAll('.calc-type');
-            const lengthInput = document.getElementById('calcLength');
-            const counterSelect = document.getElementById('calcCounter');
-            const priceDisplay = document.getElementById('calcPrice');
-            const closeBtn = document.querySelector('.close-calc');
-            const bookBtn = document.getElementById('calcBookBtn');
-            const counterSection = document.getElementById('countertopSection');
-
-            // Open/Close logic
-            window.openCalc = () => {
-                modal.classList.add('active');
-                // Center modal content
-                const container = modal.querySelector('.calc-container');
-                container.style.marginTop = '10vh';
-                calculate();
-            };
-
-            closeBtn.onclick = () => modal.classList.remove('active');
-
-            modal.addEventListener('click', (e) => {
-                if (e.target === modal) modal.classList.remove('active');
-            });
-
-            if (bookBtn) {
-                bookBtn.onclick = () => {
-                    modal.classList.remove('active');
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-
-                    const type = document.querySelector('.calc-type.active').innerText;
-                    const len = lengthInput.value;
-                    const est = priceDisplay.innerText;
-                    const msg = document.getElementById('formMessage');
-                    if (msg) msg.value = `I'm interested in a ${type} (approx ${len}ft). Estimate was ${est}.`;
-                };
-            }
-
-            types.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    types.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    calculate();
-                });
-            });
-
-            if (lengthInput) lengthInput.addEventListener('input', calculate);
-        }
-        initCalculator();
-
-        function calculate() {
-            const typeBtn = document.querySelector('.calc-type.active');
-            const lengthInput = document.getElementById('calcLength');
-            const materialSelect = document.getElementById('calcMaterial');
-            const hardwareSelect = document.getElementById('calcHardware');
-            const counterSelect = document.getElementById('calcCounter');
-            const priceDisplay = document.getElementById('calcPrice');
-            const counterSection = document.getElementById('countertopSection');
-
-            if (!typeBtn || !lengthInput) return;
-
-            const type = typeBtn.dataset.value;
-            const len = parseFloat(lengthInput.value) || 0;
-            const matMultiplier = parseFloat(materialSelect.value) || 1.0;
-            const hardwareRate = parseFloat(hardwareSelect.value) || 150;
-            const counterRate = parseFloat(counterSelect.value) || 0;
-
-            // Base Structural Yield per Linear Foot
-            let baseRate = (type === 'kitchen') ? 220 : 180;
-
-            if (type === 'wardrobe') {
-                if (counterSection) counterSection.style.display = 'none';
-            } else {
-                if (counterSection) counterSection.style.display = 'block';
-            }
-
-            const total = (baseRate * len * matMultiplier) + (hardwareRate * len) + (counterRate * len);
-            const min = Math.round(total * 0.95);
-            const max = Math.round(total * 1.05);
-
-            if (priceDisplay) {
-                priceDisplay.innerText = `$${min.toLocaleString()} - $${max.toLocaleString()}`;
-                if (navigator.vibrate) navigator.vibrate(5);
-            }
         }
 
         // Feature 38: Animated Stats (Intersection Observer)
