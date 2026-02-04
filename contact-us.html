@@ -162,6 +162,20 @@
             border: none;
         }
 
+        .nav-est {
+            font-size: 0.6rem;
+            border: 1px solid #FFD700;
+            padding: 0.3rem 0.8rem;
+            color: #FFD700;
+            margin-left: 2rem;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
         /* HERO */
         .hero {
             background: linear-gradient(to bottom, rgba(8, 22, 33, 0.85), rgba(8, 22, 33, 0.95)), url('images/img_4.jpg');
@@ -490,6 +504,11 @@
             .nav-links.active {
                 transform: translateY(0);
             }
+
+            .nav-est {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
         }
 
         /* Fix Select Option Contrast Globally */
@@ -504,7 +523,7 @@
     <!-- Navigation -->
     <nav class="navbar">
         <a href="https://www.caramellabrunei.com/" target="_top" class="logo">Caramella</a>
-        <button class="menu-toggle" aria-label="Toggle Navigation"
+        <button class="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false"
             style="background: none; border: none;">&#9776;</button>
         <div class="nav-links" style="justify-content: space-evenly;">
             <a href="index.html">Home</a>
@@ -512,8 +531,7 @@
             <a href="inspiration.html">Concepts</a>
             <a href="faq.html">Knowledge</a>
             <a href="contact-us.html" class="nav-active">Inquire</a>
-            <span
-                style="font-size: 0.6rem; border: 1px solid #FFD700; padding: 0.3rem 0.8rem; color: #FFD700; margin-left: 2rem; border-radius: 50px;">&#127463;&#127475;
+            <span class="nav-est">&#127463;&#127475;
                 EST. 2015</span>
         </div>
     </nav>
@@ -753,15 +771,46 @@
         const toggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
         if (toggle && navLinks) {
-            toggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                toggle.textContent = navLinks.classList.contains('active') ? '\u2715' : '\u2630';
+            const closeMenu = () => {
+                navLinks.classList.remove('active');
+                toggle.textContent = '\u2630';
+                toggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+            };
+
+            const openMenu = () => {
+                navLinks.classList.add('active');
+                toggle.textContent = '\u2715';
+                toggle.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('menu-open');
+            };
+
+            toggle.setAttribute('aria-expanded', 'false');
+
+            toggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                if (navLinks.classList.contains('active')) closeMenu();
+                else openMenu();
             });
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    toggle.textContent = '\u2630';
-                });
+
+            navLinks.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
+            navLinks.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) closeMenu();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 968) closeMenu();
             });
         }
 
