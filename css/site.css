@@ -9,6 +9,10 @@ body {
     line-height: 1.7;
 }
 
+p {
+    color: rgba(243, 245, 247, 0.88);
+}
+
 .navbar {
     background: rgba(8, 22, 33, 0.94) !important;
     border-bottom: 1px solid rgba(212, 175, 55, 0.28) !important;
@@ -52,6 +56,30 @@ button.btn-primary {
     border-radius: 999px !important;
     box-shadow: none !important;
     transform: none !important;
+}
+
+.btn-primary:hover,
+button.btn-primary:hover {
+    transform: translateY(-1px) !important;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid rgba(212, 175, 55, 0.9);
+    outline-offset: 2px;
+}
+
+/* Remove promotional/gimmick overlays for a cleaner, more editorial feel */
+.social-proof {
+    display: none !important;
+}
+
+.whatsapp-float {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22) !important;
+    border: 1px solid rgba(212, 175, 55, 0.35) !important;
 }
 
 img {
@@ -104,6 +132,24 @@ img {
     .menu-toggle {
         display: block;
         z-index: 10001;
+    }
+
+    .whatsapp-float {
+        width: 52px !important;
+        height: 52px !important;
+        right: 16px !important;
+        bottom: 82px !important;
+    }
+
+    .hero,
+    [style*="background-attachment: fixed"] {
+        background-attachment: scroll !important;
+    }
+
+    .hero-content-3d,
+    .gallery-item.tilt,
+    .case-sidebar {
+        transform: none !important;
     }
 }
 
