@@ -2122,7 +2122,7 @@
     </script>
 
 
-    <!-- Feature 14: Cookie Consent (Moved to bottom) -->
+    <!-- Cookie Consent -->
     <div class="cookie-banner" id="cookieBanner" style="z-index: 100001 !important;">
         <div class="cookie-content">
             We use cookies to enhance your experience and analyze our traffic. By continuing to visit this site, you
@@ -2131,7 +2131,7 @@
         <button class="cookie-btn" id="acceptCookies" onclick="acceptCookiesNow()">Accept</button>
     </div>
 
-    <!-- Cookie Logic (Robust Inline) -->
+    <!-- Cookie Logic -->
     <script>
         function acceptCookiesNow() {
             const banner = document.getElementById('cookieBanner');
@@ -2158,8 +2158,6 @@
                     if (banner) banner.style.display = 'none';
                 }
             } catch (e) {
-                // Should show by default if LS fails, or hide? 
-                // Let's show it to be safe, logic above adds .visible
                 setTimeout(() => {
                     if (banner) banner.classList.add('visible');
                 }, 1000);
