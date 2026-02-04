@@ -1432,10 +1432,17 @@
                 transform: translateY(-100%);
                 transition: 0.3s ease;
                 padding-top: 80px;
+                z-index: 10000;
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
             }
 
             .nav-links.active {
                 transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
             }
 
             .nav-links a {
