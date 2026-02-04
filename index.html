@@ -489,42 +489,41 @@
             font-size: 0.9rem;
             letter-spacing: 0.15em;
             text-transform: uppercase;
-            color: #081621 !important;
-            background: #FFD700;
-            border: none;
+            color: #FFD700 !important;
+            background: rgba(255, 215, 0, 0.05);
+            border: 1px solid rgba(255, 215, 0, 0.4);
             border-radius: var(--radius-lg);
             cursor: pointer;
             transition: all 0.5s var(--ease-elastic);
             text-decoration: none;
             font-weight: 600;
-            /* Feature 5: Ripple Effect */
             position: relative;
             overflow: hidden;
-        }
-
-        .btn-luxury::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            background: rgba(255, 255, 255, 0.4);
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            transition: width 0.6s ease, height 0.6s ease;
-        }
-
-        .btn-luxury:active::before {
-            width: 300px;
-            height: 300px;
+            backdrop-filter: blur(10px);
         }
 
         .btn-luxury:hover {
-            background: var(--gold-warm);
-            color: #081621 !important;
-            box-shadow: 0 16px 48px rgba(255, 215, 0, 0.35);
+            background: rgba(255, 215, 0, 0.15);
+            color: #FFF !important;
+            border-color: #FFD700;
+            box-shadow: 0 0 40px rgba(255, 215, 0, 0.2);
             transform: translateY(-4px) scale(1.02);
+        }
+
+        /* Shine Effect */
+        .btn-luxury::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-luxury:hover::after {
+            left: 100%;
         }
 
         /* WIX EMBED & MOBILE OPTIMIZATION */
@@ -1600,7 +1599,7 @@
 
     <nav class="navbar">
         <a href="https://www.caramellabrunei.com/" target="_top" class="logo">Caramella</a>
-        <button class="menu-toggle" aria-label="Toggle Navigation"
+        <button class="menu-toggle" aria-label="Toggle Navigation Menu"
             style="background: none; border: none;">&#9776;</button>
         <div class="nav-links" style="justify-content: space-evenly;">
             <a href="index.html" class="nav-active">Home</a>
@@ -1685,7 +1684,7 @@
                 style="flex: 1; font-family: var(--font-body); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary-light); background: rgba(255, 255, 255, 0.03); border-left: 2px solid var(--accent-amber); backdrop-filter: blur(5px); padding: 2rem;">
                 <div style="display: grid; grid-template-columns: 1fr auto; gap: 0.5rem;">
                     <span style="opacity: 0.5;">PRECISION STANDARD</span> <span
-                        style="color: var(--accent-amber);">├é┬▒0.1MM CNC</span>
+                        style="color: var(--accent-amber);">&plusmn;0.1MM CNC</span>
                     <span style="opacity: 0.5;">HUMIDITY RESISTANCE</span> <span style="color: var(--accent-amber);">ENF
                         GRADE</span>
                     <span style="opacity: 0.5;">JOINERY LOGIC</span> <span
@@ -2236,7 +2235,7 @@
 
                     // Feature 15: Lazy Loading Blur-up (Wishlist removed per user request)
                     el.innerHTML = `
-                        <img src="${url}" loading="lazy" alt="${altText}" class="blur-load" onload="this.classList.add('loaded')">
+                        <img src="${url}" loading="lazy" alt="${altText}" class="blur-load" onload="this.classList.add('loaded')" width="400" height="400" style="aspect-ratio: 1 / 1;">
                     `;
                     el.onclick = () => {
                         const lb = document.getElementById('lightbox');
