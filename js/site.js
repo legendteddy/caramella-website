@@ -24,6 +24,7 @@
 
         function closeMenu() {
             navLinks.classList.remove('active');
+            navLinks.classList.remove('nav-active');
             menuToggle.classList.remove('is-open');
             menuToggle.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('menu-open');
@@ -31,6 +32,7 @@
 
         function openMenu() {
             navLinks.classList.add('active');
+            navLinks.classList.add('nav-active');
             menuToggle.classList.add('is-open');
             menuToggle.setAttribute('aria-expanded', 'true');
             document.body.classList.add('menu-open');
