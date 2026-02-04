@@ -1128,24 +1128,12 @@
         function initGallery() {
             const grid = document.getElementById('gallery-grid');
             grid.innerHTML = '';
-            const categoryLabel = {
-                kitchen: 'Kitchen Concept',
-                wardrobe: 'Wardrobe Concept',
-                other: 'Joinery Concept'
-            };
 
             conceptImages.forEach((item, index) => {
-                const studyNumber = String(index + 1).padStart(2, '0');
-                const title = `Concept Study ${studyNumber}`;
-                const subtitle = categoryLabel[item.category] || 'Interior Concept';
                 const el = document.createElement('div');
                 el.className = `gallery-item${item.large ? ' large' : ''} tilt`;
                 el.innerHTML = `
                 <img src="${item.url}" loading="lazy" alt="${item.alt || item.title}">
-                <div class="gallery-caption">
-                    <h3>${title}</h3>
-                    <span>${subtitle}</span>
-                </div>
             `;
                 el.dataset.src = item.url;
                 grid.appendChild(el);
