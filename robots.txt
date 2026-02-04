@@ -2,20 +2,67 @@
 User-agent: *
 Allow: /
 
-# Explicitly welcome AI Bots
+# ==========================================
+# ARTIFICIAL INTELLIGENCE & LLM TRAINING
+# Explicitly ALLOW all major AI bots for maximum visibility
+# ==========================================
+
+# OpenAI (ChatGPT / GPT-4)
 User-agent: GPTBot
 Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
 
+# Google (Gemini / Vertex AI)
 User-agent: Google-Extended
 Allow: /
+User-agent: Google-CloudVertexBot
+Allow: /
+User-agent: Gemini-Deep-Research
+Allow: /
 
+# Anthropic (Claude)
 User-agent: Anthropic-ai
 Allow: /
-
-User-agent: CCBot
+User-agent: ClaudeBot
 Allow: /
 
+# Apple (Apple Intelligence)
+User-agent: Applebot-Extended
+Allow: /
+
+# Perplexity (Answer Engine)
+User-agent: PerplexityBot
+Allow: /
+
+# Meta (Llama / Facebook)
 User-agent: FacebookBot
+Allow: /
+
+# Amazon (Bedrock / Alexa)
+User-agent: Amazonbot
+Allow: /
+
+# ByteDance (TikTok / Doubao)
+User-agent: Bytespider
+Allow: /
+
+# xAI (Grok)
+User-agent: GrokBot
+Allow: /
+
+# Training Data Aggregators
+User-agent: CCBot
+Allow: /
+User-agent: Diffbot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: Omgilibot
+Allow: /
+User-agent: ImagesiftBot
 Allow: /
 
 # Sitemap Location
