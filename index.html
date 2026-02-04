@@ -1705,60 +1705,6 @@
             initMagneticButtons();
             initScrollProgress();
 
-            // Feature 12: Wishlist System
-            let wishlist = JSON.parse(localStorage.getItem('caramella_wishlist') || '[]');
-
-            window.toggleWishlist = (url, alt) => {
-                const index = wishlist.findIndex(item => item.url === url);
-                if (index === -1) {
-                    wishlist.push({ url, alt });
-                } else {
-                    wishlist.splice(index, 1);
-                }
-                localStorage.setItem('caramella_wishlist', JSON.stringify(wishlist));
-                updateWishlistUI();
-                if (navigator.vibrate) navigator.vibrate([10, 30, 10]);
-            };
-
-            window.updateWishlistUI = () => {
-                const badge = document.getElementById('wish-count-badge');
-                if (badge) {
-                    badge.innerText = wishlist.length;
-                    badge.style.display = wishlist.length > 0 ? 'flex' : 'none';
-                }
-
-                // Update dots on cards
-                document.querySelectorAll('.wishlist-trigger').forEach(btn => {
-                    const url = btn.parentElement.querySelector('img').src;
-                    btn.classList.toggle('active', wishlist.some(item => url.includes(item.url)));
-                });
-            };
-
-            window.showWishlist = () => {
-                const modal = document.getElementById('wishlist-modal');
-                const grid = document.getElementById('wishlist-display-grid');
-                grid.innerHTML = wishlist.length > 0 ? '' : '<p style="text-align:center; opacity:0.5; grid-column: 1/-1;">Your shortlist is empty.</p>';
-
-                wishlist.forEach(item => {
-                    const div = document.createElement('div');
-                    div.className = 'wish-item';
-                    div.innerHTML = `
-                        <img src="${item.url}" alt="${item.alt}">
-                        <div class="wishlist-trigger active" onclick="toggleWishlist('${item.url}', '${item.alt}'); showWishlist();">
-                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l8.89-8.89 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-                        </div>
-                    `;
-                    grid.appendChild(div);
-                });
-
-                modal.classList.add('visible');
-            };
-
-            window.closeWishlist = () => {
-                document.getElementById('wishlist-modal').classList.remove('visible');
-            };
-
-            updateWishlistUI();
         });
 
         // Auto-update copyright year
@@ -2276,27 +2222,6 @@
         }
     </style>
 
-    <!-- Feature 12: Wishlist Modal -->
-    <div id="wishlist-modal" class="wishlist-modal">
-        <div class="container">
-            <h2 style="text-align: center; color: #FFD700;">My <span class="italic-accent">Shortlist</span></h2>
-            <div id="wishlist-display-grid" class="wishlist-grid"></div>
-            <div
-                style="text-align: center; margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-                <button class="btn-luxury" onclick="closeWishlist()" style="background: rgba(255,255,255,0.05);">Back to
-                    Gallery</button>
-                <button class="btn-luxury" onclick="generateManifest()">Generate BIM/CAD Manifest</button>
-                <button class="btn-luxury"
-                    onclick="alert('Inquiry for shortlist sent to WhatsApp!'); closeWishlist()">Inquire for All
-                    Items</button>
-            </div>
-        </div>
-    </div>
-
-
-
-
-
     <!-- Feature 100: App Polish -->
     <style>
         html,
@@ -2327,84 +2252,13 @@
             transform: scale(0.96);
         }
 
-        /* Feature 11 & 12: Utility Styles */
+        /* Feature 11: Utility Styles */
         .hull-part,
         .counter-part,
         .handle-part {
             transition: fill 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .wishlist-trigger {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.4);
-            backdrop-filter: blur(8px);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 10;
-            transition: all 0.3s ease;
-            color: #fff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .wishlist-trigger:hover {
-            background: #FFD700;
-            color: #000;
-            transform: scale(1.1);
-        }
-
-        .wishlist-trigger.active {
-            color: #FF2D55;
-            background: #fff;
-        }
-
-        .wishlist-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 10005;
-            flex-direction: column;
-            padding: 4rem 2rem;
-            overflow-y: auto;
-        }
-
-        .wishlist-modal.visible {
-            display: flex;
-        }
-
-        .wishlist-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            width: 100%;
-            margin: 2rem auto;
-        }
-
-        .wish-item {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .wish-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
     </style>
     <!-- Phase 2 Logic (Rescue) -->
     <script>
@@ -2432,70 +2286,6 @@
             }
         }
 
-        function generateManifest() {
-            if (wishlist.length === 0) {
-                alert("Please add projects to your shortlist first.");
-                return;
-            }
-            // Create temporary print window for technical output
-            const printWin = window.open('', '', 'width=900,height=1200');
-            const date = new Date().toLocaleDateString();
-
-            let itemsHtml = wishlist.map(item => `
-                <div style="border-bottom: 2px solid #333; padding: 2rem 0; page-break-inside: avoid;">
-                    <div style="display: flex; gap: 2rem;">
-                        <img src="${item.url}" style="width: 250px; height: 180px; object-fit: cover; border: 1px solid #000;">
-                        <div style="flex: 1;">
-                            <h3 style="margin: 0; text-transform: uppercase;">${item.alt.split('-')[0]}</h3>
-                            <p style="font-size: 0.7rem; color: #666; margin: 0.5rem 0;">SPEC ID: CARA-REF-${Math.random().toString(36).substr(2, 6).toUpperCase()}</p>
-                            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.8rem;">
-                                <tr><td style="padding: 4px 0; border-bottom: 1px solid #eee;"><strong>Structure:</strong></td><td style="padding: 4px 0; border-bottom: 1px solid #eee;">18mm Sovereign Multi-Core V3</td></tr>
-                                <tr><td style="padding: 4px 0; border-bottom: 1px solid #eee;"><strong>Tolerance:</strong></td><td style="padding: 4px 0; border-bottom: 1px solid #eee;">┬▒0.1mm CNC Verified</td></tr>
-                                <tr><td style="padding: 4px 0; border-bottom: 1px solid #eee;"><strong>Hardware:</strong></td><td style="padding: 4px 0; border-bottom: 1px solid #eee;">Blum Onyx Edition / Soft-Close</td></tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-
-            printWin.document.write(`
-                <html>
-                <head>
-                    <title>Technical Manifest - Caramella Trading Co.</title>
-                    <style>
-                        body { font-family: 'Courier New', monospace; padding: 4rem; color: #000; line-height: 1.5; }
-                        h1 { letter-spacing: 0.3em; margin-bottom: 0.5rem; border-bottom: 5px solid #000; padding-bottom: 1rem; }
-                        .header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
-                        .footer { margin-top: 4rem; font-size: 0.6rem; border-top: 1px solid #ccc; padding-top: 1rem; }
-                    </style>
-</head>
-                <body>
-                    <div class="header">
-                        <div>
-                            <h1>CARAMELLA</h1>
-                            <p style="font-size: 0.8rem;">TECHNICAL SPECIFICATION MANIFEST<br>PRECISION JOINERY & MILLWORK</p>
-                        </div>
-                        <p style="font-size: 0.7rem; text-align: right;">DATE: ${date}<br>REF: SOV-MANIFEST-${Date.now()}</p>
-                    </div>
-                    
-                    <div style="background: #f0f0f0; padding: 1rem; margin-bottom: 2rem; border-left: 5px solid #000;">
-                        <strong>PROJECT SELECTION DATA</strong>
-                        <p style="font-size: 0.7rem; margin: 0.5rem 0;">This document serves as an official BIM/CAD reference sheet for architectural procurement.</p>
-                    </div>
-
-                    ${itemsHtml}
-
-                    <div class="footer">
-                        &copy; 2026 CARAMELLA TRADING COMPANY. CONFIDENTIAL ENGINEERING DATA. ALL JOINTS MEASURE ┬▒0.1mm.
-                    </div>
-</body>
-                </html>
-            `);
-            printWin.document.close();
-            setTimeout(() => {
-                printWin.print();
-            }, 500);
-        }
     </script>
 
 
