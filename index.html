@@ -1202,71 +1202,6 @@
             transform: scale(1.2);
         }
 
-        /* Feature 11: Mobile Bottom Navigation */
-        .mobile-bottom-nav {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255, 215, 0, 0.2);
-            padding: 0.75rem 0;
-            padding-bottom: calc(0.75rem + env(safe-area-inset-bottom));
-            z-index: 9998;
-        }
-
-        body.menu-open .mobile-bottom-nav {
-            transform: translateY(120%);
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .mobile-bottom-nav .nav-items {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-        }
-
-        .mobile-bottom-nav .nav-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.25rem;
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: all 0.3s ease;
-        }
-
-        .mobile-bottom-nav .nav-item:hover,
-        .mobile-bottom-nav .nav-item.active {
-            color: #FFD700;
-        }
-
-        .mobile-bottom-nav .nav-icon {
-            font-size: 1.25rem;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-bottom-nav {
-                display: block;
-            }
-
-            /* Hide regular WhatsApp float on mobile since it's in nav */
-            .whatsapp-float {
-                bottom: 5rem;
-            }
-
-            /* Add padding to body so content isn't hidden behind nav */
-            body {
-                padding-bottom: 4.5rem;
-            }
-        }
-
 
 
         /* Feature 16: Social Proof Popup */
@@ -2703,33 +2638,6 @@
             background-attachment: fixed !important;
         }
     </style>
-
-    <!-- Feature 11: Mobile Bottom Navigation -->
-    <nav class="mobile-bottom-nav">
-        <div class="nav-items">
-            <a href="index.html" class="nav-item active">
-                <span class="nav-icon">&#127968;</span>
-                <span>Home</span>
-            </a>
-            <a href="portfolio.html" class="nav-item">
-                <span class="nav-icon">&#128736;</span>
-                <span>Work</span>
-            </a>
-            <a href="inspiration.html" class="nav-item">
-                <span class="nav-icon">&#128161;</span>
-                <span>Ideas</span>
-            </a>
-            <a href="#" onclick="showWishlist(); return false;" class="nav-item">
-                <span class="nav-icon">&#10084;</span>
-                <span id="wish-count-badge" class="nav-badge" style="display:none; top: 5px; right: 5px;">0</span>
-                <span>Shortlist</span>
-            </a>
-            <a href="https://wa.me/6737187185" target="_blank" rel="noopener noreferrer" class="nav-item">
-                <span class="nav-icon">&#128172;</span>
-                <span>Chat</span>
-            </a>
-        </div>
-    </nav>
 
     <!-- Feature 12: Wishlist Modal -->
     <div id="wishlist-modal" class="wishlist-modal">
