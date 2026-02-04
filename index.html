@@ -1127,63 +1127,6 @@
 
 
 
-        /* Feature 16: Social Proof Popup */
-        .social-proof {
-            position: fixed;
-            bottom: 2rem;
-            left: 2rem;
-            background: rgba(15, 41, 61, 0.85);
-            /* Darker glass for readability */
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-left: 3px solid #FFD700;
-            padding: 1rem 1.5rem;
-            border-radius: var(--radius-lg);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            z-index: 9996;
-            transform: translateX(-150%);
-            /* Start hidden off-screen */
-            transition: transform 0.6s var(--ease-elastic);
-            max-width: 320px;
-        }
-
-        .social-proof.visible {
-            transform: translateX(0);
-        }
-
-        .social-proof-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFD700;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .social-proof-content {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .social-proof-title {
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #fff;
-        }
-
-        .social-proof-meta {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.6);
-        }
-
         /* Feature 14: Cookie Consent Banner */
         .cookie-banner {
             position: fixed;
@@ -1234,11 +1177,6 @@
         }
 
         @media (max-width: 768px) {
-            .social-proof {
-                display: none;
-                /* Hide on mobile to respect screen real estate */
-            }
-
             .cookie-banner {
                 flex-direction: column;
                 gap: 1rem;
@@ -1250,20 +1188,6 @@
             .cookie-content {
                 margin-right: 0;
             }
-        }
-
-        /* LEGACY HIDING */
-        .magical-bg,
-        .orb,
-        .orb-1,
-        .orb-2,
-        .orb-3,
-        .preloader,
-        .cursor,
-        .cursor-dot,
-        .cursor-light,
-        .particles-container {
-            display: none !important;
         }
 
         /* MOBILE OPTIMIZATION */
@@ -1422,12 +1346,6 @@
         </svg>
     </a>
 
-    <!-- MAGICAL BACKGROUND - Ethereal Animated Layer -->
-    <div class="magical-bg"></div>
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
-
     <!-- Feature 13: Back-to-Top Button -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
         <svg viewBox="0 0 48 48">
@@ -1435,29 +1353,6 @@
         </svg>
         <span class="arrow">&#8593;</span>
     </button>
-
-    <!-- Feature 16: Social Proof Popup -->
-    <div class="social-proof" id="socialProof">
-        <div class="social-proof-icon">&#128276;</div>
-        <div class="social-proof-content">
-            <div class="social-proof-title" id="sp-title">New Request</div>
-            <div class="social-proof-meta" id="sp-meta">Someone in Bandar just requested a quote</div>
-        </div>
-    </div>
-
-    <!-- Preloader -->
-    <div class="preloader" id="preloader">
-        <div class="preloader-logo">Caramella</div>
-        <div class="preloader-bar"></div>
-    </div>
-
-    <!-- Particle Background (Merged from Award) -->
-    <div class="particles-container" id="particles"></div>
-
-    <!-- Custom Cursor (Merged from Award) -->
-    <div class="cursor"></div>
-    <div class="cursor-dot"></div>
-    <div class="cursor-light"></div>
 
     <nav class="navbar" aria-label="Primary">
         <a href="index.html" class="logo">Caramella</a>
@@ -2300,8 +2195,6 @@
             }
 
             .hero,
-            .particles-container,
-            .cursor,
             .whatsapp-float,
             .scroll-progress,
             .lightbox,
