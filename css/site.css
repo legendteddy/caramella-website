@@ -239,11 +239,15 @@ img {
         background: #081621 !important;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
+        overflow: visible;
     }
 
     .navbar .nav-links {
-        position: fixed;
-        inset: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        height: calc(100svh - 70px);
         z-index: 10000;
         display: flex;
         flex-direction: column;
@@ -256,7 +260,7 @@ img {
         pointer-events: none;
         transition: transform 0.28s ease, opacity 0.28s ease;
         margin-left: 0;
-        padding: 80px 1.5rem 1.5rem;
+        padding: 1.5rem;
     }
 
     .navbar .nav-links.active,
