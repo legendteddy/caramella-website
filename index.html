@@ -1269,9 +1269,24 @@
         /* MOBILE OPTIMIZATION */
         @media (max-width: 968px) {
             .hero {
-                padding-top: 70px;
-                /* Minimal padding for mobile navbar */
-                min-height: 100vh;
+                min-height: 100svh;
+                justify-content: flex-start;
+                padding-top: clamp(84px, 14vh, 120px);
+            }
+
+            .hero-content {
+                margin: 0 auto;
+                padding: 1.25rem;
+                transform: translateY(-8vh);
+            }
+
+            .hero h1 {
+                margin-bottom: 1.4rem;
+            }
+
+            .hero-badge,
+            .hero-subtitle {
+                margin-bottom: 1rem;
             }
 
             .trust-grid {
