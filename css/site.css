@@ -1,4 +1,14 @@
 /* Shared site polish: consistent, restrained navigation across pages */
+* {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    color: #f3f5f7;
+    line-height: 1.7;
+}
+
 .navbar {
     background: rgba(8, 22, 33, 0.94) !important;
     border-bottom: 1px solid rgba(212, 175, 55, 0.28) !important;
@@ -22,6 +32,30 @@
 
 body.menu-open {
     overflow: hidden;
+}
+
+/* Tone down auto-generated visual noise and keep UX focused */
+.preloader,
+.cursor,
+.cursor-dot,
+.cursor-light {
+    display: none !important;
+}
+
+.section,
+section {
+    scroll-margin-top: 88px;
+}
+
+.btn-primary,
+button.btn-primary {
+    border-radius: 999px !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+img {
+    image-rendering: auto;
 }
 
 @media (max-width: 968px) {
@@ -70,5 +104,13 @@ body.menu-open {
     .menu-toggle {
         display: block;
         z-index: 10001;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
     }
 }
