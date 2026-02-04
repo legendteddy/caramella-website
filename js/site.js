@@ -1,8 +1,11 @@
 (function () {
     function initSharedNav() {
         var nav = document.querySelector('.navbar');
-        var menuToggle = document.querySelector('.menu-toggle');
-        var navLinks = document.querySelector('.nav-links');
+        if (!nav) return;
+
+        var menuToggle = nav.querySelector('.menu-toggle');
+        var navLinks = nav.querySelector('.nav-links');
+        var mobileMedia = window.matchMedia('(max-width: 968px)');
 
         if (nav) {
             window.addEventListener('scroll', function () {
@@ -22,28 +25,25 @@
             menuToggle.appendChild(icon);
         }
 
+        function isMobile() {
+            return mobileMedia.matches;
+        }
+
         function closeMenu() {
             navLinks.classList.remove('active');
             navLinks.classList.remove('nav-active');
             menuToggle.classList.remove('is-open');
             menuToggle.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('menu-open');
-            navLinks.style.transform = '';
-            navLinks.style.opacity = '';
-            navLinks.style.visibility = '';
-            navLinks.style.pointerEvents = '';
         }
 
         function openMenu() {
+            if (!isMobile()) return;
             navLinks.classList.add('active');
             navLinks.classList.add('nav-active');
             menuToggle.classList.add('is-open');
             menuToggle.setAttribute('aria-expanded', 'true');
             document.body.classList.add('menu-open');
-            navLinks.style.transform = 'translateY(0)';
-            navLinks.style.opacity = '1';
-            navLinks.style.visibility = 'visible';
-            navLinks.style.pointerEvents = 'auto';
         }
 
         menuToggle.dataset.navBound = '1';
@@ -72,8 +72,14 @@
         });
 
         window.addEventListener('resize', function () {
-            if (window.innerWidth > 968) closeMenu();
+            if (!isMobile()) closeMenu();
         });
+
+        if (mobileMedia.addEventListener) {
+            mobileMedia.addEventListener('change', function (event) {
+                if (!event.matches) closeMenu();
+            });
+        }
     }
 
     if (document.readyState === 'loading') {
