@@ -28,6 +28,10 @@
             menuToggle.classList.remove('is-open');
             menuToggle.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('menu-open');
+            navLinks.style.transform = '';
+            navLinks.style.opacity = '';
+            navLinks.style.visibility = '';
+            navLinks.style.pointerEvents = '';
         }
 
         function openMenu() {
@@ -36,6 +40,10 @@
             menuToggle.classList.add('is-open');
             menuToggle.setAttribute('aria-expanded', 'true');
             document.body.classList.add('menu-open');
+            navLinks.style.transform = 'translateY(0)';
+            navLinks.style.opacity = '1';
+            navLinks.style.visibility = 'visible';
+            navLinks.style.pointerEvents = 'auto';
         }
 
         menuToggle.dataset.navBound = '1';
