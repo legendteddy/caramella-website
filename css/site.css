@@ -260,7 +260,8 @@ img {
     }
 
     .navbar .nav-links.active,
-    .navbar .nav-links.nav-active {
+    .navbar .nav-links.nav-active,
+    .navbar .menu-toggle[aria-expanded="true"] + .nav-links {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
