@@ -621,6 +621,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
@@ -960,7 +961,6 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             initPreloader();
-            initMobileMenu();
             initReadingProgress();
         });
 
@@ -971,56 +971,6 @@
                 setTimeout(() => preloader.classList.add('hidden'), 600);
             });
         }
-
-        // Mobile Menu Toggle
-        function initMobileMenu() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (!menuToggle || !navLinks) return;
-
-            const closeMenu = () => {
-                navLinks.classList.remove('active');
-                menuToggle.textContent = '\u2630';
-                menuToggle.setAttribute('aria-expanded', 'false');
-                document.body.classList.remove('menu-open');
-            };
-
-            const openMenu = () => {
-                navLinks.classList.add('active');
-                menuToggle.textContent = '\u2715';
-                menuToggle.setAttribute('aria-expanded', 'true');
-                document.body.classList.add('menu-open');
-            };
-
-            menuToggle.setAttribute('aria-expanded', 'false');
-
-            menuToggle.addEventListener('click', (event) => {
-                event.stopPropagation();
-                if (navLinks.classList.contains('active')) closeMenu();
-                else openMenu();
-            });
-
-            navLinks.addEventListener('click', (event) => {
-                event.stopPropagation();
-            });
-
-            navLinks.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', closeMenu);
-            });
-
-            document.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) closeMenu();
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 968) closeMenu();
-            });
-        }
-
         // Reading Progress Bar
         function initReadingProgress() {
             const progressBar = document.getElementById('readingProgress');
@@ -1034,6 +984,7 @@
             });
         }
     </script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>

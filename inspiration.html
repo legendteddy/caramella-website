@@ -823,6 +823,7 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
@@ -925,7 +926,6 @@
             initParticles();
             initGallery();
             initCursor();
-            initMobileMenu();
             initLightbox();
             initHeroForce(); // Renamed from initTiltEffect (Hero)
             initMagneticButtons();
@@ -1177,54 +1177,6 @@
             });
         }
 
-        function initMobileMenu() {
-            const toggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (!toggle || !navLinks) return;
-
-            const closeMenu = () => {
-                navLinks.classList.remove('active');
-                toggle.textContent = '\u2630';
-                toggle.setAttribute('aria-expanded', 'false');
-                document.body.classList.remove('menu-open');
-            };
-
-            const openMenu = () => {
-                navLinks.classList.add('active');
-                toggle.textContent = '\u2715';
-                toggle.setAttribute('aria-expanded', 'true');
-                document.body.classList.add('menu-open');
-            };
-
-            toggle.setAttribute('aria-expanded', 'false');
-
-            toggle.addEventListener('click', (event) => {
-                event.stopPropagation();
-                if (navLinks.classList.contains('active')) closeMenu();
-                else openMenu();
-            });
-
-            navLinks.addEventListener('click', (event) => {
-                event.stopPropagation();
-            });
-
-            navLinks.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', closeMenu);
-            });
-
-            document.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) closeMenu();
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 968) closeMenu();
-            });
-        }
-
         // 3D Tilt Effect
         function initTiltEffect() {
             if (window.innerWidth < 968) return; // Skip on mobile
@@ -1322,6 +1274,7 @@
             }
         }
     </script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>

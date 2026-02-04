@@ -1576,6 +1576,7 @@
             transition: width 0.1s linear;
         }
     </style>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 
@@ -2010,8 +2011,6 @@
             initHero();
             initAnimations();
             initAwardCursor();
-            initNavbar();
-            initMobileMenu();
             initCounterAnimation();
             initMagneticButtons();
             initScrollProgress(); // Feature 2: Scroll Progress
@@ -2405,62 +2404,6 @@
             hoverElements.forEach(el => {
                 el.addEventListener('mouseenter', () => cursor.classList.add('hovering'));
                 el.addEventListener('mouseleave', () => cursor.classList.remove('hovering'));
-            });
-        }
-
-        function initNavbar() {
-            window.addEventListener('scroll', () => {
-                const nav = document.querySelector('.navbar');
-                if (window.scrollY > 50) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
-            });
-        }
-
-        function initMobileMenu() {
-            const toggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-            if (!toggle || !navLinks) return;
-
-            const closeMenu = () => {
-                navLinks.classList.remove('active');
-                toggle.textContent = '\u2630';
-                toggle.setAttribute('aria-expanded', 'false');
-                document.body.classList.remove('menu-open');
-            };
-
-            const openMenu = () => {
-                navLinks.classList.add('active');
-                toggle.textContent = '\u2715';
-                toggle.setAttribute('aria-expanded', 'true');
-                document.body.classList.add('menu-open');
-            };
-
-            toggle.setAttribute('aria-expanded', 'false');
-
-            toggle.addEventListener('click', (event) => {
-                event.stopPropagation();
-                if (navLinks.classList.contains('active')) closeMenu();
-                else openMenu();
-            });
-
-            navLinks.addEventListener('click', (event) => {
-                event.stopPropagation();
-            });
-
-            navLinks.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', closeMenu);
-            });
-
-            document.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) closeMenu();
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 968) closeMenu();
             });
         }
 
@@ -2980,7 +2923,7 @@
                         .header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; }
                         .footer { margin-top: 4rem; font-size: 0.6rem; border-top: 1px solid #ccc; padding-top: 1rem; }
                     </style>
-                </head>
+</head>
                 <body>
                     <div class="header">
                         <div>
@@ -3000,7 +2943,7 @@
                     <div class="footer">
                         &copy; 2026 CARAMELLA TRADING COMPANY. CONFIDENTIAL ENGINEERING DATA. ALL JOINTS MEASURE ┬▒0.1mm.
                     </div>
-                </body>
+</body>
                 </html>
             `);
             printWin.document.close();
@@ -3055,6 +2998,7 @@
             }
         });
     </script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>

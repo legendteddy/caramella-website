@@ -524,6 +524,7 @@
             color: #FFFFFF;
         }
     </style>
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
@@ -774,53 +775,6 @@
         // Auto-update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Mobile Menu Toggle
-        const toggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        if (toggle && navLinks) {
-            const closeMenu = () => {
-                navLinks.classList.remove('active');
-                toggle.textContent = '\u2630';
-                toggle.setAttribute('aria-expanded', 'false');
-                document.body.classList.remove('menu-open');
-            };
-
-            const openMenu = () => {
-                navLinks.classList.add('active');
-                toggle.textContent = '\u2715';
-                toggle.setAttribute('aria-expanded', 'true');
-                document.body.classList.add('menu-open');
-            };
-
-            toggle.setAttribute('aria-expanded', 'false');
-
-            toggle.addEventListener('click', (event) => {
-                event.stopPropagation();
-                if (navLinks.classList.contains('active')) closeMenu();
-                else openMenu();
-            });
-
-            navLinks.addEventListener('click', (event) => {
-                event.stopPropagation();
-            });
-
-            navLinks.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', closeMenu);
-            });
-
-            document.addEventListener('click', () => {
-                if (navLinks.classList.contains('active')) closeMenu();
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
-            });
-
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 968) closeMenu();
-            });
-        }
-
         // Form Submission - mailto:
         document.getElementById('inquiryForm').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -876,6 +830,7 @@
             window.location.href = mailtoUrl;
         });
     </script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>
