@@ -14,16 +14,24 @@
         if (!menuToggle || !navLinks) return;
         if (menuToggle.dataset.navBound === '1') return;
 
+        if (!menuToggle.querySelector('.menu-icon')) {
+            menuToggle.textContent = '';
+            var icon = document.createElement('span');
+            icon.className = 'menu-icon';
+            icon.setAttribute('aria-hidden', 'true');
+            menuToggle.appendChild(icon);
+        }
+
         function closeMenu() {
             navLinks.classList.remove('active');
-            menuToggle.textContent = '\u2261';
+            menuToggle.classList.remove('is-open');
             menuToggle.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('menu-open');
         }
 
         function openMenu() {
             navLinks.classList.add('active');
-            menuToggle.textContent = '\u00D7';
+            menuToggle.classList.add('is-open');
             menuToggle.setAttribute('aria-expanded', 'true');
             document.body.classList.add('menu-open');
         }

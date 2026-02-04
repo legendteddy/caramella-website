@@ -65,8 +65,7 @@ h3 {
     /* Force non-white icon color over page-level inline CSS. */
     color: #5f6872 !important;
     -webkit-text-fill-color: #5f6872 !important;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 600;
+    font-size: 0;
     line-height: 1;
 }
 
@@ -80,6 +79,49 @@ h3 {
     background: rgba(255, 255, 255, 0.08);
     border-color: rgba(212, 175, 55, 0.5);
     color: rgba(255, 215, 0, 0.95);
+}
+
+.navbar .menu-toggle .menu-icon {
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    position: relative;
+    transition: background-color 0.2s ease;
+}
+
+.navbar .menu-toggle .menu-icon::before,
+.navbar .menu-toggle .menu-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    transition: transform 0.22s ease, top 0.22s ease;
+}
+
+.navbar .menu-toggle .menu-icon::before {
+    top: -6px;
+}
+
+.navbar .menu-toggle .menu-icon::after {
+    top: 6px;
+}
+
+.navbar .menu-toggle.is-open .menu-icon {
+    background: transparent;
+}
+
+.navbar .menu-toggle.is-open .menu-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.navbar .menu-toggle.is-open .menu-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
 }
 
 body.menu-open {
