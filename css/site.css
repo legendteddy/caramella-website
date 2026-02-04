@@ -62,8 +62,8 @@ h3 {
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.14);
     background: rgba(255, 255, 255, 0.02);
-    /* Not pure white: reads more premium and avoids "default hamburger" look */
-    color: rgba(155, 161, 166, 0.95);
+    /* Darker icon so it doesn't read as white on OLED screens */
+    color: rgba(115, 122, 130, 0.98);
     line-height: 1;
 }
 
