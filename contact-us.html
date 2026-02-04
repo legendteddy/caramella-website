@@ -727,7 +727,18 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-primary">Send Inquiry via Email</button>
+                    <button type="submit" class="btn-primary">Prepare Inquiry Message</button>
+                    <div id="formStatus"
+                        style="display:none; margin-top: 1rem; padding: 1rem; border: 1px solid rgba(212,175,55,0.35); border-radius: 12px; background: rgba(255,215,0,0.04);">
+                        <p id="formStatusText" style="margin: 0 0 0.75rem 0; font-size: 0.9rem;"></p>
+                        <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
+                            <button type="button" id="copyInquiryBtn" class="btn-primary"
+                                style="padding: 0.65rem 1.2rem; font-size: 0.78rem;">Copy Message</button>
+                            <a id="whatsappInquiryLink" class="btn-primary" target="_blank" rel="noopener noreferrer"
+                                style="padding: 0.65rem 1.2rem; font-size: 0.78rem; text-decoration:none;">Send via
+                                WhatsApp</a>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -775,8 +786,8 @@
         // Auto-update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Form Submission - mailto:
-        document.getElementById('inquiryForm').addEventListener('submit', (e) => {
+        // Form Submission
+        document.getElementById('inquiryForm').addEventListener('submit', async (e) => {
             e.preventDefault();
 
             // Gather Data
@@ -799,6 +810,8 @@
             const hob = document.getElementById('appHob').value;
             const hood = document.getElementById('appHood').value;
             const oven = document.getElementById('appOven').value;
+
+            if (!name || !phone) return;
 
             // Build Email Subject
             const subject = `New Project Inquiry - ${name}`;
@@ -825,7 +838,27 @@
             body += `========================\n`;
             body += `Sent from caramellabrunei.com Contact Form`;
 
-            // Open mailto
+            // Fallback Actions
+            const statusWrap = document.getElementById('formStatus');
+            const statusText = document.getElementById('formStatusText');
+            const copyBtn = document.getElementById('copyInquiryBtn');
+            const whatsappLink = document.getElementById('whatsappInquiryLink');
+
+            statusWrap.style.display = 'block';
+            statusText.textContent = 'Your inquiry message is ready. We opened your email app; if needed, use the fallback actions below.';
+            whatsappLink.href = `https://wa.me/6737187185?text=${encodeURIComponent(body)}`;
+            copyBtn.onclick = async () => {
+                try {
+                    await navigator.clipboard.writeText(body);
+                    copyBtn.textContent = 'Copied';
+                    setTimeout(() => copyBtn.textContent = 'Copy Message', 1500);
+                } catch (_) {
+                    copyBtn.textContent = 'Copy Failed';
+                    setTimeout(() => copyBtn.textContent = 'Copy Message', 1500);
+                }
+            };
+
+            // Open email app
             const mailtoUrl = `mailto:caramellabrunei@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             window.location.href = mailtoUrl;
         });
