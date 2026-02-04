@@ -54,10 +54,10 @@ h3 {
 }
 
 .navbar .menu-toggle {
+    display: none;
     width: 44px;
     height: 44px;
     padding: 0;
-    display: inline-flex;
     align-items: center;
     justify-content: center;
     border-radius: 12px;
@@ -237,8 +237,8 @@ img {
         margin: 0.4rem 0 0;
     }
 
-    .menu-toggle {
-        display: block;
+    .navbar .menu-toggle {
+        display: inline-flex;
         z-index: 10001;
     }
 
