@@ -207,6 +207,20 @@
             cursor: pointer;
         }
 
+        .nav-est {
+            font-size: 0.6rem;
+            border: 1px solid #FFD700;
+            padding: 0.3rem 0.8rem;
+            color: #FFD700;
+            margin-left: 2rem;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
         /* Language Switcher */
         .lang-switch {
             font-size: 0.75rem;
@@ -553,6 +567,11 @@
                 transform: translateY(0);
             }
 
+            .nav-est {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+
             article {
                 padding: 2rem 1.5rem;
             }
@@ -616,7 +635,7 @@
     <!-- Unified Navbar -->
     <nav class="navbar">
         <a href="https://www.caramellabrunei.com/" target="_top" class="logo">Caramella</a>
-        <button class="menu-toggle" aria-label="Toggle Navigation"
+        <button class="menu-toggle" aria-label="Toggle Navigation" aria-expanded="false"
             style="background: none; border: none;">&#9776;</button>
         <div class="nav-links" style="justify-content: space-evenly;">
             <a href="index.html">Home</a>
@@ -624,8 +643,7 @@
             <a href="inspiration.html">Concepts</a>
             <a href="faq.html" class="nav-active">Knowledge</a>
             <a href="contact-us.html">Inquire</a>
-            <span
-                style="font-size: 0.6rem; border: 1px solid #FFD700; padding: 0.3rem 0.8rem; color: #FFD700; margin-left: 2rem; border-radius: 50px;">&#127463;&#127475;
+            <span class="nav-est">&#127463;&#127475;
                 EST. 2015</span>
         </div>
     </nav>
@@ -928,16 +946,46 @@
             const navLinks = document.querySelector('.nav-links');
             if (!menuToggle || !navLinks) return;
 
-            menuToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                menuToggle.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            const closeMenu = () => {
+                navLinks.classList.remove('active');
+                menuToggle.textContent = '\u2630';
+                menuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+            };
+
+            const openMenu = () => {
+                navLinks.classList.add('active');
+                menuToggle.textContent = '\u2715';
+                menuToggle.setAttribute('aria-expanded', 'true');
+                document.body.classList.add('menu-open');
+            };
+
+            menuToggle.setAttribute('aria-expanded', 'false');
+
+            menuToggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                if (navLinks.classList.contains('active')) closeMenu();
+                else openMenu();
             });
 
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    menuToggle.textContent = '☰';
-                });
+            navLinks.addEventListener('click', (event) => {
+                event.stopPropagation();
+            });
+
+            navLinks.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', closeMenu);
+            });
+
+            document.addEventListener('click', () => {
+                if (navLinks.classList.contains('active')) closeMenu();
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && navLinks.classList.contains('active')) closeMenu();
+            });
+
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 968) closeMenu();
             });
         }
 
