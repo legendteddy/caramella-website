@@ -53,6 +53,10 @@ h3 {
     margin-left: 1rem;
 }
 
+.menu-toggle {
+    color: rgba(212, 175, 55, 0.95);
+}
+
 body.menu-open {
     overflow: hidden;
 }
