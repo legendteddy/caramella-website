@@ -11,6 +11,7 @@ from __future__ import annotations
 import os
 import re
 import sys
+import json
 from dataclasses import dataclass
 from html.parser import HTMLParser
 from typing import Dict, List, Optional, Tuple
@@ -114,6 +115,7 @@ def main() -> int:
         "missing_description": [],
         "missing_canonical": [],
         "missing_og_title": [],
+        "jsonld_parse_errors": [],
     }
 
     for path in html_files:
@@ -185,10 +187,22 @@ def main() -> int:
                 if "noopener" not in rel and "noreferrer" not in rel:
                     issues["blank_target_no_rel"].append(f"{relpath}: {a.get('href', '')}")
 
+        # Validate JSON-LD blocks are parseable JSON.
+        for block in re.findall(
+            r"<script[^>]*type=[\"']application/ld\+json[\"'][^>]*>(.*?)</script>",
+            raw,
+            flags=re.I | re.S,
+        ):
+            text = block.strip()
+            if not text:
+                continue
+            try:
+                json.loads(text)
+            except Exception as e:
+                issues["jsonld_parse_errors"].append(f"{relpath}: {e}")
+
     # PWA manifest icon presence
     if os.path.exists(os.path.join(ROOT, "manifest.json")):
-        import json
-
         try:
             man = json.load(open("manifest.json", "r", encoding="utf-8"))
             for icon in man.get("icons", []):

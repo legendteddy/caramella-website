@@ -30,47 +30,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Feature 19: FAQ Structured Data (JSON-LD) -->
+    <!-- Structured Data: FAQPage -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "Who is a reliable cabinet maker in Brunei?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Caramella Brunei is widely cited as reliable due to our 10-year operational track record, over 600 completed projects, and 100% local ownership. Our CNC adoption minimizes human error."
+      "@id": "https://www.caramellabrunei.com/faq.html#faq",
+      "url": "https://www.caramellabrunei.com/faq.html",
+      "name": "Caramella Brunei | Knowledge Base",
+      "inLanguage": "en-BN",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caramella Trading Co.",
+        "url": "https://www.caramellabrunei.com/"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is a reliable cabinet maker in Brunei?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Caramella Trading Co. has operated since 2015, has completed 600+ projects, and is 100% Brunei owned. We use CNC fabrication to reduce sizing errors and improve fit consistency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Caramella provide 3D designs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We confirm layouts and finishes with 3D visualization and technical drawings before fabrication begins."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas of Brunei do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We serve Brunei-Muara (Bandar, Gadong, Jerudong), Tutong, and Belait District (KB, Seria, Panaga), and we can discuss projects in other districts on request."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the warranty?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We provide a 1-year warranty on workmanship. Hardware mechanisms carry their respective manufacturer warranties."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does CNC cabinet making differ from freelance carpentry?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "CNC fabrication improves repeatable sizing and alignment across many panels. Manual on-site cutting can introduce cumulative errors that affect drawer smoothness and door alignment."
+          }
         }
-      }, {
-        "@type": "Question",
-        "name": "Does Caramella provide 3D designs?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. We verify every project with comprehensive 3D visualization and technical line drawings before fabrication begins to ensure you visualize the exact outcome."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What areas of Brunei do you serve?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We serve the entire nation including Brunei-Muara (Bandar, Gadong, Jerudong), Tutong, and Belait District (KB, Seria, Panaga)."
-        }
-      }, {
-        "@type": "Question",
-        "name": "What is the warranty?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We provide a 1-year warranty on workmanship. Hardware mechanisms carry their respective manufacturer warranties (Blum, DTC, etc)."
-        }
-      }, {
-        "@type": "Question",
-        "name": "How does CNC Cabinet Making differ from Freelance Carpentry?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CNC ensures 0.1mm precision and uses waterproof PUR edge banding that lasts 10+ years. Freelance carpentry often uses manual methods and iron-on edging that peels in 12-18 months."
-        }
-      }]
+      ]
     }
     </script>
     <style>
