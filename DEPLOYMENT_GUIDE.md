@@ -57,7 +57,7 @@ Since you have the domain (**caramellabrunei.com**) on **Namecheap**, you have 3
 
 ---
 
-## 🏆 Recommendation
+## Recommendation
 **Use Option 1 (Netlify)** or **Option 2 (GitHub Pages)**.
 They are **free**, **faster** (CDN), and handle HTTPS (SSL) automatically. Namecheap's default shared hosting is often slower for static sites and costs money.
 
