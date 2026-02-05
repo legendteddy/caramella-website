@@ -608,6 +608,8 @@ details.spec-toggle summary {
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
+    position: relative;
+    padding-right: 3rem;
 }
 
 details.kb-toggle summary::-webkit-details-marker,
@@ -621,11 +623,15 @@ details.spec-toggle summary::after {
     font-size: 1.2rem;
     color: #f4d77a;
     transition: transform 0.2s ease;
+    position: absolute;
+    right: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 details.kb-toggle[open] summary::after,
 details.spec-toggle[open] summary::after {
-    content: "–";
+    content: "-";
 }
 
 .kb-summary,
@@ -687,6 +693,11 @@ a:hover {
         gap: 0.75rem;
     }
 
+    .kb-page .kb-toggle summary::after {
+        top: 1.2rem;
+        transform: none;
+    }
+
     .kb-page .kb-toggle summary h2 {
         font-size: 1.6rem;
         line-height: 1.25;
@@ -727,6 +738,12 @@ a:hover {
 
     .kb-page .kb-toggle summary {
         padding: 1.1rem 1rem;
+    }
+
+    .kb-page .kb-toggle summary::after {
+        top: 0.95rem;
+        right: 0.9rem;
+        transform: none;
     }
 
     .kb-page .kb-toggle summary h2 {
