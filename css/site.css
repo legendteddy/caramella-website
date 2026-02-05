@@ -448,9 +448,13 @@ header h1 {
 .hero h1 .italic-accent,
 .hero-title .italic-accent,
 header h1 .italic-accent {
-    display: inline-block;
-    padding-bottom: 0.16em;
+    display: inline-block !important;
+    padding-bottom: 0.28em;
+    line-height: 1.25;
     overflow: visible;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    transform: translateZ(0);
 }
 
 .hero p {
