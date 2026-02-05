@@ -605,6 +605,80 @@ section {
     padding: clamp(3.75rem, 7.5vw, 6.5rem) 0;
 }
 
+/* Footer: consistent, finished look across pages. */
+.site-footer {
+    background: rgba(5, 14, 21, 0.88) !important;
+    padding: 4rem 2rem;
+    border-top: var(--border-gold);
+    margin-top: 4rem;
+}
+
+.site-footer a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: #FFD700;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    max-width: 1100px;
+    margin: 0 auto 3rem;
+    width: 100%;
+}
+
+.footer-brand {
+    font-size: 1.4rem;
+    color: #FFF;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 600;
+}
+
+.footer-brand span {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: normal;
+    margin-top: 0.25rem;
+}
+
+.footer-section h5 {
+    color: #FFD700;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.footer-section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 2;
+}
+
+.footer-copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 968px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+}
+
 /* Layout rhythm */
 .section .container > * + * {
     margin-top: 1.75rem;
