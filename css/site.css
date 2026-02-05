@@ -179,6 +179,17 @@ textarea {
 .navbar .nav-est {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     margin-left: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 215, 122, 0.35);
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(255, 255, 255, 0.8);
+    letter-spacing: 0.08em;
+    font-size: 0.68rem;
+    text-transform: uppercase;
 }
 
 .navbar .menu-toggle {
