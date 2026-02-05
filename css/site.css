@@ -379,13 +379,22 @@ body::before {
     position: fixed;
     inset: 0;
     background:
-        radial-gradient(1200px 700px at 15% -10%, rgba(255, 215, 0, 0.25), transparent 60%),
-        radial-gradient(1000px 700px at 85% 5%, rgba(0, 170, 255, 0.18), transparent 60%),
-        radial-gradient(900px 800px at 50% 100%, rgba(255, 105, 180, 0.08), transparent 60%),
-        linear-gradient(180deg, rgba(2, 4, 8, 0.65), rgba(2, 4, 8, 0.95));
+        radial-gradient(1400px 800px at 10% -10%, rgba(255, 215, 120, 0.32), transparent 62%),
+        radial-gradient(1200px 900px at 90% 8%, rgba(0, 175, 255, 0.22), transparent 62%),
+        radial-gradient(900px 900px at 50% 100%, rgba(255, 120, 180, 0.16), transparent 60%),
+        radial-gradient(800px 700px at 60% 40%, rgba(120, 255, 210, 0.12), transparent 58%),
+        linear-gradient(180deg, rgba(2, 4, 8, 0.72), rgba(2, 4, 8, 0.98));
     opacity: 1;
     pointer-events: none;
     z-index: 0;
+    background-size: 220% 220%;
+    background-position:
+        calc(20% + var(--scroll-x, 0px)) calc(0% + var(--scroll-y, 0px)),
+        calc(85% - var(--scroll-x, 0px)) calc(5% + var(--scroll-y, 0px)),
+        calc(50% + var(--scroll-x, 0px)) calc(100% - var(--scroll-y, 0px)),
+        calc(65% - var(--scroll-x, 0px)) calc(35% + var(--scroll-y, 0px)),
+        center;
+    animation: auroraDrift 18s ease-in-out infinite;
 }
 
 main,
@@ -644,5 +653,32 @@ a:hover {
     .form-container,
     .gallery-item {
         border-radius: 16px !important;
+    }
+}
+
+@keyframes auroraDrift {
+    0% {
+        background-position:
+            calc(20% + var(--scroll-x, 0px)) calc(0% + var(--scroll-y, 0px)),
+            calc(85% - var(--scroll-x, 0px)) calc(5% + var(--scroll-y, 0px)),
+            calc(50% + var(--scroll-x, 0px)) calc(100% - var(--scroll-y, 0px)),
+            calc(65% - var(--scroll-x, 0px)) calc(35% + var(--scroll-y, 0px)),
+            center;
+    }
+    50% {
+        background-position:
+            calc(35% + var(--scroll-x, 0px)) calc(10% + var(--scroll-y, 0px)),
+            calc(70% - var(--scroll-x, 0px)) calc(15% + var(--scroll-y, 0px)),
+            calc(55% + var(--scroll-x, 0px)) calc(90% - var(--scroll-y, 0px)),
+            calc(55% - var(--scroll-x, 0px)) calc(50% + var(--scroll-y, 0px)),
+            center;
+    }
+    100% {
+        background-position:
+            calc(20% + var(--scroll-x, 0px)) calc(0% + var(--scroll-y, 0px)),
+            calc(85% - var(--scroll-x, 0px)) calc(5% + var(--scroll-y, 0px)),
+            calc(50% + var(--scroll-x, 0px)) calc(100% - var(--scroll-y, 0px)),
+            calc(65% - var(--scroll-x, 0px)) calc(35% + var(--scroll-y, 0px)),
+            center;
     }
 }
