@@ -408,6 +408,16 @@ p {
     transition: transform 0.25s ease;
 }
 
+.service-card:hover,
+.faq-item:hover,
+.gallery-item:hover,
+.case-study:hover,
+.contact-info:hover,
+.form-container:hover {
+    border-color: rgba(244, 215, 122, 0.28) !important;
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.45) !important;
+}
+
 .gallery-item img {
     filter: saturate(1.05) contrast(1.02);
 }
@@ -432,6 +442,12 @@ button.btn-primary:hover {
     color: #f4d77a !important;
 }
 
+.navbar .nav-links .nav-active,
+.navbar .nav-links a[aria-current="page"] {
+    color: #f4d77a !important;
+    text-shadow: 0 0 12px rgba(244, 215, 122, 0.2);
+}
+
 .form-input,
 select.form-input,
 textarea.form-input {
@@ -443,6 +459,15 @@ textarea.form-input {
 .form-input:focus {
     border-color: rgba(244, 215, 122, 0.6) !important;
     box-shadow: 0 0 0 2px rgba(244, 215, 122, 0.15) !important;
+}
+
+a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.2em;
+}
+
+a:hover {
+    text-decoration-color: rgba(244, 215, 122, 0.7);
 }
 
 @media (max-width: 968px) {
