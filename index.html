@@ -113,84 +113,7 @@
     }
     </script>
     <style>
-        body {
-            overflow-x: hidden;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* === THEME: TRILLION DOLLAR MUSEUM (2025-2026 EDITION) === */
-        :root {
-            /* THE VOID (Museum Lighting) */
-            --bg-void: #000000;
-            --bg-spotlight: radial-gradient(circle at 50% 20%, #102030 0%, #000000 80%);
-            --bg-surface: rgba(10, 20, 30, 0.4);
-
-            /* 2025-2026 TREND TOKENS */
-            --radius-lg: 1.5rem;
-            --radius-xl: 2.5rem;
-            --warm-taupe: #2E2A25;
-            --warm-taupe-glass: rgba(46, 42, 37, 0.3);
-            --shadow-soft: 0 12px 32px rgba(0, 0, 0, 0.4);
-            --shadow-float: 0 24px 64px rgba(0, 0, 0, 0.5);
-            --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
-            --ease-smooth: cubic-bezier(0.22, 0.61, 0.36, 1);
-
-            /* TRILLION DOLLAR GLASS */
-            --glass-base: rgba(15, 25, 40, 0.6);
-            --sapphire-glass: var(--glass-base);
-            --glass-blur: blur(40px) saturate(200%);
-            --glass-border: 1px solid rgba(255, 255, 255, 0.15);
-            --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-
-            /* DIAMOND REFRACTION (Prismatic) */
-            --diamond-refraction: linear-gradient(115deg, transparent 40%, rgba(0, 255, 255, 0.4) 45%, rgba(255, 0, 255, 0.4) 50%, rgba(255, 255, 0, 0.4) 55%, transparent 60%);
-            --diamond-sparkle: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0) 60%);
-            --diamond-border: 1px solid rgba(255, 255, 255, 0.2);
-
-            /* MIRROR GOLD (18k Polish) + Warm Variant + Animated Shimmer */
-            --gold-grad: linear-gradient(90deg, #B8860B 0%, #FFD700 25%, #FFFFFF 50%, #FFD700 75%, #B8860B 100%);
-            --gold-metallic: var(--gold-grad);
-            --gold-warm: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
-
-            /* LIQUID RUBY */
-            --ruby-grad: radial-gradient(circle at 35% 35%, #FF3D60 0%, #A00020 60%, #200000 100%);
-            --ruby-glow: 0 0 30px rgba(255, 61, 96, 0.6);
-
-            /* TYPOGRAPHY */
-            --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-            --text-main: #FFFFFF;
-            --text-muted: #9ba1a6;
-
-            /* LEGACY */
-            --accent-amber: #FFD700;
-            --border-gold: 1px solid rgba(212, 175, 55, 0.4);
-        }
-
-        /* GLOBAL RESET */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* Feature 27: Keyboard Focus */
-        :focus-visible {
-            outline: 2px solid #FFD700;
-            outline-offset: 4px;
-            border-radius: 4px;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scrollbar-width: none;
-        }
-
-        /* Feature 32: Luxury Selection Color */
-        ::selection {
-            background: #FFD700;
-            color: #000000;
-        }
+        /* Homepage-specific styles only. Global theme/reset/live gradient in css/site.css */
 
         /* Feature 30: Nav Badge */
         .nav-badge {
@@ -235,57 +158,7 @@
             box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
         }
 
-        html::-webkit-scrollbar {
-            display: none;
-        }
-
-        body {
-            background-color: var(--bg-void) !important;
-            color: var(--text-main) !important;
-            font-family: var(--font-main);
-            overflow-x: hidden;
-            line-height: 1.8;
-            background-image: radial-gradient(circle at 50% 0%, #0F293D 0%, #020609 80%) !important;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            /* Feature 3: Page Transition */
-            opacity: 0;
-            animation: pageLoad 0.6s ease-out forwards;
-        }
-
-        @keyframes pageLoad {
-            0% {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Feature 24: Language Switcher */
-        .lang-switch {
-            font-size: 0.75rem;
-            margin-left: 1.5rem;
-            padding-left: 1.5rem;
-            border-left: 1px solid rgba(255, 255, 255, 0.2);
-            color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            display: inline-flex;
-            gap: 0.5rem;
-            align-items: center;
-        }
-
-        .lang-opt {
-            transition: 0.3s;
-        }
-
-        .lang-opt:hover,
-        .lang-opt.active {
-            color: #FFD700;
-        }
+        /* Feature 3: Page Transition handled in css/site.css (.home-page) */
 
         /* HERO SECTION (2025-2026 Immersive) */
         .hero {
@@ -1253,7 +1126,7 @@
             transition: width 0.1s linear;
         }
     </style>
-    <link rel="stylesheet" href="css/site.css?v=20260205a">
+    <link rel="stylesheet" href="css/site.css?v=20260205b">
 </head>
 
 
@@ -1991,8 +1864,9 @@
     </script>
 
 
-    <script src="js/site.js?v=20260205a"></script>
+    <script src="js/site.js?v=20260205b"></script>
 </body>
 
 </html>
+
 
