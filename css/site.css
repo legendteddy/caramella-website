@@ -374,6 +374,15 @@ body {
     background-color: #05070a !important;
 }
 
+/* Keep page backgrounds transparent so the global gradient reads through */
+main,
+header,
+section,
+footer,
+.section {
+    background: transparent !important;
+}
+
 body::before {
     content: "";
     position: fixed;
