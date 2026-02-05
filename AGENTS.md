@@ -9,7 +9,7 @@ This repository is a static website (no framework, no build step).
 - Shared scripts: `js/site.js` (progressive enhancement, global effects)
 - Assets: `images/`
 - Deployment/SEO: `CNAME`, `robots.txt`, `sitemap.xml`, `manifest.json`, `_redirects`
-- Supporting docs: `docs/`, `DEPLOYMENT_GUIDE.md`, `SEO_Audit_Report.md`
+- Supporting docs: `docs/guides/` and `docs/reports/`
 
 There are also section folders like `portfolio/`, `knowledge-base/`, and `technical-specs/` that contain small `index.html` entrypoints.
 
@@ -40,7 +40,7 @@ There are no unit tests in this repo. Validate changes with:
 
 ## Commit & Pull Request Guidelines
 
-Commit messages follow a short, imperative pattern: `Add …`, `Fix …`, `Unify …`, `Restore …`, `Refine …`.
+Commit messages follow a short, imperative pattern: `Add ...`, `Fix ...`, `Unify ...`, `Restore ...`, `Refine ...`.
 
 For PRs:
 
