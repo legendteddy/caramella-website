@@ -154,17 +154,16 @@
             color: #FFD700 !important;
             font-style: italic;
             display: inline-block;
-            padding-bottom: 0.55em;
+            padding-bottom: 0.6em;
             padding-right: 0.14em;
             line-height: 1.4;
             overflow: visible;
-            /* Replace gradient clip with text-shadow gradient effect to avoid clipping */
-            background: none;
-            -webkit-text-fill-color: currentColor;
-            text-shadow:
-                0 0 0 #FFD700,
-                0 0 12px rgba(255, 215, 0, 0.25),
-                0 0 28px rgba(184, 134, 11, 0.35);
+            background: var(--gold-grad);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: goldRain 6s linear infinite;
         }
 
         .hero p {
