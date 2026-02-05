@@ -304,19 +304,25 @@ section {
     margin-right: auto;
 }
 
+/* Unified button system */
 .btn-primary,
+.btn-luxury,
 button.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0.95rem 2.4rem;
     border-radius: 999px !important;
-    box-shadow: none !important;
-    transform: none !important;
-    text-transform: none !important;
-    letter-spacing: 0.02em !important;
+    text-decoration: none !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.12em !important;
     font-weight: 600 !important;
-}
-
-.btn-primary:hover,
-button.btn-primary:hover {
-    transform: translateY(-1px) !important;
+    font-family: var(--font-main);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
 a:focus-visible,
@@ -367,6 +373,63 @@ footer {
 
 img {
     image-rendering: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile stability */
+main,
+header,
+section,
+footer {
+    overflow-x: hidden;
+}
+
+.container,
+.section,
+.case-study,
+.case-content,
+.case-sidebar,
+.service-card,
+.gallery-item,
+.faq-item,
+.contact-info,
+.form-container {
+    min-width: 0;
+}
+
+.services-grid,
+.gallery-grid,
+.faq-grid,
+.contact-grid {
+    min-width: 0;
+}
+
+.services-grid > *,
+.gallery-grid > *,
+.faq-grid > *,
+.contact-grid > * {
+    min-width: 0;
+}
+
+table,
+.data-table {
+    width: 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    table,
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .data-table th,
+    .data-table td {
+        white-space: nowrap;
+    }
 }
 
 @media (max-width: 968px) {
@@ -640,25 +703,20 @@ header h1 .italic-accent {
 }
 
 .btn-primary,
-.btn-luxury,
 button.btn-primary {
-    background: var(--gold-sheen) !important;
-    border: 1px solid rgba(244, 215, 122, 0.7) !important;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.75), rgba(255, 215, 0, 0.25)) !important;
+    border: 1px solid rgba(255, 215, 0, 0.85) !important;
     color: #fff !important;
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45) !important;
-}
-
-/* CTA hierarchy */
-.btn-primary,
-button.btn-primary {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.7), rgba(255, 215, 0, 0.22)) !important;
-    border-color: rgba(255, 215, 0, 0.85) !important;
-    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.55) !important;
+    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.55) !important;
 }
 
 .btn-luxury {
-    background: rgba(255, 255, 255, 0.06) !important;
-    border-color: rgba(244, 215, 122, 0.35) !important;
+    background: rgba(255, 255, 255, 0.07) !important;
+    border: 1px solid rgba(244, 215, 122, 0.45) !important;
+    color: #FFD700 !important;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .btn-primary:hover,
@@ -666,6 +724,12 @@ button.btn-primary {
 button.btn-primary:hover {
     transform: translateY(-2px) !important;
     box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6) !important;
+}
+
+.btn-primary:active,
+.btn-luxury:active,
+button.btn-primary:active {
+    transform: translateY(0) scale(0.98) !important;
 }
 
 .navbar .nav-links a:hover {
