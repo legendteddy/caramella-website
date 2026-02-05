@@ -25,8 +25,14 @@ Then open `http://localhost:5173/`.
 - Deployment options: `docs/guides/deployment.md`
 - Google Search Console steps: `docs/guides/google-search-console.md`
 - SEO snapshot report: `docs/reports/seo-audit.md`
+- Release checklist: `docs/guides/release-checklist.md`
 
 ## Contributing
 
 See `AGENTS.md` for repo conventions and review expectations.
 
+## Quick Audit
+
+```powershell
+python tools/audit_site.py
+```

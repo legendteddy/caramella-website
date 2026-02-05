@@ -77,6 +77,18 @@ body {
     padding-top: var(--nav-height);
 }
 
+/* Lightbox scroll locking (set/unset via js/site.js). */
+body.lb-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+picture,
+picture img {
+    display: block;
+}
+
 body.home-page,
 body.no-nav {
     padding-top: 0;

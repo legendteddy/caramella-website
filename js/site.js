@@ -106,13 +106,63 @@
         window.addEventListener('resize', updateScrollVars);
     }
 
+    function initLightboxScrollLock() {
+        var lightbox = document.getElementById('lightbox');
+        if (!lightbox) return;
+
+        var scrollY = 0;
+        var locked = false;
+
+        function lock() {
+            if (locked) return;
+            locked = true;
+            scrollY = window.scrollY || window.pageYOffset || 0;
+            document.body.classList.add('lb-open');
+            document.body.style.top = '-' + scrollY + 'px';
+        }
+
+        function unlock() {
+            if (!locked) return;
+            locked = false;
+            document.body.classList.remove('lb-open');
+            document.body.style.top = '';
+            window.scrollTo(0, scrollY);
+        }
+
+        function sync() {
+            var isOpen = lightbox.classList.contains('active');
+            if (isOpen) lock();
+            else unlock();
+        }
+
+        // Initial state
+        sync();
+
+        // Observe class changes (pages toggle lightbox via .active).
+        if (window.MutationObserver) {
+            var mo = new MutationObserver(sync);
+            mo.observe(lightbox, { attributes: true, attributeFilter: ['class'] });
+        }
+
+        // Fallback: close should always unlock.
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') sync();
+        });
+
+        // Safety: when navigating away/back, ensure we never stay locked.
+        window.addEventListener('pageshow', sync);
+        window.addEventListener('pagehide', unlock);
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             initSharedNav();
             initScrollGradient();
+            initLightboxScrollLock();
         });
     } else {
         initSharedNav();
         initScrollGradient();
+        initLightboxScrollLock();
     }
 })();
