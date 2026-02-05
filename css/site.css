@@ -706,6 +706,65 @@ a:hover {
     }
 }
 
+@media (max-width: 420px) {
+    .kb-page .container {
+        padding: 3rem 1rem;
+    }
+
+    .kb-page header {
+        padding: 3.25rem 1rem 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+    .kb-page h1 {
+        font-size: 2.2rem;
+        line-height: 1.15;
+    }
+
+    .kb-page article {
+        padding: 2rem 1.2rem;
+    }
+
+    .kb-page .kb-toggle summary {
+        padding: 1.1rem 1rem;
+    }
+
+    .kb-page .kb-toggle summary h2 {
+        font-size: 1.4rem;
+        line-height: 1.25;
+        width: 100%;
+    }
+
+    .kb-page .kb-summary {
+        font-size: 0.9rem;
+    }
+
+    .kb-page .kb-body {
+        padding: 0 1rem 1.25rem;
+    }
+
+    .kb-page .entity-pill {
+        font-size: 0.65rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    .kb-page .data-table th,
+    .kb-page .data-table td {
+        padding: 0.75rem 0.6rem;
+        font-size: 0.82rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .kb-page h1 {
+        font-size: 2rem;
+    }
+
+    .kb-page .kb-toggle summary h2 {
+        font-size: 1.25rem;
+    }
+}
+
 @keyframes auroraDrift {
     0% {
         background-position:
