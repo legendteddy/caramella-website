@@ -596,8 +596,9 @@ details.spec-toggle {
     border: 1px solid var(--panel-border) !important;
     border-radius: 16px !important;
     box-shadow: var(--panel-shadow) !important;
-    padding: 1.25rem 1.5rem;
+    padding: 0;
     margin: 1.25rem 0;
+    overflow: hidden;
 }
 
 details.kb-toggle summary,
@@ -609,6 +610,7 @@ details.spec-toggle summary {
     justify-content: space-between;
     gap: 1rem;
     position: relative;
+    padding: 1.25rem 1.5rem;
     padding-right: 3rem;
 }
 
@@ -643,7 +645,8 @@ details.spec-toggle[open] summary::after {
 
 .kb-body,
 .spec-body {
-    margin-top: 1rem;
+    margin-top: 0;
+    padding: 0 1.5rem 1.5rem;
 }
 
 a {
