@@ -458,6 +458,14 @@ header h1 .italic-accent {
     transform: translateZ(0);
 }
 
+/* Global italic-accent safety for descenders */
+.italic-accent {
+    display: inline-block;
+    padding-bottom: 0.3em;
+    line-height: 1.2;
+    overflow: visible;
+}
+
 .hero p {
     font-size: var(--type-body);
 }
