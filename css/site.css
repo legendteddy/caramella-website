@@ -567,6 +567,57 @@ textarea.form-input {
     box-shadow: 0 0 0 2px rgba(244, 215, 122, 0.15) !important;
 }
 
+/* Density control: collapsible knowledge + specs */
+details.kb-toggle,
+details.spec-toggle {
+    background: var(--panel) !important;
+    border: 1px solid var(--panel-border) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--panel-shadow) !important;
+    padding: 1.25rem 1.5rem;
+    margin: 1.25rem 0;
+}
+
+details.kb-toggle summary,
+details.spec-toggle summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+details.kb-toggle summary::-webkit-details-marker,
+details.spec-toggle summary::-webkit-details-marker {
+    display: none;
+}
+
+details.kb-toggle summary::after,
+details.spec-toggle summary::after {
+    content: "+";
+    font-size: 1.2rem;
+    color: #f4d77a;
+    transition: transform 0.2s ease;
+}
+
+details.kb-toggle[open] summary::after,
+details.spec-toggle[open] summary::after {
+    content: "–";
+}
+
+.kb-summary,
+.spec-summary {
+    color: var(--ink-muted);
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.kb-body,
+.spec-body {
+    margin-top: 1rem;
+}
+
 a {
     text-decoration-thickness: 1px;
     text-underline-offset: 0.2em;
