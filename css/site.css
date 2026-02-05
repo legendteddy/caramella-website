@@ -136,6 +136,8 @@ textarea {
     justify-content: space-between;
     align-items: center;
     z-index: 10000;
+    /* Force consistent nav typography across pages, regardless of page-level tokens. */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: rgba(8, 22, 33, 0.94) !important;
     border-bottom: 1px solid rgba(212, 175, 55, 0.28) !important;
     backdrop-filter: blur(10px);
@@ -143,6 +145,7 @@ textarea {
 }
 
 .navbar .logo {
+    font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: #fff !important;
     text-decoration: none;
     text-transform: uppercase;
