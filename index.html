@@ -36,7 +36,10 @@
 
     <!-- Feature 28: PWA Manifest & Icons -->
     <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="images/img_1.jpg" type="image/jpeg">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="theme-color" content="#000000">
 
     <!-- Feature 20: Open Graph Social Share Cards -->
@@ -179,7 +182,7 @@
             z-index: 0;
             background-size: cover;
             background-position: center;
-            background-image: url('images/img_4.jpg');
+            background-image: image-set(url('images/img_4.webp') type('image/webp'), url('images/img_4.jpg') type('image/jpeg'));
         }
 
         .hero-overlay {
@@ -1181,7 +1184,7 @@
 
     <!-- Engineering Truth Section -->
     <section class="section"
-        style="border-top: 1px solid var(--glass-border); background: linear-gradient(to bottom, rgba(15, 17, 21, 0.65), rgba(8, 9, 11, 0.65)), url('images/hero-bg.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+        style="border-top: 1px solid var(--glass-border); background-image: linear-gradient(to bottom, rgba(15, 17, 21, 0.65), rgba(8, 9, 11, 0.65)), image-set(url('images/hero-bg.webp') type('image/webp'), url('images/hero-bg.jpg') type('image/jpeg')); background-size: cover; background-position: center; background-attachment: fixed;">
         <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4rem;">
             <div style="flex: 1; min-width: 300px;">
                 <h3 style="color: var(--accent-amber); margin-bottom: 1rem;">Designed for Real Homes. <br><em
@@ -1468,6 +1471,7 @@
 
                 for (let i = currentIndex; i < endIndex; i++) {
                     const url = shuffled[i];
+                    const webpUrl = url.replace(/\.jpg$/i, '.webp');
                     const altText = seoAltTags[i % seoAltTags.length];
                     const el = document.createElement('div');
                     el.className = 'gallery-item reveal-stone';
@@ -1478,7 +1482,10 @@
 
                     // Feature 15: Lazy Loading Blur-up (Wishlist removed per user request)
                     el.innerHTML = `
-                        <img src="${url}" loading="lazy" alt="${altText}" class="blur-load" onload="this.classList.add('loaded')" width="400" height="400" style="aspect-ratio: 1 / 1;">
+                        <picture>
+                            <source type="image/webp" srcset="${webpUrl}">
+                            <img src="${url}" loading="lazy" decoding="async" alt="${altText}" class="blur-load" onload="this.classList.add('loaded')" width="400" height="400" style="aspect-ratio: 1 / 1;">
+                        </picture>
                     `;
                     el.onclick = () => {
                         const lb = document.getElementById('lightbox');

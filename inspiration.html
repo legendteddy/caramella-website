@@ -21,6 +21,15 @@
     <meta name="twitter:description"
         content="Explore modern concept directions for kitchens, wardrobes, and interiors by Caramella in Brunei.">
     <meta name="twitter:image" content="https://www.caramellabrunei.com/images/hero-bg.jpg">
+
+    <!-- PWA / Icons -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -811,8 +820,12 @@
             conceptImages.forEach((item, index) => {
                 const el = document.createElement('div');
                 el.className = `gallery-item${item.large ? ' large' : ''} tilt`;
+                const webpUrl = item.url.replace(/\.jpg$/i, '.webp');
                 el.innerHTML = `
-                <img src="${item.url}" loading="lazy" decoding="async" width="640" height="480" alt="${item.alt || item.title}">
+                <picture>
+                    <source type="image/webp" srcset="${webpUrl}">
+                    <img src="${item.url}" loading="lazy" decoding="async" width="640" height="480" alt="${item.alt || item.title}">
+                </picture>
             `;
                 el.dataset.src = item.url;
                 grid.appendChild(el);
