@@ -40,7 +40,7 @@ Once verified and inside the dashboard:
 2.  Wait for the data to load.
 3.  Click **Request Indexing**.
 
-## ⏳ How long does it take?
+## How Long Does It Take?
 *   **With Sitemap**: 24-48 hours usually.
 *   **Without**: Can take weeks.
 
