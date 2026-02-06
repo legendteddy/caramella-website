@@ -300,18 +300,7 @@
             max-width: 180px;
         }
 
-        /* FOOTER */
-        footer {
-            background: #050E15;
-            padding: 3rem 2rem;
-            border-top: var(--border-gold);
-            text-align: center;
-        }
-
-        .footer-copyright {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-        }
+        /* Footer is styled globally via css/site.css. Avoid page-level overrides. */
 
         /* Fix Select Option Contrast Globally */
         select option {
@@ -345,7 +334,7 @@
     </header>
 
     <!-- Main Content -->
-    <main class="container">
+    <main class="container" style="padding-bottom: 0;">
         <div class="contact-grid">
             <!-- Left Column: Contact Info -->
             <aside class="contact-info">
