@@ -1,4 +1,8 @@
 https://www.caramellabrunei.com/* https://caramellabrunei.com/:splat 301!
+/contact-us.html /contact-us 301!
+/contact-us /contact-us.html 200
+/get-a-quote /contact-us 301!
+/get-a-quote.html /contact-us 301!
 /portfolio /portfolio.html 301
 /knowledge-base /faq.html 301
 /technical-specs /tech-specs.html 301

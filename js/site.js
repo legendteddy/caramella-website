@@ -183,7 +183,7 @@
         dock.className = 'cta-dock';
         dock.innerHTML = '' +
             '<div class=\"cta-row\">' +
-            '<a class=\"btn-primary\" href=\"get-a-quote.html\" data-analytics=\"cta_quote\">Get a Quote</a>' +
+            '<a class=\"btn-primary\" href=\"contact-us.html\" data-analytics=\"cta_quote\">Get a Quote</a>' +
             '<a class=\"btn-secondary\" href=\"https://wa.me/6737187185\" target=\"_blank\" rel=\"noopener noreferrer\" data-analytics=\"cta_whatsapp\">WhatsApp</a>' +
             '</div>';
         document.body.appendChild(dock);
