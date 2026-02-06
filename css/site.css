@@ -901,6 +901,382 @@ details.spec-toggle summary::-webkit-details-marker {
     display: none;
 }
 
+/* ------------------------------------------------------------
+   Shared Page Components (Pricing/Quote/KB Articles)
+   ------------------------------------------------------------ */
+
+.section-pad {
+    padding: clamp(2.75rem, 5vw, 4.5rem) 0;
+}
+
+.page-hero {
+    position: relative;
+    padding: clamp(4.75rem, 8vw, 6.5rem) 0 clamp(2.5rem, 4vw, 3.25rem);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+    background:
+        radial-gradient(80% 120% at 50% 10%, rgba(16, 32, 48, 0.85) 0%, rgba(0, 0, 0, 0.92) 60%, rgba(0, 0, 0, 1) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
+}
+
+.page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.25;
+    background: var(--diamond-refraction);
+    background-size: 220% 220%;
+    transform: translateZ(0);
+    filter: blur(0.2px);
+}
+
+.eyebrow {
+    margin: 0 0 0.75rem 0;
+    font-family: var(--font-mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    color: rgba(255, 215, 0, 0.85);
+}
+
+.lead {
+    max-width: 64ch;
+    margin: 1rem auto 0;
+    color: rgba(243, 245, 247, 0.88);
+}
+
+.muted {
+    color: rgba(155, 161, 166, 0.92);
+}
+
+.mini-muted {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: rgba(155, 161, 166, 0.9);
+}
+
+.hero-actions {
+    margin-top: 1.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    justify-content: center;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.95rem 1.25rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: rgba(255, 215, 0, 0.95);
+    border: 1px solid rgba(244, 215, 122, 0.35);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+    font-weight: 600;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 26px 56px rgba(0, 0, 0, 0.5);
+    border-color: rgba(244, 215, 122, 0.55);
+}
+
+.text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: rgba(244, 215, 122, 0.92);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(244, 215, 122, 0.35);
+    padding-bottom: 0.15rem;
+}
+
+.text-link:hover {
+    border-bottom-color: rgba(244, 215, 122, 0.75);
+}
+
+.card-grid {
+    display: grid;
+    gap: clamp(1rem, 2.4vw, 1.5rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 968px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.feature-card {
+    background: var(--glass-base);
+    border: var(--glass-border);
+    border-radius: 18px;
+    padding: 1.4rem 1.4rem 1.25rem;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.feature-card h2,
+.feature-card h3 {
+    margin-top: 0;
+}
+
+.glass-panel {
+    background: var(--glass-base);
+    border: var(--glass-border);
+    border-radius: 22px;
+    padding: 1.6rem 1.6rem 1.4rem;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.glass-panel.center-panel {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.split {
+    display: grid;
+    grid-template-columns: 1.35fr 0.9fr;
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+    align-items: start;
+}
+
+@media (max-width: 968px) {
+    .split {
+        grid-template-columns: 1fr;
+    }
+}
+
+.stack {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.steps {
+    margin: 1.25rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.steps li + li {
+    margin-top: 0.6rem;
+}
+
+.trust-strip {
+    padding: clamp(2.75rem, 5vw, 4.25rem) 0;
+    border-top: 1px solid rgba(212, 175, 55, 0.18);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.trust-title {
+    margin-top: 0;
+    text-align: center;
+}
+
+.trust-grid {
+    display: grid;
+    margin-top: 1.75rem;
+    gap: clamp(0.9rem, 2.2vw, 1.25rem);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 968px) {
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.trust-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 1.25rem 1.25rem 1.1rem;
+}
+
+.trust-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: rgba(255, 215, 0, 0.92);
+}
+
+.trust-card p {
+    margin: 0;
+    color: rgba(243, 245, 247, 0.86);
+}
+
+.pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(244, 215, 122, 0.3);
+    background: rgba(255, 255, 255, 0.03);
+    color: rgba(243, 245, 247, 0.9);
+    font-size: 0.9rem;
+}
+
+.quote-layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.35fr;
+    gap: clamp(1.25rem, 3vw, 2.25rem);
+    align-items: start;
+}
+
+@media (max-width: 968px) {
+    .quote-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+.quote-card {
+    background: var(--glass-base);
+    border: var(--glass-border);
+    border-radius: 22px;
+    padding: 1.6rem;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+}
+
+.quote-form label {
+    display: grid;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.quote-form label > span {
+    color: rgba(155, 161, 166, 0.95);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(10, 14, 20, 0.65);
+    color: rgba(243, 245, 247, 0.95);
+}
+
+.quote-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+    outline: none;
+    border-color: rgba(244, 215, 122, 0.6);
+    box-shadow: 0 0 0 2px rgba(244, 215, 122, 0.14);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.form-actions {
+    margin-top: 0.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.checklist {
+    padding-left: 1.2rem;
+}
+
+.checklist li + li {
+    margin-top: 0.45rem;
+}
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    clip-path: inset(50%);
+}
+
+.kb-article h1 {
+    max-width: 20ch;
+}
+
+.kb-nav {
+    margin-top: 2rem;
+}
+
+/* Mobile CTA dock: injected by js/site.js (safe if analytics is absent). */
+.cta-dock {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    width: min(560px, calc(100% - 24px));
+    z-index: 9999;
+    padding: 10px;
+    border-radius: 18px;
+    background: rgba(8, 22, 33, 0.92);
+    border: 1px solid rgba(212, 175, 55, 0.28);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: none;
+}
+
+.cta-dock .cta-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.cta-dock .cta-row a {
+    width: 100%;
+    padding: 0.85rem 0.9rem;
+}
+
+@media (max-width: 968px) {
+    .cta-dock {
+        display: block;
+    }
+    body.menu-open .cta-dock {
+        display: none;
+    }
+}
+
 details.kb-toggle summary::after,
 details.spec-toggle summary::after {
     content: "+";

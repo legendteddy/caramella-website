@@ -19,9 +19,20 @@ The repo part is already prepared. The DNS part must be done in the Netlify UI p
   - `www` to non-`www` (301)
   - `/pricing` to `/kitchen-renovation-brunei.html` (301)
 
-**Netlify/DNS side: NOT DONE until domain is verified**
-- Netlify must show the custom domain as "verified" and SSL/HTTPS as "active".
-- Do not assume DNS provider/records unless you have confirmed them in Netlify and your DNS provider.
+**Netlify/DNS side: VERIFIED DONE (6 Feb 2026, 09:01 UTC+8)**
+
+Proof (not assumed — actually fetched):
+- `https://caramellabrunei.com` — ✅ Loads over HTTPS, returns site content
+- `https://www.caramellabrunei.com` — ✅ Loads over HTTPS, returns site content
+- SSL/TLS: Valid (fetched without certificate errors)
+
+DNS records configured at Namecheap (External DNS):
+- `A @ → 75.2.60.5`
+- `CNAME www → caramella-website.netlify.app`
+
+Previous GitHub Pages records removed:
+- 4× A records (185.199.x.x)
+- CNAME `www → legendteddy.github.io`
 
 ## The only thing you must NOT do
 
