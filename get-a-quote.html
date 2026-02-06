@@ -95,12 +95,12 @@
                 </div>
 
                 <div class="quote-card">
-                    <!-- Netlify Forms: no JS required, safe for static hosting -->
-                    <form class="quote-form" name="quote" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
-                        action="/thank-you.html">
-                        <input type="hidden" name="form-name" value="quote">
+                    <!-- Formspree: email delivery without needing Netlify Forms storage -->
+                    <form class="quote-form" method="POST" action="https://formspree.io/f/mreazjqo">
+                        <input type="hidden" name="_subject" value="New Quote Request (Caramella)">
+                        <input type="hidden" name="_next" value="https://caramellabrunei.com/thank-you.html">
                         <p class="visually-hidden">
-                            <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                            <label>Don’t fill this out if you’re human: <input name="_gotcha"></label>
                         </p>
 
                         <div class="form-row">
@@ -205,4 +205,3 @@
 </body>
 
 </html>
-
