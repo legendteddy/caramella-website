@@ -2,6 +2,8 @@
 
 Static website for Caramella Trading Co. (Brunei), built with plain HTML/CSS/vanilla JS.
 
+Production domain: `https://caramellabrunei.com/` (hosted on GitHub Pages).
+
 ## Local Development
 
 Serve the folder with a local static server (avoid `file://` for consistent behavior):
@@ -15,10 +17,11 @@ Then open `http://localhost:5173/`.
 ## Key Paths
 
 - Pages: `index.html`, `portfolio.html`, `inspiration.html`, `faq.html`, `tech-specs.html`, `contact-us.html`
+- Official inquiry form URL: `contact-us.html` (avoid creating multiple form endpoints)
 - Shared CSS: `css/site.css`
 - Shared JS: `js/site.js`
 - Images: `images/`
-- SEO/Deployment: `robots.txt`, `sitemap.xml`, `manifest.json`, `CNAME`, `_redirects`
+- SEO/Deployment: `robots.txt`, `sitemap.xml`, `manifest.json`, `CNAME`
 
 ## Docs
 

@@ -1,12 +1,14 @@
 # Release Checklist (Static Site)
 
-Use this when shipping changes to production hosting (Netlify / GitHub Pages / Namecheap).
+Use this when shipping changes to production hosting (GitHub Pages).
 
 ## Content and UX
 
-- Open each core page: `index.html`, `portfolio.html`, `inspiration.html`, `faq.html`, `tech-specs.html`, `contact-us.html`.
+- Open each core page: `index.html`, `portfolio.html`, `inspiration.html`, `faq.html`, `tech-specs.html`, `pricing.html`, `contact-us.html`.
+- Open pricing guides: `kitchen-renovation-brunei.html`, `wardrobe-cost-brunei.html`.
 - Mobile spot check at ~360px width (small Android): navbar, hero titles, FAQ cards, forms, galleries.
 - Verify lightbox opens/closes and the page does not "jump" after closing.
+- Confirm `get-a-quote.html` redirects to `contact-us.html`.
 
 ## SEO
 
@@ -28,4 +30,3 @@ python tools/audit_site.py
 ```
 
 This checks for missing local assets, missing `alt`, and basic SEO meta presence.
-
