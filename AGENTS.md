@@ -39,26 +39,14 @@ Some sections also have folder entrypoints like `portfolio/index.html` that redi
 
 ## Hosting / Deployment Notes
 
-The repo is ready for static hosting (no build). Netlify can host it using `netlify.toml`.
+The repo is ready for static hosting (no build). Current production hosting is **GitHub Pages**.
 
 Important domain rules (do not break):
-- Canonical host is `https://caramellabrunei.com` (non-`www`).
-- `_redirects` includes a forced redirect from `www` to non-`www`.
-- `/pricing` redirects to `/kitchen-renovation-brunei.html`.
+- Canonical host is `https://caramellabrunei.com`.
+- Prefer explicit `.html` URLs (GitHub Pages does not support `_redirects`).
+- The official inquiry form lives at `https://caramellabrunei.com/contact-us.html`.
 
-If using Netlify with "External DNS", do NOT switch nameservers to Netlify DNS unless explicitly requested.
-
-### Domain Setup Notes
-
-This repo is compatible with Netlify + "External DNS" (keep DNS at your current provider; do not switch nameservers).
-Netlify will show the exact DNS records required in its domain management UI. Typical records look like:
-
-| Purpose | Type | Host | Value |
-|--------|------|------|-------|
-| Apex/root | A or ALIAS | `@` | Netlify-provided apex target/IPs |
-| WWW | CNAME | `www` | your `*.netlify.app` hostname |
-
-After DNS is correct, Netlify provisions SSL automatically.
+Legacy files: `netlify.toml` and `_redirects` are present from an earlier Netlify attempt. They are not used by GitHub Pages.
 
 ## Development Commands
 

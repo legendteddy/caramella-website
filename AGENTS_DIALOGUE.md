@@ -1,81 +1,37 @@
-# Netlify Transfer (Plain-English Handover)
+# GitHub Pages Setup (Plain-English Handover)
 
-## What "transfer to Netlify" actually means
+This repo is a static site (no build step). Production hosting is **GitHub Pages** and the live domain is:
 
-Nothing "moves" automatically. There are 2 separate parts:
+- `https://caramellabrunei.com/`
 
-1. **Website files (this GitHub repo)**: Netlify reads the files and publishes them.
-2. **Domain DNS (caramellabrunei.com)**: your DNS provider must point the domain to Netlify.
+## What “done” looks like
 
-The repo part is already prepared. The DNS part must be done in the Netlify UI plus your DNS provider UI.
+- `https://caramellabrunei.com/` loads over HTTPS.
+- `https://www.caramellabrunei.com/` loads over HTTPS (redirect is optional; not required for Pages to work).
+- GitHub repo `Settings -> Pages` shows the custom domain as verified (no DNS warning).
 
-## Current status (repo vs Netlify)
+## Current DNS (Namecheap) for GitHub Pages
 
-**Repo side: DONE**
-- Static site, no build step.
-- `netlify.toml` exists (publish repo root).
-- Canonical URLs use `https://caramellabrunei.com` (non-`www`).
-- `_redirects` includes:
-  - `www` to non-`www` (301)
-  - `/pricing` to `/kitchen-renovation-brunei.html` (301)
+At Namecheap `Advanced DNS`, you should have:
 
-**Netlify/DNS side: VERIFIED DONE (6 Feb 2026, 09:01 UTC+8)**
+- 4x `A` records for host `@`:
+  - `185.199.108.153`
+  - `185.199.109.153`
+  - `185.199.110.153`
+  - `185.199.111.153`
+- 1x `CNAME` record:
+  - host `www` -> `legendteddy.github.io`
 
-Proof (not assumed — actually fetched):
-- `https://caramellabrunei.com` — ✅ Loads over HTTPS, returns site content
-- `https://www.caramellabrunei.com` — ✅ Loads over HTTPS, returns site content
-- SSL/TLS: Valid (fetched without certificate errors)
+If GitHub shows “`www` is improperly configured”, it is usually propagation/caching. Wait 10 to 30 minutes and click “Check again”.
 
-DNS records configured at Namecheap (External DNS):
-- `A @ → 75.2.60.5`
-- `CNAME www → caramella-website.netlify.app`
+## Important repo constraint (GitHub Pages routing)
 
-Previous GitHub Pages records removed:
-- 4× A records (185.199.x.x)
-- CNAME `www → legendteddy.github.io`
+GitHub Pages does not support Netlify-style `_redirects`. Prefer explicit `.html` links.
 
-## The only thing you must NOT do
+- Official inquiry form URL: `https://caramellabrunei.com/contact-us.html`
+- `get-a-quote.html` is a `noindex` redirect page to `contact-us.html` (there is no second form endpoint).
 
-Do **not** change nameservers to Netlify (the `dns1.p03.nsone.net` / `dns2...` / `dns3...` / `dns4...` lines).
-That would move all DNS to Netlify DNS. You said you don't want that.
+## What to ignore
 
-So we use **External DNS**: keep DNS where it is, just add records.
+The repo still contains `netlify.toml` and `_redirects` from a previous Netlify attempt. They are not used by GitHub Pages.
 
-## Exact goal (what "done" looks like)
-
-- `https://caramellabrunei.com/` loads (HTTPS works).
-- `https://www.caramellabrunei.com/` redirects to `https://caramellabrunei.com/`.
-- `https://caramellabrunei.com/pricing` redirects to the kitchen pricing page.
-- `https://caramellabrunei.com/sitemap.xml` opens.
-
-## What to click in Netlify (high level)
-
-1. Go to the project: `caramella-website` in Netlify.
-2. Go to **Domain management**.
-3. Find `caramellabrunei.com`.
-4. Open the panel that says **Check DNS configuration** / **Verify DNS** / **Awaiting External DNS** (wording varies).
-5. Look for a table like "Add these DNS records at your DNS provider".
-
-That table is the source of truth.
-
-## What to do at your DNS provider
-
-Take the Netlify table and create those records in your DNS provider.
-Typical patterns:
-
-- `www` is a **CNAME** pointing to your `*.netlify.app` hostname.
-- The root domain `@` is:
-  - **A records** to Netlify IP(s), OR
-  - an **ALIAS/ANAME** to a Netlify apex target (depends on provider).
-
-Then wait for DNS to propagate (minutes to hours).
-
-## What to send to the next AI agent (minimal)
-
-Copy/paste these items to the next agent:
-
-1. Your DNS provider name (Cloudflare / Namecheap / GoDaddy / etc.)
-2. The Netlify "External DNS" table (Host, Type, Value).
-3. The Netlify site URL (the `*.netlify.app` address).
-
-With those 3, another agent can tell you exactly what records to add and where to click.
