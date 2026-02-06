@@ -13,6 +13,7 @@
 html {
     scroll-behavior: smooth;
     scrollbar-width: none;
+    overscroll-behavior-y: none;
 }
 
 html::-webkit-scrollbar {
@@ -83,6 +84,7 @@ body {
     line-height: 1.7;
     font-size: var(--type-body);
     padding-top: var(--nav-height);
+    overscroll-behavior-y: none;
 }
 
 /* Lightbox scroll locking (set/unset via js/site.js). */
@@ -609,9 +611,9 @@ section {
 .site-footer {
     background: rgba(5, 14, 21, 0.88) !important;
     /* Default footer is compact (some pages only show a copyright line). */
-    padding: 2.25rem 1.5rem;
+    padding: 1.5rem 1.25rem;
     border-top: var(--border-gold);
-    margin-top: 2.5rem;
+    margin-top: 1.75rem;
 }
 
 .site-footer.site-footer--grid {
