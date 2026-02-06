@@ -49,5 +49,4 @@ python tools/audit_site.py
 
 ## Security
 
-Do not commit secrets (API keys, personal access tokens). If a token is ever pasted into chat/logs, revoke and rotate it immediately.
-
+Do not commit secrets (API keys, personal access tokens).
