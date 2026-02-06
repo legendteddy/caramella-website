@@ -20,7 +20,8 @@ The repo part is already prepared. The DNS part must be done in the Netlify UI p
   - `/pricing` to `/kitchen-renovation-brunei.html` (301)
 
 **Netlify/DNS side: NOT DONE until domain is verified**
-- Netlify must show the custom domain as **verified** and SSL/HTTPS as **active**.
+- Netlify must show the custom domain as "verified" and SSL/HTTPS as "active".
+- Do not assume DNS provider/records unless you have confirmed them in Netlify and your DNS provider.
 
 ## The only thing you must NOT do
 
@@ -67,4 +68,3 @@ Copy/paste these items to the next agent:
 3. The Netlify site URL (the `*.netlify.app` address).
 
 With those 3, another agent can tell you exactly what records to add and where to click.
-
