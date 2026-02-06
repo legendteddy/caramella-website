@@ -1,5 +1,29 @@
 # Repository Guidelines
 
+## Project Context (Handoff Notes)
+
+Caramella Brunei is a premium cabinetry/joinery brand. This repo is the production website for
+`https://caramellabrunei.com/` (non-`www` is canonical). The site is intentionally "luxury" in feel:
+cinematic gradients, glassmorphism, and modern, punchy copy. Avoid outdated positioning words like
+"boutique" and avoid "private"; use "premium" instead.
+
+Key user preferences that should not regress:
+- Background gradients should feel present throughout scroll, but remain centered and not distract readability.
+- Avoid purple/magenta cast in gradients (user complained about purple).
+- Typography consistency matters (navbar/footer/hero should not change fonts page-to-page).
+- Avoid clipped/cropped hero/title typography (italic/gradient effects previously caused clipping).
+- Mobile layout must be clean on small screens (user tested on Poco F7).
+
+Operational expectations:
+- Keep the site unbroken. Validate with `python tools/audit_site.py` before pushing.
+- Changes are typically committed and pushed directly to `main`.
+
+Technical facts provided by the user (used in copy/FAQ):
+- Edge sealing: EVA adhesive around ~190C on a fully automatic edge banding machine.
+- Kitchen drawer slides: Blum TANDEM runner and DTC runners (exact load rating depends on DTC series).
+- Drawer box: 18mm, pocket-screw joint.
+- Wardrobes: DTC side runner (user initially mentioned OEM 3-joint, later clarified DTC too).
+
 ## Project Structure
 
 This is a static website (HTML/CSS/vanilla JS). There is no framework and no build step.
@@ -12,6 +36,17 @@ This is a static website (HTML/CSS/vanilla JS). There is no framework and no bui
 - Tools/docs: `tools/` (repo checks), `docs/` (guides and reports)
 
 Some sections also have folder entrypoints like `portfolio/index.html` that redirect to canonical root pages.
+
+## Hosting / Deployment Notes
+
+The repo is ready for static hosting (no build). Netlify can host it using `netlify.toml`.
+
+Important domain rules (do not break):
+- Canonical host is `https://caramellabrunei.com` (non-`www`).
+- `_redirects` includes a forced redirect from `www` to non-`www`.
+- `/pricing` redirects to `/kitchen-renovation-brunei.html`.
+
+If using Netlify with "External DNS", do NOT switch nameservers to Netlify DNS unless explicitly requested.
 
 ## Development Commands
 
