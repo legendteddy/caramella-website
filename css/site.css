@@ -608,9 +608,15 @@ section {
 /* Footer: consistent, finished look across pages. */
 .site-footer {
     background: rgba(5, 14, 21, 0.88) !important;
-    padding: 4rem 2rem;
+    /* Default footer is compact (some pages only show a copyright line). */
+    padding: 2.25rem 1.5rem;
     border-top: var(--border-gold);
-    margin-top: 4rem;
+    margin-top: 2.5rem;
+}
+
+.site-footer.site-footer--grid {
+    /* Pages with a full footer grid need more breathing room. */
+    padding: 3.5rem 2rem;
 }
 
 .site-footer a {
@@ -625,9 +631,9 @@ section {
 .footer-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3rem;
+    gap: 2.25rem;
     max-width: 1100px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2.25rem;
     width: 100%;
 }
 
@@ -667,7 +673,7 @@ section {
     text-align: center;
     font-size: 0.8rem;
     color: var(--text-muted);
-    padding-top: 2rem;
+    padding-top: 1.25rem;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
