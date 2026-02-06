@@ -382,30 +382,37 @@
 
             <!-- Right Column: Form -->
             <div class="form-container">
-                <form id="inquiryForm">
+                <form id="inquiryForm" method="POST" action="https://formspree.io/f/mreazjqo">
+                    <input type="hidden" name="_subject" value="New Consultation Request (Caramella)">
+                    <input type="hidden" name="_next" value="https://caramellabrunei.com/thank-you.html">
+                    <input type="hidden" name="source" value="contact-us">
+                    <p class="visually-hidden">
+                        <label>Don't fill this out if you're human: <input name="_gotcha"></label>
+                    </p>
+                    <textarea class="visually-hidden" name="message" id="entryMessage" rows="6"></textarea>
                     <!-- SECTION 1: ENTRY FORM -->
                     <div class="form-section">
                         <h3 class="form-header">Design Consultation</h3>
                         <div class="form-grid-2">
                             <div class="form-group">
                                 <label class="form-label">Name <span style="color:#E74C3C">*</span></label>
-                                <input type="text" id="entryName" class="form-input" required>
+                                <input type="text" id="entryName" name="name" class="form-input" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Contact No <span style="color:#E74C3C">*</span></label>
-                                <input type="tel" id="entryPhone" class="form-input" required placeholder="+673">
+                                <input type="tel" id="entryPhone" name="phone" class="form-input" required placeholder="+673">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="form-label">Address / Location</label>
-                            <input type="text" id="entryAddress" class="form-input">
+                            <input type="text" id="entryAddress" name="address" class="form-input">
                         </div>
                         <div class="form-group">
                             <label class="form-label">Preferred Appointment</label>
                             <div class="form-grid-2" style="gap: 1rem; margin-bottom: 0;">
-                                <input type="text" id="entryDate" class="form-input" placeholder="Select Date"
+                                <input type="text" id="entryDate" name="appointment_date" class="form-input" placeholder="Select Date"
                                     style="cursor: pointer; background: rgba(255, 215, 0, 0.05); border-color: rgba(255, 215, 0, 0.3);">
-                                <select id="entrySlot" class="form-input" style="cursor: pointer;">
+                                <select id="entrySlot" name="appointment_slot" class="form-input" style="cursor: pointer;">
                                     <option value="Morning">Morning (9am - 12pm)</option>
                                     <option value="Afternoon">Afternoon (2pm - 5pm)</option>
                                 </select>
@@ -437,7 +444,7 @@
                         </div>
                         <div class="form-group" style="margin-top: 1rem;">
                             <label class="form-label">Project Budget</label>
-                            <input type="text" id="entryBudget" class="form-input" placeholder="$">
+                            <input type="text" id="entryBudget" name="budget" class="form-input" placeholder="$">
                         </div>
                     </div>
 
@@ -516,12 +523,12 @@
                     <div class="form-section">
                         <h3 class="form-header">Additional Remarks</h3>
                         <div class="form-group">
-                            <textarea id="entryRemarks" class="form-input" rows="4"
+                            <textarea id="entryRemarks" name="remarks" class="form-input" rows="4"
                                 placeholder="Tell us more about your project..."></textarea>
                         </div>
                     </div>
 
-                    <button type="submit" class="btn-primary">Prepare Inquiry Message</button>
+                    <button type="submit" class="btn-primary" data-analytics="contact_submit">Send Inquiry</button>
                     <div id="formStatus"
                         style="display:none; margin-top: 1rem; padding: 1rem; border: 1px solid rgba(212,175,55,0.35); border-radius: 12px; background: rgba(255,215,0,0.04);">
                         <p id="formStatusText" style="margin: 0 0 0.75rem 0; font-size: 0.9rem;"></p>
@@ -632,34 +639,12 @@
             body += `========================\n`;
             body += `Sent from caramellabrunei.com Contact Form`;
 
-            // Fallback Actions
-            const statusWrap = document.getElementById('formStatus');
-            const statusText = document.getElementById('formStatusText');
-            const copyBtn = document.getElementById('copyInquiryBtn');
-            const whatsappLink = document.getElementById('whatsappInquiryLink');
-
-            statusWrap.style.display = 'block';
-            statusText.textContent = 'Your inquiry message is ready. We opened your email app; if needed, use the fallback actions below.';
-            whatsappLink.href = `https://wa.me/6737187185?text=${encodeURIComponent(body)}`;
-            copyBtn.onclick = async () => {
-                try {
-                    await navigator.clipboard.writeText(body);
-                    copyBtn.textContent = 'Copied';
-                    setTimeout(() => copyBtn.textContent = 'Copy Message', 1500);
-                } catch (_) {
-                    copyBtn.textContent = 'Copy Failed';
-                    setTimeout(() => copyBtn.textContent = 'Copy Message', 1500);
-                }
-            };
-
-            // Open email app
-            const mailtoUrl = `mailto:caramellabrunei@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            window.location.href = mailtoUrl;
+            // Submit to Formspree (email delivery) with a clean, structured message payload.
+            document.getElementById('entryMessage').value = body;
+            e.target.submit();
         });
     </script>
     <script src="js/site.js?v=20260206a"></script>
 </body>
 
 </html>
-
-
