@@ -1,53 +1,53 @@
 # Repository Guidelines
 
-## Project Structure & Module Organization
+## Project Structure
 
-This repository is a static website (no framework, no build step).
+This is a static website (HTML/CSS/vanilla JS). There is no framework and no build step.
 
-- Pages: root-level HTML files like `index.html`, `portfolio.html`, `inspiration.html`, `faq.html`, `tech-specs.html`, `contact-us.html`, `404.html`
-- Shared styles: `css/site.css` (global theme tokens, navbar, buttons, responsive rules)
+- Pages: root HTML files like `index.html`, `portfolio.html`, `inspiration.html`, `faq.html`, `tech-specs.html`, `contact-us.html`, `404.html`
+- Shared styles: `css/site.css` (theme tokens, components, responsive rules)
 - Shared scripts: `js/site.js` (progressive enhancement, global effects)
-- Assets: `images/`
-- Deployment/SEO: `CNAME`, `robots.txt`, `sitemap.xml`, `manifest.json`, `_redirects`
-- Supporting docs: `docs/guides/` and `docs/reports/`
+- Assets: `images/` (JPG + WebP variants, icons)
+- SEO/deploy files: `robots.txt`, `sitemap.xml`, `manifest.json`, `_redirects`, `CNAME`
+- Tools/docs: `tools/` (repo checks), `docs/` (guides and reports)
 
-There are also section folders like `portfolio/`, `knowledge-base/`, and `technical-specs/` that contain small `index.html` entrypoints.
+Some sections also have folder entrypoints like `portfolio/index.html` that redirect to canonical root pages.
 
-## Build, Test, and Development Commands
+## Development Commands
 
-No build tooling is required. Use a local static server (avoid `file://` because relative paths and fetches can behave differently).
+Run locally with a static server (avoid `file://`):
 
 ```powershell
 python -m http.server 5173
 ```
 
-Then open `http://localhost:5173/`.
+Open `http://localhost:5173/`.
 
-## Coding Style & Naming Conventions
+Site audit (links/assets/meta/schema sanity):
 
-- Indentation: 4 spaces, no tabs (match existing HTML/CSS).
-- CSS: prefer tokens in `:root` and reuse existing utilities/components in `css/site.css`.
-- Naming: kebab-case for classes and files (`contact-us.html`, `.lang-switch`).
-- SEO: keep JSON-LD blocks valid JSON and aligned with page content (title/description/canonical URL).
+```powershell
+python tools/audit_site.py
+```
 
-## Testing Guidelines
+## Coding Style
 
-There are no unit tests in this repo. Validate changes with:
+- HTML/CSS indentation: 4 spaces, no tabs (match existing files).
+- Prefer editing shared styles in `css/site.css` over adding new per-page `<style>` blocks.
+- Keep copy modern and direct; avoid “boutique” and “private”, use “premium”.
+- SEO: keep `<link rel="canonical">`, `og:url`, and JSON-LD URLs consistent with the live domain.
 
-- Visual checks: desktop + mobile widths (including small screens)
-- Basic regression scan: navigation, hero, FAQ/KB expanders, portfolio cards
-- SEO sanity: page titles/descriptions, canonical tags, JSON-LD validity (Structured Data testing tools)
+## Testing Checklist
 
-## Commit & Pull Request Guidelines
+- Desktop + mobile: navbar, hero, cards, FAQ/KB expanders, lightbox, footer.
+- Performance: images should use WebP where available; avoid huge new assets.
+- SEO: title/description present, canonical correct, JSON-LD parses, page appears in `sitemap.xml`.
 
-Commit messages follow a short, imperative pattern: `Add ...`, `Fix ...`, `Unify ...`, `Restore ...`, `Refine ...`.
+## Commits & PRs
 
-For PRs:
+- Commits: short, imperative messages (`Fix ...`, `Add ...`, `Unify ...`, `Restore ...`).
+- PRs (if used): describe affected pages and include screenshots for desktop + mobile; call out any schema/SEO changes.
 
-- Describe the user-facing change and which pages are affected.
-- Include screenshots for key breakpoints (desktop and mobile).
-- Call out any SEO/schema changes explicitly.
+## Security
 
-## Security & Configuration Tips
+Do not commit secrets (API keys, personal access tokens). If a token is ever pasted into chat/logs, revoke and rotate it immediately.
 
-Do not commit secrets (API keys, personal tokens). Keep external embeds (maps, analytics) configuration-only and review any third-party scripts for privacy and performance impact.
