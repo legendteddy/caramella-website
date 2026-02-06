@@ -1,0 +1,7 @@
+[build]
+  # Static site: no build step. Publish the repo root.
+  publish = "."
+  command = ""
+
+# Redirects are in `_redirects` (Netlify convention).
+
