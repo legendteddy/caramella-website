@@ -48,6 +48,18 @@ Important domain rules (do not break):
 
 If using Netlify with "External DNS", do NOT switch nameservers to Netlify DNS unless explicitly requested.
 
+### Domain Setup Notes
+
+This repo is compatible with Netlify + "External DNS" (keep DNS at your current provider; do not switch nameservers).
+Netlify will show the exact DNS records required in its domain management UI. Typical records look like:
+
+| Purpose | Type | Host | Value |
+|--------|------|------|-------|
+| Apex/root | A or ALIAS | `@` | Netlify-provided apex target/IPs |
+| WWW | CNAME | `www` | your `*.netlify.app` hostname |
+
+After DNS is correct, Netlify provisions SSL automatically.
+
 ## Development Commands
 
 Run locally with a static server (avoid `file://`):
@@ -68,7 +80,7 @@ python tools/audit_site.py
 
 - HTML/CSS indentation: 4 spaces, no tabs (match existing files).
 - Prefer editing shared styles in `css/site.css` over adding new per-page `<style>` blocks.
-- Keep copy modern and direct; avoid “boutique” and “private”, use “premium”.
+- Keep copy modern and direct; avoid "boutique" and "private", use "premium".
 - SEO: keep `<link rel="canonical">`, `og:url`, and JSON-LD URLs consistent with the live domain.
 
 ## Testing Checklist
