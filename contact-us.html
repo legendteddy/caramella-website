@@ -307,11 +307,22 @@
             background-color: #081621;
             color: #FFFFFF;
         }
+
+        /* This page uses a minimal footer; override the global "big footer" spacing. */
+        body.contact-page .site-footer {
+            margin-top: 2rem;
+            padding: 2rem 1.5rem;
+        }
+
+        body.contact-page .site-footer .footer-copyright {
+            padding-top: 0;
+            border-top: 0;
+        }
     </style>
     <link rel="stylesheet" href="css/site.css?v=20260206a">
 </head>
 
-<body>
+<body class="contact-page">
     <!-- Navigation -->
     <nav class="navbar" aria-label="Primary">
         <a href="index.html" class="logo">Caramella</a>
