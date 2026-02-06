@@ -1,4 +1,4 @@
-# Allow all crawlers
+﻿# Allow all crawlers
 User-agent: *
 Allow: /
 
@@ -66,4 +66,4 @@ User-agent: ImagesiftBot
 Allow: /
 
 # Sitemap Location
-Sitemap: https://www.caramellabrunei.com/sitemap.xml
+Sitemap: https://caramellabrunei.com/sitemap.xml
