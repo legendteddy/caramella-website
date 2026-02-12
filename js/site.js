@@ -214,6 +214,23 @@
         });
     }
 
+    /* ── Company age (auto-updates from founding date 2015-01-11) ── */
+    function initCompanyAge() {
+        var founded = new Date(2015, 0, 11); // January 11, 2015
+        var now = new Date();
+        var years = now.getFullYear() - founded.getFullYear();
+        if (now.getMonth() < founded.getMonth() ||
+            (now.getMonth() === founded.getMonth() && now.getDate() < founded.getDate())) {
+            years--;
+        }
+        document.querySelectorAll('.company-years').forEach(function (el) {
+            el.textContent = years + '+';
+        });
+        document.querySelectorAll('.company-years-text').forEach(function (el) {
+            el.textContent = years + '+ years';
+        });
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             initSharedNav();
@@ -222,6 +239,7 @@
             initFloatingWhatsApp();
             // initMobileCtaDock(); — removed: too salesman-aggressive for a premium brand
             initAnalyticsHooks();
+            initCompanyAge();
         });
     } else {
         initSharedNav();
@@ -230,5 +248,6 @@
         initFloatingWhatsApp();
         // initMobileCtaDock(); — removed: too salesman-aggressive for a premium brand
         initAnalyticsHooks();
+        initCompanyAge();
     }
 })();
