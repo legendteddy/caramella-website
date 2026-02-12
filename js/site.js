@@ -220,7 +220,7 @@
             initScrollGradient();
             initLightboxScrollLock();
             initFloatingWhatsApp();
-            initMobileCtaDock();
+            // initMobileCtaDock(); — removed: too salesman-aggressive for a premium brand
             initAnalyticsHooks();
         });
     } else {
@@ -228,7 +228,7 @@
         initScrollGradient();
         initLightboxScrollLock();
         initFloatingWhatsApp();
-        initMobileCtaDock();
+        // initMobileCtaDock(); — removed: too salesman-aggressive for a premium brand
         initAnalyticsHooks();
     }
 })();
