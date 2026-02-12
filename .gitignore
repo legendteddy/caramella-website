@@ -5,15 +5,7 @@ package.json
 package-lock.json
 output/playwright/
 
-# Internal strategy & planning docs (should not be publicly deployed)
-PHASE1_IMPLEMENTATION_SUMMARY.md
-AGENTS.md
-AGENTS_DIALOGUE.md
-caramella-build-standard.md
-compare-quotes-checklist.md
-whatsapp-script.md
-synapse.jsonl
-Caramella vs Brunei Cabinetry Competitors.md
-Marketing Strategy For Caramella Trading Company.md
+# Internal strategy & planning docs (not deployed)
 docs/
 tools/
+AGENTS.md
