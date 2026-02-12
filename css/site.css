@@ -854,6 +854,7 @@ header h1 .italic-accent {
     box-shadow: var(--panel-shadow) !important;
     border-radius: 18px !important;
     backdrop-filter: var(--glass-strong);
+    padding: 1.75rem 2rem;
 }
 
 .service-card:hover,
