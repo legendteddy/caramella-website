@@ -333,16 +333,16 @@ button.btn-primary {
     justify-content: center;
     gap: 0.5rem;
     min-height: 44px;
-    padding: 0.95rem 2.4rem;
+    padding: 0.85rem 2rem;
     border-radius: 999px !important;
     text-decoration: none !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.12em !important;
-    font-weight: 600 !important;
+    letter-spacing: 0.04em !important;
+    font-weight: 500 !important;
     font-family: var(--font-main);
+    font-size: 0.9rem;
     position: relative;
     overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 a:focus-visible,
@@ -881,10 +881,12 @@ header h1 .italic-accent {
 
 .btn-primary,
 button.btn-primary {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.75), rgba(255, 215, 0, 0.25)) !important;
-    border: 1px solid rgba(255, 215, 0, 0.85) !important;
-    color: #fff !important;
-    box-shadow: 0 20px 44px rgba(0, 0, 0, 0.55) !important;
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid rgba(244, 215, 122, 0.35) !important;
+    color: #f4d77a !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
 .btn-luxury {
@@ -900,7 +902,8 @@ button.btn-primary {
 .btn-luxury:hover,
 button.btn-primary:hover {
     transform: translateY(-2px) !important;
-    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.6) !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(244, 215, 122, 0.6) !important;
 }
 
 .btn-primary:active,
