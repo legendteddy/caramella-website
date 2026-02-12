@@ -55,14 +55,12 @@ html::-webkit-scrollbar {
     --glass-border: 1px solid rgba(255, 255, 255, 0.15);
     --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
     /* Avoid magenta/purple refraction; keep it sapphire + gold. */
-    --diamond-refraction: linear-gradient(
-        115deg,
-        transparent 40%,
-        rgba(0, 175, 255, 0.42) 46%,
-        rgba(255, 215, 0, 0.42) 52%,
-        rgba(120, 255, 210, 0.22) 58%,
-        transparent 62%
-    );
+    --diamond-refraction: linear-gradient(115deg,
+            transparent 40%,
+            rgba(0, 175, 255, 0.42) 46%,
+            rgba(255, 215, 0, 0.42) 52%,
+            rgba(120, 255, 210, 0.22) 58%,
+            transparent 62%);
     --diamond-sparkle: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0) 60%);
     --diamond-border: 1px solid rgba(255, 255, 255, 0.2);
     --gold-grad: linear-gradient(90deg, #B8860B 0%, #FFD700 25%, #FFFFFF 50%, #FFD700 75%, #B8860B 100%);
@@ -427,10 +425,10 @@ footer {
     min-width: 0;
 }
 
-.services-grid > *,
-.gallery-grid > *,
-.faq-grid > *,
-.contact-grid > * {
+.services-grid>*,
+.gallery-grid>*,
+.faq-grid>*,
+.contact-grid>* {
     min-width: 0;
 }
 
@@ -441,6 +439,7 @@ table,
 }
 
 @media (max-width: 768px) {
+
     table,
     .data-table {
         display: block;
@@ -491,7 +490,7 @@ table,
 
     .navbar .nav-links.active,
     .navbar .nav-links.nav-active,
-    .navbar .menu-toggle[aria-expanded="true"] + .nav-links {
+    .navbar .menu-toggle[aria-expanded="true"]+.nav-links {
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
@@ -676,6 +675,7 @@ section {
         transform: scale(1);
         opacity: 0.5;
     }
+
     100% {
         transform: scale(1.8);
         opacity: 0;
@@ -761,12 +761,12 @@ section {
 }
 
 /* Layout rhythm */
-.section .container > * + * {
+.section .container>*+* {
     margin-top: 1.75rem;
 }
 
-.section h2 + p,
-.section h3 + p {
+.section h2+p,
+.section h3+p {
     margin-top: 0.75rem;
 }
 
@@ -839,7 +839,7 @@ header h1 .italic-accent {
 }
 
 /* Section rhythm helpers */
-.section + .section {
+.section+.section {
     padding-top: clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -1150,7 +1150,7 @@ details.spec-toggle summary::-webkit-details-marker {
     padding-left: 1.25rem;
 }
 
-.steps li + li {
+.steps li+li {
     margin-top: 0.6rem;
 }
 
@@ -1166,7 +1166,7 @@ details.spec-toggle summary::-webkit-details-marker {
     text-align: center;
 }
 
-.trust-grid {
+.trust-strip .trust-grid {
     display: grid;
     margin-top: 1.75rem;
     gap: clamp(0.9rem, 2.2vw, 1.25rem);
@@ -1243,7 +1243,7 @@ details.spec-toggle summary::-webkit-details-marker {
     margin-bottom: 1rem;
 }
 
-.quote-form label > span {
+.quote-form label>span {
     color: rgba(155, 161, 166, 0.95);
     font-size: 0.78rem;
     letter-spacing: 0.08em;
@@ -1298,7 +1298,7 @@ details.spec-toggle summary::-webkit-details-marker {
     padding-left: 1.2rem;
 }
 
-.checklist li + li {
+.checklist li+li {
     margin-top: 0.45rem;
 }
 
@@ -1353,6 +1353,7 @@ details.spec-toggle summary::-webkit-details-marker {
     .cta-dock {
         display: block;
     }
+
     body.menu-open .cta-dock {
         display: none;
     }
@@ -1398,6 +1399,7 @@ a:hover {
 }
 
 @media (max-width: 968px) {
+
     .section,
     section {
         padding: clamp(3rem, 8vw, 5rem) 0;
@@ -1533,6 +1535,7 @@ a:hover {
             calc(50% - var(--scroll-x, 0px)) calc(45% + var(--scroll-y, 0px)),
             center;
     }
+
     50% {
         background-position:
             calc(52% + var(--scroll-x, 0px)) calc(12% + var(--scroll-y, 0px)),
@@ -1541,6 +1544,7 @@ a:hover {
             calc(48% - var(--scroll-x, 0px)) calc(48% + var(--scroll-y, 0px)),
             center;
     }
+
     100% {
         background-position:
             calc(50% + var(--scroll-x, 0px)) calc(10% + var(--scroll-y, 0px)),
