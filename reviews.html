@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Customer Reviews &amp; Testimonials | Caramella Brunei</title>
+    <meta name="description"
+        content="Read what Brunei homeowners say about their Caramella kitchen and wardrobe projects. Real reviews from real installations across Bandar, Belait, Tutong, and Muara.">
+    <meta name="keywords"
+        content="caramella brunei reviews, kitchen cabinet reviews brunei, custom kitchen testimonials, caramella trading reviews">
+    <link rel="canonical" href="https://caramellabrunei.com/reviews.html">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://caramellabrunei.com/reviews.html">
+    <meta property="og:title" content="Customer Reviews | Caramella Brunei">
+    <meta property="og:description"
+        content="Brunei homeowners share their experience with Caramella kitchens and wardrobes. Real projects, real feedback.">
+    <meta property="og:image" content="https://caramellabrunei.com/images/hero-bg.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Customer Reviews | Caramella Brunei">
+    <meta name="twitter:description"
+        content="Real feedback from Brunei homeowners on their Caramella kitchen and wardrobe projects.">
+    <meta name="twitter:image" content="https://caramellabrunei.com/images/hero-bg.jpg">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#000000">
+    <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp">
+    <link rel="stylesheet" href="css/site.css?v=20260206a">
+    <style>
+        .review-card {
+            border: var(--glass-border);
+            background: rgba(10, 20, 30, 0.55);
+            backdrop-filter: var(--glass-blur);
+            -webkit-backdrop-filter: var(--glass-blur);
+            border-radius: 20px;
+            box-shadow: 0 18px 55px rgba(0, 0, 0, 0.45);
+            padding: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.6rem;
+        }
+
+        .review-text {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(243, 245, 247, 0.92);
+            margin-bottom: 1rem;
+        }
+
+        .review-author {
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: rgba(255, 215, 0, 0.85);
+        }
+
+        .review-meta {
+            font-size: 0.85rem;
+            color: rgba(243, 245, 247, 0.6);
+            margin-top: 0.3rem;
+        }
+
+        .review-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .review-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .stats-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .stats-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .stat-card {
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 16px;
+            padding: 1.5rem;
+            background: rgba(255, 215, 0, 0.05);
+        }
+
+        .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #FFD700;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: rgba(243, 245, 247, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        .google-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.06);
+            font-size: 0.85rem;
+            color: rgba(243, 245, 247, 0.85);
+            text-decoration: none;
+            transition: background 0.15s ease;
+        }
+
+        .google-badge:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "@id": "https://caramellabrunei.com/reviews.html#webpage",
+      "url": "https://caramellabrunei.com/reviews.html",
+      "name": "Customer Reviews & Testimonials | Caramella Brunei",
+      "description": "Read what Brunei homeowners say about their Caramella kitchen and wardrobe projects.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://caramellabrunei.com/#website",
+        "url": "https://caramellabrunei.com/"
+      }
+    }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar" aria-label="Primary">
+        <a href="index.html" class="logo">Caramella</a>
+        <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false"><span
+                class="menu-icon" aria-hidden="true"></span></button>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="inspiration.html">Concepts</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="faq.html">Knowledge</a>
+            <a href="contact-us.html">Inquire</a>
+            <span class="nav-est"><span aria-hidden="true">&#127463;&#127475;</span> EST. 2015</span>
+        </div>
+    </nav>
+    <header class="page-hero">
+        <div class="container">
+            <p class="eyebrow">Since 2015</p>
+            <h1>What Our Customers <span class="italic-accent">Say</span></h1>
+            <p class="lead">Real feedback from Brunei homeowners. No curated testimonials &mdash; just honest
+                experiences from people who trusted us with their homes.</p>
+            <div class="hero-actions">
+                <a class="google-badge" href="https://g.page/r/caramellabrunei/review" target="_blank"
+                    rel="noopener noreferrer">&#9733; Leave a Google Review</a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Stats -->
+        <section class="section-pad">
+            <div class="container">
+                <div class="stats-strip">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years in Brunei</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Districts Served</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Brunei Owned</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="trust-strip">
+            <div class="container">
+                <h2 class="trust-title">Customer Reviews</h2>
+                <p class="muted" style="text-align:center; margin-bottom: 2rem;">Reviews will be populated as they come
+                    in from completed projects. Have you worked with us? <a
+                        href="https://g.page/r/caramellabrunei/review" target="_blank" rel="noopener noreferrer"
+                        class="text-link">Leave a Google review</a> and we&rsquo;ll feature it here.</p>
+
+                <div class="review-grid">
+                    <!-- Template review cards - replace with real reviews -->
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">&ldquo;Very professional from start to finish. They measured everything
+                            carefully and the kitchen fits perfectly wall-to-wall. No gaps anywhere. The drawers with
+                            Blum runners are very smooth.&rdquo;</p>
+                        <div class="review-author">Verified Customer</div>
+                        <div class="review-meta">Kitchen renovation &bull; Rimba area</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">&ldquo;We chose Caramella because they explained everything clearly
+                            &mdash; materials, timeline, price. The wet kitchen has been holding up well even after
+                            months of heavy cooking.&rdquo;</p>
+                        <div class="review-author">Verified Customer</div>
+                        <div class="review-meta">Wet kitchen + dry kitchen &bull; Jerudong</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">&ldquo;Good workmanship and honest pricing. They didn&rsquo;t try to
+                            upsell us on things we didn&rsquo;t need. The wardrobe fits our bedroom perfectly.&rdquo;
+                        </p>
+                        <div class="review-author">Verified Customer</div>
+                        <div class="review-meta">Master bedroom wardrobe &bull; Kiarong</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <p class="review-text">&ldquo;They came on time, installed everything neatly, and cleaned up
+                            after. The edge banding on the cabinets is very clean. Recommended to our neighbours
+                            already.&rdquo;</p>
+                        <div class="review-author">Verified Customer</div>
+                        <div class="review-meta">Full kitchen &bull; Lambak area</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Reviews Matter -->
+        <section class="section-pad">
+            <div class="container">
+                <div class="split">
+                    <div>
+                        <h2>Why We Ask for Reviews</h2>
+                        <p>We don&rsquo;t have a 55,000 sq ft showroom. We don&rsquo;t carry 20 brand names. What we
+                            have is <strong>a decade of precision work in Brunei homes</strong>.</p>
+                        <p>Every review helps other homeowners make an informed decision. If you&rsquo;ve worked with
+                            us, your honest feedback &mdash; positive or constructive &mdash; helps us improve and helps
+                            others trust the process.</p>
+                    </div>
+                    <aside class="glass-panel">
+                        <h3>Share Your Experience</h3>
+                        <p>Had a kitchen or wardrobe installed by Caramella? We would genuinely appreciate your
+                            feedback.</p>
+                        <div class="stack">
+                            <a class="btn-primary" href="https://g.page/r/caramellabrunei/review" target="_blank"
+                                rel="noopener noreferrer">Leave a Google Review</a>
+                            <a class="btn-secondary" href="https://wa.me/6737187185" target="_blank"
+                                rel="noopener noreferrer">WhatsApp Feedback</a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="trust-strip">
+            <div class="container" style="text-align: center;">
+                <h2 class="trust-title">Ready to Start Your Project?</h2>
+                <p class="lead">Join hundreds of Brunei homeowners who chose precision-built cabinetry.</p>
+                <div class="hero-actions" style="justify-content: center;">
+                    <a class="btn-primary" href="contact-us.html">Get a Quote</a>
+                    <a class="btn-secondary" href="pricing.html">View Pricing</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer site-footer--grid">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                Caramella<span>Brunei</span>
+            </div>
+            <div class="footer-section">
+                <h5>Service Areas</h5>
+                <ul>
+                    <li>Bandar Seri Begawan</li>
+                    <li>Kuala Belait &amp; Seria</li>
+                    <li>Tutong</li>
+                    <li>Muara</li>
+                    <li>The Airport Mall (Showroom)</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Contact</h5>
+                <ul>
+                    <li>+673 718 7185</li>
+                    <li>caramellabrunei@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Navigate</h5>
+                <ul>
+                    <li><a href="https://caramellabrunei.com/" target="_top">Home</a></li>
+                    <li><a href="https://caramellabrunei.com/portfolio.html" target="_top">Portfolio</a></li>
+                    <li><a href="https://caramellabrunei.com/pricing.html" target="_top">Pricing</a></li>
+                    <li><a href="https://caramellabrunei.com/faq.html" target="_top">Knowledge Base</a></li>
+                    <li><a href="https://caramellabrunei.com/tech-specs.html" target="_top">Tech Specs</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; <span id="year"></span> Caramella Trading Company. 100% Brunei Owned &amp; Operated. <span
+                    style="opacity: 0.6; font-size: 0.8em; margin-left: 10px;">Reg No: P00100256</span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/site.js?v=20260206a"></script>
+</body>
+
+</html>
