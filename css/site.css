@@ -540,6 +540,7 @@ table,
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     *,
     *::before,
     *::after {
@@ -1747,7 +1748,7 @@ a:hover {
     z-index: 0;
     background-size: cover;
     background-position: center;
-    background-image: image-set(url('images/img_4.webp') type('image/webp'), url('images/img_4.webp') type('image/jpeg'));
+    background-image: image-set(url('../images/img_4.webp') type('image/webp'), url('../images/img_4.webp') type('image/jpeg'));
     animation: kenBurns 25s ease-in-out infinite alternate;
     will-change: transform;
 }
