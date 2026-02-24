@@ -335,6 +335,27 @@ L-shaped is the most common in Brunei residential kitchens (RPN, terraced, semi-
 
 ---
 
+
+---
+
+## Brunei vs Miri Kitchen Cabinets
+
+Many Bruneians consider buying kitchen cabinets from Miri workshops across the border. Key comparison points:
+
+| Factor | Brunei-Made | Miri-Made |
+|:--|:--|:--|
+| Transport | Included | BND 300-800 (kitchen), 800-1,500 (full house) |
+| Customs duty | None | ~5% of CIF value |
+| On-site measurement | Yes, laser measurement | Usually remote (from photos) |
+| Humidity engineering | Designed for 80-90% RH | Built to 60-75% RH (Malaysian standard) |
+| Carcass | 18mm ENF plywood | Varies, often 16mm standard particleboard |
+| Warranty | Local, same-week service | Cross-border, you arrange return |
+| Currency | BND, no exchange risk | MYR, rate fluctuates |
+
+Hidden costs of Miri import: transport (300-800), customs (350-900), installation travel (200-500), measurement rework (500-2,000+). Total hidden: BND 1,350-4,700+.
+
+When Miri makes sense: budget-first projects, specific Malaysian brands, temporary/rental properties, dry-only rooms (air-conditioned bedrooms).
+
 ## Frequently Asked Questions
 
 ### How much do kitchen cabinets cost in Brunei?
@@ -369,6 +390,7 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Wet Kitchen Guide: https://caramellabrunei.com/wet-kitchen-brunei.html
 - Wardrobe Pricing: https://caramellabrunei.com/wardrobe-cost-brunei.html
 - Franchise vs Custom: https://caramellabrunei.com/franchise-vs-custom.html
+- Brunei vs Miri Cabinets: https://caramellabrunei.com/brunei-vs-miri-cabinets.html
 - Build Standard: https://caramellabrunei.com/build-standard.html
 - Tech Specs: https://caramellabrunei.com/tech-specs.html
 - BIBD Financing: https://caramellabrunei.com/financing-brunei.html
