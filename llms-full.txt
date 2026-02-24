@@ -26,7 +26,7 @@
 ## Services
 
 ### Kitchen Cabinets
-Wet and dry kitchen configurations. Carcass built from 16mm ENF-grade moisture-resistant particleboard. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: laminate, acrylic, melamine, veneer. Countertop options: quartz composite, solid surface, granite.
+Wet and dry kitchen configurations. Carcass built from 18mm ENF-grade plywood. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: laminate, acrylic, melamine, veneer. Countertop options: quartz composite, solid surface, granite.
 
 ### Wardrobes
 Walk-in, sliding door, and hinged configurations with customised interior compartments. Pull-out accessories from Higold available. Standard configurations start from approximately BND 2,800.
@@ -42,7 +42,7 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 2. **3D design renders** — Visual approval before fabrication begins.
 3. **CNC fabrication** — Panels cut at 0.1mm tolerance at the local workshop.
 4. **Professional installation** — Done by in-house team, not subcontracted.
-5. **Lead time**: Typically 4–8 weeks from confirmation.
+5. **Lead time**: Typically 10–14 weeks from confirmation.
 
 ---
 
@@ -50,7 +50,7 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 
 | Component | Specification |
 |:--|:--|
-| Carcass | 16mm moisture-resistant particleboard, ENF grade (lowest formaldehyde emission) |
+| Carcass | 18mm ENF-grade plywood (lowest formaldehyde emission) |
 | Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 190°C |
 | Drawer box | 18mm plywood, pocket-screw joints |
 | Drawer runners | Blum TANDEM concealed, 30kg rated, soft-close |
@@ -110,7 +110,7 @@ Both approaches have merits:
 **Advantages of locally fabricated kitchens:**
 - Custom-fitted to exact room dimensions (not limited to modular sizes)
 - No import duties, shipping costs, or franchise licensing fees
-- Shorter lead times (typically 4–8 weeks vs 8–16 weeks)
+- Shorter lead times (typically 10–14 weeks vs 12–20 weeks for imports)
 - Local warranty and on-site service support
 - Materials can be specifically selected for Brunei's humidity
 

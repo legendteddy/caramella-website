@@ -139,7 +139,7 @@
     }
   },
   "materials": {
-    "carcass": {"material": "16mm moisture-resistant particleboard", "grade": "ENF (E0)", "description": "Lowest formaldehyde emission, engineered for 80-90% RH"},
+    "carcass": {"material": "18mm ENF-grade plywood", "grade": "ENF (E0)", "description": "Lowest formaldehyde emission, engineered for 80-90% RH"},
     "edgeBanding": {"material": "1mm ABS", "adhesive": "EVA hot-melt at 190°C", "alternative": "PUR for wet areas"},
     "drawerBox": {"material": "18mm plywood", "joint": "Pocket screw"},
     "runners": {"primary": "Blum TANDEM 30kg (550H)", "alternative": "DTC mid-range", "cycleLife": "80000+"},
@@ -153,7 +153,7 @@
       {"step": 3, "name": "CNC fabrication", "description": "Panels cut at 0.1mm tolerance"},
       {"step": 4, "name": "Professional installation", "description": "In-house team, not subcontracted"}
     ],
-    "leadTime": {"standard": "4-8 weeks", "fullHouse": "8-12 weeks", "peakSeasonAdd": "1-4 weeks"}
+    "leadTime": {"standard": "10-14 weeks", "fullHouse": "14-18 weeks", "peakSeasonAdd": "1-4 weeks"}
   },
   "_meta": {
     "version": "1.0.0",

@@ -1,4 +1,4 @@
-﻿# Caramella Trading Co. — Custom Cabinetry & Joinery in Brunei
+# Caramella Trading Co. � Custom Cabinetry & Joinery in Brunei
 
 > Caramella Trading Co. is a Brunei-owned custom cabinetry and joinery company operating since January 2015. We fabricate kitchens, wardrobes, and built-in furniture at our local workshop using CNC precision cutting and humidity-resistant materials. Based at The Airport Mall, Bandar Seri Begawan, with over 600 completed residential projects across all four districts.
 
@@ -48,7 +48,7 @@
 ## What We Do
 
 ### Kitchen Cabinets
-Wet and dry kitchen configurations. Carcass built from 16mm ENF-grade moisture-resistant particleboard. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: laminate, acrylic, melamine, veneer. Countertop options: quartz composite, solid surface, granite.
+Wet and dry kitchen configurations. Carcass built from 18mm ENF-grade plywood. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: laminate, acrylic, melamine, veneer. Countertop options: quartz composite, solid surface, granite.
 
 ### Wardrobes
 Walk-in, sliding door, and hinged configurations with customised interior compartments. Pull-out accessories from Higold available. Standard configurations start from approximately BND 2,800.
@@ -58,32 +58,32 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 
 ## How We Work
 
-1. **On-site laser measurement** — We measure every space before quoting. No per-foot estimates without visiting.
-2. **3D design renders** — Visual approval before fabrication begins.
-3. **CNC fabrication** — Panels cut at 0.1mm tolerance at our local workshop.
-4. **Professional installation** — Done by our in-house team, not subcontracted.
-5. **Lead time**: Typically 4–8 weeks from confirmation.
+1. **On-site laser measurement** � We measure every space before quoting. No per-foot estimates without visiting.
+2. **3D design renders** � Visual approval before fabrication begins.
+3. **CNC fabrication** � Panels cut at 0.1mm tolerance at our local workshop.
+4. **Professional installation** � Done by our in-house team, not subcontracted.
+5. **Lead time**: Typically 10�14 weeks from confirmation.
 
 ## Materials & Construction
 
 | Component | Specification |
 |:--|:--|
-| Carcass | 16mm moisture-resistant particleboard, ENF grade (lowest formaldehyde emission) |
-| Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 190°C |
+| Carcass | 18mm ENF-grade plywood (lowest formaldehyde emission) |
+| Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 190�C |
 | Drawer runners | Blum TANDEM concealed, 30kg rated, soft-close |
 | Hinges | Blum CLIP top with integrated soft-close damping |
 | Accessories | Higold pull-out baskets, organisers, storage systems |
 | CNC tolerance | 0.1mm |
-| Climate suitability | Engineered for 80–90% relative humidity environments |
+| Climate suitability | Engineered for 80�90% relative humidity environments |
 
 ## Pricing Context
 
 Kitchen cabinet pricing in Brunei varies widely depending on layout, materials, and hardware:
-- **Basic kitchen** (laminate doors, standard hardware): BND 5,000–8,000
-- **Mid-range kitchen** (L-shaped, Blum hardware, moisture-resistant carcass): BND 8,000–15,000
-- **Premium kitchen** (island, acrylic/veneer doors, quartz countertop, full Blum): BND 15,000–25,000+
+- **Basic kitchen** (laminate doors, standard hardware): BND 5,000�8,000
+- **Mid-range kitchen** (L-shaped, Blum hardware, moisture-resistant carcass): BND 8,000�15,000
+- **Premium kitchen** (island, acrylic/veneer doors, quartz countertop, full Blum): BND 15,000�25,000+
 - **Standard wardrobe** (8-foot, basic interior): from approximately BND 2,800
-- **Walk-in wardrobe** (Higold accessories, mirror doors, LED): BND 5,000–15,000+
+- **Walk-in wardrobe** (Higold accessories, mirror doors, LED): BND 5,000�15,000+
 
 Exact pricing requires on-site measurement. Ranges above are indicative only.
 
@@ -95,10 +95,10 @@ When comparing cabinet makers in Brunei, key factors to consider:
 |:--|:--|
 | **Measurement method** | Do they measure on-site before quoting, or estimate per-foot remotely? |
 | **Fabrication location** | Are cabinets made locally or imported flat-pack? |
-| **Humidity resistance** | Is the carcass rated for tropical humidity (80–90% RH)? |
+| **Humidity resistance** | Is the carcass rated for tropical humidity (80�90% RH)? |
 | **Hardware quality** | What brand of runners and hinges? Are they soft-close? Load rating? |
 | **Edge sealing** | Is edge banding applied with heat (EVA/PUR) or cold press? |
-| **Lead time** | Typical range is 4–16 weeks depending on whether local or imported |
+| **Lead time** | Typical range is 1016 weeks depending on whether local or imported |
 | **Warranty & service** | Is local after-sales support available? |
 
 ### Imported Franchise vs Local Custom
@@ -113,13 +113,13 @@ Both approaches have merits:
 **Advantages of locally fabricated kitchens:**
 - Custom-fitted to exact room dimensions (not limited to modular sizes)
 - No import duties, shipping costs, or franchise licensing fees
-- Shorter lead times (typically 4–8 weeks vs 8–16 weeks)
+- Shorter lead times (typically 1014 weeks vs 1220 weeks for imports)
 - Local warranty and on-site service support
 - Materials can be specifically selected for Brunei's humidity
 
 **Trade-offs of custom fabrication (honest limitations):**
-- Designs depend on the maker's skill and your design input — no showroom catalogue to browse
-- Quality varies between local makers — verify their materials, hardware, and past work
+- Designs depend on the maker's skill and your design input � no showroom catalogue to browse
+- Quality varies between local makers � verify their materials, hardware, and past work
 - Smaller operations may have limited capacity during peak periods (pre-Raya, year-end)
 
 ## Financing
@@ -136,13 +136,13 @@ All districts of Brunei Darussalam:
 
 ## Customer Feedback
 
-**H.A. — Kitchen, Rimba** ★★★★★
+**H.A. � Kitchen, Rimba** ?????
 "Kitchen siap before Raya, exactly like they promised. My wife happy with the drawers, very smooth and quiet when closing. No regret."
 
-**N.R. — Kitchen + Island, Mentiri** ★★★★☆
+**N.R. � Kitchen + Island, Mentiri** ?????
 "Overall happy with the result. Took a bit longer because we changed the countertop colour halfway, but they were patient about it. Quality is good."
 
-**M.Z. — Full House Cabinets, Lambak Kanan** ★★★★★
+**M.Z. � Full House Cabinets, Lambak Kanan** ?????
 "Compared 3 companies. Caramella was the only one who came to measure first before giving a price. The others just gave a per-foot quote over WhatsApp."
 
 ## Site Directory
