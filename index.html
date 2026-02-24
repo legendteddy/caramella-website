@@ -273,11 +273,38 @@
 
         .hero-bg-slider {
             position: absolute;
-            inset: 0;
+            inset: -10%;
+            width: 120%;
+            height: 120%;
             z-index: 0;
             background-size: cover;
             background-position: center;
             background-image: image-set(url('images/img_4.webp') type('image/webp'), url('images/img_4.jpg') type('image/jpeg'));
+            animation: kenBurns 25s ease-in-out infinite alternate;
+            will-change: transform;
+        }
+
+        @keyframes kenBurns {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+
+            50% {
+                transform: scale(1.08) translate(-1%, 1%);
+            }
+
+            100% {
+                transform: scale(1.04) translate(1%, -0.5%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-bg-slider {
+                animation: none;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+            }
         }
 
         .hero-overlay {
@@ -1311,18 +1338,27 @@
             <h2 class="reveal-stone">Culinary <span class="italic-accent">Architecture</span> <br>& Sartorial Living
             </h2>
             <div class="services-grid reveal-stone">
-                <div class="service-card card-gradient">
-                    <h3>Culinary Architecture</h3>
-                    <p>Kitchens built around how you cook. Smart workflow. Premium finishes. Solid hardware.</p>
+                <div class="service-card card-gradient" style="background-image:url('images/img_9.jpg');">
+                    <div class="service-card__overlay"></div>
+                    <div class="service-card__content">
+                        <h3>Culinary Architecture</h3>
+                        <p>Kitchens built around how you cook. Smart workflow. Premium finishes. Solid hardware.</p>
+                    </div>
                 </div>
-                <div class="service-card card-gradient">
-                    <h3>Sartorial Collections</h3>
-                    <p>Wardrobes built around your routine. Clear zones. Easy access. A clean look.</p>
+                <div class="service-card card-gradient" style="background-image:url('images/img_5.jpg');">
+                    <div class="service-card__overlay"></div>
+                    <div class="service-card__content">
+                        <h3>Sartorial Collections</h3>
+                        <p>Wardrobes built around your routine. Clear zones. Easy access. A clean look.</p>
+                    </div>
                 </div>
-                <div class="service-card card-gradient">
-                    <h3>Spatial Joinery</h3>
-                    <p>Built-ins and feature joinery that make the space feel intentional. Nothing looks pieced
-                        together.</p>
+                <div class="service-card card-gradient" style="background-image:url('images/img_6.jpg');">
+                    <div class="service-card__overlay"></div>
+                    <div class="service-card__content">
+                        <h3>Spatial Joinery</h3>
+                        <p>Built-ins and feature joinery that make the space feel intentional. Nothing looks pieced
+                            together.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1998,7 +2034,7 @@
     </script>
 
 
-    <script src="js/site.js?v=20260224a"></script>
+    <script src="js/site.js?v=20260224b"></script>
 </body>
 
 </html>

@@ -217,6 +217,48 @@
         });
     }
 
+    /* ── Scroll-Reveal (IntersectionObserver) ── */
+    function initScrollReveal() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        if (!('IntersectionObserver' in window)) return;
+
+        // Collect revealable elements: sections, cards, grid children, headings
+        var selectors = [
+            'section > .container',
+            '.service-card',
+            '.card',
+            '.faq-item',
+            '.gallery-item',
+            '.testimonial-card',
+            'h2',
+            '.stats-strip',
+            '.image-break'
+        ];
+
+        var elements = document.querySelectorAll(selectors.join(','));
+        elements.forEach(function (el) {
+            // Skip if already has reveal or is inside a hero
+            if (el.classList.contains('reveal') || el.closest('.hero')) return;
+            el.classList.add('reveal');
+        });
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        document.querySelectorAll('.reveal').forEach(function (el) {
+            observer.observe(el);
+        });
+    }
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', function () {
             initSharedNav();
@@ -225,6 +267,7 @@
             initFloatingWhatsApp();
             initAnalyticsHooks();
             initCompanyAge();
+            initScrollReveal();
         });
     } else {
         initSharedNav();
@@ -233,5 +276,6 @@
         initFloatingWhatsApp();
         initAnalyticsHooks();
         initCompanyAge();
+        initScrollReveal();
     }
 })();
