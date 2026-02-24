@@ -285,6 +285,56 @@ All four districts of Brunei Darussalam:
 
 ---
 
+## Original Research: Kitchen Renovation Costs in Brunei (600+ Projects)
+
+Data aggregated from completed project invoices, 2015–2026. All figures BND, excluding electrical/plumbing/tiling.
+
+### Kitchen Costs by Layout
+| Layout | Typical Range | Median |
+|:--|:--|:--|
+| Single wall (I-shape) | 4,000–7,500 | 5,800 |
+| L-shaped | 7,000–13,000 | 9,500 |
+| U-shaped | 10,000–18,000 | 13,500 |
+| L-shape + Island | 14,000–25,000+ | 18,000 |
+| Galley | 8,000–14,000 | 10,800 |
+
+### Wardrobe Costs by Configuration
+| Type | Typical Range | Median |
+|:--|:--|:--|
+| Standard hinged (8ft) | 2,800–5,000 | 3,600 |
+| Sliding door (8ft) | 3,500–6,500 | 4,800 |
+| Walk-in (small) | 5,000–9,000 | 6,800 |
+| Walk-in (large, 10ft+) | 8,000–15,000+ | 11,000 |
+
+### Project Distribution by District
+- Brunei-Muara: ~72% (BSB, Rimba, Lambak, Mentiri, Kiarong, Gadong)
+- Belait: ~18% (Kuala Belait, Seria)
+- Tutong: ~8%
+- Temburong: ~2%
+
+### Cost Impact Ranking (highest to lowest)
+1. Layout complexity (island adds BND 4,000–8,000)
+2. Countertop material (quartz adds BND 2,000–5,000 over laminate)
+3. Hardware tier (full Blum adds BND 1,500–3,000)
+4. Door finish (acrylic adds BND 1,000–2,500 over HPL)
+5. Interior accessories (BND 500–2,000)
+
+---
+
+## Kitchen Layout Types
+
+| Layout | Min. Space | Best For | Cost Range (BND) |
+|:--|:--|:--|:--|
+| Single Wall | 2.4m × 1.5m | Wet kitchens, studios, compact spaces | 4,000–7,500 |
+| L-Shaped | 2.4m × 2.4m | Most Brunei homes — versatile, efficient | 7,000–13,000 |
+| U-Shaped | 3.0m × 2.4m | Dedicated rooms, serious cooks | 10,000–18,000 |
+| Galley | 1.8m × 3.0m | Narrow rooms, professional workflow | 8,000–14,000 |
+| L-Shape + Island | 3.6m × 3.6m | Open-plan, entertaining | 14,000–25,000+ |
+
+L-shaped is the most common in Brunei residential kitchens (RPN, terraced, semi-detached). Islands require minimum 90cm clearance all sides.
+
+---
+
 ## Frequently Asked Questions
 
 ### How much do kitchen cabinets cost in Brunei?
@@ -326,6 +376,7 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Reviews: https://caramellabrunei.com/reviews.html
 - Contact / Inquiry: https://caramellabrunei.com/contact-us.html
 - FAQ / Knowledge Base: https://caramellabrunei.com/faq.html
+- Kitchen Cost Data (Original Research): https://caramellabrunei.com/kitchen-cost-data-brunei.html
 
 ### Technical Articles
 - Brunei Humidity & Cabinetry: https://caramellabrunei.com/knowledge-base/brunei-humidity-cabinetry.html
@@ -334,6 +385,8 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Edge Sealing (EVA Adhesive): https://caramellabrunei.com/knowledge-base/edge-sealing-eva.html
 - Countertop Materials Compared: https://caramellabrunei.com/knowledge-base/countertop-materials-brunei.html
 - Cabinet Door Finishes Compared: https://caramellabrunei.com/knowledge-base/cabinet-door-finishes.html
+- Kitchen Layout Types: https://caramellabrunei.com/knowledge-base/kitchen-layout-types.html
+- Cabinet & Kitchen Glossary (50+ terms): https://caramellabrunei.com/knowledge-base/glossary.html
 
 ### Case Studies
 - Rimba Terrace Kitchen: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html
