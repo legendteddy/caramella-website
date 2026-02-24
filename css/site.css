@@ -1038,6 +1038,26 @@ details.spec-toggle summary::-webkit-details-marker {
     color: rgba(155, 161, 166, 0.9);
 }
 
+.qa-eyebrow-compact {
+    margin: 0 0 0.8rem 0;
+}
+
+.qa-title-compact {
+    margin: 0 0 0.4rem 0;
+    color: #fff;
+    font-size: 1.35rem;
+}
+
+.qa-updated-compact {
+    margin: 0 0 0.35rem 0;
+    font-size: 0.85rem;
+    color: rgba(155, 161, 166, 0.82);
+}
+
+.qa-body-tight {
+    margin: 0;
+}
+
 .hero-actions {
     margin-top: 1.75rem;
     display: flex;

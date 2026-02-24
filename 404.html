@@ -144,12 +144,50 @@
             transform: translateY(-2px);
         }
 
+        .quick-links {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            justify-content: center;
+        }
+
+        .quick-links a {
+            color: rgba(255, 255, 255, 0.75);
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            padding: 0.45rem 0.8rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .quick-links a:hover,
+        .quick-links a:focus-visible {
+            color: #fff;
+            border-color: rgba(255, 215, 0, 0.35);
+            background: rgba(255, 255, 255, 0.04);
+            outline: none;
+        }
+
         /* PARTICLES */
         .particle {
             position: absolute;
             background: #fff;
             border-radius: 50%;
             pointer-events: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .orb,
+            h1 {
+                animation: none !important;
+            }
+
+            .btn-home,
+            .quick-links a {
+                transition: none !important;
+            }
         }
     </style>
     <link rel="stylesheet" href="css/site.css?v=20260224e">
@@ -160,7 +198,7 @@
     <div class="orb orb-1"></div>
     <div class="orb orb-2"></div>
 
-    <div class="container">
+    <main id="main-content" class="container">
         <h1>404</h1>
         <div class="subtitle">Design Not Conceptualized</div>
         <p>
@@ -168,7 +206,13 @@
             <br>Return to our showroom to view available collections.
         </p>
         <a href="index.html" class="btn-home">Return Home</a>
-    </div>
+        <nav class="quick-links" aria-label="Helpful pages">
+            <a href="pricing.html">Pricing</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="faq.html">FAQ</a>
+            <a href="contact-us.html">Contact</a>
+        </nav>
+    </main>
 
     <script>
         // Simple Particle System
@@ -187,7 +231,9 @@
                 document.body.appendChild(p);
             }
         }
-        createParticles();
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            createParticles();
+        }
     </script>
     <script src="js/site.js?v=20260224b"></script>
 </body>

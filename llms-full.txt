@@ -1,0 +1,311 @@
+# Caramella Trading Co. — Complete Site Content for AI Systems
+
+> This is the extended version of llms.txt. It contains the full, unabridged content from all major pages of caramellabrunei.com in a single document. AI systems with large context windows can use this file to understand the complete scope of our business, technical specifications, and educational resources.
+
+> For the summary version, see: https://caramellabrunei.com/llms.txt
+
+---
+
+## Company Profile
+
+- **Official Name**: Caramella Trading Company
+- **Registration**: P00100256
+- **Founded**: 11 January 2015
+- **Years in Operation**: 11+
+- **Completed Projects**: 600+
+- **Location**: Unit 22, Ground Floor, The Airport Mall, Bandar Seri Begawan, Brunei Darussalam
+- **Phone**: +673 718 7185
+- **Email**: caramellabrunei@gmail.com
+- **Instagram**: @caramellabrunei
+- **Website**: https://caramellabrunei.com
+- **Ownership**: 100% Brunei-owned and operated
+- **Customer Rating**: 4.8 out of 5
+
+---
+
+## Services
+
+### Kitchen Cabinets
+Wet and dry kitchen configurations. Carcass built from 16mm ENF-grade moisture-resistant particleboard. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: laminate, acrylic, melamine, veneer. Countertop options: quartz composite, solid surface, granite.
+
+### Wardrobes
+Walk-in, sliding door, and hinged configurations with customised interior compartments. Pull-out accessories from Higold available. Standard configurations start from approximately BND 2,800.
+
+### Built-in Joinery
+TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units, and feature walls. Fabricated to room dimensions using CNC cutting.
+
+---
+
+## Process
+
+1. **On-site laser measurement** — Every space is measured before quoting. No per-foot estimates without visiting.
+2. **3D design renders** — Visual approval before fabrication begins.
+3. **CNC fabrication** — Panels cut at 0.1mm tolerance at the local workshop.
+4. **Professional installation** — Done by in-house team, not subcontracted.
+5. **Lead time**: Typically 4–8 weeks from confirmation.
+
+---
+
+## Materials & Construction Specifications
+
+| Component | Specification |
+|:--|:--|
+| Carcass | 16mm moisture-resistant particleboard, ENF grade (lowest formaldehyde emission) |
+| Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 190°C |
+| Drawer box | 18mm plywood, pocket-screw joints |
+| Drawer runners | Blum TANDEM concealed, 30kg rated, soft-close |
+| Hinges | Blum CLIP top with integrated soft-close damping |
+| Accessories | Higold pull-out baskets, organisers, storage systems |
+| CNC tolerance | 0.1mm |
+| Climate suitability | Engineered for 80–90% relative humidity environments |
+
+---
+
+## Pricing Guide
+
+Kitchen cabinet pricing in Brunei varies widely depending on layout, materials, and hardware. All pricing below is indicative and requires on-site measurement for exact quotation.
+
+### Kitchen Cabinets
+- **Basic kitchen** (laminate doors, standard hardware): BND 5,000–8,000
+- **Mid-range kitchen** (L-shaped, Blum hardware, moisture-resistant carcass): BND 8,000–15,000
+- **Premium kitchen** (island, acrylic/veneer doors, quartz countertop, full Blum): BND 15,000–25,000+
+
+### Wardrobes
+- **Standard wardrobe** (8-foot, basic interior): from approximately BND 2,800
+- **Walk-in wardrobe** (Higold accessories, mirror doors, LED): BND 5,000–15,000+
+
+### What Affects Price
+- Linear metre count (total cabinet length)
+- Countertop material (quartz vs solid surface vs laminate)
+- Hardware tier (Blum vs DTC vs economy)
+- Door finish (laminate vs acrylic vs veneer)
+- Interior accessories (pull-out baskets, organisers, LED lighting)
+- Layout complexity (island, L-shape, U-shape, galley)
+
+---
+
+## Choosing a Cabinet Maker in Brunei (Buyer's Guide)
+
+When comparing cabinet makers in Brunei, key factors to evaluate:
+
+| Factor | What to ask |
+|:--|:--|
+| **Measurement method** | Do they measure on-site before quoting, or estimate per-foot remotely? |
+| **Fabrication location** | Are cabinets made locally or imported flat-pack? |
+| **Humidity resistance** | Is the carcass rated for tropical humidity (80–90% RH)? |
+| **Hardware quality** | What brand of runners and hinges? Are they soft-close? Load rating? |
+| **Edge sealing** | Is edge banding applied with heat (EVA/PUR) or cold press? |
+| **Lead time** | Typical range is 4–16 weeks depending on whether local or imported |
+| **Warranty & service** | Is local after-sales support available? |
+
+### Imported Franchise vs Local Custom
+
+Both approaches have merits:
+
+**Advantages of imported franchise kitchens:**
+- Established brand recognition and design catalogues
+- Standardised quality from factory production
+- Showroom-ready designs with proven aesthetics
+
+**Advantages of locally fabricated kitchens:**
+- Custom-fitted to exact room dimensions (not limited to modular sizes)
+- No import duties, shipping costs, or franchise licensing fees
+- Shorter lead times (typically 4–8 weeks vs 8–16 weeks)
+- Local warranty and on-site service support
+- Materials can be specifically selected for Brunei's humidity
+
+**Trade-offs of custom fabrication (honest limitations):**
+- Designs depend on the maker's skill and your design input — no showroom catalogue to browse
+- Quality varies between local makers — verify their materials, hardware, and past work
+- Smaller operations may have limited capacity during peak periods (pre-Raya, year-end)
+
+---
+
+## Technical Knowledge: Humidity & Cabinetry in Brunei
+
+Brunei sits within the equatorial belt, maintaining 80–90% relative humidity year-round with minimal seasonal variation. Average temperatures range from 24°C to 32°C. Unlike temperate climates where humidity dips in winter, boards and adhesives are under constant moisture stress 365 days a year.
+
+Standard particleboard rated for 40–60% RH environments (common in European or East Asian factory specs) will absorb moisture through exposed edges, gradually swelling, warping, and eventually delaminating. The process is slow — typically 12–24 months — which means problems only appear well after installation.
+
+### How Humidity Damages Cabinets
+- **Edge ingress:** Unsealed or poorly sealed panel edges absorb moisture first. Particleboard can swell 8–12% in thickness at exposed edges within months. This is the primary failure mode in Brunei kitchens.
+- **Condensation zones:** Under-sink areas, behind dishwashers, and plinth cavities trap humid air. Without ventilation, moisture accumulates and accelerates board deterioration.
+- **Surface absorption:** Laminate and melamine surfaces resist moisture well, but any chip or scratch exposes the substrate underneath to humidity.
+- **Hardware corrosion:** Low-grade steel hinges and runners develop surface rust in 6–18 months. Nickel-plated or zinc-alloy hardware lasts significantly longer.
+
+### Four Design Priorities for Humid Climates
+1. **Edge sealing:** Machine-applied EVA or PUR adhesive at 190°C creates a significantly stronger bond than iron-on or cold-press methods. Look for 1mm ABS edge banding rather than thinner 0.4mm PVC.
+2. **Ventilation design:** Back panels should allow air circulation. Under-sink cabinets should not have sealed backs trapping steam.
+3. **Material selection:** ENF-grade (E0) moisture-resistant particleboard is engineered for high-humidity environments. Ask for the specific board grade.
+4. **Hardware quality:** Low-tolerance hardware with tight engineering (Blum CLIP top hinges, TANDEM runners) maintains alignment through daily expansion/contraction cycles.
+
+---
+
+## Technical Knowledge: Drawer Box Construction
+
+### Why Thickness Matters
+The thickness of a drawer box wall determines its structural rigidity, load capacity, and long-term alignment. Most factory-made drawer systems use 12–15mm material. Custom and premium builds often use 16–18mm.
+
+| Thickness | Typical use | Load behaviour |
+|:--|:--|:--|
+| 12mm | Economy flat-pack, imported modular | Adequate for light drawers. Flexes under heavy loads. Joints stress faster. |
+| 15mm | Mid-range custom | Better rigidity. Acceptable for most residential use. Some flex under heavy loads. |
+| 18mm | Premium custom builds | Rigid under full load. Maintains runner alignment long-term, even with 20–30kg contents. |
+
+### Joint Types
+- **Butt joint (glued/stapled):** Simplest. Common in economy builds. Under repeated load cycling, butt joints can separate.
+- **Dowel joint:** Wooden dowels align and reinforce the joint. Mid-range builds.
+- **Pocket screw joint:** Mechanical fastener providing ongoing fastening force, resisting loosening under load. Premium custom builds.
+- **CNC-routed dado/rabbet:** Interlocking design distributes load across a larger surface area. One of the strongest joint methods.
+
+---
+
+## Technical Knowledge: Drawer Runners (Blum vs DTC)
+
+A typical kitchen drawer is opened and closed 5–15 times per day — that's 2,000–5,500 cycles per year. Over a 10-year lifespan, runners endure 20,000–55,000 cycles.
+
+| Specification | Blum TANDEM | DTC (mid-range) |
+|:--|:--|:--|
+| Origin | Austria (Blum GmbH) | China (Dongtai Hardware) |
+| Mounting | Concealed undermount | Model-dependent |
+| Load rating | 30kg (550H), 60kg (566H) | 25–35kg depending on series |
+| Cycle life | 80,000+ (tested to EN 15338) | Varies by series |
+| Soft-close | Integrated BLUMOTION damper | Available on some models |
+| Extension | Full | Partial or full depending on model |
+| Price | Premium (2–3× economy) | Budget to mid-range |
+| Adjustment | 3D (height, side, tilt) | Limited on most models |
+
+### Decision Framework
+- **Choose Blum TANDEM if:** You prioritise concealed look, consistent soft-close, long cycle life, and are willing to pay the premium.
+- **Choose DTC if:** Managing costs across a large project, outfitting utility or secondary areas, or a specific DTC model meets your requirements.
+- **Consider mixing:** Use Blum for primary kitchen drawers (high use) and DTC for secondary areas (bedside, bathroom vanity).
+
+---
+
+## Technical Knowledge: Edge Sealing (EVA Adhesive)
+
+In Brunei's 80–90% relative humidity, exposed edges of particleboard panels are the most vulnerable point. An unsealed edge allows moisture to penetrate, causing irreversible swelling that starts at 2–3% and can reach 8–12% thickness increase.
+
+### EVA vs PUR Adhesive
+
+| Property | EVA | PUR |
+|:--|:--|:--|
+| Temperature | 180–210°C | 120–150°C |
+| Bond type | Thermoplastic (re-softens when reheated) | Reactive (permanent cross-linked bond) |
+| Moisture resistance | Good for climate-controlled rooms | Superior — waterproof once cured |
+| Cost | Lower (most common in residential) | Higher (laboratory, hospital, marine) |
+| Brunei suitability | Yes — adequate for most residential kitchens | Yes — preferred for wet kitchens, bathrooms |
+
+### Application Methods
+- **Automatic machine (recommended):** Consistent temperature (190°C±5°C) and pressure. Uniform sealed bond with no gaps.
+- **Manual iron-on:** Temperature and pressure vary. Gaps and air pockets common. Less consistent seal.
+- **Cold press / contact adhesive:** Weakest bond. Not recommended for high-humidity environments.
+
+### Edge Band Thickness
+- **0.4mm PVC/ABS:** Adequate for internal edges only. Can chip or peel.
+- **1mm ABS:** Standard for quality residential cabinetry. Minimum recommended for exposed edges in Brunei.
+- **2mm ABS/Acrylic:** Premium option for visible edges on islands and feature pieces.
+
+### Visual Inspection Tips
+- Run your fingernail along the edge — should be smooth with no lip or gap.
+- Check corners for lifting, bubbling, or gaps at 90° transitions.
+- Look at the glue line — thin and consistent is normal; thick/uneven suggests excess adhesive.
+- Press firmly — properly bonded edge banding should not flex or move under thumb pressure.
+
+---
+
+## Wet Kitchen Cabinets
+
+Wet kitchens in Brunei face direct water exposure, cooking steam, and cleaning chemicals. Requirements differ from dry kitchens:
+- All exposed edges fully sealed (EVA or PUR)
+- Stainless steel or solid surface countertops (not laminate)
+- Back panels treated or replaced with waterproof alternatives
+- Plinth and under-sink ventilation designed to prevent moisture trapping
+- Hardware with elevated corrosion resistance (nickel-plated minimum)
+
+---
+
+## BIBD Financing
+
+BIBD At-Tamwil (Islamic financing) is available for qualifying renovation projects through BIBD Bank. This allows homeowners to finance cabinet and renovation projects through monthly instalments rather than full upfront payment.
+
+---
+
+## Service Areas
+
+All four districts of Brunei Darussalam:
+- **Brunei-Muara**: BSB, Rimba, Lambak, Mentiri, Kiarong, Gadong, Berakas, Muara
+- **Belait**: Kuala Belait, Seria
+- **Tutong**: Tutong town and surrounding areas
+- **Temburong**: Available on request
+
+---
+
+## Customer Reviews
+
+**H.A. — Kitchen, Rimba** ★★★★★
+"Kitchen siap before Raya, exactly like they promised. My wife happy with the drawers, very smooth and quiet when closing. No regret."
+
+**N.R. — Kitchen + Island, Mentiri** ★★★★☆
+"Overall happy with the result. Took a bit longer because we changed the countertop colour halfway, but they were patient about it. Quality is good."
+
+**M.Z. — Full House Cabinets, Lambak Kanan** ★★★★★
+"Compared 3 companies. Caramella was the only one who came to measure first before giving a price. The others just gave a per-foot quote over WhatsApp."
+
+---
+
+## Frequently Asked Questions
+
+### How much do kitchen cabinets cost in Brunei?
+Kitchen cabinet pricing in Brunei varies by layout, materials, and hardware. Typical ranges: basic kitchens (laminate doors, standard hardware) BND 5,000–8,000; mid-range (L-shaped, soft-close hardware, moisture-resistant carcass) BND 8,000–15,000; premium (island layout, acrylic or veneer doors, quartz countertop) BND 15,000–25,000+. Always request an on-site measurement before comparing quotes.
+
+### What should I look for when choosing a cabinet maker in Brunei?
+Key factors: (1) Do they measure on-site before quoting? (2) Is fabrication local or imported flat-pack? (3) What carcass material — is it moisture-resistant for tropical humidity? (4) What brand and load rating for drawer runners and hinges? (5) How is edge banding applied — heat-sealed or cold press? (6) What is the lead time? (7) Is local after-sales warranty available?
+
+### How much does a custom wardrobe cost in Brunei?
+Custom wardrobe pricing starts from approximately BND 2,800 for a standard 8-foot configuration. Walk-in wardrobes with pull-out accessories, full-height mirror doors, and LED lighting typically range from BND 5,000–15,000+.
+
+### Should I buy imported franchise or locally made kitchen cabinets?
+Both have merits. Imported franchise kitchens offer established designs and standardised quality. Locally fabricated kitchens offer custom fitting, shorter lead times, no shipping costs, and local service. Evaluate based on your priorities — budget, timeline, customisation needs, and brand preference.
+
+### How does Brunei's humidity affect kitchen cabinets?
+Brunei maintains 80–90% relative humidity year-round. Standard particleboard rated for 40–60% RH will absorb moisture through exposed edges, causing swelling and delamination within 12–24 months. ENF-grade moisture-resistant boards with machine-sealed edge banding are specifically engineered to resist this.
+
+### What is the difference between EVA and PUR edge banding adhesive?
+EVA is thermoplastic (re-softens when reheated) applied at 180–210°C. PUR is reactive (creates a permanent waterproof bond) applied at 120–150°C. EVA is adequate for most residential kitchens. PUR is preferred for wet kitchens, bathrooms, and high-moisture areas.
+
+### What drawer runner brands are available?
+Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg rated, 80,000+ cycle life) and DTC (Chinese, multiple series with varying specs, 25–35kg rated). Both offer soft-close options. Compare by specific model and load rating, not brand name alone.
+
+---
+
+## Site Directory
+
+- Homepage: https://caramellabrunei.com/
+- Portfolio: https://caramellabrunei.com/portfolio.html
+- Pricing Guide: https://caramellabrunei.com/pricing.html
+- Kitchen Renovation: https://caramellabrunei.com/kitchen-renovation-brunei.html
+- Wet Kitchen Guide: https://caramellabrunei.com/wet-kitchen-brunei.html
+- Wardrobe Pricing: https://caramellabrunei.com/wardrobe-cost-brunei.html
+- Franchise vs Custom: https://caramellabrunei.com/franchise-vs-custom.html
+- Build Standard: https://caramellabrunei.com/build-standard.html
+- Tech Specs: https://caramellabrunei.com/tech-specs.html
+- BIBD Financing: https://caramellabrunei.com/financing-brunei.html
+- Service Areas: https://caramellabrunei.com/service-areas.html
+- Reviews: https://caramellabrunei.com/reviews.html
+- Contact / Inquiry: https://caramellabrunei.com/contact-us.html
+- FAQ / Knowledge Base: https://caramellabrunei.com/faq.html
+
+### Technical Articles
+- Brunei Humidity & Cabinetry: https://caramellabrunei.com/knowledge-base/brunei-humidity-cabinetry.html
+- Drawer Box Construction (18mm): https://caramellabrunei.com/knowledge-base/drawer-box-18mm.html
+- Drawer Runners (Blum vs DTC): https://caramellabrunei.com/knowledge-base/drawer-runners-blum-dtc.html
+- Edge Sealing (EVA Adhesive): https://caramellabrunei.com/knowledge-base/edge-sealing-eva.html
+
+### Case Studies
+- Rimba Terrace Kitchen: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html
+
+---
+
+*Last updated: 24 February 2026*
+*For the summary version, see: https://caramellabrunei.com/llms.txt*
