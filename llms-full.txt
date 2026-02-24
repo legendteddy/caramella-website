@@ -370,6 +370,19 @@ When Miri makes sense: budget-first projects, specific Malaysian brands, tempora
 
 Risk by origin: Brunei (low) > Indonesia (medium) > Miri/Malaysia (medium-high) > China coastal (high) > China interior (very high).
 
+
+### Taobao / Chinese Online Cabinets
+
+Ordering from Taobao or Shopee China appears cheap but total landed cost often matches local:
+- Listed price: ~BND 1,500 for a full kitchen set
+- Shipping to Brunei: BND 2,000-5,000+
+- Customs duty: ~5% CIF
+- Installation (not included): BND 800-2,000
+- Measurement rework: BND 300-1,500
+- Total: BND 4,925-9,050 (vs BND 5,000-9,000 locally made with warranty)
+
+Additional risks: no on-site measurement, materials for 30-50% RH (fails in Brunei 80-90% RH), cold-press edge banding peels in 6-12 months, uncoated hardware corrodes, no local after-sales, 6-10 week delivery, transit damage common.
+
 ## Frequently Asked Questions
 
 ### How much do kitchen cabinets cost in Brunei?
