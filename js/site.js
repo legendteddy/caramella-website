@@ -8,10 +8,26 @@
         var mobileMedia = window.matchMedia('(max-width: 968px)');
 
         if (nav) {
-            window.addEventListener('scroll', function () {
-                if (window.scrollY > 50) nav.classList.add('scrolled');
-                else nav.classList.remove('scrolled');
-            });
+            var navScrollRafPending = false;
+            var navIsScrolled = nav.classList.contains('scrolled');
+
+            function updateNavScrolledState() {
+                var shouldBeScrolled = (window.scrollY || window.pageYOffset || 0) > 50;
+                if (shouldBeScrolled !== navIsScrolled) {
+                    nav.classList.toggle('scrolled', shouldBeScrolled);
+                    navIsScrolled = shouldBeScrolled;
+                }
+                navScrollRafPending = false;
+            }
+
+            function scheduleNavScrolledUpdate() {
+                if (navScrollRafPending) return;
+                navScrollRafPending = true;
+                window.requestAnimationFrame(updateNavScrolledState);
+            }
+
+            updateNavScrolledState();
+            window.addEventListener('scroll', scheduleNavScrolledUpdate, { passive: true });
         }
 
         if (!menuToggle || !navLinks) return;
@@ -143,6 +159,15 @@
             else unlock();
         }
 
+        function closeActiveLightboxes() {
+            var overlays = document.querySelectorAll('.lightbox.active');
+            if (!overlays.length) return false;
+            overlays.forEach(function (overlay) {
+                overlay.classList.remove('active');
+            });
+            return true;
+        }
+
         // Initial state
         sync();
 
@@ -152,9 +177,11 @@
             mo.observe(lightbox, { attributes: true, attributeFilter: ['class'] });
         }
 
-        // Fallback: close should always unlock.
+        // Escape should close open lightboxes and ensure scroll lock state stays in sync.
         document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') sync();
+            if (e.key !== 'Escape') return;
+            closeActiveLightboxes();
+            sync();
         });
 
         // Safety: when navigating away/back, ensure we never stay locked.
