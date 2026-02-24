@@ -12,12 +12,7 @@
 
 html {
     scroll-behavior: smooth;
-    scrollbar-width: none;
     overscroll-behavior-y: none;
-}
-
-html::-webkit-scrollbar {
-    display: none;
 }
 
 ::selection {
@@ -545,7 +540,9 @@ table,
 }
 
 @media (prefers-reduced-motion: reduce) {
-    * {
+    *,
+    *::before,
+    *::after {
         animation: none !important;
         transition: none !important;
         scroll-behavior: auto !important;
