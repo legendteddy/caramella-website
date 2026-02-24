@@ -1338,21 +1338,21 @@
             <h2 class="reveal-stone">Culinary <span class="italic-accent">Architecture</span> <br>& Sartorial Living
             </h2>
             <div class="services-grid reveal-stone">
-                <div class="service-card card-gradient" style="background-image:url('images/img_9.jpg');">
+                <div class="service-card" style="background-image:url('images/img_9.jpg');">
                     <div class="service-card__overlay"></div>
                     <div class="service-card__content">
                         <h3>Culinary Architecture</h3>
                         <p>Kitchens built around how you cook. Smart workflow. Premium finishes. Solid hardware.</p>
                     </div>
                 </div>
-                <div class="service-card card-gradient" style="background-image:url('images/img_5.jpg');">
+                <div class="service-card" style="background-image:url('images/img_5.jpg');">
                     <div class="service-card__overlay"></div>
                     <div class="service-card__content">
                         <h3>Sartorial Collections</h3>
                         <p>Wardrobes built around your routine. Clear zones. Easy access. A clean look.</p>
                     </div>
                 </div>
-                <div class="service-card card-gradient" style="background-image:url('images/img_6.jpg');">
+                <div class="service-card" style="background-image:url('images/img_6.jpg');">
                     <div class="service-card__overlay"></div>
                     <div class="service-card__content">
                         <h3>Spatial Joinery</h3>
@@ -1878,6 +1878,12 @@
             background: linear-gradient(var(--bg-void), var(--bg-void)) padding-box,
                 var(--gold-grad) border-box;
             border: 1px solid transparent !important;
+            border-radius: 1rem;
+        }
+
+        /* Allow inline background-image to show on service cards */
+        .service-card[style*="background-image"] {
+            border: 1px solid rgba(255, 215, 0, 0.25);
             border-radius: 1rem;
         }
 
