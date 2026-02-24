@@ -849,7 +849,7 @@ header h1 .italic-accent {
 .contact-info,
 .form-container,
 .gallery-item {
-    background: var(--panel) !important;
+    background-color: var(--panel) !important;
     border: 1px solid var(--panel-border) !important;
     box-shadow: var(--panel-shadow) !important;
     border-radius: 18px !important;
