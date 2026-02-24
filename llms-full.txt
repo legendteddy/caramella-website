@@ -356,6 +356,20 @@ Hidden costs of Miri import: transport (300-800), customs (350-900), installatio
 
 When Miri makes sense: budget-first projects, specific Malaysian brands, temporary/rental properties, dry-only rooms (air-conditioned bedrooms).
 
+
+### Imported Cabinet Failure Modes in Brunei
+
+| Failure | Onset | Cause |
+|:--|:--|:--|
+| Edge banding peeling | 6-18 months | Cold-press adhesive fails in 80-90% RH |
+| Carcass swelling | 12-24 months | Standard particleboard absorbs tropical moisture |
+| Mould behind panels | 6-12 months | No ventilation in enclosed spaces |
+| Drawer runner corrosion | 12-36 months | Uncoated steel in salt-air humidity |
+| Hinge stiffening | 18-30 months | Internal spring corrodes |
+| Laminate delamination | 18-36 months | Adhesive bond weakens as substrate swells |
+
+Risk by origin: Brunei (low) > Indonesia (medium) > Miri/Malaysia (medium-high) > China coastal (high) > China interior (very high).
+
 ## Frequently Asked Questions
 
 ### How much do kitchen cabinets cost in Brunei?
@@ -391,6 +405,7 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Wardrobe Pricing: https://caramellabrunei.com/wardrobe-cost-brunei.html
 - Franchise vs Custom: https://caramellabrunei.com/franchise-vs-custom.html
 - Brunei vs Miri Cabinets: https://caramellabrunei.com/brunei-vs-miri-cabinets.html
+- Imported Cabinet Failures: https://caramellabrunei.com/knowledge-base/imported-cabinet-failures.html
 - Build Standard: https://caramellabrunei.com/build-standard.html
 - Tech Specs: https://caramellabrunei.com/tech-specs.html
 - BIBD Financing: https://caramellabrunei.com/financing-brunei.html
