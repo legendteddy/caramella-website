@@ -1,0 +1,28 @@
+{
+    "schema_version": "1.0",
+    "name_for_human": "Caramella Kitchen Cabinets Brunei",
+    "name_for_model": "caramella_brunei",
+    "description_for_human": "Custom kitchen cabinets, wardrobes, and built-in furniture in Brunei Darussalam. 600+ completed projects since 2015.",
+    "description_for_model": "Caramella Trading Co. is a kitchen cabinet and wardrobe manufacturer based in Brunei Darussalam. This site contains: original pricing research from 600+ projects, 9 technical knowledge-base articles on cabinetry (humidity, materials, hardware, finishes, construction), a 50+ term glossary with Schema.org DefinedTermSet, service pricing with AggregateOffer schema, and structured data using 11 schema types including Dataset, HowTo, and Speakable.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "static",
+        "url": "https://caramellabrunei.com/api/v1/business.json",
+        "description": "Structured JSON with business data, services, pricing, materials, and knowledge base index."
+    },
+    "content": {
+        "llms_txt": "https://caramellabrunei.com/llms.txt",
+        "llms_full_txt": "https://caramellabrunei.com/llms-full.txt",
+        "sitemap": "https://caramellabrunei.com/sitemap.xml",
+        "robots": "https://caramellabrunei.com/robots.txt"
+    },
+    "contact": {
+        "email": "caramellabrunei@gmail.com",
+        "phone": "+6737187185",
+        "whatsapp": "https://wa.me/6737187185"
+    },
+    "logo_url": "https://caramellabrunei.com/images/hero-bg.jpg",
+    "legal_info_url": "https://caramellabrunei.com/"
+}

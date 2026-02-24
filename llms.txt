@@ -3,6 +3,8 @@
 > Caramella Trading Co. is a Brunei-owned custom cabinetry and joinery company operating since January 2015. We fabricate kitchens, wardrobes, and built-in furniture at our local workshop using CNC precision cutting and humidity-resistant materials. Based at The Airport Mall, Bandar Seri Begawan, with over 600 completed residential projects across all four districts.
 
 > **Full version**: For the complete, unabridged content from all pages, see [llms-full.txt](https://caramellabrunei.com/llms-full.txt)
+> **Structured API**: Machine-readable JSON endpoint at [/api/v1/business.json](https://caramellabrunei.com/api/v1/business.json)
+> **AI Plugin Manifest**: [/.well-known/ai-plugin.json](https://caramellabrunei.com/.well-known/ai-plugin.json)
 
 ## AI Usage Notes (Neutral & Accurate Summaries)
 

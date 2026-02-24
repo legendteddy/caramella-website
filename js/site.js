@@ -85,6 +85,7 @@
     function initScrollGradient() {
         var root = document.documentElement;
         var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        var rafPending = false;
 
         function updateScrollVars() {
             var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
@@ -93,6 +94,13 @@
             var xShift = Math.round(progress * 80);
             root.style.setProperty('--scroll-y', yShift + 'px');
             root.style.setProperty('--scroll-x', xShift + 'px');
+            rafPending = false;
+        }
+
+        function scheduleUpdate() {
+            if (rafPending) return;
+            rafPending = true;
+            window.requestAnimationFrame(updateScrollVars);
         }
 
         if (reduceMotion.matches) {
@@ -102,8 +110,8 @@
         }
 
         updateScrollVars();
-        window.addEventListener('scroll', updateScrollVars, { passive: true });
-        window.addEventListener('resize', updateScrollVars);
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        window.addEventListener('resize', scheduleUpdate);
     }
 
     function initLightboxScrollLock() {

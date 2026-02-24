@@ -67,3 +67,9 @@ Allow: /
 
 # Sitemap Location
 Sitemap: https://caramellabrunei.com/sitemap.xml
+
+# AI-Readable Content (machine-first formats)
+# Summary: https://caramellabrunei.com/llms.txt
+# Full content: https://caramellabrunei.com/llms-full.txt
+# Structured API: https://caramellabrunei.com/api/v1/business.json
+# AI Plugin Manifest: https://caramellabrunei.com/.well-known/ai-plugin.json
