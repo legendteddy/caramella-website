@@ -44,7 +44,18 @@
     <meta name="geo.position" content="4.94025;114.93983">
     <meta name="ICBM" content="4.94025, 114.93983">
 
-    <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp">
+    <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp">    <!-- Speakable Schema for Voice Assistants -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["title", "meta[name='description']", "h1", ".lead"]
+      },
+      "url": "https://caramellabrunei.com/wet-kitchen-brunei.html"
+    }
+    </script>
     <link rel="stylesheet" href="css/site.css?v=20260224e">
 
     <script type="application/ld+json">

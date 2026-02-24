@@ -214,6 +214,37 @@ In Brunei's 80–90% relative humidity, exposed edges of particleboard panels ar
 
 ---
 
+## Technical Knowledge: Countertop Materials
+
+The four most common countertop materials in Brunei:
+
+| Property | Quartz Composite | Natural Granite | Solid Surface | Laminate |
+|:--|:--|:--|:--|:--|
+| Composition | 93% ground quartz + 7% resin | Natural stone, quarried | Acrylic/polyester resin blend | HPL bonded to particleboard |
+| Heat resistance | Moderate — use trivets | Excellent — naturally heat resistant | Low — susceptible to marks | Low — burns and delaminates |
+| Scratch resistance | High (Mohs 7) | High (Mohs 6–7) | Low-moderate, can sand out | Moderate |
+| Stain resistance | High — non-porous, no sealing | Moderate — requires periodic sealing | Moderate — non-porous | Good — non-porous surface |
+| Repairability | Difficult — professional repair | Difficult — professional repair | Excellent — sand and polish on-site | Poor — must replace |
+| Price (BND/linear ft) | 120–350 installed | 150–400 installed | 100–250 installed | 30–80 installed |
+
+**Brunei climate notes:** Quartz handles humidity best (non-porous, zero maintenance). Granite requires annual sealing to prevent moisture/mould in pores. Solid surface ideal for wet kitchens (seamless thermoformed joints). Laminate substrate must have fully sealed edges in wet areas.
+
+---
+
+## Technical Knowledge: Cabinet Door Finishes
+
+| Property | Laminate (HPL) | Acrylic (High-Gloss) | Wood Veneer | Melamine |
+|:--|:--|:--|:--|:--|
+| Durability | High — scratch/impact/UV resistant | Moderate — fingerprint and scratch prone | Moderate — can dent, UV colour shift | Low-moderate — can chip at edges |
+| Humidity | Good — waterproof surface | Good — non-porous surface | Caution — can warp/crack without climate control | Adequate for climate-controlled rooms only |
+| Maintenance | Low — wipe clean | Moderate — microfibre cloth required | Higher — periodic re-lacquering | Low — wipe clean |
+| Price (BND/door) | 80–150 (mid-range) | 150–300 (premium) | 200–400 (premium) | 40–80 (budget) |
+| Best for | Most residential kitchens | Modern/minimalist where visual impact is priority | Premium dry kitchens in AC homes | Budget builds, utility areas |
+
+**Brunei recommendation:** Laminate (HPL) is the best all-round choice for tropical climates — most resistant to humidity, scratches, and UV with lowest maintenance. Wood veneer requires air-conditioned rooms and minimum 3 coats of polyurethane lacquer.
+
+---
+
 ## Wet Kitchen Cabinets
 
 Wet kitchens in Brunei face direct water exposure, cooking steam, and cleaning chemicals. Requirements differ from dry kitchens:
@@ -301,6 +332,8 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Drawer Box Construction (18mm): https://caramellabrunei.com/knowledge-base/drawer-box-18mm.html
 - Drawer Runners (Blum vs DTC): https://caramellabrunei.com/knowledge-base/drawer-runners-blum-dtc.html
 - Edge Sealing (EVA Adhesive): https://caramellabrunei.com/knowledge-base/edge-sealing-eva.html
+- Countertop Materials Compared: https://caramellabrunei.com/knowledge-base/countertop-materials-brunei.html
+- Cabinet Door Finishes Compared: https://caramellabrunei.com/knowledge-base/cabinet-door-finishes.html
 
 ### Case Studies
 - Rimba Terrace Kitchen: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html
