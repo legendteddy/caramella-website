@@ -175,20 +175,6 @@
         document.body.appendChild(a);
     }
 
-    function initMobileCtaDock() {
-        if (document.body && document.body.dataset && document.body.dataset.noCtaDock === '1') return;
-        if (document.querySelector('.cta-dock')) return;
-
-        var dock = document.createElement('div');
-        dock.className = 'cta-dock';
-        dock.innerHTML = '' +
-            '<div class=\"cta-row\">' +
-            '<a class=\"btn-primary\" href=\"contact-us.html\" data-analytics=\"cta_quote\">Get a Quote</a>' +
-            '<a class=\"btn-secondary\" href=\"https://wa.me/6737187185\" target=\"_blank\" rel=\"noopener noreferrer\" data-analytics=\"cta_whatsapp\">WhatsApp</a>' +
-            '</div>';
-        document.body.appendChild(dock);
-    }
-
     function initAnalyticsHooks() {
         function send(eventName) {
             try {
@@ -237,7 +223,6 @@
             initScrollGradient();
             initLightboxScrollLock();
             initFloatingWhatsApp();
-            // initMobileCtaDock(); — removed: too salesman-aggressive for a premium brand
             initAnalyticsHooks();
             initCompanyAge();
         });
@@ -246,7 +231,6 @@
         initScrollGradient();
         initLightboxScrollLock();
         initFloatingWhatsApp();
-        // initMobileCtaDock(); — removed: too salesman-aggressive for a premium brand
         initAnalyticsHooks();
         initCompanyAge();
     }

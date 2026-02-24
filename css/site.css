@@ -55,6 +55,17 @@ html::-webkit-scrollbar {
     --glass-border: 1px solid rgba(255, 255, 255, 0.15);
     --glass-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
     /* Avoid magenta/purple refraction; keep it sapphire + gold. */
+
+    /* Visual upgrade tokens */
+    --ink: #f5f7f9;
+    --ink-muted: rgba(245, 247, 249, 0.72);
+    --gold-core: #f4d77a;
+    --gold-deep: #b8860b;
+    --panel: rgba(12, 18, 26, 0.38);
+    --panel-border: rgba(255, 255, 255, 0.18);
+    --panel-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+    --glass-strong: blur(26px) saturate(160%);
+    --gold-sheen: linear-gradient(135deg, rgba(255, 215, 0, 0.42), rgba(255, 215, 0, 0.08));
     --diamond-refraction: linear-gradient(115deg,
             transparent 40%,
             rgba(0, 175, 255, 0.42) 46%,
@@ -542,17 +553,6 @@ table,
 }
 
 /* === Visual Upgrade Pass (modern, minimal, premium) === */
-:root {
-    --ink: #f5f7f9;
-    --ink-muted: rgba(245, 247, 249, 0.72);
-    --gold-core: #f4d77a;
-    --gold-deep: #b8860b;
-    --panel: rgba(12, 18, 26, 0.38);
-    --panel-border: rgba(255, 255, 255, 0.18);
-    --panel-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
-    --glass-strong: blur(26px) saturate(160%);
-    --gold-sheen: linear-gradient(135deg, rgba(255, 215, 0, 0.42), rgba(255, 215, 0, 0.08));
-}
 
 body {
     position: relative;
@@ -1324,44 +1324,7 @@ details.spec-toggle summary::-webkit-details-marker {
     margin-top: 2rem;
 }
 
-/* Mobile CTA dock: injected by js/site.js (safe if analytics is absent). */
-.cta-dock {
-    position: fixed;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: calc(12px + env(safe-area-inset-bottom));
-    width: min(560px, calc(100% - 24px));
-    z-index: 9999;
-    padding: 10px;
-    border-radius: 18px;
-    background: rgba(8, 22, 33, 0.92);
-    border: 1px solid rgba(212, 175, 55, 0.28);
-    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    display: none;
-}
 
-.cta-dock .cta-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-}
-
-.cta-dock .cta-row a {
-    width: 100%;
-    padding: 0.85rem 0.9rem;
-}
-
-@media (max-width: 968px) {
-    .cta-dock {
-        display: block;
-    }
-
-    body.menu-open .cta-dock {
-        display: none;
-    }
-}
 
 details.kb-toggle summary::after,
 details.spec-toggle summary::after {
