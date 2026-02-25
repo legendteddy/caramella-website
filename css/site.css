@@ -577,6 +577,30 @@ table,
     }
 }
 
+/* === Rendering Performance === */
+
+/* Skip rendering for off-screen sections until scrolled into view.
+   contain-intrinsic-size gives the browser a placeholder height so
+   scroll-bar length stays stable as sections load.                */
+.section,
+section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 600px;
+}
+
+/* Promote hover-animated cards to their own compositing layer */
+.service-card,
+.case-study,
+.faq-item,
+.gallery-item {
+    will-change: transform;
+}
+
+/* Isolate footer rendering from main content repaints */
+.site-footer {
+    contain: layout style paint;
+}
+
 /* === Visual Upgrade Pass (modern, minimal, premium) === */
 
 body {
