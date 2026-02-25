@@ -2957,3 +2957,179 @@ button:active,
 .handle-part {
     transition: fill 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+/* ============================================================
+   MOBILE VISUAL FIXES — comprehensive pass 2026-02-25
+   Addresses: cramped form, table overflow, excessive padding,
+   section/hero spacing, split layout stacking.
+   ============================================================ */
+
+/* --- Spec / data tables: always scrollable on mobile --- */
+.spec-table,
+table:not(.data-table) {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+@media (max-width: 768px) {
+
+    /* Make ALL tables horizontally scrollable — not just .data-table */
+    .spec-table,
+    table:not(.data-table) {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    /* Restore normal flow to table body for inline scrolling */
+    .spec-table thead,
+    .spec-table tbody,
+    .spec-table tfoot {
+        display: table;
+        width: 100%;
+    }
+
+    /* Container: reduce fat horizontal padding sitewide on mobile */
+    .container,
+    .kb-article {
+        padding-left: 1.1rem !important;
+        padding-right: 1.1rem !important;
+    }
+
+    /* section-pad: reduce vertical breathing room */
+    .section-pad {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    /* Glass panels: reduce internal padding so content isn't squished */
+    .glass-panel {
+        padding: 1.25rem 1rem !important;
+    }
+
+    /* Hero sections: less vertical padding on small screens */
+    .page-hero,
+    .hero {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+        padding-left: 1.1rem !important;
+        padding-right: 1.1rem !important;
+    }
+
+    /* Split layout (service-areas, etc.): stack vertically */
+    .split {
+        display: block !important;
+    }
+
+    .split>aside,
+    .split>section {
+        width: 100% !important;
+        margin-bottom: 2rem;
+    }
+
+    /* form-grid-2: always stack on mobile — catches global + page-level instances */
+    .form-grid-2 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* App rows in form: allow wrapping select to go full width */
+    .app-row {
+        flex-wrap: wrap;
+    }
+
+    .app-row .form-input.is-small {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* form-section internal padding: breathe on mobile */
+    .form-section {
+        padding: 1rem 0.85rem !important;
+    }
+
+    /* Footer grid: reduce padding on narrow screens */
+    .site-footer.site-footer--grid {
+        padding: 2rem 1.1rem !important;
+    }
+
+    /* Footer grid columns: 2 cols on mobile instead of 4 */
+    .footer-grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Pill grids: wrap cleanly */
+    .pill-grid {
+        gap: 0.4rem;
+    }
+
+    /* Card grids: force 1 col below 500px */
+    .card-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* ROI / comparison tables inside glass panels:
+       allow them to scroll rather than squish text */
+    .glass-panel table,
+    .glass-panel .spec-table {
+        font-size: 0.82rem;
+    }
+
+    /* Checklist items: always readable */
+    .checklist li,
+    .feature-list li {
+        font-size: 0.92rem;
+        line-height: 1.7;
+    }
+
+    /* h2 on mobile: reduce bottom margin from global 3rem */
+    h2 {
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* hero-actions buttons: stack on very small screens */
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+
+    .hero-actions .btn-primary,
+    .hero-actions .btn-secondary,
+    .hero-actions .btn-luxury {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Extra small: 375px and below */
+@media (max-width: 420px) {
+
+    /* Contact-us form: reduce outer container padding further */
+    .form-container {
+        padding: 1rem 0.85rem !important;
+        border-radius: 1rem !important;
+    }
+
+    .contact-info {
+        padding: 1rem 0.85rem !important;
+        border-radius: 1rem !important;
+    }
+
+    /* Appointment date + slot: stack vertically */
+    .form-grid-2[style*="gap"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Footer: single column */
+    .footer-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* KB articles: even tighter */
+    .kb-article {
+        padding-left: 0.9rem !important;
+        padding-right: 0.9rem !important;
+    }
+}
