@@ -19,7 +19,7 @@
       "isPartOf": { "@id": "https://caramellabrunei.com/#website" },
       "creator": { "@type": "Organization", "@id": "https://caramellabrunei.com/#organization", "name": "Caramella Trading Co." },
       "inLanguage": "en-BN",
-      "dateModified": "2026-02-24"
+      "dateModified": "2026-02-25"
     }
     </script>
     <link rel="canonical" href="https://caramellabrunei.com/inspiration.html">
@@ -185,7 +185,7 @@
             </div>
         </div>
         <div class="footer-copyright">
-            <p>&copy; 2025 Caramella Trading Company. 100% Brunei Owned & Operated. <span
+            <p>&copy; <span id="year"></span> Caramella Trading Company. 100% Brunei Owned & Operated. <span
                     style="opacity: 0.6; font-size: 0.8em; margin-left: 10px;">Reg No: P00100256</span></p>
         </div>
     </footer>
@@ -198,6 +198,8 @@
     </div>
     <script src="js/inspiration.js?v=20260224a"></script>
     <script src="js/site.js?v=20260225b" defer></script>
+
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 
 </html>
