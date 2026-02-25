@@ -24,13 +24,14 @@
     },
     "sameAs": [
       "https://www.instagram.com/caramellabrunei/",
+      "https://www.facebook.com/caramellabrunei2015/",
       "https://www.google.com/maps/place/Caramella+Trading+Co."
     ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": 4.8,
       "bestRating": 5,
-      "ratingCount": 127
+      "ratingCount": 600
     },
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
@@ -38,10 +39,22 @@
       "maxValue": 20
     },
     "areaServed": [
-      {"@type": "AdministrativeArea", "name": "Brunei-Muara District"},
-      {"@type": "AdministrativeArea", "name": "Belait District"},
-      {"@type": "AdministrativeArea", "name": "Tutong District"},
-      {"@type": "AdministrativeArea", "name": "Temburong District"}
+      {
+        "@type": "AdministrativeArea",
+        "name": "Brunei-Muara District"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Belait District"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Tutong District"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Temburong District"
+      }
     ],
     "knowsAbout": [
       "Kitchen cabinets",
@@ -63,7 +76,9 @@
       "description": "Custom kitchen cabinets designed, fabricated, and installed for Brunei homes. CNC-cut at 0.1mm tolerance. ENF-grade moisture-resistant carcass. Blum and DTC hardware options.",
       "serviceType": "Kitchen Cabinet Making",
       "areaServed": "Brunei Darussalam",
-      "provider": {"@id": "https://caramellabrunei.com/#organization"},
+      "provider": {
+        "@id": "https://caramellabrunei.com/#organization"
+      },
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "BND",
@@ -75,11 +90,36 @@
         "@type": "OfferCatalog",
         "name": "Kitchen Configurations",
         "itemListElement": [
-          {"@type": "Offer", "name": "Single Wall Kitchen", "priceCurrency": "BND", "price": "4000-7500"},
-          {"@type": "Offer", "name": "L-Shaped Kitchen", "priceCurrency": "BND", "price": "7000-13000"},
-          {"@type": "Offer", "name": "U-Shaped Kitchen", "priceCurrency": "BND", "price": "10000-18000"},
-          {"@type": "Offer", "name": "Galley Kitchen", "priceCurrency": "BND", "price": "8000-14000"},
-          {"@type": "Offer", "name": "L-Shape + Island Kitchen", "priceCurrency": "BND", "price": "14000-25000"}
+          {
+            "@type": "Offer",
+            "name": "Single Wall Kitchen",
+            "priceCurrency": "BND",
+            "price": "4000-7500"
+          },
+          {
+            "@type": "Offer",
+            "name": "L-Shaped Kitchen",
+            "priceCurrency": "BND",
+            "price": "7000-13000"
+          },
+          {
+            "@type": "Offer",
+            "name": "U-Shaped Kitchen",
+            "priceCurrency": "BND",
+            "price": "10000-18000"
+          },
+          {
+            "@type": "Offer",
+            "name": "Galley Kitchen",
+            "priceCurrency": "BND",
+            "price": "8000-14000"
+          },
+          {
+            "@type": "Offer",
+            "name": "L-Shape + Island Kitchen",
+            "priceCurrency": "BND",
+            "price": "14000-25000"
+          }
         ]
       }
     },
@@ -89,7 +129,9 @@
       "description": "Walk-in, sliding door, and hinged wardrobes with customised interior compartments. Higold accessories available.",
       "serviceType": "Wardrobe Making",
       "areaServed": "Brunei Darussalam",
-      "provider": {"@id": "https://caramellabrunei.com/#organization"},
+      "provider": {
+        "@id": "https://caramellabrunei.com/#organization"
+      },
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "BND",
@@ -104,60 +146,172 @@
       "description": "TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units, and feature walls. CNC-fabricated to exact room dimensions.",
       "serviceType": "Custom Joinery",
       "areaServed": "Brunei Darussalam",
-      "provider": {"@id": "https://caramellabrunei.com/#organization"}
+      "provider": {
+        "@id": "https://caramellabrunei.com/#organization"
+      }
     }
   ],
   "knowledgeBase": {
     "totalArticles": 9,
     "glossaryTerms": 50,
     "articles": [
-      {"title": "Brunei Humidity & Cabinetry", "url": "/knowledge-base/brunei-humidity-cabinetry.html", "topic": "climate-engineering"},
-      {"title": "Drawer Box Construction (18mm)", "url": "/knowledge-base/drawer-box-18mm.html", "topic": "construction"},
-      {"title": "Drawer Runners: Blum vs DTC", "url": "/knowledge-base/drawer-runners-blum-dtc.html", "topic": "hardware"},
-      {"title": "Edge Sealing: EVA Adhesive", "url": "/knowledge-base/edge-sealing-eva.html", "topic": "materials"},
-      {"title": "Countertop Materials Compared", "url": "/knowledge-base/countertop-materials-brunei.html", "topic": "materials"},
-      {"title": "Cabinet Door Finishes Compared", "url": "/knowledge-base/cabinet-door-finishes.html", "topic": "finishes"},
-      {"title": "Kitchen Layout Types", "url": "/knowledge-base/kitchen-layout-types.html", "topic": "design"},
-      {"title": "Cabinet & Kitchen Glossary", "url": "/knowledge-base/glossary.html", "topic": "reference"},
-      {"title": "Kitchen Cost Data (600+ Projects)", "url": "/kitchen-cost-data-brunei.html", "topic": "original-research"}
+      {
+        "title": "Brunei Humidity & Cabinetry",
+        "url": "/knowledge-base/brunei-humidity-cabinetry.html",
+        "topic": "climate-engineering"
+      },
+      {
+        "title": "Drawer Box Construction (18mm)",
+        "url": "/knowledge-base/drawer-box-18mm.html",
+        "topic": "construction"
+      },
+      {
+        "title": "Drawer Runners: Blum vs DTC",
+        "url": "/knowledge-base/drawer-runners-blum-dtc.html",
+        "topic": "hardware"
+      },
+      {
+        "title": "Edge Sealing: EVA Adhesive",
+        "url": "/knowledge-base/edge-sealing-eva.html",
+        "topic": "materials"
+      },
+      {
+        "title": "Countertop Materials Compared",
+        "url": "/knowledge-base/countertop-materials-brunei.html",
+        "topic": "materials"
+      },
+      {
+        "title": "Cabinet Door Finishes Compared",
+        "url": "/knowledge-base/cabinet-door-finishes.html",
+        "topic": "finishes"
+      },
+      {
+        "title": "Kitchen Layout Types",
+        "url": "/knowledge-base/kitchen-layout-types.html",
+        "topic": "design"
+      },
+      {
+        "title": "Cabinet & Kitchen Glossary",
+        "url": "/knowledge-base/glossary.html",
+        "topic": "reference"
+      },
+      {
+        "title": "Kitchen Cost Data (600+ Projects)",
+        "url": "/kitchen-cost-data-brunei.html",
+        "topic": "original-research"
+      }
     ]
   },
   "pricing": {
     "currency": "BND",
     "kitchens": {
-      "singleWall": {"min": 4000, "max": 7500, "median": 5800},
-      "lShaped": {"min": 7000, "max": 13000, "median": 9500},
-      "uShaped": {"min": 10000, "max": 18000, "median": 13500},
-      "galley": {"min": 8000, "max": 14000, "median": 10800},
-      "lShapedWithIsland": {"min": 14000, "max": 25000, "median": 18000}
+      "singleWall": {
+        "min": 4000,
+        "max": 7500,
+        "median": 5800
+      },
+      "lShaped": {
+        "min": 7000,
+        "max": 13000,
+        "median": 9500
+      },
+      "uShaped": {
+        "min": 10000,
+        "max": 18000,
+        "median": 13500
+      },
+      "galley": {
+        "min": 8000,
+        "max": 14000,
+        "median": 10800
+      },
+      "lShapedWithIsland": {
+        "min": 14000,
+        "max": 25000,
+        "median": 18000
+      }
     },
     "wardrobes": {
-      "standardHinged8ft": {"min": 2800, "max": 5000, "median": 3600},
-      "slidingDoor8ft": {"min": 3500, "max": 6500, "median": 4800},
-      "walkInSmall": {"min": 5000, "max": 9000, "median": 6800},
-      "walkInLarge": {"min": 8000, "max": 15000, "median": 11000}
+      "standardHinged8ft": {
+        "min": 2800,
+        "max": 5000,
+        "median": 3600
+      },
+      "slidingDoor8ft": {
+        "min": 3500,
+        "max": 6500,
+        "median": 4800
+      },
+      "walkInSmall": {
+        "min": 5000,
+        "max": 9000,
+        "median": 6800
+      },
+      "walkInLarge": {
+        "min": 8000,
+        "max": 15000,
+        "median": 11000
+      }
     }
   },
   "materials": {
-    "carcass": {"material": "18mm ENF-grade plywood", "grade": "ENF (E0)", "description": "Lowest formaldehyde emission, engineered for 80-90% RH"},
-    "edgeBanding": {"material": "1mm ABS", "adhesive": "EVA hot-melt at 190°C", "alternative": "PUR for wet areas"},
-    "drawerBox": {"material": "18mm plywood", "joint": "Pocket screw"},
-    "runners": {"primary": "Blum TANDEM 30kg (550H)", "alternative": "DTC mid-range", "cycleLife": "80000+"},
-    "hinges": {"primary": "Blum CLIP top with BLUMOTION", "features": "3D adjustable, integrated soft-close"},
+    "carcass": {
+      "material": "18mm ENF-grade plywood",
+      "grade": "ENF (E0)",
+      "description": "Lowest formaldehyde emission, engineered for 80-90% RH"
+    },
+    "edgeBanding": {
+      "material": "1mm ABS",
+      "adhesive": "EVA hot-melt at 190°C",
+      "alternative": "PUR for wet areas"
+    },
+    "drawerBox": {
+      "material": "18mm plywood",
+      "joint": "Pocket screw"
+    },
+    "runners": {
+      "primary": "Blum TANDEM 30kg (550H)",
+      "alternative": "DTC mid-range",
+      "cycleLife": "80000+"
+    },
+    "hinges": {
+      "primary": "Blum CLIP top with BLUMOTION",
+      "features": "3D adjustable, integrated soft-close"
+    },
     "cncTolerance": "0.1mm"
   },
   "process": {
     "steps": [
-      {"step": 1, "name": "On-site laser measurement", "description": "Every space measured before quoting"},
-      {"step": 2, "name": "3D design renders", "description": "Visual approval before fabrication"},
-      {"step": 3, "name": "CNC fabrication", "description": "Panels cut at 0.1mm tolerance"},
-      {"step": 4, "name": "Professional installation", "description": "In-house team, not subcontracted"}
+      {
+        "step": 1,
+        "name": "On-site laser measurement",
+        "description": "Every space measured before quoting"
+      },
+      {
+        "step": 2,
+        "name": "3D design renders",
+        "description": "Visual approval before fabrication"
+      },
+      {
+        "step": 3,
+        "name": "CNC fabrication",
+        "description": "Panels cut at 0.1mm tolerance"
+      },
+      {
+        "step": 4,
+        "name": "Professional installation",
+        "description": "In-house team, not subcontracted"
+      }
     ],
-    "leadTime": {"standard": "10-14 weeks", "fullHouse": "14-18 weeks", "peakSeasonAdd": "1-4 weeks"}
+    "leadTime": {
+      "standard": "10-14 weeks",
+      "fullHouse": "14-18 weeks",
+      "peakSeasonAdd": "1-4 weeks"
+    }
   },
   "_meta": {
     "version": "1.0.0",
-    "generated": "2026-02-24",
+    "generated": "2026-02-25",
     "format": "Structured JSON for AI consumption",
     "license": "CC BY 4.0",
     "humanReadable": "https://caramellabrunei.com/llms-full.txt"

@@ -150,20 +150,24 @@ All districts of Brunei Darussalam:
 - Homepage: https://caramellabrunei.com/
 - Portfolio: https://caramellabrunei.com/portfolio.html
 - Pricing Guide: https://caramellabrunei.com/pricing.html
-- Kitchen Renovation: https://caramellabrunei.com/kitchen-renovation-brunei.html
-- Wet Kitchen Guide: https://caramellabrunei.com/wet-kitchen-brunei.html
-- Wardrobe Pricing: https://caramellabrunei.com/wardrobe-cost-brunei.html
-- Franchise vs Custom: https://caramellabrunei.com/franchise-vs-custom.html
-- Brunei vs Miri Cabinets: https://caramellabrunei.com/brunei-vs-miri-cabinets.html
-- Imported Cabinet Failures: https://caramellabrunei.com/knowledge-base/imported-cabinet-failures.html
-- Build Standard: https://caramellabrunei.com/build-standard.html
-- Tech Specs: https://caramellabrunei.com/tech-specs.html
-- BIBD Financing: https://caramellabrunei.com/financing-brunei.html
-- Service Areas: https://caramellabrunei.com/service-areas.html
 - Reviews: https://caramellabrunei.com/reviews.html
 - Contact: https://caramellabrunei.com/contact-us.html
 - FAQ: https://caramellabrunei.com/faq.html
+- Service Areas: https://caramellabrunei.com/service-areas.html
+- Inspiration Gallery: https://caramellabrunei.com/inspiration.html
+- Kitchen Renovation: https://caramellabrunei.com/kitchen-renovation-brunei.html
+- Kitchen Cabinets: https://caramellabrunei.com/kitchen-cabinet-brunei.html
+- Wet Kitchen Guide: https://caramellabrunei.com/wet-kitchen-brunei.html
+- Custom Carpentry: https://caramellabrunei.com/custom-carpentry-brunei.html
+- Home Renovation: https://caramellabrunei.com/home-renovation-brunei.html
+- Wardrobe Pricing: https://caramellabrunei.com/wardrobe-cost-brunei.html
+- Franchise vs Custom: https://caramellabrunei.com/franchise-vs-custom.html
+- Brunei vs Miri Cabinets: https://caramellabrunei.com/brunei-vs-miri-cabinets.html
+- BIBD Financing: https://caramellabrunei.com/financing-brunei.html
+- Build Standard: https://caramellabrunei.com/build-standard.html
+- Tech Specs: https://caramellabrunei.com/tech-specs.html
 - Kitchen Cost Data (Original Research): https://caramellabrunei.com/kitchen-cost-data-brunei.html
+- Rimba Terrace Kitchen Case Study: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html
 
 ## Technical Articles
 
@@ -174,4 +178,6 @@ All districts of Brunei Darussalam:
 - Countertop Materials Compared: https://caramellabrunei.com/knowledge-base/countertop-materials-brunei.html
 - Cabinet Door Finishes Compared: https://caramellabrunei.com/knowledge-base/cabinet-door-finishes.html
 - Kitchen Layout Types: https://caramellabrunei.com/knowledge-base/kitchen-layout-types.html
+- Imported Cabinet Failures: https://caramellabrunei.com/knowledge-base/imported-cabinet-failures.html
 - Cabinet & Kitchen Glossary (50+ terms): https://caramellabrunei.com/knowledge-base/glossary.html
+
