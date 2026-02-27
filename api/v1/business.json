@@ -213,39 +213,54 @@
       "campaignName": "11th Anniversary Special Packages",
       "packages": [
         {
-          "name": "Melamine Wardrobe",
-          "price": 620,
+          "name": "Formica Bedroom Set",
+          "price": 3490,
           "category": "Wardrobe"
         },
         {
-          "name": "P.E.T Wardrobe",
-          "price": 1150,
-          "category": "Wardrobe",
-          "features": "Smooth, Anti-fingerprint"
+          "name": "Formica TV Cabinet (Large)",
+          "price": 1790,
+          "category": "Joinery"
+        },
+        {
+          "name": "Formica TV Cabinet (Standard)",
+          "price": 1390,
+          "category": "Joinery"
+        },
+        {
+          "name": "Formica Kitchen (3m)",
+          "price": 2990,
+          "category": "Kitchen"
+        },
+        {
+          "name": "Formica Kitchen (6m)",
+          "price": 4190,
+          "category": "Kitchen"
         },
         {
           "name": "Formica Entryway Cabinet",
           "price": 1920,
-          "category": "Joinery",
-          "features": "Shoe & Display Consoles"
+          "category": "Joinery"
         },
         {
-          "name": "Wet Kitchen (Base Cabinet)",
-          "price": 2810,
-          "category": "Kitchen",
-          "features": "Humidity-Resistant"
+          "name": "Classic Kitchen (3m)",
+          "price": 3390,
+          "category": "Kitchen"
         },
         {
-          "name": "Melamine Kitchen (Standard)",
-          "price": 1580,
-          "category": "Kitchen",
-          "features": "Budget-friendly, Matt finish"
+          "name": "Classic Kitchen (6m)",
+          "price": 4690,
+          "category": "Kitchen"
         },
         {
-          "name": "Classic Lacquer Kitchen",
+          "name": "Classic Lacquer Kitchen (3m)",
+          "price": 3590,
+          "category": "Kitchen"
+        },
+        {
+          "name": "Classic Lacquer Kitchen (6m)",
           "price": 5090,
-          "category": "Kitchen",
-          "features": "Painted, Premium, Shaker style"
+          "category": "Kitchen"
         }
       ]
     },
@@ -310,14 +325,14 @@
     },
     "otherJoinery": {
       "tvCabinet": {
-         "min": 1300,
-         "max": 2500,
-         "description": "2m - 3m custom media wall"
+        "min": 1300,
+        "max": 2500,
+        "description": "2m - 3m custom media wall"
       },
       "entryway": {
-         "min": 1200,
-         "max": 2500,
-         "description": "Shoe cabinet + display console"
+        "min": 1200,
+        "max": 2500,
+        "description": "Shoe cabinet + display console"
       }
     }
   },
