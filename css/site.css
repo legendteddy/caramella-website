@@ -1064,6 +1064,7 @@ details.spec-toggle summary::-webkit-details-marker {
     position: relative;
     padding: clamp(4.75rem, 8vw, 6.5rem) 0 clamp(2.5rem, 4vw, 3.25rem);
     border-bottom: 1px solid rgba(212, 175, 55, 0.22);
+    text-align: center;
     background:
         radial-gradient(80% 120% at 50% 10%, rgba(16, 32, 48, 0.85) 0%, rgba(0, 0, 0, 0.92) 60%, rgba(0, 0, 0, 1) 100%),
         linear-gradient(180deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1));
