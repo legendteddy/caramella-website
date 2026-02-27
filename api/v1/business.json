@@ -209,7 +209,52 @@
   },
   "pricing": {
     "currency": "BND",
+    "promotions": {
+      "campaignName": "11th Anniversary Special Packages",
+      "packages": [
+        {
+          "name": "Melamine Wardrobe",
+          "price": 620,
+          "category": "Wardrobe"
+        },
+        {
+          "name": "P.E.T Wardrobe",
+          "price": 1150,
+          "category": "Wardrobe",
+          "features": "Smooth, Anti-fingerprint"
+        },
+        {
+          "name": "Formica Entryway Cabinet",
+          "price": 1920,
+          "category": "Joinery",
+          "features": "Shoe & Display Consoles"
+        },
+        {
+          "name": "Wet Kitchen (Base Cabinet)",
+          "price": 2810,
+          "category": "Kitchen",
+          "features": "Humidity-Resistant"
+        },
+        {
+          "name": "Melamine Kitchen (Standard)",
+          "price": 1580,
+          "category": "Kitchen",
+          "features": "Budget-friendly, Matt finish"
+        },
+        {
+          "name": "Classic Lacquer Kitchen",
+          "price": 5090,
+          "category": "Kitchen",
+          "features": "Painted, Premium, Shaker style"
+        }
+      ]
+    },
     "kitchens": {
+      "baseRange": {
+        "min": 3000,
+        "max": 6000,
+        "description": "Standard 3m - 6m kitchen"
+      },
       "singleWall": {
         "min": 4000,
         "max": 7500,
@@ -237,6 +282,11 @@
       }
     },
     "wardrobes": {
+      "baseRange": {
+        "min": 2500,
+        "max": 4500,
+        "description": "Standard 2m - 4m built-in wardrobe"
+      },
       "standardHinged8ft": {
         "min": 2800,
         "max": 5000,
@@ -256,6 +306,18 @@
         "min": 8000,
         "max": 15000,
         "median": 11000
+      }
+    },
+    "otherJoinery": {
+      "tvCabinet": {
+         "min": 1300,
+         "max": 2500,
+         "description": "2m - 3m custom media wall"
+      },
+      "entryway": {
+         "min": 1200,
+         "max": 2500,
+         "description": "Shoe cabinet + display console"
       }
     }
   },
