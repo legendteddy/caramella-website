@@ -195,7 +195,9 @@ Every improvement — content, schema, performance, linking, AI signals — shou
 | `wet-kitchen-brunei.html` | Wet kitchen specialization page |
 | `custom-carpentry-brunei.html` | Custom carpentry services |
 | `home-renovation-brunei.html` | Full home renovation guide |
-| `wardrobe-cost-brunei.html` | Wardrobe pricing guide |
+| `built-in-wardrobe-brunei.html` | Wardrobe services and pricing |
+| `interior-design-brunei.html` | Full interior design hub |
+| `raya-renovation-brunei.html` | Pre-Raya seasonal renovation guide |
 | `franchise-vs-custom.html` | Imported vs locally-made comparison |
 | `brunei-vs-miri-cabinets.html` | Brunei vs Miri cross-border comparison |
 | `financing-brunei.html` | BIBD At-Tamwil financing info |
@@ -271,7 +273,9 @@ caramella-website/
 ├── wet-kitchen-brunei.html             ← "wet kitchen cabinet brunei"
 ├── custom-carpentry-brunei.html        ← "custom carpentry brunei"
 ├── home-renovation-brunei.html         ← "home renovation brunei"
-├── wardrobe-cost-brunei.html           ← "wardrobe cost brunei"
+├── built-in-wardrobe-brunei.html       ← "built in wardrobe brunei"
+├── interior-design-brunei.html         ← "interior design brunei"
+├── raya-renovation-brunei.html         ← "raya renovation brunei"
 │
 │── COMPARISON & DATA PAGES
 ├── franchise-vs-custom.html            ← Franchise vs locally-made comparison
@@ -385,7 +389,7 @@ graph TD
     HOME --> FAQ[faq.html]
 
     PRICE --> KR[kitchen-renovation-brunei.html]
-    PRICE --> WC[wardrobe-cost-brunei.html]
+    PRICE --> WC[built-in-wardrobe-brunei.html]
     PRICE --> FIN[financing-brunei.html]
     PRICE --> FVC[franchise-vs-custom.html]
     PRICE --> BVM[brunei-vs-miri-cabinets.html]
@@ -479,7 +483,9 @@ The site previously suffered from an "AI-generated" vibe (overuse of glowing eff
 | wet kitchen cabinet brunei | `wet-kitchen-brunei.html` | ✅ Live |
 | custom carpentry brunei | `custom-carpentry-brunei.html` | ✅ Live |
 | home renovation brunei | `home-renovation-brunei.html` | ✅ Live |
-| wardrobe cost brunei | `wardrobe-cost-brunei.html` | ✅ Live |
+| built in wardrobe brunei / wardrobe cost | `built-in-wardrobe-brunei.html` | ✅ Live |
+| interior design brunei | `interior-design-brunei.html` | ✅ Live |
+| hari raya kitchen renovation | `raya-renovation-brunei.html` | ✅ Live |
 | kitchen cost brunei / how much kitchen | `kitchen-cost-data-brunei.html` | ✅ Live |
 | kitchen pricing brunei | `pricing.html` | ✅ Live |
 | franchise vs custom kitchen brunei | `franchise-vs-custom.html` | ✅ Live |
@@ -497,8 +503,7 @@ The site previously suffered from an "AI-generated" vibe (overuse of glowing eff
 | quartz vs solid surface brunei | `knowledge-base/quartz-vs-solid-surface-brunei.html` | ✅ Live |
 | diy kitchen cabinet brunei | `knowledge-base/diy-cabinet-guide-brunei.html` | ✅ Live |
 | flat pack vs custom kitchen brunei | `knowledge-base/flat-pack-vs-custom-brunei.html` | ✅ Live |
-| kitchen renovation checklist brunei | — | ❌ Gap (Idea #2) |
-| hari raya kitchen renovation | — | ❌ Gap (Idea #6: Pre-Raya guide) |
+| kitchen renovation checklist brunei | `renovation-checklist-brunei.html` | ✅ Live |
 | kitchen design trends 2026 brunei | — | ❌ Gap |
 | kitchen renovation permit brunei | — | ❌ Gap (FAQ expansion) |
 
@@ -521,7 +526,10 @@ The site previously suffered from an "AI-generated" vibe (overuse of glowing eff
 | `wet-kitchen-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
 | `custom-carpentry-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
 | `home-renovation-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
-| `wardrobe-cost-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
+| `built-in-wardrobe-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
+| `interior-design-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
+| `raya-renovation-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
+| `renovation-checklist-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
 | `franchise-vs-custom.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
 | `brunei-vs-miri-cabinets.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
 | `financing-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
@@ -663,7 +671,10 @@ Standard footer on 22+ pages (3-column grid):
 | `wet-kitchen-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
 | `custom-carpentry-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
 | `home-renovation-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
-| `wardrobe-cost-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
+| `built-in-wardrobe-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
+| `interior-design-brunei.html` | 2026-02-27 | Created full interior design hub |
+| `raya-renovation-brunei.html` | 2026-02-27 | Created pre-Raya seasonal guide |
+| `renovation-checklist-brunei.html` | 2026-02-27 | Created renovation checklist |
 | `franchise-vs-custom.html` | 2026-02-27 | Schema dateModified, cross-links |
 | `brunei-vs-miri-cabinets.html` | 2026-02-27 | Schema dateModified, cross-links |
 | `financing-brunei.html` | 2026-02-27 | Schema dateModified |
@@ -881,7 +892,10 @@ Optimal range: **120–160 characters**. Flag anything outside this range.
 | `wet-kitchen-brunei.html` | 193 | 🔴 Over limit (trim!) |
 | `custom-carpentry-brunei.html` | 168 | ⚠️ Over limit |
 | `home-renovation-brunei.html` | 171 | 🔴 Over limit |
-| `wardrobe-cost-brunei.html` | 167 | ⚠️ Over limit |
+| `built-in-wardrobe-brunei.html` | 167 | ⚠️ Over limit |
+| `interior-design-brunei.html` | 158 | ✅ OK |
+| `raya-renovation-brunei.html` | 155 | ✅ OK |
+| `renovation-checklist-brunei.html` | 159 | ✅ OK |
 | `franchise-vs-custom.html` | 170 | ⚠️ Over limit |
 | `brunei-vs-miri-cabinets.html` | 160 | ✅ OK |
 | `financing-brunei.html` | 169 | ⚠️ Over limit |
