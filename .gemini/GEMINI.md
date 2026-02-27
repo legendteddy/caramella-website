@@ -572,7 +572,7 @@ All content pages have `dateModified` in schema. Update when content changes.
 | 8 | KB articles don't consistently link back to service pages | 🟡 Medium | ✅ Fixed 2026-02-27 |
 | 9 | `portfolio/index.html` and `technical-specs/index.html` are legacy redirects — verify they work | 🟢 Low | Open |
 | 10 | `videos/IMG_6500.MOV` (78MB) — not used anywhere on site, should it be? | 🟢 Low | Open |
-| 11 | **Execute "De-AI" Grounding Pass**: UI (remove aurora/glass) & Copy (humanize all service pages) | 🔴 High | Open |
+| 11 | **Execute "De-AI" Grounding Pass**: UI (remove aurora/glass) & Copy (humanize all service pages) | 🔴 High | ✅ Fixed 2026-02-27 |
 | 12 | No interactive layout decision tree (Idea #4) | 🟢 Low | Open |
 | 13 | No KB search functionality (Idea #9) | 🟢 Low | Open |
 | 14 | **NO Google Analytics (GA4) installed** — cannot measure traffic, engagement, or conversions | 🔴 High | ✅ Fixed 2026-02-27 |
@@ -659,11 +659,11 @@ Standard footer on 22+ pages (3-column grid):
 | `service-areas.html` | 2026-02-27 | Added sameAs social links, OG image diversified |
 | `inspiration.html` | 2026-02-27 | Footer fix, year dynamic |
 | `kitchen-renovation-brunei.html` | 2026-02-27 | Schema dateModified, cross-links |
-| `kitchen-cabinet-brunei.html` | 2026-02-27 | Expanded "whole-house customization" messaging (anti-franchise) |
-| `wet-kitchen-brunei.html` | 2026-02-27 | Schema dateModified, cross-links |
-| `custom-carpentry-brunei.html` | 2026-02-27 | Expanded "whole-house customization" messaging (anti-franchise) |
-| `home-renovation-brunei.html` | 2026-02-27 | Expanded "whole-house customization" messaging (anti-franchise) |
-| `wardrobe-cost-brunei.html` | 2026-02-27 | Schema dateModified, cross-links |
+| `kitchen-cabinet-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
+| `wet-kitchen-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
+| `custom-carpentry-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
+| `home-renovation-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
+| `wardrobe-cost-brunei.html` | 2026-02-27 | Full "De-AI" Pass, expanded messaging, semantic tags |
 | `franchise-vs-custom.html` | 2026-02-27 | Schema dateModified, cross-links |
 | `brunei-vs-miri-cabinets.html` | 2026-02-27 | Schema dateModified, cross-links |
 | `financing-brunei.html` | 2026-02-27 | Schema dateModified |
@@ -685,9 +685,9 @@ Standard footer on 22+ pages (3-column grid):
 |:--|:--|:--|:--|:--|
 | `index.html` | 🟡 Partial | ❌ No | ❌ No | Open (High Priority) |
 | `pricing.html` | ✅ Done | ❌ No | ❌ No | Open |
-| Service Pages (4 pages) | ❌ No | ❌ No | ❌ No | Open |
-| Knowledge Base (14 pages) | 🟡 Partial | ✅ Done | ✅ Done | ✅ Text-heavy design |
-| Portfolio/Inspiration | ❌ No | ❌ No | ❌ No | Open |
+| Service Pages (4 pages) | ✅ Done | ❌ No | ❌ No | Open |
+| Knowledge Base (14 pages) | ✅ Done | ✅ Done | ✅ Done | ✅ Text-heavy design |
+| Portfolio/Inspiration | 🟡 Partial | ❌ No | ❌ No | Open |
 
 ---
 
@@ -1135,3 +1135,4 @@ Each session, I scan the site through these lenses. They **never complete** — 
 | 2026-02-27 | #4 | Trimmed meta descriptions to fit 120-160 characters on all flagged pages. Updated GEMINI.md page inventory and keyword map with new KB articles (tropical mistakes, quartz vs solid surface, DIY guide, flat pack). Expanded "whole-house customization" messaging on custom carpentry and home renovation pages to better counter imported franchise competitors like PA Home. |
 | 2026-02-27 | #5 | Expanded "whole-house customization" messaging further to frame the use of filler panels as a necessary custom scribe specifically to handle Brunei's naturally uneven walls and ceilings. |
 | 2026-02-27 | #6 | L5 Autonomous Sprint completed. Fixed index.html internal link coverage (added Cost Data and Case Studies links). Added standard "Related Services" cross-linking blocks to all 14 Knowledge Base articles. Expanded faq.html with detailed answers on ABCi permits, BIBD financing, replace vs renovate, and kitchen usage during renovation. |
+| 2026-02-27 | #7 | Executed Deep De-AI pass on all core service pages and KB. Removed 'In conclusion/Moreover' padding. Added HTML entity script fix for mojibake characters site-wide. Final A11y semantic perfection (scope attributes) on pricing/build tables. |
