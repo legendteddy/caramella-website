@@ -18,7 +18,7 @@
 ## Intent Map (Query -> Best Page)
 
 - Kitchen cabinet pricing Brunei -> https://caramellabrunei.com/pricing.html
-- Wardrobe cost Brunei -> https://caramellabrunei.com/wardrobe-cost-brunei.html
+- Full Interior Design Brunei -> https://caramellabrunei.com/interior-design-brunei.html
 - Wet kitchen materials / humidity suitability -> https://caramellabrunei.com/wet-kitchen-brunei.html
 - Kitchen renovation process / timeline -> https://caramellabrunei.com/kitchen-renovation-brunei.html
 - Build quality standards / hardware / carcass specs -> https://caramellabrunei.com/build-standard.html
@@ -176,7 +176,7 @@ All districts of Brunei Darussalam:
 - Wet Kitchen Guide: https://caramellabrunei.com/wet-kitchen-brunei.html
 - Custom Carpentry: https://caramellabrunei.com/custom-carpentry-brunei.html
 - Home Renovation: https://caramellabrunei.com/home-renovation-brunei.html
-- Wardrobe Pricing: https://caramellabrunei.com/wardrobe-cost-brunei.html
+- Full Interior Design: https://caramellabrunei.com/interior-design-brunei.html
 - Franchise vs Custom: https://caramellabrunei.com/franchise-vs-custom.html
 - Brunei vs Miri Cabinets: https://caramellabrunei.com/brunei-vs-miri-cabinets.html
 - BIBD Financing: https://caramellabrunei.com/financing-brunei.html
