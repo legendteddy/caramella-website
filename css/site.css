@@ -3171,3 +3171,12 @@ table:not(.data-table) {
     font-style: italic;
     font-size: 0.93rem;
 }
+
+.housing-tag {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
