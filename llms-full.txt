@@ -456,3 +456,23 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 
 *Last updated: 24 February 2026*
 *For the summary version, see: https://caramellabrunei.com/llms.txt*
+
+## Kitchen Layout Types
+URL: https://caramellabrunei.com/knowledge-base/kitchen-layout-types.html
+
+The layout determines workflow efficiency, storage capacity, and how the kitchen feels to use daily. Here is how each layout works, what space it needs, and what it typically costs in Brunei.
+
+### Layout Comparison
+- Single Wall (I-shape): Min 2.4m x 1.5m. Best for studio apartments, wet kitchens. Limited storage. Cost: BND 4,000–7,500
+- L-Shaped: Min 2.4m x 2.4m. Best for most Brunei homes. Good storage. Cost: BND 7,000–13,000
+- U-Shaped: Min 3.0m x 2.4m. Best for dedicated kitchens. Excellent storage. Cost: BND 10,000–18,000
+- Galley: Min 1.8m x 3.0m. Best for narrow rooms. Good storage. Cost: BND 8,000–14,000
+- L-Shape + Island: Min 3.6m x 3.6m. Best for open-plan living. Excellent storage. Cost: BND 14,000–25,000+
+
+### Which Layout for Your Home?
+- Room under 6m²: Single wall or small L-shape
+- Room 6–10m²: L-shape (most common residential size in Brunei)
+- Room 10–15m²: L-shape, U-shape, or galley
+- Room over 15m² or open-plan: L-shape + island
+- Wet kitchen (any size): Single wall or L-shape
+
