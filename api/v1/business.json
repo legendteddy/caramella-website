@@ -152,7 +152,7 @@
     }
   ],
   "knowledgeBase": {
-    "totalArticles": 9,
+    "totalArticles": 10,
     "glossaryTerms": 50,
     "articles": [
       {
@@ -189,6 +189,11 @@
         "title": "Kitchen Layout Types",
         "url": "/knowledge-base/kitchen-layout-types.html",
         "topic": "design"
+      },
+      {
+        "title": "Imported Cabinet Failures",
+        "url": "/knowledge-base/imported-cabinet-failures.html",
+        "topic": "durability"
       },
       {
         "title": "Cabinet & Kitchen Glossary",
@@ -311,7 +316,7 @@
   },
   "_meta": {
     "version": "1.0.0",
-    "generated": "2026-02-25",
+    "generated": "2026-02-27",
     "format": "Structured JSON for AI consumption",
     "license": "CC BY 4.0",
     "humanReadable": "https://caramellabrunei.com/llms-full.txt"
