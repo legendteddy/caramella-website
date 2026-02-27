@@ -833,7 +833,7 @@ When building new landing pages or rewriting copy, sprinkle these authentic quot
 7. **Schema changes** → Update `dateModified` in affected pages
 8. **New pages** → Add to `sitemap.xml`, `llms.txt`, `llms-full.txt`, and cross-link
 9. **After deploy** → Ping IndexNow with affected URLs for fast indexing
-10. **NEVER use PowerShell regex (`-replace`) or `Set-Content` inside a loop to modify `.html` files.** Using `Get-Content` and `$content -replace` inside a PowerShell script inevitably strips encodings, duplicates EOF tags (like `</html>`), and catastrophically deletes blocks of text on multi-line matches. **You are strictly forbidden** from doing bulk HTML edits via PS script. You must use the `multi_replace_file_content` tool natively or edit files one by one.
+10. **NEVER use PowerShell (`Set-Content`, `Out-File`, `>` etc.) to modify code files.** PowerShell scripting is **STRICTLY FORBIDDEN** for editing or generating code due to extreme risk of file corruption, encoding destruction, and regex catastrophic failures. You must ONLY use the `multi_replace_file_content` tool natively or write a discrete Python script if bulk algorithmic changes are required. This is a hard architectural boundary.
 
 ---
 
