@@ -152,7 +152,7 @@
     }
   ],
   "knowledgeBase": {
-    "totalArticles": 10,
+    "totalArticles": 12,
     "glossaryTerms": 50,
     "articles": [
       {
@@ -193,6 +193,16 @@
       {
         "title": "Imported Cabinet Failures",
         "url": "/knowledge-base/imported-cabinet-failures.html",
+        "topic": "durability"
+      },
+      {
+        "title": "DIY Cabinet Reality Guide",
+        "url": "/knowledge-base/diy-cabinet-guide-brunei.html",
+        "topic": "diy-renovation"
+      },
+      {
+        "title": "Flat-Pack vs Custom Cabinets",
+        "url": "/knowledge-base/flat-pack-vs-custom-brunei.html",
         "topic": "durability"
       },
       {
