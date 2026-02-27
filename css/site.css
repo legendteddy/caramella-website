@@ -3158,3 +3158,16 @@ table:not(.data-table) {
         padding-right: 0.9rem !important;
     }
 }
+
+/* === Extracted Utility Classes === */
+.footer-reg-no {
+    opacity: 0.6;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.quote-text {
+    opacity: 0.85;
+    font-style: italic;
+    font-size: 0.93rem;
+}

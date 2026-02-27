@@ -9,3 +9,5 @@ output/playwright/
 docs/
 tools/
 AGENTS.md
+.gemini/
+*.py
