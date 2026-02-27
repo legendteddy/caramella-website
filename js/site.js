@@ -98,36 +98,10 @@
         }
     }
 
+    /* Toned down: coordinate shifting felt 'template-y' and distracting. 
+       Keeping for potential future micro-use, but disabling broadcast. */
     function initScrollGradient() {
-        var root = document.documentElement;
-        var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-        var rafPending = false;
-
-        function updateScrollVars() {
-            var maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-            var progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
-            var yShift = Math.round(progress * 140);
-            var xShift = Math.round(progress * 80);
-            root.style.setProperty('--scroll-y', yShift + 'px');
-            root.style.setProperty('--scroll-x', xShift + 'px');
-            rafPending = false;
-        }
-
-        function scheduleUpdate() {
-            if (rafPending) return;
-            rafPending = true;
-            window.requestAnimationFrame(updateScrollVars);
-        }
-
-        if (reduceMotion.matches) {
-            root.style.setProperty('--scroll-y', '0px');
-            root.style.setProperty('--scroll-x', '0px');
-            return;
-        }
-
-        updateScrollVars();
-        window.addEventListener('scroll', scheduleUpdate, { passive: true });
-        window.addEventListener('resize', scheduleUpdate);
+        return;
     }
 
     function initLightboxScrollLock() {
@@ -261,13 +235,15 @@
         var observer = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 if (entry.isIntersecting) {
+                    // Added bit of "stagger" feel via CSS transition delays if needed,
+                    // but primarily ensuring it doesn't fire too aggressively.
                     entry.target.classList.add('is-visible');
                     observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.1,
-            rootMargin: '0px 0px -40px 0px'
+            threshold: 0.05, // Fire earlier so it doesn't "pop" mid-view
+            rootMargin: '0px 0px -20px 0px' // Less aggressive margin
         });
 
         document.querySelectorAll('.reveal').forEach(function (el) {

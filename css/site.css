@@ -62,20 +62,17 @@ html {
     --panel-border: rgba(212, 175, 55, 0.15);
     --panel-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     --glass-strong: none;
-    --gold-sheen: linear-gradient(135deg, rgba(255, 215, 0, 0.42), rgba(255, 215, 0, 0.08));
-    --diamond-refraction: linear-gradient(115deg,
-            transparent 40%,
-            rgba(0, 175, 255, 0.42) 46%,
-            rgba(255, 215, 0, 0.42) 52%,
-            rgba(120, 255, 210, 0.22) 58%,
-            transparent 62%);
-    --diamond-sparkle: linear-gradient(45deg, rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0.95) 50%, rgba(255, 255, 255, 0) 60%);
-    --diamond-border: 1px solid rgba(255, 255, 255, 0.2);
+    --metallic-tonal: linear-gradient(135deg, rgba(212, 175, 55, 0.25), rgba(212, 175, 55, 0.05));
+    --surface-refractive: linear-gradient(115deg,
+            transparent 42%,
+            rgba(255, 255, 255, 0.08) 48%,
+            rgba(212, 175, 55, 0.12) 52%,
+            transparent 58%);
+    --high-gloss-highlight: linear-gradient(45deg, rgba(255, 255, 255, 0) 45%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 55%);
+    --surface-border: 1px solid rgba(255, 255, 255, 0.12);
     --gold-grad: linear-gradient(90deg, #B8860B 0%, #FFD700 25%, #FFFFFF 50%, #FFD700 75%, #B8860B 100%);
     --gold-metallic: var(--gold-grad);
     --gold-warm: linear-gradient(135deg, #FFD700 0%, #B8860B 100%);
-    --ruby-grad: radial-gradient(circle at 35% 35%, #FF3D60 0%, #A00020 60%, #200000 100%);
-    --ruby-glow: 0 0 30px rgba(255, 61, 96, 0.6);
     --text-main: #FFFFFF;
     --text-muted: #9ba1a6;
     --accent-amber: #FFD700;

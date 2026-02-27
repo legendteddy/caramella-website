@@ -52,6 +52,7 @@ When the user says "read GEMINI.md", "do your thing", "continue", or any similar
 - **Smart Home Rule:** Treat "smart home" tech as a gimmick. Do not write about it. Focus on timeless physical craftsmanship and architectural lines.
 - **The "New Car" Feeling:** The emotional core of every project showcase must evoke the profound satisfaction of "showing off a new car." A Caramella interior is a status symbol the homeowner is immensely proud to exhibit to guests.
 - **Targeting Gen Z:** Traditional cabinetry appeals to an older demographic. Shift the visual language and messaging to appeal to Gen Z homeowners (e.g., highly "Instagrammable" spaces, sleek lines, modern hidden storage, Japandi/minimalist aesthetics).
+- **Material Guardrails (2026):** **We DO NOT sell or promote Solid Surface or Granite countertops.** Caramella focuses exclusively on **Quartz Composite** (Premium) and **Laminate** (Economy) to ensure long-term durability in Brunei's climate. Do not suggest or mention Solid Surface/Granite as viable options.
 - **Maintain strict neutrality and genuine helpfulness**. Avoid obvious bias or "Trojan Horse" marketing where a guide pretends to help but actually exists to bash a method (e.g., DIY). If writing a guide, genuinely teach the user how to succeed. Only offer Caramella's services as a low-pressure alternative.
 - **NEVER invent warranty claims**. We provide NO warranty on the kitchen structure/cabinetry itself. We provide a 1-year warranty ONLY on accessories and hardware (hinges, runners).
 - **NEVER promise in-house dismantling**. Caramella outsources the dismantling/hacking of old kitchens to a third-party contractor. Do not market it as an in-house service.
@@ -218,7 +219,6 @@ Every improvement — content, schema, performance, linking, AI signals — shou
 | `kitchen-layout-types.html` | L, U, galley, island layout guide |
 | `imported-cabinet-failures.html` | Import failure modes in Brunei humidity |
 | `tropical-kitchen-mistakes-brunei.html` | 7 tropical kitchen mistakes to avoid |
-| `quartz-vs-solid-surface-brunei.html` | Quartz vs Solid Surface comparison |
 | `diy-cabinet-guide-brunei.html` | DIY kitchen cabinet guide |
 | `flat-pack-vs-custom-brunei.html` | Flat pack vs custom cabinetry comparison |
 

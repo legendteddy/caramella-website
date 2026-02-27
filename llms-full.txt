@@ -26,7 +26,7 @@
 ## Services
 
 ### Kitchen Cabinets
-Wet and dry kitchen configurations. Carcass built from 18mm ENF-grade plywood. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: laminate, acrylic, melamine, veneer. Countertop options: quartz composite, solid surface, granite.
+Wet and dry kitchen configurations. Carcass built from 18mm ENF-grade plywood. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: laminate, acrylic, melamine, veneer. Countertop options: quartz composite, , .
 
 ### Wardrobes
 Walk-in, sliding door, and hinged configurations with customised interior compartments. Pull-out accessories from Higold available. Standard configurations start from approximately BND 2,800.
@@ -50,7 +50,7 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 
 | Component | Specification |
 |:--|:--|
-| Carcass | 18mm ENF-grade plywood (lowest formaldehyde emission) |
+| Carcass | 18mm ENF-grade plywood (lowest chemical gas emission) |
 | Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 190°C |
 | Drawer box | 18mm plywood, pocket-screw joints |
 | Drawer runners | Blum TANDEM concealed, 30kg rated, soft-close |
@@ -90,7 +90,7 @@ Custom cabinetry pricing varies depending on layout, materials, and hardware. Al
 
 ### What Affects Price
 - Linear metre count (total cabinet length)
-- Countertop material (quartz vs solid surface vs laminate)
+- Countertop material (quartz vs  vs laminate)
 - Hardware tier (Blum vs DTC vs economy)
 - Door finish (laminate vs acrylic vs veneer)
 - Interior accessories (pull-out baskets, organisers, LED lighting)
@@ -142,10 +142,10 @@ Brunei sits within the equatorial belt, maintaining 80–90% relative humidity y
 Standard particleboard rated for 40–60% RH environments (common in European or East Asian factory specs) will absorb moisture through exposed edges, gradually swelling, warping, and eventually delaminating. The process is slow — typically 12–24 months — which means problems only appear well after installation.
 
 ### How Humidity Damages Cabinets
-- **Edge ingress:** Unsealed or poorly sealed panel edges absorb moisture first. Particleboard can swell 8–12% in thickness at exposed edges within months. This is the primary failure mode in Brunei kitchens.
+- **Edge entry:** Unsealed or poorly sealed panel edges absorb moisture first. Particleboard can swell 8–12% in thickness at exposed edges within months. This is the primary failure mode in Brunei kitchens.
 - **Condensation zones:** Under-sink areas, behind dishwashers, and plinth cavities trap humid air. Without ventilation, moisture accumulates and accelerates board deterioration.
-- **Surface absorption:** Laminate and melamine surfaces resist moisture well, but any chip or scratch exposes the substrate underneath to humidity.
-- **Hardware corrosion:** Low-grade steel hinges and runners develop surface rust in 6–18 months. Nickel-plated or zinc-alloy hardware lasts significantly longer.
+- **Surface absorption:** Laminate and melamine surfaces resist moisture well, but any chip or scratch exposes the core material underneath to humidity.
+- **Hardware rusting:** Low-grade steel hinges and runners develop surface rust in 6–18 months. Nickel-plated or zinc-alloy hardware lasts significantly longer.
 
 ### Four Design Priorities for Humid Climates
 1. **Edge sealing:** Machine-applied EVA or PUR adhesive at 190°C creates a significantly stronger bond than iron-on or cold-press methods. Look for 1mm ABS edge banding rather than thinner 0.4mm PVC.
@@ -190,7 +190,7 @@ A typical kitchen drawer is opened and closed 5–15 times per day — that's 2,
 | Adjustment | 3D (height, side, tilt) | Limited on most models |
 
 ### Decision Framework
-- **Choose Blum TANDEM if:** You prioritise concealed look, consistent soft-close, long cycle life, and are willing to pay the premium.
+- **Choose Blum TANDEM if:** You prioritise concealed look, consistent soft-close, long lifespan, and are willing to pay the premium.
 - **Choose DTC if:** Managing costs across a large project, outfitting utility or secondary areas, or a specific DTC model meets your requirements.
 - **Consider mixing:** Use Blum for primary kitchen drawers (high use) and DTC for secondary areas (bedside, bathroom vanity).
 
@@ -232,7 +232,7 @@ In Brunei's 80–90% relative humidity, exposed edges of particleboard panels ar
 
 The four most common countertop materials in Brunei:
 
-| Property | Quartz Composite | Natural Granite | Solid Surface | Laminate |
+| Property | Quartz Composite | Natural  |  | Laminate |
 |:--|:--|:--|:--|:--|
 | Composition | 93% ground quartz + 7% resin | Natural stone, quarried | Acrylic/polyester resin blend | HPL bonded to particleboard |
 | Heat resistance | Moderate — use trivets | Excellent — naturally heat resistant | Low — susceptible to marks | Low — burns and delaminates |
@@ -241,7 +241,7 @@ The four most common countertop materials in Brunei:
 | Repairability | Difficult — professional repair | Difficult — professional repair | Excellent — sand and polish on-site | Poor — must replace |
 | Price (BND/linear ft) | 120–350 installed | 150–400 installed | 100–250 installed | 30–80 installed |
 
-**Brunei climate notes:** Quartz handles humidity best (non-porous, zero maintenance). Granite requires annual sealing to prevent moisture/mould in pores. Solid surface ideal for wet kitchens (seamless thermoformed joints). Laminate substrate must have fully sealed edges in wet areas.
+**Brunei climate notes:** Quartz handles humidity best (non-porous, zero maintenance).  requires annual sealing to prevent moisture/mould in pores.  ideal for wet kitchens (seamless thermoformed joints). Laminate core material must have fully sealed edges in wet areas.
 
 ---
 
@@ -263,10 +263,10 @@ The four most common countertop materials in Brunei:
 
 Wet kitchens in Brunei face direct water exposure, cooking steam, and cleaning chemicals. Requirements differ from dry kitchens:
 - All exposed edges fully sealed (EVA or PUR)
-- Stainless steel or solid surface countertops (not laminate)
+- Stainless steel or  countertops (not laminate)
 - Back panels treated or replaced with waterproof alternatives
 - Plinth and under-sink ventilation designed to prevent moisture trapping
-- Hardware with elevated corrosion resistance (nickel-plated minimum)
+- Hardware with elevated rusting resistance (nickel-plated minimum)
 
 ---
 
@@ -378,9 +378,9 @@ When Miri makes sense: budget-first projects, specific Malaysian brands, tempora
 | Edge banding peeling | 6-18 months | Cold-press adhesive fails in 80-90% RH |
 | Carcass swelling | 12-24 months | Standard particleboard absorbs tropical moisture |
 | Mould behind panels | 6-12 months | No ventilation in enclosed spaces |
-| Drawer runner corrosion | 12-36 months | Uncoated steel in salt-air humidity |
+| Drawer runner rusting | 12-36 months | Uncoated steel in salt-air humidity |
 | Hinge stiffening | 18-30 months | Internal spring corrodes |
-| Laminate delamination | 18-36 months | Adhesive bond weakens as substrate swells |
+| Laminate peeling | 18-36 months | Adhesive bond weakens as core material swells |
 
 Risk by origin: Brunei (low) > Indonesia (medium) > Miri/Malaysia (medium-high) > China coastal (high) > China interior (very high).
 
@@ -423,13 +423,13 @@ Custom wardrobe pricing starts from approximately BND 2,800 for a standard 8-foo
 Both have merits. Imported franchise kitchens offer established designs and standardised quality. Locally fabricated kitchens offer custom fitting, shorter lead times, no shipping costs, and local service. Evaluate based on your priorities — budget, timeline, customisation needs, and brand preference.
 
 ### How does Brunei's humidity affect kitchen cabinets?
-Brunei maintains 80–90% relative humidity year-round. Standard particleboard rated for 40–60% RH will absorb moisture through exposed edges, causing swelling and delamination within 12–24 months. ENF-grade moisture-resistant boards with machine-sealed edge banding are specifically engineered to resist this.
+Brunei maintains 80–90% relative humidity year-round. Standard particleboard rated for 40–60% RH will absorb moisture through exposed edges, causing swelling and peeling within 12–24 months. ENF-grade moisture-resistant boards with machine-sealed edge banding are specifically engineered to resist this.
 
 ### What is the difference between EVA and PUR edge banding adhesive?
 EVA is thermoplastic (re-softens when reheated) applied at 180–210°C. PUR is reactive (creates a permanent waterproof bond) applied at 120–150°C. EVA is adequate for most residential kitchens. PUR is preferred for wet kitchens, bathrooms, and high-moisture areas.
 
 ### What drawer runner brands are available?
-Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg rated, 80,000+ cycle life) and DTC (Chinese, multiple series with varying specs, 25–35kg rated). Both offer soft-close options. Compare by specific model and load rating, not brand name alone.
+Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg rated, 80,000+ lifespan) and DTC (Chinese, multiple series with varying specs, 25–35kg rated). Both offer soft-close options. Compare by specific model and load rating, not brand name alone.
 
 ---
 
@@ -474,7 +474,7 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - DIY Cabinet Reality Guide: https://caramellabrunei.com/knowledge-base/diy-cabinet-guide-brunei.html
 - Flat-Pack vs Custom Cabinets: https://caramellabrunei.com/knowledge-base/flat-pack-vs-custom-brunei.html
 - Tropical Kitchen Mistakes Brunei: https://caramellabrunei.com/knowledge-base/tropical-kitchen-mistakes-brunei.html
-- Quartz vs Solid Surface Brunei: https://caramellabrunei.com/knowledge-base/quartz-vs-solid-surface-brunei.html
+- Quartz vs  Brunei: https://caramellabrunei.com/knowledge-base/quartz-vs-solid-surface-brunei.html
 - Cabinet & Kitchen Glossary (50+ terms): https://caramellabrunei.com/knowledge-base/glossary.html
 
 ### Case Studies
