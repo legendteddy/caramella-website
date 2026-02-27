@@ -58,10 +58,10 @@ html {
     --ink-muted: rgba(245, 247, 249, 0.72);
     --gold-core: #f4d77a;
     --gold-deep: #b8860b;
-    --panel: rgba(12, 18, 26, 0.38);
-    --panel-border: rgba(255, 255, 255, 0.18);
-    --panel-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
-    --glass-strong: blur(26px) saturate(160%);
+    --panel: #0d1217;
+    --panel-border: rgba(212, 175, 55, 0.15);
+    --panel-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    --glass-strong: none;
     --gold-sheen: linear-gradient(135deg, rgba(255, 215, 0, 0.42), rgba(255, 215, 0, 0.08));
     --diamond-refraction: linear-gradient(115deg,
             transparent 40%,
