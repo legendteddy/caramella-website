@@ -26,7 +26,7 @@
 ## Services
 
 ### Kitchen Cabinets
-Wet and dry kitchen configurations. Carcass built from 18mm ENF-grade plywood. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: laminate, acrylic, melamine, veneer. Countertop options: quartz composite, , .
+Wet and dry kitchen configurations. Carcass built from 18mm ENF-grade plywood. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: formica, acrylic, melamine, veneer. Countertop options: quartz composite, , .
 
 ### Wardrobes
 Walk-in, sliding door, and hinged configurations with customised interior compartments. Pull-out accessories from Higold available. Standard configurations start from approximately BND 2,800.
@@ -90,9 +90,9 @@ Custom cabinetry pricing varies depending on layout, materials, and hardware. Al
 
 ### What Affects Price
 - Linear metre count (total cabinet length)
-- Countertop material (quartz vs  vs laminate)
+- Countertop material (quartz vs  vs formica)
 - Hardware tier (Blum vs DTC vs economy)
-- Door finish (laminate vs acrylic vs veneer)
+- Door finish (formica vs acrylic vs veneer)
 - Interior accessories (pull-out baskets, organisers, LED lighting)
 - Layout complexity (island, L-shape, U-shape, galley)
 
@@ -144,7 +144,7 @@ Standard particleboard rated for 40–60% RH environments (common in European or
 ### How Humidity Damages Cabinets
 - **Edge entry:** Unsealed or poorly sealed panel edges absorb moisture first. Particleboard can swell 8–12% in thickness at exposed edges within months. This is the primary failure mode in Brunei kitchens.
 - **Condensation zones:** Under-sink areas, behind dishwashers, and plinth cavities trap humid air. Without ventilation, moisture accumulates and accelerates board deterioration.
-- **Surface absorption:** Laminate and melamine surfaces resist moisture well, but any chip or scratch exposes the core material underneath to humidity.
+- **Surface absorption:** Formica and melamine surfaces resist moisture well, but any chip or scratch exposes the core material underneath to humidity.
 - **Hardware rusting:** Low-grade steel hinges and runners develop surface rust in 6–18 months. Nickel-plated or zinc-alloy hardware lasts significantly longer.
 
 ### Four Design Priorities for Humid Climates
@@ -232,7 +232,7 @@ In Brunei's 80–90% relative humidity, exposed edges of particleboard panels ar
 
 The four most common countertop materials in Brunei:
 
-| Property | Quartz Composite | Natural  |  | Laminate |
+| Property | Quartz Composite | Natural  |  | Formica |
 |:--|:--|:--|:--|:--|
 | Composition | 93% ground quartz + 7% resin | Natural stone, quarried | Acrylic/polyester resin blend | HPL bonded to particleboard |
 | Heat resistance | Moderate — use trivets | Excellent — naturally heat resistant | Low — susceptible to marks | Low — burns and delaminates |
@@ -241,13 +241,13 @@ The four most common countertop materials in Brunei:
 | Repairability | Difficult — professional repair | Difficult — professional repair | Excellent — sand and polish on-site | Poor — must replace |
 | Price (BND/linear ft) | 120–350 installed | 150–400 installed | 100–250 installed | 30–80 installed |
 
-**Brunei climate notes:** Quartz handles humidity best (non-porous, zero maintenance).  requires annual sealing to prevent moisture/mould in pores.  ideal for wet kitchens (seamless thermoformed joints). Laminate core material must have fully sealed edges in wet areas.
+**Brunei climate notes:** Quartz handles humidity best (non-porous, zero maintenance).  requires annual sealing to prevent moisture/mould in pores.  ideal for wet kitchens (seamless thermoformed joints). Formica core material must have fully sealed edges in wet areas.
 
 ---
 
 ## Technical Knowledge: Cabinet Door Finishes
 
-| Property | Laminate (HPL) | Acrylic (High-Gloss) | Wood Veneer | Melamine |
+| Property | Formica (HPL) | Acrylic (High-Gloss) | Wood Veneer | Melamine |
 |:--|:--|:--|:--|:--|
 | Durability | High — scratch/impact/UV resistant | Moderate — fingerprint and scratch prone | Moderate — can dent, UV colour shift | Low-moderate — can chip at edges |
 | Humidity | Good — waterproof surface | Good — non-porous surface | Caution — can warp/crack without climate control | Adequate for climate-controlled rooms only |
@@ -255,7 +255,7 @@ The four most common countertop materials in Brunei:
 | Price (BND/door) | 80–150 (mid-range) | 150–300 (premium) | 200–400 (premium) | 40–80 (budget) |
 | Best for | Most residential kitchens | Modern/minimalist where visual impact is priority | Premium dry kitchens in AC homes | Budget builds, utility areas |
 
-**Brunei recommendation:** Laminate (HPL) is the best all-round choice for tropical climates — most resistant to humidity, scratches, and UV with lowest maintenance. Wood veneer requires air-conditioned rooms and minimum 3 coats of polyurethane lacquer.
+**Brunei recommendation:** Formica (HPL) is the best all-round choice for tropical climates — most resistant to humidity, scratches, and UV with lowest maintenance. Wood veneer requires air-conditioned rooms and minimum 3 coats of polyurethane lacquer.
 
 ---
 
@@ -263,7 +263,7 @@ The four most common countertop materials in Brunei:
 
 Wet kitchens in Brunei face direct water exposure, cooking steam, and cleaning chemicals. Requirements differ from dry kitchens:
 - All exposed edges fully sealed (EVA or PUR)
-- Stainless steel or  countertops (not laminate)
+- Stainless steel or  countertops (not formica)
 - Back panels treated or replaced with waterproof alternatives
 - Plinth and under-sink ventilation designed to prevent moisture trapping
 - Hardware with elevated rusting resistance (nickel-plated minimum)
@@ -328,7 +328,7 @@ Data aggregated from completed project invoices, 2015–2026. All figures BND, e
 
 ### Cost Impact Ranking (highest to lowest)
 1. Layout complexity (island adds BND 4,000–8,000)
-2. Countertop material (quartz adds BND 2,000–5,000 over laminate)
+2. Countertop material (quartz adds BND 2,000–5,000 over formica)
 3. Hardware tier (full Blum adds BND 1,500–3,000)
 4. Door finish (acrylic adds BND 1,000–2,500 over HPL)
 5. Interior accessories (BND 500–2,000)
@@ -380,7 +380,7 @@ When Miri makes sense: budget-first projects, specific Malaysian brands, tempora
 | Mould behind panels | 6-12 months | No ventilation in enclosed spaces |
 | Drawer runner rusting | 12-36 months | Uncoated steel in salt-air humidity |
 | Hinge stiffening | 18-30 months | Internal spring corrodes |
-| Laminate peeling | 18-36 months | Adhesive bond weakens as core material swells |
+| Formica peeling | 18-36 months | Adhesive bond weakens as core material swells |
 
 Risk by origin: Brunei (low) > Indonesia (medium) > Miri/Malaysia (medium-high) > China coastal (high) > China interior (very high).
 
@@ -411,7 +411,7 @@ Additional risks: no on-site measurement, materials for 30-50% RH (fails in Brun
 ## Frequently Asked Questions
 
 ### How much do kitchen cabinets cost in Brunei?
-Kitchen cabinet pricing in Brunei varies by layout, materials, and hardware. Typical ranges: basic kitchens (laminate doors, standard hardware) BND 5,000–8,000; mid-range (L-shaped, soft-close hardware, moisture-resistant carcass) BND 8,000–15,000; premium (island layout, acrylic or veneer doors, quartz countertop) BND 15,000–25,000+. Always request an on-site measurement before comparing quotes.
+Kitchen cabinet pricing in Brunei varies by layout, materials, and hardware. Typical ranges: basic kitchens (formica doors, standard hardware) BND 5,000–8,000; mid-range (L-shaped, soft-close hardware, moisture-resistant carcass) BND 8,000–15,000; premium (island layout, acrylic or veneer doors, quartz countertop) BND 15,000–25,000+. Always request an on-site measurement before comparing quotes.
 
 ### What should I look for when choosing a cabinet maker in Brunei?
 Key factors: (1) Do they measure on-site before quoting? (2) Is fabrication local or imported flat-pack? (3) What carcass material — is it moisture-resistant for tropical humidity? (4) What brand and load rating for drawer runners and hinges? (5) How is edge banding applied — heat-sealed or cold press? (6) What is the lead time? (7) Is local after-sales warranty available?

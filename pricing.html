@@ -442,7 +442,7 @@
                                     <input type="radio" name="layout" id="finish-formica" value="formica" checked
                                         autocomplete="off">
                                     <span class="est-card-inner">
-                                        <strong>Formica / Laminate</strong>
+                                        <strong>Formica / Formica</strong>
                                         <span class="est-card-sub">Highly durable &bull; Best all-round</span>
                                     </span>
                                 </label>
@@ -460,11 +460,11 @@
                         <fieldset class="est-step" id="countertop-step">
                             <legend>4. Kitchen Countertop</legend>
                             <div class="est-options est-options--3col">
-                                <label class="est-card" for="countertop-laminate">
-                                    <input type="radio" name="countertop" id="countertop-laminate" value="laminate"
+                                <label class="est-card" for="countertop-formica">
+                                    <input type="radio" name="countertop" id="countertop-formica" value="formica"
                                         checked autocomplete="off">
                                     <span class="est-card-inner">
-                                        <strong>Laminate</strong>
+                                        <strong>Formica</strong>
                                         <span class="est-card-sub">From BND 30/ft</span>
                                     </span>
                                 </label>
@@ -690,12 +690,12 @@
             var hw = { 'dtc': 1.0, 'blum': 1.25 }; // Blum is a premium Austrian upgrade
 
             // Door finish multiplier 
-            // Derived from promos: Melamine (~55% of Laminate), Classic/Lacquer (~120% of Laminate)
+            // Derived from promos: Melamine (~55% of Formica), Classic/Lacquer (~120% of Formica)
             var fin = { 'melamine': 0.55, 'pet': 1.10, 'formica': 1.0, 'classic': 1.20 };
 
             // Countertop add-on (flat range added to total)
             var cTop = {
-                'laminate': [300, 600],
+                'formica': [300, 600],
                 'quartz': [1800, 3500]
             };
 
