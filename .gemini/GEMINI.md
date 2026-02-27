@@ -298,7 +298,7 @@ caramella-website/
 │   ├── drawer-runners-blum-dtc.html    ← Blum vs DTC runner comparison
 │   ├── edge-sealing-eva.html           ← EVA edge banding for humidity
 │   ├── kitchen-layout-types.html       ← L, U, galley, island layout guide
-│   └── imported-cabinet-failures.html  ← Import failure modes in Brunei
+│   ├── imported-cabinet-failures.html  ← Import failure modes in Brunei
 │
 │── CASE STUDIES (case-studies/)
 ├── case-studies/
@@ -1153,3 +1153,4 @@ Each session, I scan the site through these lenses. They **never complete** — 
 | 2026-02-27 | #6 | L5 Autonomous Sprint completed. Fixed index.html internal link coverage (added Cost Data and Case Studies links). Added standard "Related Services" cross-linking blocks to all 14 Knowledge Base articles. Expanded faq.html with detailed answers on ABCi permits, BIBD financing, replace vs renovate, and kitchen usage during renovation. |
 | 2026-02-27 | #7 | Executed Deep De-AI pass on all core service pages and KB. Removed 'In conclusion/Moreover' padding. Added HTML entity script fix for mojibake characters site-wide. Final A11y semantic perfection (scope attributes) on pricing/build tables. |
 | 2026-02-27 | #8 | Post-Deploy Emergency Fixes: Removed leaked JS comment from `index.html` body. Added `padding-top` to `.hero` to clear absolute navbar. Safely injected `llms.txt` and `robots.txt` `<link>` tags into the `<head>` of all 44 HTML files via Python. Banned PowerShell `-replace` HTML regex matching in both local and global `GEMINI.md`. |
+| 2026-02-27 | #9 | Countertop Material Cleanup: Permanently removed all promotion of Solid Surface and Granite. Deleted `quartz-vs-solid-surface-brunei.html`. Refactored `countertop-materials-brunei.html` comparison table and recommendations (Quartz/Laminate only). Updated `faq.html`, `glossary.html`, `pricing.html` (estimator), `tech-specs.html`, and `sitemap.xml`. Documented "Material Guardrails" in project context to prevent future re-introduction of these materials. |
