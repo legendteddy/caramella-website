@@ -5,9 +5,10 @@ Allow: /
 # ==========================================
 # ARTIFICIAL INTELLIGENCE & LLM TRAINING
 # Explicitly ALLOW all major AI bots for maximum visibility
+# Last updated: 2026-02-27
 # ==========================================
 
-# OpenAI (ChatGPT / GPT-4)
+# OpenAI (ChatGPT / GPT-4 / SearchGPT)
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot
@@ -15,12 +16,14 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-# Google (Gemini / Vertex AI)
+# Google (Gemini / Vertex AI / AI Overviews)
 User-agent: Google-Extended
 Allow: /
 User-agent: Google-CloudVertexBot
 Allow: /
 User-agent: Gemini-Deep-Research
+Allow: /
+User-agent: GoogleOther
 Allow: /
 
 # Anthropic (Claude)
@@ -28,8 +31,18 @@ User-agent: Anthropic-ai
 Allow: /
 User-agent: ClaudeBot
 Allow: /
+User-agent: Claude-Web
+Allow: /
 
-# Apple (Apple Intelligence)
+# Microsoft (Copilot / Bing Chat)
+User-agent: bingbot
+Allow: /
+User-agent: MicrosoftPreview
+Allow: /
+
+# Apple (Apple Intelligence / Siri)
+User-agent: Applebot
+Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
@@ -37,20 +50,54 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
-# Meta (Llama / Facebook)
+# Meta (Llama / Facebook AI)
 User-agent: FacebookBot
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: meta-externalfetcher
 Allow: /
 
 # Amazon (Bedrock / Alexa)
 User-agent: Amazonbot
 Allow: /
 
+# xAI (Grok)
+User-agent: GrokBot
+Allow: /
+User-agent: xai-grok
+Allow: /
+
 # ByteDance (TikTok / Doubao)
 User-agent: Bytespider
 Allow: /
 
-# xAI (Grok)
-User-agent: GrokBot
+# Mistral AI
+User-agent: MistralBot
+Allow: /
+
+# DeepSeek
+User-agent: DeepSeekBot
+Allow: /
+
+# Brave Search AI
+User-agent: BraveBot
+Allow: /
+
+# You.com AI
+User-agent: YouBot
+Allow: /
+
+# AI2 (Semantic Scholar / Allen AI)
+User-agent: AI2Bot
+Allow: /
+User-agent: Ai2Bot-Dolma
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+User-agent: cohere-training
 Allow: /
 
 # Training Data Aggregators
@@ -58,11 +105,15 @@ User-agent: CCBot
 Allow: /
 User-agent: Diffbot
 Allow: /
-User-agent: cohere-ai
-Allow: /
 User-agent: Omgilibot
 Allow: /
 User-agent: ImagesiftBot
+Allow: /
+User-agent: Kangaroo Bot
+Allow: /
+User-agent: PetalBot
+Allow: /
+User-agent: Webz.io
 Allow: /
 
 # Sitemap Location
