@@ -421,7 +421,7 @@
                         </fieldset>
 
                         <fieldset class="est-step">
-                            <legend>3. Door Finish Material</legend>
+                            <legend>3. Door Finish</legend>
                             <div class="est-options est-options--2col">
                                 <label class="est-card" for="finish-melamine">
                                     <input type="radio" name="finish" id="finish-melamine" value="melamine"
@@ -442,8 +442,15 @@
                                 <label class="est-card" for="finish-pet">
                                     <input type="radio" name="finish" id="finish-pet" value="pet" autocomplete="off">
                                     <span class="est-card-inner">
-                                        <strong>PET / PETG</strong>
-                                        <span class="est-card-sub">High-Gloss / Matte &bull; Eco-friendly</span>
+                                        <strong>PET</strong>
+                                        <span class="est-card-sub">Eco-friendly &bull; Matte Finish</span>
+                                    </span>
+                                </label>
+                                <label class="est-card" for="finish-petg">
+                                    <input type="radio" name="finish" id="finish-petg" value="petg" autocomplete="off">
+                                    <span class="est-card-inner">
+                                        <strong>PETG</strong>
+                                        <span class="est-card-sub">Luxury Gloss &bull; Impact Resistant</span>
                                     </span>
                                 </label>
                                 <label class="est-card" for="finish-lacquer">
@@ -486,12 +493,12 @@
                         <div class="est-result-label">Estimated Range</div>
                         <div class="est-result-range">
                             <span class="est-bnd">BND</span>
-                            <span id="est-low">7,000</span>
+                            <span id="est-low">2,990</span>
                             <span class="est-dash">&ndash;</span>
-                            <span id="est-high">13,000</span>
+                            <span id="est-high">6,000</span>
                         </div>
-                        <p class="est-result-note">Cabinets + hardware + installation. Countertop quoted separately
-                            based on your linear metre count.</p>
+                        <p class="est-result-note">Cabinets + hardware + installation. Includes premium core material
+                            selection as standard.</p>
                         <a class="btn-primary" href="contact-us.html" style="margin-top:1.2rem">Get an Exact Quote</a>
                     </div>
 
@@ -693,7 +700,7 @@
 
             // Door finish multiplier 
             // Derived from promos: Melamine (~55% of Formica), Classic/Lacquer (~120% of Formica)
-            var fin = { 'melamine': 0.55, 'pet': 1.10, 'formica': 1.0, 'classic': 1.20 };
+            var fin = { 'melamine': 0.55, 'pet': 1.10, 'petg': 1.25, 'formica': 1.0, 'classic': 1.20 };
 
             // Countertop add-on (flat range added to total)
             var cTop = {

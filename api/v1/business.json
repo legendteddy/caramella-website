@@ -65,6 +65,9 @@
       "Tropical humidity cabinetry",
       "Blum hardware",
       "Quartz countertops",
+      "PET finishing",
+      "PETG finishing",
+      "Formica finishes",
       "Built-in furniture"
     ],
     "slogan": "100% Brunei Owned & Operated"
@@ -353,9 +356,23 @@
   },
   "materials": {
     "carcass": {
-      "material": "18mm ENF-grade plywood",
+      "materials": [
+        "18mm Plywood",
+        "MDF",
+        "Particle Board",
+        "OSB"
+      ],
       "grade": "ENF (E0)",
       "description": "Lowest formaldehyde emission, engineered for 80-90% RH"
+    },
+    "finishing": {
+      "options": [
+        "Formica",
+        "Lacquer",
+        "PET",
+        "PETG",
+        "Melamine"
+      ]
     },
     "edgeBanding": {
       "material": "1mm ABS",
