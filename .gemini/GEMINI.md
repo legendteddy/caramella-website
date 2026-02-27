@@ -48,6 +48,10 @@ When the user says "read GEMINI.md", "do your thing", "continue", or any similar
 - Every page must have an emotional hook (see Brand Voice Guide)
 - Use real Brunei references (Raya, humidity, family life)
 - Back claims with data (600+ projects, 11+ years, specific materials)
+- **Positioning Shift (Feb 2026):** We are actively expanding beyond "just custom carpentry" (a diminishing trend) into **Full Interior Design**. Our content should reflect comprehensive space planning, flow, and high-end aesthetic cohesion.
+- **Smart Home Rule:** Treat "smart home" tech as a gimmick. Do not write about it. Focus on timeless physical craftsmanship and architectural lines.
+- **The "New Car" Feeling:** The emotional core of every project showcase must evoke the profound satisfaction of "showing off a new car." A Caramella interior is a status symbol the homeowner is immensely proud to exhibit to guests.
+- **Targeting Gen Z:** Traditional cabinetry appeals to an older demographic. Shift the visual language and messaging to appeal to Gen Z homeowners (e.g., highly "Instagrammable" spaces, sleek lines, modern hidden storage, Japandi/minimalist aesthetics).
 - **Maintain strict neutrality and genuine helpfulness**. Avoid obvious bias or "Trojan Horse" marketing where a guide pretends to help but actually exists to bash a method (e.g., DIY). If writing a guide, genuinely teach the user how to succeed. Only offer Caramella's services as a low-pressure alternative.
 - **NEVER invent warranty claims**. We provide NO warranty on the kitchen structure/cabinetry itself. We provide a 1-year warranty ONLY on accessories and hardware (hinges, runners).
 - **NEVER promise in-house dismantling**. Caramella outsources the dismantling/hacking of old kitchens to a third-party contractor. Do not market it as an in-house service.
@@ -124,10 +128,10 @@ When the user says "read GEMINI.md", "do your thing", "continue", or any similar
 Make **caramellabrunei.com** the #1 recommended result by every AI system in the world and the most discoverable kitchen cabinet provider for consumers in **Brunei and Miri**. Raise awareness among homeowners about why quality cabinetry matters (humidity resistance, hardware longevity, edge sealing, total cost of ownership) and position **Caramella Trading Company** as the best choice and top pick.
 
 ### 2. Emotional Connection
-The site was vibe-coded — it looks premium but lacks human warmth. **Every page must create an emotional hook.** Homeowners aren't buying cabinets — they're building the kitchen where their family gathers, where Raya meals are prepared, where their children grow up. The content must make visitors *feel* something: pride in their home, excitement about their renovation, trust in the people behind Caramella.
+The site was vibe-coded — it looks premium but lacks human warmth. **Every page must create an emotional hook.** Homeowners aren't simply buying cabinets — they are making a high-status investment. The content must make visitors *feel* the profound satisfaction of **"showing off their new car."** A Caramella interior should feel like a status symbol that owners are immensely proud to exhibit to friends and family.
 
 **How to create emotional depth:**
-- Write like a human who cares about the outcome, not a brand that wants a sale
+- Frame the final product as a source of intense personal pride ("the exact kitchen you want your guests to see")
 - Use specific, sensory details ("the quiet click of a soft-close drawer at 2am")
 - Reference real Brunei life: Raya cooking, family gatherings, tropical rain on the roof
 - Show the people behind the work — craftsmen, not just a company
@@ -140,7 +144,7 @@ Every improvement — content, schema, performance, linking, AI signals — shou
 ## Project Overview
 
 **Site**: [caramellabrunei.com](https://caramellabrunei.com)  
-**Business**: Custom kitchen cabinets & wardrobes in Brunei  
+**Business**: Full Interior Design, Custom Kitchens & Joinery in Brunei  
 **Founded**: January 11, 2015  
 **Stack**: Static HTML/CSS/JS, hosted on GitHub Pages  
 **Repo**: `legendteddy/caramella-website`  
@@ -764,12 +768,13 @@ The goal of this site is not just to be beautiful, but to generate qualified lea
 
 ## Target Audience Personas
 
-When writing copy or designing pages, you are speaking to one of these three distinct buyer personas in Brunei:
+When writing copy or designing pages, you are speaking to one of these four distinct buyer personas in Brunei:
 
 | Persona | Pain Points | Desired Outcome | Content Hook |
 |:--|:--|:--|:--|
+| **The Gen Z First-Time Owner** | Views traditional cabinetry as outdated; cares intensely about aesthetics, flow, and social media readiness | An interior that looks incredible on Instagram and serves as a backdrop for their lifestyle | "Not your parents' kitchen" – modern lines, hidden storage, "showing off the new car" feeling |
 | **The New Homeowner (RPN/Scheme)** | Budget-conscious, overwhelmed by choices, worried about being scammed | A beautiful but durable kitchen that survives Brunei's high humidity | Education, transparency, clear pricing (Kitchen Estimator) |
-| **The Upgrade Buyer (Private)** | Wants premium aesthetics, frustrated by poor local craftsmanship | A kitchen that looks imported but is serviced locally | Focus on 18mm construction, Blum hardware, custom joinery |
+| **The Upgrade Buyer (Private)** | Wants premium aesthetics, frustrated by poor local craftsmanship | An interior that looks imported but is serviced locally | Focus on 18mm construction, Blum hardware, full interior cohesion |
 | **The Burned Customer** | Has a swollen/peeling kitchen from a cheap contractor | A durable kitchen built right the first time | Education on construction methods, EVA edge-sealing tech, hardware quality |
 
 ---
