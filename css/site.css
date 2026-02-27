@@ -1727,6 +1727,7 @@ a:hover {
     text-align: center;
     position: relative;
     overflow: hidden;
+    padding-top: var(--nav-height, 80px);
     background: transparent !important;
 }
 

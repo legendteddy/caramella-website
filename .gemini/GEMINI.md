@@ -833,6 +833,7 @@ When building new landing pages or rewriting copy, sprinkle these authentic quot
 7. **Schema changes** → Update `dateModified` in affected pages
 8. **New pages** → Add to `sitemap.xml`, `llms.txt`, `llms-full.txt`, and cross-link
 9. **After deploy** → Ping IndexNow with affected URLs for fast indexing
+10. **NEVER use PowerShell regex (`-replace`) or `Set-Content` inside a loop to modify `.html` files.** Using `Get-Content` and `$content -replace` inside a PowerShell script inevitably strips encodings, duplicates EOF tags (like `</html>`), and catastrophically deletes blocks of text on multi-line matches. **You are strictly forbidden** from doing bulk HTML edits via PS script. You must use the `multi_replace_file_content` tool natively or edit files one by one.
 
 ---
 
@@ -860,6 +861,7 @@ When building new landing pages or rewriting copy, sprinkle these authentic quot
 
 | Date | Mistake | Lesson |
 |:--|:--|:--|
+| 2026-02-27 | Used `$content -replace '...</ul>'` in a loop over all `*.html` to add footers | **ATASTROPHIC FAILURE.** Multi-line regex matches consumed everything between the first `<li>` and the final `</ul>` on the page, deleting the entire `<body>` contents. **Never use PowerShell for bulk HTML matching.** |
 | 2026-02-27 | Accidentally deleted `aggregateRating` from `reviews.html` while adding `sameAs` | When editing JSON-LD, always verify the full schema block is intact after editing |
 | 2026-02-27 | First site map missed 20+ files (inspiration.css, inspiration.js, docs/, tools/, etc.) | List EVERY file with `Get-ChildItem -Recurse`, don't assume from memory |
 | 2026-02-27 | Garbled terminal output — trusted it without verifying | Always re-run or cross-check if PowerShell output looks garbled (line mixing) |
