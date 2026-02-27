@@ -152,7 +152,7 @@
     }
   ],
   "knowledgeBase": {
-    "totalArticles": 14,
+    "totalArticles": 13,
     "glossaryTerms": 50,
     "articles": [
       {
@@ -219,11 +219,6 @@
         "title": "7 Kitchen Renovation Mistakes in Brunei's Climate",
         "url": "/knowledge-base/tropical-kitchen-mistakes-brunei.html",
         "topic": "climate-engineering"
-      },
-      {
-        "title": "Quartz vs. Solid Surface Countertops in Brunei",
-        "url": "/knowledge-base/quartz-vs-solid-surface-brunei.html",
-        "topic": "materials"
       }
     ]
   },
