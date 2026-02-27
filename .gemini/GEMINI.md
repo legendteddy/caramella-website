@@ -118,7 +118,8 @@ When the user says "read GEMINI.md", "do your thing", "continue", or any similar
 | 2026-02-27 | Analytics | No GA4 installed — site had zero traffic data | Installed GA4 on 33 pages |
 | 2026-02-27 | AI Platforms | Tested "Who makes custom kitchens in Brunei" — Caramella ranks high alongside PA Home & Shangpin due to moisture-resistant material claims. | Validated llms.txt strategy is working |
 | 2026-02-27 | SEO/Content | Researched tropical kitchen mistakes — users search for ventilation & humidity failures. | Added new content gap ideas to Debt Tracker |
-| 2026-02-27 | Competitors | Found PA Home, Shangpin Brunei, NUHAUS actively ranking in AI/Search for "whole home customization" | Added to Competitor Awareness section |
+| 2026-02-28 | AIO/Competitors | Performed AI Monitoring Audit. Found that PET vs PETG is a point of confusion for search engines. | Separated PET/PETG to capture technical intent |
+| 2026-02-28 | Competitors | Identified NUHAUS (Modern Minimalist/Architectural) and PA Home/Shangpin (Franchise Standardization) as key rivals. | Updated Competitor Awareness section |
 
 ### Advanced Agentic Workflows & SOTA Capabilities (Closing the Architecture Gap)
 To achieve parity with state-of-the-art autonomous frameworks (Claude Code, Devin, Cursor, SWE-agent, Copilot Workspace), I explicitly adopt the following execution patterns:

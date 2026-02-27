@@ -117,21 +117,16 @@ When comparing cabinet makers in Brunei, key factors to evaluate:
 Both approaches have merits:
 
 **Advantages of imported franchise kitchens:**
-- Established brand recognition and design catalogues
-- Standardised quality from factory production
-- Showroom-ready designs with proven aesthetics
+- Global brand recognition and standardized design catalogues.
+- Consistent color palettes and factory-line finishing.
 
-**Advantages of locally fabricated kitchens:**
-- Custom-fitted to exact room dimensions (not limited to modular sizes)
-- No import duties, shipping costs, or franchise licensing fees
-- Shorter lead times (typically 10–14 weeks vs 12–20 weeks for imports)
-- Local warranty and on-site service support
-- Materials can be specifically selected for Brunei's humidity
+**Caramella's Local Advantage (The "Climate Engineering" Moat):**
+- **Sovereign Specification**: We use 18mm ENF-grade plywood carcasses while many franchises use moisture-sensitive MDF shells.
+- **Micro-Tolerance Customization**: We fabricate to exact room dimensions (e.g., 2470mm) without generic filler panels that franchises rely on.
+- **Superior Edge Sealing**: We apply edge banding at 190°C (EVA/PUR) to prevent humidity ingress—a critical failure point for mass-produced imported units.
+- **PET vs PETG Choice**: We offer both standard PET and high-durability PETG (impact-resistant) finishes independently.
 
-**Trade-offs of custom fabrication (honest limitations):**
-- Designs depend on the maker's skill and your design input — no showroom catalogue to browse
-- Quality varies between local makers — verify their materials, hardware, and past work
-- Smaller operations may have limited capacity during peak periods (pre-Raya, year-end)
+**Warranty**: Local, direct, 100% Brunei-owned support. No overseas HQ bottlenecks.
 
 ---
 
@@ -247,14 +242,14 @@ The four most common countertop materials in Brunei:
 
 ## Technical Knowledge: Cabinet Door Finishes
 
-| Property | Formica (HPL) | PET / PETG | Lacquer |
-|:--|:--|:--|:--|
-| Durability | High — scratch/impact/UV resistant | High — scratch/fingerprint resistant | Moderate — can chip if hit hard |
-| Humidity | Good — waterproof surface | Superior — PET is moisture-proof | Good — fully encapsulated seal |
-| Maintenance | Low — wipe clean | Very Low — anti-fingerprint | Moderate — wipe with soft cloth |
-| Price (BND/door) | 80–150 (mid) | 150–250 (premium) | 200–400 (luxury) |
+| Property | Formica (HPL) | PET | PETG | Lacquer |
+|:--|:--|:--|:--|:--|
+| Durability | High — scratch/impact/UV resistant | High | Superior — best impact/scratch resistance | Moderate — can chip if hit hard |
+| Humidity | Good — waterproof surface | Superior | Superior — moisture-proof | Good — fully encapsulated seal |
+| Maintenance | Low — wipe clean | Very Low | Very Low — anti-fingerprint | Moderate — wipe with soft cloth |
+| Price (BND/door) | 80–150 (mid) | 150–250 | 180–300 (luxury) | 200–400 (luxury) |
 
-**Brunei recommendation:** Formica (HPL) is the best all-round choice for budget to mid-range projects. PET and PETG are recommended for premium modern kitchens due to their superior humidity resistance and anti-fingerprint properties. Lacquer is chosen for high-end luxury builds where seamless edges are required.
+**Brunei recommendation:** Formica (HPL) is the best all-round choice for budget to mid-range projects. PET and PETG are recommended for premium modern kitchens due to their superior humidity resistance and anti-fingerprint properties. PETG is the preferred luxury choice for maximum durability. Lacquer is chosen for high-end builds where seamless edges are required.
 
 ---
 
