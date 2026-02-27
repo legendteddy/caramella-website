@@ -3180,3 +3180,148 @@ table:not(.data-table) {
     font-size: 0.8rem;
     color: var(--text-muted);
 }
+
+/* ── Kitchen Cost Estimator ──────────────────────────────── */
+
+.est-step {
+    border: none;
+    padding: 0;
+    margin: 0 0 1.6rem;
+}
+
+.est-step legend {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--gold-core);
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.01em;
+}
+
+.est-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 0.6rem;
+}
+
+.est-options--2col {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.est-options--3col {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.est-card {
+    cursor: pointer;
+    display: block;
+}
+
+.est-card input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.est-card-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.85rem 1rem;
+    border-radius: 14px;
+    border: 1px solid var(--panel-border);
+    background: var(--panel);
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.est-card-inner strong {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.est-card-sub {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    line-height: 1.3;
+}
+
+.est-card input:checked+.est-card-inner {
+    border-color: var(--gold-core);
+    background: rgba(244, 215, 122, 0.08);
+    box-shadow: 0 0 0 1px var(--gold-core), 0 4px 20px rgba(244, 215, 122, 0.1);
+}
+
+.est-card input:focus-visible+.est-card-inner {
+    outline: 2px solid var(--gold-core);
+    outline-offset: 2px;
+}
+
+.est-card:hover .est-card-inner {
+    border-color: rgba(244, 215, 122, 0.5);
+    background: rgba(244, 215, 122, 0.04);
+}
+
+/* Result panel */
+.est-result {
+    margin-top: 2rem;
+    padding: 1.6rem;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(244, 215, 122, 0.06), rgba(12, 18, 26, 0.5));
+    border: 1px solid rgba(244, 215, 122, 0.25);
+    text-align: center;
+    transition: transform 0.3s var(--ease-smooth);
+}
+
+.est-result-label {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--gold-core);
+    margin-bottom: 0.5rem;
+}
+
+.est-result-range {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.1;
+}
+
+.est-bnd {
+    font-weight: 400;
+    font-size: 0.65em;
+    color: var(--ink-muted);
+    margin-right: 0.15em;
+}
+
+.est-dash {
+    margin: 0 0.15em;
+    color: var(--ink-muted);
+}
+
+.est-result-note {
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    margin-top: 0.6rem;
+    line-height: 1.5;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 600px) {
+
+    .est-options,
+    .est-options--2col,
+    .est-options--3col {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .est-result-range {
+        font-size: 1.8rem;
+    }
+}
