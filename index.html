@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -319,19 +319,7 @@
 
 <body class="home-page">
     <a href="#main-content" class="skip-to-content">Skip to content</a>
-    <!-- Scroll Progress Indicator -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-
-    <!-- WhatsApp float injected by site.js -->
-
-    <!-- Feature 13: Back-to-Top Button -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <svg viewBox="0 0 48 48">
-            <circle class="progress-ring" cx="24" cy="24" r="22"></circle>
-        </svg>
-        <span class="arrow">&#8593;</span>
-    </button>
+    /* Tracking UI elements (scroll progress, back-to-top, floating WA) removed for cleaner signal. */
 
     <nav class="navbar" aria-label="Primary">
         <a href="index.html" class="logo">Caramella</a>
@@ -857,74 +845,7 @@
             }
         }
 
-        // Feature 2: Scroll Progress Indicator
-        function initScrollProgress() {
-            const progressBar = document.getElementById('scrollProgress');
-            if (!progressBar) return;
-            let rafPending = false;
-
-            const update = () => {
-                const scrollTop = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-                progressBar.style.width = scrollPercent + '%';
-                rafPending = false;
-            };
-
-            const scheduleUpdate = () => {
-                if (rafPending) return;
-                rafPending = true;
-                window.requestAnimationFrame(update);
-            };
-
-            update();
-            window.addEventListener('scroll', scheduleUpdate, { passive: true });
-            window.addEventListener('resize', scheduleUpdate);
-        }
-
-        // Feature 13: Back-to-Top Button with Progress Ring
-        function initBackToTop() {
-            const btn = document.getElementById('backToTop');
-            const progressRing = btn?.querySelector('.progress-ring');
-            if (!btn || !progressRing) return;
-
-            const circumference = 2 * Math.PI * 22; // r=22
-            progressRing.style.strokeDasharray = circumference;
-            let rafPending = false;
-
-            const update = () => {
-                const scrollTop = window.scrollY;
-                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) : 0;
-
-                // Show/hide button
-                if (scrollTop > 300) {
-                    btn.classList.add('visible');
-                } else {
-                    btn.classList.remove('visible');
-                }
-
-                // Update progress ring
-                const offset = circumference - (scrollPercent * circumference);
-                progressRing.style.strokeDashoffset = offset;
-                rafPending = false;
-            };
-
-            const scheduleUpdate = () => {
-                if (rafPending) return;
-                rafPending = true;
-                window.requestAnimationFrame(update);
-            };
-
-            update();
-            window.addEventListener('scroll', scheduleUpdate, { passive: true });
-            window.addEventListener('resize', scheduleUpdate);
-
-            btn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-        }
-        initBackToTop();
+        /* Scroll Progress and Back-to-Top JavaScript removed for cleaner signal */
 
         // Feature 16: Dynamic Social Proof
 
@@ -1162,7 +1083,7 @@
 
 
 
-    <script src="js/site.js?v=20260227a" defer></script>
+    <script src="js/site.js?v=20260227b" defer></script>
 </body>
 
 </html>
