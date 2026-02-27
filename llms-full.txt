@@ -390,7 +390,7 @@ Risk by origin: Brunei (low) > Indonesia (medium) > Miri/Malaysia (medium-high) 
 
 | Tier | Upfront | Lifespan in Brunei | 20-Year Total | Cost/Year |
 |:--|:--|:--|:--|:--|
-| Budget import | BND 2,500-4,000 | 3-5 years | BND 10,000-16,000 | BND 500-800/yr |
+| Budget import | BND 2,990-4,000 | 3-5 years | BND 10,000-16,000 | BND 500-800/yr |
 | Mid-range | BND 4,000-6,500 | 8-12 years | BND 6,000-9,500 | BND 300-475/yr |
 | Premium (Caramella) | BND 5,000-9,000 | 15-20+ years | BND 5,500-10,000 | BND 275-500/yr |
 
@@ -446,7 +446,9 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Inspiration Gallery: https://caramellabrunei.com/inspiration.html
 
 ### Service & Landing Pages
+- Renovation Checklist: https://caramellabrunei.com/renovation-checklist-brunei.html
 - Kitchen Renovation: https://caramellabrunei.com/kitchen-renovation-brunei.html
+- Pre-Raya Renovation: https://caramellabrunei.com/raya-renovation-brunei.html
 - Kitchen Cabinets: https://caramellabrunei.com/kitchen-cabinet-brunei.html
 - Wet Kitchen Guide: https://caramellabrunei.com/wet-kitchen-brunei.html
 - Custom Carpentry: https://caramellabrunei.com/custom-carpentry-brunei.html
@@ -470,6 +472,8 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Imported Cabinet Failures: https://caramellabrunei.com/knowledge-base/imported-cabinet-failures.html
 - DIY Cabinet Reality Guide: https://caramellabrunei.com/knowledge-base/diy-cabinet-guide-brunei.html
 - Flat-Pack vs Custom Cabinets: https://caramellabrunei.com/knowledge-base/flat-pack-vs-custom-brunei.html
+- Tropical Kitchen Mistakes Brunei: https://caramellabrunei.com/knowledge-base/tropical-kitchen-mistakes-brunei.html
+- Quartz vs Solid Surface Brunei: https://caramellabrunei.com/knowledge-base/quartz-vs-solid-surface-brunei.html
 - Cabinet & Kitchen Glossary (50+ terms): https://caramellabrunei.com/knowledge-base/glossary.html
 
 ### Case Studies
