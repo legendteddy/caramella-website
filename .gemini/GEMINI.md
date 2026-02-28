@@ -807,8 +807,9 @@ When building new landing pages or rewriting copy, sprinkle these authentic quot
 ## Operational Rules
 
 1. **ALWAYS ASK FOR CLARIFICATION**: If a user request is ambiguous, broad, or impacts core messaging/design, you MUST pause and ask numbered questions (1, 2, 3) to clarify intent before executing. Give the user numbered options to respond with.
-2. **Bulk HTML changes** → Use native `multi_replace_file_content` tool exclusively. Banned scripts.
-3. **CSS changes** → Edit `css/site.css`, the global stylesheet
+2. **Read-Before-Replace Protocol**: NEVER execute a file replacement tool without FIRST running `view_file` or `grep_search` on the EXACT target file to copy the exact `TargetContent` string directly from the terminal output. Assuming file contents or line numbers leads to string-matching failures and breaks flow.
+3. **Bulk HTML changes** → Use native `multi_replace_file_content` tool exclusively. Banned scripts.
+4. **CSS changes** → Edit `css/site.css`, the global stylesheet
 4. **JS changes** → Edit `js/site.js`, then bump cache-buster version in all HTML files
 5. **Footer changes** → Must be applied to all pages with footers individually
 6. **Prefer explicit `.html` URLs** — GitHub Pages doesn't support clean URL rewrites
