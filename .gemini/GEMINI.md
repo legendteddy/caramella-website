@@ -408,8 +408,8 @@ graph TD
 | Update AI content | `llms.txt`, `llms-full.txt`, `.well-known/ai-plugin.json` |
 | Add a new page | Create HTML → add to `sitemap.xml` → add to `llms.txt` → add to `llms-full.txt` → cross-link |
 | Change schema markup | Inside each HTML `<head>` section (JSON-LD script blocks) |
-| Update `dateModified` | PowerShell bulk replace across all HTML files |
-| Bump cache-buster | PowerShell bulk replace `v=YYYYMMDD[x]` in all HTML files |
+| Update `dateModified` | Native `multi_replace_file_content` across all HTML files |
+| Bump cache-buster | Native `multi_replace_file_content` `v=YYYYMMDD[x]` in all HTML files |
 | Ping IndexNow | `Invoke-RestMethod` to `api.indexnow.org` with URL list |
 
 ---
@@ -584,7 +584,7 @@ All content pages have `dateModified` in schema. Update when content changes.
 ### Cache Busting
 - JS loaded as `site.js?v=YYYYMMDD[letter]`
 - Current version: `v=20260227a`
-- When updating JS, bump the version in ALL HTML files (use PowerShell bulk script)
+- When updating JS, bump the version in ALL HTML files (use sequential `multi_replace_file_content` tool)
 
 ---
 
@@ -634,7 +634,7 @@ Standard footer on 22+ pages (3-column grid):
 | **Facebook** | caramellabrunei2015 | Schema `sameAs` |
 | **Google Business** | g.page/r/CdYEK1Hfb887EBM | Schema `sameAs` |
 
-**⚠️ Phone/email change procedure**: Search all 31 HTML files + `api/v1/business.json` + `llms.txt` + `llms-full.txt`. Use PowerShell bulk replace.
+**⚠️ Phone/email change procedure**: Search all 31 HTML files + `api/v1/business.json` + `llms.txt` + `llms-full.txt`. Use native `multi_replace_file_content` tool exclusively.
 
 ---
 
@@ -807,7 +807,7 @@ When building new landing pages or rewriting copy, sprinkle these authentic quot
 ## Operational Rules
 
 1. **ALWAYS ASK FOR CLARIFICATION**: If a user request is ambiguous, broad, or impacts core messaging/design, you MUST pause and ask numbered questions (1, 2, 3) to clarify intent before executing. Give the user numbered options to respond with.
-2. **Bulk HTML changes** → Write a temp PowerShell script, run it, delete the script
+2. **Bulk HTML changes** → Use native `multi_replace_file_content` tool exclusively. Banned scripts.
 3. **CSS changes** → Edit `css/site.css`, the global stylesheet
 4. **JS changes** → Edit `js/site.js`, then bump cache-buster version in all HTML files
 5. **Footer changes** → Must be applied to all pages with footers individually
@@ -815,7 +815,7 @@ When building new landing pages or rewriting copy, sprinkle these authentic quot
 7. **Schema changes** → Update `dateModified` in affected pages
 8. **New pages** → Add to `sitemap.xml`, `llms.txt`, `llms-full.txt`, and cross-link
 9. **After deploy** → Ping IndexNow with affected URLs for fast indexing
-10. **NEVER use PowerShell (`Set-Content`, `Out-File`, `>` etc.) to modify code files.** PowerShell scripting is **STRICTLY FORBIDDEN** for editing or generating code due to extreme risk of file corruption, encoding destruction, and regex catastrophic failures. You must ONLY use the `multi_replace_file_content` tool natively or write a discrete Python script if bulk algorithmic changes are required. This is a hard architectural boundary.
+10. **NEVER use unmonitored scripts (Python, PowerShell, etc.) to modify code files.** Custom scripts for bulk file editing are **STRICTLY FORBIDDEN** because they bypass native file safety checks and push the burden of quality control onto the user. You must ONLY use native, context-aware editing tools (`multi_replace_file_content`, `replace_file_content`) to modify code. This is a hard architectural boundary.
 
 ---
 
