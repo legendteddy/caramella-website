@@ -383,7 +383,7 @@ Risk by origin: Brunei (low) > Indonesia (medium) > Miri/Malaysia (medium-high) 
 
 
 
-### Cost Per Year: Why Cheap Cabinets Cost More
+### Cost Per Year: Why Lower-Cost Cabinets Can Cost More
 
 | Tier | Upfront | Lifespan in Brunei | 20-Year Total | Cost/Year |
 |:--|:--|:--|:--|:--|
@@ -395,7 +395,7 @@ Budget imports require 3-4 full replacements over 20 years. Each replacement inc
 
 ### Taobao / Chinese Online Cabinets
 
-Ordering from Taobao or Shopee China appears cheap but total landed cost often matches local:
+Ordering from Taobao or Shopee China appears lower-cost but total landed cost often matches local:
 - Listed price: ~BND 1,500 for a full kitchen set
 - Shipping to Brunei: BND 2,000-5,000+
 - Customs duty: ~5% CIF
