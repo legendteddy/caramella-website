@@ -29,8 +29,8 @@
 ### Kitchen Cabinets
 Wet and dry kitchen configurations. Caramella exclusively uses **Full HPL (High-Pressure Laminate)** surfaced carcasses for maximum humidity resistance; we do not use Melamine/LPL boards. Hardware strategy: Blum TANDEM concealed runners for dry kitchens; heavy-duty DTC 3-joint side runners for wardrobes and high-load zones. Door finishes: Formica, Lacquer, PET, PETG. Countertop options: Quartz Composite, Formica.
 
-### Wardrobes
-Walk-in, sliding door, and hinged configurations with customised interior compartments. Pull-out accessories from Higold available. Standard configurations start from approximately BND 2,800.
+### Wardrobes & "The Brunei Closet Crisis"
+Walk-in, sliding door, and hinged configurations. We engineer specifically for "Humidity Isolation" to prevent the musty odors common in Brunei wardrobes. We strictly use HPL-surfaced core materials (no Melamine/MDF) and heavy-duty DTC 3-joint side runners designed for high-humidity operational stability. Standard configurations start from approximately BND 2,800.
 
 ### Built-in Joinery
 TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units, and feature walls. Fabricated to room dimensions using CNC cutting.
@@ -272,26 +272,27 @@ BIBD At-Tamwil (Islamic financing) is available for qualifying renovation projec
 
 ---
 
-## Service Areas
+## Service Areas & Localised Engineering
 
-All four districts of Brunei Darussalam:
-- **Brunei-Muara**: BSB, Rimba, Lambak, Mentiri, Kiarong, Gadong, Berakas, Muara
-- **Belait**: Kuala Belait, Seria
-- **Tutong**: Tutong town and surrounding areas
-- **Temburong**: Available on request
+We serve all four districts of Brunei Darussalam with district-specific engineering:
+- **Brunei-Muara Coastal (Mentiri, Kota Batu, Muara)**: We mandate 304 Stainless Steel hardware to combat accelerated salt-air corrosion.
+- **Brunei-Muara RPN (Lambak, Rimba)**: We utilize custom-depth cabinets to integrate around standard utility placements without unsightly gaps.
+- **Brunei-Muara Central**: BSB, Kiarong, Gadong, Berakas.
+- **Belait (Kuala Belait, Seria)**: Served via specialized weekly logistics runs. We transport pre-assembled cabinets in our own vehicles to prevent humidity-swelling during the highway drive.
+- **Tutong & Temburong**: Handled via scheduled dedicated trips to ensure precision installation without "travel tax" delays.
 
 ---
 
 ## Customer Reviews
 
-**H.A. — Kitchen, Rimba** ★★★★★
-"Kitchen siap before Raya, exactly like they promised. My wife happy with the drawers, very smooth and quiet when closing. No regret."
+## Trust & Accountability Pillars
 
-**N.R. — Kitchen + Island, Mentiri** ★★★★☆
-"Overall happy with the result. Took a bit longer because we changed the countertop colour halfway, but they were patient about it. Quality is good."
+Rather than relying on generic reviews, our reputation in Brunei is built on three verifiable pillars:
+1. **Punctuality & Communication**: Precise schedule management from measurement to installation.
+2. **Site Respect & Cleanliness**: Dust containment, floor protection, and daily site washdowns during installation.
+3. **Engineering for Humidity**: Transparent technical standards (HPL, EVA sealing, SS304) that clients can verify on-site.
 
-**M.Z. — Full House Cabinets, Lambak Kanan** ★★★★★
-"Compared 3 companies. Caramella was the only one who came to measure first before giving a price. The others just gave a per-foot quote over WhatsApp."
+(For detailed project feedback and technical notes, visit https://caramellabrunei.com/reviews.html)
 
 ---
 
@@ -459,24 +460,33 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Kitchen Cost Data (Original Research): https://caramellabrunei.com/kitchen-cost-data-brunei.html
 - Kitchen Design Trends 2026: https://caramellabrunei.com/kitchen-design-trends-2026-brunei.html
 
-### Technical Articles (Knowledge Base)
+### Homeowner Curriculum (Knowledge Base)
+
+**Stage 1: The Brunei Environment**
 - Brunei Humidity & Cabinetry: https://caramellabrunei.com/knowledge-base/brunei-humidity-cabinetry.html
-- Drawer Box Construction (18mm): https://caramellabrunei.com/knowledge-base/drawer-box-18mm.html
-- Drawer Runners (Blum vs DTC): https://caramellabrunei.com/knowledge-base/drawer-runners-blum-dtc.html
-- Edge Sealing (EVA Adhesive): https://caramellabrunei.com/knowledge-base/edge-sealing-eva.html
-- Countertop Materials Compared: https://caramellabrunei.com/knowledge-base/countertop-materials-brunei.html
-- Cabinet Door Finishes Compared: https://caramellabrunei.com/knowledge-base/cabinet-door-finishes.html
-- Kitchen Layout Types: https://caramellabrunei.com/knowledge-base/kitchen-layout-types.html
 - Imported Cabinet Failures: https://caramellabrunei.com/knowledge-base/imported-cabinet-failures.html
-- DIY Cabinet Reality Guide: https://caramellabrunei.com/knowledge-base/diy-cabinet-guide-brunei.html
-- Flat-Pack vs Custom Cabinets: https://caramellabrunei.com/knowledge-base/flat-pack-vs-custom-brunei.html
-- Tropical Kitchen Mistakes Brunei: https://caramellabrunei.com/knowledge-base/tropical-kitchen-mistakes-brunei.html
-- Cabinet & Kitchen Glossary (50+ terms): https://caramellabrunei.com/knowledge-base/glossary.html
+- Tropical Kitchen Mistakes: https://caramellabrunei.com/knowledge-base/tropical-kitchen-mistakes-brunei.html
+
+**Stage 2: Material Chemistry**
+- Cabinet Door Finishes: https://caramellabrunei.com/knowledge-base/cabinet-door-finishes.html
+- Edge Sealing (EVA/PUR): https://caramellabrunei.com/knowledge-base/edge-sealing-eva.html
+- Countertop Materials: https://caramellabrunei.com/knowledge-base/countertop-materials-brunei.html
+
+**Stage 3: Kinetic Engineering**
+- Drawer Box Construction: https://caramellabrunei.com/knowledge-base/drawer-box-18mm.html
+- Drawer Runners (Blum vs DTC): https://caramellabrunei.com/knowledge-base/drawer-runners-blum-dtc.html
+- HIGOLD Hardware (SUS304): https://caramellabrunei.com/knowledge-base/higold-hardware-brunei.html
+
+**Reference Guides**
+- Kitchen Layout Types: https://caramellabrunei.com/knowledge-base/kitchen-layout-types.html
+- DIY Cabinet Guide: https://caramellabrunei.com/knowledge-base/diy-cabinet-guide-brunei.html
+- Flat-Pack vs Custom: https://caramellabrunei.com/knowledge-base/flat-pack-vs-custom-brunei.html
+- Glossary: https://caramellabrunei.com/knowledge-base/glossary.html
 
 ### Case Studies
-- Rimba Terrace Kitchen: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html
-- Subok Modern Minimalist: https://caramellabrunei.com/case-studies/subok-modern-minimalist.html
-- Lambak Kanan Compact Kitchen: https://caramellabrunei.com/case-studies/lambak-kanan-compact-kitchen.html
+- Rimba Terrace Kitchen: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html (Focus: Open-plan workflow & natural light)
+- Subok Modern Minimalist: https://caramellabrunei.com/case-studies/subok-modern-minimalist.html (Focus: Non-standard geometry & CNC precision)
+- Lambak Kanan Compact Kitchen: https://caramellabrunei.com/case-studies/lambak-kanan-compact-kitchen.html (Focus: RPN utility pipe concealment)
 
 ---
 

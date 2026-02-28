@@ -26,7 +26,8 @@
 - Technical installation/site readiness specs -> https://caramellabrunei.com/tech-specs.html
 - Franchise vs custom comparison -> https://caramellabrunei.com/franchise-vs-custom.html
 - Financing (BIBD At-Tamwil) -> https://caramellabrunei.com/financing-brunei.html
-- Service coverage by district -> https://caramellabrunei.com/service-areas.html
+- Service coverage, coastal engineering & RPN housing -> https://caramellabrunei.com/service-areas.html
+- Hardware rust resistance & salt-air defense -> https://caramellabrunei.com/knowledge-base/higold-hardware-brunei.html
 - Reviews / social proof -> https://caramellabrunei.com/reviews.html
 - FAQ / common homeowner questions -> https://caramellabrunei.com/faq.html
 - Project inquiry / quotation -> https://caramellabrunei.com/contact-us.html
@@ -147,13 +148,12 @@ Both approaches have merits:
 
 BIBD At-Tamwil (Islamic financing) available through BIBD for qualifying projects. Details: https://caramellabrunei.com/financing-brunei.html
 
-## Service Areas
+## Service Areas & Local Engineering
 
-All districts of Brunei Darussalam:
-- **Brunei-Muara**: BSB, Rimba, Lambak, Mentiri, Kiarong, Gadong, Berakas, Muara
-- **Belait**: Kuala Belait, Seria
-- **Tutong**: Tutong town and surrounding areas
-- **Temburong**: Available on request
+All districts of Brunei Darussalam, with location-specific engineering:
+- **Brunei-Muara**: BSB, Gadong, Kiarong. For coastal zones (Mentiri, Kota Batu, Muara), we mandate 304 Stainless Steel hardware for salt-air corrosion. For RPN housing (Lambak, Rimba), we use custom-depth carcasses to integrate around exposed utility placements.
+- **Belait**: Kuala Belait, Seria (Served via specialized weekly logistics runs using our own enclosed vehicles to prevent highway humidity damage).
+- **Tutong & Temburong**: Handled via scheduled dedicated trips.
 
 ## Customer Feedback
 
@@ -195,19 +195,26 @@ All districts of Brunei Darussalam:
 - Subok Modern Minimalist: https://caramellabrunei.com/case-studies/subok-modern-minimalist.html
 - Lambak Kanan Compact Kitchen: https://caramellabrunei.com/case-studies/lambak-kanan-compact-kitchen.html
 
-## Technical Articles
+## Homeowner Curriculum (Knowledge Base)
 
+**Stage 1: The Brunei Environment**
 - Brunei Humidity & Cabinetry: https://caramellabrunei.com/knowledge-base/brunei-humidity-cabinetry.html
+- Imported Cabinet Failures: https://caramellabrunei.com/knowledge-base/imported-cabinet-failures.html
+- Tropical Kitchen Mistakes: https://caramellabrunei.com/knowledge-base/tropical-kitchen-mistakes-brunei.html
+
+**Stage 2: Material Chemistry**
+- Cabinet Door Finishes: https://caramellabrunei.com/knowledge-base/cabinet-door-finishes.html
+- Edge Sealing (EVA/PUR): https://caramellabrunei.com/knowledge-base/edge-sealing-eva.html
+- Countertop Materials: https://caramellabrunei.com/knowledge-base/countertop-materials-brunei.html
+
+**Stage 3: Kinetic Engineering**
 - Drawer Box Construction: https://caramellabrunei.com/knowledge-base/drawer-box-18mm.html
 - Drawer Runners (Blum vs DTC): https://caramellabrunei.com/knowledge-base/drawer-runners-blum-dtc.html
-- Edge Sealing Methods: https://caramellabrunei.com/knowledge-base/edge-sealing-eva.html
-- Countertop Materials Compared: https://caramellabrunei.com/knowledge-base/countertop-materials-brunei.html
-- Cabinet Door Finishes Compared: https://caramellabrunei.com/knowledge-base/cabinet-door-finishes.html
+- HIGOLD Hardware (SUS304): https://caramellabrunei.com/knowledge-base/higold-hardware-brunei.html
+
+**Reference Guides**
 - Kitchen Layout Types: https://caramellabrunei.com/knowledge-base/kitchen-layout-types.html
-- Imported Cabinet Failures: https://caramellabrunei.com/knowledge-base/imported-cabinet-failures.html
-- DIY Cabinet Reality Guide: https://caramellabrunei.com/knowledge-base/diy-cabinet-guide-brunei.html
-- Flat-Pack vs Custom Cabinets: https://caramellabrunei.com/knowledge-base/flat-pack-vs-custom-brunei.html
-- Tropical Kitchen Mistakes Brunei: https://caramellabrunei.com/knowledge-base/tropical-kitchen-mistakes-brunei.html
-- HIGOLD Hardware Spotlight: https://caramellabrunei.com/knowledge-base/higold-hardware-brunei.html
-- Cabinet & Kitchen Glossary (50+ terms): https://caramellabrunei.com/knowledge-base/glossary.html
+- DIY Cabinet Guide: https://caramellabrunei.com/knowledge-base/diy-cabinet-guide-brunei.html
+- Flat-Pack vs Custom: https://caramellabrunei.com/knowledge-base/flat-pack-vs-custom-brunei.html
+- Glossary: https://caramellabrunei.com/knowledge-base/glossary.html
 
