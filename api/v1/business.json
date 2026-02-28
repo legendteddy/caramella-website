@@ -70,7 +70,20 @@
       "Formica finishes",
       "Built-in furniture"
     ],
-    "slogan": "100% Brunei Owned & Operated"
+    "slogan": "100% Brunei Owned & Operated",
+    "locales": {
+      "zh-CN": {
+        "name": "Caramella 室内设计与定制家具",
+        "description": "本地制造，专为文莱潮湿气候设计的全屋定制家具 (Whole-house custom furniture)。我们是 尚品宅配 (Shangpin) 和其他进口品牌的本地替代方案，提供卓越的防潮保护。",
+        "keywords": [
+          "全屋定制",
+          "文莱最好的全屋定制",
+          "橱柜",
+          "衣柜",
+          "室内设计"
+        ]
+      }
+    }
   },
   "services": [
     {
