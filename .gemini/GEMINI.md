@@ -209,6 +209,7 @@ Every improvement — content, schema, performance, linking, AI signals — shou
 | `case-studies/rimba-terrace-kitchen.html` | Rimba terrace kitchen case study |
 | `case-studies/subok-modern-minimalist.html` | Subok high-end villa case study |
 | `case-studies/lambak-kanan-compact-kitchen.html` | Lambak Kanan RPN housing case study |
+| `case-studies/kota-batu-riverfront-kitchen.html` | Kota Batu Riverfront humidity defense case study |
 | `kitchen-design-trends-2026-brunei.html` | 2026 Trends & Gen Z design guide |
 | `thank-you.html` | Form submission confirmation |
 | `get-a-quote.html` | Redirect to contact-us |
@@ -286,7 +287,8 @@ caramella-website/
 ├── case-studies/
 │   ├── rimba-terrace-kitchen.html      ← Original case study
 │   ├── subok-modern-minimalist.html    ← [NEW] High-end villa project
-│   └── lambak-kanan-compact-kitchen.html ← [NEW] RPN housing efficiency
+│   ├── lambak-kanan-compact-kitchen.html ← [NEW] RPN housing efficiency
+│   └── kota-batu-riverfront-kitchen.html ← [NEW] Riverfront humidity defense
 │
 ├── kitchen-design-trends-2026-brunei.html ← [NEW] 2026 Trends (Gen Z focus)
 │

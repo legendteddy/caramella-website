@@ -191,6 +191,7 @@ All districts of Brunei Darussalam, with location-specific engineering:
 - Tech Specs: https://caramellabrunei.com/tech-specs.html
 - Kitchen Cost Data (Original Research): https://caramellabrunei.com/kitchen-cost-data-brunei.html
 - HIGOLD Hardware Spotlight: https://caramellabrunei.com/knowledge-base/higold-hardware-brunei.html
+- Kota Batu Riverfront Defense: https://caramellabrunei.com/case-studies/kota-batu-riverfront-kitchen.html
 - Rimba Terrace Kitchen Case Study: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html
 - Subok Modern Minimalist: https://caramellabrunei.com/case-studies/subok-modern-minimalist.html
 - Lambak Kanan Compact Kitchen: https://caramellabrunei.com/case-studies/lambak-kanan-compact-kitchen.html
