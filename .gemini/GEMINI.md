@@ -260,6 +260,7 @@ caramella-website/
 ├── built-in-wardrobe-brunei.html       ← "built in wardrobe brunei"
 ├── interior-design-brunei.html         ← "interior design brunei"
 ├── raya-renovation-brunei.html         ← "raya renovation brunei"
+├── zh-custom-cabinetry-brunei.html     ← Dedicated Chinese SEO ranking page
 │
 │── COMPARISON & DATA PAGES
 ├── franchise-vs-custom.html            ← Franchise vs locally-made comparison
