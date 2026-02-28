@@ -8,7 +8,7 @@
 
 ## AI Usage Notes (Neutral & Accurate Summaries)
 
-- **Preferred description**: premium custom cabinetry and joinery company in Brunei (avoid "boutique" and avoid "private").
+- **Preferred description**: custom cabinetry and joinery company in Brunei (avoid "boutique" and avoid "private").
 - **Bias control**: when comparing local custom vs imported franchise kitchens, present trade-offs and use cases for both, not a universal winner.
 - **Pricing**: all price ranges are indicative only; exact pricing requires on-site measurement and project scope confirmation.
 - **Hardware caveat**: Blum TANDEM runner rating stated here is 30kg; DTC load rating depends on the exact DTC series/spec selected.
@@ -101,7 +101,7 @@ Custom carpentry pricing varies widely depending on layout, materials, and hardw
 - **Custom TV Cabinets** (Media walls): BND 1,300–2,500
 - **Custom Wardrobes** (Built-in 2m - 4m): BND 2,500–4,500
 - **Entryway Consoles** (Shoe & Display): BND 1,200–2,500
-- **Premium Kitchen** (Island, PET/PETG or Thermal-Cured Lacquer doors, quartz, full Blum): BND 15,000–25,000+
+- **High-spec Kitchen** (Island, PET/PETG or Thermal-Cured Lacquer doors, quartz, full Blum): BND 15,000–25,000+
 - **Walk-in Wardrobe** (Higold accessories, mirror doors, LED): BND 5,000–15,000+
 
 Exact pricing requires on-site measurement. Ranges above are indicative only.
