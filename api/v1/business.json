@@ -222,6 +222,11 @@
         "title": "7 Kitchen Renovation Mistakes in Brunei's Climate",
         "url": "/knowledge-base/tropical-kitchen-mistakes-brunei.html",
         "topic": "climate-engineering"
+      },
+      {
+        "title": "HIGOLD Hardware Spotlight: SS304 & Nano-Technology",
+        "url": "/knowledge-base/higold-hardware-brunei.html",
+        "topic": "hardware"
       }
     ]
   },
@@ -363,20 +368,19 @@
         "OSB"
       ],
       "grade": "ENF (E0)",
-      "description": "Lowest formaldehyde emission, engineered for 80-90% RH"
+      "description": "High-Pressure HPL surfaced (Full Seal) on all internal and external faces for maximum humidity resistance. We do not use Melamine / LPL boards."
     },
     "finishing": {
       "options": [
         "Formica",
         "Lacquer",
         "PET",
-        "PETG",
-        "Melamine"
+        "PETG"
       ]
     },
     "edgeBanding": {
       "material": "1mm ABS",
-      "adhesive": "EVA hot-melt at 190°C",
+      "adhesive": "EVA hot-melt at 180°C-190°C",
       "alternative": "PUR for wet areas"
     },
     "drawerBox": {
@@ -384,8 +388,8 @@
       "joint": "Pocket screw"
     },
     "runners": {
-      "primary": "Blum TANDEM 30kg (550H)",
-      "alternative": "DTC mid-range",
+      "primary": "Blum TANDEM (Kitchens) / DTC 3-joint Side Runners (Wardrobes)",
+      "alternative": "1-Year Universal Hardware Warranty",
       "cycleLife": "80000+"
     },
     "hinges": {

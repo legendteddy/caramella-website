@@ -77,6 +77,9 @@ html {
     --text-muted: #9ba1a6;
     --accent-amber: #FFD700;
     --border-gold: 1px solid rgba(212, 175, 55, 0.4);
+
+    /* Layout Utilities */
+    --section-pad: clamp(4rem, 8vw, 8rem);
 }
 
 body {
@@ -481,6 +484,109 @@ table thead th,
     border-bottom: 2px solid rgba(212, 175, 55, 0.3);
     font-weight: 600;
     color: var(--text-main);
+}
+
+/* ── Global Layout Components ── */
+.section-pad {
+    padding: var(--section-pad) 0;
+}
+
+.page-hero {
+    padding: calc(var(--nav-height) + 4rem) var(--nav-pad-x) 4rem;
+    text-align: center;
+    background: var(--bg-spotlight);
+    border-bottom: var(--border-gold);
+}
+
+.page-hero .eyebrow {
+    font-family: var(--font-mono);
+    color: var(--gold-core);
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.page-hero h1 {
+    margin-bottom: 1.5rem;
+}
+
+.page-hero .lead {
+    max-width: 720px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.15rem;
+    color: var(--ink-muted);
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+/* Pill Grid (Service Areas, Tags) */
+.pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0 3rem;
+}
+
+.pill {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--ink-muted);
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+.pill:hover {
+    border-color: var(--gold-core);
+    color: #fff;
+    background: rgba(212, 175, 55, 0.08);
+}
+
+/* Sidebar / Glass Panel */
+.glass-panel {
+    background: var(--sapphire-glass);
+    border: var(--glass-border);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    position: sticky;
+    top: calc(var(--nav-height) + 2rem);
+}
+
+.glass-panel h3 {
+    color: var(--gold-core);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2rem;
+}
+
+.checklist li {
+    position: relative;
+    padding-left: 1.75rem;
+    margin-bottom: 0.85rem;
+    color: var(--ink-muted);
+    font-size: 0.95rem;
+}
+
+.checklist li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--gold-core);
+    font-weight: 800;
 }
 
 @media (max-width: 768px) {

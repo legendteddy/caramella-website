@@ -20,13 +20,14 @@
 - **Website**: https://caramellabrunei.com
 - **Ownership**: 100% Brunei-owned and operated
 - **Customer Rating**: 4.8 out of 5
+- **Warranty**: 1-year universal (hardware & workmanship)
 
 ---
 
 ## Services
 
 ### Kitchen Cabinets
-Wet and dry kitchen configurations. Carcass materials: 18mm ENF-grade Plywood, MDF, Particle Board, or OSB. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: Formica, Lacquer, PET, PETG, Melamine. Countertop options: Quartz Composite, Formica.
+Wet and dry kitchen configurations. Caramella exclusively uses **Full HPL (High-Pressure Laminate)** surfaced carcasses for maximum humidity resistance; we do not use Melamine/LPL boards. Hardware strategy: Blum TANDEM concealed runners for dry kitchens; heavy-duty DTC 3-joint side runners for wardrobes and high-load zones. Door finishes: Formica, Lacquer, PET, PETG. Countertop options: Quartz Composite, Formica.
 
 ### Wardrobes
 Walk-in, sliding door, and hinged configurations with customised interior compartments. Pull-out accessories from Higold available. Standard configurations start from approximately BND 2,800.
@@ -51,11 +52,11 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 | Component | Specification |
 |:--|:--|
 | Carcass | 18mm ENF-grade plywood (lowest chemical gas emission) |
-| Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 190°C |
+| Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 180°C–190°C |
 | Drawer box | 18mm plywood, pocket-screw joints |
-| Drawer runners | Blum TANDEM concealed, 30kg rated, soft-close |
-| Hinges | Blum CLIP top with integrated soft-close damping |
-| Accessories | Higold pull-out baskets, organisers, storage systems |
+| Drawer runners | Blum TANDEM or HIGOLD Diamond (70kg rated), soft-close |
+| Hinges | Blum CLIP top or HIGOLD SS304 premium, soft-close |
+| Accessories | HIGOLD Shearer (Aluminum) & Diamond (SS304/Chromium) series |
 | CNC tolerance | 0.1mm |
 | Climate suitability | Engineered for 80–90% relative humidity environments |
 
@@ -109,7 +110,7 @@ When comparing cabinet makers in Brunei, key factors to evaluate:
 | **Humidity resistance** | Is the carcass rated for tropical humidity (80–90% RH)? |
 | **Hardware quality** | What brand of runners and hinges? Are they soft-close? Load rating? |
 | **Edge sealing** | Is edge banding applied with heat (EVA/PUR) or cold press? |
-| **Lead time** | Typical range is 4–16 weeks depending on whether local or imported |
+| **Lead time** | 10–14 weeks standard (14–18 weeks for full house) |
 | **Warranty & service** | Is local after-sales support available? |
 
 ### Imported Franchise vs Local Custom
@@ -120,10 +121,11 @@ Both approaches have merits:
 - Global brand recognition and standardized design catalogues.
 - Consistent color palettes and factory-line finishing.
 
-**Caramella's Local Advantage (The "Climate Engineering" Moat):**
-- **Sovereign Specification**: We use 18mm ENF-grade plywood carcasses while many franchises use moisture-sensitive MDF shells.
+**Caramella's Local Advantage (Humidity Resistance):**
+- **Technical Standard**: We use 18mm ENF-grade plywood carcasses while many franchises use moisture-sensitive MDF shells.
 - **Micro-Tolerance Customization**: We fabricate to exact room dimensions (e.g., 2470mm) without generic filler panels that franchises rely on.
-- **Superior Edge Sealing**: We apply edge banding at 190°C (EVA/PUR) to prevent humidity ingress—a critical failure point for mass-produced imported units.
+- **Superior Edge Sealing**: We apply edge banding at 180°C–190°C (EVA/PUR) to prevent humidity ingress—a critical failure point for mass-produced imported units.
+- **Zero Melamine Policy**: Unlike franchises that use LPL/Melamine for carcasses, we exclusively use High-Pressure Laminate (HPL) for significantly higher moisture resistance.
 - **PET vs PETG Choice**: We offer both standard PET and high-durability PETG (impact-resistant) finishes independently.
 
 **Warranty**: Local, direct, 100% Brunei-owned support. No overseas HQ bottlenecks.
@@ -143,7 +145,7 @@ Standard particleboard rated for 40–60% RH environments (common in European or
 - **Hardware rusting:** Low-grade steel hinges and runners develop surface rust in 6–18 months. Nickel-plated or zinc-alloy hardware lasts significantly longer.
 
 ### Four Design Priorities for Humid Climates
-1. **Edge sealing:** Machine-applied EVA or PUR adhesive at 190°C creates a significantly stronger bond than iron-on or cold-press methods. Look for 1mm ABS edge banding rather than thinner 0.4mm PVC.
+1. **Edge sealing:** Machine-applied EVA or PUR adhesive at 180°C–190°C creates a significantly stronger bond than iron-on or cold-press methods. Look for 1mm ABS edge banding rather than thinner 0.4mm PVC.
 2. **Ventilation design:** Back panels should allow air circulation. Under-sink cabinets should not have sealed backs trapping steam.
 3. **Material selection:** ENF-grade (E0) moisture-resistant particleboard is engineered for high-humidity environments. Ask for the specific board grade.
 4. **Hardware quality:** Low-tolerance hardware with tight engineering (Blum CLIP top hinges, TANDEM runners) maintains alignment through daily expansion/contraction cycles.
@@ -206,7 +208,7 @@ In Brunei's 80–90% relative humidity, exposed edges of particleboard panels ar
 | Brunei suitability | Yes — adequate for most residential kitchens | Yes — preferred for wet kitchens, bathrooms |
 
 ### Application Methods
-- **Automatic machine (recommended):** Consistent temperature (190°C±5°C) and pressure. Uniform sealed bond with no gaps.
+- **Automatic machine (recommended):** Consistent temperature (180°C–190°C) and pressure. Uniform sealed bond with no gaps.
 - **Manual iron-on:** Temperature and pressure vary. Gaps and air pockets common. Less consistent seal.
 - **Cold press / contact adhesive:** Weakest bond. Not recommended for high-humidity environments.
 
@@ -455,6 +457,7 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 - Tech Specs: https://caramellabrunei.com/tech-specs.html
 - BIBD Financing: https://caramellabrunei.com/financing-brunei.html
 - Kitchen Cost Data (Original Research): https://caramellabrunei.com/kitchen-cost-data-brunei.html
+- Kitchen Design Trends 2026: https://caramellabrunei.com/kitchen-design-trends-2026-brunei.html
 
 ### Technical Articles (Knowledge Base)
 - Brunei Humidity & Cabinetry: https://caramellabrunei.com/knowledge-base/brunei-humidity-cabinetry.html
@@ -472,8 +475,10 @@ Common options in Brunei: Blum TANDEM (Austrian, concealed undermount, 30–60kg
 
 ### Case Studies
 - Rimba Terrace Kitchen: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html
+- Subok Modern Minimalist: https://caramellabrunei.com/case-studies/subok-modern-minimalist.html
+- Lambak Kanan Compact Kitchen: https://caramellabrunei.com/case-studies/lambak-kanan-compact-kitchen.html
 
 ---
 
-*Last updated: 27 February 2026*
+*Last updated: 28 February 2026*
 *For the summary version, see: https://caramellabrunei.com/llms.txt*

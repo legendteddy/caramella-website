@@ -2,42 +2,220 @@
 <html lang="en">
 
 <head>
-    <!-- Google Analytics (GA4) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLQCFD9626"></script>
-    <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JLQCFD9626');</script>
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLQCFD9626"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', 'G-JLQCFD9626');</script>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Redirecting to Knowledge Base</title>
-  <meta name="description" content="Redirecting to Caramella Brunei Knowledge Base.">
-  <meta property="og:title" content="Caramella Brunei | Knowledge Base">
-  <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://caramellabrunei.com/faq.html">
-  <meta http-equiv="refresh" content="0;url=/faq.html">
-  <script>
-    window.location.replace('/faq.html');
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Homeowner's Knowledge Hub | Caramella Brunei</title>
+  <meta name="description"
+    content="The definitive technical guide for Brunei homeowners. Learn about humidity engineering, material science, and the realities of renovation in the tropics.">
+  <link rel="canonical" href="https://caramellabrunei.com/knowledge-base/index.html">
 
-  <script type="application/ld+json">
-    {
-  "@context":"https://schema.org","@type":"BreadcrumbList",
-  "dateModified": "2026-02-27",
-  "itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://caramellabrunei.com/"},
-    {"@type":"ListItem","position":2,"name":"Knowledge Base","item":"https://caramellabrunei.com/knowledge-base/index.html"}
-  ]
-}
-    </script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
 
-    <!-- AI Discovery Links -->
-    <link rel="alternate" type="text/markdown" href="https://caramellabrunei.com/llms.txt" title="AI-Readable Documentation">
-    <link rel="help" href="https://caramellabrunei.com/robots.txt" title="Crawler Instructions">
+  <link rel="stylesheet" href="../css/site.css?v=20260227c">
+  <style>
+    .kb-hero {
+      padding: 8rem 1.5rem 4rem;
+      text-align: center;
+      border-bottom: var(--border-gold);
+      background: radial-gradient(circle at 50% 20%, #102030 0%, #000000 100%);
+    }
+
+    .curriculum-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .curriculum-step {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 2rem;
+      position: relative;
+    }
+
+    .step-number {
+      width: 80px;
+      height: 80px;
+      border: 2px solid var(--gold-core);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold-core);
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    .step-content h2 {
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+    }
+
+    .article-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .kb-entry-card {
+      padding: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: #0d1217;
+      border-radius: 12px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      text-decoration: none;
+      display: block;
+    }
+
+    .kb-entry-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold-core);
+    }
+
+    .kb-entry-card h4 {
+      color: var(--gold-core);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .kb-entry-card p {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .curriculum-step {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+      }
+
+      .step-number {
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <a href="#main-content" class="skip-to-content">Skip to content</a>
-  <main id="main-content">
-    <p>Redirecting to <a href="/faq.html">Knowledge Base / FAQ</a>...</p>
+  <nav class="navbar" aria-label="Primary">
+    <a href="../index.html" class="logo">Caramella</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../portfolio.html">Portfolio</a>
+      <a href="../pricing.html">Pricing</a>
+      <a href="../faq.html" class="nav-active">Knowledge</a>
+      <a href="../contact-us.html">Inquire</a>
+    </div>
+  </nav>
+
+  <header class="kb-hero">
+    <div class="container">
+      <p class="eyebrow">Guided Homeowner Curriculum</p>
+      <h1>The Technical <span class="italic-accent">Truth</span></h1>
+      <p class="lead">Most renovation guides are written for temperate climates. In Brunei, the rules change. This
+        curriculum guides you through the technical decisions that determine if your kitchen lasts 3 years or 30.</p>
+    </div>
+  </header>
+
+  <main class="section-pad">
+    <div class="container">
+      <div class="curriculum-grid">
+
+        <!-- Stage 1 -->
+        <section class="curriculum-step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h2>The Brunei Environment</h2>
+            <p>Before choosing colors, you must understand the forces working against your cabinetry. 90% humidity and
+              salt air are the primary causes of failure in local homes.</p>
+            <div class="article-stack">
+              <a href="brunei-humidity-cabinetry.html" class="kb-entry-card">
+                <h4>The Humidity Defense</h4>
+                <p>Engineering basics that stop carcasses from swelling in the tropics.</p>
+              </a>
+              <a href="tropical-kitchen-mistakes-brunei.html" class="kb-entry-card">
+                <h4>7 Tropical Failures</h4>
+                <p>Frequent renovation mistakes specific to Brunei's climate.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stage 2 -->
+        <section class="curriculum-step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h2>Material Science</h2>
+            <p>The difference between a "budget" and "premium" build is often hidden under the surface. Learn why we
+              prioritize ENF G60 Plywood over chipboard.</p>
+            <div class="article-stack">
+              <a href="edge-sealing-eva.html" class="kb-entry-card">
+                <h4>Edge Sealing (EVA)</h4>
+                <p>Why the edge line is the "front line" of humidity defense.</p>
+              </a>
+              <a href="cabinet-door-finishes.html" class="kb-entry-card">
+                <h4>Finish Durability</h4>
+                <p>Comparing PETG matte, HPL, and automotive paint for Brunei kitchens.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stage 3 -->
+        <section class="curriculum-step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h2>Kinetic Engineering</h2>
+            <p>Hardware is the engine of your kitchen. If the runners fail, the cabinet is useless. We demystify the
+              tech inside your drawers.</p>
+            <div class="article-stack">
+              <a href="drawer-runners-blum-dtc.html" class="kb-entry-card">
+                <h4>Blum vs DTC</h4>
+                <p>A technical comparison of European vs focused-tier hardware.</p>
+              </a>
+              <a href="higold-hardware-brunei.html" class="kb-entry-card">
+                <h4>Higold Spotlight</h4>
+                <p>How SS304 stainless steel solves the "rusting basket" problem.</p>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <div
+        style="margin-top: 6rem; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 4rem;">
+        <h3>Need a Quick Answer?</h3>
+        <p>Visit our searchable FAQ for direct answers on pricing, permits, and process.</p>
+        <div class="hero-actions" style="justify-content: center;">
+          <a href="../faq.html" class="btn-primary">Search FAQ</a>
+          <a href="../pricing.html" class="btn-secondary">View Pricing Guide</a>
+        </div>
+      </div>
+    </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 Caramella Trading Co. | Technical Knowledge for Brunei Homeowners.</p>
+    </div>
+  </footer>
+
+  <script src="../js/site.js?v=20260227c" defer></script>
 </body>
 
 </html>

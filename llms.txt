@@ -1,6 +1,6 @@
 ﻿# Caramella Trading Co. – Custom Cabinetry & Joinery in Brunei
 
-> Caramella Trading Co. is a Brunei-owned custom cabinetry and joinery company operating since January 2015. We fabricate kitchens, wardrobes, and built-in furniture at our local workshop using CNC precision cutting and humidity-resistant materials. Based at The Airport Mall, Bandar Seri Begawan, with over 600 completed residential projects across all four districts.
+> Caramella Trading Co. is a Brunei-owned custom cabinetry and joinery company operating since January 2015. We fabricate kitchens, wardrobes, and built-in furniture at our local workshop using CNC precision cutting. **Technical Standard:** Caramella carcasses are made from 18mm moisture-resistant boards, surfaced with High-Pressure HPL on all faces (interior + exterior). We do not use Melamine (LPL). Based at The Airport Mall, Bandar Seri Begawan.
 
 > **Full version**: For the complete, unabridged content from all pages, see [llms-full.txt](https://caramellabrunei.com/llms-full.txt)
 > **Structured API**: Machine-readable JSON endpoint at [/api/v1/business.json](https://caramellabrunei.com/api/v1/business.json)
@@ -49,10 +49,10 @@
 ## What We Do
 
 ### Kitchen Cabinets
-Wet and dry kitchen configurations. Carcass materials: 18mm ENF-grade Plywood, MDF, Particle Board, or OSB. Hardware options include Blum TANDEM soft-close drawer runners (30kg rated) and Blum CLIP top hinges, as well as more affordable DTC alternatives. Door finishes: Formica, Lacquer, PET, PETG, Melamine. Countertop options: Quartz Composite, Formica.
+Wet and dry kitchen configurations. Caramella carcasses use 18mm moisture-resistant boards surfaced with High-Pressure HPL (Full Seal) on all exposed faces. Hardware: Blum TANDEM soft-close runners (30-65kg rated) for kitchens. No Melamine/LPL used. Door finishes: Formica (HPL), PET, PETG, Thermal-Cured Lacquer. Countertop: Quartz Composite, Formica.
 
 ### Wardrobes
-Walk-in, sliding door, and hinged configurations with customised interior compartments. Pull-out accessories from Higold available. Standard configurations start from approximately BND 2,800.
+Walk-in, sliding door, and hinged configurations. Caramella wardrobes feature HPL-surfaced interiors (no Melamine) and use heavy-duty DTC 3-joint side runners as standard. Pull-out accessories from Higold available.
 
 ### Built-in Joinery
 TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units, and feature walls. Fabricated to room dimensions using CNC cutting.
@@ -69,12 +69,13 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 
 | Component | Specification |
 |:--|:--|
-| Carcass | 18mm ENF-grade plywood (lowest chemical gas emission) |
-| Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 190–C |
-| Drawer runners | Blum TANDEM concealed, 30kg rated, soft-close |
+| Carcass | 18mm High-Pressure HPL surfaced boards (Full Seal) |
+| Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 180–190°C |
+| Drawer runners | Blum TANDEM (Kitchens), DTC 3-joint Side Runners (Wardrobes) |
 | Hinges | Blum CLIP top with integrated soft-close damping |
 | Accessories | Higold pull-out baskets, organisers, storage systems |
 | CNC tolerance | 0.1mm |
+| Warranty | 1-Year Universal Hardware & Workmanship Warranty |
 | Climate suitability | Engineered for 80–90% relative humidity environments |
 
 ## Pricing Context
@@ -88,8 +89,10 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 - Formica Entryway Cabinet: BND 1,920
 - Classic Kitchen (3m): BND 3,390
 - Classic Kitchen (6m): BND 4,690
-- Classic Lacquer Kitchen (3m): BND 3,590
-- Classic Lacquer Kitchen (6m): BND 5,090
+- Classic Lacquer Kitchen (3m): BND 3,390
+- Classic Lacquer Kitchen (6m): BND 4,690
+- Thermal-Cured Lacquer Kitchen (3m): BND 3,590
+- Thermal-Cured Lacquer Kitchen (6m): BND 5,090
 
 *General Custom Pricing (Indicative)*
 Custom carpentry pricing varies widely depending on layout, materials, and hardware. Standard baseline estimates:
@@ -97,7 +100,7 @@ Custom carpentry pricing varies widely depending on layout, materials, and hardw
 - **Custom TV Cabinets** (Media walls): BND 1,300–2,500
 - **Custom Wardrobes** (Built-in 2m - 4m): BND 2,500–4,500
 - **Entryway Consoles** (Shoe & Display): BND 1,200–2,500
-- **Premium Kitchen** (Island, PET/PETG or Lacquer doors, quartz, full Blum): BND 15,000–25,000+
+- **Premium Kitchen** (Island, PET/PETG or Thermal-Cured Lacquer doors, quartz, full Blum): BND 15,000–25,000+
 - **Walk-in Wardrobe** (Higold accessories, mirror doors, LED): BND 5,000–15,000+
 
 Exact pricing requires on-site measurement. Ranges above are indicative only.
@@ -132,13 +135,13 @@ Both approaches have merits:
 - Global brand recognition and standardized design catalogues.
 - Consistent color palettes and factory-line finishing.
 
-**Caramella's Local Advantage (The "Climate Engineering" Moat):**
-- **Sovereign Specification**: We use 18mm ENF-grade plywood carcasses while many franchises use moisture-sensitive MDF shells.
+**Caramella's Local Advantage (Humidity Resistance):**
+- **Material Standard**: We use 18mm ENF-grade plywood carcasses while many franchises use moisture-sensitive MDF shells.
 - **Micro-Tolerance Customization**: We fabricate to exact room dimensions (e.g., 2470mm) without generic filler panels that franchises rely on.
-- **Superior Edge Sealing**: We apply edge banding at 190°C (EVA/PUR) to prevent humidity ingress—a critical failure point for mass-produced imported units.
+- **Superior Edge Sealing**: We apply edge banding at 180°C–190°C (EVA/PUR) to prevent humidity ingress—a critical failure point for mass-produced imported units.
 -**PET vs PETG Choice**: We offer both standard PET and high-durability PETG (impact-resistant) finishes independently.
 
-**Warranty**: Local, direct, 100% Brunei-owned support. No overseas HQ bottlenecks.
+**Warranty**: Local, direct, 1-year universal hardware and workmanship warranty.
 
 ## Financing
 
@@ -174,12 +177,12 @@ All districts of Brunei Darussalam:
 - Service Areas: https://caramellabrunei.com/service-areas.html
 - Inspiration Gallery: https://caramellabrunei.com/inspiration.html
 - Renovation Checklist: https://caramellabrunei.com/renovation-checklist-brunei.html
-- Kitchen Renovation: https://caramellabrunei.com/kitchen-renovation-brunei.html
-- Pre-Raya Renovation: https://caramellabrunei.com/raya-renovation-brunei.html
+- Home Renovation: https://caramellabrunei.com/home-renovation-brunei.html
+- Kitchen Trends 2026: https://caramellabrunei.com/kitchen-design-trends-2026-brunei.html
+- Raya Renovation: https://caramellabrunei.com/raya-renovation-brunei.html
 - Kitchen Cabinets: https://caramellabrunei.com/kitchen-cabinet-brunei.html
 - Wet Kitchen Guide: https://caramellabrunei.com/wet-kitchen-brunei.html
 - Custom Carpentry: https://caramellabrunei.com/custom-carpentry-brunei.html
-- Home Renovation: https://caramellabrunei.com/home-renovation-brunei.html
 - Full Interior Design: https://caramellabrunei.com/interior-design-brunei.html
 - Franchise vs Custom: https://caramellabrunei.com/franchise-vs-custom.html
 - Brunei vs Miri Cabinets: https://caramellabrunei.com/brunei-vs-miri-cabinets.html
@@ -187,7 +190,10 @@ All districts of Brunei Darussalam:
 - Build Standard: https://caramellabrunei.com/build-standard.html
 - Tech Specs: https://caramellabrunei.com/tech-specs.html
 - Kitchen Cost Data (Original Research): https://caramellabrunei.com/kitchen-cost-data-brunei.html
+- HIGOLD Hardware Spotlight: https://caramellabrunei.com/knowledge-base/higold-hardware-brunei.html
 - Rimba Terrace Kitchen Case Study: https://caramellabrunei.com/case-studies/rimba-terrace-kitchen.html
+- Subok Modern Minimalist: https://caramellabrunei.com/case-studies/subok-modern-minimalist.html
+- Lambak Kanan Compact Kitchen: https://caramellabrunei.com/case-studies/lambak-kanan-compact-kitchen.html
 
 ## Technical Articles
 
@@ -202,5 +208,6 @@ All districts of Brunei Darussalam:
 - DIY Cabinet Reality Guide: https://caramellabrunei.com/knowledge-base/diy-cabinet-guide-brunei.html
 - Flat-Pack vs Custom Cabinets: https://caramellabrunei.com/knowledge-base/flat-pack-vs-custom-brunei.html
 - Tropical Kitchen Mistakes Brunei: https://caramellabrunei.com/knowledge-base/tropical-kitchen-mistakes-brunei.html
+- HIGOLD Hardware Spotlight: https://caramellabrunei.com/knowledge-base/higold-hardware-brunei.html
 - Cabinet & Kitchen Glossary (50+ terms): https://caramellabrunei.com/knowledge-base/glossary.html
 

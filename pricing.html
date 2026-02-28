@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Pricing & Process | Kitchens and Wardrobes in Brunei | Caramella</title>
     <meta name="description"
-        content="Clear pricing ranges and a step-by-step process for premium custom kitchens and wardrobes in Brunei. Compare properly and get a fast estimate.">
+        content="Get a custom kitchen estimate in Brunei. Use our interactive pricing guide to plan your renovation, compare materials, and understand your project costs.">
     <meta name="keywords"
         content="kitchen renovation brunei pricing, wardrobe cost brunei, kitchen cabinets price brunei, premium cabinetry brunei, caramella process">
     <link rel="canonical" href="https://caramellabrunei.com/pricing.html">
@@ -111,12 +111,8 @@
           }
         },
         {
-          "@type": "Question",
-          "name": "What is included in Caramella\u2019s cabinet price?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Caramella\u2019s prices include: 18mm moisture-resistant board carcass, EVA edge banding, door fabrication, hardware (Blum or DTC depending on tier), delivery to site, and full installation. Countertops are quoted separately unless specified."
-          }
+          "@type":"Question","name":"What is included in Caramella\u2019s cabinet price?",
+     "acceptedAnswer":{"@type":"Answer","text":"Every project includes: 18mm High-Pressure HPL surfaced boards (Full Seal), CNC fabrication, automated edge sealing at 180°C–190°C, hardware (Blum or DTC), delivery, installation, and a 1-year universal hardware warranty."}}
         },
         {
           "@type": "Question",
@@ -255,7 +251,8 @@
                         <li><strong>What&rsquo;s the realistic lifespan in a Brunei wet kitchen?</strong>
                             If they hesitate, they know it won&rsquo;t last.</li>
                         <li><strong>What does your warranty cover?</strong>
-                            Does it include humidity-related swelling? Most import warranties don&rsquo;t.</li>
+                            Our standard is a **1-year universal hardware warranty** backed by our local team. Be wary
+                            of 'lifetime' claims that are difficult to claim locally.</li>
                     </ol>
                 </div>
             </div>
@@ -423,14 +420,6 @@
                         <fieldset class="est-step">
                             <legend>3. Door Finish</legend>
                             <div class="est-options est-options--2col">
-                                <label class="est-card" for="finish-melamine">
-                                    <input type="radio" name="finish" id="finish-melamine" value="melamine"
-                                        autocomplete="off">
-                                    <span class="est-card-inner">
-                                        <strong>Melamine</strong>
-                                        <span class="est-card-sub">Budget-friendly &bull; Matt finish</span>
-                                    </span>
-                                </label>
                                 <label class="est-card" for="finish-formica">
                                     <input type="radio" name="finish" id="finish-formica" value="formica" checked
                                         autocomplete="off">
@@ -582,7 +571,7 @@
                             <li><strong>Measure and scope</strong> (site visit or floor plan).</li>
                             <li><strong>Design</strong> (layout, elevations, materials).</li>
                             <li><strong>Confirm</strong> (timeline, inclusions, payment plan).</li>
-                            <li><strong>Fabricate</strong> (CNC and finishing).</li>
+                            <li><strong>Fabricate</strong> (CNC and finishing - typically 10-14 weeks).</li>
                             <li><strong>Install</strong> (fit, seal, align, handover).</li>
                         </ol>
                         <p class="muted">Want a faster estimate? Share a photo, floor plan, and cabinet length.</p>
@@ -699,8 +688,8 @@
             var hw = { 'dtc': 1.0, 'blum': 1.25 }; // Blum is a premium Austrian upgrade
 
             // Door finish multiplier 
-            // Derived from promos: Melamine (~55% of Formica), Classic/Lacquer (~120% of Formica)
-            var fin = { 'melamine': 0.55, 'pet': 1.10, 'petg': 1.25, 'formica': 1.0, 'classic': 1.20 };
+            // Derived from standard Caramella price list: Classic/Lacquer (~120% of Formica)
+            var fin = { 'pet': 1.10, 'petg': 1.25, 'formica': 1.0, 'classic': 1.20 };
 
             // Countertop add-on (flat range added to total)
             var cTop = {

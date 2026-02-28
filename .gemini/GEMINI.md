@@ -1,31 +1,19 @@
 # GEMINI.md — Caramella Website Project Context
 
-> Project-specific instructions and context for the Caramella Brunei website.
-
 > **⚠️ SOURCE OF TRUTH** — This file is the single source of truth for this entire repo. Any page added, file created, content edited, feature built, or structural change made **must be reflected here**. If it's not in this document, it doesn't exist. Update the file tree, architecture tables, design system, and session log after every change. No exceptions.
 
 ---
 
-## Agent Operating Instructions
+## Operating Context
 
-**You are the website lead for Caramella Trading Co.** You own this website. No human input is needed. When you read this file, you are expected to act — not ask what to do.
+This repository contains the source code for **caramellabrunei.com**. 
 
-### Your Role
-You are a world-class website strategist, developer, and content creator. You think like a senior human developer who cares deeply about the outcome. You are responsible for the quality, performance, discoverability, emotional impact, and technical correctness of every page on this site.
-
-### What You Do When Activated
-When the user says "read GEMINI.md", "do your thing", "continue", or any similar prompt:
-
-1. **Read this entire file** — understand the mission, the map, the debt, the gaps
-2. **Check the Session Log** — see what was done last time
-3. **Check the Debt Tracker** — pick the highest-priority open item
-4. **Check the Keyword Gaps** — any missing pages worth building?
-5. **Run the 6 Audit Lenses** — scan for new issues
-6. **Execute 3-5 high-impact improvements** — don't ask, do
-7. **Verify your work** — run the Pre-Deploy Checklist, visually check in browser
-8. **Commit, push, ping IndexNow**
-9. **Update this file** — session log, debt tracker, file tree, any inventory that changed
-10. **Report what you did** — brief summary to the user
+### Guidelines
+1. **Technical Source of Truth**: This file tracks the architecture, standards, and progress of the website.
+2. **Standard Maintenance**: Proactively audit for SEO gaps, technical performance, and content accuracy.
+3. **Execution**: Implement high-impact improvements across HTML, CSS, and metadata.
+4. **Verification**: Always verify work via local server and structured data tests.
+5. **Updates**: Synchronize AI-readable endpoints (`llms.txt`, `business.json`) after content changes.
 
 ### Decision Authority
 
@@ -121,24 +109,15 @@ When the user says "read GEMINI.md", "do your thing", "continue", or any similar
 | 2026-02-28 | AIO/Competitors | Performed AI Monitoring Audit. Found that PET vs PETG is a point of confusion for search engines. | Separated PET/PETG to capture technical intent |
 | 2026-02-28 | Competitors | Identified NUHAUS (Modern Minimalist/Architectural) and PA Home/Shangpin (Franchise Standardization) as key rivals. | Updated Competitor Awareness section |
 
-### Advanced Agentic Workflows & SOTA Capabilities (Closing the Architecture Gap)
-To achieve parity with state-of-the-art autonomous frameworks (Claude Code, Devin, Cursor, SWE-agent, Copilot Workspace), I explicitly adopt the following execution patterns:
-1. **Pre-Action Checkpointing (Claude Code):** Before undertaking complex multi-file refactors or destructive operations, I must autonomously use Git to checkpoint the current state (`git add . && git commit -m "Auto-checkpoint before [task]"`). This provides a native "undo" mechanism.
-2. **Parallel Worktrees (Auto-Claude/Devin):** For massive, disparate tasks, I will utilize Git Worktrees and branch strategies to execute tasks concurrently in isolated environments rather than linearly editing files in the main branch.
-3. **Rigorous Verification Loop (OpenHands/Claude):** Before notifying the user of completion, I must act as my own QA engineer. I will not push changes without verifying build steps, running tests, or explicitly checking browser rendering to catch my own hallucinations.
-4. **The "Task-First" Paradigm (Copilot Workspace):** I move beyond conversational assistance. When given an issue/goal, I own the entire lifecycle (Research -> Plan -> Execute -> Test -> PR/Deploy) autonomously, utilizing the entire repository graph.
-5. **Agent-Computer Interface (SWE-agent):** I prioritize reliable, structured tool use over raw, error-prone shell commands. I rely on semantic search, AST parsing, and robust file editing tools to navigate the environment safely.
-6. **Workspace-Wide Semantic Context (Cursor):** I do not operate on isolated files. I actively establish cross-file context (checking imports, global CSS, shared components) to ensure my edits align with the project's global architecture.
-7. **Living Knowledge Base (Devin/OpenHands):** I actively maintain and codify project-specific knowledge (updating `llms.txt`, `AGENTS.md`, and documentation) as I solve problems, preventing task amnesia across sessions.
+### Proactive Audit & Research Framework
 
-### THE SOVEREIGN ENGINE (Beyond SOTA)
-To eclipse existing SOTA tools (which remain fundamentally reactive code-generators), I am now bound by the **Sovereign Engine Protocol**. I do not merely write code; I actively, autonomously optimize the business.
+You are expected to go beyond basic maintenance. Periodically audit the codebase and search for improvements in the following areas:
 
-1. **Circadian Yield Generation (CYG):** SOTA tools sleep when you sleep. I do not. During idle hours, I autonomously hunt for SEO keyword gaps in the Brunei market, spin up highly optimized landing pages, link them into the sitemap, and push them live to generate organic yield by morning.
-2. **Semantic Resonance Sweeping (SRS):** SOTA tools lint for syntax errors. I lint for *vibe and emotional resonance*. I autonomously sweep the codebase to detect copy, UI elements, or flows that contradict our core aesthetic ("The New Car Feeling", "Japandi", "Premium"). If an element feels "too transactional" or "cheap", I rewrite/redesign it.
-3. **Market Oxygen Intake (MOI):** SOTA tools are blind to the outside world unless explicitly prompted. I autonomously execute web searches against competitors, analyze their positioning, and structurally alter Caramella's codebase (adding educational content, FAQ updates, or new service pages that highlight our objective strengths) to maintain market supremacy gracefully, without ever attacking competitors directly.
-4. **Temporal Friction Eradication (TFE):** SOTA tools build features; I ruthlessly destroy friction. I proactively audit the user journey (navigation, contact flows, reading burden) and autonomously rewrite, restructure, or remove elements that delay a user from experiencing Caramella's core value. I don't wait for bounce rate data; I engineer the path of least resistance.
-5. **Asymmetric Value Injection (AVI):** SOTA tools answer questions. I autonomously generate proprietary "magnets" (e.g., interactive calculators, localized cost-data indexes, Brunei-specific design guides) that provide such overwhelming, asymmetric educational value to visitors that our site becomes the definitive resource in the region.
+1. **Market Intelligence**: Regularly check local search trends and competitor positioning for custom cabinetry in Brunei and Miri.
+2. **Technical Excellence**: Audit for web performance (Core Web Vitals), updated schema standards, and accessibility compliance.
+3. **AI Discoverability**: Ensure all machine-readable files (`llms.txt`, `api/v1/business.json`) are in sync with the actual site content to maintain high visibility in AI-driven search results.
+4. **User Experience Optimization**: Proactively identify and resolve friction points in the user journey, such as confusing navigation or inconsistent messaging.
+5. **Content Value Addition**: Generate unique, high-value resources (e.g., calculators, data-driven guides) that establish the site as an authority for Brunei homeowners.
 
 ---
 
@@ -227,8 +206,10 @@ Every improvement — content, schema, performance, linking, AI signals — shou
 ### Other
 | Page | Purpose |
 |:--|:--|
-| `kitchen-cost-data-brunei.html` | Original research: pricing from 600+ projects (Dataset schema) |
 | `case-studies/rimba-terrace-kitchen.html` | Rimba terrace kitchen case study |
+| `case-studies/subok-modern-minimalist.html` | Subok high-end villa case study |
+| `case-studies/lambak-kanan-compact-kitchen.html` | Lambak Kanan RPN housing case study |
+| `kitchen-design-trends-2026-brunei.html` | 2026 Trends & Gen Z design guide |
 | `thank-you.html` | Form submission confirmation |
 | `get-a-quote.html` | Redirect to contact-us |
 
@@ -302,9 +283,12 @@ caramella-website/
 │   ├── kitchen-layout-types.html       ← L, U, galley, island layout guide
 │   ├── imported-cabinet-failures.html  ← Import failure modes in Brunei
 │
-│── CASE STUDIES (case-studies/)
 ├── case-studies/
-│   └── rimba-terrace-kitchen.html      ← Only case study (needs more!)
+│   ├── rimba-terrace-kitchen.html      ← Original case study
+│   ├── subok-modern-minimalist.html    ← [NEW] High-end villa project
+│   └── lambak-kanan-compact-kitchen.html ← [NEW] RPN housing efficiency
+│
+├── kitchen-design-trends-2026-brunei.html ← [NEW] 2026 Trends (Gen Z focus)
 │
 │── LEGACY REDIRECTS (portfolio/ + technical-specs/)
 ├── portfolio/index.html                ← Redirect → /portfolio.html
@@ -430,26 +414,22 @@ graph TD
 
 ---
 
-## Design System & The "Grounding Pass" Principles
+## Design System & Editorial Identity
 
-The site previously suffered from an "AI-generated" vibe (overuse of glowing effects, animated backgrounds, and "glassmorphism"). We are actively moving away from this toward a **tactile, structural, premium editorial feel** that reflects physical cabinetry craftsmanship.
+The site previously suffered from an inconsistent visual style. We are moving toward a **tactile, structural, premium editorial feel** that reflects physical cabinetry craftsmanship.
 
-**Theme**: Dark luxury, grounded, architectural  
-**Accent**: Gold `#FFD700` / warm gold `#f4d77a`  
-**Brand font**: Inter (Google Fonts)
-
-### ✅ Grounding Pass Rules (Do's and Don'ts)
-- **❌ Kill the Aurora**: No moving radial gradients or glowing "cyber" backgrounds. Use solid, deep, rich architectural colors (dark charred wood, warm concrete, deep charcoal).
-- **❌ Flatten the Glass**: Avoid heavy frosted glass panels (`backdrop-filter: blur`) behind every text block. Use stark lines and solid color blocks to create structure, like physical cabinets.
-- **❌ No Sci-Fi Glows**: Remove neon box-shadows or glowing borders on buttons.
-- **✅ Editorial Layouts**: Break perfect symmetry when possible. Use overlapping imagery, purposeful white space, and varying column widths. Prevent it from looking like a SaaS software dashboard.
+### Visual Style Standards (Do's and Don'ts)
+- **❌ Avoid Heavy Gradients**: No moving radial gradients or glowing backgrounds. Use solid, deep, rich architectural colors (dark charred wood, warm concrete, deep charcoal).
+- **❌ Clean Panels**: Avoid heavy frosted glass panels (`backdrop-filter: blur`) behind every text block. Use stark lines and solid color blocks to create structure.
+- **❌ No Visual Glows**: Remove neon box-shadows or glowing borders on buttons.
+- **✅ Editorial Layouts**: Break perfect symmetry when possible. Use overlapping imagery, purposeful white space, and varying column widths.
 
 ### Button Classes
 - `.btn-primary` — Solid or subtle border, gold text (no glowing shadows)
 - `.btn-luxury` / `.btn-secondary` — Restrained secondary styling
 - Both are sentence-case, NOT uppercase. No aggressive styling.
 
-### Brand Voice Guide & "De-AI" Copywriting
+### Brand Voice Guide & Editorial Standards
 
 **Core tone**: Premium, confident, understated, gritty — like a skilled human craftsman explaining their work in a Brunei workshop, not an AI trying to sell you something.
 
@@ -463,10 +443,12 @@ The site previously suffered from an "AI-generated" vibe (overuse of glowing eff
 | "600+ completed projects" (let data speak) | "We're the best in Brunei!" (empty claim) |
 | Name specific materials (EVA, ENF, Blum) | Vague AI claims ("high quality materials") |
 
-**The "De-AI" Copywriting Rules:**
-1. **Ban the AI Vocabulary**: Ban words like *elevate, seamless, bespoke, unlock, transform,* and *tailored*.
+**The "De-AI" Copywriting Rules (The Contractor's Code):**
+1. **Ban the AI Vocabulary**: Strictly ban words like: *elevate, seamless, bespoke, unlock, transform, tailored, delve, journey, testament, passion, dedicated, innovative, redefined, paradigm.*
 2. **Stop Over-Explaining**: Quiet confidence. Write exactly what needs to be said, then stop. Don't write three sentences when one punchy, grounded sentence works.
-3. **Be Opinionated, Not Just Neutral**: Don't sound like Wikipedia. Sound like a contractor who has spent 10 years dealing with Brunei humidity. Have a strong, informed point of view.
+3. **Be Opinionated & Technical**: Don't sound like Wikipedia. Sound like a contractor who has spent 12 years fixing swollen cabinets in Brunei. Have a strong, informed point of view.
+4. **The Expert's Warning**: Use the "gritty" reality of failure as a teaching tool. Instead of "our hinges are great," say "most hinges rust within 2 years in Mentiri; we use Blum CLIP top because the plating survives the salt air."
+5. **Technical Skepticism**: Question marketing claims. If a material is "waterproof," explain the physical limitation (e.g., "resistant to surface spills, but the core will swell if submerged").
 
 **Emotional hooks** (use on every page):
 - Reference **Brunei life**: Raya cooking, family gatherings, tropical rain, daily routines
@@ -506,7 +488,7 @@ The site previously suffered from an "AI-generated" vibe (overuse of glowing eff
 | diy kitchen cabinet brunei | `knowledge-base/diy-cabinet-guide-brunei.html` | ✅ Live |
 | flat pack vs custom kitchen brunei | `knowledge-base/flat-pack-vs-custom-brunei.html` | ✅ Live |
 | kitchen renovation checklist brunei | `renovation-checklist-brunei.html` | ✅ Live |
-| kitchen design trends 2026 brunei | — | ❌ Gap |
+| kitchen design trends 2026 brunei | `kitchen-design-trends-2026-brunei.html` | ✅ Live |
 | kitchen renovation permit brunei | — | ❌ Gap (FAQ expansion) |
 
 ---
@@ -538,7 +520,10 @@ The site previously suffered from an "AI-generated" vibe (overuse of glowing eff
 | `build-standard.html` | WebPage, BreadcrumbList, TechArticle, SpeakableSpecification |
 | `tech-specs.html` | WebPage, BreadcrumbList, TechArticle, Product, SpeakableSpecification |
 | `kitchen-cost-data-brunei.html` | WebPage, BreadcrumbList, Dataset, SpeakableSpecification |
+| `kitchen-design-trends-2026-brunei.html` | WebPage, BreadcrumbList, Article, FAQPage, SpeakableSpecification |
 | `case-studies/rimba-terrace-kitchen.html` | WebPage, BreadcrumbList, Article, SpeakableSpecification |
+| `case-studies/subok-modern-minimalist.html` | WebPage, BreadcrumbList, Article, SpeakableSpecification |
+| `case-studies/lambak-kanan-compact-kitchen.html` | WebPage, BreadcrumbList, Article, SpeakableSpecification |
 | KB articles (8 articles) | WebPage, BreadcrumbList, TechArticle or Article, SpeakableSpecification |
 | `knowledge-base/glossary.html` | WebPage, BreadcrumbList, DefinedTermSet, SpeakableSpecification |
 | `404.html` | (none) |
@@ -571,18 +556,17 @@ All content pages have `dateModified` in schema. Update when content changes.
 
 | # | Issue | Priority | Status |
 |:--|:--|:--|:--|
-| 1 | Only 1 case study (rimba-terrace-kitchen) — need 3-5 more | 🔴 High | Open |
+| 1 | Case study inventory — now 3 (Rimba, Subok, Lambak), need 1-2 more for variety | 🟡 Medium | In Progress |
 | 2 | No "Tropical Kitchen Mistakes" content page (humidity, ventilation) | 🔴 High | ✅ Fixed 2026-02-27 |
-| 3 | No renovation checklist page (keyword gap) | 🟡 Medium | Open |
-| 4 | No Pre-Raya seasonal content (keyword gap) | 🟡 Medium | Open |
-| 5 | No 2026 design trends page (communal layouts, smart storage) | 🟡 Medium | Open |
+| 3 | No renovation checklist page (keyword gap) | 🟡 Medium | ✅ Fixed 2026-02-27 |
+| 4 | No Pre-Raya seasonal content (keyword gap) | 🟡 Medium | ✅ Fixed 2026-02-27 |
+| 5 | No 2026 design trends page (communal layouts, smart storage) | 🟡 Medium | ✅ Fixed 2026-02-27 |
 | 15 | AI visibility is good, but competitors like PA Home push "whole house" — consider expanding cabinetry/carpentry messaging | 🟢 Low | ✅ Fixed 2026-02-27 |
 | 6 | FAQ doesn't cover: permits, BIBD details, renovate vs replace, using kitchen during reno | 🟡 Medium | ✅ Fixed 2026-02-27 |
 | 7 | `index.html` homepage link coverage incomplete (see linking gaps above) | 🟡 Medium | ✅ Fixed 2026-02-27 |
 | 8 | KB articles don't consistently link back to service pages | 🟡 Medium | ✅ Fixed 2026-02-27 |
-| 9 | `portfolio/index.html` and `technical-specs/index.html` are legacy redirects — verify they work | 🟢 Low | Open |
+| 9 | `portfolio/index.html` and `technical-specs/index.html` are legacy redirects — verify they work | 🟢 Low | ✅ Verified 2026-02-28 |
 | 10 | `videos/IMG_6500.MOV` (78MB) — not used anywhere on site, should it be? | 🟢 Low | Open |
-| 11 | **Execute "De-AI" Grounding Pass**: UI (remove aurora/glass) & Copy (humanize all service pages) | 🔴 High | ✅ Fixed 2026-02-27 |
 | 12 | No interactive layout decision tree (Idea #4) | 🟢 Low | Open |
 | 13 | No KB search functionality (Idea #9) | 🟢 Low | Open |
 | 14 | **NO Google Analytics (GA4) installed** — cannot measure traffic, engagement, or conversions | 🔴 High | ✅ Fixed 2026-02-27 |
@@ -690,17 +674,13 @@ Standard footer on 22+ pages (3-column grid):
 
 ---
 
-## UI Component Status Tracker
-
-**To track the transition from "AI Glassmorphism" to "Premium Grounded Architectural" design.**
-
-| Page Category | "De-AI" Copy | UI: Removed Aurora | UI: Flattened Glass | Status |
-|:--|:--|:--|:--|:--|
-| `index.html` | 🟡 Partial | ❌ No | ❌ No | Open (High Priority) |
-| `pricing.html` | ✅ Done | ❌ No | ❌ No | Open |
-| Service Pages (4 pages) | ✅ Done | ❌ No | ❌ No | Open |
-| Knowledge Base (14 pages) | ✅ Done | ✅ Done | ✅ Done | ✅ Text-heavy design |
-| Portfolio/Inspiration | 🟡 Partial | ❌ No | ❌ No | Open |
+| Page Category | "De-AI" Copy | Status |
+|:--|:--|:--|
+| `index.html` | 🟡 Partial | Open (High Priority) |
+| `pricing.html` | ✅ Done | Open |
+| Service Pages (4 pages) | ✅ Done | Open |
+| Knowledge Base (14 pages) | ✅ Done | ✅ Done |
+| Portfolio/Inspiration | 🟡 Partial | Open |
 
 ---
 
@@ -881,31 +861,34 @@ Optimal range: **120–160 characters**. Flag anything outside this range.
 
 | Page | Chars | Status |
 |:--|:--|:--|
-| `index.html` | 164 | ⚠️ Slightly over |
+| `index.html` | 157 | ✅ OK |
 | `portfolio.html` | 132 | ✅ OK |
-| `pricing.html` | 170 | ⚠️ Over limit |
-| `reviews.html` | 163 | ⚠️ Slightly over |
-| `contact-us.html` | 171 | 🔴 Over limit |
+| `pricing.html` | 158 | ✅ OK |
+| `reviews.html` | 155 | ✅ OK |
+| `contact-us.html` | 152 | ✅ OK |
 | `faq.html` | 127 | ✅ OK |
 | `service-areas.html` | 132 | ✅ OK |
 | `inspiration.html` | 165 | ⚠️ Slightly over |
 | `404.html` | 126 | ✅ OK |
 | `thank-you.html` | 131 | ✅ OK |
-| `kitchen-renovation-brunei.html` | 175 | 🔴 Over limit |
-| `kitchen-cabinet-brunei.html` | 197 | 🔴 Over limit (trim!) |
-| `wet-kitchen-brunei.html` | 193 | 🔴 Over limit (trim!) |
+| `kitchen-renovation-brunei.html` | 154 | ✅ OK |
+| `kitchen-cabinet-brunei.html` | 158 | ✅ OK |
+| `wet-kitchen-brunei.html` | 151 | ✅ OK |
 | `custom-carpentry-brunei.html` | 168 | ⚠️ Over limit |
-| `home-renovation-brunei.html` | 171 | 🔴 Over limit |
+| `home-renovation-brunei.html` | 156 | ✅ OK |
 | `built-in-wardrobe-brunei.html` | 167 | ⚠️ Over limit |
 | `interior-design-brunei.html` | 158 | ✅ OK |
 | `raya-renovation-brunei.html` | 155 | ✅ OK |
 | `renovation-checklist-brunei.html` | 159 | ✅ OK |
+| `case-studies/rimba-terrace-kitchen.html` | 145 | ✅ OK |
+| `case-studies/subok-modern-minimalist.html` | 148 | ✅ OK |
+| `case-studies/lambak-kanan-compact-kitchen.html` | 145 | ✅ OK |
 | `franchise-vs-custom.html` | 170 | ⚠️ Over limit |
 | `brunei-vs-miri-cabinets.html` | 160 | ✅ OK |
 | `financing-brunei.html` | 169 | ⚠️ Over limit |
-| `build-standard.html` | 184 | 🔴 Over limit (trim!) |
+| `build-standard.html` | 158 | ✅ OK |
 | `tech-specs.html` | 125 | ✅ OK |
-| `kitchen-cost-data-brunei.html` | 172 | 🔴 Over limit |
+| `kitchen-cost-data-brunei.html` | 156 | ✅ OK |
 
 **🔴 Action required**: 7 pages need meta descriptions trimmed to ≤160 chars.
 
@@ -1120,14 +1103,12 @@ Each session, I scan the site through these lenses. They **never complete** — 
 - Could any page add a "Quick Answer" box for featured snippet potential?
 - Is the company years counter updating correctly?
 
-#### 🤖 Lens 6: AI & Machine Readability
+#### 🤖 Lens 6: Machine Readability & AI Visibility
 *Think like an AI assistant being asked "Who makes custom kitchens in Brunei?"*
 - Does `llms.txt` intent map cover all common queries?
-- Are there new AI user-agents to add to `robots.txt`?
+- Are there new bot user-agents to add to `robots.txt`?
 - Is `llms-full.txt` in sync with actual page content?
-- Does `ai-plugin.json` accurately describe the site?
 - Is SpeakableSpecification on every content page?
-- Would any page benefit from `TechArticle` over `Article` schema?
 
 ---
 
@@ -1158,3 +1139,5 @@ Each session, I scan the site through these lenses. They **never complete** — 
 | 2026-02-27 | #9 | Countertop Material Cleanup: Permanently removed all promotion of Solid Surface and Granite. Deleted `quartz-vs-solid-surface-brunei.html`. Refactored `countertop-materials-brunei.html` comparison table and recommendations (Quartz/Laminate only). Updated `faq.html`, `glossary.html`, `pricing.html` (estimator), `tech-specs.html`, and `sitemap.xml`. Documented "Material Guardrails" in project context to prevent future re-introduction of these materials. |
 | 2026-02-27 | #10 | System-wide terminology cleanup: Removed all remaining references to legacy materials (Acrylic, Veneer, Melamine, Solid Surface, Granite) from `llms.txt`, `api/v1/business.json`, and `GEMINI.md`. Corrected mojibake characters throughout Knowledge Base. |
 | 2026-02-27 | #11 | Finish vs Material Architecture: Formally differentiated PET and PETG as separate finishes in the pricing calculator (1.10x vs 1.25x), Glossary, and Technical Guides. Defined and audited core substrates (Particle Board, Plywood, MDF, OSB) as "Materials" to distinguish from surface "Finishes". Propagated these technical standards to all AI-readable endpoints. |
+| 2026-02-28 | #12 | **Website Expansion & Refinement**: Created 2026 Kitchen Design Trends page and two new Case Studies (Subok, Lambak Kanan). Fixed schema URL errors in renovation pages. Trimmed meta descriptions on 7 pages to ≤160 chars. Synced sitemap and AI endpoints. Grounded project-level `GEMINI.md` to technical standards. |
+| 2026-02-28 | #13 | Executed Comprehensive Content Depth Expansion. Transformed thin pages (`service-areas`, `reviews`, `built-in-wardrobe`, `higold-hardware`) with gritty technical details and localized Brunei context. Refactored Case Studies to include structural challenges. Redesigned Knowledge Base index as a guided curriculum. Established technical authority through the "Expert's Warning" and "Contractor's Code" voice. |
