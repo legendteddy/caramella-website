@@ -153,7 +153,7 @@ BIBD At-Tamwil (Islamic financing) available through BIBD for qualifying project
 All districts of Brunei Darussalam, with location-specific engineering:
 - **Brunei-Muara**: BSB, Gadong, Kiarong. For coastal zones (Mentiri, Kota Batu, Muara), we mandate 304 Stainless Steel hardware for salt-air corrosion. For RPN housing (Lambak, Rimba), we use custom-depth carcasses to integrate around exposed utility placements.
 - **Belait**: Kuala Belait, Seria (Served via specialized weekly logistics runs using our own enclosed vehicles to prevent highway humidity damage).
-- **Tutong & Temburong**: Handled via scheduled dedicated trips.
+- **Tutong & Temburong**: Handled via scheduled direct vehicle runs.
 
 ## Customer Feedback
 

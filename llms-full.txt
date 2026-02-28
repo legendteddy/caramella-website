@@ -238,7 +238,7 @@ The four most common countertop materials in Brunei:
 | Repairability | Difficult — professional repair | Poor — must replace |
 | Price (BND/linear ft) | 120–350 installed | 30–80 installed |
 
-**Brunei climate notes:** Quartz handles humidity best (non-porous, zero maintenance).  requires annual sealing to prevent moisture/mould in pores.  ideal for wet kitchens (seamless thermoformed joints). Formica core material must have fully sealed edges in wet areas.
+**Brunei climate notes:** Quartz handles humidity best (non-porous, zero maintenance).  requires annual sealing to prevent moisture/mould in pores.  ideal for wet kitchens (thermoformed joints). Formica core material must have fully sealed edges in wet areas.
 
 ---
 
@@ -251,7 +251,7 @@ The four most common countertop materials in Brunei:
 | Maintenance | Low — wipe clean | Very Low | Very Low — anti-fingerprint | Moderate — wipe with soft cloth |
 | Price (BND/door) | 80–150 (mid) | 150–250 | 180–300 (luxury) | 200–400 (luxury) |
 
-**Brunei recommendation:** Formica (HPL) is the best all-round choice for budget to mid-range projects. PET and PETG are recommended for premium modern kitchens due to their superior humidity resistance and anti-fingerprint properties. PETG is the preferred luxury choice for maximum durability. Lacquer is chosen for high-end builds where seamless edges are required.
+**Brunei recommendation:** Formica (HPL) is the best all-round choice for budget to mid-range projects. PET and PETG are recommended for premium modern kitchens due to their superior humidity resistance and anti-fingerprint properties. PETG is the preferred luxury choice for maximum durability. Lacquer is chosen for high-end builds where wrapped, invisible edges are required.
 
 ---
 
@@ -262,7 +262,7 @@ Wet kitchens in Brunei face direct water exposure, cooking steam, and cleaning c
 - Stainless steel or Quartz countertops (not formica)
 - Back panels treated or replaced with waterproof alternatives
 - Plinth and under-sink ventilation designed to prevent moisture trapping
-- Hardware with elevated rusting resistance (nickel-plated minimum)
+- Hardware with high rusting resistance (nickel-plated minimum)
 
 ---
 
@@ -279,7 +279,7 @@ We serve all four districts of Brunei Darussalam with district-specific engineer
 - **Brunei-Muara RPN (Lambak, Rimba)**: We utilize custom-depth cabinets to integrate around standard utility placements without unsightly gaps.
 - **Brunei-Muara Central**: BSB, Kiarong, Gadong, Berakas.
 - **Belait (Kuala Belait, Seria)**: Served via specialized weekly logistics runs. We transport pre-assembled cabinets in our own vehicles to prevent humidity-swelling during the highway drive.
-- **Tutong & Temburong**: Handled via scheduled dedicated trips to ensure precision installation without "travel tax" delays.
+- **Tutong & Temburong**: Handled via scheduled direct vehicle runs to ensure precision installation without "travel tax" delays.
 
 ---
 
@@ -338,7 +338,7 @@ Data aggregated from completed project invoices, 2015–2026. All figures BND, e
 |:--|:--|:--|:--|
 | Single Wall | 2.4m × 1.5m | Wet kitchens, studios, compact spaces | 4,000–7,500 |
 | L-Shaped | 2.4m × 2.4m | Most Brunei homes — versatile, efficient | 7,000–13,000 |
-| U-Shaped | 3.0m × 2.4m | Dedicated rooms, serious cooks | 10,000–18,000 |
+| U-Shaped | 3.0m × 2.4m | Enclosed rooms, serious cooks | 10,000–18,000 |
 | Galley | 1.8m × 3.0m | Narrow rooms, professional workflow | 8,000–14,000 |
 | L-Shape + Island | 3.6m × 3.6m | Open-plan, entertaining | 14,000–25,000+ |
 
