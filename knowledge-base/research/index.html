@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLQCFD9626"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', 'G-JLQCFD9626');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Research & Intelligence | Technical Authority | Caramella Brunei</title>
+    <meta name="description"
+        content="Deep technical research and market intelligence for Brunei's built environment. Material science, ROI analysis, and climate-specific engineering.">
+    <link rel="canonical" href="https://caramellabrunei.com/knowledge-base/research/index.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="../../css/site.css?v=20260303">
+    <style>
+        .research-hero {
+            padding: 10rem 1.5rem 6rem;
+            text-align: center;
+            background: radial-gradient(circle at 50% 30%, #152535 0%, #000000 100%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .research-hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><circle cx="1" cy="1" r="0.5" fill="rgba(212,175,55,0.05)"/></svg>');
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .category-section {
+            margin-top: 6rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .category-header h2 {
+            font-size: 2.2rem;
+            margin: 0;
+        }
+
+        .category-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, rgba(212, 175, 55, 0.5), transparent);
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 2rem;
+        }
+
+        .research-card {
+            background: #0a0e12;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .research-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at top left, rgba(212, 175, 55, 0.03), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 16px;
+        }
+
+        .research-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold-core);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .research-card:hover::before {
+            opacity: 1;
+        }
+
+        .research-card .tag {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--gold-core);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .research-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+            color: #fff;
+        }
+
+        .research-card p {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            flex: 1;
+        }
+
+        .research-card .meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 1.5rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cta-ribbon {
+            background: linear-gradient(to right, #102030, #000);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 8rem;
+            border-top: 1px solid var(--gold-core);
+            border-bottom: 1px solid var(--gold-core);
+        }
+
+        @media (max-width: 768px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar" aria-label="Primary">
+        <a href="../../index.html" class="logo">Caramella</a>
+        <div class="nav-links">
+            <a href="../../index.html">Home</a>
+            <a href="../../portfolio.html">Portfolio</a>
+            <a href="../../pricing.html">Pricing</a>
+            <a href="../index.html" class="nav-active">Knowledge</a>
+            <a href="../../contact-us.html">Inquire</a>
+        </div>
+    </nav>
+
+    <header class="research-hero">
+        <div class="container">
+            <p class="eyebrow" style="color: var(--gold-core); font-family: var(--font-mono);">Technical Intelligence
+                Portal</p>
+            <h1 style="font-size: clamp(3rem, 8vw, 5rem);">Research & <span class="italic-accent">Intelligence</span>
+            </h1>
+            <p class="lead" style="max-width: 700px; margin: 2rem auto;">The definitive deep-research repository for the
+                Brunei built environment. We treat cabinetry as an engineering problem, focusing on material science,
+                tropical longevity, and investment ROI.</p>
+        </div>
+    </header>
+
+    <main class="section-pad">
+        <div class="container">
+
+            <!-- Category: Material Science -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2>Material Science</h2>
+                    <div class="category-line"></div>
+                </div>
+                <div class="research-grid">
+                    <a href="pet-vs-petg-cabinetry-material-comparison.html" class="research-card">
+                        <span class="tag">Surface Engineering</span>
+                        <h3>PET vs. PETG Comparison</h3>
+                        <p>Analyzing thermal stability, scratch resistance, and the molecular differences that dictate
+                            lifespan in tropical kitchens.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 8 min</span>
+                            <span class="meta-item">Level: Technical</span>
+                        </div>
+                    </a>
+                    <a href="quartz-vs-sintered-stone-tropical-kitchen-durability.html" class="research-card">
+                        <span class="tag">Countertop Science</span>
+                        <h3>Quartz vs. Sintered Stone</h3>
+                        <p>Heat shock resilience, thermal expansion coefficients, and stain resistance ratings under
+                            sustained 90% humidity.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 12 min</span>
+                            <span class="meta-item">Level: Technical</span>
+                        </div>
+                    </a>
+                    <a href="edge-sealing-science-eva-vs-pur-adhesives.html" class="research-card">
+                        <span class="tag">Adhesive Technology</span>
+                        <h3>EVA vs. PUR Edge Sealing</h3>
+                        <p>The science of delamination. Why 1K moisture-curing polyurethane (PUR) is the only permanent
+                            defense against edge swelling.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 10 min</span>
+                            <span class="meta-item">Level: Engineering</span>
+                        </div>
+                    </a>
+                    <a href="salt-air-corrosion-brunei-coastal-cabinetry.html" class="research-card">
+                        <span class="tag">Coastal Engineering</span>
+                        <h3>Salt-Air Corrosion Analysis</h3>
+                        <p>Quantifying the degradation of carbon steel vs. SS304 in Muara and Belait coastal zones (ISO
+                            C5 conditions).</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 7 min</span>
+                            <span class="meta-item">Level: Technical</span>
+                        </div>
+                    </a>
+                    <a href="wood-hygroscopicity-swelling-tropical-humidity-brunei.html" class="research-card">
+                        <span class="tag">Wood Science</span>
+                        <h3>Wood Hygroscopicity & Swelling</h3>
+                        <p>Equilibrium Moisture Content (EMC) profiles for Plywood vs. MDF in sustained 80-90% RH
+                            environments.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 9 min</span>
+                            <span class="meta-item">Level: Engineering</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Category: Market Dynamics & ROI -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2>Market Dynamics & ROI</h2>
+                    <div class="category-line"></div>
+                </div>
+                <div class="research-grid">
+                    <a href="total-cost-of-ownership-melamine-vs-plywood-brunei.html" class="research-card">
+                        <span class="tag">Investment Analysis</span>
+                        <h3>10-Year TCO Analysis</h3>
+                        <p>Probabilistic modeling of repair costs and replacement cycles: Melamine/Chipboard vs. Premium
+                            Plywood.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 15 min</span>
+                            <span class="meta-item">Level: Executive</span>
+                        </div>
+                    </a>
+                    <a href="social-hub-kitchens-gen-z-millennial-brunei.html" class="research-card">
+                        <span class="tag">Demographics</span>
+                        <h3>The Social-Hub Kitchen</h3>
+                        <p>How Gen-Z and Millennial home ownership is shifting Brunei renovation demand towards
+                            open-concept "social hubs."</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 6 min</span>
+                            <span class="meta-item">Level: Market</span>
+                        </div>
+                    </a>
+                    <a href="mortgage-valuation-built-in-joinery-brunei.html" class="research-card">
+                        <span class="tag">Real Estate</span>
+                        <h3>Mortgage & Valuation Impact</h3>
+                        <p>How Brunei appraisers treat architectural joinery as fixtures, and the resulting impact on
+                            resale equity.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 11 min</span>
+                            <span class="meta-item">Level: Financial</span>
+                        </div>
+                    </a>
+                    <a href="total-landed-cost-importing-cabinetry-miri-brunei.html" class="research-card">
+                        <span class="tag">Supply Chain</span>
+                        <h3>Miri-Brunei Import Economics</h3>
+                        <p>Quantifying hidden costs: Duty, cross-border transport, and the 10% rework risk associated
+                            with remote measurement.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 14 min</span>
+                            <span class="meta-item">Level: Executive</span>
+                        </div>
+                    </a>
+                    <a href="modular-vs-fixed-fit-outs-brunei-landlords.html" class="research-card">
+                        <span class="tag">Property Management</span>
+                        <h3>Modular vs. Fixed Fit-Outs</h3>
+                        <p>ROI comparison for Kuala Belait/Seria landlords targeting oil & gas expatriates. Durability
+                            vs. Upfront Cost.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 9 min</span>
+                            <span class="meta-item">Level: Investment</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Category: Safety & Compliance -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2>Safety, Health & Compliance</h2>
+                    <div class="category-line"></div>
+                </div>
+                <div class="research-grid">
+                    <a href="formaldehyde-safety-e2-vs-enf-boards-brunei.html" class="research-card">
+                        <span class="tag">Health & IAQ</span>
+                        <h3>Formaldehyde Exposure Report</h3>
+                        <p>Modeled indoor HCHO concentrations in typical Brunei bedrooms: E2-grade imports vs. ENF G60
+                            boards.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 13 min</span>
+                            <span class="meta-item">Level: Health</span>
+                        </div>
+                    </a>
+                    <a href="humidity-control-mold-prevention-walk-in-closets-brunei.html" class="research-card">
+                        <span class="tag">Building Physics</span>
+                        <h3>Closet Mold Prevention</h3>
+                        <p>A technical guide to passive ventilation, VOC-safe desiccants, and moisture thresholds in
+                            master suites.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 8 min</span>
+                            <span class="meta-item">Level: Practical</span>
+                        </div>
+                    </a>
+                    <a href="cafe-restaurant-fit-out-failure-analysis-brunei.html" class="research-card">
+                        <span class="tag">Commercial Risk</span>
+                        <h3>F&B Fit-Out Failure Audit</h3>
+                        <p>Analyzing the top 5 technical failure modes that cause operational shutdowns in Brunei's
+                            culinary sector.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 12 min</span>
+                            <span class="meta-item">Level: Professional</span>
+                        </div>
+                    </a>
+                    <a href="fsc-plywood-carbon-footprint-cabinetry-brunei.html" class="research-card">
+                        <span class="tag">Sustainability</span>
+                        <h3>Carbon Footprint Analysis</h3>
+                        <p>Comparing biogenic carbon storage of FSC Plywood vs. mass-manufactured particleboard.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 7 min</span>
+                            <span class="meta-item">Level: ESG</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Category: Architectural Design -->
+            <section class="category-section">
+                <div class="category-header">
+                    <h2>Architectural Logic</h2>
+                    <div class="category-line"></div>
+                </div>
+                <div class="research-grid">
+                    <a href="wet-vs-dry-kitchen-evolution-brunei.html" class="research-card">
+                        <span class="tag">Spatial Culture</span>
+                        <h3>The Wet vs. Dry Evolution</h3>
+                        <p>Tracing the sociological role of the "Dapur" and the emergence of the modern hybrid
+                            two-kitchen solution.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 10 min</span>
+                            <span class="meta-item">Level: Architectural</span>
+                        </div>
+                    </a>
+                    <a href="ergonomic-communal-kitchen-design-multigenerational-brunei.html" class="research-card">
+                        <span class="tag">Human Factors</span>
+                        <h3>Communal Ergonomics</h3>
+                        <p>Designing for 3+ simultaneous cooks in multi-generational Brunei households. Clearance &
+                            safety standards.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 9 min</span>
+                            <span class="meta-item">Level: Design</span>
+                        </div>
+                    </a>
+                    <a href="seasonality-quality-cabinet-fabrication-brunei-raya.html" class="research-card">
+                        <span class="tag">Operational Risk</span>
+                        <h3>Seasonality & Defect Rates</h3>
+                        <p>Quantifying the "Pre-Raya Rush" impact on fabrication precision and defect probabilities.</p>
+                        <div class="meta">
+                            <span class="meta-item">Read Time: 6 min</span>
+                            <span class="meta-item">Level: Operations</span>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <div class="cta-ribbon">
+        <div class="container">
+            <h2 style="color: var(--gold-core); margin-bottom: 1.5rem;">Professional Consultancy</h2>
+            <p style="max-width: 600px; margin: 0 auto 2.5rem; opacity: 0.8;">Applying these research findings to your
+                specific project requires technical oversight. Contact our engineers for a design audit.</p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="../../contact-us.html" class="btn-primary">Audit Your Design</a>
+                <a href="../../technical-specs/" class="btn-secondary">View Build Standard</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer" style="padding: 4rem 0;">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 Caramella Trading Co. | Technical Knowledge for the Brunei Built Environment.</p>
+        </div>
+    </footer>
+
+    <script src="../../js/site.js?v=20260303" defer></script>
+</body>
+
+</html>

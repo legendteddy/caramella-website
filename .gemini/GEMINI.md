@@ -21,6 +21,7 @@ Position **caramellabrunei.com** as the #1 technical authority for cabinetry in 
 - **Local Server**: `python -m http.server 8008`
 - **Deployment**: `git push origin main` (Wait 2 mins for GH Pages)
 - **Modifications**: ALWAYS use `multi_replace_file_content`. Bulk replacement tools are forbidden to prevent context loss.
+- **Git Operations**: **MANDATORY**: Execute `git add .`, `git commit -m "[Task Summary]"`, and `git push origin main` after EVERY successful file modification and verification.
 
 ### 3. AI Discovery & Sync
 Whenever site content changes, you **MUST** sync:
