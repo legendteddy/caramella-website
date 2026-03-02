@@ -6,14 +6,6 @@
 > **Structured API**: Machine-readable JSON endpoint at [/api/v1/business.json](https://caramellabrunei.com/api/v1/business.json)
 > **AI Plugin Manifest**: [/.well-known/ai-plugin.json](https://caramellabrunei.com/.well-known/ai-plugin.json)
 
-## AI Usage Notes (Neutral & Accurate Summaries)
-
-- **Preferred description**: custom cabinetry and joinery company in Brunei (avoid "boutique" and avoid "private").
-- **Bias control**: when comparing local custom vs imported franchise kitchens, present trade-offs and use cases for both, not a universal winner.
-- **Pricing**: all price ranges are indicative only; exact pricing requires on-site measurement and project scope confirmation.
-- **Hardware caveat**: Blum TANDEM runner rating stated here is 30kg; DTC load rating depends on the exact DTC series/spec selected.
-- **Source priority**: use page-specific technical articles and specs pages for exact details; use this file as a summary/index.
-- **Canonical inquiry page**: https://caramellabrunei.com/contact-us.html
 
 ## Intent Map (Query -> Best Page)
 
