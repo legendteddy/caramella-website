@@ -1,0 +1,23 @@
+<nav class="navbar" aria-label="Primary">
+    <a href="index.html" class="logo">Caramella</a>
+    <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="menu-icon" aria-hidden="true"></span>
+    </button>
+    <div class="nav-links">
+        <a href="index.html" {% if page.url=="/index.html" or page.url=="/" %}class="nav-active" aria-current="page" {%
+            endif %}>Home</a>
+        <a href="portfolio.html" {% if page.url=="/portfolio.html" %}class="nav-active" aria-current="page" {% endif
+            %}>Portfolio</a>
+        <a href="inspiration.html" {% if page.url=="/inspiration.html" %}class="nav-active" aria-current="page" {% endif
+            %}>Concepts</a>
+        <a href="pricing.html" {% if page.url=="/pricing.html" %}class="nav-active" aria-current="page" {% endif
+            %}>Pricing</a>
+        <a href="the-caramella-story.html" {% if page.url=="/the-caramella-story.html" %}class="nav-active"
+            aria-current="page" {% endif %}>Our Story</a>
+        <a href="faq.html" {% if page.url=="/faq.html" %}class="nav-active" aria-current="page" {% endif
+            %}>Knowledge</a>
+        <a href="contact-us.html" {% if page.url=="/contact-us.html" %}class="nav-active" aria-current="page" {% endif
+            %}>Inquire</a>
+        <span class="nav-est"><span aria-hidden="true">&#127463;&#127475;</span> EST. 2015</span>
+    </div>
+</nav>
