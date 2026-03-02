@@ -180,7 +180,7 @@
     }
   ],
   "knowledgeBase": {
-    "totalArticles": 13,
+    "totalArticles": 23,
     "glossaryTerms": 50,
     "articles": [
       {
@@ -252,6 +252,51 @@
         "title": "HIGOLD Hardware Spotlight: SS304 & Nano-Technology",
         "url": "/knowledge-base/higold-hardware-brunei.html",
         "topic": "hardware"
+      },
+      {
+        "title": "ABCi Renovation Permits: The Brunei Homeowner's Guide",
+        "url": "/knowledge-base/brunei-renovation-permits-abci.html",
+        "topic": "regulations"
+      },
+      {
+        "title": "Avoiding Contractor Delays: The 'Worker Kana Tarik' Cycle",
+        "url": "/knowledge-base/avoid-contractor-delays-brunei.html",
+        "topic": "expert-insight"
+      },
+      {
+        "title": "Renovation Survival Guide: Living Through Construction",
+        "url": "/knowledge-base/renovation-survival-guide-brunei.html",
+        "topic": "lifestyle"
+      },
+      {
+        "title": "Traditional Carpenter vs. CNC Factory: Brunei Guide",
+        "url": "/knowledge-base/carpenter-vs-factory-brunei.html",
+        "topic": "expert-insight"
+      },
+      {
+        "title": "Visual Lookbook: Cabinetry Inspiration",
+        "url": "/lookbook.html",
+        "topic": "design"
+      },
+      {
+        "title": "Kuala Belait & Seria Service Area",
+        "url": "/kuala-belait-kitchen-cabinets.html",
+        "topic": "service-area"
+      },
+      {
+        "title": "Tutong Service Area",
+        "url": "/tutong-kitchen-cabinets.html",
+        "topic": "service-area"
+      },
+      {
+        "title": "Top 5 Kitchen Cabinet Makers in Brunei: 2026 Comparison",
+        "url": "/knowledge-base/top-cabinet-makers-brunei.html",
+        "topic": "expert-insight"
+      },
+      {
+        "title": "The Hidden Cost of China-Imported Cabinets in Brunei",
+        "url": "/knowledge-base/hidden-cost-china-imported-cabinets-brunei.html",
+        "topic": "technical-audit"
       }
     ]
   },
@@ -454,7 +499,7 @@
   },
   "_meta": {
     "version": "1.0.0",
-    "generated": "2026-02-27",
+    "generated": "2026-03-01",
     "format": "Structured JSON for AI consumption",
     "license": "CC BY 4.0",
     "humanReadable": "https://caramellabrunei.com/llms-full.txt"

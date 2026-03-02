@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JLQCFD9626"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments) } gtag('js', new Date()); gtag('config', 'G-JLQCFD9626');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Visual Lookbook | Premium Cabinetry Inspiration Brunei | Caramella</title>
+    <meta name="description"
+        content="High-impact visual inspiration for your Brunei home. Browse our lookbook of precision-engineered kitchens, wardrobes, and custom cabinetry.">
+    <link rel="canonical" href="https://caramellabrunei.com/lookbook.html">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css?v=20260227c">
+
+    <style>
+        .lookbook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .lookbook-item {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--glass-base);
+            border: var(--glass-border);
+            transition: transform 0.4s var(--ease-elastic);
+        }
+
+        .lookbook-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: var(--shadow-float);
+        }
+
+        .lookbook-image {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+        }
+
+        .lookbook-content {
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: white;
+        }
+
+        .lookbook-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .lookbook-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-gold-bright);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .lookbook-header {
+            text-align: center;
+            padding: 6rem 2rem 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .lookbook-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body class="kb-page">
+    <nav class="navbar" aria-label="Primary">
+        <a href="index.html" class="logo">Caramella</a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="lookbook.html" class="nav-active">Lookbook</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="contact-us.html" class="nav-cta">Inquire</a>
+        </div>
+    </nav>
+
+    <header class="lookbook-header">
+        <div class="container">
+            <p class="eyebrow">Design Inspiration</p>
+            <h1>The <span class="italic-accent">Visual Lookbook</span></h1>
+            <p class="lead" style="max-width: 600px; margin: 0 auto;">No long case studies. Just high-impact precision,
+                engineered for the Brunei home. Tap any image to discuss building it.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="lookbook-grid">
+            <!-- Item 1: The Detail -->
+            <div class="lookbook-item">
+                <img src="https://caramellabrunei.com/images/lookbook-detail-main.png" alt="Precision joinery detail"
+                    class="lookbook-image">
+                <div class="lookbook-content">
+                    <h3 class="lookbook-title">0.1mm Precision Engineering</h3>
+                    <a href="https://wa.me/6737187185?text=I'm%20interested%20in%20this%20precision%20detail%20from%20the%20lookbook"
+                        class="lookbook-cta">Discuss this Build &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 2: KB Industrial -->
+            <div class="lookbook-item">
+                <img src="https://caramellabrunei.com/images/kb-industrial-kitchen.png"
+                    alt="Industrial kitchen in Kuala Belait" class="lookbook-image">
+                <div class="lookbook-content">
+                    <h3 class="lookbook-title">Industrial Minimalism (Kuala Belait)</h3>
+                    <a href="https://wa.me/6737187185?text=I'm%20interested%20in%20the%20KB%20Industrial%20look"
+                        class="lookbook-cta">Discuss this Build &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Item 3: Tutong Warmth -->
+            <div class="lookbook-item">
+                <img src="https://caramellabrunei.com/images/tutong-family-kitchen.png" alt="Family kitchen in Tutong"
+                    class="lookbook-image">
+                <div class="lookbook-content">
+                    <h3 class="lookbook-title">Warm Family Hub (Tutong)</h3>
+                    <a href="https://wa.me/6737187185?text=I'm%20interested%20in%20the%20Tutong%20Warmth%20look"
+                        class="lookbook-cta">Discuss this Build &rarr;</a>
+                </div>
+            </div>
+
+            <!-- Standard Portfolio Images as fallback/expansion -->
+            <div class="lookbook-item">
+                <img src="images/img_4.jpg" alt="Premium Kitchen Build" class="lookbook-image">
+                <div class="lookbook-content">
+                    <h3 class="lookbook-title">Monochrome Modernity</h3>
+                    <a href="https://wa.me/6737187185" class="lookbook-cta">Discuss this Build &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container" style="text-align: center;">
+            <p>&copy; 2026 Caramella Trading Co. Precision Built in Brunei.</p>
+        </div>
+    </footer>
+    <script src="js/site.js" defer></script>
+</body>
+
+</html>

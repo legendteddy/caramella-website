@@ -3243,3 +3243,53 @@ table:not(.data-table) {
         font-size: 1.8rem;
     }
 }
+
+/* ── WhatsApp Floating CTA ── */
+.wa-float-container {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999;
+}
+
+.wa-float-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #25D366;
+    color: #fff;
+    padding: 0.8rem 1.25rem;
+    border-radius: 999px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.wa-float-link:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+    color: #fff;
+}
+
+.wa-float-text {
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .wa-float-container {
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .wa-float-text {
+        display: none;
+    }
+
+    .wa-float-link {
+        padding: 0.85rem;
+    }
+}
