@@ -8,7 +8,18 @@
     "registrationNumber": "P00100256",
     "foundingDate": "2015-01-11",
     "url": "https://caramellabrunei.com",
-    "telephone": "+6737187185",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+673 234 0618",
+      "contactType": "Sales & Inquiries",
+      "areaServed": "BN",
+      "availableLanguage": [
+        "English",
+        "Malay",
+        "Mandarin"
+      ]
+    },
+    "telephone": "+673 718 7185",
     "email": "caramellabrunei@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -499,7 +510,7 @@
   },
   "_meta": {
     "version": "1.0.0",
-    "generated": "2026-03-01",
+    "generated": "2026-03-02",
     "format": "Structured JSON for AI consumption",
     "license": "CC BY 4.0",
     "humanReadable": "https://caramellabrunei.com/llms-full.txt"

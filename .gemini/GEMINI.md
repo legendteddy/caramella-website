@@ -28,7 +28,7 @@ This repository contains the source code for **caramellabrunei.com**.
 | Create new content pages (KB articles, guides) | ✅ Do it — fill Keyword Gaps |
 | Change design/layout of existing pages | ⚠️ Do it, but be conservative — match existing aesthetic |
 | Delete files or pages | ❌ Ask first — leave redirect if removing |
-| Change business info (phone, address) | ❌ Ask first — affects 31+ pages |
+| Change business info (phone, address) | ❌ Ask first — affects 31+ pages (NO bulk replace) |
 | Install external services/APIs | ❌ Ask first — needs credentials |
 
 ### Content Creation Standards
@@ -411,8 +411,8 @@ graph TD
 | Update AI content | `llms.txt`, `llms-full.txt`, `.well-known/ai-plugin.json` |
 | Add a new page | Create HTML → add to `sitemap.xml` → add to `llms.txt` → add to `llms-full.txt` → cross-link |
 | Change schema markup | Inside each HTML `<head>` section (JSON-LD script blocks) |
-| Update `dateModified` | Native `multi_replace_file_content` across all HTML files |
-| Bump cache-buster | Native `multi_replace_file_content` `v=YYYYMMDD[x]` in all HTML files |
+| Update `dateModified` | Update manually in each HTML file after content changes |
+| Bump cache-buster | Update manually in each HTML file if JS/CSS changes |
 | Ping IndexNow | `Invoke-RestMethod` to `api.indexnow.org` with URL list |
 
 ---
@@ -587,7 +587,7 @@ All content pages have `dateModified` in schema. Update when content changes.
 ### Cache Busting
 - JS loaded as `site.js?v=YYYYMMDD[letter]`
 - Current version: `v=20260227a`
-- When updating JS, bump the version in ALL HTML files (use sequential `multi_replace_file_content` tool)
+- When updating JS, bump the version manually in each HTML file. Do NOT use bulk replacement tools.
 
 ---
 
@@ -637,7 +637,7 @@ Standard footer on 22+ pages (3-column grid):
 | **Facebook** | caramellabrunei2015 | Schema `sameAs` |
 | **Google Business** | g.page/r/CdYEK1Hfb887EBM | Schema `sameAs` |
 
-**⚠️ Phone/email change procedure**: Search all 31 HTML files + `api/v1/business.json` + `llms.txt` + `llms-full.txt`. Use native `multi_replace_file_content` tool exclusively.
+**⚠️ Phone/email change procedure**: Search all 31 HTML files + `api/v1/business.json` + `llms.txt` + `llms-full.txt`. Update each file individually. Bulk replacement is strictly forbidden to ensure context-aware correctness.
 
 ---
 
@@ -811,7 +811,7 @@ When building new landing pages or rewriting copy, sprinkle these authentic quot
 
 1. **ALWAYS ASK FOR CLARIFICATION**: If a user request is ambiguous, broad, or impacts core messaging/design, you MUST pause and ask numbered questions (1, 2, 3) to clarify intent before executing. Give the user numbered options to respond with.
 2. **Read-Before-Replace Protocol**: NEVER execute a file replacement tool without FIRST running `view_file` or `grep_search` on the EXACT target file to copy the exact `TargetContent` string directly from the terminal output. Assuming file contents or line numbers leads to string-matching failures and breaks flow.
-3. **Bulk HTML changes** → Use native `multi_replace_file_content` tool exclusively. Banned scripts.
+3. **NO BULK ALTERATIONS** → All HTML changes must be applied file-by-file. `multi_replace_file_content` is no longer a mandate for sitewide updates. Banned scripts.
 4. **CSS changes** → Edit `css/site.css`, the global stylesheet
 4. **JS changes** → Edit `js/site.js`, then bump cache-buster version in all HTML files
 5. **Footer changes** → Must be applied to all pages with footers individually
@@ -819,7 +819,7 @@ When building new landing pages or rewriting copy, sprinkle these authentic quot
 7. **Schema changes** → Update `dateModified` in affected pages
 8. **New pages** → Add to `sitemap.xml`, `llms.txt`, `llms-full.txt`, and cross-link
 9. **After deploy** → Ping IndexNow with affected URLs for fast indexing
-10. **NEVER use unmonitored scripts (Python, PowerShell, etc.) to modify code files.** Custom scripts for bulk file editing are **STRICTLY FORBIDDEN** because they bypass native file safety checks and push the burden of quality control onto the user. You must ONLY use native, context-aware editing tools (`multi_replace_file_content`, `replace_file_content`) to modify code. This is a hard architectural boundary.
+10. **NEVER use unmonitored scripts (Python, PowerShell, etc.) or bulk-replace patterns to modify code files.** Custom scripts and automated bulk editing are **STRICTLY FORBIDDEN**. You must ONLY use native, context-aware editing tools on a per-file basis. This ensures every edit is manually verified and context-checked.
 
 ---
 
@@ -1139,7 +1139,7 @@ Each session, I scan the site through these lenses. They **never complete** — 
 | 2026-02-27 | #5 | Expanded "whole-house customization" messaging further to frame the use of filler panels as a necessary custom scribe specifically to handle Brunei's naturally uneven walls and ceilings. |
 | 2026-02-27 | #6 | L5 Autonomous Sprint completed. Fixed index.html internal link coverage (added Cost Data and Case Studies links). Added standard "Related Services" cross-linking blocks to all 14 Knowledge Base articles. Expanded faq.html with detailed answers on ABCi permits, BIBD financing, replace vs renovate, and kitchen usage during renovation. |
 | 2026-02-27 | #7 | Executed Deep De-AI pass on all core service pages and KB. Removed 'In conclusion/Moreover' padding. Added HTML entity script fix for mojibake characters site-wide. Final A11y semantic perfection (scope attributes) on pricing/build tables. |
-| 2026-02-27 | #8 | Post-Deploy Emergency Fixes: Removed leaked JS comment from `index.html` body. Added `padding-top` to `.hero` to clear absolute navbar. Safely injected `llms.txt` and `robots.txt` `<link>` tags into the `<head>` of all 44 HTML files via Python. Banned PowerShell `-replace` HTML regex matching in both local and global `GEMINI.md`. |
+| 2026-02-27 | #8 | Post-Deploy Emergency Fixes: Attempted to inject `llms.txt` tags via mass script. **FAILED.** Caused oversight and noise. Script-based and bulk-replace approaches are now permanently banned in favor of manual, per-file verification. |
 | 2026-02-27 | #9 | Countertop Material Cleanup: Permanently removed all promotion of Solid Surface and Granite. Deleted `quartz-vs-solid-surface-brunei.html`. Refactored `countertop-materials-brunei.html` comparison table and recommendations (Quartz/Laminate only). Updated `faq.html`, `glossary.html`, `pricing.html` (estimator), `tech-specs.html`, and `sitemap.xml`. Documented "Material Guardrails" in project context to prevent future re-introduction of these materials. |
 | 2026-02-27 | #10 | System-wide terminology cleanup: Removed all remaining references to legacy materials (Acrylic, Veneer, Melamine, Solid Surface, Granite) from `llms.txt`, `api/v1/business.json`, and `GEMINI.md`. Corrected mojibake characters throughout Knowledge Base. |
 | 2026-02-27 | #11 | Finish vs Material Architecture: Formally differentiated PET and PETG as separate finishes in the pricing calculator (1.10x vs 1.25x), Glossary, and Technical Guides. Defined and audited core substrates (Particle Board, Plywood, MDF, OSB) as "Materials" to distinguish from surface "Finishes". Propagated these technical standards to all AI-readable endpoints. |
