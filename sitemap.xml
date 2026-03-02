@@ -39,6 +39,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://caramellabrunei.com/the-caramella-story.html</loc>
+    <lastmod>2026-03-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://caramellabrunei.com/service-areas.html</loc>
     <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
@@ -380,5 +386,10 @@
     <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/knowledge-base/cabinetry-humidity-physics-brunei.html</loc>
+    <lastmod>2026-03-02</lastmod>
+    <priority>0.70</priority>
   </url>
 </urlset>

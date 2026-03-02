@@ -443,10 +443,9 @@
   "materials": {
     "carcass": {
       "materials": [
-        "18mm Plywood",
-        "MDF",
-        "Particle Board",
-        "OSB"
+        "18mm Plywood (Standard)",
+        "Moisture-Resistant Plywood",
+        "Marine Plywood"
       ],
       "grade": "ENF (E0)",
       "description": "High-Pressure HPL surfaced (Full Seal) on all internal and external faces for maximum humidity resistance. We do not use Melamine / LPL boards."

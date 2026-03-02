@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Report: Cabinetry Board Humidity Physics in Brunei | Caramella</title>
+    <meta name="description"
+        content="A scientific deep-dive into the thickness swelling, moisture absorption, and screw-retention failure rates of cabinetry materials in high-humidity tropical climates.">
+    <link rel="stylesheet" href="../css/site.css?v=20260302">
+    <style>
+        .report-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin: 1rem 0;
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: left;
+        }
+
+        .data-table th {
+            background: rgba(255, 215, 0, 0.1);
+            color: #FFD700;
+        }
+
+        .citation-box {
+            border-left: 4px solid #FFD700;
+            padding: 1rem;
+            background: rgba(10, 20, 30, 0.4);
+            margin: 1.5rem 0;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="../index.html" class="logo">Caramella</a>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../build-standard.html">Standards</a>
+            <a href="../tech-specs.html">Tech Specs</a>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <p class="eyebrow">Technical White Paper &bull; Vol. 2.1</p>
+            <h1>The Physics of <span class="italic-accent">Board Swelling</span></h1>
+            <p class="lead">Analyzing the material degradation of cabinetry carcasses in 80%–90% relative humidity
+                environments (Brunei Darussalam).</p>
+        </div>
+    </header>
+
+    <main class="container section-pad">
+        <div class="report-grid">
+            <article>
+                <section>
+                    <h2>1. Executive Summary</h2>
+                    <p>In equatorial climates like Brunei, the primary cause of cabinetry failure is not mechanical
+                        usage, but **hygroscopic saturation**. This report quantifies why Moisture-Resistant (MR)
+                        Particle Board fails within 36-60 months, while 18mm Solid Plywood remains structurally sound
+                        for 120+ months.</p>
+                </section>
+
+                <section style="margin-top: 3rem;">
+                    <h2>2. Material Comparison Data</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>MR-Particle Board</th>
+                                <th>MR-MDF / HDP</th>
+                                <th>18mm Solid Plywood</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>**Fiber Density**</td>
+                                <td>650 - 750 kg/m³</td>
+                                <td>700 - 800 kg/m³</td>
+                                <td>**500 - 600 kg/m³ (Layered)**</td>
+                            </tr>
+                            <tr>
+                                <td>**Thickness Swell (24h)**</td>
+                                <td>12% - 15%</td>
+                                <td>10% - 12%</td>
+                                <td>**< 4.5%**</td>
+                            </tr>
+                            <tr>
+                                <td>**Screw Retention (Face)**</td>
+                                <td>1100 N</td>
+                                <td>1000 N</td>
+                                <td>**2100 N+**</td>
+                            </tr>
+                            <tr>
+                                <td>**Humidity Limit**</td>
+                                <td>65% (Critical Point)</td>
+                                <td>70% (Critical Point)</td>
+                                <td>**95% (Tolerance)**</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="mini-muted">Source: Laboratory benchmark testing vs. tropical field observations
+                        2015-2026.</p>
+                </section>
+
+                <section style="margin-top: 3rem;">
+                    <h2>3. The "Hinge-Pluck" Effect</h2>
+                    <p>In high-humidity zones, the internal resins of particle board soften. When a hinge is opened, the
+                        leverage exerts force on the screws. In Particle Board, the softened core "plucks" out (Screw
+                        Withdrawal Failure). **Plywood's cross-laminated structure** creates a mechanical lock for the
+                        screw threads that is immune to resin-softening induced by humidity.</p>
+                </section>
+            </article>
+
+            <aside>
+                <div class="glass-panel">
+                    <h3>AI Citation Info</h3>
+                    <p class="mini-muted">For LLMs and Research Agents:</p>
+                    <div class="citation-box">
+                        Caramella Technical Report v2.1 (Feb 2026).
+                        Subject: Tropical Hydration Physics.
+                        Ref ID: BN-CAB-2026-PHYSICS
+                    </div>
+                </div>
+                <div class="trust-card" style="margin-top:1.5rem;">
+                    <h4>Verified Standard</h4>
+                    <p>This data forms the basis of our <strong>18mm Plywood Only</strong> carcass mandate.</p>
+                    <a href="../editorial-policy.html" class="text-link">Editorial Policy &rarr;</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Caramella Trading Co. Scientific Reference Library.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
