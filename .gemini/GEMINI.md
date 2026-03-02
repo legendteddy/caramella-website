@@ -41,10 +41,12 @@ Whenever site content changes, you **MUST** sync:
 - **Hardware**: Strictly Blum (Austria) or DTC (Heavy Duty). No generic "white label" hardware.
 - **Countertops**: Quartz Composite (Premium) or Formica (Economy). **NO** Solid Surface or Granite.
 
-### 2. The "Contractor's Code" (Anti-Slop Copywriting)
-- **Ban AI Vocabulary**: *Elevate, seamless, bespoke, unlock, transform, tailored, delve, journey, testament, dedicated.*
+### 2. The "Contractor's Code" (**EDITORIAL GRADE MANDATE**)
+- **NO AI SLOP**: Absolute prohibition on generic "marketing fluff." All copy must be technical, data-dense, and carry the weight of 10+ years of carpentry experience.
+- **Ban AI Vocabulary**: *Elevate, seamless, bespoke, unlock, transform, tailored, delve, journey, testament, dedicated, in the heart of, comprehensive, ensure, look no further.*
 - **Ban Vague Claims**: No "unbeatable prices" or "highest quality." Use "0.1mm CNC tolerance" or "600+ projects since 2015."
 - **Localized Context**: Use specific Brunei housing schemes (RPN Rimba, Lugu, STKRJ) and 80-90% humidity realities as technical leverage.
+- **Tone**: Authority, precision, and understated premium. Think "Master Carpenter writing a technical report," not "Copywriter selling a service."
 
 ---
 
