@@ -25,6 +25,8 @@ User-agent: Gemini-Deep-Research
 Allow: /
 User-agent: GoogleOther
 Allow: /
+User-agent: GoogleAgent-Mariner
+Allow: /
 
 # Anthropic (Claude)
 User-agent: Anthropic-ai
@@ -32,6 +34,10 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 User-agent: Claude-Web
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: Claude-SearchBot
 Allow: /
 
 # Microsoft (Copilot / Bing Chat)
@@ -48,6 +54,8 @@ Allow: /
 
 # Perplexity (Answer Engine)
 User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
 Allow: /
 
 # Meta (Llama / Facebook AI)
@@ -114,6 +122,8 @@ Allow: /
 User-agent: PetalBot
 Allow: /
 User-agent: Webz.io
+Allow: /
+User-agent: DuckAssistBot
 Allow: /
 
 # Sitemap Location
