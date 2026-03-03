@@ -387,7 +387,7 @@
         <!-- Trust Authority -->
         <section class="section trust-section">
             <div class="container">
-                <div class="trust-grid reveal-stone">
+                <div class="trust-grid">
                     <div class="trust-item">
                         <span class="trust-number company-years">11+</span>
                         <span class="trust-label">Years of Craft</span>
@@ -835,13 +835,13 @@
 
         document.addEventListener('DOMContentLoaded', () => {
             // Keep startup focused on visible homepage behavior only.
-            initGallery();
-            initAnimations();
-            initCounterAnimation();
-            initMagneticButtons();
-            initScrollProgress();
-            initTestimonials();
-
+            // Each init wrapped in try-catch so one failure doesn't kill the rest.
+            try { initGallery(); } catch (e) { console.error('initGallery:', e); }
+            try { initAnimations(); } catch (e) { console.error('initAnimations:', e); }
+            try { initCounterAnimation(); } catch (e) { console.error('initCounterAnimation:', e); }
+            try { initMagneticButtons(); } catch (e) { console.error('initMagneticButtons:', e); }
+            try { initScrollProgress(); } catch (e) { console.error('initScrollProgress:', e); }
+            try { initTestimonials(); } catch (e) { console.error('initTestimonials:', e); }
         });
 
         // Auto-update copyright year
@@ -1127,43 +1127,45 @@
 
     <!-- Footer -->
     <footer class="site-footer site-footer--grid">
-    <div class="footer-grid">
-        <div class="footer-brand">
-            Caramella<span>Brunei</span>
-            <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4; text-transform: none; letter-spacing: normal;">
-                Precision joinery engineered for Brunei's humidity since 2015.
-            </p>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                Caramella<span>Brunei</span>
+                <p
+                    style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4; text-transform: none; letter-spacing: normal;">
+                    Precision joinery engineered for Brunei's humidity since 2015.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h5>Showroom</h5>
+                <address style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; font-style: normal;">
+                    Unit 22, Ground Floor,<br>
+                    The Airport Mall, BB2713<br>
+                    Bandar Seri Begawan, Brunei
+                </address>
+            </div>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                    <li><a href="careers.html" style="color: var(--gold); font-weight: 600;">Careers</a></li>
+                    <li><a href="the-caramella-story.html">Our Story</a></li>
+                    <li><a href="faq.html">Knowledge Hub</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Social</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.instagram.com/caramellabrunei/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/caramellabrunei2015/" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/caramella-brunei/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-section">
-            <h5>Showroom</h5>
-            <address style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; font-style: normal;">
-                Unit 22, Ground Floor,<br>
-                The Airport Mall, BB2713<br>
-                Bandar Seri Begawan, Brunei
-            </address>
+        <div class="footer-copyright">
+            <p>&copy; <span id="year"></span> Caramella Trading Company. 100% Brunei Owned &amp; Operated. <span
+                    class="footer-reg-no">Reg No: P00100256</span></p>
         </div>
-        <div class="footer-section">
-            <h5>Company</h5>
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="contact-us.html">Contact Us</a></li>
-                <li><a href="careers.html" style="color: var(--gold); font-weight: 600;">Careers</a></li>
-                <li><a href="the-caramella-story.html">Our Story</a></li>
-                <li><a href="faq.html">Knowledge Hub</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h5>Social</h5>
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="https://www.instagram.com/caramellabrunei/" target="_blank">Instagram</a></li>
-                <li><a href="https://www.facebook.com/caramellabrunei2015/" target="_blank">Facebook</a></li>
-                <li><a href="https://www.linkedin.com/company/caramella-brunei/" target="_blank">LinkedIn</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <p>&copy; <span id="year"></span> Caramella Trading Company. 100% Brunei Owned &amp; Operated. <span class="footer-reg-no">Reg No: P00100256</span></p>
-    </div>
-</footer>
+    </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 
