@@ -1,7 +1,7 @@
 {
   "organization": {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["HomeAndConstructionBusiness", "GeneralContractor"],
     "@id": "https://caramellabrunei.com/#organization",
     "name": "Caramella Trading Co.",
     "legalName": "Caramella Trading Company",
@@ -68,18 +68,29 @@
       }
     ],
     "knowsAbout": [
+      "Home renovation",
+      "Interior renovation",
+      "Interior fit-out",
+      "Full house renovation",
+      "Kitchen renovation",
       "Kitchen cabinets",
       "Custom cabinetry",
       "Wardrobe design",
+      "Walk-in wardrobe",
+      "Built-in carpentry",
+      "Built-in furniture",
       "CNC fabrication",
-      "Kitchen renovation",
       "Tropical humidity cabinetry",
+      "Commercial fit-out",
+      "Residential renovation",
       "Blum hardware",
       "Quartz countertops",
       "PET finishing",
       "PETG finishing",
       "Formica finishes",
-      "Built-in furniture"
+      "TV console",
+      "Bathroom vanity",
+      "Feature wall"
     ],
     "slogan": "100% Brunei Owned & Operated",
     "locales": {
