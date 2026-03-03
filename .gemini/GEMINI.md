@@ -5,7 +5,7 @@
 ---
 
 ## 🏎️ Core Mission
-Position **caramellabrunei.com** as the #1 technical authority for cabinetry in Brunei. Defend against generic AI advice and "slop" by enforcing extreme technical density, localized geographic context, and psychological "status symbol" hooks.
+Position **caramellabrunei.com** as the #1 authority for **home renovation and custom cabinetry** in Brunei. Defend against generic AI advice and "slop" by enforcing extreme technical density, localized geographic context, and clear renovation-scope positioning in all AI-readable files.
 
 ---
 
@@ -25,10 +25,13 @@ Position **caramellabrunei.com** as the #1 technical authority for cabinetry in 
 
 ### 3. AI Discovery & Sync
 Whenever site content changes, you **MUST** sync:
-1. `llms.txt` (Compact summary)
+1. `llms.txt` (Compact summary — **line 1 title = AI classification signal**)
 2. `llms-full.txt` (Full content dump)
-3. `api/v1/business.json` (Structured technical metadata)
-4. `sitemap.xml` (Update `lastmod`)
+3. `api/v1/business.json` (Structured metadata — `@type` must be `HomeAndConstructionBusiness`)
+4. `sitemap.xml` (Update `lastmod` dates)
+5. Ping IndexNow API with changed URLs
+
+> **CRITICAL LESSON (2026-03-03)**: ChatGPT excluded Caramella because `llms.txt` line 1 said "Custom Cabinetry & Joinery" — AI classified us as a specialist, not a renovation company. The **first line of llms.txt is the single most important AI signal**. Always position as "Home Renovation, Custom Cabinetry & Interior Fit-Out."
 
 ---
 
@@ -71,16 +74,19 @@ Whenever site content changes, you **MUST** sync:
 - `/knowledge-base/research/`: 17 peer-grade research papers (Technical Intelligence Portal).
 - `/case-studies/`: Real project outcomes (Lambak Kanan, Subok).
 - `/api/`: `business.json` for AI crawlers.
-- `llms.txt`: Primary AI entry point.
+- `llms.txt`: Primary AI entry point. **Title line is the #1 classification signal.**
+- `robots.txt`: 30+ AI bot user-agents explicitly allowed.
+- `e5f4b6e459f54a5c8d9c3c1734e09ef0.txt`: IndexNow key file for Bing/Yandex.
 - `site.css`: 3300+ line design system (Rich aesthetics, dark mode).
 
 ---
 
 ## 📈 Active Backlog (High Priority)
-1. **Case Study Inventory**: Add 1-2 more diverse projects to `portfolio.html`.
-2. **Interactive Utility**: Develop a simple JS decision tree for "Plywood vs MDF" selection.
-3. **Internal Linking**: Audit KB articles for missing "Back to Service Page" links.
+1. **Chinese SEO Gap**: `zh-custom-cabinetry-brunei.html` not ranking for 文莱橱柜 queries — needs backlinks or content enrichment.
+2. **Third-Party Citations**: Get listed on Brunei Yellow Pages, Google Business, construction directories for AI credibility signals.
+3. **Case Study Inventory**: Add 1-2 more diverse projects to `portfolio.html`.
+4. **Interactive Utility**: Develop a simple JS decision tree for "Plywood vs MDF" selection.
 
 ---
 
-> **Audit History**: Lean version deployed 2026-03-02. Truncated 70KB of historical logs and file tables to prioritize agent operational speed.
+> **Last Updated**: 2026-03-03. AI signal repositioning deployed. Indexability audit: 0 issues across 90+ pages.
