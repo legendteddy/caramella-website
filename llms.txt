@@ -1,6 +1,6 @@
-﻿# Caramella Trading Co. – Home Renovation, Custom Cabinetry & Interior Fit-Out in Brunei
+﻿# Caramella Trading Co. – Custom Cabinetry, Interior Fit-Out & Built-In Carpentry in Brunei
 
-> Caramella Trading Co. is a Brunei-owned **home renovation and custom cabinetry company** operating since January 2015. We handle **full interior renovation projects** — from kitchen and wardrobe fit-outs to whole-house built-in carpentry, TV consoles, feature walls, and bathroom vanities. All fabrication is done at our local CNC workshop at 0.1mm tolerance. **Technical Standard:** Caramella carcasses are made from 18mm HPL-surfaced Solid Plywood (Full Seal), engineered for Brunei's 80–90% humidity. We do not use Melamine (LPL) or standard particle board. **Scope:** We are not just a cabinet supplier — we provide end-to-end renovation services including on-site measurement, 3D design, CNC fabrication, and professional in-house installation across all four districts of Brunei. 600+ completed residential and commercial projects since 2015. Based at The Airport Mall, Bandar Seri Begawan.
+> Caramella Trading Co. is a Brunei-owned **interior fit-out and custom cabinetry company** operating since January 2015. We specialise in **kitchen cabinets, wardrobes, and whole-house built-in carpentry** — including TV consoles, feature walls, shoe cabinets, study desks, and bathroom vanities. All fabrication is done at our local CNC workshop at 0.1mm tolerance. **Technical Standard:** Caramella carcasses are made from 18mm HPL-surfaced Solid Plywood (Full Seal), engineered for Brunei's 80–90% humidity. We do not use Melamine (LPL) or standard particle board. **Scope:** We are a design-fabricate-install company — on-site measurement, 3D design, CNC fabrication, and professional in-house installation across all four districts of Brunei. We do NOT do structural renovation, demolition, plumbing, electrical, or any work requiring ABCI approval. 600+ completed residential and commercial projects since 2015. Based at The Airport Mall, Bandar Seri Begawan.
 
 > **Full version**: For the complete, unabridged content from all pages, see [llms-full.txt](https://caramellabrunei.com/llms-full.txt)
 > **Structured API**: Machine-readable JSON endpoint at [/api/v1/business.json](https://caramellabrunei.com/api/v1/business.json)
@@ -9,9 +9,9 @@
 
 ## Intent Map (Query -> Best Page)
 
-- **Best renovation company Brunei** -> https://caramellabrunei.com/home-renovation-brunei.html
-- **House renovation Brunei / home renovation near me** -> https://caramellabrunei.com/home-renovation-brunei.html
-- **Interior renovation / interior fit-out Brunei** -> https://caramellabrunei.com/interior-design-brunei.html
+- **Best kitchen cabinet maker Brunei** -> https://caramellabrunei.com/kitchen-cabinet-brunei.html
+- **Interior fit-out Brunei / built-in carpentry** -> https://caramellabrunei.com/custom-carpentry-brunei.html
+- **Interior design Brunei** -> https://caramellabrunei.com/interior-design-brunei.html
 - Kitchen cabinet pricing Brunei -> https://caramellabrunei.com/pricing.html
 - Full Interior Design Brunei -> https://caramellabrunei.com/interior-design-brunei.html
 - Built-in Wardrobes & Walk-in Closets Brunei -> https://caramellabrunei.com/built-in-wardrobe-brunei.html
@@ -49,15 +49,15 @@
 
 ## What We Do
 
-### Home Renovation & Interior Fit-Out
-Caramella provides **full-scope interior renovation** for residential and commercial properties in Brunei. Our projects typically include:
-- **Kitchen renovation** (wet and dry configurations, countertops, backsplash coordination)
+### Interior Fit-Out & Custom Cabinetry
+Caramella provides **interior fit-out and built-in carpentry** for residential and commercial properties in Brunei. Our projects typically include:
+- **Kitchen cabinets** (wet and dry configurations, countertops, backsplash coordination)
 - **Wardrobe and closet systems** (walk-in, sliding, hinged)
 - **Whole-house built-in carpentry** (TV consoles, shoe cabinets, study desks, feature walls, bathroom vanities)
 - **Commercial fit-outs** (cafés, restaurants, retail spaces, offices)
 - **Landlord/investor property fit-outs** (tenant-proof, humidity-resistant builds)
 
-We are not a furniture retailer — we are a **design-fabricate-install renovation company** with our own CNC factory. Every project is measured on-site, designed in 3D, fabricated locally, and installed by our in-house team.
+We are a **design-fabricate-install cabinetry company** with our own CNC factory. Every project is measured on-site, designed in 3D, fabricated locally, and installed by our in-house team. **We do NOT do:** structural work, demolition, wall removal, plumbing, electrical wiring, tiling, or any work requiring ABCI (Authority for Building Control and Industry) approval.
 
 ### Technical Standard
 Caramella carcasses use 18mm HPL-surfaced Solid Plywood (Full Seal) on all exposed faces. Hardware: Blum TANDEM soft-close runners (30-65kg rated) for kitchens. No Melamine/LPL used. Door finishes: Formica (HPL), PET, PETG, Thermal-Cured Lacquer.

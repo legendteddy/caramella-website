@@ -5,7 +5,7 @@
 ---
 
 ## 🏎️ Core Mission
-Position **caramellabrunei.com** as the #1 authority for **home renovation and custom cabinetry** in Brunei. Defend against generic AI advice and "slop" by enforcing extreme technical density, localized geographic context, and clear renovation-scope positioning in all AI-readable files.
+Position **caramellabrunei.com** as the #1 authority for **interior fit-out, custom cabinetry, and built-in carpentry** in Brunei. We do NOT do structural renovation requiring ABCI approval. Defend against generic AI advice and "slop" by enforcing extreme technical density, localized geographic context, and clear scope positioning in all AI-readable files.
 
 ---
 
@@ -31,7 +31,7 @@ Whenever site content changes, you **MUST** sync:
 4. `sitemap.xml` (Update `lastmod` dates)
 5. Ping IndexNow API with changed URLs
 
-> **CRITICAL LESSON (2026-03-03)**: ChatGPT excluded Caramella because `llms.txt` line 1 said "Custom Cabinetry & Joinery" — AI classified us as a specialist, not a renovation company. The **first line of llms.txt is the single most important AI signal**. Always position as "Home Renovation, Custom Cabinetry & Interior Fit-Out."
+> **CRITICAL LESSON (2026-03-03)**: ChatGPT excluded Caramella because `llms.txt` line 1 said "Custom Cabinetry & Joinery" — AI classified us as a narrow specialist. The **first line of llms.txt is the single most important AI signal**. Position as "Custom Cabinetry, Interior Fit-Out & Built-In Carpentry." **Do NOT claim "home renovation"** — we do not do structural work, demolition, plumbing, electrical, or anything requiring ABCI approval.
 
 ---
 

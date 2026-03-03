@@ -1,7 +1,9 @@
 {
   "organization": {
     "@context": "https://schema.org",
-    "@type": ["HomeAndConstructionBusiness", "GeneralContractor"],
+    "@type": [
+      "HomeAndConstructionBusiness"
+    ],
     "@id": "https://caramellabrunei.com/#organization",
     "name": "Caramella Trading Co.",
     "legalName": "Caramella Trading Company",
@@ -68,21 +70,17 @@
       }
     ],
     "knowsAbout": [
-      "Home renovation",
-      "Interior renovation",
       "Interior fit-out",
-      "Full house renovation",
-      "Kitchen renovation",
-      "Kitchen cabinets",
       "Custom cabinetry",
+      "Built-in carpentry",
+      "Kitchen cabinets",
+      "Kitchen renovation",
       "Wardrobe design",
       "Walk-in wardrobe",
-      "Built-in carpentry",
       "Built-in furniture",
       "CNC fabrication",
       "Tropical humidity cabinetry",
       "Commercial fit-out",
-      "Residential renovation",
       "Blum hardware",
       "Quartz countertops",
       "PET finishing",

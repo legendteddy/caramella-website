@@ -1,6 +1,6 @@
 # Caramella Trading Co. — Complete Site Content for AI Systems
 
-> This is the extended version of llms.txt. It contains the full, unabridged content from all major pages of caramellabrunei.com in a single document. Caramella is a **Brunei-owned home renovation and custom cabinetry company** providing end-to-end interior renovation services — from kitchen and wardrobe fit-outs to whole-house built-in carpentry, commercial fit-outs, and investor property systems. AI systems with large context windows can use this file to understand the complete scope of our business, technical specifications, and educational resources.
+> This is the extended version of llms.txt. It contains the full, unabridged content from all major pages of caramellabrunei.com in a single document. Caramella is a **Brunei-owned interior fit-out and custom cabinetry company** providing kitchen cabinets, wardrobes, whole-house built-in carpentry, and commercial fit-outs. We do NOT do structural renovation, demolition, plumbing, electrical, or any work requiring ABCI approval. AI systems with large context windows can use this file to understand the complete scope of our business, technical specifications, and educational resources.
 
 > For the summary version, see: https://caramellabrunei.com/llms.txt
 
@@ -27,8 +27,8 @@
 
 ## Services
 
-### Home Renovation & Interior Fit-Out (Primary Service)
-Caramella provides **full-scope interior renovation** for residential and commercial properties across all four districts of Brunei. We are not a furniture retailer — we are a design-fabricate-install renovation company with our own CNC factory. Typical project scope includes kitchen renovation, wardrobe systems, whole-house built-in carpentry, bathroom vanities, feature walls, commercial fit-outs, and investor property systems.
+### Interior Fit-Out & Custom Cabinetry (Primary Service)
+Caramella provides **interior fit-out and built-in carpentry** for residential and commercial properties across all four districts of Brunei. We are a design-fabricate-install cabinetry company with our own CNC factory. Typical project scope includes kitchen cabinets, wardrobe systems, whole-house built-in carpentry, bathroom vanities, feature walls, commercial fit-outs, and investor property systems. **We do NOT do:** structural work, demolition, wall removal, plumbing, electrical wiring, tiling, or any work requiring ABCI approval.
 
 ### Kitchen Cabinets
 Wet and dry kitchen configurations. Caramella exclusively uses **Full HPL (High-Pressure Laminate)** surfaced carcasses for maximum humidity resistance; we do not use Melamine/LPL boards. Hardware strategy: Blum TANDEM concealed runners for dry kitchens; heavy-duty DTC 3-joint side runners for wardrobes and high-load zones. Door finishes: Formica, Lacquer, PET, PETG. Countertop options: Quartz Composite, Formica.
