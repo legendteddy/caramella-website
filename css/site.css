@@ -526,6 +526,18 @@ table thead th,
     flex-wrap: wrap;
 }
 
+/* Consolidate common hero backgrounds from inline styles */
+.hero-glass-blend {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(8, 22, 33, 0.85), rgba(8, 22, 33, 0.95)), url('../images/hero-bg.webp') center/cover;
+}
+
+.hero-glass-blend .container {
+    position: relative;
+    z-index: 2;
+}
+
 /* Pill Grid (Service Areas, Tags) */
 .pill-grid {
     display: flex;

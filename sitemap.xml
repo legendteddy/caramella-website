@@ -57,6 +57,13 @@
     <priority>0.7</priority>
   </url>
 
+  <url>
+    <loc>https://caramellabrunei.com/careers.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Service & Landing Pages -->
   <url>
     <loc>https://caramellabrunei.com/raya-renovation-brunei.html</loc>
