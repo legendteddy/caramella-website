@@ -508,4 +508,36 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Previously Missing Pages -->
+  <url>
+    <loc>https://caramellabrunei.com/editorial-policy.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/get-a-quote.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/knowledge-base/carpenter-vs-factory-brunei.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/knowledge-base/index.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/zh-custom-cabinetry-brunei.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
