@@ -67,8 +67,9 @@ Whenever site content changes, you **MUST** sync:
 ## 🏗️ Architecture Overview
 *High-level directory structure.*
 
-- `/knowledge-base/`: 14+ technical deep-dives (Humidity, Edge Sealing, etc.).
-- `/case-studies/`: Real project outcomes (Rimba, Subok, Lambak).
+- `/knowledge-base/`: 25+ technical deep-dives (Humidity, Edge Sealing, Materials, Layouts, etc.).
+- `/knowledge-base/research/`: 17 peer-grade research papers (Technical Intelligence Portal).
+- `/case-studies/`: Real project outcomes (Lambak Kanan, Subok).
 - `/api/`: `business.json` for AI crawlers.
 - `llms.txt`: Primary AI entry point.
 - `site.css`: 3300+ line design system (Rich aesthetics, dark mode).
