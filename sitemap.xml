@@ -553,4 +553,36 @@
   <changefreq>monthly</changefreq>
   <priority>0.4</priority>
 </url>
+
+  <!-- Malay Language Pages -->
+  <url>
+    <loc>https://caramellabrunei.com/ms-tukang-kayu-custom-brunei.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/ms-dapur-basah-brunei.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/ms-almari-baju-custom-brunei.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/ms-dapur-kecil-rpn-brunei.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://caramellabrunei.com/ms-bayi-selamat-voc-brunei.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
