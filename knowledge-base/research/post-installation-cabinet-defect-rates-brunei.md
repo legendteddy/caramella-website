@@ -31,6 +31,21 @@ Which defect categories dominate the first 12 months, and which corrective contr
 - Early underreporting from minor-owner fixes can bias rates.
 - Some defects have multi-cause interactions.
 
+## Comparative Benchmark Framework
+Comparison table ranks defect categories by recurrence risk, closure speed, and rework cost impact.  
+Benchmarking also compares prevention controls (process checks, material controls, and install QA) against measurable performance criteria.
+
+## Data Sources
+- Internal post-installation ticket and inspection datasets (anonymized).
+- Brunei statistical and market-reference data used for baseline normalization.
+- International quality-system references for CAPA and nonconformance handling.
+
+## Citation Registry (Primary Links)
+- https://deps.mofe.gov.bn/
+- https://www.iso.org/standard/62085.html
+- https://www.iso.org/standard/62086.html
+- https://asq.org/quality-resources/corrective-action
+
 ## Independent Validation Status
 Protocol complete, local dataset pending.
 

@@ -34,7 +34,18 @@ for (const file of files) {
         if (ln.includes('**')) add(file, n, 'Possible visible markdown token "**"');
         if (/\?\s*<\/a>/.test(ln)) add(file, n, 'Anchor text ends with "?" (likely placeholder glyph issue)');
         if (ln.includes('\\&amp;')) add(file, n, 'Found escaped ampersand "\\&amp;"');
-        if (ln.includes('â€™') || ln.includes('â€“') || ln.includes('â€”') || ln.includes('Ã') || ln.includes('\uFFFD') || ln.includes('&#226;') || ln.includes('&#195;')) {
+        if (
+            ln.includes('â€™') ||
+            ln.includes('â€“') ||
+            ln.includes('â€”') ||
+            ln.includes('â€œ') ||
+            ln.includes('â€') ||
+            ln.includes('Ã') ||
+            ln.includes('Â') ||
+            ln.includes('\uFFFD') ||
+            ln.includes('&#226;') ||
+            ln.includes('&#195;')
+        ) {
             add(file, n, 'Potential mojibake artifact');
         }
     });

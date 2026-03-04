@@ -31,6 +31,21 @@ Which design and operational controls provide the largest reduction in ignition 
 - Rare major events limit direct statistical precision.
 - Suppression outcomes vary by response time.
 
+## Comparative Benchmark Framework
+Benchmark matrix compares control alternatives across prevention, detection, and containment performance.  
+Table-based scoring highlights cost-versus-risk trade-offs for household retrofit decisions in compact wet-kitchen layouts.
+
+## Data Sources
+- Fire incident-prevention guidance and public safety advisories from relevant national authorities.
+- International kitchen fire safety references (ventilation, suppression readiness, and clearance practice).
+- Building and electrical safety standards used for control-checklist validation.
+
+## Citation Registry (Primary Links)
+- https://www.frd.gov.bn/
+- https://www.nfpa.org/codes-and-standards
+- https://www.gov.uk/government/publications/fire-safety-risk-assessment-means-of-escape-for-disabled-people
+- https://www.iec.ch/homepage
+
 ## Independent Validation Status
 Protocol complete, local dataset pending.
 
