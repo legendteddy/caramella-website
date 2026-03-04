@@ -1,0 +1,8 @@
+﻿{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "TechArticle", "@id": "https://caramellabrunei.com/knowledge-base/research/hardware-durability-benchmark-brunei-humidity.html#article", "headline": "Hardware Durability Benchmark in High-Humidity Brunei Conditions", "datePublished": "2026-03-04", "dateModified": "2026-03-04", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://caramellabrunei.com/knowledge-base/research/hardware-durability-benchmark-brunei-humidity.html"}},
+    {"@type": "Dataset", "@id": "https://caramellabrunei.com/knowledge-base/research/data/brunei-hardware-durability-benchmark-template.csv#dataset", "name": "Brunei Hardware Durability Benchmark Template Dataset", "distribution": {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://caramellabrunei.com/knowledge-base/research/data/brunei-hardware-durability-benchmark-template.csv"}, "dateModified": "2026-03-04", "variableMeasured": ["cycles_to_failure", "corrosion_grade", "load_retention_percent", "benchmark_score_100"]},
+    {"@type": "FAQPage", "@id": "https://caramellabrunei.com/knowledge-base/research/hardware-durability-benchmark-brunei-humidity.html#faq", "mainEntity": [{"@type": "Question", "name": "How is ranking determined?", "acceptedAnswer": {"@type": "Answer", "text": "Ranking uses a published weighted rubric across cycle life, corrosion, retention, and field returns."}}]}
+  ]
+}

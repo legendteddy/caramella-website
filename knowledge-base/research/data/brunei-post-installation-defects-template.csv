@@ -1,0 +1,4 @@
+﻿record_id,project_id,handover_date,defect_report_date,defect_category,severity,root_cause_code,days_to_report,days_to_close,rework_cost_bnd,recurrence_flag,capa_action,capa_followup_days,capa_effective_flag,reviewer_id,qa_flag,is_synthetic_example
+D0001,P021,2025-11-05,2026-01-14,edge_banding_lift,moderate,installation_quality,70,5,180,false,retrain_edge_process,60,true,R1,ok,true
+D0002,P037,2025-10-22,2026-02-18,hinge_misalignment,minor,transport_settlement,119,3,95,true,add_final_alignment_gate,45,false,R2,ok,true
+D0003,P044,2025-12-03,2026-01-06,board_swelling,major,water_ingress_detail,34,12,780,false,raised_plinth_spec_update,90,true,R1,ok,true

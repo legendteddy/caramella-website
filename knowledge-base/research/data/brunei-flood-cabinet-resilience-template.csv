@@ -1,0 +1,4 @@
+﻿record_id,assembly_id,material_system,edge_seal_type,plinth_height_mm,kickboard_type,water_depth_mm,exposure_hours,drying_method,swelling_percent_24h,swelling_percent_7d,delamination_flag,hinge_binding_flag,microbial_risk_flag_7d,functional_recovery_days,repair_cost_bnd,qa_flag,is_synthetic_example
+F0001,A11,plywood_hpl,EVA_1_5mm,80,aluminum,20,4,fan_plus_dehumidifier,1.8,0.9,false,false,false,1,120,ok,true
+F0002,A15,particleboard_melamine,PVC_tape,30,pvc,35,12,natural_air_only,7.4,5.9,true,true,true,9,860,ok,true
+F0003,A20,hdhmr_hpl,PUR_1_0mm,90,aluminum,25,8,fan_plus_dehumidifier,2.2,1.4,false,false,false,2,210,ok,true

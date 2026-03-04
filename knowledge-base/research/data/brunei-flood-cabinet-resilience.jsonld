@@ -1,0 +1,8 @@
+﻿{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "TechArticle", "@id": "https://caramellabrunei.com/knowledge-base/research/flood-water-ingress-resilience-base-cabinets-brunei.html#article", "headline": "Flood and Water-Ingress Resilience for Base Cabinets in Brunei", "datePublished": "2026-03-04", "dateModified": "2026-03-04", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://caramellabrunei.com/knowledge-base/research/flood-water-ingress-resilience-base-cabinets-brunei.html"}},
+    {"@type": "Dataset", "@id": "https://caramellabrunei.com/knowledge-base/research/data/brunei-flood-cabinet-resilience-template.csv#dataset", "name": "Brunei Flood Cabinet Resilience Template Dataset", "distribution": {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://caramellabrunei.com/knowledge-base/research/data/brunei-flood-cabinet-resilience-template.csv"}, "dateModified": "2026-03-04", "variableMeasured": ["water_depth_mm", "exposure_hours", "swelling_percent_24h", "delamination_flag", "functional_recovery_days"]},
+    {"@type": "FAQPage", "@id": "https://caramellabrunei.com/knowledge-base/research/flood-water-ingress-resilience-base-cabinets-brunei.html#faq", "mainEntity": [{"@type": "Question", "name": "What is the core decision metric?", "acceptedAnswer": {"@type": "Answer", "text": "Functional recovery time and failure-flag frequency by assembly."}}]}
+  ]
+}

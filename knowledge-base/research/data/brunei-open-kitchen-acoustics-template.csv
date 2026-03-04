@@ -1,0 +1,4 @@
+﻿record_id,home_id,kitchen_layout,room_volume_m3,hood_model,hood_speed,appliance_combo,listener_distance_m,combined_dba,speech_interference_flag,occupant_comfort_score_10,mitigation_applied,mitigation_delta_dba,measurement_timestamp_local,qa_flag,is_synthetic_example
+A0001,H008,open_plan,78,HoodM1,2,hood_plus_dishwasher,2.5,56,false,7,none,0,2026-03-11T20:10,ok,true
+A0002,H008,open_plan,78,HoodM1,3,hood_plus_fryer,2.5,63,true,4,acoustic_baffle_panel,-4,2026-03-11T20:25,ok,true
+A0003,H021,hybrid_partition,65,HoodM2,2,hood_plus_induction,2.0,52,false,8,soft_surface_addition,-3,2026-03-13T19:40,ok,true

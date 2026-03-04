@@ -1,0 +1,4 @@
+﻿record_id,system_type,usage_profile,initial_cost_bnd,annual_maintenance_bnd,failure_probability_annual,avg_failure_cost_bnd,replacement_cycle_years,downtime_cost_per_event_bnd,discount_rate_percent,inflation_percent,tco_10y_bnd,break_even_year_vs_plywood,scenario_id,qa_flag,is_synthetic_example
+L0001,plywood_hpl,medium,9800,260,0.11,740,9,180,4.0,2.0,14320,baseline,S1,ok,true
+L0002,hdhmr_hpl,medium,11200,220,0.08,620,10,150,4.0,2.0,14810,8,S1,ok,true
+L0003,aluminum_frame_panel,medium,14500,130,0.05,480,12,120,4.0,2.0,15640,never,S1,ok,true

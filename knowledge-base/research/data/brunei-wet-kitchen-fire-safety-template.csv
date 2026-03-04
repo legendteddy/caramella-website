@@ -1,0 +1,4 @@
+﻿record_id,home_id,fuel_type,layout_clearance_mm,hood_state,extinguisher_present,suppression_type,alarm_state,near_miss_count_12m,incident_count_12m,critical_control_compliance_percent,suppression_readiness_score_100,residual_risk_tier,inspection_date,qa_flag,is_synthetic_example
+S0001,H003,gas,700,ducted_ok,true,portable_abc,active,1,0,88,82,medium,2026-03-08,ok,true
+S0002,H017,gas,420,recirculating_only,false,none,inactive,3,1,42,25,high,2026-03-09,ok,true
+S0003,H026,induction,650,ducted_ok,true,portable_abc,active,0,0,91,85,low,2026-03-10,ok,true

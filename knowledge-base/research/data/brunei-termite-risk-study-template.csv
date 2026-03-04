@@ -1,0 +1,4 @@
+﻿record_id,district,project_id,home_type,board_family,treatment_type,ground_contact_flag,moisture_exposure_level,incident_date,incident_severity,days_from_installation,repair_cost_bnd,control_applied_post,followup_days,recurrent_incident_flag,inspection_source,qa_flag,is_synthetic_example
+T0001,Brunei-Muara,P101,terrace,particleboard,borate,low,high,2026-02-11,major,210,1850,stainless_kickboard_raised_plinth,90,false,service_report,ok,true
+T0002,Belait,P088,detached,plywood,none,medium,medium,2026-01-19,moderate,340,920,soil_barrier_plus_sealant,120,false,inspection_log,ok,true
+T0003,Tutong,P067,semi_detached,MDF,borate,low,high,2026-02-28,major,145,2400,board_replacement_hdhmr,60,true,service_report,ok,true

@@ -1,0 +1,4 @@
+﻿record_id,home_id,vent_config_id,hood_type,airflow_cfm,power_w,runtime_min_day,ac_setpoint_c,monthly_kwh,monthly_cost_bnd,iaq_compliance_rate_percent,cost_per_compliant_hour_bnd,scenario_tariff_id,measurement_month,qa_flag,is_synthetic_example
+E0001,H006,V1,ducted,650,210,95,24,58,14.8,92,0.21,T1,2026-02,ok,true
+E0002,H006,V2,recirculating,420,160,110,24,49,12.5,71,0.27,T1,2026-02,ok,true
+E0003,H019,V3,ducted_variable,700,185,90,24,52,13.2,95,0.19,T1,2026-02,ok,true

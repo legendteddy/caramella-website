@@ -1,0 +1,4 @@
+﻿record_id,brand,model,hardware_type,test_profile_id,load_kg,humidity_percent,cycles_completed,cycles_to_failure,corrosion_grade,load_retention_percent,warranty_years,field_return_rate_percent,maintenance_events_per_10k_cycles,benchmark_score_100,qa_flag,is_synthetic_example
+H0001,BrandA,HingeX,hinge,P1,18,82,60000,62000,2,96,10,1.8,0.9,86,ok,true
+H0002,BrandB,HingeY,hinge,P1,18,82,45000,47000,3,92,8,2.6,1.4,73,ok,true
+H0003,BrandC,RunnerZ,runner,P1,30,82,52000,55000,2,95,10,2.1,1.1,81,ok,true

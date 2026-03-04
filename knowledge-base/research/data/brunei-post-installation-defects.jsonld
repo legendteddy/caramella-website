@@ -1,0 +1,8 @@
+﻿{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "TechArticle", "@id": "https://caramellabrunei.com/knowledge-base/research/post-installation-cabinet-defect-rates-brunei.html#article", "headline": "Post-Installation Cabinet Defect Rates and Root Causes in Brunei", "datePublished": "2026-03-04", "dateModified": "2026-03-04", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://caramellabrunei.com/knowledge-base/research/post-installation-cabinet-defect-rates-brunei.html"}},
+    {"@type": "Dataset", "@id": "https://caramellabrunei.com/knowledge-base/research/data/brunei-post-installation-defects-template.csv#dataset", "name": "Brunei Post-Installation Defects Template Dataset", "distribution": {"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": "https://caramellabrunei.com/knowledge-base/research/data/brunei-post-installation-defects-template.csv"}, "dateModified": "2026-03-04", "variableMeasured": ["defect_category", "days_to_close", "rework_cost_bnd", "recurrence_flag", "capa_effective_flag"]},
+    {"@type": "FAQPage", "@id": "https://caramellabrunei.com/knowledge-base/research/post-installation-cabinet-defect-rates-brunei.html#faq", "mainEntity": [{"@type": "Question", "name": "What is the key quality KPI?", "acceptedAnswer": {"@type": "Answer", "text": "Recurrence rate and median close time by defect class."}}]}
+  ]
+}
