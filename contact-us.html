@@ -126,7 +126,7 @@
 
         /* HERO */
         .hero {
-            background-image: linear-gradient(to bottom, rgba(8, 22, 33, 0.85), rgba(8, 22, 33, 0.95)), image-set(url('images/img_4.webp') type('image/webp'), url('images/img_4.webp') type('image/jpeg'));
+            background-image: linear-gradient(to bottom, rgba(8, 22, 33, 0.85), rgba(8, 22, 33, 0.95)), image-set(url('images/img_4.webp') type('image/webp'), url('images/img_4.jpg') type('image/jpeg'));
             background-size: cover;
             background-position: center;
             padding: 6rem 2rem;
@@ -541,21 +541,21 @@
                         <h3 class="form-header">Design Consultation</h3>
                         <div class="form-grid-2">
                             <div class="form-group">
-                                <label class="form-label">Name <span style="color:#E74C3C">*</span></label>
+                                <label class="form-label" for="entryName">Name <span style="color:#E74C3C">*</span></label>
                                 <input type="text" id="entryName" name="name" class="form-input" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Contact No <span style="color:#E74C3C">*</span></label>
+                                <label class="form-label" for="entryPhone">Contact No <span style="color:#E74C3C">*</span></label>
                                 <input type="tel" id="entryPhone" name="phone" class="form-input" required
                                     placeholder="+673">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Address / Location</label>
+                            <label class="form-label" for="entryAddress">Address / Location</label>
                             <input type="text" id="entryAddress" name="address" class="form-input">
                         </div>
                         <div class="form-group">
-                            <label class="form-label">Preferred Appointment</label>
+                            <p class="form-label">Preferred Appointment</p>
                             <div class="form-grid-2" style="gap: 1rem; margin-bottom: 0;">
                                 <input type="text" id="entryDate" name="appointment_date" class="form-input"
                                     placeholder="Select Date"
@@ -578,7 +578,7 @@
                     <!-- SECTION 2: PROJECT INFO -->
                     <div class="form-section">
                         <h3 class="form-header">Project Details</h3>
-                        <label class="form-label">Construction Status</label>
+                        <p class="form-label">Construction Status</p>
                         <div class="checkbox-group">
                             <label class="check-item"><input type="checkbox" class="status-check" value="Floor Plan">
                                 Floor Plan</label>
@@ -592,7 +592,7 @@
                                 Renovation</label>
                         </div>
                         <div class="form-group" style="margin-top: 1rem;">
-                            <label class="form-label">Project Budget</label>
+                            <label class="form-label" for="entryBudget">Project Budget</label>
                             <input type="text" id="entryBudget" name="budget" class="form-input" placeholder="$">
                         </div>
                     </div>
@@ -601,7 +601,7 @@
                     <div class="form-section">
                         <h3 class="form-header">Kitchen (Dry / Wet)</h3>
 
-                        <label class="form-label">Materials / Finishes</label>
+                        <p class="form-label">Materials / Finishes</p>
                         <div class="checkbox-group">
                             <label class="check-item"><input type="checkbox" class="mat-check" value="Formica">
                                 Formica</label>
@@ -615,17 +615,15 @@
                                 Classic Lacquer</label>
                         </div>
 
-                        <label class="form-label" style="margin-top: 1rem;">Counter Top</label>
+                        <p class="form-label" style="margin-top: 1rem;">Counter Top</p>
                         <div class="checkbox-group">
                             <label class="check-item"><input type="checkbox" class="top-check" value="Quartz Stone">
                                 Quartz Stone</label>
                             <label class="check-item"><input type="checkbox" class="top-check"
                                     value="Marble Design Quartz"> Marble Design Quartz</label>
-                            <label class="check-item"><input type="checkbox" class="top-check" value="Solid Surface">
-                                Solid Surface</label>
                         </div>
 
-                        <label class="form-label" style="margin-top: 1rem;">Appliances</label>
+                        <p class="form-label" style="margin-top: 1rem;">Appliances</p>
                         <div class="app-row">
                             <span>Hob</span>
                             <select id="appHob" class="form-input is-small">
@@ -655,7 +653,7 @@
                     <!-- SECTION 4: WARDROBE -->
                     <div class="form-section">
                         <h3 class="form-header">Wardrobe / Custom</h3>
-                        <label class="form-label">Door Type</label>
+                        <p class="form-label">Door Type</p>
                         <div class="checkbox-group">
                             <label class="check-item"><input type="checkbox" class="door-check" value="Swing">
                                 Swing</label>
@@ -762,7 +760,7 @@
         flatpickr("#entryDate", {
             enableTime: false,
             dateFormat: "Y-m-d",
-            disableMobile: "true",
+            disableMobile: true,
             disable: [
                 function (date) {
                     return (date.getDay() === 0); // Disable Sundays
@@ -864,18 +862,18 @@
                             copyBtn.innerText = "Copied!";
                             copyBtn.style.backgroundColor = "#27ae60";
                             setTimeout(() => {
-                                copyBtn.innerText = "Copy Message";
+                                copyBtn.innerText = "Copy Brief";
                                 copyBtn.style.backgroundColor = "";
                             }, 3000);
                         });
                     });
                 } else {
-                    submitBtn.innerText = "Send Inquiry";
+                    submitBtn.innerText = "Send Project Brief";
                     submitBtn.disabled = false;
                     alert("There was an error sending the form. Please click the WhatsApp button instead.");
                 }
             }).catch(error => {
-                submitBtn.innerText = "Send Inquiry";
+                submitBtn.innerText = "Send Project Brief";
                 submitBtn.disabled = false;
                 alert("Network error. Please connect via WhatsApp instead.");
             });
