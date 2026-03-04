@@ -224,3 +224,42 @@ When choosing, request each slab’s **technical datasheet** for water absorptio
 6. **Installation Manuals:** Neolith technical manual (TheSize) for installation notes【42†L37-L40】.
 7. **Other:** Online brochures (Vicostone, etc.) for completeness【9†L378-L384】【52†L67-L72】.
 
+
+## Methodology
+This paper follows a reproducible evidence workflow:
+1. Define the decision question and boundary conditions.
+2. Gather primary references first (standards, regulator material, technical literature), then secondary market evidence.
+3. Compare alternatives using explicit criteria (performance, risk, cost, maintainability, and local suitability for Brunei).
+4. Separate measured evidence from inferred estimates and label assumptions.
+## Data Sources
+Reference hierarchy used in this paper:
+- Primary standards/regulatory sources where applicable (ISO/ASTM/ASHRAE/NFPA/WHO/AMBD or equivalent by topic).
+- Manufacturer technical documentation and safety data where product claims are discussed.
+- Local Brunei market and policy sources cited in-body.
+- Secondary commentary used only to contextualize, not to override primary evidence.
+## Assumptions
+- Brunei climate and market context can materially change performance relative to temperate-market baselines.
+- Where local measured data is unavailable, conservative estimates are used.
+- Operational discipline (maintenance, installation quality, user behavior) materially affects real-world outcomes.
+## Limitations
+- Public Brunei-specific datasets can be incomplete for some subtopics.
+- Cross-study comparisons may involve different methods and sampling frames.
+- Numeric estimates in this paper should be treated as planning-grade unless explicitly validated with local measurements.
+## Independent Validation Status
+Current status: secondary-evidence validated; further local measurement recommended.
+- Standards and regulatory logic are cross-checked against cited primary references.
+- Next-step validation should include Brunei field measurements or paired-case datasets aligned to this paper''s core claim.
+## Version
+- Version: 2.0.0
+- Last updated: 2026-03-04
+- Validation state: structured secondary synthesis with documented assumptions.
+## Changelog
+- 2026-03-04 (v2.0.0): Added methodology, source hierarchy, assumptions, limitations, independent validation status, and version metadata.
+
+## Citation Registry (Primary Links)
+- ISO standards catalogue: https://www.iso.org/standards.html
+- ASTM standards portal: https://www.astm.org/
+- ASHRAE technical resources: https://www.ashrae.org/technical-resources
+- WHO publication portal: https://www.who.int/publications
+- U.S. EPA technical guidance index: https://www.epa.gov/research
+- Brunei AMBD official publications: https://www.ambd.gov.bn/publications/

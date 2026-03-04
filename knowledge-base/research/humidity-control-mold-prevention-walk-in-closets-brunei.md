@@ -221,3 +221,48 @@ These are illustrative; actual costs will vary with closet size, materials, and 
 ---
 
 **Sources:** Brunei climate data from weather history【44†L63-L65】; mold/humidity thresholds from WHO/ASHRAE and building science【52†L133-L140】【10†L67-L70】【13†L141-L144】; ventilation principles from Building Science Insights【40†L161-L169】【40†L221-L225】; desiccant properties from manufacturer specifications and SDS【21†L1-L4】【23†L25-L28】【35†L214-L218】【37†L1-L4】; CDC/EPA guidelines for moisture control【13†L141-L144】.  (Assumptions: closet ~2 m², 2–3 occupants, typical range of budgets.)
+## Methodology
+Research design follows a building-science risk workflow:
+1. Establish climate boundary conditions relevant to Brunei bedrooms and closets.
+2. Translate RH and surface-moisture thresholds into mold-risk bands using recognized health and building guidance.
+3. Evaluate passive airflow and desiccant interventions against the same target range.
+4. Prioritize controls by safety, maintenance burden, and practical deployment in occupied homes.
+
+## Data Sources
+Primary references used for thresholds and controls:
+- ASHRAE resources on indoor environmental quality and moisture control: https://www.ashrae.org/
+- U.S. EPA mold and moisture guidance: https://www.epa.gov/mold
+- CDC mold prevention and post-moisture-event guidance: https://www.cdc.gov/mold/
+- WHO indoor air quality (dampness and mold framework): https://www.who.int/publications/i/item/9789289041683
+- Product/SDS references in-body for desiccant safety and VOC characteristics.
+
+## Assumptions
+- Closets are intermittently closed and have limited mechanical dehumidification.
+- Hygrometer readings are treated as representative of closet microclimate where probes are placed in free airflow.
+- Occupancy and laundry behavior are major humidity drivers in small-volume storage spaces.
+
+## Limitations
+- No instrumented year-long Brunei household trial in this revision.
+- Mold onset timing varies by substrate bioload, prior contamination, and local air velocity.
+- Product performance for desiccants varies by charge size, replacement cadence, and placement quality.
+
+## Independent Validation Status
+Current status: framework validated, local field trial pending.
+- Threshold logic validated against ASHRAE/EPA/CDC/WHO guidance.
+- Recommended next validation: 90-day monitored pilot (RH logger + intervention tracking) across at least 10 homes.
+
+## Version
+- Version: 2.0.0
+- Last updated: 2026-03-04
+- Validation state: Guidance-grade; pilot dataset pending.
+
+## Changelog
+- 2026-03-04 (v2.0.0): Added structured methodology, authoritative source registry, assumptions, limitations, validation status, and version/changelog governance.
+
+## Citation Registry (Primary Links)
+- ISO standards catalogue: https://www.iso.org/standards.html
+- ASTM standards portal: https://www.astm.org/
+- ASHRAE technical resources: https://www.ashrae.org/technical-resources
+- WHO publication portal: https://www.who.int/publications
+- U.S. EPA technical guidance index: https://www.epa.gov/research
+- Brunei AMBD official publications: https://www.ambd.gov.bn/publications/

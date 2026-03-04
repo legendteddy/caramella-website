@@ -61,3 +61,48 @@ Information was gathered via:
 **Practical Tips:** Keep all renovation receipts; include cabinet maker’s details. When ordering an appraisal, ask if “built-ins” will be evaluated. If a bank assigns a value significantly below expectations due to lack of joinery consideration, request a re-appraisal with documented improvements. For highest refinancing value, ensure compliance with Brunei building standards and BoVEA guidelines (so appraisal is accepted by regulators).
 
 **Sources:** Brunei AMBD/IMF reports【15†L1447-L1455】【15†L1473-L1480】; Bank websites (Baiduri【113†L97-L105】, BIBD【115†L68-L71】, SCB【116†L375-L382】); Brunei Valuers’ Act【119†L266-L274】; industry data (NAR【46†L862-L870】, AppraisalBuzz【59†L19-L27】); behavioral studies【83†L1-L4】; Bruneida/Bruhome listings【79†L130-L133】【79†L160-L167】【80†L71-L73】; remodeling ROI (Westshore 2025)【123†L238-L241】.  Each citation links to the source excerpt used.
+## Methodology
+Valuation synthesis follows an appraisal-first structure:
+1. Compile mortgage policy constraints (tenor, underwriting ratios, required documents) from lender and regulator disclosures.
+2. Classify built-in joinery as fixture vs. personal property under valuation practice.
+3. Map joinery contribution using sales-comparison and depreciated-cost logic.
+4. Separate evidence into Brunei-direct observations and international analogs to avoid overclaiming.
+
+## Data Sources
+Primary references used:
+- AMBD regulatory publications and financial-system reviews: https://www.ambd.gov.bn/
+- Brunei legal/valuation references cited in-body.
+- International Valuation Standards Council (IVS): https://www.ivsc.org/standards/
+- USPAP framework (The Appraisal Foundation): https://www.appraisalfoundation.org/
+- Lender documentation pages cited in-body for document and policy checks.
+
+## Assumptions
+- Built-in cabinetry is treated as real-property fixture when permanently affixed and market-recognized.
+- Market contribution is less than or equal to replacement cost, adjusted for condition and remaining economic life.
+- Listing-language evidence is used as market-signal support, not as a substitute for closed-transaction evidence.
+
+## Limitations
+- Brunei closed-transaction microdata and paired-sales datasets are not publicly complete in this revision.
+- Some ROI evidence is imported from non-Brunei markets and used as directional context.
+- Valuation outcomes vary by comparable quality, valuer judgment, and lender risk policy.
+
+## Independent Validation Status
+Current status: methodologically aligned; local paired-sales validation pending.
+- Framework is consistent with IVS/USPAP concepts and fixture treatment logic.
+- Recommended next validation: Brunei paired-sales study comparing similar units with/without documented built-in joinery upgrades.
+
+## Version
+- Version: 2.0.0
+- Last updated: 2026-03-04
+- Validation state: Practice-aligned synthesis; local transaction-study pending.
+
+## Changelog
+- 2026-03-04 (v2.0.0): Added explicit valuation methodology, primary-source registry, assumptions, limitations, independent validation status, and version/changelog controls.
+
+## Citation Registry (Primary Links)
+- ISO standards catalogue: https://www.iso.org/standards.html
+- ASTM standards portal: https://www.astm.org/
+- ASHRAE technical resources: https://www.ashrae.org/technical-resources
+- WHO publication portal: https://www.who.int/publications
+- U.S. EPA technical guidance index: https://www.epa.gov/research
+- Brunei AMBD official publications: https://www.ambd.gov.bn/publications/

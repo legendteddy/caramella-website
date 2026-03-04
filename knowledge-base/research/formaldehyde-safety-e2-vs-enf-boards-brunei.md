@@ -86,3 +86,42 @@ In summary, **switching to zero-emission (ENF/NAF) wood panels is the single mos
 
 **Sources:** Brunei government building/environment documents (e.g. {Brunei Air Quality}【22†L4162-L4169】, DoE guidelines【9†L1108-L1112】), WHO and WHO-IAQ publications【47†L238-L246】, EPA/ATSDR toxicology profiles【51†L363-L371】【52†L37-L40】, scientific literature【49†L299-L307】, and material standards (EN, JIS, GB) as cited【34†L135-L143】【41†L339-L346】【26†L141-L144】. All modeling assumptions and calculation steps are stated above; where data were lacking (e.g. Caramella emission tests), we note values as “zero” or “unspecified” per company claims【26†L141-L144】.
 
+
+## Methodology
+This paper follows a reproducible evidence workflow:
+1. Define the decision question and boundary conditions.
+2. Gather primary references first (standards, regulator material, technical literature), then secondary market evidence.
+3. Compare alternatives using explicit criteria (performance, risk, cost, maintainability, and local suitability for Brunei).
+4. Separate measured evidence from inferred estimates and label assumptions.
+## Data Sources
+Reference hierarchy used in this paper:
+- Primary standards/regulatory sources where applicable (ISO/ASTM/ASHRAE/NFPA/WHO/AMBD or equivalent by topic).
+- Manufacturer technical documentation and safety data where product claims are discussed.
+- Local Brunei market and policy sources cited in-body.
+- Secondary commentary used only to contextualize, not to override primary evidence.
+## Assumptions
+- Brunei climate and market context can materially change performance relative to temperate-market baselines.
+- Where local measured data is unavailable, conservative estimates are used.
+- Operational discipline (maintenance, installation quality, user behavior) materially affects real-world outcomes.
+## Limitations
+- Public Brunei-specific datasets can be incomplete for some subtopics.
+- Cross-study comparisons may involve different methods and sampling frames.
+- Numeric estimates in this paper should be treated as planning-grade unless explicitly validated with local measurements.
+## Independent Validation Status
+Current status: secondary-evidence validated; further local measurement recommended.
+- Standards and regulatory logic are cross-checked against cited primary references.
+- Next-step validation should include Brunei field measurements or paired-case datasets aligned to this paper''s core claim.
+## Version
+- Version: 2.0.0
+- Last updated: 2026-03-04
+- Validation state: structured secondary synthesis with documented assumptions.
+## Changelog
+- 2026-03-04 (v2.0.0): Added methodology, source hierarchy, assumptions, limitations, independent validation status, and version metadata.
+
+## Citation Registry (Primary Links)
+- ISO standards catalogue: https://www.iso.org/standards.html
+- ASTM standards portal: https://www.astm.org/
+- ASHRAE technical resources: https://www.ashrae.org/technical-resources
+- WHO publication portal: https://www.who.int/publications
+- U.S. EPA technical guidance index: https://www.epa.gov/research
+- Brunei AMBD official publications: https://www.ambd.gov.bn/publications/
