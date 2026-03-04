@@ -2576,6 +2576,113 @@ cite {
     transform: translateY(0);
 }
 
+/* ── Scroll-Reveal Animations (paired with initScrollReveal in site.js) ── */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+        transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Stagger children in grids — each card delays slightly */
+.review-grid .reveal:nth-child(2),
+.trust-grid .reveal:nth-child(2),
+.stats-strip .reveal:nth-child(2) {
+    transition-delay: 0.08s;
+}
+
+.review-grid .reveal:nth-child(3),
+.trust-grid .reveal:nth-child(3),
+.stats-strip .reveal:nth-child(3) {
+    transition-delay: 0.16s;
+}
+
+.review-grid .reveal:nth-child(4),
+.trust-grid .reveal:nth-child(4),
+.stats-strip .reveal:nth-child(4) {
+    transition-delay: 0.24s;
+}
+
+.review-grid .reveal:nth-child(5),
+.trust-grid .reveal:nth-child(5) {
+    transition-delay: 0.32s;
+}
+
+.review-grid .reveal:nth-child(6) {
+    transition-delay: 0.40s;
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ── Review Card Avatar Initials ── */
+.review-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(244, 215, 122, 0.2), rgba(212, 175, 55, 0.35));
+    border: 1px solid rgba(255, 215, 0, 0.4);
+    color: #FFD700;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    flex-shrink: 0;
+}
+
+.review-author-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.review-author-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.review-author-info .review-author {
+    margin: 0;
+}
+
+.review-author-info .review-meta {
+    margin-top: 0.15rem;
+}
+
+/* Verified badge for Google reviews */
+.review-verified {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.72rem;
+    color: rgba(45, 212, 191, 0.9);
+    font-family: var(--font-mono);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+}
+
+.review-verified svg {
+    width: 12px;
+    height: 12px;
+    fill: currentColor;
+}
+
 /* Feature 10: Testimonial Carousel */
 .testimonials-section {
     text-align: center;
