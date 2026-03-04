@@ -1,0 +1,4 @@
+﻿record_id,sample_stream,sample_id,district,site_type,board_family,board_class_declared,supplier_lot,edge_seal_type,installation_age_days,temp_c,rh_percent,air_exchange_note,formaldehyde_mg_m3,tvoc_mg_m3,aldehydes_panel_note,measurement_method,measurement_timestamp_local,qa_flag,threshold_profile,exceedance_flag,notes,is_synthetic_example
+V0001,chamber,C001,Brunei-Muara,lab,plywood,E0,L2026-041,EVA_1_5mm,14,30.1,72,controlled,0.032,0.210,not_run,lab_method_A,2026-03-12T10:30,ok,profile_A,false,baseline_chamber_run,true
+V0002,field,F007,Belait,occupied_home,particleboard,E1,L2026-118,PUR_1_0mm,46,31.4,79,windows_closed_evening,0.071,0.388,not_run,portable_method_B,2026-03-15T20:10,ok,profile_A,true,evening_peak,true
+V0003,field,F015,Tutong,occupied_home,MDF,ENF,L2026-087,EVA_2_0mm,102,29.7,70,hood_on_window_open,0.028,0.162,not_run,portable_method_B,2026-03-16T14:05,ok,profile_A,false,mid_age_installation,true

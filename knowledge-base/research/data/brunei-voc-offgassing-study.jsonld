@@ -1,0 +1,92 @@
+﻿{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://caramellabrunei.com/knowledge-base/research/cabinet-voc-offgassing-tropical-homes-brunei.html#article",
+      "headline": "Cabinet VOC Off-Gassing in Tropical Homes (E0, E1, ENF): Brunei Protocol",
+      "description": "Reproducible protocol for comparing formaldehyde and TVOC behavior of cabinet board classes under Brunei-relevant hot-humid conditions.",
+      "inLanguage": "en",
+      "datePublished": "2026-03-04",
+      "dateModified": "2026-03-04",
+      "author": {
+        "@type": "Organization",
+        "name": "Caramella Trading Co.",
+        "url": "https://caramellabrunei.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caramella Trading Co.",
+        "url": "https://caramellabrunei.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://caramellabrunei.com/knowledge-base/research/cabinet-voc-offgassing-tropical-homes-brunei.html"
+      },
+      "about": [
+        "Indoor Air Quality",
+        "Formaldehyde",
+        "TVOC",
+        "Cabinet Materials",
+        "Brunei"
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://caramellabrunei.com/knowledge-base/research/data/brunei-voc-offgassing-study-template.csv#dataset",
+      "name": "Brunei VOC Off-Gassing Study Template Dataset",
+      "description": "Template schema for chamber and field measurements of formaldehyde and TVOC for cabinet board systems.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Caramella Trading Co."
+      },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "dateModified": "2026-03-04",
+      "isAccessibleForFree": true,
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://caramellabrunei.com/knowledge-base/research/data/brunei-voc-offgassing-study-template.csv"
+      },
+      "variableMeasured": [
+        "formaldehyde_mg_m3",
+        "tvoc_mg_m3",
+        "board_class_declared",
+        "board_family",
+        "edge_seal_type",
+        "installation_age_days",
+        "rh_percent"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://caramellabrunei.com/knowledge-base/research/cabinet-voc-offgassing-tropical-homes-brunei.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does this package contain final measured Brunei results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. It is a protocol and dataset template. Final conclusions require completed field and chamber measurements with validation checks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which outcomes are primary in this study?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Primary outcomes are formaldehyde concentration, TVOC concentration, decay behavior over time, and threshold exceedance flags."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why are edge-sealing details included?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Edge-seal quality can materially influence emissions behavior in humid conditions, so it is recorded as a core explanatory variable."
+          }
+        }
+      ]
+    }
+  ]
+}
