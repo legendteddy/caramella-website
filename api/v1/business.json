@@ -32,8 +32,8 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 4.9431,
-      "longitude": 114.9425
+      "latitude": 4.94025,
+      "longitude": 114.93983
     },
     "sameAs": [
       "https://www.instagram.com/caramellabrunei/",
@@ -47,7 +47,8 @@
       "@type": "AggregateRating",
       "ratingValue": 4.8,
       "bestRating": 5,
-      "ratingCount": 600
+      "ratingCount": 6,
+      "reviewCount": 6
     },
     "numberOfEmployees": {
       "@type": "QuantitativeValue",
