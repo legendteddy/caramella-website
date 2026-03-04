@@ -161,6 +161,13 @@
         <div class="container" style="position: relative; z-index: 2;">
             <div class="hero-kicker">For Brunei Landlords & Investors</div>
             <h1>Stop Leaking <span class="italic-accent">Rental Yield</span></h1>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Landlords and property investors in Brunei wanting durable kitchens that withstand tenant turnover.</p>
+                <p>This page covers material choices, finish durability, and design decisions that protect your rental investment.</p>
+            </div>
             <p style="font-size: 1.15rem; opacity: 0.9; max-width: 65ch; margin: 0 auto 2.5rem; line-height: 1.6;">
                 The margin for error in Brunei's residential rental market is exceedingly narrow. Protect your
                 investment from the "Hurricane Renter" effect with indestructible, climate-engineered wet kitchens
@@ -308,6 +315,7 @@
     </div>
 </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

@@ -79,6 +79,13 @@
             <h1>Traditional Carpenter vs. <span class="italic-accent">CNC Factory</span></h1>
             <p class="lead">In Brunei, choosing how your cabinets are built is as important as the design. Here is how
                 precision machinery compares to manual craftsmanship.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners choosing between a traditional carpenter and a CNC-equipped factory workshop.</p>
+                <p>This comparison covers consistency, lead time, pricing, and quality control differences.</p>
+            </div>
         </div>
     </header>
 
@@ -236,6 +243,7 @@
 </footer>
     <script src="../js/site.js" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

@@ -174,6 +174,13 @@
             <h1>Riverfront <span class="italic-accent">Defense</span></h1>
             <p class="lead">Built to survive extreme 85%+ relative humidity near the Brunei river. Pure ENF-grade
                 plywood and heat-sealed edges to prevent swelling.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners interested in seeing a real Caramella kitchen project — materials, timeline, and final result.</p>
+                <p>This case study covers the Kota Batu riverfront project from site measurement to completion.</p>
+            </div>
             <div class="stat-row">
                 <div class="case-hero-stat">
                     <span class="val">ENF</span>
@@ -386,6 +393,7 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
     <script src="../js/site.js?v=20260302" defer></script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

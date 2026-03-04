@@ -203,6 +203,13 @@
             <h1>Carbon Footprint Analysis: <span class="italic-accent">FSC Plywood</span></h1>
             <p class="lead">Evaluating the lifecycle ecological impact, carbon sequestration, and end-of-life
                 recyclability of cabinetry substrates in Brunei.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Environmentally conscious buyers and specifiers evaluating the carbon footprint of plywood cabinetry.</p>
+                <p>This lifecycle analysis covers FSC certification, CO₂ sequestration in plywood, and sustainable sourcing.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -300,8 +307,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
 <footer class="site-footer site-footer--grid">
     <div class="footer-grid">
@@ -344,6 +353,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

@@ -152,6 +152,7 @@
       <h1>The Technical <span class="italic-accent">Truth</span></h1>
       <p class="lead">Most renovation guides are written for temperate climates. In Brunei, the rules change. This
         curriculum guides you through the technical decisions that determine if your kitchen lasts 3 years or 30.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
     </div>
   </header>
 
@@ -417,6 +418,7 @@
 
   <script src="../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

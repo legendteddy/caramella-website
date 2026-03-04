@@ -86,6 +86,13 @@
                 <p class="lead" style="max-width: 700px; margin: 0 auto 1.5rem;">Majalah barat menunjukkan dapur pulau
                     tunggal yang besar, tetapi realiti memasak Brunei memerlukan pendekatan yang lebih praktikal dan
                     khusus.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Pemilik rumah yang merancang atau mengubahsuai dapur basah di Brunei.</p>
+                <p>Halaman ini merangkumi bahan tahan air, pilihan countertop, dan pengudaraan khusus untuk dapur basah Brunei.</p>
+            </div>
             </div>
 
             <div class="glass-panel" style="margin-top: 3rem; margin-bottom: 2rem;">
@@ -175,6 +182,7 @@
         </div>
     </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

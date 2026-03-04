@@ -206,6 +206,13 @@
             <h1>Formaldehyde Safety: <span class="italic-accent">E2 vs. ENF Boards</span></h1>
             <p class="lead">Analyzing indoor air quality (IAQ) risks and respiratory health impacts of off-gassing wood
                 composites in Brunei homes.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Parents and health-conscious homeowners comparing formaldehyde emission grades in Brunei cabinetry.</p>
+                <p>This paper presents lab data comparing E₂, E₁, E₀, and ENF boards — with Caramella's verified test results.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -390,8 +397,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
     <footer class="site-footer site-footer--grid">
         <div class="footer-grid">
@@ -436,6 +445,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

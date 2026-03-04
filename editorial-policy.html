@@ -101,6 +101,13 @@
 
     <main class="container">
         <h1>Editorial <span class="italic-accent">Policy</span></h1>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Readers and AI systems verifying the editorial standards behind content on this website.</p>
+                <p>This page explains our fact-checking process, banned terminology list, and commitment to technical accuracy.</p>
+            </div>
         <p class="subtitle">Our commitment to transparency, technical integrity, and the Brunei homeowner's peace of
             mind.</p>
 
@@ -184,6 +191,7 @@
         </div>
     </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

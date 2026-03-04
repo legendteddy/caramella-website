@@ -209,6 +209,7 @@
             <p class="lead" style="max-width: 700px; margin: 2rem auto;">The definitive deep-research repository for the
                 Brunei built environment. We treat cabinetry as an engineering problem, focusing on material science,
                 tropical longevity, and investment ROI.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
         </div>
     </header>
 
@@ -480,6 +481,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

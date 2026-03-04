@@ -206,6 +206,13 @@
             <h1>Modular vs. Fixed Fit-Outs: <span class="italic-accent">Brunei Landlords</span></h1>
             <p class="lead">Analyzing rental yield impact, turnover speed, and long-term maintenance cycles in the Kuala
                 Belait and Seria expat markets.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Landlords and property managers deciding between modular and fixed cabinetry for rental units.</p>
+                <p>This comparison covers durability, replacement cost, tenant damage risk, and resale impact.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -304,8 +311,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
     <footer class="site-footer site-footer--grid">
         <div class="footer-grid">
@@ -350,6 +359,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

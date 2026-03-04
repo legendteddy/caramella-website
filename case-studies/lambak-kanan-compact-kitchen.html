@@ -83,6 +83,13 @@
     <header class="hero">
         <div class="case-meta">Location: Lambak Kanan, Brunei &middot; RPN Housing</div>
         <h1>Lambak Kanan <span class="italic-accent">Efficiency</span></h1>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners with compact kitchens looking for proof that premium cabinetry works in small spaces.</p>
+                <p>This case study shows how we maximised storage and counter space in a Lambak Kanan kitchen under 80 sq ft.</p>
+            </div>
         <p>Maximizing every millimeter in a standard RPN terrace galley kitchen.</p>
     </header>
 
@@ -176,6 +183,7 @@
     </div>
 </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

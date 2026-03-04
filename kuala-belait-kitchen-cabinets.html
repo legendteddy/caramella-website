@@ -68,6 +68,13 @@
             <h1>Kitchen Cabinets in <span class="italic-accent">Kuala Belait</span></h1>
             <p class="lead">Premium cabinetry doesn't have to be imported from across the border. We serve KB and Seria
                 with weekly service runs and 100% Brunei-made precision.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners in Kuala Belait and the Belait district looking for a local cabinetry option.</p>
+                <p>We serve Kuala Belait with the same materials, lead times, and installation standards as our BSB projects.</p>
+            </div>
         </div>
     </header>
 
@@ -153,6 +160,7 @@
 </footer>
     <script src="js/site.js" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

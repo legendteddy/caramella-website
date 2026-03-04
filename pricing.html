@@ -157,8 +157,15 @@
             <h1>Realistic Pricing and <span class="italic-accent">Process</span></h1>
             <p class="lead">Every house is different. Share your layout with us, and we'll give you an honest
                 estimate based on what you actually need.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
             <p class="mini-muted" style="margin-top:1.5rem">See also: <a class="text-link"
                     href="kitchen-cost-data-brunei.html">Real cost data from 600+ completed projects</a></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners comparing kitchen cabinet costs in Brunei and wanting transparent per-foot pricing before committing.</p>
+                <p>Use the pricing tiers on this page as a starting estimate, then <a class="text-link" href="contact-us.html">request a detailed quote</a> based on your floor plan.</p>
+            </div>
 
             <div class="hero-actions">
                 <a class="btn-primary" href="contact-us.html">Discuss Your Project</a>
@@ -755,6 +762,7 @@
         })();
     </script>
     <script src="js/site.js?v=20260302" defer></script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

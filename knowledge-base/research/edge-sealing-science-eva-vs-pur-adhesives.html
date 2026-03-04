@@ -203,6 +203,13 @@
             <h1>The Science of Edge Sealing: <span class="italic-accent">EVA vs. PUR</span></h1>
             <p class="lead">Understanding delamination physics and the moisture-curing chemistry required for tropical
                 kitchen longevity.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Technically minded readers comparing EVA and PUR adhesive chemistry for edge sealing in tropical conditions.</p>
+                <p>This paper covers bond strength, moisture resistance, and thermal cycling performance of both adhesive families.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -299,8 +306,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
 <footer class="site-footer site-footer--grid">
     <div class="footer-grid">
@@ -343,6 +352,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

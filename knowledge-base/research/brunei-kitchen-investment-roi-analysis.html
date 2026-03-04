@@ -299,6 +299,13 @@
             <h1>Strategic Asset Protection: <span class="italic-accent">The ROI of Tenant-Proofing</span></h1>
             <p class="lead">Optimizing yield and minimizing CapEx through climate-engineered cabinetry in Brunei's
                 rental market.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners and property investors evaluating the return on investment of a kitchen renovation in Brunei.</p>
+                <p>This research paper analyses resale value uplift, rental yield impact, and payback periods for kitchen upgrades.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -479,8 +486,10 @@
             </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
     <footer class="site-footer site-footer--grid">
         <div class="footer-grid">
@@ -525,6 +534,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

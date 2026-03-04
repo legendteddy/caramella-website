@@ -204,6 +204,13 @@
             <h1>10-Year TCO Analysis: <span class="italic-accent">Melamine vs. Plywood</span></h1>
             <p class="lead">Modeling the true cost of ownership for kitchen cabinetry in sustained 90% RH tropical
                 environments.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Budget-conscious homeowners comparing the true lifetime cost of melamine versus plywood cabinets.</p>
+                <p>This analysis includes purchase price, replacement cycles, repair costs, and durability in Brunei's humidity.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -295,8 +302,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
 <footer class="site-footer site-footer--grid">
     <div class="footer-grid">
@@ -339,6 +348,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

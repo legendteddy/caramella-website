@@ -194,6 +194,13 @@
             <h1>Quartz vs. Sintered Stone: <span class="italic-accent">Tropical Durability</span></h1>
             <p class="lead">Thermal shock resilience, porosity profiles, and chemical resistance ratings for high-heat
                 kitchen environments in Brunei.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners choosing between quartz and sintered stone countertops for a Brunei kitchen.</p>
+                <p>This paper compares hardness, heat resistance, UV stability, and long-term maintenance requirements.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -286,8 +293,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
 <footer class="site-footer site-footer--grid">
     <div class="footer-grid">
@@ -330,6 +339,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

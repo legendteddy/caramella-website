@@ -375,6 +375,13 @@
                 <h1>
                     Spaces Built for <br><span class="italic-accent">Daily Life</span>
                 </h1>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners in Brunei looking for a local cabinetry partner who measures, designs, fabricates, and installs under one roof.</p>
+                <p>Start with the <a class="text-link" href="portfolio.html">Portfolio</a> to see finished work, then <a class="text-link" href="contact-us.html">request a site measurement</a>.</p>
+            </div>
                 <p
                     style="color: rgba(255,255,255,0.85); max-width: 560px; font-size: 1.15rem; letter-spacing: 0.02em; line-height: 1.6;">
                     We build kitchens and wardrobes around daily life in Brunei homes. We start with on-site
@@ -1167,6 +1174,7 @@
         </div>
     </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

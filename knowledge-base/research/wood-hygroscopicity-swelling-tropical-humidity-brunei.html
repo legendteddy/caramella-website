@@ -202,6 +202,13 @@
             <h1>Wood Hygroscopicity & Swelling: <span class="italic-accent">Plywood vs. MDF</span></h1>
             <p class="lead">Analyzing Equilibrium Moisture Content (EMC) profiles and structural irreversibility in
                 Brunei's 85% relative humidity environment.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Technically minded readers wanting to understand the physics of wood moisture absorption in tropical climates.</p>
+                <p>This paper covers fibre saturation points, dimensional change rates, and material engineering countermeasures.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -304,8 +311,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
 <footer class="site-footer site-footer--grid">
     <div class="footer-grid">
@@ -348,6 +357,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

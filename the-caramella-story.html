@@ -163,6 +163,13 @@
             <h1>Crafted in <span class="italic-accent">Brunei.</span></h1>
             <p class="lead" style="max-width: 700px; margin: 0 auto;">Building for Brunei's tropical climate
                 since 2015. A journey from manual carpentry to CNC precision.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Anyone wanting to understand who Caramella is, how we started, and why we build the way we do.</p>
+                <p>This page covers our founding in 2015, our workshop operations, and the technical philosophy behind every cabinet we build.</p>
+            </div>
         </div>
     </header>
 
@@ -326,6 +333,7 @@
 
     <script src="js/site.js?v=20260302" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

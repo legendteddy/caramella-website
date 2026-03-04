@@ -67,6 +67,13 @@
                 <h1>Why is My Cheap Furniture Peeling and Swelling?</h1>
                 <p class="lead" style="max-width: 700px; margin: 0 auto 1.5rem;">Experiencing severe buyer's remorse
                     because your brand new flat-pack TV console is bubbling? It's not your fault—it's physics.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners whose existing furniture is peeling or swelling and wanting to understand why.</p>
+                <p>This page explains the root cause (moisture absorption through unsealed edges) and what materials prevent it.</p>
+            </div>
             </div>
 
             <div class="glass-panel" style="margin-top: 3rem; margin-bottom: 2rem;">
@@ -150,6 +157,7 @@
     </div>
 </footer>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

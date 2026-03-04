@@ -128,6 +128,13 @@
             <h1>The Caramella <span class="italic-accent">Build Standard</span></h1>
             <p class="lead">We document every material and process we use. To us, premium means building
                 something that lasts in Brunei's climate.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners and contractors who want to understand exactly what materials and methods Caramella uses.</p>
+                <p>Use this specification sheet to compare quotes. Every material, adhesive, and hardware brand is listed.</p>
+            </div>
             <div class="hero-actions">
                 <a class="btn-primary" href="#download">Download PDF</a>
                 <a class="btn-secondary" href="#specifications">View Specifications</a>
@@ -462,6 +469,7 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
     <script src="js/site.js?v=20260303" defer></script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

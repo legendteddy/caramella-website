@@ -76,6 +76,13 @@
                 <p class="lead" style="max-width: 700px; margin: 0 auto 1.5rem;">Western magazines show massive
                     single-island kitchens, but Bruneian culinary reality demands a harder, more specialized approach to
                     cooking zones.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners deciding whether to separate their kitchen into wet and dry zones.</p>
+                <p>This guide compares layout options, ventilation needs, and material requirements for both configurations.</p>
+            </div>
             </div>
 
             <div class="glass-panel" style="margin-top: 3rem; margin-bottom: 2rem;">
@@ -162,6 +169,7 @@
         </div>
     </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

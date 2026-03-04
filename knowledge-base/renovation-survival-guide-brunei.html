@@ -71,6 +71,13 @@
             <h1>The Renovation <span class="italic-accent">Survival Guide</span></h1>
             <p class="lead">Renovating a kitchen or bedroom while the whole family is still living in the house is a
                 specialized skill. Here is how to manage the chaos and keep everyone sane.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> First-time renovators in Brunei who want a practical, step-by-step survival guide.</p>
+                <p>This guide covers budgeting, timeline expectations, contractor selection, and common pitfalls to avoid.</p>
+            </div>
         </div>
     </header>
 
@@ -146,6 +153,7 @@
     </div>
 </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

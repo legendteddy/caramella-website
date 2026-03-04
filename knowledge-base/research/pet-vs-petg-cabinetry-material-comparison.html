@@ -194,6 +194,13 @@
             <h1>PET vs. PETG: Cabinetry <span class="italic-accent">Material Comparison</span></h1>
             <p class="lead">Analyzing composition, thermal stability, and scratch-recovery physics for high-end tropical
                 cabinetry.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Designers and specifiers comparing PET and PETG surface finishes for cabinet doors.</p>
+                <p>This technical comparison covers scratch resistance, UV stability, impact strength, and tropical performance.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -290,8 +297,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
 <footer class="site-footer site-footer--grid">
     <div class="footer-grid">
@@ -334,6 +343,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

@@ -202,6 +202,13 @@
             <h1>Renovation Anxiety: <span class="italic-accent">F&B Fit-Out Failures</span></h1>
             <p class="lead">An audit of the top 5 technical failure modes in Brunei's cafe and restaurant sector,
                 analyzing root causes and the true cost of operational downtime.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> F&B business owners wanting to avoid common fit-out failures that lead to premature refurbishment.</p>
+                <p>This analysis covers material failure patterns, hygiene compliance gaps, and cost-of-failure data from Brunei restaurants.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -299,8 +306,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
 <footer class="site-footer site-footer--grid">
     <div class="footer-grid">
@@ -343,6 +352,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

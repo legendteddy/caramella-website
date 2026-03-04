@@ -103,6 +103,13 @@
         <span class="brand">Knowledge Base / Governance</span>
         <h1>ABCi Renovation Permits: <span class="italic-accent">The Brunei Guide</span></h1>
         <p class="lead">Navigating building control for cabinetry and internal works in Brunei Darussalam.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners unsure whether their renovation requires an ABCI permit.</p>
+                <p>Interior fit-out (cabinetry, built-ins) does not require ABCI approval. Structural changes do. This page explains the boundary.</p>
+            </div>
 
         <section>
             <h2>When is a Permit NOT Required?</h2>
@@ -203,6 +210,7 @@
     </div>
 </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>

@@ -198,6 +198,13 @@
             <h1>Salt-Air Corrosion of Coastal Hinges <span class="italic-accent">in Brunei</span></h1>
             <p class="lead">Quantifying technical failure modes and service life expectations for ironmongery in Muara,
                 Kota Batu, and Kuala Belait coastal zones.</p>
+            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+
+            <div class="glass-panel">
+                <h2>Quick Answer</h2>
+                <p><strong>Who this page is for:</strong> Homeowners in coastal areas of Brunei concerned about salt air damage to cabinetry hardware.</p>
+                <p>This paper covers corrosion mechanisms, protective coatings, and hardware selection for coastal environments.</p>
+            </div>
         </header>
 
         <div class="paper-content">
@@ -306,8 +313,10 @@
         </nav>
     </article>
 
-    </main>
-
+    </main>
+
+
+
     <!-- Footer -->
 <footer class="site-footer site-footer--grid">
     <div class="footer-grid">
@@ -350,6 +359,7 @@
 
     <script src="../../js/site.js?v=20260303" defer></script>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
 </body>
 
 </html>
