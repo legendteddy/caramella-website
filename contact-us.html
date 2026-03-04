@@ -441,7 +441,7 @@
     <!-- Hero Section -->
     <header class="hero">
         <h1>Start Your <span class="italic-accent">Project</span></h1>
-            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+        <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
         <p>Tell us what you are planning. We will review your details and reply with a realistic estimate, usually
             within one business day. Our goal is to provide a stress-free transition from your design vision to a
             fully-installed reality in your Brunei home.</p>
@@ -532,6 +532,12 @@
                     <input type="hidden" name="_subject" value="New Consultation Request (Caramella)">
                     <input type="hidden" name="_next" value="https://caramellabrunei.com/thank-you.html">
                     <input type="hidden" name="source" value="contact-us">
+                    <p class="lead">Visit our showroom or send us a message. We're here to help you engineer a kitchen
+                        that lasts a lifetime in Brunei's humidity.</p>
+                    <p class="service-localization"
+                        style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
+                        Serving <strong>RPN</strong> and <strong>STKRJ</strong> housing schemes nationwide.
+                    </p>
                     <p class="visually-hidden">
                         <label>Don't fill this out if you're human: <input name="_gotcha"></label>
                     </p>
@@ -541,11 +547,13 @@
                         <h3 class="form-header">Design Consultation</h3>
                         <div class="form-grid-2">
                             <div class="form-group">
-                                <label class="form-label" for="entryName">Name <span style="color:#E74C3C">*</span></label>
+                                <label class="form-label" for="entryName">Name <span
+                                        style="color:#E74C3C">*</span></label>
                                 <input type="text" id="entryName" name="name" class="form-input" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label" for="entryPhone">Contact No <span style="color:#E74C3C">*</span></label>
+                                <label class="form-label" for="entryPhone">Contact No <span
+                                        style="color:#E74C3C">*</span></label>
                                 <input type="tel" id="entryPhone" name="phone" class="form-input" required
                                     placeholder="+673">
                             </div>
@@ -557,14 +565,20 @@
                         <div class="form-group">
                             <p class="form-label">Preferred Appointment</p>
                             <div class="form-grid-2" style="gap: 1rem; margin-bottom: 0;">
-                                <input type="text" id="entryDate" name="appointment_date" class="form-input"
-                                    placeholder="Select Date"
-                                    style="cursor: pointer; background: rgba(255, 215, 0, 0.05); border-color: rgba(255, 215, 0, 0.3);">
-                                <select id="entrySlot" name="appointment_slot" class="form-input"
-                                    style="cursor: pointer;">
-                                    <option value="Morning">Morning (9am - 12pm)</option>
-                                    <option value="Afternoon">Afternoon (2pm - 5pm)</option>
-                                </select>
+                                <div>
+                                    <label class="form-label" for="entryDate">Preferred Date</label>
+                                    <input type="text" id="entryDate" name="appointment_date" class="form-input"
+                                        placeholder="Select Date"
+                                        style="cursor: pointer; background: rgba(255, 215, 0, 0.05); border-color: rgba(255, 215, 0, 0.3);">
+                                </div>
+                                <div>
+                                    <label class="form-label" for="entrySlot">Preferred Time Slot</label>
+                                    <select id="entrySlot" name="appointment_slot" class="form-input"
+                                        style="cursor: pointer;">
+                                        <option value="Morning">Morning (9am - 12pm)</option>
+                                        <option value="Afternoon">Afternoon (2pm - 5pm)</option>
+                                    </select>
+                                </div>
                             </div>
                             <p
                                 style="font-size: 0.75rem; color: #FFD700; margin-top: 0.5rem; opacity: 0.8; font-style: italic;">
@@ -625,24 +639,24 @@
 
                         <p class="form-label" style="margin-top: 1rem;">Appliances</p>
                         <div class="app-row">
-                            <span>Hob</span>
-                            <select id="appHob" class="form-input is-small">
+                            <label for="appHob">Hob</label>
+                            <select id="appHob" name="hob_type" class="form-input is-small">
                                 <option value="No">No</option>
                                 <option value="Own">Own</option>
                                 <option value="Caramella">From Caramella</option>
                             </select>
                         </div>
                         <div class="app-row">
-                            <span>Hood</span>
-                            <select id="appHood" class="form-input is-small">
+                            <label for="appHood">Hood</label>
+                            <select id="appHood" name="hood_type" class="form-input is-small">
                                 <option value="No">No</option>
                                 <option value="Own">Own</option>
                                 <option value="Caramella">From Caramella</option>
                             </select>
                         </div>
                         <div class="app-row">
-                            <span>Oven</span>
-                            <select id="appOven" class="form-input is-small">
+                            <label for="appOven">Oven</label>
+                            <select id="appOven" name="oven_type" class="form-input is-small">
                                 <option value="No">No</option>
                                 <option value="Own">Own</option>
                                 <option value="Caramella">From Caramella</option>
@@ -670,6 +684,7 @@
                     <div class="form-section">
                         <h3 class="form-header">Additional Remarks</h3>
                         <div class="form-group">
+                            <label class="form-label" for="entryRemarks">Project Remarks</label>
                             <textarea id="entryRemarks" name="remarks" class="form-input" rows="4"
                                 placeholder="Tell us more about your project..."></textarea>
                         </div>
@@ -677,7 +692,7 @@
 
                     <button type="submit" class="btn-primary" data-analytics="contact_submit">Send Project
                         Brief</button>
-                    <div id="formStatus"
+                    <div id="formStatus" aria-live="polite"
                         style="display:none; margin-top: 1rem; padding: 1rem; border: 1px solid rgba(212,175,55,0.35); border-radius: 12px; background: rgba(255,215,0,0.04);">
                         <p id="formStatusText" style="margin: 0 0 0.75rem 0; font-size: 0.9rem;"></p>
                         <div style="display:flex; gap:0.75rem; flex-wrap:wrap;">
@@ -723,9 +738,12 @@
             <div class="footer-section">
                 <h5>Social</h5>
                 <ul style="list-style: none; padding: 0;">
-                    <li><a href="https://www.instagram.com/caramellabrunei/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                    <li><a href="https://www.facebook.com/caramellabrunei2015/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                    <li><a href="https://www.linkedin.com/company/caramella-brunei/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                    <li><a href="https://www.instagram.com/caramellabrunei/" target="_blank"
+                            rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/caramellabrunei2015/" target="_blank"
+                            rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/caramella-brunei/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
                 </ul>
             </div>
         </div>
@@ -797,7 +815,18 @@
             const hood = document.getElementById('appHood').value;
             const oven = document.getElementById('appOven').value;
 
-            if (!name || !phone) return;
+            if (!name || !phone) {
+                const statusDiv = document.getElementById('formStatus');
+                const statusText = document.getElementById('formStatusText');
+                statusDiv.style.display = 'block';
+                statusText.textContent = 'Please fill in your name and phone number before submitting.';
+                if (!name) {
+                    document.getElementById('entryName').focus();
+                } else {
+                    document.getElementById('entryPhone').focus();
+                }
+                return;
+            }
 
             // Build Email Subject
             const subject = `New Project Inquiry - ${name}`;
@@ -880,7 +909,7 @@
         });
     </script>
     <script src="js/site.js?v=20260303" defer></script>
-<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
+    <script>document.querySelectorAll('.auto-date').forEach(function (el) { var d = new Date(document.lastModified); el.textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); });</script>
 </body>
 
 </html>
