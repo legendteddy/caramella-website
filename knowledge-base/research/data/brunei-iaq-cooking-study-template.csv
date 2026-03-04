@@ -1,0 +1,4 @@
+﻿record_id,home_id,district,home_type,kitchen_type,fuel_type,session_date,session_start_local,cooking_task,hood_state,window_state,door_state,occupancy_count,temp_c,rh_percent,pm25_baseline_ug_m3,pm25_peak_ug_m3,pm25_1h_mean_ug_m3,no2_baseline_ppb,no2_peak_ppb,time_to_pm25_baseline_min,adjacent_pm25_peak_ug_m3,notes,data_quality_flag,is_synthetic_example
+R0001,H001,Brunei-Muara,terrace,wet_kitchen,gas,2026-03-10,18:05,stir_fry_noodles,ON,OPEN,CLOSED,4,30.2,74,12,88,34,8,46,41,35,normal_session,true
+R0002,H001,Brunei-Muara,terrace,wet_kitchen,gas,2026-03-12,12:20,deep_fry_chicken,OFF,CLOSED,CLOSED,3,31.0,77,14,162,62,9,71,57,68,high_peak_no_hood,true
+R0003,H014,Belait,detached,hybrid_open_plan,induction,2026-03-14,19:10,boil_soup_and_saute,ON,OPEN,OPEN,5,29.4,72,10,52,24,6,18,19,22,good_cross_ventilation,true

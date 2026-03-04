@@ -1,0 +1,92 @@
+﻿{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "TechArticle",
+      "@id": "https://caramellabrunei.com/knowledge-base/research/brunei-indoor-air-quality-during-cooking.html#article",
+      "headline": "Indoor Air Quality During Cooking in Brunei Homes",
+      "description": "Protocol and analysis framework for measuring PM2.5 and NO2 cooking exposure in Brunei homes across kitchen types and ventilation controls.",
+      "inLanguage": "en",
+      "datePublished": "2026-03-04",
+      "dateModified": "2026-03-04",
+      "author": {
+        "@type": "Organization",
+        "name": "Caramella Trading Co.",
+        "url": "https://caramellabrunei.com/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Caramella Trading Co.",
+        "url": "https://caramellabrunei.com/"
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://caramellabrunei.com/knowledge-base/research/brunei-indoor-air-quality-during-cooking.html"
+      },
+      "about": [
+        "Indoor Air Quality",
+        "Cooking Emissions",
+        "PM2.5",
+        "NO2",
+        "Brunei Homes"
+      ]
+    },
+    {
+      "@type": "Dataset",
+      "@id": "https://caramellabrunei.com/knowledge-base/research/data/brunei-iaq-cooking-study-template.csv#dataset",
+      "name": "Brunei IAQ Cooking Study Template Dataset",
+      "description": "Template schema for recording cooking-related indoor PM2.5 and NO2 measurements with intervention state logs.",
+      "creator": {
+        "@type": "Organization",
+        "name": "Caramella Trading Co."
+      },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "dateModified": "2026-03-04",
+      "isAccessibleForFree": true,
+      "distribution": {
+        "@type": "DataDownload",
+        "encodingFormat": "text/csv",
+        "contentUrl": "https://caramellabrunei.com/knowledge-base/research/data/brunei-iaq-cooking-study-template.csv"
+      },
+      "variableMeasured": [
+        "pm25_peak_ug_m3",
+        "pm25_1h_mean_ug_m3",
+        "no2_peak_ppb",
+        "kitchen_type",
+        "hood_state",
+        "window_state",
+        "door_state"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://caramellabrunei.com/knowledge-base/research/brunei-indoor-air-quality-during-cooking.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the main endpoint in this study?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main endpoints are PM2.5 peak, PM2.5 one-hour mean, NO2 peak, and time-to-baseline after cooking events."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does this protocol already include measured Brunei household results?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. This package is protocol-ready. Conclusions require completion of field data collection and validation steps."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which interventions are compared?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The study compares hood use and window and door states, with repeated sessions per home to estimate within-home intervention effects."
+          }
+        }
+      ]
+    }
+  ]
+}
