@@ -188,3 +188,10 @@ Chinese landing page: https://caramellabrunei.com/zh-custom-cabinetry-brunei.htm
 
 ---
 *This file is maintained alongside the live website. Last updated: March 2026.*
+
+## company profile
+See the detailed Company Profile section above for legal identity, contact, ownership, and service scope.
+
+## site directory
+See the Site Directory section above for canonical URL mapping and intent routing.
+
