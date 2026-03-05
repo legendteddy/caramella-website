@@ -114,7 +114,7 @@
     <header class="hero">
         <div class="case-meta">Location: Subok, Brunei &middot; Completed: 2025</div>
         <h1>Subok Modern <span class="italic-accent">Architecture</span></h1>
-            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+        <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
         <p>A masterclass in integrated joinery and high-performance finishes for a private villa.</p>
     </header>
 
@@ -140,10 +140,12 @@
         <p>We utilized our local CNC precision to fabricate custom <strong>scribe panels</strong>. We meticulously
             mapped the wall's variance and cut the side panels with 0.1mm tolerance to match the exact profile of the
             Subok site. This eliminated the need for "standard" filler strips, allowing the cabinetry to flow directly
-            into the architecture. The result is a high-status "Social Hub" that feels built-in, not just installed.</p>
+            into the architecture. The result is a social kitchen hub that feels built-in, not just installed.</p>
 
         <section class="glass-panel" style="margin-top: 3rem; padding: 2rem;">
-            <h3 style="margin-top: 0;">Climate Engineering for High-Status Homes</h3>
+            <h3 style="margin-top: 0;">Climate Engineering for Long-Term Daily Use</h3>
+            <p>Designed to meet the same durability thresholds as our <strong>RPN</strong> and <strong>STKRJ</strong>
+                project series.</p>
             <p>For this project, the use of <strong>PETG (Polyethylene Terephthalate Glycol)</strong> finishes was
                 critical. PETG
                 is notoriously difficult to handle in high-humidity environments like Subok if not sealed correctly, as
@@ -169,45 +171,50 @@
 
     <!-- Footer -->
     <footer class="site-footer site-footer--grid">
-    <div class="footer-grid">
-        <div class="footer-brand">
-            Caramella<span>Brunei</span>
-            <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4; text-transform: none; letter-spacing: normal;">
-                Precision joinery engineered for Brunei's humidity since 2015.
-            </p>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                Caramella<span>Brunei</span>
+                <p
+                    style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4; text-transform: none; letter-spacing: normal;">
+                    Precision joinery engineered for Brunei's humidity since 2015.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h5>Showroom</h5>
+                <address style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; font-style: normal;">
+                    Unit 22, Ground Floor,<br>
+                    The Airport Mall, BB2713<br>
+                    Bandar Seri Begawan, Brunei
+                </address>
+            </div>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="../contact-us.html">Contact Us</a></li>
+                    <li><a href="../careers.html" style="color: var(--gold); font-weight: 600;">Careers</a></li>
+                    <li><a href="../the-caramella-story.html">Our Story</a></li>
+                    <li><a href="../faq.html">Knowledge Hub</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Social</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.instagram.com/caramellabrunei/" target="_blank"
+                            rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/caramellabrunei2015/" target="_blank"
+                            rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/caramella-brunei/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-section">
-            <h5>Showroom</h5>
-            <address style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; font-style: normal;">
-                Unit 22, Ground Floor,<br>
-                The Airport Mall, BB2713<br>
-                Bandar Seri Begawan, Brunei
-            </address>
+        <div class="footer-copyright">
+            <p>&copy; <span id="year"></span> Caramella Trading Company. 100% Brunei Owned &amp; Operated. <span
+                    class="footer-reg-no">Reg No: P00100256</span></p>
         </div>
-        <div class="footer-section">
-            <h5>Company</h5>
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="../contact-us.html">Contact Us</a></li>
-                <li><a href="../careers.html" style="color: var(--gold); font-weight: 600;">Careers</a></li>
-                <li><a href="../the-caramella-story.html">Our Story</a></li>
-                <li><a href="../faq.html">Knowledge Hub</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h5>Social</h5>
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="https://www.instagram.com/caramellabrunei/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                <li><a href="https://www.facebook.com/caramellabrunei2015/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                <li><a href="https://www.linkedin.com/company/caramella-brunei/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <p>&copy; <span id="year"></span> Caramella Trading Company. 100% Brunei Owned &amp; Operated. <span class="footer-reg-no">Reg No: P00100256</span></p>
-    </div>
-</footer>
+    </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
+    <script>document.querySelectorAll('.auto-date').forEach(function (el) { var d = new Date(document.lastModified); el.textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); });</script>
 </body>
 
 </html>

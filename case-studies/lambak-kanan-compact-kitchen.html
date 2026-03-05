@@ -86,14 +86,15 @@
     <header class="hero">
         <div class="case-meta">Location: Lambak Kanan, Brunei &middot; RPN Housing</div>
         <h1>Lambak Kanan <span class="italic-accent">Efficiency</span></h1>
-            <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
+        <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
         <p>Maximizing every millimeter in a standard RPN terrace galley kitchen.</p>
     </header>
 
     <main class="project-details">
         <h2>The Objective</h2>
         <p>A standard RPN terrace kitchen often feels cramped. This client needed to fit professional-grade storage into
-            a narrow 3.2m footprint. The goal: maximize vertical storage while keeping the space feeling light and airy.
+            a narrow 3.2m footprint. The goal: maximize vertical structural mass while maintaining uncompromised
+            circulation channels.
         </p>
 
         <h3>The Challenge: Utility Obstruction</h3>
@@ -125,6 +126,10 @@
                 <div style="color: var(--gold);">190&deg;C EVA Thermal-Bonded ABS</div>
                 <div style="color: var(--text-muted);">Countertop:</div>
                 <div style="color: var(--gold);">20mm Solid Quartz with 45&deg; Mitred Edge</div>
+                <p style="margin-top: 1.5rem; color: var(--text-muted); font-size: 0.9rem;">
+                    *This project utilized <strong>ENF-grade</strong> material science to ensure safety in the compact
+                    <strong>RPN Lambak</strong> layout.
+                </p>
             </div>
             <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1.5rem; font-style: italic;">
                 *Note: These specs are standard for all Caramella RPN/STKRJ kitchen packages to ensure long-term
@@ -142,45 +147,50 @@
 
     <!-- Footer -->
     <footer class="site-footer site-footer--grid">
-    <div class="footer-grid">
-        <div class="footer-brand">
-            Caramella<span>Brunei</span>
-            <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4; text-transform: none; letter-spacing: normal;">
-                Precision joinery engineered for Brunei's humidity since 2015.
-            </p>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                Caramella<span>Brunei</span>
+                <p
+                    style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem; line-height: 1.4; text-transform: none; letter-spacing: normal;">
+                    Precision joinery engineered for Brunei's humidity since 2015.
+                </p>
+            </div>
+            <div class="footer-section">
+                <h5>Showroom</h5>
+                <address style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; font-style: normal;">
+                    Unit 22, Ground Floor,<br>
+                    The Airport Mall, BB2713<br>
+                    Bandar Seri Begawan, Brunei
+                </address>
+            </div>
+            <div class="footer-section">
+                <h5>Company</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="../contact-us.html">Contact Us</a></li>
+                    <li><a href="../careers.html" style="color: var(--gold); font-weight: 600;">Careers</a></li>
+                    <li><a href="../the-caramella-story.html">Our Story</a></li>
+                    <li><a href="../faq.html">Knowledge Hub</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h5>Social</h5>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="https://www.instagram.com/caramellabrunei/" target="_blank"
+                            rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://www.facebook.com/caramellabrunei2015/" target="_blank"
+                            rel="noopener noreferrer">Facebook</a></li>
+                    <li><a href="https://www.linkedin.com/company/caramella-brunei/" target="_blank"
+                            rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="footer-section">
-            <h5>Showroom</h5>
-            <address style="color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; font-style: normal;">
-                Unit 22, Ground Floor,<br>
-                The Airport Mall, BB2713<br>
-                Bandar Seri Begawan, Brunei
-            </address>
+        <div class="footer-copyright">
+            <p>&copy; <span id="year"></span> Caramella Trading Company. 100% Brunei Owned &amp; Operated. <span
+                    class="footer-reg-no">Reg No: P00100256</span></p>
         </div>
-        <div class="footer-section">
-            <h5>Company</h5>
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="../contact-us.html">Contact Us</a></li>
-                <li><a href="../careers.html" style="color: var(--gold); font-weight: 600;">Careers</a></li>
-                <li><a href="../the-caramella-story.html">Our Story</a></li>
-                <li><a href="../faq.html">Knowledge Hub</a></li>
-            </ul>
-        </div>
-        <div class="footer-section">
-            <h5>Social</h5>
-            <ul style="list-style: none; padding: 0;">
-                <li><a href="https://www.instagram.com/caramellabrunei/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-                <li><a href="https://www.facebook.com/caramellabrunei2015/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
-                <li><a href="https://www.linkedin.com/company/caramella-brunei/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer-copyright">
-        <p>&copy; <span id="year"></span> Caramella Trading Company. 100% Brunei Owned &amp; Operated. <span class="footer-reg-no">Reg No: P00100256</span></p>
-    </div>
-</footer>
+    </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script>document.querySelectorAll('.auto-date').forEach(function(el){var d=new Date(document.lastModified);el.textContent=d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});});</script>
+    <script>document.querySelectorAll('.auto-date').forEach(function (el) { var d = new Date(document.lastModified); el.textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); });</script>
 </body>
 
 </html>
