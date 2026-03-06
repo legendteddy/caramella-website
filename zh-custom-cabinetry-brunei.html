@@ -284,9 +284,13 @@
 
     <header class="hero"
         style="border-bottom: var(--border-gold); padding: 7.5rem 1.5rem 5.5rem; text-align: center; position: relative; overflow: hidden;">
-        <!-- Background setup matching custom-carpentry-brunei.html -->
+        <!-- Background setup matching custom-carpentry-brunei.html with responsive images -->
+        <!-- We use an absolute positioned img with srcset for optimal bandwidth scaling and SEO -->
+        <img src="images/hero-bg.jpg" srcset="images/hero-bg.jpg 1200w, images/img_5.jpg 800w" sizes="100vw"
+            alt="Luxury Custom Cabinetry inside a modern Brunei home"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1;">
         <div
-            style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(8, 22, 33, 0.85), rgba(8, 22, 33, 0.95)), url('images/hero-bg.jpg') center/cover; z-index: 1;">
+            style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(8, 22, 33, 0.85), rgba(8, 22, 33, 0.95)); z-index: 1;">
         </div>
 
         <div class="container" style="position: relative; z-index: 2;">
@@ -344,18 +348,27 @@
                         <div>
                             <strong style="color: #fff; display: block; margin-bottom: 0.5rem;">实木多层板 (Plywood)</strong>
                             <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">
-                                文莱本地首选。由多层薄木板垂直交叉压制而成，具有极强的抗弯曲性能且不怕潮气。Caramella 仅采用 ENF 级别（无醛排放）环保板材。</p>
+                                文莱本地首选。由多层薄木板垂直交叉压制而成，具有极强的抗弯曲性能且不怕潮气。Caramella 仅采用 ENF 级别（无醛排放）环保板材。阅读我们的 <a
+                                    href="knowledge-base/research/formaldehyde-safety-e2-vs-enf-boards-brunei.html"
+                                    style="color: var(--gold-core); text-decoration: underline;">ENF 与 E2 甲醛安全报告</a>。
+                            </p>
                         </div>
                         <div>
                             <strong style="color: #fff; display: block; margin-bottom: 0.5rem;">高压防火板 (HPL)</strong>
                             <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">
-                                表面坚硬耐磨，抗染色且易于清理。非常适合作为厨房橱柜的饰面层，即便在频繁烹饪的文莱家庭中也能保持十年如新。</p>
+                                表面坚硬耐磨，抗染色且易于清理。非常适合作为厨房橱柜的饰面层，即便在频繁烹饪的文莱家庭中也能保持十年如新。了解更多关于 <a
+                                    href="knowledge-base/research/total-cost-of-ownership-melamine-vs-plywood-brunei.html"
+                                    style="color: var(--gold-core); text-decoration: underline;">10年总体拥有成本 (TCO) 分析</a>。
+                            </p>
                         </div>
                         <div>
                             <strong style="color: #fff; display: block; margin-bottom: 0.5rem;">SUS304 不锈钢
                                 hardware</strong>
                             <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">针对沿海地区（如 KB 和
-                                Muara）的盐分侵蚀，我们建议所有水槽柜底部采用 304 不锈钢，配合进口阻尼合页，彻底告别“生锈”烦恼。</p>
+                                Muara）的盐分侵蚀，我们建议所有水槽柜底部采用 304 不锈钢，配合进口阻尼合页。查看我们的 <a
+                                    href="knowledge-base/research/salt-air-corrosion-brunei-coastal-cabinetry.html"
+                                    style="color: var(--gold-core); text-decoration: underline;">沿海气候盐雾腐蚀分析</a>，彻底告别“生锈”烦恼。
+                            </p>
                         </div>
                     </div>
                 </div>
