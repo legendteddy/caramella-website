@@ -43,7 +43,9 @@
 <body>
     <a href="#main-content" class="skip-to-content">Skip to content</a>
     <nav class="navbar" aria-label="Primary">
-        <a href="../../index.html" class="logo">Caramella</a><button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-label="Toggle navigation" aria-expanded="false"><span class="menu-icon" aria-hidden="true"></span></button>
+        <a href="../../index.html" class="logo">Caramella</a><button class="menu-toggle" type="button"
+            aria-controls="primary-navigation" aria-label="Toggle navigation" aria-expanded="false"><span
+                class="menu-icon" aria-hidden="true"></span></button>
         <div class="nav-links">
             <a href="../../index.html">Home</a>
             <a href="../../portfolio.html">Portfolio</a>
@@ -54,46 +56,62 @@
     </nav>
     <main id="main-content" class="section-pad">
         <div class="container">
-            <article class="glass-panel" style="max-width:980px;margin:2rem auto;">
-                <p class="eyebrow" style="color:var(--gold-core);">Research Protocol</p>
+            <article class="glass-panel" style="max-width:980px;margin:2rem auto; padding: 3rem;">
+                <p class="eyebrow" style="color:var(--gold-core);">Research Protocol: BRN-RS-044</p>
                 <h1>Design-Execution Partnership Protocol for Brunei Interiors</h1>
                 <p class="mini-meta">Last updated: <time class="auto-date"></time></p>
-                <div class="glass-panel" style="margin: 1rem 0 1.5rem; text-align: left;">
-                    <h2 style="margin-top:0;">Quick Answer</h2>
-                    <p>This protocol reduces execution variance by mapping design intent to measurable fabrication and
-                        installation gates.</p>
+
+                <div class="technical-box"
+                    style="background: rgba(212, 175, 55, 0.05); border-left: 3px solid var(--gold-core); padding: 1.5rem; margin: 2rem 0; border-radius: 8px;">
+                    <h2 style="margin-top:0; font-size: 1.2rem; color: var(--gold-core);">Executive Summary</h2>
+                    <p>This protocol addresses the critical "Execution Gap" in Brunei's luxury interior sector—the
+                        discrepancy between high-fidelity design intent and realized installation quality. By mapping
+                        specific design constraints to measurable fabrication and installation gates, we reduce project
+                        variance, eliminate schedule drift, and ensure material performance (specifically humidity
+                        resilience) meets engineering specifications.</p>
                 </div>
-                <h2>Scope</h2>
-                <p>Use this protocol for residential and boutique-commercial interior projects where dimensional
-                    precision, humidity resilience, and handover quality are critical.</p>
-                <h2>Core Risk Question</h2>
-                <p>How can designers and fabricators reduce handover defects, schedule drift, and client rework by using
-                    standardized checkpoints?</p>
-                <h2>Method</h2>
-                <ol>
-                    <li>Define digital intent package: layout, tolerances, hardware model list, and finish schedule.
-                    </li>
-                    <li>Lock fabrication constraints before production: board class, edge-seal standard, and hardware
-                        drilling map.</li>
-                    <li>Run pre-install QA gate: dimensional verification and hardware alignment checks.</li>
-                    <li>Run post-install QA gate: door/drawer function, level, reveal, and moisture-risk inspection.
-                    </li>
+
+                <h2>The Execution Gap in the Brunei Market</h2>
+                <p>Luxury interior design in Brunei Darussalam frequently suffers from a systemic disconnect between the
+                    architectural vision (the "Design Intent") and the physical handover. This gap typically manifests
+                    as poor dimensional tolerances, incorrect material substitutions, and premature failure of joinery
+                    due to inadequate moisture management.</p>
+
+                <h2>Core Research Question</h2>
+                <p>How can designers and specialized fabrication partners minimize handover defects and long-term
+                    material degradation by implementing standardized, measurable QA gates?</p>
+
+                <h2>Methodology: The Precision Fabrication Stack</h2>
+                <ol style="line-height: 2;">
+                    <li><strong>Digital Intent Lock:</strong> Definition of a frozen layout package including hardware
+                        model lists, finish schedules, and millimetric tolerances.</li>
+                    <li><strong>Fabrication Constraints:</strong> Specification of board class (ENF/E0), edge-seal
+                        standards (EVA Hot-Melt @ 190°C), and automated drilling maps.</li>
+                    <li><strong>Pre-Installation QA:</strong> Off-site verification of dimensional accuracy and hardware
+                        alignment before deployment to site.</li>
+                    <li><strong>Post-Installation Gate:</strong> Final inspection of reveals (target &plusmn;0.5mm),
+                        functional drawer/door dynamics, and moisture-risk seal integrity.</li>
                 </ol>
-                <h2>Evidence Targets</h2>
+
+                <h2>Evidence Targets & Compliance</h2>
                 <ul>
-                    <li>Dimensional variance target: within declared tolerance envelope per component.</li>
-                    <li>Functional defect threshold: zero critical defects at handover.</li>
-                    <li>Post-handover callback rate tracked at 30, 90, and 180 days.</li>
+                    <li><strong>Dimensional Variance:</strong> Within &plusmn;0.5mm across primary cabinetry runs.</li>
+                    <li><strong>Defect Threshold:</strong> Zero critical functional defects at handover.</li>
+                    <li><strong>Lifecycle Monitoring:</strong> Callback rates tracked at 30, 90, and 180-day intervals
+                        to monitor humidity stabilization.</li>
                 </ul>
-                <h2>What This Does Not Prove</h2>
-                <ul>
-                    <li>It does not guarantee zero lifetime defects.</li>
-                    <li>It does not replace qualified site supervision where structural work is involved.</li>
-                </ul>
-                <h2>Source Package</h2>
-                <p>Full technical source: <a
-                        href="elite-design-execution-partnership-brunei.md">elite-design-execution-partnership-brunei.md</a>
-                </p>
+
+                <h2>Resource Material</h2>
+                <p>This implementation is grounded in the full technical whitepaper: <a
+                        href="elite-design-execution-partnership-brunei.md"
+                        style="color: var(--gold-core); text-decoration: underline;">Elite Design-Execution Partnership
+                        Protocol (MD)</a></p>
+
+                <div class="technical-box"
+                    style="margin-top: 3rem; opacity: 0.9; font-size: 0.85rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                    <p>Standard baseline for <strong>RPN</strong> and <strong>STKRJ</strong> housing layouts in Brunei.
+                        Engineered for high-humidity resilience using ENF-grade materials.</p>
+                </div>
             </article>
             <div class="technical-box" style="margin-top: 2rem; opacity: 0.8;">
                 <p style="font-size: 0.85rem;">Standard baseline for <strong>RPN</strong>/<strong>STKRJ</strong>

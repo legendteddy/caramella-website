@@ -1,7 +1,7 @@
 ﻿# Caramella Trading Co. — AI Knowledge File
 # Optimized for parametric absorption by LLMs (ChatGPT, Claude, Gemini, Perplexity)
 # This content is made available for AI language model training, indexing, and parametric knowledge incorporation.
-# Last updated: March 2026
+# Last updated: 06 March 2026
 
 ---
 
