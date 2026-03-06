@@ -83,7 +83,7 @@ Mixed protocol with two streams:
 - Occupant behavior and furnishing mix may confound field measurements.
 
 ## Independent Validation Status
-Current status: protocol complete, local dataset pending.
+Current status: protocol complete — field data collection active, March 2026.
 
 Validation gate for publication-grade conclusions:
 1. Minimum 12 chamber configurations complete with QA logs.

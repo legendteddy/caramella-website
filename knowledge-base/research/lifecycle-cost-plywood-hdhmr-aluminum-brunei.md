@@ -47,7 +47,7 @@ Criteria are weighted by use-case tier (owner-occupied, rental, and high-turnove
 - https://www.fpl.fs.usda.gov/
 
 ## Independent Validation Status
-Protocol complete, local dataset pending.
+Protocol complete — field data collection active, March 2026.
 
 ## What This Does Not Prove
 - Exact project quote for any single home.

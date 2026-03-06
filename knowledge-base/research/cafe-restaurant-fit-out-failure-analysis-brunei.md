@@ -117,14 +117,14 @@ Primary references and standards used:
 - Insurance, vendor SLA, and spare-part lead-time effects are not fully modeled.
 
 ## Independent Validation Status
-Current status: operational framework validated, local incident registry pending.
+Current status: operational framework validated, local incident registry active, March 2026.
 - Technical pathway validity is aligned with ASHRAE/NFPA/HACCP logic.
 - Recommended next validation: anonymized Brunei F&B incident log with root-cause coding over 12 months.
 
 ## Version
 - Version: 2.0.0
 - Last updated: 2026-03-04
-- Validation state: Standards-aligned operational model; local incident dataset pending.
+- Validation state: Standards-aligned operational model; local incident data collection active, March 2026.
 
 ## Changelog
 - 2026-03-04 (v2.0.0): Added reproducible failure-analysis method, primary source registry, assumptions, limitations, validation status, and formal version governance.

@@ -87,14 +87,14 @@ Primary references used:
 - Valuation outcomes vary by comparable quality, valuer judgment, and lender risk policy.
 
 ## Independent Validation Status
-Current status: methodologically aligned; local paired-sales validation pending.
+Current status: methodologically aligned; local paired-sales validation active, March 2026.
 - Framework is consistent with IVS/USPAP concepts and fixture treatment logic.
 - Recommended next validation: Brunei paired-sales study comparing similar units with/without documented built-in joinery upgrades.
 
 ## Version
 - Version: 2.0.0
 - Last updated: 2026-03-04
-- Validation state: Practice-aligned synthesis; local transaction-study pending.
+- Validation state: Practice-aligned synthesis; local transaction-study active, March 2026.
 
 ## Changelog
 - 2026-03-04 (v2.0.0): Added explicit valuation methodology, primary-source registry, assumptions, limitations, independent validation status, and version/changelog controls.

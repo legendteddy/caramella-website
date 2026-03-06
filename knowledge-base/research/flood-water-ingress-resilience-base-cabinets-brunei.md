@@ -32,7 +32,7 @@ Which base-cabinet material and detailing combinations maintain function after s
 - Material lots may vary by supplier and batch.
 
 ## Independent Validation Status
-Protocol complete, measured dataset pending.
+Protocol complete — measured data collection active, March 2026.
 
 ## What This Does Not Prove
 - Absolute flood-proof performance for all installations.

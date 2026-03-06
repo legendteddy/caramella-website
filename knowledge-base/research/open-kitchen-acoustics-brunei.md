@@ -32,7 +32,7 @@ Which appliance and layout combinations maintain acceptable perceived comfort in
 - Furnishing changes can alter acoustic behavior.
 
 ## Independent Validation Status
-Protocol complete, local dataset pending.
+Protocol complete — field data collection active, March 2026.
 
 ## What This Does Not Prove
 - Universal comfort for every user profile.

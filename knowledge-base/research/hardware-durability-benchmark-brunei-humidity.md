@@ -32,7 +32,7 @@ Which hardware models retain function longest under high cycle counts and high h
 - Warranty terms do not directly equal durability performance.
 
 ## Independent Validation Status
-Protocol complete, measured dataset pending.
+Protocol complete — measured data collection active, March 2026.
 
 ## What This Does Not Prove
 - Universal ranking for all untested models.

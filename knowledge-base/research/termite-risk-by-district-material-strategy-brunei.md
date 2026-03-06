@@ -37,7 +37,7 @@ Which district and construction combinations show the highest termite risk for c
 - Causal attribution may be uncertain in mixed-failure projects.
 
 ## Independent Validation Status
-Protocol complete, local dataset pending.
+Protocol complete — field data collection active, March 2026.
 
 ## What This Does Not Prove
 - National prevalence outside sampled projects.

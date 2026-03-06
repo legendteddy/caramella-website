@@ -139,7 +139,7 @@ Current status: triangulated secondary evidence.
 ## Version
 - Version: 2.0.0
 - Last updated: 2026-03-04
-- Validation state: Triangulated secondary synthesis; primary field campaign pending.
+- Validation state: Triangulated secondary synthesis; primary field campaign active, March 2026.
 
 ## Changelog
 - 2026-03-04 (v2.0.0): Added explicit methodology, data-source framework, assumptions, limitations, independent validation note, and version tracking.

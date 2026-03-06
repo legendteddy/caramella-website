@@ -47,7 +47,7 @@ Table-based scoring highlights cost-versus-risk trade-offs for household retrofi
 - https://www.iec.ch/homepage
 
 ## Independent Validation Status
-Protocol complete, local dataset pending.
+Protocol complete — field data collection active, March 2026.
 
 ## What This Does Not Prove
 - Zero-fire guarantee for compliant kitchens.

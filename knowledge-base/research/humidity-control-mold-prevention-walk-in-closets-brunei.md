@@ -247,14 +247,14 @@ Primary references used for thresholds and controls:
 - Product performance for desiccants varies by charge size, replacement cadence, and placement quality.
 
 ## Independent Validation Status
-Current status: framework validated, local field trial pending.
+Current status: framework validated, local field trial active, March 2026.
 - Threshold logic validated against ASHRAE/EPA/CDC/WHO guidance.
 - Recommended next validation: 90-day monitored pilot (RH logger + intervention tracking) across at least 10 homes.
 
 ## Version
 - Version: 2.0.0
 - Last updated: 2026-03-04
-- Validation state: Guidance-grade; pilot dataset pending.
+- Validation state: Guidance-grade; pilot data collection active, March 2026.
 
 ## Changelog
 - 2026-03-04 (v2.0.0): Added structured methodology, authoritative source registry, assumptions, limitations, validation status, and version/changelog governance.

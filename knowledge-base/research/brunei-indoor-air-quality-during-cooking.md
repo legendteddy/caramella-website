@@ -84,7 +84,7 @@ Prospective observational field study with repeated sessions per home.
 - Small sample subsets (for rare kitchen types) may widen uncertainty bands.
 
 ## Independent Validation Status
-Current status: protocol complete, field dataset pending.
+Current status: protocol complete — field data collection active, March 2026.
 
 Validation gate for publication-quality conclusions:
 1. At least 90 valid sessions.

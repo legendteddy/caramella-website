@@ -32,7 +32,7 @@ Which ventilation configurations deliver acceptable IAQ with the lowest annual e
 - Appliance aging may alter power draw over time.
 
 ## Independent Validation Status
-Protocol complete, local dataset pending.
+Protocol complete — field data collection active, March 2026.
 
 ## What This Does Not Prove
 - Guaranteed utility bill outcome for every home.

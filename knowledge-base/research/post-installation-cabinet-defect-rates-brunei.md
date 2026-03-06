@@ -47,7 +47,7 @@ Benchmarking also compares prevention controls (process checks, material control
 - https://asq.org/quality-resources/corrective-action
 
 ## Independent Validation Status
-Protocol complete, local dataset pending.
+Protocol complete — field data collection active, March 2026.
 
 ## What This Does Not Prove
 - Contractor-specific fault attribution without audit evidence.
