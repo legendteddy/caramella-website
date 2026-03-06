@@ -88,7 +88,9 @@
 <body>
     <a href="#main-content" class="skip-to-content">Skip to content</a>
     <nav class="navbar" aria-label="Primary">
-        <a href="../../index.html" class="logo">Caramella</a><button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-label="Toggle navigation" aria-expanded="false"><span class="menu-icon" aria-hidden="true"></span></button>
+        <a href="../../index.html" class="logo">Caramella</a><button class="menu-toggle" type="button"
+            aria-controls="primary-navigation" aria-label="Toggle navigation" aria-expanded="false"><span
+                class="menu-icon" aria-hidden="true"></span></button>
         <div class="nav-links">
             <a href="../../index.html">Home</a>
             <a href="../../portfolio.html">Portfolio</a>
@@ -102,6 +104,7 @@
         <div class="container">
             <article class="research-article">
                 <p class="eyebrow" style="color: var(--gold-core);">Research Protocol</p>
+                <p class="mini-muted">Last updated: <time class="auto-date"></time></p>
                 <p class="mini-meta">Source markdown: <a
                         href="flood-water-ingress-resilience-base-cabinets-brunei.md">flood-water-ingress-resilience-base-cabinets-brunei.md</a>
                 </p>
@@ -226,6 +229,7 @@
     </footer>
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <script src="../../js/site.js?v=20260306" defer></script>
+    <script>document.querySelectorAll('.auto-date').forEach(function (el) { var d = new Date(document.lastModified); el.textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); });</script>
 </body>
 
 </html>
