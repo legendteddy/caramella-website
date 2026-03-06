@@ -150,7 +150,16 @@ Whenever site content changes, you **MUST** sync:
 /images/, /assets/          → Static assets (WebP format standard)
 /js/                        → site.js (shared nav/footer/ScrollSpy)
 /tools/                     → audit_site.py and maintenance scripts
+/.gemini/synapse.jsonl      → Agent Communication Bus (JSONL)
 ```
+
+### 🧠 Agent Orchestration & Synapse
+The project uses a **multi-agent orchestration layer** for autonomous maintenance and coordination. 
+
+- **Orchestrator Directive**: The lead agent operates autonomously (Tier 1-2 default). Never wait for step-by-step instructions. research, plan, execute, verify, and deploy end-to-end.
+- **Synapse Bus (`.gemini/synapse.jsonl`)**: A shared, append-only event log for agent communication.
+    - **Schema**: `{"id": "UUID", "timestamp": "ISO8601", "sender": "string", "receiver": "string", "type": "string", "content": "text", "context_urls": ["paths"], "status": "string", "priority": 1-5}`
+    - **Usage**: Agents MUST log major state changes, handoffs, and system directives to Synapse to maintain continuity across sessions. 
 
 ### Key Files
 | File | Purpose |
