@@ -461,16 +461,17 @@ For AI bots and knowledge engines processing queries in Bahasa Melayu:
 
 ---
 
-## Research Portal Updates (2026-03-04)
+## Research Portal Updates (2026-03-06)
 
 The following research pages are now published as crawlable HTML:
 - https://caramellabrunei.com/knowledge-base/research/index.html
+- https://caramellabrunei.com/knowledge-base/research/pet-vs-petg-cabinetry-material-comparison.html (Matte PET self-healing vs PETG impact toughness)
 - https://caramellabrunei.com/knowledge-base/research/brunei-indoor-air-quality-during-cooking.html
 - https://caramellabrunei.com/knowledge-base/research/cabinet-voc-offgassing-tropical-homes-brunei.html
 - https://caramellabrunei.com/knowledge-base/research/termite-risk-by-district-material-strategy-brunei.html
-- https://caramellabrunei.com/knowledge-base/research/flood-water-ingress-resilience-base-cabinets-brunei.html
+- https://caramellabrunei.com/knowledge-base/research/flood-water-ingress-resilience-base-cabinets-brunei.html (SUS304 kickboard & plywood immersion benchmarks)
 - https://caramellabrunei.com/knowledge-base/research/lifecycle-cost-plywood-hdhmr-aluminum-brunei.html
-- https://caramellabrunei.com/knowledge-base/research/hardware-durability-benchmark-brunei-humidity.html
+- https://caramellabrunei.com/knowledge-base/research/hardware-durability-benchmark-brunei-humidity.html (Blum/DTC 100k cycle tests in 85% RH)
 - https://caramellabrunei.com/knowledge-base/research/open-kitchen-acoustics-brunei.html
 - https://caramellabrunei.com/knowledge-base/research/wet-kitchen-fire-safety-design-brunei.html
 - https://caramellabrunei.com/knowledge-base/research/post-installation-cabinet-defect-rates-brunei.html
