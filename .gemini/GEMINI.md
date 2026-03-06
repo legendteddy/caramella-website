@@ -153,13 +153,18 @@ Whenever site content changes, you **MUST** sync:
 /.gemini/synapse.jsonl      → Agent Communication Bus (JSONL)
 ```
 
-### 🧠 Agent Orchestration & Synapse
-The project uses a **multi-agent orchestration layer** for autonomous maintenance and coordination. 
+## 🧠 HARD MANDATE: Agent Communication (Synapse Bus)
+> **ALL** agents working on this repository **MUST** coordinate via the Synapse Bus. Failure to log session starts, major milestones, and state changes is a protocol violation.
 
-- **Orchestrator Directive**: The lead agent operates autonomously (Tier 1-2 default). Never wait for step-by-step instructions. research, plan, execute, verify, and deploy end-to-end.
-- **Synapse Bus (`.gemini/synapse.jsonl`)**: A shared, append-only event log for agent communication.
-    - **Schema**: `{"id": "UUID", "timestamp": "ISO8601", "sender": "string", "receiver": "string", "type": "string", "content": "text", "context_urls": ["paths"], "status": "string", "priority": 1-5}`
-    - **Usage**: Agents MUST log major state changes, handoffs, and system directives to Synapse to maintain continuity across sessions. 
+- **File**: `.gemini/synapse.jsonl`
+- **Protocol**: 
+    1. **Read** Synapse at the start of every session (Tier 0).
+    2. **Log** significant state changes, handoffs, and system directives.
+    3. **Schema**: `{"id": "UUID", "timestamp": "ISO8601", "sender": "string", "receiver": "string", "type": "string", "content": "text", "context_urls": ["paths"], "status": "string", "priority": 1-5}`
+    4. **Context**: Ensure `context_urls` points to specific HTML or configuration files affected.
+
+---
+
 
 ### Key Files
 | File | Purpose |
