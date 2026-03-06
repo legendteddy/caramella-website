@@ -29,7 +29,7 @@ Wood and wood-based panels are hygroscopic: at a given temperature and RH, they 
 That “~20% MC” matters because:
 
 - It approaches levels that building scientists have historically used as a **red-flag criterion** for moisture problems in wood materials (with 20% MC frequently discussed as a practical threshold for concern, even before fiber saturation). citeturn27view0
-- It increases swelling/shrinkage cycling stresses (especially across edge-sealed vs unsealed regions) and can degrade mechanical properties in wood composites under elevated moisture contents and cycling. citeturn10view0turn9search6
+- It increases swelling/shrinkage cycling stresses (especially across edge-sealed vs unsealed regions) and can degrade mechanical properties in wood composites under elevated moisture contents and cycling. 
 - Protective coatings largely **retard** moisture exchange but **do not stop** it; edge integrity and detailing remain critical. citeturn2view0
 
 ### Mold and biodeterioration thresholds at high humidity
@@ -318,7 +318,7 @@ This chain is supported by documented high-RH susceptibility and mold thresholds
 - For plywood, specify **Exterior-bond/phenolic adhesive** products where feasible; APA documentation explicitly identifies phenolic adhesives in trademarked plywood and distinguishes Exposure 1 vs Exterior performance expectations. citeturn25view0turn24view1
 
 **Edge detailing**
-- Ensure all cut edges and field-drilled holes are sealed; coatings slow moisture exchange but don’t eliminate it. citeturn2view0turn2view2  
+- Ensure all cut edges and field-drilled holes are sealed; coatings slow moisture exchange but don’t eliminate it.
 - Use thicker, high-quality edge banding in wet zones (sink base, floor-adjacent panels), and avoid leaving raw composite edges exposed.
 
 ### Hardware corrosion and endurance mitigations
