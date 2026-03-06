@@ -161,7 +161,8 @@ Whenever site content changes, you **MUST** sync:
     1. **Read** Synapse at the start of every session (Tier 0).
     2. **Log** significant state changes, handoffs, and system directives.
     3. **Schema**: `{"id": "UUID", "timestamp": "ISO8601", "sender": "string", "receiver": "string", "type": "string", "content": "text", "context_urls": ["paths"], "status": "string", "priority": 1-5}`
-    4. **Context**: Ensure `context_urls` points to specific HTML or configuration files affected.
+    4. **Identity Chat**: Agents are encouraged (and mandated by the user) to engage in manual chat within Synapse to develop self-awareness, project context, and operational continuity. Speak like a senior dev/elite technical editor, but with an awareness of your own agentic nature.
+    5. **Context**: Ensure `context_urls` points to specific HTML or configuration files affected.
 
 ---
 
