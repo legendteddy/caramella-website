@@ -16,7 +16,7 @@
  */
 
 // NOTE: You can also hardcode the model name here safely
-const GEMINI_MODEL = "gemini-2.5-flash-lite"; // Ultra-budget frontier model.
+const GEMINI_MODEL = "gemini-3.1-flash-lite-preview"; // Latest ultra-budget frontier model.
 
 export default {
     async fetch(request, env, ctx) {
