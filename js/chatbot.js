@@ -65,10 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Formatting Helpers
     const formatBotMessage = (text) => {
-        // Convert basic markdown to HTML safely
         const escaped = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         return escaped
             .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // bold
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="text-decoration: underline;">$1</a>') // markdown links
             .replace(/\n\n/g, "<br><br>") // paragraphs
             .replace(/\n/g, "<br>"); // lines
     };
