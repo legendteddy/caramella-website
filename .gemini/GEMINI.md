@@ -123,12 +123,13 @@ Whenever site content changes, you **MUST** sync:
 ## 🪵 Material & Brand Guardrails
 
 ### 1. Technical Baseline
-- **The Plywood Standard**: 18mm Solid Plywood is the premium local standard.
-- **The "Imported" Reality**: MDF and Particle Board are only for "Imported Economy" tiers. Never claim we "never use MDF," but prioritize Plywood for durability.
+- **The Plywood Standard**: 18mm Solid Plywood is the premium local standard for carcasses.
+- **The HMR MDF Strategy**: High-Moisture Resistant (HMR) MDF is utilized for Shaker doors and precision profiles.
+- **Adjustable Plastic Legs**: Cabinets are lifted 100mm+ via plastic legs/kickboards to prevent floor-level rot and rust.
 - **Edge Sealing**: Automated EVA application at **180°C - 190°C**. This is our primary moat against humidity.
-- **Hardware**: Strictly Blum (Austria) or DTC (Heavy Duty). No generic "white label" hardware. SUS304 stainless steel kickboards used in wet zones.
+- **Hardware**: Strictly Blum (Austria) or DTC (Heavy Duty). No generic "white label" hardware.
 - **Countertops**: **Quartz Composite** (Premium) or **Formica HPL** (Economy). **NO** Solid Surface, Granite, or Marble.
-- **ENF Certification**: Third-party lab verified (Report C25-WT0806). Formaldehyde emission < 0.010 mg/m³ — 60% below ENF threshold, 12× less than standard E₁ boards. **This is a key differentiator — reference it.**
+- **ENF Certification**: Third-party lab verified (Report C25-WT0806). Formaldehyde emission < 0.010 mg/m³ — 60% below ENF threshold, 12× less than standard E₁ boards.
 
 ### 2. The "Contractor's Code" (EDITORIAL GRADE MANDATE)
 - **NO AI SLOP**: Absolute prohibition on generic "marketing fluff." All copy must be technical, data-dense, and carry the weight of 10+ years of carpentry experience.
@@ -244,4 +245,4 @@ Common false positives to reject:
 
 ---
 
-> **Last Updated**: 2026-03-08. **CHATBOT SOTA UPGRADE FINALIZED.** Dynamic Language Sensor live. Frontier Persistence active. Social Genius persona with Graceful Pivot enabled. D1 Intelligence Archive active. UI Enlarged (500x800).
+> **Last Updated**: 2026-03-08. **CHATBOT SOTA UPGRADE FINALIZED.** Universal Multilingual Mirroring (EN/MS/ZH) live. Emergency Protocol active. Cloudflare D1 Intelligence Archive & Message Logging active. Lead Capture tool fully synchronized. ASCII-safe encoding enforced. UI enlarged for visibility. Technical materials strategy corrected (Plastic kickboards + HMR MDF).
