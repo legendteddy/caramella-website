@@ -11,13 +11,12 @@
 
 .chatbot-container {
     position: fixed;
-    bottom: 232px;
-    /* Increased shift to clear WhatsApp + Toggle gap */
-    right: 24px;
+    bottom: 180px;
+    right: 2rem;
     width: 360px;
-    max-width: calc(100vw - 40px);
+    max-width: calc(100vw - 3rem);
     height: 520px;
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 200px);
     background: var(--chat-bg);
     border: 1px solid var(--chat-border);
     border-radius: 16px;
@@ -122,16 +121,38 @@
     gap: 14px;
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+    /* Scrollbar Styling */
 }
 
 .chatbot-body::-webkit-scrollbar {
     width: 4px;
 }
 
+.chatbot-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 .chatbot-body::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 4px;
+}
+
+.chatbot-body::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsiveness alignment with WA float */
+@media (max-width: 768px) {
+    .chatbot-toggle-btn {
+        bottom: 88px;
+        right: 1.5rem;
+    }
+
+    .chatbot-container {
+        bottom: 160px;
+        right: 1.5rem;
+        max-width: calc(100vw - 3rem);
+    }
 }
 
 .chat-message {
@@ -280,9 +301,8 @@
 /* Floating Toggle Button */
 .chatbot-toggle-btn {
     position: fixed;
-    bottom: 160px;
-    /* Safe clearance above WhatsApp (approx 80-100px high including gap) */
-    right: 24px;
+    bottom: 104px;
+    right: 2rem;
     width: 56px;
     height: 56px;
     border-radius: 50%;
