@@ -1,0 +1,324 @@
+/* Chatbot Core Styles - Premium Glassmorphism */
+
+:root {
+    --chat-bg: rgba(15, 17, 21, 0.75);
+    --chat-border: rgba(255, 215, 0, 0.15);
+    --chat-accent: #FFD700;
+    --chat-text: #FFFFFF;
+    --chat-user-msg: rgba(255, 215, 0, 0.1);
+    --chat-bot-msg: rgba(255, 255, 255, 0.05);
+}
+
+.chatbot-container {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 360px;
+    max-width: calc(100vw - 40px);
+    height: 520px;
+    max-height: calc(100vh - 120px);
+    background: var(--chat-bg);
+    border: 1px solid var(--chat-border);
+    border-radius: 16px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+    overflow: hidden;
+    transform-origin: bottom right;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.chatbot-container.closed {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    pointer-events: none;
+}
+
+/* Header */
+.chatbot-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--chat-border);
+}
+
+.chatbot-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chatbot-avatar {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--chat-accent), #c2a000);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2);
+}
+
+.chatbot-title h4 {
+    margin: 0;
+    font-family: var(--font-heading, "Outfit", sans-serif);
+    font-size: 1.05rem;
+    color: var(--chat-text);
+    letter-spacing: 0.02em;
+}
+
+.chatbot-status {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.chatbot-status::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(34, 197, 94, 0.8);
+}
+
+.chatbot-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    padding: 4px;
+}
+
+.chatbot-btn:hover {
+    color: var(--chat-accent);
+}
+
+/* Body */
+.chatbot-body {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+.chatbot-body::-webkit-scrollbar {
+    width: 4px;
+}
+
+.chatbot-body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.chat-message {
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 85%;
+    word-wrap: break-word;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bot-message {
+    background: var(--chat-bot-msg);
+    color: rgba(255, 255, 255, 0.9);
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bot-message strong {
+    color: var(--chat-accent);
+}
+
+.user-message {
+    background: var(--chat-user-msg);
+    color: var(--chat-text);
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.error-message {
+    background: rgba(255, 0, 0, 0.1);
+    color: #ffb3b3;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+/* Loading Indicator */
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 12px 16px;
+    align-self: flex-start;
+    background: var(--chat-bot-msg);
+    border-radius: 12px;
+    border-bottom-left-radius: 2px;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out both;
+}
+
+.typing-dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes typing {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}
+
+/* Footer / Input */
+.chatbot-footer {
+    padding: 14px 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#chatbot-input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 12px 16px;
+    border-radius: 24px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    outline: none;
+}
+
+#chatbot-input:focus {
+    border-color: var(--chat-accent);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+#chatbot-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.chatbot-send-btn {
+    background: var(--chat-accent);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.chatbot-send-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.chatbot-send-btn:not(:disabled):hover {
+    transform: scale(1.05);
+}
+
+/* Floating Toggle Button */
+.chatbot-toggle-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--chat-accent), #c2a000);
+    color: #111;
+    border: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 215, 0, 0.5);
+    cursor: pointer;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.chatbot-toggle-btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 0, 0.8);
+}
+
+.chatbot-toggle-btn.active {
+    transform: scale(0.9);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+    .chatbot-container {
+        width: 100vw;
+        height: 100vh;
+        max-height: 100vh;
+        max-width: 100vw;
+        bottom: 0;
+        right: 0;
+        border-radius: 0;
+        border: none;
+    }
+
+    .chatbot-toggle-btn {
+        bottom: 16px;
+        right: 16px;
+    }
+}
