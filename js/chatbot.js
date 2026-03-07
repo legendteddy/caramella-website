@@ -455,43 +455,38 @@ document.addEventListener("DOMContentLoaded", () => {
                 botDiv.className = 'chat-message bot-message streaming';
                 chatBody.appendChild(botDiv);
 
-                // Character reveal state
-                let revealedLength = 0;
-                let targetText = '';
+                // Word-by-word reveal state
+                let revealedWords = 0;
+                let targetWords = [];
                 let revealTimer = null;
-                const CHAR_DELAY = 12; // ms per character (~83 chars/sec, natural reading pace)
+                const WORD_DELAY = 35; // ms per word (~28 words/sec)
 
-                const revealNextChars = () => {
-                    if (revealedLength < targetText.length) {
-                        // Reveal in small bursts (3-5 chars) for smoother feel
-                        const burst = Math.min(3, targetText.length - revealedLength);
-                        revealedLength += burst;
-                        const displaySlice = targetText.slice(0, revealedLength);
-                        botDiv.innerHTML = formatBotMessage(displaySlice);
+                const revealNextWord = () => {
+                    if (revealedWords < targetWords.length) {
+                        revealedWords++;
+                        const displayText = targetWords.slice(0, revealedWords).join(' ');
+                        botDiv.innerHTML = formatBotMessage(displayText);
                         chatBody.scrollTop = chatBody.scrollHeight;
-                        revealTimer = setTimeout(revealNextChars, CHAR_DELAY);
+                        revealTimer = setTimeout(revealNextWord, WORD_DELAY);
+                    } else {
+                        revealTimer = null; // Loop done, will restart when new words arrive
                     }
                 };
 
                 await parseSSEStream(
                     response,
-                    // On each chunk: update target text (reveal loop catches up)
                     (accumulated) => {
-                        targetText = accumulated
+                        const cleanAccumulated = accumulated
                             .replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '')
                             .replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '')
                             .trim();
-                        // Start reveal loop if not already running
-                        if (!revealTimer) revealNextChars();
+                        targetWords = cleanAccumulated.split(/(\s+)/).filter(w => w.length > 0);
+                        if (!revealTimer && revealedWords < targetWords.length) revealNextWord();
                     },
-                    // On done: finish revealing and process
                     (finalText) => {
-                        // Let reveal finish, then finalize
+                        clearTimeout(revealTimer);
+                        // Flush remaining words quickly
                         const finalize = () => {
-                            if (revealedLength < targetText.length) {
-                                revealedLength = targetText.length;
-                                botDiv.innerHTML = formatBotMessage(targetText);
-                            }
                             const { cleanText, suggestions } = processResponse(finalText);
                             botDiv.innerHTML = formatBotMessage(cleanText);
                             botDiv.classList.remove('streaming');
@@ -499,23 +494,20 @@ document.addEventListener("DOMContentLoaded", () => {
                             renderSuggestionChips(suggestions);
                             chatBody.scrollTop = chatBody.scrollHeight;
                         };
-                        // Wait for reveal to catch up (max 500ms), then force-finish
-                        if (revealedLength >= targetText.length) {
+                        if (revealedWords >= targetWords.length) {
                             finalize();
                         } else {
-                            clearTimeout(revealTimer);
-                            // Quick flush remaining chars
-                            const flushRemaining = () => {
-                                if (revealedLength < targetText.length) {
-                                    revealedLength += 5;
-                                    botDiv.innerHTML = formatBotMessage(targetText.slice(0, Math.min(revealedLength, targetText.length)));
+                            const flush = () => {
+                                if (revealedWords < targetWords.length) {
+                                    revealedWords += 2;
+                                    botDiv.innerHTML = formatBotMessage(targetWords.slice(0, Math.min(revealedWords, targetWords.length)).join(' '));
                                     chatBody.scrollTop = chatBody.scrollHeight;
-                                    setTimeout(flushRemaining, 5);
+                                    setTimeout(flush, 10);
                                 } else {
                                     finalize();
                                 }
                             };
-                            flushRemaining();
+                            flush();
                         }
                     }
                 );
