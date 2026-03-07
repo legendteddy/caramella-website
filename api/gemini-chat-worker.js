@@ -47,6 +47,15 @@ ${ragKnowledge}`;
                 };
             }
 
+            // Enable Google Search Grounding for off-topic or real-time queries
+            if (!body.tools) {
+                body.tools = [
+                    {
+                        googleSearch: {}
+                    }
+                ];
+            }
+
             const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
             const response = await fetch(endpoint, {
                 method: "POST",
