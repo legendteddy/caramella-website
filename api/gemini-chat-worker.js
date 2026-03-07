@@ -61,24 +61,44 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nDYNAMIC USER MEMORY
             if (!body.generationConfig) body.generationConfig = {};
             body.generationConfig.thinkingConfig = { thinkingLevel: "MEDIUM" };
 
-            // Use streaming endpoint
-            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`;
-            const response = await fetch(endpoint, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(body),
-            });
+            // Check if client requested non-streaming fallback
+            const url = new URL(request.url);
+            const useStreaming = url.searchParams.get('stream') !== 'false';
 
-            // Stream the SSE response back to the client
-            return new Response(response.body, {
-                status: response.status,
-                headers: {
-                    "Content-Type": "text/event-stream",
-                    "Cache-Control": "no-cache",
-                    "Connection": "keep-alive",
-                    "Access-Control-Allow-Origin": "*",
-                },
-            });
+            if (useStreaming) {
+                // Streaming SSE endpoint
+                const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`;
+                const response = await fetch(endpoint, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body),
+                });
+                return new Response(response.body, {
+                    status: response.status,
+                    headers: {
+                        "Content-Type": "text/event-stream",
+                        "Cache-Control": "no-cache",
+                        "Connection": "keep-alive",
+                        "Access-Control-Allow-Origin": "*",
+                    },
+                });
+            } else {
+                // Non-streaming fallback
+                const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+                const response = await fetch(endpoint, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(body),
+                });
+                const data = await response.json();
+                return new Response(JSON.stringify(data), {
+                    status: response.status,
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Access-Control-Allow-Origin": "*",
+                    },
+                });
+            }
         } catch (error) {
             return new Response(JSON.stringify({ error: error.message }), {
                 status: 500,

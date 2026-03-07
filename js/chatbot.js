@@ -435,82 +435,111 @@ document.addEventListener("DOMContentLoaded", () => {
                 renderSuggestionChips(suggestions);
 
             } else {
-                // Production: streaming via Cloudflare Worker
-                response = await fetch(WORKER_URL, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
-                });
+                // Production: try streaming first, fallback to non-streaming
+                const streamingSuccess = await (async () => {
+                    try {
+                        response = await fetch(WORKER_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
 
-                if (!response.ok) {
-                    let errorText = await response.text();
-                    console.error("API Error:", errorText);
-                    throw new Error(`Server returned ${response.status}`);
-                }
+                        if (!response.ok) throw new Error(`Server returned ${response.status}`);
+                        // Verify we got an SSE stream
+                        const contentType = response.headers.get('content-type') || '';
+                        if (!contentType.includes('text/event-stream')) throw new Error('Not SSE');
 
-                removeTyping();
+                        removeTyping();
+                        const botDiv = document.createElement('div');
+                        botDiv.className = 'chat-message bot-message streaming';
+                        chatBody.appendChild(botDiv);
 
-                // Create bot message div for streaming
-                const botDiv = document.createElement('div');
-                botDiv.className = 'chat-message bot-message streaming';
-                chatBody.appendChild(botDiv);
+                        // Word-by-word reveal
+                        let revealedWords = 0;
+                        let targetWords = [];
+                        let revealTimer = null;
+                        const WORD_DELAY = 35;
 
-                // Word-by-word reveal state
-                let revealedWords = 0;
-                let targetWords = [];
-                let revealTimer = null;
-                const WORD_DELAY = 35; // ms per word (~28 words/sec)
-
-                const revealNextWord = () => {
-                    if (revealedWords < targetWords.length) {
-                        revealedWords++;
-                        const displayText = targetWords.slice(0, revealedWords).join(' ');
-                        botDiv.innerHTML = formatBotMessage(displayText);
-                        chatBody.scrollTop = chatBody.scrollHeight;
-                        revealTimer = setTimeout(revealNextWord, WORD_DELAY);
-                    } else {
-                        revealTimer = null; // Loop done, will restart when new words arrive
-                    }
-                };
-
-                await parseSSEStream(
-                    response,
-                    (accumulated) => {
-                        const cleanAccumulated = accumulated
-                            .replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '')
-                            .replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '')
-                            .trim();
-                        targetWords = cleanAccumulated.split(/(\s+)/).filter(w => w.length > 0);
-                        if (!revealTimer && revealedWords < targetWords.length) revealNextWord();
-                    },
-                    (finalText) => {
-                        clearTimeout(revealTimer);
-                        // Flush remaining words quickly
-                        const finalize = () => {
-                            const { cleanText, suggestions } = processResponse(finalText);
-                            botDiv.innerHTML = formatBotMessage(cleanText);
-                            botDiv.classList.remove('streaming');
-                            chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
-                            renderSuggestionChips(suggestions);
-                            chatBody.scrollTop = chatBody.scrollHeight;
+                        const revealNextWord = () => {
+                            if (revealedWords < targetWords.length) {
+                                revealedWords++;
+                                botDiv.innerHTML = formatBotMessage(targetWords.slice(0, revealedWords).join(' '));
+                                chatBody.scrollTop = chatBody.scrollHeight;
+                                revealTimer = setTimeout(revealNextWord, WORD_DELAY);
+                            } else {
+                                revealTimer = null;
+                            }
                         };
-                        if (revealedWords >= targetWords.length) {
-                            finalize();
-                        } else {
-                            const flush = () => {
-                                if (revealedWords < targetWords.length) {
-                                    revealedWords += 2;
-                                    botDiv.innerHTML = formatBotMessage(targetWords.slice(0, Math.min(revealedWords, targetWords.length)).join(' '));
+
+                        await parseSSEStream(
+                            response,
+                            (accumulated) => {
+                                const clean = accumulated
+                                    .replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '')
+                                    .replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '')
+                                    .trim();
+                                targetWords = clean.split(/(\s+)/).filter(w => w.length > 0);
+                                if (!revealTimer && revealedWords < targetWords.length) revealNextWord();
+                            },
+                            (finalText) => {
+                                clearTimeout(revealTimer);
+                                const finalize = () => {
+                                    const { cleanText, suggestions } = processResponse(finalText);
+                                    botDiv.innerHTML = formatBotMessage(cleanText);
+                                    botDiv.classList.remove('streaming');
+                                    chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
+                                    renderSuggestionChips(suggestions);
                                     chatBody.scrollTop = chatBody.scrollHeight;
-                                    setTimeout(flush, 10);
-                                } else {
+                                };
+                                if (revealedWords >= targetWords.length) {
                                     finalize();
+                                } else {
+                                    const flush = () => {
+                                        if (revealedWords < targetWords.length) {
+                                            revealedWords += 2;
+                                            botDiv.innerHTML = formatBotMessage(targetWords.slice(0, Math.min(revealedWords, targetWords.length)).join(' '));
+                                            chatBody.scrollTop = chatBody.scrollHeight;
+                                            setTimeout(flush, 10);
+                                        } else { finalize(); }
+                                    };
+                                    flush();
                                 }
-                            };
-                            flush();
-                        }
+                            }
+                        );
+                        return true;
+                    } catch (streamErr) {
+                        console.warn("Streaming failed, falling back to non-streaming:", streamErr.message);
+                        return false;
                     }
-                );
+                })();
+
+                // Fallback: non-streaming request
+                if (!streamingSuccess) {
+                    try {
+                        response = await fetch(WORKER_URL + '?stream=false', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+                        const data = await response.json();
+                        removeTyping();
+
+                        let botText = "I'm sorry, I couldn't generate a response.";
+                        if (data.candidates && data.candidates.length > 0) {
+                            // Filter out thought parts
+                            const textParts = (data.candidates[0].content?.parts || []).filter(p => !p.thought && p.text);
+                            if (textParts.length > 0) botText = textParts.map(p => p.text).join('');
+                        }
+                        const { cleanText, suggestions } = processResponse(botText);
+                        chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
+                        appendMessage(cleanText, 'bot');
+                        renderSuggestionChips(suggestions);
+                    } catch (fallbackErr) {
+                        console.error("Fallback also failed:", fallbackErr);
+                        removeTyping();
+                        throw fallbackErr;
+                    }
+                }
             }
         } catch (error) {
             console.error("Chat Error:", error);
