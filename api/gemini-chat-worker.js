@@ -1,5 +1,5 @@
 /**
- * Caramella Chatbot - Cloudflare Worker Proxy (TOTAL SWARM HARDENING)
+ * Caramella Chatbot - Cloudflare Worker Proxy (SWARM V6 - LEAD TIME HARDENED)
  */
 const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
 const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
@@ -25,21 +25,20 @@ export default {
             const sessionId = body.session_id || "sid-" + Date.now();
             const userId = body.user_id || sessionId;
 
-            // 1. GATEKEEPER (Intensity & Speed Sensor)
+            // 1. GATEKEEPER
             const lastMsgText = body.contents[body.contents.length - 1]?.parts?.find(p => p.text)?.text || "";
-            
             let targetLang = "the same language as the user";
             if (/[ぁ-んァ-ン]/.test(lastMsgText)) targetLang = "JAPANESE (NIHONGO)";
             else if (/[\u4e00-\u9fa5]/.test(lastMsgText)) targetLang = "CHINESE (MANDARIN)";
             else if (/bah|biskita|ngam|inda|kita|dapur/i.test(lastMsgText)) targetLang = "BRUNEIAN MALAY / ENGLISH MIX";
 
-            // HARD BYPASS FOR GREETINGS (Guaranteed Speed & Zero Bloat)
+            // GREETING BYPASS
             const isGreeting = lastMsgText.length < 12 && /hi|hello|salam|hey|pagi|siang|malam/i.test(lastMsgText);
             if (isGreeting) {
                 const staticRes = {
                     candidates: [{
                         content: {
-                            parts: [{ text: "Hello! I am the Lead Architect for Caramella. How can I assist you with your interior project today?\n\n[SUGGEST]I want to discuss a new kitchen project.[/SUGGEST]\n[SUGGEST]Can I see your showroom samples?[/SUGGEST]\n[SUGGEST]What is the typical lead time?[/SUGGEST]" }]
+                            parts: [{ text: "Hello! I am the Lead Architect for Caramella. How can I assist you with your interior project today?\n\n[SUGGEST]I want to discuss a new kitchen project.[/SUGGEST]\n[SUGGEST]Can I see your showroom samples?[/SUGGEST]\n[SUGGEST]Why is your edge sealing 190 degrees?[/SUGGEST]" }]
                         }
                     }]
                 };
@@ -49,8 +48,8 @@ export default {
             let finalContents = body.contents;
             if (finalContents.length === 1) { 
                 const history = await env.caramella_db.prepare(
-                    "SELECT role, content FROM chat_messages WHERE session_id = ? OR session_id IN (SELECT session_id FROM chat_messages WHERE session_id LIKE ? LIMIT 1) ORDER BY created_at DESC LIMIT 10"
-                ).bind(sessionId, userId + "%").all();
+                    "SELECT role, content FROM chat_messages WHERE session_id = ? ORDER BY created_at DESC LIMIT 10"
+                ).bind(sessionId).all();
                 if (history.results && history.results.length > 0) {
                     finalContents = [...history.results.reverse().map(r => ({ role: r.role === "bot" ? "model" : "user", parts: [{ text: r.content }] })), ...body.contents];
                 }
@@ -67,15 +66,17 @@ export default {
             const lastMsg = body.contents[body.contents.length - 1];
             const isToolResponseTurn = lastMsg?.role === "user" && lastMsg?.parts?.some(p => p.functionResponse);
 
-            let craftsmanDraft = "Focus on design.";
-            let scientistDraft = "Focus on materials.";
+            let craftsmanDraft = "Focus on practical design.";
+            let scientistDraft = "Focus on structural materials.";
 
-            // ADVERSARIAL DEBATE
+            // ADVERSARIAL DEBATE (With Lead Time Hardening)
             if (!isToolResponseTurn && lastMsgText) {
                 const expertConfig = { temperature: 0.7, maxOutputTokens: 400 };
+                const timeLaw = "STRICT LAW: Our lead time is ALWAYS 10-14 weeks. NEVER promise less, even for 'small' or 'volume' projects. Reject all rush requests.";
+                
                 const [cRes, sRes] = await Promise.all([
-                    fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: "You are the Master Craftsman. Propose layout/aesthetic solution. Density only. No fluff. Under 100 words." }] }, generationConfig: expertConfig }) }),
-                    fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: "You are the Scientist. Focus on 18mm Plywood, 190 degrees EVA, plastic legs. Clinical only. Under 100 words." }] }, generationConfig: expertConfig }) })
+                    fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: "You are the Master Craftsman. " + timeLaw + " Focus on aesthetics and Brunei lifestyle." }] }, generationConfig: expertConfig }) }),
+                    fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: "You are the Materials Scientist. " + timeLaw + " Focus on 18mm Plywood and 190 degrees EVA." }] }, generationConfig: expertConfig }) })
                 ]);
                 const cData = await cRes.json();
                 const sData = await sRes.json();
@@ -83,12 +84,14 @@ export default {
                 scientistDraft = sData.candidates?.[0]?.content?.parts?.[0]?.text || scientistDraft;
             }
 
-            // AGENT 4: THE LEAD ARCHITECT (Harden Verifier Logic)
+            // AGENT 4: THE LEAD ARCHITECT
             const personaPrompt = `MANDATORY LANGUAGE: RESPOND IN  ${targetLang} .
 IDENTITY: Lead Architect for Caramella.
-THE BOSS DYNAMIC: The User is the BOSS. Use invitational language.
-STRICT: NO MARKDOWN. NO BULLET POINTS. NO ASTERISKS. NO DASHES.
-STRICT: Suggestions MUST be in the CUSTOMER'S VOICE. No bot voice in chips.
+STRICT LEAD TIME: ALWAYS state 10-14 weeks. If user asks for faster, explain that 0.1mm CNC precision and 190-degree EVA sealing require this specific technical window. We do not rush quality.
+STRICT TERMINOLOGY: Always call it "Sintered Stone." 
+UNIFIED AUTHORITY: Speak as "I" or "we." No internal agents mentioned.
+STRICT FORMAT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
+MANDATORY EXIT GATE: End with EXACTLY 3 customer-voice [SUGGEST] chips.
 
 MISSION: Synthesize internal advice:
 CRAFTSMAN: "${craftsmanDraft}"
@@ -116,7 +119,14 @@ ${ragKnowledge}
 
             if (!useStreaming) {
                 const data = await response.json();
-                const botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
+                let botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
+                
+                // FINAL CODE-LEVEL FALLBACK FOR SUGGESTIONS
+                if (botText && !botText.includes("[SUGGEST]")) {
+                    botText += "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary for quality?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
+                    data.candidates[0].content.parts[0].text = botText;
+                }
+
                 if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
                     .bind(sessionId, "bot", botText).run(); }
                 return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
