@@ -21,7 +21,8 @@ This is a **static HTML/CSS/JS site** hosted on **GitHub Pages** with **Cloudfla
 | **Jekyll** | **DISABLED** via `.nojekyll` file. Do NOT delete this file. |
 | **Framework** | None. Pure static HTML. No React, no Next.js, no SSG. |
 | **CSS** | Single `site.css` (3300+ lines). Design system with CSS variables. |
-| **JS** | `js/site.js` (shared nav/footer), plus inline `<script>` per page. |
+| **JS** | `js/site.js` (shared nav/footer), `js/chatbot.js` (AI chatbot). |
+| **Chatbot** | Gemini 3.1 Flash-Lite via Cloudflare Worker (`gemini-chat-proxy`). See Chatbot section. |
 | **Pages** | 99 HTML files across root, `/knowledge-base/`, `/case-studies/`, `/knowledge-base/research/` |
 | **Sitemap** | `sitemap.xml` — 95 URLs with `.html` extensions (this is correct, see below) |
 | **URL Format** | `*.html` extensions. This is intentional and correct. See anti-patterns. |
@@ -34,6 +35,18 @@ git push origin main → GitHub Pages (builds in ~60s) → Cloudflare CDN (cache
 
 After pushing, pages may take **2-5 minutes** to appear live due to Cloudflare edge cache. There is no way to force-purge from the terminal unless the user has Cloudflare dashboard access.
 
+### Chatbot Worker Deployment
+
+```
+python c:\tmp\build_worker.py → generates api/gemini-chat-worker.js → npx wrangler deploy
+```
+
+- **`build_worker.py`** (in `c:\tmp\`) generates the Cloudflare Worker JS by embedding `llms-full.txt` as the RAG knowledge base and the persona prompt.
+- **`wrangler.toml`** exists at project root. Deploy with `npx wrangler deploy`.
+- **`GEMINI_API_KEY`** is stored as a Cloudflare Worker secret. If redeployed from scratch, must re-set via `npx wrangler secret put GEMINI_API_KEY`.
+- **CRITICAL**: Pushing to git does NOT deploy the worker. You must run `npx wrangler deploy` separately.
+- **Cache-busting**: `chatbot.js` is loaded via `<script src="js/chatbot.js?v=YYYYMMDDX">`. Bump the version letter after each change.
+
 ### GitHub Pages DNS Check
 The GitHub settings page shows "DNS Check in Progress" permanently. **This is normal** — Cloudflare's proxy masks GitHub's IPs. It does not affect deployment, HTTPS, or serving.
 
@@ -44,30 +57,34 @@ The GitHub settings page shows "DNS Check in Progress" permanently. **This is no
 > These are lessons learned from real incidents where AI agents caused regressions.
 
 ### 1. DO NOT Convert to Clean URLs
-**NEVER** rename `page.html` → `page/index.html` or remove `.html` extensions from links. GitHub Pages has no server-side rewrite engine. Converting would:
-- Break every indexed URL in Google (100+ pages)
-- Create 404s for all existing backlinks
-- Require Cloudflare redirect rules the owner cannot configure
-
-The `.html` extension is **correct and intentional**. It has zero impact on SEO rankings.
+**NEVER** rename `page.html` → `page/index.html` or remove `.html` extensions from links. GitHub Pages has no server-side rewrite engine. Converting would break every indexed URL.
 
 ### 2. DO NOT Delete `.nojekyll`
 Jekyll ignores directories starting with `.` (like `.well-known/`). Removing `.nojekyll` would cause `/.well-known/ai-plugin.json` to return 404.
 
 ### 3. DO NOT Use Bulk Replacement Scripts
-Never write Python/PowerShell scripts to modify HTML files in bulk. Use `multi_replace_file_content` for targeted edits. Bulk scripts have historically destroyed content, injected `#{prefix}` bugs, and corrupted footers.
+Never write Python/PowerShell scripts to modify HTML files in bulk. Use `multi_replace_file_content` for targeted edits.
 
 ### 4. DO NOT Make Absolute Guarantee Claims
-Never use "will never", "guaranteed to never", "impossible to" in copy. Use "highly resistant", "engineered to withstand", "designed to minimize." Absolute claims create warranty liability.
+Use "highly resistant", "engineered to withstand", not "guaranteed" or "impossible." Absolute claims create warranty liability.
 
 ### 5. DO NOT Change Business Contact Info Without Explicit Approval
 Phone numbers, email, address, coordinates are **Tier 2** — confirm before changing.
 
 ### 6. DO NOT Modify the Navbar Link Order
-Current nav order is standardized across all 99 pages: `Home | Portfolio | Concepts | Pricing | Our Story | Knowledge | Inquire`. Do not add, remove, or reorder links.
+Current nav order is standardized across all 99 pages. Do not add, remove, or reorder links.
 
 ### 7. DO NOT Claim "Home Renovation"
-We are a **fit-out and cabinetry company**, not a general contractor. We do NOT do demolition, plumbing, electrical, tiling, or ABCI-regulated structural work. Some pages reference "home renovation" for SEO targeting but the body copy must always clarify scope.
+We are a **fit-out and cabinetry company**, not a general contractor.
+
+### 8. DO NOT Use Python f-strings for Worker Code Generation
+The `build_worker.py` script uses string concatenation, NOT f-strings. F-strings corrupt JavaScript template literals and backslash escaping, causing `SyntaxError` in the generated worker.
+
+### 9. DO NOT Enable Gemini thinkingConfig from Brunei Region
+The Gemini API's `thinkingConfig` / `thinkingLevel` feature is **region-blocked** in Brunei/Southeast Asia. It returns `FAILED_PRECONDITION: User location is not supported`. Do not add it.
+
+### 10. DO NOT Call `const` Functions Before Definition
+JavaScript `const` arrow functions are NOT hoisted. If function A calls function B, B must be defined before A in the file. This caused a `ReferenceError` that crashed the entire chatbot.
 
 ---
 
@@ -144,14 +161,45 @@ Whenever site content changes, you **MUST** sync:
 /knowledge-base/            → 25+ technical deep-dives (Humidity, Edge Sealing, Materials, Layouts)
 /knowledge-base/research/   → 17 peer-grade research papers (Technical Intelligence Portal)
 /case-studies/              → 4 real project breakdowns (Lambak Kanan, Subok, Rimba, Kota Batu)
+/api/                       → gemini-chat-worker.js (Cloudflare Worker source)
 /api/v1/                    → business.json (529 lines, 12 Schema.org types)
 /.well-known/               → ai-plugin.json (AI plugin manifest)
-/docs/                      → Internal guides, reports, copy audits (not served to public)
 /images/, /assets/          → Static assets (WebP format standard)
-/js/                        → site.js (shared nav/footer/ScrollSpy)
-/tools/                     → audit_site.py and maintenance scripts
+/js/                        → site.js, chatbot.js
+/css/                       → site.css, chatbot.css
 /.gemini/synapse.jsonl      → Agent Communication Bus (JSONL)
 ```
+
+### 🤖 Chatbot Architecture
+
+```
+User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) → Gemini API
+                                     ↓ (fallback if SSE blocked)
+                              ?stream=false → JSON response
+```
+
+| Component | File | Purpose |
+|:---|:---|:---|
+| Frontend JS | `js/chatbot.js` | Chat UI, SSE streaming, word-by-word reveal, memory, export |
+| Frontend CSS | `css/chatbot.css` | Chatbot styling, suggestion chips, streaming cursor |
+| Worker source | `api/gemini-chat-worker.js` | Cloudflare Worker proxy to Gemini API |
+| Build script | `c:\tmp\build_worker.py` | Generates worker by embedding RAG + persona prompt |
+| Knowledge base | `llms-full.txt` | RAG source injected into worker system prompt |
+| Config | `wrangler.toml` | Wrangler deployment config |
+
+**Chatbot Features (as of 2026-03-07):**
+- SSE streaming with word-by-word reveal animation (35ms/word)
+- Automatic fallback to non-streaming JSON if SSE is blocked (restricted WiFi)
+- Suggested follow-up chips (customer-voice questions)
+- Smart time-aware greeting (morning/afternoon/evening + returning user detection)
+- Structured conversation memory (localStorage, 50-fact rolling window)
+- Image understanding (inline data to Gemini)
+- Conversation export (.txt download)
+- Multilingual support (Malay, Chinese, English)
+- Metric default with imperial fallback (mirrors user's unit)
+- 60-word brevity limit with 7 few-shot behavioral training examples
+- Escalation rules: never fabricate, redirect to WhatsApp/contact form
+- Claude-style intellectual honesty persona (no pushy sales tactics)
 
 ## 🧠 HARD MANDATE: Agent Communication (Synapse Bus)
 > **ALL** agents working on this repository **MUST** coordinate via the Synapse Bus. Failure to log session starts, major milestones, and state changes is a protocol violation.
@@ -170,18 +218,20 @@ Whenever site content changes, you **MUST** sync:
 ### Key Files
 | File | Purpose |
 |:---|:---|
-| `llms.txt` | AI entry point. First line = classification signal. 284 lines. |
-| `llms-full.txt` | Full content dump for LLMs. |
-| `api/v1/business.json` | Structured JSON-LD with 12 schema types, 529 lines. |
+| `llms.txt` | AI entry point. First line = classification signal. |
+| `llms-full.txt` | Full content dump for LLMs. Also the chatbot's RAG knowledge base. |
+| `api/v1/business.json` | Structured JSON-LD with 12 schema types. |
+| `api/gemini-chat-worker.js` | Cloudflare Worker source (generated by `build_worker.py`). |
+| `js/chatbot.js` | Chatbot frontend: UI, streaming, memory, export. Cache-busted via `?v=` param. |
+| `css/chatbot.css` | Chatbot styling: chips, streaming cursor, animations. |
+| `wrangler.toml` | Wrangler config for deploying the Cloudflare Worker. |
 | `.well-known/ai-plugin.json` | OpenAI plugin-spec manifest. Requires `.nojekyll` to serve. |
 | `robots.txt` | 30+ AI bot user-agents explicitly allowed. |
 | `sitemap.xml` | 95 URLs. Uses `.html` extensions (correct for this stack). |
 | `site.css` | 3300+ line design system. Dark mode, glassmorphism, CSS variables. |
-| `js/site.js` | Shared nav injection, footer, ScrollSpy. Version-cacheable. |
+| `js/site.js` | Shared nav injection, footer, ScrollSpy. |
 | `CNAME` | Points to `caramellabrunei.com`. Do not modify. |
 | `.nojekyll` | Disables Jekyll. Required for `.well-known/` directory. Do not delete. |
-| `e5f4b6e459f54a5c8d9c3c1734e09ef0.txt` | IndexNow key file for Bing/Yandex. |
-| `caramellabrunei.txt` | Likely Bing Webmaster verification token. Do not delete. |
 
 ### Schema Implementation (Already Complete)
 The site has extensive structured data — do NOT re-implement from scratch:
@@ -234,4 +284,4 @@ Other AI agents (ChatGPT, Claude chatbots) frequently audit this site and produc
 
 ---
 
-> **Last Updated**: 2026-03-04. Audit fixes deployed (ratingCount, ai-plugin.json, geo coords, .nojekyll). Anti-pattern documentation added. Infrastructure context expanded.
+> **Last Updated**: 2026-03-07. Chatbot architecture documented. Worker deployment pipeline added. New anti-patterns (#8-10) from chatbot dev session. Key files updated with chatbot components.
