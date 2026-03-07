@@ -135,9 +135,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // FORMATTING HELPERS
     // ============================
     const formatBotMessage = (text) => {
-        // --- Markdown Purge ---
-        // We strictly remove all asterisks to ensure clean plain-text output
-        const cleanText = text.replace(/\*/g, "");
+        // --- Total Markdown Purge ---
+        // Strictly remove all asterisks, dashes, and bullets used for markdown formatting
+        const cleanText = text
+            .replace(/\*/g, "")
+            .replace(/^[\s]*[-•][\s]+/gm, "") // Remove bullet markers at start of lines
+            .replace(/[\s]*[-•][\s]+/g, " "); // Remove inline bullet markers
 
         const escaped = cleanText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         return escaped
