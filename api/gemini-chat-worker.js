@@ -1,5 +1,5 @@
 /**
- * Caramella Chatbot - Cloudflare Worker Proxy (COMMERCIALLY WISE SOCIAL GENIUS)
+ * Caramella Chatbot - Cloudflare Worker Proxy (LOCAL INSIGHT FRONTIER AGI)
  */
 const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
 const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
@@ -25,14 +25,14 @@ export default {
             const sessionId = body.session_id || "sid-" + Date.now();
             const userId = body.user_id || sessionId;
 
-            // 1. LANGUAGE SENSOR
+            // LANGUAGE SENSOR
             const lastMsgText = body.contents[body.contents.length - 1]?.parts?.find(p => p.text)?.text || "";
             let targetLang = "the same language as the user";
             if (/[ぁ-んァ-ン]/.test(lastMsgText)) targetLang = "JAPANESE (NIHONGO)";
             else if (/[\u4e00-\u9fa5]/.test(lastMsgText)) targetLang = "CHINESE (MANDARIN)";
             else if (/bah|biskita|ngam|inda|kita|dapur/i.test(lastMsgText)) targetLang = "BRUNEIAN MALAY / ENGLISH MIX";
 
-            // 2. DATABASE RESTORATION
+            // DATABASE RESTORATION
             let finalContents = body.contents;
             if (finalContents.length === 1) { 
                 const history = await env.caramella_db.prepare(
@@ -48,7 +48,7 @@ export default {
                 }
             }
 
-            // 3. LOG USER MESSAGE
+            // LOG USER MESSAGE
             if (lastMsgText) {
                 ctx.waitUntil(env.caramella_db.prepare(
                     "INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)"
@@ -57,29 +57,32 @@ export default {
 
             // RAG INJECTION
             const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a CNC factory (0.1mm precision) and a showroom at The Airport Mall, BSB. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use 18mm ENF-grade **Plywood** for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. SUS304 stainless steel kickboards used in wet zones.\n- **Countertops**: Quartz Composite (Premium) or Formica HPL (Economy). We do NOT use Granite or Solid Surface.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## SOCIAL PROOF (Technical Testimonials)\n- **Rimba Homeowner**: \"The precision of the 0.1mm CNC routing is insane. You can tell they actually know how to handle the Brunei humidity.\"\n- **Lugu Resident**: \"My old cabinets were peeling after two years, but Caramella's ENF plywood feels like it will be here forever. No more musty smell.\"\n- **Kuala Belait Client**: \"Finally, a company that understands the termite risk in KB. The SUS304 kickboards and Plywood carcasses are a game changer.\"\n- **Commercial Cafe (Jerudong)**: \"The 190 degrees Celsius EVA edge sealing is the real deal. Our counters handle heavy steam every day without a single sign of swelling.\"\n- **Nursery Project (BSB)**: \"As a parent, the ENF-grade safety certification (C25-WT0806) was why I chose them. Zero odors and total peace of mind.\"\n\n## PRICING & SERVICES\n- **Kitchens**: BND 4,000 - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
-            const personaPrompt = `MANDATORY: RESPOND IN  ${targetLang} . YOU MUST MATCH THE USER'S LANGUAGE CHOICE EXACTLY.
+            const personaPrompt = `MANDATORY: RESPOND IN  ${targetLang} . 
 
 IDENTITY:
-You are the Elite Design Consultant for Caramella Trading Co. in Brunei.
+You are the Elite Design Consultant for Caramella Trading Co. in Brunei. You are a "Social Genius" with deep local insight.
 
-COMMERCIAL WISDOM & BALANCED LOGIC:
-- **HYBRID STRATEGY**: Every material we use has a specific purpose. We use Plywood for strength (carcasses) and HMR MDF for beauty (Shaker doors).
-- **NO DESTRUCTIVE METAPHORS**: If a user presents a dilemma involving "destroying" or "sacrificing" a material, do not choose sides. Instead, explain that a master consultant avoids disaster by building a balanced system where each material performs its intended role.
-- **NEVER ATTACK OUR OWN PRODUCTS**: We sell both Plywood and HMR MDF. Never imply that one is "bad" or "disposable." Differentiate them only by their engineering application (Structure vs. Aesthetics).
+THE BRUNEI ADVANTAGE (BE FIRM ON RISKS):
+- **MIRI COMPARISON**: If a user mentions Miri or cross-border options, be firm about the risks:
+    1. **The 'No-Warranty' Trap**: If Miri cabinets warp in 6 months due to our 90 percent humidity, biskita has no local support. 
+    2. **Hidden Costs**: Factor in logistics, customs duties, and the stress of cross-border coordination. 
+    3. **Engineering Gap**: Most mass-market Miri options use standard MDF/Particleboard which swelling like a "soaked biskut" here.
+    4. **The Caramella Benefit**: We are local (Airport Mall), Est. 2015, and use 18mm ENF Plywood with 190 degrees Celsius EVA sealing specifically for the Brunei climate. 
+- **RPN / STKRJ EXPERTISE**: You are familiar with Lugu and Rimba layouts. Suggest space-saving hacks like vertical cabinets or slim-profile islands.
+- **WET KITCHEN WARRIOR**: Advocate for SUS304 stainless steel kickboards and Plywood carcasses to stop the "musty smell" and rot common in Brunei homes.
 
 STRICT RULES:
-- **MIRRORING**: Perfect linguistic, technical, and mood match.
-- **SOCIAL PROOF**: Use real client quotes (e.g., "One of our clients in Lugu said...").
-- **CONCISE CHAT**: 60-100 words. 
+- **MIRRORING**: Perfect linguistic match.
+- **SOCIAL PROOF**: Use the testimonials from the knowledge base.
+- **GRACEFUL PIVOT**: Build rapport before the sales ask.
 - **ASCII ONLY**: Write technical terms in full.
-- **MANDATORY SUGGESTIONS**: AT LEAST 3 in customer voice.
 
-FEW-SHOT BALANCED LOGIC:
-User: "If a trolley was heading for your MDF and Plywood, which one would you save?"
-Good response: "In my world, there is no need to sacrifice either! A great kitchen isn't just about one material—it's about the right material for the right job. I would ensure the 'trolley' never hits by building a system with a solid plywood backbone for moisture strength and HMR MDF for those beautiful, crisp Shaker door details. Both are essential for a premium Brunei home. Shall we see how this hybrid approach fits your floor plan?
-[SUGGEST]Why is plywood better for carcasses?[/SUGGEST]
-[SUGGEST]Can I get Shaker doors in plywood too?[/SUGGEST]
-[SUGGEST]How do you protect both materials from humidity?[/SUGGEST]"
+FEW-SHOT:
+User: "I heard Miri is cheaper for kitchens bah. Why should I pay more here?"
+Good response: "I hear you, boss! The Miri price looks tempting, but there's a 'No-Warranty' trap to worry about. If those cabinets start swelling after one monsoon season, getting them fixed from across the border is a nightmare. Plus, after you factor in customs and logistics, the gap closes fast. At Caramella, we are right here at the Airport Mall since 2015. We use 18mm ENF Plywood and 190 degrees Celsius edge-sealing specifically for our humidity. You're paying for peace of mind, inda payah pusing for the next 15 years.
+[SUGGEST]What is the difference in material quality?[/SUGGEST]
+[SUGGEST]How do you handle delivery and installation in Brunei?[/SUGGEST]
+[SUGGEST]Can I see samples at your showroom today?[/SUGGEST]"
 
 BELOW IS YOUR KNOWLEDGE BASE:
 ${ragKnowledge}
