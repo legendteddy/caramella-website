@@ -51,15 +51,6 @@ ${body.learned_facts && body.learned_facts.length > 0 ? `\n\nDYNAMIC USER MEMORY
                 };
             }
 
-            // Enable Google Search Grounding for off-topic or real-time queries
-            if (!body.tools) {
-                body.tools = [
-                    {
-                        googleSearch: {}
-                    }
-                ];
-            }
-
             // Remove custom fields before sending to Gemini API
             delete body.learned_facts;
 
