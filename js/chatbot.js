@@ -196,13 +196,15 @@ document.addEventListener("DOMContentLoaded", () => {
             const chip = document.createElement('button');
             chip.className = 'suggestion-chip';
             chip.textContent = text;
-            chip.addEventListener('click', () => {
+            chip.addEventListener('click', async () => {
                 // Remove chips when clicked
                 container.remove();
-                // Set input value and submit
-                chatInput.value = text;
-                sendBtn.disabled = false;
-                chatForm.dispatchEvent(new Event('submit', { cancelable: true }));
+                // Set input value to reflect state
+                chatInput.value = ''; // Clear it since we are submitting it immediately
+                sendBtn.disabled = true;
+
+                // Directly call the robust submission handler
+                await submitChatMessage(text);
             });
             container.appendChild(chip);
         });
@@ -374,34 +376,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     // ============================
-    // FORM SUBMIT HANDLER
+    // MESSAGE SUBMISSION LOGIC
     // ============================
-    chatForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    const submitChatMessage = async (messageText, attachedImageBase64 = null, attachedMimeType = null) => {
         if (isStreaming) return;
-
-        const messageText = chatInput.value.trim();
-        chatInput.value = '';
-
-        // Handle Image Attachment
-        const fileInput = document.getElementById('chat-image-upload');
-        let attachedImageBase64 = null;
-        let attachedMimeType = null;
-
-        if (fileInput && fileInput.files.length > 0) {
-            const file = fileInput.files[0];
-            attachedMimeType = file.type;
-            attachedImageBase64 = await new Promise((resolve) => {
-                const reader = new FileReader();
-                reader.onloadend = () => {
-                    const base64String = reader.result.replace(/^data:image\/(png|jpeg|webp);base64,/, "");
-                    resolve(base64String);
-                };
-                reader.readAsDataURL(file);
-            });
-            fileInput.value = '';
-        }
-
         if (!messageText && !attachedImageBase64) {
             sendBtn.disabled = true;
             return;
@@ -490,7 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         if (forceNonStreaming) {
                             console.log("Forcing non-streaming for lead-capture turn.");
-                            throw new Error("Force Fallback"); 
+                            throw new Error("Force Fallback");
                         }
 
                         response = await fetch(WORKER_URL, {
@@ -520,14 +498,14 @@ document.addEventListener("DOMContentLoaded", () => {
                                 // Batch words slightly if the buffer grows too large
                                 const batchSize = Math.max(1, Math.floor((targetWords.length - revealedWords) / 8));
                                 revealedWords += batchSize;
-                                
+
                                 requestAnimationFrame(() => {
                                     const currentDisplay = targetWords.slice(0, Math.min(revealedWords, targetWords.length)).join('');
                                     botDiv.innerHTML = formatBotMessage(currentDisplay);
                                     chatBody.style.scrollBehavior = 'auto';
                                     chatBody.scrollTop = chatBody.scrollHeight;
                                 });
-                                
+
                                 revealTimer = setTimeout(revealNextWord, WORD_DELAY);
                             } else {
                                 revealTimer = null;
@@ -546,7 +524,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     .replace(/\[SUGGEST\]/g, '')
                                     .replace(/\[LEARN\]/g, '')
                                     .trim();
-                                
+
                                 // Split by words/whitespace to create the reveal buffer
                                 targetWords = displayOnly.split(/(\s+)/).filter(w => w.length > 0);
                                 if (!revealTimer && revealedWords < targetWords.length) revealNextWord();
@@ -558,14 +536,14 @@ document.addEventListener("DOMContentLoaded", () => {
                                     botDiv.innerHTML = formatBotMessage(cleanText);
                                     botDiv.classList.remove('streaming');
                                     chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
-                                    
+
                                     setTimeout(() => {
                                         renderSuggestionChips(suggestions);
                                         chatBody.style.scrollBehavior = 'smooth';
                                         chatBody.scrollTop = chatBody.scrollHeight;
                                     }, 100);
                                 };
-                                
+
                                 // Final flush if reveal is still trailing
                                 if (revealedWords >= targetWords.length) {
                                     finalize();
@@ -627,5 +605,37 @@ document.addEventListener("DOMContentLoaded", () => {
             isStreaming = false;
             sendBtn.disabled = chatInput.value.trim().length === 0;
         }
+    };
+
+    // ============================
+    // FORM SUBMIT HANDLER
+    // ============================
+    chatForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const messageText = chatInput.value.trim();
+        chatInput.value = '';
+
+        // Handle Image Attachment
+        const fileInput = document.getElementById('chat-image-upload');
+        let attachedImageBase64 = null;
+        let attachedMimeType = null;
+
+        if (fileInput && fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            attachedMimeType = file.type;
+            attachedImageBase64 = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    const base64String = reader.result.replace(/^data:image\/(png|jpeg|webp);base64,/, "");
+                    resolve(base64String);
+                };
+                reader.readAsDataURL(file);
+            });
+            fileInput.value = '';
+        }
+
+        await submitChatMessage(messageText, attachedImageBase64, attachedMimeType);
     });
+
 });
