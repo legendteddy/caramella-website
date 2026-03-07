@@ -11,12 +11,12 @@
 
 .chatbot-container {
     position: fixed;
-    bottom: 180px;
+    bottom: 100px;
     right: 2rem;
     width: 360px;
     max-width: calc(100vw - 3rem);
     height: 520px;
-    max-height: calc(100vh - 200px);
+    max-height: calc(100vh - 120px);
     background: var(--chat-bg);
     border: 1px solid var(--chat-border);
     border-radius: 16px;
@@ -313,7 +313,7 @@
 /* Floating Toggle Button — Pill with Label */
 .chatbot-toggle-btn {
     position: fixed;
-    bottom: 104px;
+    bottom: 2rem;
     right: 2rem;
     height: 52px;
     padding: 0 20px 0 16px;
@@ -368,7 +368,7 @@
 /* Welcome Bubble */
 .chatbot-welcome-bubble {
     position: fixed;
-    bottom: 168px;
+    bottom: 76px;
     right: 2rem;
     max-width: 260px;
     padding: 14px 36px 14px 16px;
@@ -427,18 +427,18 @@
 /* Responsive: Tablet */
 @media (max-width: 768px) {
     .chatbot-toggle-btn {
-        bottom: 140px;
+        bottom: 1.5rem;
         right: 1.5rem;
     }
 
     .chatbot-welcome-bubble {
-        bottom: 204px;
+        bottom: 80px;
         right: 1.5rem;
         max-width: 220px;
     }
 
     .chatbot-container {
-        bottom: 210px;
+        bottom: 80px;
         right: 1.5rem;
     }
 }
@@ -457,12 +457,12 @@
     }
 
     .chatbot-toggle-btn {
-        bottom: 96px;
+        bottom: 16px;
         right: 16px;
     }
 
     .chatbot-welcome-bubble {
-        bottom: 160px;
+        bottom: 76px;
         right: 16px;
         max-width: calc(100vw - 40px);
     }
