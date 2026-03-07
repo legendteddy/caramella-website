@@ -186,22 +186,22 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 | Component | File | Purpose |
 |:---|:---|:---|
 | Frontend JS | `js/chatbot.js` | Chat UI, SSE real-time rendering, history capping, persistent SID |
-| Frontend CSS | `css/chatbot.css` | Chatbot styling, suggestion chips, enlarged UI (440px x 700px) |
+| Frontend CSS | `css/chatbot.css` | Chatbot styling, suggestion chips, enlarged UI (500px x 800px) |
 | Worker source | `api/gemini-chat-worker.js` | Cloudflare Worker proxy with Tool Use & D1 Logging |
 | Build script | `build_worker.py` | Generates worker by embedding sanitized llms-compact.txt |
 | Knowledge base | `llms-compact.txt` | ASCII-safe, token-optimized RAG source for internal worker |
 | Database | `caramella_db` (D1) | Intelligence Archive for messages & lead analytics |
 
 **Chatbot Features (as of 2026-03-08):**
-- **Universal Multilingual Mirroring**: Perfectly matches user language (Full Chinese, Full Professional Malay, or Code-Switching).
+- **Dynamic Language Sensor**: Perfectly matches user language choice (Japanese, Chinese, Malay, English) with 100% precision.
+- **Bruneian Social Genius**: Master of professional local nuances (bah, ngam, inda payah pusing) with Graceful Pivot logic.
+- **Frontier Persistence**: Automatically restores previous conversation history from D1 using permanent User IDs.
 - **Emergency & Support Protocol**: Empathetic detection of distress with local Brunei resources (Talian Harapan 145).
-- **Bruneian Social Genius**: Master of professional local nuances (bah, ngam, inda payah pusing) with frontier IQ.
-- **SOTA Technical Intelligence**: High-density knowledge of hardware (Blum/DTC), material physics, and ROI.
+- **SOTA Technical Intelligence**: High-density knowledge of hardware (Blum/DTC), hybrid material strategy, and ROI.
 - **Lead Capture Tool**: Mirrors showroom contact form (Name, Phone, Location, Status, Budget, Appt).
 - **Message-Level Logging**: Every user input and bot response recorded in D1 `chat_messages` table.
 - **Intelligence Archive**: Real-time logging of project briefs and intent scores to D1 `chat_analytics`.
 - **Real-time Rendering**: Optimized via `requestAnimationFrame` and word-batching (zero lag).
-- **Proactive Funnel**: Identifies high-intent and gently guides users toward direct contact.
 
 ## 🧠 HARD MANDATE: Agent Communication (Synapse Bus)
 > **ALL** agents working on this repository **MUST** coordinate via the Synapse Bus. Failure to log session starts, major milestones, and state changes is a protocol violation.
@@ -244,4 +244,4 @@ Common false positives to reject:
 
 ---
 
-> **Last Updated**: 2026-03-08. **CHATBOT SOTA UPGRADE FINALIZED.** Universal Multilingual Mirroring (EN/MS/ZH) live. Emergency Protocol active. Cloudflare D1 Intelligence Archive & Message Logging active. Lead Capture tool fully synchronized. ASCII-safe encoding enforced. UI enlarged for visibility.
+> **Last Updated**: 2026-03-08. **CHATBOT SOTA UPGRADE FINALIZED.** Dynamic Language Sensor live. Frontier Persistence active. Social Genius persona with Graceful Pivot enabled. D1 Intelligence Archive active. UI Enlarged (500x800).
