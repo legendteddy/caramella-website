@@ -189,6 +189,18 @@
     color: var(--chat-accent);
 }
 
+.bot-message a {
+    color: var(--chat-accent);
+    text-decoration: underline;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.bot-message a:hover {
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
 .user-message {
     background: var(--chat-user-msg);
     color: var(--chat-text);
