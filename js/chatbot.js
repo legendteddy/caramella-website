@@ -272,9 +272,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         const parsed = JSON.parse(data);
                         if (parsed.candidates && parsed.candidates[0]) {
                             const parts = parsed.candidates[0].content?.parts;
-                            if (parts && parts[0] && parts[0].text) {
-                                fullText += parts[0].text;
-                                onChunk(fullText);
+                            if (parts) {
+                                for (const part of parts) {
+                                    // Skip thinking/thought parts — only show final answer
+                                    if (part.thought) continue;
+                                    if (part.text) {
+                                        fullText += part.text;
+                                        onChunk(fullText);
+                                    }
+                                }
                             }
                         }
                     } catch (e) {

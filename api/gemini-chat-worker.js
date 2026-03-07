@@ -57,6 +57,10 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nDYNAMIC USER MEMORY
             // Remove custom fields before sending to Gemini API
             delete body.learned_facts;
 
+            // Enable deep thinking for better reasoning
+            if (!body.generationConfig) body.generationConfig = {};
+            body.generationConfig.thinkingConfig = { thinkingLevel: "HIGH" };
+
             // Use streaming endpoint
             const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`;
             const response = await fetch(endpoint, {
