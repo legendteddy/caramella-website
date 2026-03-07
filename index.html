@@ -342,7 +342,7 @@
         title="AI-Readable Documentation">
     <link rel="help" href="https://caramellabrunei.com/robots.txt" title="Crawler Instructions">
     <!-- Chatbot Styles -->
-    <link rel="stylesheet" href="css/chatbot.css?v=20260307d">
+    <link rel="stylesheet" href="css/chatbot.css?v=20260307e">
 </head>
 
 
@@ -1255,14 +1255,20 @@
             Messages are processed by AI. Please do not share sensitive information.
         </div>
     </div>
+    <div id="chatbot-welcome-bubble" class="chatbot-welcome-bubble" style="display:none;">
+        <span class="welcome-close"
+            onclick="this.parentElement.style.display='none';localStorage.setItem('chatWelcomeDismissed','1');">&times;</span>
+        Need help with your kitchen or wardrobe project? Ask our AI consultant.
+    </div>
     <button id="chatbot-toggle-btn" class="chatbot-toggle-btn" aria-label="Open Chat Assistant">
         <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
         </svg>
+        <span class="toggle-label">Ask AI</span>
     </button>
 
-    <script src="js/chatbot.js?v=20260307f" defer></script>
+    <script src="js/chatbot.js?v=20260307g" defer></script>
 </body>
 
 </html>

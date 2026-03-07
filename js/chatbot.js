@@ -94,8 +94,22 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    toggleBtn.addEventListener('click', toggleChat);
+    toggleBtn.addEventListener('click', () => {
+        const welcomeBubble = document.getElementById('chatbot-welcome-bubble');
+        if (welcomeBubble) welcomeBubble.style.display = 'none';
+        toggleChat();
+    });
     closeBtn.addEventListener('click', toggleChat);
+
+    // Welcome bubble: show after 5s for first-time visitors
+    const welcomeBubble = document.getElementById('chatbot-welcome-bubble');
+    if (welcomeBubble && !localStorage.getItem('chatWelcomeDismissed')) {
+        setTimeout(() => {
+            if (chatContainer.classList.contains('closed')) {
+                welcomeBubble.style.display = 'block';
+            }
+        }, 5000);
+    }
 
     // ============================
     // INPUT STATE
