@@ -61,18 +61,32 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nDYNAMIC USER MEMORY
             if (!body.generationConfig) body.generationConfig = {};
             body.generationConfig.thinkingConfig = { thinkingLevel: "MEDIUM" };
 
+            // Helper: call Gemini API, retry without thinkingConfig if region-blocked
+            const callGemini = async (action, bodyObj) => {
+                const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:${action}&key=${apiKey}`;
+                let response = await fetch(endpoint, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(bodyObj),
+                });
+                // If 400 (likely region restriction on thinking), retry without thinkingConfig
+                if (response.status === 400 && bodyObj.generationConfig?.thinkingConfig) {
+                    delete bodyObj.generationConfig.thinkingConfig;
+                    response = await fetch(endpoint, {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(bodyObj),
+                    });
+                }
+                return response;
+            };
+
             // Check if client requested non-streaming fallback
             const url = new URL(request.url);
             const useStreaming = url.searchParams.get('stream') !== 'false';
 
             if (useStreaming) {
-                // Streaming SSE endpoint
-                const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`;
-                const response = await fetch(endpoint, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(body),
-                });
+                const response = await callGemini("streamGenerateContent?alt=sse", body);
                 return new Response(response.body, {
                     status: response.status,
                     headers: {
@@ -83,13 +97,7 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nDYNAMIC USER MEMORY
                     },
                 });
             } else {
-                // Non-streaming fallback
-                const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
-                const response = await fetch(endpoint, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(body),
-                });
+                const response = await callGemini("generateContent?", body);
                 const data = await response.json();
                 return new Response(JSON.stringify(data), {
                     status: response.status,
