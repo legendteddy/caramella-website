@@ -1,0 +1,210 @@
+import json
+import re
+
+# Set the correct absolute path for the COMPACT knowledge base
+llms_compact_path = 'C:/Users/thoma/Documents/Caramella Website/llms-compact.txt'
+
+with open(llms_compact_path, 'r', encoding='utf-8') as f:
+    knowledge = f.read()
+
+# 1. STRIP BOM
+if knowledge.startswith('\ufeff'):
+    knowledge = knowledge[1:]
+
+# 2. SANITIZE: Force everything to ASCII
+knowledge = knowledge.replace('°', ' degrees ')
+knowledge = knowledge.replace('\u00b3', '3')
+knowledge = re.sub(r'[^\x00-\x7f]', r'', knowledge)
+
+# Escape the knowledge for embedding in JS
+knowledge_json = json.dumps(knowledge)
+
+# Build the worker JS directly using string concatenation to avoid f-string escaping nightmares
+worker_parts = []
+
+worker_parts.append('''/**
+ * Caramella Chatbot - Cloudflare Worker Proxy (CURIOSITY-DRIVEN ENGAGEMENT)
+ */
+const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
+const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
+
+export default {
+    async fetch(request, env, ctx) {
+        if (request.method === "OPTIONS") {
+            return new Response(null, {
+                headers: {
+                    "Access-Control-Allow-Origin": "*",
+                    "Access-Control-Allow-Methods": "POST, OPTIONS",
+                    "Access-Control-Allow-Headers": "Content-Type",
+                    "Content-Type": "application/json; charset=utf-8"
+                },
+            });
+        }
+        if (request.method !== "POST") {
+            return new Response("Method not allowed", { status: 405 });
+        }
+        try {
+            const apiKey = env.GEMINI_API_KEY;
+            const body = await request.json();
+            const sessionId = body.session_id || "sid-" + Date.now();
+            const userId = body.user_id || sessionId;
+
+            // 1. DATABASE RESTORATION
+            let finalContents = body.contents;
+            if (finalContents.length === 1) { 
+                const history = await env.caramella_db.prepare(
+                    "SELECT role, content FROM chat_messages WHERE session_id = ? OR session_id IN (SELECT session_id FROM chat_messages WHERE session_id LIKE ? LIMIT 1) ORDER BY created_at DESC LIMIT 10"
+                ).bind(sessionId, userId + "%").all();
+                
+                if (history.results && history.results.length > 0) {
+                    const restored = history.results.reverse().map(r => ({
+                        role: r.role === "bot" ? "model" : "user",
+                        parts: [{ text: r.content }]
+                    }));
+                    finalContents = [...restored, ...body.contents];
+                }
+            }
+
+            // 2. LOG USER MESSAGE
+            const lastUserMsg = body.contents[body.contents.length - 1];
+            if (lastUserMsg && lastUserMsg.role === "user") {
+                const userText = lastUserMsg.parts.find(p => p.text)?.text || "[Media]";
+                ctx.waitUntil(env.caramella_db.prepare(
+                    "INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)"
+                ).bind(sessionId, "user", userText).run());
+            }
+
+            // RAG INJECTION
+            const ragKnowledge = ''')
+
+worker_parts.append(knowledge_json)
+
+worker_parts.append(''';
+            const personaPrompt = `YOU ARE THE ELITE DESIGN CONSULTANT FOR CARAMELLA TRADING CO. IN BRUNEI.
+
+CURIOSITY-DRIVEN SUGGESTIONS (HOOK LOGIC):
+Your suggestion chips MUST trigger the user's curiosity. Do not use boring "Yes/No" questions. Use "Hook-Based" language that hints at hidden technical truths or common industry mistakes.
+- **Rules for Chips**: 
+    1. Use "Why" or "The secret to..." or "What happens when...".
+    2. Focus on technical moats: 190 degrees Celsius sealing, ENF safety, Plywood carcasses, Plastic legs.
+    3. Make the user feel like they are getting "insider" knowledge.
+- **Good Examples**: "Why do standard hinges fail in Brunei's humidity?", "What is the 'musty smell' secret in old kitchens?", "How does 190 degrees Celsius sealing actually stop water?", "Why is MDF necessary for Shaker doors but bad for carcasses?"
+- **Bad Examples**: "How much?", "Where are you?", "Thank you."
+
+STRICT LEAD CAPTURE: Name, Phone, Full Address (House/Street), and Budget turn-by-turn.
+
+RULES:
+- **MIRRORING**: Perfect linguistic and cultural match.
+- **NO MARKDOWN**: Plain text only. No asterisks (*).
+- **ASCII ONLY**: Technical terms in full.
+
+FEW-SHOT:
+User: "I want a new kitchen in Lugu."
+Good response: "Lugu houses have great potential, boss! Since you're dealing with 90 percent humidity there, we focus on ENF-grade plywood carcasses and 190 degrees Celsius EVA edge sealing to ensure your kitchen doesn't swell up like a soaked biskut. To get started on a custom layout for your space, could I get your name and a contact number?
+[SUGGEST]Why do standard cabinets fail so quickly in Lugu?[/SUGGEST]
+[SUGGEST]What is the secret to a rot-proof wet kitchen?[/SUGGEST]
+[SUGGEST]How does your CNC precision affect my kitchen's life?[/SUGGEST]"
+
+BELOW IS YOUR KNOWLEDGE BASE:
+${ragKnowledge}
+
+${body.learned_facts && body.learned_facts.length > 0 ? '\\n\\nFACTS LEARNED (Track these):\\n- ' + body.learned_facts.join('\\n- ') : ""}
+`;
+
+            if (!body.system_instruction) {
+                body.system_instruction = {
+                    parts: [{ text: personaPrompt }]
+                };
+            }
+
+            // TOOL DEFINITION
+            body.tools = [{
+                function_declarations: [{
+                    name: "submit_lead",
+                    description: "Captures and submits a project lead. USE THIS IMMEDIATELY once Name, Phone, and ANY other detail are known.",
+                    parameters: {
+                        type: "OBJECT",
+                        properties: {
+                            name: { type: "STRING" },
+                            phone: { type: "STRING" },
+                            location: { type: "STRING" },
+                            status: { type: "STRING" },
+                            budget: { type: "STRING" },
+                            materials: { type: "STRING" },
+                            appointment_date: { type: "STRING" },
+                            appointment_slot: { type: "STRING" },
+                            summary: { type: "STRING" },
+                            sentiment: { type: "STRING" },
+                            intent_score: { type: "NUMBER" },
+                            tech_queries: { type: "STRING" }
+                        },
+                        required: ["name", "phone"]
+                    }
+                }]
+            }];
+
+            const cleanContents = finalContents.map(c => ({ role: c.role, parts: c.parts.map(p => ({ ...p })) }));
+            const geminiBody = {
+                contents: cleanContents,
+                system_instruction: body.system_instruction,
+                tools: body.tools,
+                generationConfig: body.generationConfig || { temperature: 0.8, topP: 0.95, maxOutputTokens: 1000 }
+            };
+
+            const url = new URL(request.url);
+            const useStreaming = url.searchParams.get('stream') !== 'false';
+            const endpoint = useStreaming 
+                ? `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`
+                : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
+
+            let response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(geminiBody) });
+            if (!response.ok) { const errText = await response.text(); throw new Error(`Gemini API error: ${errText}`); }
+
+            if (!useStreaming) {
+                const data = await response.json();
+                const lastMsg = body.contents[body.contents.length - 1];
+                const isToolResponseTurn = lastMsg?.role === "user" && lastMsg?.parts?.some(p => p.functionResponse);
+
+                if (!isToolResponseTurn && data.candidates?.[0]?.content?.parts?.[0]?.functionCall) {
+                    const call = data.candidates[0].content.parts[0].functionCall;
+                    if (call.name === "submit_lead") {
+                        const args = call.args;
+                        try {
+                            await env.caramella_db.prepare("INSERT INTO chat_analytics (customer_info, summary, sentiment, intent_score, tech_queries, source) VALUES (?, ?, ?, ?, ?, ?)")
+                                .bind(`${args.name} | ${args.phone} | ${args.location || 'N/A'}`, args.summary || 'Lead', args.sentiment || 'N/A', args.intent_score || 5, args.tech_queries || 'N/A', 'chatbot-v6').run();
+                            await fetch(FORMSPREE_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...args, source: "chatbot-v6" }) });
+                        } catch (err) { console.error(err); }
+
+                        const toolBody = {
+                            contents: [...geminiBody.contents, data.candidates[0].content, { role: "user", parts: [{ functionResponse: { name: "submit_lead", response: { content: "Lead recorded." } } }] }],
+                            tools: geminiBody.tools, system_instruction: geminiBody.system_instruction, generationConfig: geminiBody.generationConfig
+                        };
+                        const finalResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(toolBody) });
+                        const finalData = await finalResponse.json();
+                        const botText = finalData.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
+                        ctx.waitUntil(env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
+                            .bind(sessionId, "bot", botText).run());
+                        return new Response(JSON.stringify(finalData), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
+                    }
+                }
+                const botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
+                if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
+                    .bind(sessionId, "bot", botText).run(); }
+                return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
+            }
+
+            return new Response(response.body, {
+                status: response.status,
+                headers: { "Content-Type": "text/event-stream; charset=utf-8", "Cache-Control": "no-cache", "Connection": "keep-alive", "Access-Control-Allow-Origin": "*" },
+            });
+        } catch (error) { return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } }); }
+    },
+};
+''')
+
+worker_code = ''.join(worker_parts)
+
+with open('C:/Users/thoma/Documents/Caramella Website/api/gemini-chat-worker.js', 'w', encoding='utf-8') as f:
+    f.write(worker_code)
+
+print("Worker generated successfully.")
