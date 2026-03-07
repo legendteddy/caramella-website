@@ -534,8 +534,10 @@
     }
 
     .chatbot-toggle-btn {
-        bottom: 16px;
-        right: 16px;
+        bottom: 20px;
+        right: 20px;
+        padding: 0 16px;
+        height: 48px;
     }
 
     .chatbot-welcome-bubble {
@@ -545,7 +547,7 @@
     }
 
     .toggle-label {
-        display: none;
+        /* Content visibility maintained on mobile */
     }
 }
 

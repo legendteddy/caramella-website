@@ -3400,6 +3400,7 @@ table:not(.data-table) {
 
 @media (max-width: 768px) {
     .wa-float-container {
+        display: none !important;
         bottom: 1.5rem;
         right: 1.5rem;
     }
