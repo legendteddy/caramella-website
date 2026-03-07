@@ -191,6 +191,8 @@
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://caramellabrunei.com/"},{"@type":"ListItem","position":2,"name":"Kitchen Design Trends 2026 Brunei","item":"https://caramellabrunei.com/kitchen-design-trends-2026-brunei.html"}]}
     </script>
+
+    <link rel="stylesheet" href="css/chatbot.css?v=20260307h">
 </head>
 
 <body>
@@ -343,6 +345,97 @@
     <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
     <script src="js/site.js?v=20260306" defer></script>
     <script>document.querySelectorAll('.auto-date').forEach(function (el) { var d = new Date(document.lastModified); el.textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }); });</script>
+
+    <!-- Chatbot Serverless UI Integration -->
+    <div id="caramella-chatbot" class="chatbot-container closed" aria-hidden="true">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <div class="chatbot-avatar">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M12 2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1.5v1h3A2.5 2.5 0 0 1 16 11.5v5a2.5 2.5 0 0 1-2.5 2.5h-3A2.5 2.5 0 0 1 8 16.5v-5A2.5 2.5 0 0 1 10.5 9h3V8h-1.5a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z">
+                        </path>
+                    </svg>
+                </div>
+                <div>
+                    <h4>AI Assistant</h4>
+                    <span class="chatbot-status">Online</span>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <button id="chatbot-export-btn" class="chatbot-export-btn" aria-label="Download Conversation"
+                    title="Download conversation">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </button>
+                <button id="chatbot-close-btn" class="chatbot-btn" aria-label="Close Chat">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="chatbot-body" class="chatbot-body">
+            <div class="chat-message bot-message">
+                Welcome. I'm your Caramella design consultant — here to help with kitchens, wardrobes, or any questions
+                about custom cabinetry in Brunei. What are you working on?
+            </div>
+        </div>
+        <form id="chatbot-form" class="chatbot-footer">
+            <input type="file" id="chat-image-upload" accept="image/jpeg, image/png, image/webp" style="display: none;">
+            <button type="button" class="chat-attach-btn"
+                onclick="document.getElementById('chat-image-upload').click();" aria-label="Attach Photo"
+                style="background: none; border: none; cursor: pointer; padding: 0; color: #aaa; transition: color 0.2s; display: flex; align-items: center; justify-content: center;"
+                onmouseover="this.style.color='#FFD700'" onmouseout="this.style.color='#aaa'">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+            </button>
+            <input type="text" id="chatbot-input" placeholder="Ask about materials, cost..." autocomplete="off"
+                required>
+            <button type="submit" id="chatbot-send-btn" class="chatbot-send-btn" aria-label="Send Message" disabled>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+            </button>
+        </form>
+        <div
+            style="text-align: center; padding: 8px 16px; font-size: 0.72rem; color: #888; background: rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.05); border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; display: flex; justify-content: space-between; align-items: center;">
+            <span>AI-powered. Don't share sensitive info.</span>
+            <a href="https://wa.me/6737187185" target="_blank" rel="noopener noreferrer"
+                style="color: #25D366; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 4px; transition: opacity 0.2s;"
+                onmouseover="this.style.opacity='0.8'" onmouseout="this.style.opacity='1'">
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor">
+                    <path
+                        d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z" />
+                </svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+    <div id="chatbot-welcome-bubble" class="chatbot-welcome-bubble" style="display:none;">
+        <span class="welcome-close"
+            onclick="this.parentElement.style.display='none';localStorage.setItem('chatWelcomeDismissed','1');">&times;</span>
+        Need help with your kitchen or wardrobe project? Ask our AI consultant.
+    </div>
+    <button id="chatbot-toggle-btn" class="chatbot-toggle-btn" aria-label="Open Chat Assistant">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        <span class="toggle-label">Ask AI</span>
+    </button>
+
+    <script src="js/chatbot.js?v=20260307h" defer></script>
 </body>
 
 </html>

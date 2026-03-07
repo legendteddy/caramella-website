@@ -163,10 +163,7 @@
         window.addEventListener('pagehide', unlock);
     }
 
-    function initWhatsAppFloat() {
-        // Disabled: WhatsApp access is now inside the chatbot widget
-        return;
-    }
+
 
     function initAnalyticsHooks() {
         function send(eventName) {
@@ -266,7 +263,6 @@
             initAnalyticsHooks();
             initCompanyAge();
             initScrollReveal();
-            initWhatsAppFloat();
         });
     } else {
         initSharedNav();
@@ -275,6 +271,5 @@
         initAnalyticsHooks();
         initCompanyAge();
         initScrollReveal();
-        initWhatsAppFloat();
     }
 })();
