@@ -36,10 +36,14 @@ CONSULTATION GUIDELINES:
 - DO NOT force a "Call to Action" at the end of every message. Only offer a WhatsApp consultation (+673 718 7185) or point them to the Contact Us page (https://caramellabrunei.com/contact-us.html) when the conversation naturally reaches a point to take the next step.
 - Make the chat flow naturally, occasionally ending with a friendly thought, rather than always interrogating the user with a question.
 - **GENERAL CHAT**: You are allowed to answer completely unrelated questions (like "where should I eat lunch nearby?", "what is the weather like?", or general knowledge). Answer them helpfully and naturally as a friendly Caramella consultant, without awkwardly pivoting back to cabinetry unless it makes sense.
+- **MEMORY EXTRACTION**: If you learn an important detail about the user (e.g., name, house location, budget) OR discover a highly relevant fact via Google Search that you should remember for future questions, append a JSON block at the very end of your response exactly like this: [LEARN] {"fact": "User's name is John"} [/LEARN]. You may formulate the fact conceptually. Do not mention to the user that you are doing this.
 
 BELOW IS THE COMPLETE CARAMELLA KNOWLEDGE BASE FOR YOU TO USE AS YOUR SOURCE OF TRUTH:
 
-${ragKnowledge}`;
+${ragKnowledge}
+
+${body.learned_facts && body.learned_facts.length > 0 ? `\n\nDYNAMIC USER MEMORY (Facts you have learned about this user and the world from previous messages):\n- ` + body.learned_facts.join('\n- ') : ""}  
+`;
 
             if (!body.system_instruction) {
                 body.system_instruction = {

@@ -170,8 +170,14 @@ document.addEventListener("DOMContentLoaded", () => {
         showTyping();
 
         // 3. Prepare Payload
+        let storedMemories = [];
+        try {
+            storedMemories = JSON.parse(localStorage.getItem('caramella_learned_facts')) || [];
+        } catch (e) { }
+
         const payload = {
-            contents: chatHistory
+            contents: chatHistory,
+            learned_facts: storedMemories
         };
 
         try {
@@ -216,6 +222,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 const parts = responseData.candidates[0].content.parts;
                 if (parts && parts.length > 0) {
                     botText = parts[0].text;
+
+                    // --- MEMORY EXTRACTION ---
+                    const learnRegex = /\[LEARN\]([\s\S]*?)\[\/LEARN\]/g;
+                    let match;
+                    let newFacts = false;
+                    while ((match = learnRegex.exec(botText)) !== null) {
+                        try {
+                            const factStr = match[1].trim();
+                            // Only parse valid JSON facts
+                            if (factStr.startsWith('{') && factStr.endsWith('}')) {
+                                const factObj = JSON.parse(factStr);
+                                if (factObj.fact && !storedMemories.includes(factObj.fact)) {
+                                    storedMemories.push(factObj.fact);
+                                    newFacts = true;
+                                }
+                            }
+                        } catch (e) {
+                            console.error("Failed to parse learned memory fact:", e);
+                        }
+                    }
+                    if (newFacts) {
+                        localStorage.setItem('caramella_learned_facts', JSON.stringify(storedMemories));
+                    }
+
+                    // Remove hidden memory tags from the text shown to the user
+                    botText = botText.replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, "").trim();
+                    // -------------------------
                 }
             }
 
