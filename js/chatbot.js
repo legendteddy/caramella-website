@@ -32,11 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
     let chatHistory = [];
     let isStreaming = false;
 
-    // --- Session Tracking ---
+    // --- Session & User Tracking ---
     let sessionId = sessionStorage.getItem('caramella_chat_sid');
     if (!sessionId) {
         sessionId = 'sid-' + Math.random().toString(36).substring(2, 15) + '-' + Date.now();
         sessionStorage.setItem('caramella_chat_sid', sessionId);
+    }
+
+    let userId = localStorage.getItem('caramella_user_id');
+    if (!userId) {
+        userId = 'uid-' + Math.random().toString(36).substring(2, 15);
+        localStorage.setItem('caramella_user_id', userId);
     }
 
     // ============================
@@ -423,6 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const cappedHistory = chatHistory.slice(-10);
         const payload = {
             session_id: sessionId,
+            user_id: userId,
             contents: cappedHistory,
             learned_facts: storedMemories
         };

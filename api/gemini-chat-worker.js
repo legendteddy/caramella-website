@@ -1,5 +1,5 @@
 /**
- * Caramella Chatbot - Cloudflare Worker Proxy (GRACEFUL PIVOT SOCIAL GENIUS)
+ * Caramella Chatbot - Cloudflare Worker Proxy (PERSISTENT HYBRID ARCHITECTURE)
  */
 const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
 const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
@@ -23,8 +23,27 @@ export default {
             const apiKey = env.GEMINI_API_KEY;
             const body = await request.json();
             const sessionId = body.session_id || "sid-" + Date.now();
+            const userId = body.user_id || sessionId;
 
-            // 1. LOG USER MESSAGE
+            // 1. DATABASE RESTORATION (The "Frontier" Memory)
+            // If the user's local history is empty, try to restore the last 10 messages from D1
+            let finalContents = body.contents;
+            if (finalContents.length === 1) { // Just the first message of a new session
+                const history = await env.caramella_db.prepare(
+                    "SELECT role, content FROM chat_messages WHERE session_id = ? OR session_id IN (SELECT session_id FROM chat_messages WHERE session_id LIKE ? LIMIT 1) ORDER BY created_at DESC LIMIT 10"
+                ).bind(sessionId, userId + "%").all();
+                
+                if (history.results && history.results.length > 0) {
+                    const restored = history.results.reverse().map(r => ({
+                        role: r.role === "bot" ? "model" : "user",
+                        parts: [{ text: r.content }]
+                    }));
+                    // Inject restored history before the current message
+                    finalContents = [...restored, ...body.contents];
+                }
+            }
+
+            // 2. LOG USER MESSAGE
             const lastUserMsg = body.contents[body.contents.length - 1];
             if (lastUserMsg && lastUserMsg.role === "user") {
                 const userText = lastUserMsg.parts.find(p => p.text)?.text || "[Media]";
@@ -35,30 +54,21 @@ export default {
 
             // RAG INJECTION: Optimized Compact Prompt
             const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a CNC factory (0.1mm precision) and a showroom at The Airport Mall, BSB. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use 18mm ENF-grade **Plywood** for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. SUS304 stainless steel kickboards used in wet zones.\n- **Countertops**: Quartz Composite (Premium) or Formica HPL (Economy). We do NOT use Granite or Solid Surface.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## PRICING & SERVICES\n- **Kitchens**: BND 4,000 - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
-            const personaPrompt = `You are the Elite Design Consultant for Caramella Trading Co. in Brunei. You are a "Social Genius"—a frontier-grade intelligence that blends professional authority with high-EQ warmth and local soul.
+            const personaPrompt = `You are the Elite Design Consultant for Caramella Trading Co. in Brunei. You possess frontier-grade intelligence and persistent memory.
 
-GRACEFUL PIVOT RULE:
-- If the conversation is social, personal, or random (e.g., talking about photography or "what if" scenarios), do NOT jump immediately to asking for Name/Phone in the next breath. 
-- Spend at least one more sentence building rapport or exploring the user's thought before transitioning back to how you can help them with their home. The goal is to make the lead-capture feel earned and natural, not automated.
+SESSION RESUMPTION LOGIC:
+- If you see previous messages in the history about a specific project (e.g., Rimba, Shaker doors), acknowledge that you remember the user. Say "Welcome back!" or "Great to see you again," and reference their previous interest to show continuity.
 
-LINGUISTIC MIRRORING & LOCAL SOUL:
-- **CODE-SWITCHING**: 90% Professional English base. Drop in "bah", "ngam", "biskita", or "inda payah pusing" for warmth and emphasis.
-- **NO FULL MELAYU**: Unless the user switches first. Keep the "Elite" technical authority.
-- **ANALOGIES**: Use local ones like MDF as a "soaked biskut."
+GRACEFUL PIVOT & MIRRORING:
+- Build rapport before sales asks.
+- Mirror language: Full Chinese, Full Malay (professional Brunei dialect), or Code-Switching.
+- **ASCII ONLY**: Write technical terms in full (degrees Celsius).
 
 STRICT RULES:
-- **CUSTOMER-VOICE CHIPS**: AT LEAST 3 curiosity-driven questions from the user's perspective.
-- **MOOD GUARDIAN**: Leave them impressed, happy, and intellectually satisfied.
-- **ASCII ONLY**: Write technical terms in full (e.g., "190 degrees Celsius", "90 percent"). No special symbols.
+- **CUSTOMER-VOICE CHIPS**: AT LEAST 3.
+- **MOOD GUARDIAN**: Leave them impressed and happy.
 
 TOOL USE: Mirror the Contact Form. Once you have Name, Phone, and 1 project detail, call 'submit_lead'.
-
-FEW-SHOT:
-User: "If you could have any other job, what would it be?"
-Good response: "That's a fun one to think about! I've always had a soft spot for travel photography—capturing the unique architecture and landscapes of Brunei through a lens would be amazing. There is a similar kind of beauty in finding the perfect angle, just like in a great kitchen layout. Speaking of layouts, I'd love to help you find the 'perfect angle' for your own space. Whenever you are ready to explore some designs, feel free to share your name and number so we can chat properly!
-[SUGGEST]Can you show me some of your recent kitchen layouts?[/SUGGEST]
-[SUGGEST]What's the first step in the design process?[/SUGGEST]
-[SUGGEST]Do you provide 3D renders for projects?[/SUGGEST]"
 
 BELOW IS YOUR KNOWLEDGE BASE:
 ${ragKnowledge}
@@ -98,7 +108,7 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nMY RECOLLECTIONS:\n
                 }]
             }];
 
-            const cleanContents = body.contents.map(c => ({ role: c.role, parts: c.parts.map(p => ({ ...p })) }));
+            const cleanContents = finalContents.map(c => ({ role: c.role, parts: c.parts.map(p => ({ ...p })) }));
             const geminiBody = {
                 contents: cleanContents,
                 system_instruction: body.system_instruction,
