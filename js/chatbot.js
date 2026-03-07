@@ -411,10 +411,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show typing
         showTyping();
 
-        // Prepare payload
+        // Prepare payload (cap history to last 10 turns for token efficiency)
         const storedMemories = getMemoryStrings();
+        const cappedHistory = chatHistory.slice(-10);
         const payload = {
-            contents: chatHistory,
+            contents: cappedHistory,
             learned_facts: storedMemories
         };
 
@@ -452,6 +453,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 // Production: try streaming first, fallback to non-streaming
                 const streamingSuccess = await (async () => {
                     try {
+                        // PRODUCTION: Try streaming, but allow non-streaming for tool calls
+                        // We use a small trick: if the user mentions "send", "email", or "contact", 
+                        // we force non-streaming for that turn to handle the tool-call reliably.
+                        const forceNonStreaming = messageText && /send|email|contact|book|number|phone|718/i.test(messageText);
+
+                        if (forceNonStreaming) {
+                            console.log("Forcing non-streaming for lead-capture turn.");
+                            throw new Error("Force Fallback"); 
+                        }
+
                         response = await fetch(WORKER_URL, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
