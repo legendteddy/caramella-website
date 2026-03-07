@@ -69,7 +69,7 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 | Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 180°C–190°C |
 | Drawer box | 18mm plywood, pocket-screw joints |
 | Drawer runners | Blum TANDEM or HIGOLD Diamond (70kg rated), soft-close |
-| Hinges | Blum CLIP top or HIGOLD SS304, soft-close |
+| Hinges | Blum CLIP top (Authentic Austrian hardware), soft-close |
 | Accessories | HIGOLD Shearer (Aluminum) & Diamond (SS304/Chromium) series |
 | CNC tolerance | 0.1mm |
 | Climate suitability | Engineered for 80–90% relative humidity environments |
@@ -156,7 +156,7 @@ Standard particleboard rated for 40–60% RH environments (common in European or
 - **Edge entry:** Unsealed or poorly sealed panel edges absorb moisture first. Particleboard can swell 8–12% in thickness at exposed edges within months. This is the primary failure mode in Brunei kitchens.
 - **Condensation zones:** Under-sink areas, behind dishwashers, and plinth cavities trap humid air. Without ventilation, moisture accumulates and accelerates board deterioration.
 - **Surface absorption:** Formica and melamine surfaces resist moisture well, but any chip or scratch exposes the core material underneath to humidity.
-- **Hardware rusting:** Low-grade steel hinges and runners develop surface rust in 6–18 months. Nickel-plated or zinc-alloy hardware lasts significantly longer.
+- **Hardware rusting:** Low-grade steel hinges and runners develop surface rust in 6–18 months. Caramella exclusively uses genuine **Blum hinges** (nickel-plated) which provide superior, tested resistance against tropical humidity and salt-air corrosion.
 
 ### Four Design Priorities for Humid Climates
 1. **Edge sealing:** Machine-applied EVA or PUR adhesive at 180°C–190°C creates a significantly stronger bond than iron-on or cold-press methods. Look for 1mm ABS edge banding rather than thinner 0.4mm PVC.
@@ -289,7 +289,7 @@ BIBD At-Tamwil (Islamic financing) is available for qualifying renovation projec
 ## Service Areas & Localised Engineering
 
 We serve all four districts of Brunei Darussalam with district-specific engineering:
-- **Brunei-Muara Coastal (Mentiri, Kota Batu, Muara)**: We mandate 304 Stainless Steel hardware to combat accelerated salt-air corrosion.
+- **Brunei-Muara Coastal (Mentiri, Kota Batu, Muara)**: We mandate genuine Blum hinges and runners to combat accelerated salt-air corrosion, avoiding the rusting common in unbranded carbon-steel hardware.
 - **National Housing Schemes (RPN Lambak, STKRJ Rimba, Lugu Housing, Mengkubau)**: We specialize in maximizing storage in standardized government terrace and semi-detached floorplans. We utilize custom-depth cabinets to integrate around standard utility placements without unsightly gaps.
 - **Brunei-Muara Central**: BSB, Kiarong, Gadong, Berakas.
 - **Belait (Kuala Belait, Seria)**: Served via specialized weekly logistics runs. We transport pre-assembled cabinets in our own vehicles to prevent humidity-swelling during the highway drive.
@@ -313,7 +313,7 @@ Caramella strictly builds using **ENF-grade (Zero-Formaldehyde)** moisture-resis
 Rather than relying on generic reviews, our reputation in Brunei is built on three verifiable pillars:
 1. **Punctuality & Communication**: Precise schedule management from measurement to installation.
 2. **Site Respect & Cleanliness**: Dust containment, floor protection, and daily site washdowns during installation.
-3. **Engineering for Humidity**: Transparent technical standards (HPL, EVA sealing, SS304) that clients can verify on-site.
+3. **Engineering for Humidity**: Transparent technical standards (HPL, EVA sealing, Blum hardware) that clients can verify on-site.
 
 (For detailed project feedback and technical notes, visit https://caramellabrunei.com/reviews.html)
 

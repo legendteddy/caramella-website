@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 2. INTERNAL OVERRIDE for pure local testing (Do not commit to public reps with a real key!) 
     // Ensure you use a restricted key if you ever accidentally expose it.
-    const LOCAL_API_KEY = "YOUR_API_KEY_HERE";
+    const LOCAL_API_KEY = "";
 
     // ---------------------
 
