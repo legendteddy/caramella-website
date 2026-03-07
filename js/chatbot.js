@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- CONFIGURATION ---
 
     // 1. PRODUCTION setting (Cloudflare URL)
-    const WORKER_URL = "https://your-cloudflare-worker-url.workers.dev"; // UPDATE THIS once deployed
+    const WORKER_URL = "https://gemini-chat-proxy.caramellabrunei.workers.dev"; // Live Cloudflare backend
 
     // 2. INTERNAL OVERRIDE for pure local testing (Do not commit to public reps with a real key!) 
     // Ensure you use a restricted key if you ever accidentally expose it.
