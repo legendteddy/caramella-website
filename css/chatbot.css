@@ -11,8 +11,8 @@
 
 .chatbot-container {
     position: fixed;
-    bottom: 172px;
-    /* Shifted up for Vertical Stack above WhatsApp */
+    bottom: 232px;
+    /* Increased shift to clear WhatsApp + Toggle gap */
     right: 24px;
     width: 360px;
     max-width: calc(100vw - 40px);
@@ -279,8 +279,8 @@
 /* Floating Toggle Button */
 .chatbot-toggle-btn {
     position: fixed;
-    bottom: 100px;
-    /* Shifted up to clear WhatsApp float (~32px bottom + 56px height + gap) */
+    bottom: 160px;
+    /* Safe clearance above WhatsApp (approx 80-100px high including gap) */
     right: 24px;
     width: 56px;
     height: 56px;
@@ -306,7 +306,21 @@
     transform: scale(0.9);
 }
 
-/* Mobile Responsiveness */
+/* Responsive Logic */
+@media (max-width: 768px) {
+    .chatbot-toggle-btn {
+        bottom: 140px;
+        /* Adjusting for slightly lower WhatsApp position on mobile */
+        right: 1.5rem;
+    }
+
+    .chatbot-container {
+        bottom: 210px;
+        right: 1.5rem;
+    }
+}
+
+/* Mobile Responsiveness (Full Screen) */
 @media (max-width: 480px) {
     .chatbot-container {
         width: 100vw;
