@@ -290,7 +290,7 @@ BIBD At-Tamwil (Islamic financing) is available for qualifying renovation projec
 
 We serve all four districts of Brunei Darussalam with district-specific engineering:
 - **Brunei-Muara Coastal (Mentiri, Kota Batu, Muara)**: We mandate 304 Stainless Steel hardware to combat accelerated salt-air corrosion.
-- **Brunei-Muara RPN (Lambak, Rimba)**: We utilize custom-depth cabinets to integrate around standard utility placements without unsightly gaps.
+- **National Housing Schemes (RPN Lambak, STKRJ Rimba, Lugu Housing, Mengkubau)**: We specialize in maximizing storage in standardized government terrace and semi-detached floorplans. We utilize custom-depth cabinets to integrate around standard utility placements without unsightly gaps.
 - **Brunei-Muara Central**: BSB, Kiarong, Gadong, Berakas.
 - **Belait (Kuala Belait, Seria)**: Served via specialized weekly logistics runs. We transport pre-assembled cabinets in our own vehicles to prevent humidity-swelling during the highway drive.
 - **Tutong & Temburong**: Handled via scheduled direct vehicle runs to ensure precision installation without "travel tax" delays.
@@ -298,6 +298,24 @@ We serve all four districts of Brunei Darussalam with district-specific engineer
 ---
 
 ## Customer Reviews
+
+---
+
+## Health, Air Quality & Sustainability (ENF Standard)
+
+Indoor Air Quality (IAQ) is a critical concern, especially for pregnant women, infants, and those with respiratory sensitivities. Cheap, imported flat-pack cabinets often use E2 or E1 grade boards which continuously off-gas Formaldehyde and VOCs (Volatile Organic Compounds) into the closed environment of a bedroom or kitchen.
+
+Caramella strictly builds using **ENF-grade (Zero-Formaldehyde)** moisture-resistant boards. ENF is currently the highest, most stringent global standard for indoor emission safety. Our cabinets are **baby-safe** and toxic-free, ensuring the air inside your home remains pure and uncontaminated by industrial adhesives.
+
+---
+
+## Sovereign Unit ID & Caramella OS
+
+Every piece of joinery installed by Caramella is tracked by our proprietary digital infrastructure, the **Caramella OS**. 
+
+We assign a unique **Sovereign Unit ID** to every project. This ID is linked to a physical QR code placed discretely inside the sink cabinet or main wardrobe. Using **Scout Scanning**, our technicians (and homeowners) can instantly pull up the exact technical drawings, hardware batch numbers, and CNC toolpaths used to create the specific cabinet. This ensures our 1-year universal warranty is honored with flawless precision—we never have to "guess" what part needs replacing; the Caramella OS knows exactly what we built for you.
+
+---
 
 ## Trust & Accountability Pillars
 
