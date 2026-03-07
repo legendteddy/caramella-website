@@ -307,15 +307,6 @@ Indoor Air Quality (IAQ) is a critical concern, especially for pregnant women, i
 
 Caramella strictly builds using **ENF-grade (Zero-Formaldehyde)** moisture-resistant boards. ENF is currently the highest, most stringent global standard for indoor emission safety. Our cabinets are **baby-safe** and toxic-free, ensuring the air inside your home remains pure and uncontaminated by industrial adhesives.
 
----
-
-## Sovereign Unit ID & Caramella OS
-
-Every piece of joinery installed by Caramella is tracked by our proprietary digital infrastructure, the **Caramella OS**. 
-
-We assign a unique **Sovereign Unit ID** to every project. This ID is linked to a physical QR code placed discretely inside the sink cabinet or main wardrobe. Using **Scout Scanning**, our technicians (and homeowners) can instantly pull up the exact technical drawings, hardware batch numbers, and CNC toolpaths used to create the specific cabinet. This ensures our 1-year universal warranty is honored with flawless precision—we never have to "guess" what part needs replacing; the Caramella OS knows exactly what we built for you.
-
----
 
 ## Trust & Accountability Pillars
 
