@@ -11,8 +11,9 @@
 
 .chatbot-container {
     position: fixed;
-    bottom: 90px;
-    right: 20px;
+    bottom: 172px;
+    /* Shifted up for Vertical Stack above WhatsApp */
+    right: 24px;
     width: 360px;
     max-width: calc(100vw - 40px);
     height: 520px;
@@ -278,7 +279,8 @@
 /* Floating Toggle Button */
 .chatbot-toggle-btn {
     position: fixed;
-    bottom: 24px;
+    bottom: 100px;
+    /* Shifted up to clear WhatsApp float (~32px bottom + 56px height + gap) */
     right: 24px;
     width: 56px;
     height: 56px;
