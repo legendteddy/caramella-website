@@ -1,1 +1,28 @@
-{"timestamp": "2026-03-07T17:05:00Z", "context": "Fixing Chatbot floating behavior and removing redundant WhatsApp button.", "findings": ["Chatbot fixed positioning was broken by a 'transform' on the 'body' element in site.css.", "WhatsApp floating button was injected via JS in site.js and partially hidden in site.css, but consistently peeking through.", "Some subpages like contact-us.html were missing the chatbot integration entirely."], "actions": ["Removed 'transform' from 'pageLoad' animation in site.css.", "Removed 'initWhatsAppFloat' function and all calls in site.js.", "Injected Chatbot HTML, CSS, and JS into contact-us.html.", "Added global '#wa-float, .wa-float-container { display: none !important; }' rule to site.css."], "status": "Executing fixes and preparing for site-wide verification."}
+{
+  "timestamp": "2026-03-07T17:10:00Z",
+  "topic": "Chatbot & WhatsApp UI Reconciliation",
+  "status": "COMPLETED",
+  "key_changes": [
+    {
+      "component": "CSS (site.css)",
+      "change": "Removed 'transform' from 'pageFadeIn' (formerly 'pageLoad') animation on '.home-page'.",
+      "reason": "Applying 'transform' to an ancestor (body) creates a new containing block, breaking 'position: fixed' for the Chatbot on the homepage."
+    },
+    {
+      "component": "JS (site.js)",
+      "change": "Removed 'initWhatsAppFloat' function and all initialization calls.",
+      "reason": "WhatsApp contact is now integrated into the Chatbot; redundant floating button was removed to prevent UI overlap."
+    },
+    {
+      "component": "HTML (Global)",
+      "change": "Injected Chatbot HTML, CSS, and JS into 41 subpages.",
+      "reason": "Consistency across the site; ensures the AI assistant is available on all marketing and info pages."
+    },
+    {
+      "component": "CSS (Global Override)",
+      "change": "Added '#wa-float, .wa-float-container { display: none !important; }' to site.css.",
+      "reason": "Final safety measure to suppress the old WhatsApp widget if any legacy code or cached CSS attempts to render it."
+    }
+  ],
+  "handover_notes": "The Chatbot is now the primary conversion tool. If adding new pages, use the pattern found in 'contact-us.html' or 'index.html' for the chatbot block. Do not re-enable 'transform' on the body element without testing 'position: fixed' elements."
+}
