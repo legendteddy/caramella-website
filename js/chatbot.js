@@ -42,9 +42,22 @@ document.addEventListener("DOMContentLoaded", () => {
         else if (hour < 17) greeting = "Good afternoon";
         else greeting = "Good evening";
 
-        // Check if returning user
-        const memory = getMemory();
-        const userName = memory.find(m => m.fact && m.fact.toLowerCase().includes("name"));
+        // Check if returning user (inline read — getMemory not yet defined at this point)
+        let userName = null;
+        try {
+            const raw = localStorage.getItem('caramella_learned_facts');
+            if (raw) {
+                const facts = JSON.parse(raw);
+                if (Array.isArray(facts)) {
+                    userName = facts.find(m => {
+                        const f = typeof m === 'string' ? m : m.fact;
+                        return f && f.toLowerCase().includes('name');
+                    });
+                    if (userName && typeof userName !== 'string') userName = { fact: userName.fact };
+                    else if (typeof userName === 'string') userName = { fact: userName };
+                }
+            }
+        } catch (e) { /* no memory */ }
 
         const welcomeDiv = chatBody.querySelector('.bot-message');
         if (welcomeDiv) {
@@ -170,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ============================
     const MEMORY_KEY = 'caramella_learned_facts';
     const MAX_MEMORIES = 50;
+
 
     const getMemory = () => {
         try {
