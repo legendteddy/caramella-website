@@ -135,9 +135,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // FORMATTING HELPERS
     // ============================
     const formatBotMessage = (text) => {
-        const escaped = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        // --- Markdown Purge ---
+        // We strictly remove all asterisks to ensure clean plain-text output
+        const cleanText = text.replace(/\*/g, "");
+
+        const escaped = cleanText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         return escaped
-            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
             .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="text-decoration: underline;">$1</a>')
             .replace(/\n\n/g, "<br><br>")
             .replace(/\n/g, "<br>");
