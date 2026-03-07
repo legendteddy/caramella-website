@@ -129,19 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // FORMATTING HELPERS
     // ============================
     const formatBotMessage = (text) => {
-        // --- System 2 Thinking Filter ---
-        // We hide everything inside <thought> tags
-        let displayableText = text;
-        if (text.includes('<response>')) {
-            const parts = text.split('<response>');
-            displayableText = parts[parts.length - 1].split('</response>')[0];
-        } else {
-            // If it hasn't reached <response> yet, it's still thinking
-            // We just show a '...' or nothing to keep the UI clean
-            displayableText = text.includes('<thought>') ? "..." : text;
-        }
-
-        const escaped = displayableText.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        const escaped = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         return escaped
             .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
             .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="text-decoration: underline;">$1</a>')
