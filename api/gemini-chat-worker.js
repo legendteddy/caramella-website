@@ -16,7 +16,7 @@
  */
 
 // NOTE: You can also hardcode the model name here safely
-const GEMINI_MODEL = "gemini-2.5-flash"; // Currently the recommended cost-effective frontier model.
+const GEMINI_MODEL = "gemini-2.5-flash-lite"; // Ultra-budget frontier model.
 
 export default {
     async fetch(request, env, ctx) {
