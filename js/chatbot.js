@@ -468,56 +468,35 @@ document.addEventListener("DOMContentLoaded", () => {
                         botDiv.className = 'chat-message bot-message streaming';
                         chatBody.appendChild(botDiv);
 
-                        // Word-by-word reveal
-                        let revealedWords = 0;
-                        let targetWords = [];
-                        let revealTimer = null;
-                        const WORD_DELAY = 35;
-
-                        const revealNextWord = () => {
-                            if (revealedWords < targetWords.length) {
-                                revealedWords++;
-                                botDiv.innerHTML = formatBotMessage(targetWords.slice(0, revealedWords).join(' '));
-                                chatBody.scrollTop = chatBody.scrollHeight;
-                                revealTimer = setTimeout(revealNextWord, WORD_DELAY);
-                            } else {
-                                revealTimer = null;
-                            }
-                        };
-
                         await parseSSEStream(
                             response,
                             (accumulated) => {
-                                const clean = accumulated
+                                // Direct real-time update without word-by-word delays
+                                const displayOnly = accumulated
                                     .replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '')
                                     .replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '')
                                     .trim();
-                                targetWords = clean.split(/(\s+)/).filter(w => w.length > 0);
-                                if (!revealTimer && revealedWords < targetWords.length) revealNextWord();
+                                
+                                requestAnimationFrame(() => {
+                                    botDiv.innerHTML = formatBotMessage(displayOnly);
+                                    chatBody.style.scrollBehavior = 'auto';
+                                    chatBody.scrollTop = chatBody.scrollHeight;
+                                });
                             },
                             (finalText) => {
-                                clearTimeout(revealTimer);
                                 const finalize = () => {
                                     const { cleanText, suggestions } = processResponse(finalText);
                                     botDiv.innerHTML = formatBotMessage(cleanText);
                                     botDiv.classList.remove('streaming');
                                     chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
-                                    renderSuggestionChips(suggestions);
-                                    chatBody.scrollTop = chatBody.scrollHeight;
+                                    
+                                    setTimeout(() => {
+                                        renderSuggestionChips(suggestions);
+                                        chatBody.style.scrollBehavior = 'smooth';
+                                        chatBody.scrollTop = chatBody.scrollHeight;
+                                    }, 100);
                                 };
-                                if (revealedWords >= targetWords.length) {
-                                    finalize();
-                                } else {
-                                    const flush = () => {
-                                        if (revealedWords < targetWords.length) {
-                                            revealedWords += 2;
-                                            botDiv.innerHTML = formatBotMessage(targetWords.slice(0, Math.min(revealedWords, targetWords.length)).join(' '));
-                                            chatBody.scrollTop = chatBody.scrollHeight;
-                                            setTimeout(flush, 10);
-                                        } else { finalize(); }
-                                    };
-                                    flush();
-                                }
+                                finalize();
                             }
                         );
                         return true;
