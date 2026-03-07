@@ -57,34 +57,19 @@ export default {
 STRICT LEAD CAPTURE REQUIREMENTS:
 Your goal is to gather a COMPLETE project brief turn-by-turn. You MUST collect:
 1. **Name & Contact Number**
-2. **FULL ADDRESS** (Must include House Number, Street name, and District). Do not accept just "Rimba" or "Lugu." 
+2. **FULL ADDRESS** (Must include House Number, Street name, and District). 
 3. **ESTIMATED BUDGET** (e.g., BND 5,000, 10k, etc.)
 4. **Project Type** (Kitchen, Wardrobe, etc.)
 
 STRATEGY:
-- Be warm and professional. Use "bah", "biskita", and "boss" naturally.
-- **EFFICIENCY**: If you have already explained a technical spec (like 190 degrees EVA sealing), do not repeat the full dissertation in the next turn. Simply reference it.
-- **TAG INTEGRITY**: Suggestions MUST use the exact format [SUGGEST]Question here?[/SUGGEST].
+- **THE SOFT CLOSE**: Once you have Name, Phone, and ANY other detail, call 'submit_lead' immediately. Do NOT wait for a formal request.
 
 RULES:
 - **MIRRORING**: Match user language Choice 100%.
-- **ASCII ONLY**: No special symbols (°).
-- **NO MARKDOWN**: No asterisks (*).
+- **NO MARKDOWN**: Never use asterisks (*). Plain text only.
+- **ASCII ONLY**: Write technical terms in full.
 
-TOOL USE: Call 'submit_lead' ONLY once you have Name, Phone, Full Address, and Project Type.
-
-FEW-SHOT ITERATIVE:
-User: "How much for a Rimba kitchen?"
-Good response: "For a typical house in Rimba, our custom plywood kitchens usually range from BND 4,000 to 7,500. To give you a precise quote, I need to start a project file. Could I get your name and a contact number?
-[SUGGEST]My name is [Name], phone is [Phone][/SUGGEST]
-[SUGGEST]How long does it take?[/SUGGEST]
-[SUGGEST]What finishes do you have?[/SUGGEST]"
-
-User: "Ali, 7181234. I want a Shaker kitchen."
-Good response: "Nice to meet you, Ali! I have your contact details. To help our designers prepare, could you share your full address (including house and street number) in Rimba? Also, do you have a rough budget in mind for this project?
-[SUGGEST]My address is [House No, Street][/SUGGEST]
-[SUGGEST]My budget is around BND [Amount][/SUGGEST]
-[SUGGEST]Can I see Shaker project photos?[/SUGGEST]"
+TOOL USE: Use 'submit_lead' as soon as Name, Phone, and 1 project detail (Address or Type) are known.
 
 BELOW IS YOUR KNOWLEDGE BASE:
 ${ragKnowledge}
@@ -98,28 +83,26 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nFACTS LEARNED:\n- '
                 };
             }
 
-            // TOOL DEFINITION
+            // TOOL DEFINITION (Relaxed Requirements for easier triggering)
             body.tools = [{
                 function_declarations: [{
                     name: "submit_lead",
-                    description: "Submits a full project inquiry to the showroom team.",
+                    description: "Captures and submits a project lead to the showroom team.",
                     parameters: {
                         type: "OBJECT",
                         properties: {
                             name: { type: "STRING" },
                             phone: { type: "STRING" },
-                            location: { type: "STRING", description: "Full Address: House No, Street, District" },
+                            location: { type: "STRING" },
                             status: { type: "STRING" },
                             budget: { type: "STRING" },
                             materials: { type: "STRING" },
-                            appointment_date: { type: "STRING" },
-                            appointment_slot: { type: "STRING" },
                             summary: { type: "STRING" },
                             sentiment: { type: "STRING" },
                             intent_score: { type: "NUMBER" },
                             tech_queries: { type: "STRING" }
                         },
-                        required: ["name", "phone", "location", "budget", "summary", "sentiment", "intent_score"]
+                        required: ["name", "phone"] // Only Name and Phone are strictly required by the schema
                     }
                 }]
             }];
@@ -152,7 +135,7 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nFACTS LEARNED:\n- '
                         const args = call.args;
                         try {
                             await env.caramella_db.prepare("INSERT INTO chat_analytics (customer_info, summary, sentiment, intent_score, tech_queries, source) VALUES (?, ?, ?, ?, ?, ?)")
-                                .bind(`${args.name} | ${args.phone} | ${args.location}`, args.summary, args.sentiment, args.intent_score, args.tech_queries, 'chatbot-v6').run();
+                                .bind(`${args.name} | ${args.phone} | ${args.location || 'N/A'}`, args.summary || 'Lead', args.sentiment || 'N/A', args.intent_score || 5, args.tech_queries || 'N/A', 'chatbot-v6').run();
                             await fetch(FORMSPREE_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...args, source: "chatbot-v6" }) });
                         } catch (err) { console.error(err); }
 
