@@ -348,26 +348,63 @@
     transform: translateY(-1px);
 }
 
-/* Floating Toggle Button — Pill with Label */
+/* Floating Toggle Button — Premium Glowing Gold Pill */
 .chatbot-toggle-btn {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
+    position: fixed !important;
+    /* Force floating */
+    bottom: 2rem !important;
+    right: 2rem !important;
     height: 52px;
     padding: 0 20px 0 16px;
     border-radius: 26px;
-    background: linear-gradient(135deg, var(--chat-accent), #c2a000);
+
+    /* Shifting Gold Gradient Background */
+    background: linear-gradient(110deg, #d4af37, #ffdf00, #d4af37, #ffd700);
+    background-size: 300% 300%;
+    animation: goldShimmer 4s ease infinite;
+
     color: #111;
-    border: none;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 215, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+
+    /* Constant glow instead of just pulse */
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4),
+        0 0 15px rgba(255, 215, 0, 0.3),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6);
     cursor: pointer;
-    z-index: 10000;
+    z-index: 2147483647 !important;
+    /* Absolute maximum z-index */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s;
-    animation: togglePulse 3s ease-in-out 5s 3;
+}
+
+@keyframes goldShimmer {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.chatbot-toggle-btn::after {
+    /* Glass reflection effect */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+    border-radius: 20px 20px 0 0;
+    pointer-events: none;
 }
 
 .chatbot-toggle-btn svg {
@@ -384,7 +421,9 @@
 
 .chatbot-toggle-btn:hover {
     transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 215, 0, 0.8);
+    box-shadow: 0 12px 30px rgba(212, 175, 55, 0.6),
+        0 0 20px rgba(255, 215, 0, 0.5),
+        inset 0 2px 4px rgba(255, 255, 255, 0.8);
 }
 
 .chatbot-toggle-btn.active {
