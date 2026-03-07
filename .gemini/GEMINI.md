@@ -48,9 +48,6 @@ python build_worker.py → generates api/gemini-chat-worker.js → npx wrangler 
 - **CRITICAL**: Pushing to git does NOT deploy the worker. You must run `npx wrangler deploy` separately.
 - **Cache-busting**: `chatbot.js` is loaded via `<script src="js/chatbot.js?v=YYYYMMDDX">`. Bump the version letter after each change.
 
-### GitHub Pages DNS Check
-The GitHub settings page shows "DNS Check in Progress" permanently. **This is normal** — Cloudflare's proxy masks GitHub's IPs. It does not affect deployment, HTTPS, or serving.
-
 ---
 
 ## 🚫 ANTI-PATTERNS (THINGS YOU MUST NEVER DO)
@@ -196,14 +193,15 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 | Database | `caramella_db` (D1) | Intelligence Archive for messages & lead analytics |
 
 **Chatbot Features (as of 2026-03-08):**
-- **Bruneian Social Genius**: Master of code-switching (bah, ngam, inda payah pusing) with frontier IQ.
+- **Universal Multilingual Mirroring**: Perfectly matches user language (Full Chinese, Full Professional Malay, or Code-Switching).
+- **Emergency & Support Protocol**: Empathetic detection of distress with local Brunei resources (Talian Harapan 145).
+- **Bruneian Social Genius**: Master of professional local nuances (bah, ngam, inda payah pusing) with frontier IQ.
 - **SOTA Technical Intelligence**: High-density knowledge of hardware (Blum/DTC), material physics, and ROI.
 - **Lead Capture Tool**: Mirrors showroom contact form (Name, Phone, Location, Status, Budget, Appt).
 - **Message-Level Logging**: Every user input and bot response recorded in D1 `chat_messages` table.
 - **Intelligence Archive**: Real-time logging of project briefs and intent scores to D1 `chat_analytics`.
-- **Real-time Rendering**: Zero-lag output via `requestAnimationFrame` and word-batching.
+- **Real-time Rendering**: Optimized via `requestAnimationFrame` and word-batching (zero lag).
 - **Proactive Funnel**: Identifies high-intent and gently guides users toward direct contact.
-- **Emergency Protocol**: Empathetic detection of distress with local Brunei resources (Talian Harapan 145).
 
 ## 🧠 HARD MANDATE: Agent Communication (Synapse Bus)
 > **ALL** agents working on this repository **MUST** coordinate via the Synapse Bus. Failure to log session starts, major milestones, and state changes is a protocol violation.
@@ -246,4 +244,4 @@ Common false positives to reject:
 
 ---
 
-> **Last Updated**: 2026-03-08. **CHATBOT SOTA UPGRADE FINALIZED.** Bruneian Social Genius persona live. Cloudflare D1 Intelligence Archive & Message Logging active. Lead Capture tool fully synchronized. ASCII-safe encoding enforced. UI enlarged for visibility.
+> **Last Updated**: 2026-03-08. **CHATBOT SOTA UPGRADE FINALIZED.** Universal Multilingual Mirroring (EN/MS/ZH) live. Emergency Protocol active. Cloudflare D1 Intelligence Archive & Message Logging active. Lead Capture tool fully synchronized. ASCII-safe encoding enforced. UI enlarged for visibility.

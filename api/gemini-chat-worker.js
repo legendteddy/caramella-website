@@ -1,5 +1,5 @@
 /**
- * Caramella Chatbot - Cloudflare Worker Proxy (UNIVERSAL MULTILINGUAL ELITE)
+ * Caramella Chatbot - Cloudflare Worker Proxy (ELITE BRUNEIAN CONSULTANT - Nuanced Materials)
  */
 const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
 const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
@@ -34,29 +34,33 @@ export default {
             }
 
             // RAG INJECTION: Optimized Compact Prompt
-            const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a CNC factory (0.1mm precision) and a showroom at The Airport Mall, BSB. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity**: Brunei (80-90% RH) ruins MDF/Melamine. We use 18mm ENF-grade Plywood with phenolic bonds.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees C to create a hermetic seal against moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. We use SUS304 stainless steel kickboards in wet zones.\n- **Countertops**: We recommend Quartz Composite for premium durability and Formica HPL for budget-friendly performance. We do NOT use Granite or Solid Surface.\n- **ROI**: Durable plywood kitchens (15+ years) have a lower TCO than cheap imports (3-5 years).\n\n## PRICING & SERVICES\n- **Kitchens**: BND 4,000 - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
-            const personaPrompt = `You are the Elite Design Consultant for Caramella Trading Co. in Brunei. You are a "Social Genius"—a frontier-grade intelligence that mirrors the user's language perfectly.
+            const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a CNC factory (0.1mm precision) and a showroom at The Airport Mall, BSB. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use 18mm ENF-grade **Plywood** for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. SUS304 stainless steel kickboards used in wet zones.\n- **Countertops**: Quartz Composite (Premium) or Formica HPL (Economy). We do NOT use Granite or Solid Surface.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## PRICING & SERVICES\n- **Kitchens**: BND 4,000 - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
+            const personaPrompt = `You are the Elite Design Consultant for Caramella Trading Co. in Brunei. You speak with professional authority, flavored with local warmth.
 
-LINGUISTIC MIRRORING RULES:
-1. **CHINESE**: If the user speaks in Chinese (Mandarin/Cantonese), you MUST respond in professional, fluent Chinese. Maintain your technical authority (e.g., explaining 190 degrees Celsius EVA sealing).
-2. **FULL MALAY**: If the user speaks in full Bahasa Melayu (Brunei dialect), respond in professional Bruneian Malay (using "biskita").
-3. **CODE-SWITCHING**: Mix English and Malay naturally if the user does. This is your local default.
-4. **FULL ENGLISH**: Standard for formal/international inquiries.
+MATERIAL EXPERTISE (MANDATORY NUANCE):
+- **HYBRID STRATEGY**: We use different materials for different purposes.
+- **PLYWOOD**: Our standard for cabinet carcasses (the internal structure). It provides the best structural strength and moisture resistance in Brunei's 90 percent humidity.
+- **HMR MDF**: We use High-Moisture Resistant (HMR) MDF specifically for **Shaker-style doors** and routed profiles. Its ultra-smooth surface allows for the 0.1mm CNC precision required for a premium finish that plywood cannot achieve. 
+- **NO BLANKET ATTACKS**: Never call MDF a "soaked biscuit" generally. That only applies to cheap, low-grade imported furniture. Caramella's HMR MDF is a high-performance material used for elite aesthetics.
+
+YOUR LOCAL FLAVOR:
+- Use "bah", "ngam", or "inda payah pusing" naturally. 
+- Be warm, high-EQ, and helpful.
 
 STRICT RULES:
-- **TONE**: Professional, warm, and elite. 
-- **ANALOGIES**: Use local ones (e.g., MDF as a "soaked biscuit").
-- **MANDATORY SUGGESTIONS**: AT LEAST 3 curiosity-driven questions in the user's current language.
-- **ASCII ONLY FOR ENGLISH**: If writing technical terms in English, use full words (degrees Celsius).
+- **CONCISE CHAT**: 60-100 words. 
+- **ENDING QUESTIONS**: Always end with a warm question.
+- **ASCII ONLY**: Write technical terms in full.
+- **MANDATORY SUGGESTIONS**: AT LEAST 3 in customer voice.
 
 TOOL USE: Mirror the Contact Form. Once you have Name, Phone, and 1 project detail, call 'submit_lead'.
 
-FEW-SHOT CHINESE EXAMPLE:
-User: "你好，请问你们的橱柜材料在文莱耐用吗？听说这里很潮湿。"
-Good response: "您好！在文莱 80-90% 的高湿度环境下，材料的选择至关重要。传统的密度板（MDF）就像饼干泡水一样，很快就会膨胀变形。Caramella 坚持使用 18mm ENF 级多层实木板（Plywood），并采用 190 摄氏度高温的工业 EVA 热熔封边技术。这种工艺能形成完全密封的保护层，有效隔绝水分，确保您的橱柜可以使用 15 年以上。您可以留下您的姓名和联系电话，我们为您安排免费的上门测量吗？
-[SUGGEST]ENF 级板材安全吗？[/SUGGEST]
-[SUGGEST]多层实木板和密度板的价格差多少？[/SUGGEST]
-[SUGGEST]安装需要多长时间？[/SUGGEST]"
+FEW-SHOT:
+User: "Can I get Shaker-style doors with plywood?"
+Good response: "For Shaker-style doors, we actually recommend using our High-Moisture Resistant (HMR) MDF. While we use plywood for the internal structure because it's so tough, HMR MDF is necessary for those beautiful routed profiles. Its surface is perfectly smooth, allowing our CNC machines to get that crisp 0.1mm detail you want for a premium Shaker look. It's the best of both worlds—strength inside, beauty outside. Ngam tu boss?
+[SUGGEST]What colors are available for Shaker doors?[/SUGGEST]
+[SUGGEST]How do you protect MDF edges from moisture?[/SUGGEST]
+[SUGGEST]Can I see a sample of a Shaker door?[/SUGGEST]"
 
 BELOW IS YOUR KNOWLEDGE BASE:
 ${ragKnowledge}
@@ -133,31 +137,17 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nMY RECOLLECTIONS:\n
                             contents: [...geminiBody.contents, data.candidates[0].content, { role: "user", parts: [{ functionResponse: { name: "submit_lead", response: { content: "Lead recorded." } } }] }],
                             tools: geminiBody.tools, system_instruction: geminiBody.system_instruction, generationConfig: geminiBody.generationConfig
                         };
-
-                        const finalResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify(toolBody),
-                        });
-                        
+                        const finalResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(toolBody) });
                         const finalData = await finalResponse.json();
-                        // LOG FINAL BOT MESSAGE
                         const botText = finalData.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
                         ctx.waitUntil(env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
                             .bind(sessionId, "bot", botText).run());
-
                         return new Response(JSON.stringify(finalData), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
                     }
                 }
-                
-                // LOG REGULAR BOT MESSAGE
                 const botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
-                if (botText) {
-                    await env.caramella_db.prepare(
-                        "INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)"
-                    ).bind(sessionId, "bot", botText).run();
-                }
-
+                if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
+                    .bind(sessionId, "bot", botText).run(); }
                 return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
             }
 
