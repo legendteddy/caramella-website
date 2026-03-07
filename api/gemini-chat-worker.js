@@ -59,7 +59,7 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nDYNAMIC USER MEMORY
 
             // Enable deep thinking for better reasoning
             if (!body.generationConfig) body.generationConfig = {};
-            body.generationConfig.thinkingConfig = { thinkingLevel: "HIGH" };
+            body.generationConfig.thinkingConfig = { thinkingLevel: "MEDIUM" };
 
             // Use streaming endpoint
             const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`;
