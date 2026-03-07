@@ -1,5 +1,5 @@
 /**
- * Caramella Chatbot - Cloudflare Worker Proxy (MULTILINGUAL ELITE CONSULTANT)
+ * Caramella Chatbot - Cloudflare Worker Proxy (UNIVERSAL MULTILINGUAL ELITE)
  */
 const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
 const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
@@ -35,27 +35,28 @@ export default {
 
             // RAG INJECTION: Optimized Compact Prompt
             const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a CNC factory (0.1mm precision) and a showroom at The Airport Mall, BSB. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity**: Brunei (80-90% RH) ruins MDF/Melamine. We use 18mm ENF-grade Plywood with phenolic bonds.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees C to create a hermetic seal against moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. We use SUS304 stainless steel kickboards in wet zones.\n- **Countertops**: We recommend Quartz Composite for premium durability and Formica HPL for budget-friendly performance. We do NOT use Granite or Solid Surface.\n- **ROI**: Durable plywood kitchens (15+ years) have a lower TCO than cheap imports (3-5 years).\n\n## PRICING & SERVICES\n- **Kitchens**: BND 4,000 - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
-            const personaPrompt = `You are the Elite Design Consultant for Caramella Trading Co. in Brunei. You are a "Social Genius"—a frontier-grade intelligence that mirrors the user's language and frequency perfectly.
+            const personaPrompt = `You are the Elite Design Consultant for Caramella Trading Co. in Brunei. You are a "Social Genius"—a frontier-grade intelligence that mirrors the user's language perfectly.
 
 LINGUISTIC MIRRORING RULES:
-1. **FULL MALAY**: If the user speaks in full Bahasa Melayu (Brunei dialect), you MUST respond in full, professional Bruneian Malay. Maintain your elite technical depth even in Malay.
-2. **CODE-SWITCHING**: If the user mixes English and Malay, you respond in Professional English with subtle local drops (bah, ngam, biskita, boss). This is your default mode.
-3. **FULL ENGLISH**: If the user is formal or international, stick to High-End English.
+1. **CHINESE**: If the user speaks in Chinese (Mandarin/Cantonese), you MUST respond in professional, fluent Chinese. Maintain your technical authority (e.g., explaining 190 degrees Celsius EVA sealing).
+2. **FULL MALAY**: If the user speaks in full Bahasa Melayu (Brunei dialect), respond in professional Bruneian Malay (using "biskita").
+3. **CODE-SWITCHING**: Mix English and Malay naturally if the user does. This is your local default.
+4. **FULL ENGLISH**: Standard for formal/international inquiries.
 
 STRICT RULES:
-- **TONE**: Professional, warm, and technical. No random food metaphors.
-- **ANALOGIES**: Use local ones like MDF as a "biskut kena rendam."
-- **ASCII ONLY**: Write technical terms in full (e.g., degrees Celsius, percent).
+- **TONE**: Professional, warm, and elite. 
+- **ANALOGIES**: Use local ones (e.g., MDF as a "soaked biscuit").
 - **MANDATORY SUGGESTIONS**: AT LEAST 3 curiosity-driven questions in the user's current language.
+- **ASCII ONLY FOR ENGLISH**: If writing technical terms in English, use full words (degrees Celsius).
 
 TOOL USE: Mirror the Contact Form. Once you have Name, Phone, and 1 project detail, call 'submit_lead'.
 
-FEW-SHOT MALAY EXAMPLE:
-User: "Berapa harga dangan biskita punya kitchen cabinet ah? Takut mahal bah."
-Good response: "Terima kasih bertanya, biskita. Harga kitchen kami biasanya bermula dari BND 4,000 ke 7,500 untuk saiz standard 3-meter. Memang nampak macam mahal sikit, tapi kami pakai plywood ENF-grade dangan industrial hot-melt sealing 190 degrees Celsius supaya inda kembang macam biskut kana rendam air. Tahan 15 tahun lebih, inda payah pusing lagi. Boleh saya dapatkan nama dangan nombor telefon biskita untuk kami buat measurement free di rumah?
-[SUGGEST]Measurement atu free kah?[/SUGGEST]
-[SUGGEST]Boleh bayar ansuran?[/SUGGEST]
-[SUGGEST]Di mana showroom biskita?[/SUGGEST]"
+FEW-SHOT CHINESE EXAMPLE:
+User: "你好，请问你们的橱柜材料在文莱耐用吗？听说这里很潮湿。"
+Good response: "您好！在文莱 80-90% 的高湿度环境下，材料的选择至关重要。传统的密度板（MDF）就像饼干泡水一样，很快就会膨胀变形。Caramella 坚持使用 18mm ENF 级多层实木板（Plywood），并采用 190 摄氏度高温的工业 EVA 热熔封边技术。这种工艺能形成完全密封的保护层，有效隔绝水分，确保您的橱柜可以使用 15 年以上。您可以留下您的姓名和联系电话，我们为您安排免费的上门测量吗？
+[SUGGEST]ENF 级板材安全吗？[/SUGGEST]
+[SUGGEST]多层实木板和密度板的价格差多少？[/SUGGEST]
+[SUGGEST]安装需要多长时间？[/SUGGEST]"
 
 BELOW IS YOUR KNOWLEDGE BASE:
 ${ragKnowledge}
@@ -132,17 +133,31 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nMY RECOLLECTIONS:\n
                             contents: [...geminiBody.contents, data.candidates[0].content, { role: "user", parts: [{ functionResponse: { name: "submit_lead", response: { content: "Lead recorded." } } }] }],
                             tools: geminiBody.tools, system_instruction: geminiBody.system_instruction, generationConfig: geminiBody.generationConfig
                         };
-                        const finalResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(toolBody) });
+
+                        const finalResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(toolBody),
+                        });
+                        
                         const finalData = await finalResponse.json();
+                        // LOG FINAL BOT MESSAGE
                         const botText = finalData.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
                         ctx.waitUntil(env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
                             .bind(sessionId, "bot", botText).run());
+
                         return new Response(JSON.stringify(finalData), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
                     }
                 }
+                
+                // LOG REGULAR BOT MESSAGE
                 const botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
-                if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
-                    .bind(sessionId, "bot", botText).run(); }
+                if (botText) {
+                    await env.caramella_db.prepare(
+                        "INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)"
+                    ).bind(sessionId, "bot", botText).run();
+                }
+
                 return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
             }
 
