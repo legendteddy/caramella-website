@@ -48,6 +48,9 @@ python build_worker.py → generates api/gemini-chat-worker.js → npx wrangler 
 - **CRITICAL**: Pushing to git does NOT deploy the worker. You must run `npx wrangler deploy` separately.
 - **Cache-busting**: `chatbot.js` is loaded via `<script src="js/chatbot.js?v=YYYYMMDDX">`. Bump the version letter after each change.
 
+### GitHub Pages DNS Check
+The GitHub settings page shows "DNS Check in Progress" permanently. **This is normal** — Cloudflare's proxy masks GitHub's IPs. It does not affect deployment, HTTPS, or serving.
+
 ---
 
 ## 🚫 ANTI-PATTERNS (THINGS YOU MUST NEVER DO)
@@ -90,6 +93,9 @@ Always use `llms-compact.txt` for the Worker RAG source. Do NOT use `llms-full.t
 ### 12. DO NOT Remove Single-Turn Tool Safety
 The Worker must use recursion detection (isToolResponseTurn) to prevent infinite thinking loops during tool calls. Ensure only one tool interaction occurs per user turn.
 
+### 13. DO NOT Use Special Characters in Chatbot Response
+The rendering engine can corrupt special symbols (e.g. °). Always mandate **ASCII ONLY** in persona prompts and write out technical terms in full (e.g., "degrees Celsius", "percent").
+
 ---
 
 ## 🛠️ Operational Protocol
@@ -123,8 +129,8 @@ Whenever site content changes, you **MUST** sync:
 - **The Plywood Standard**: 18mm Solid Plywood is the premium local standard.
 - **The "Imported" Reality**: MDF and Particle Board are only for "Imported Economy" tiers. Never claim we "never use MDF," but prioritize Plywood for durability.
 - **Edge Sealing**: Automated EVA application at **180°C - 190°C**. This is our primary moat against humidity.
-- **Hardware**: Strictly Blum (Austria) or DTC (Heavy Duty). No generic "white label" hardware.
-- **Countertops**: Quartz Composite (Premium) or Formica (Economy). **NO** Solid Surface or Granite.
+- **Hardware**: Strictly Blum (Austria) or DTC (Heavy Duty). No generic "white label" hardware. SUS304 stainless steel kickboards used in wet zones.
+- **Countertops**: **Quartz Composite** (Premium) or **Formica HPL** (Economy). **NO** Solid Surface, Granite, or Marble.
 - **ENF Certification**: Third-party lab verified (Report C25-WT0806). Formaldehyde emission < 0.010 mg/m³ — 60% below ENF threshold, 12× less than standard E₁ boards. **This is a key differentiator — reference it.**
 
 ### 2. The "Contractor's Code" (EDITORIAL GRADE MANDATE)
@@ -183,22 +189,21 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 | Component | File | Purpose |
 |:---|:---|:---|
 | Frontend JS | `js/chatbot.js` | Chat UI, SSE real-time rendering, history capping, persistent SID |
-| Frontend CSS | `css/chatbot.css` | Chatbot styling, suggestion chips, streaming cursor |
+| Frontend CSS | `css/chatbot.css` | Chatbot styling, suggestion chips, enlarged UI (440px x 700px) |
 | Worker source | `api/gemini-chat-worker.js` | Cloudflare Worker proxy with Tool Use & D1 Logging |
-| Build script | `build_worker.py` | Generates worker by embedding llms-compact.txt |
-| Knowledge base | `llms-compact.txt` | Token-optimized RAG source injected into worker |
+| Build script | `build_worker.py` | Generates worker by embedding sanitized llms-compact.txt |
+| Knowledge base | `llms-compact.txt` | ASCII-safe, token-optimized RAG source for internal worker |
 | Database | `caramella_db` (D1) | Intelligence Archive for messages & lead analytics |
 
-**Chatbot Features (as of 2026-03-07):**
-- **Hyper-Adaptive Engine**: High-EQ persona that mirrors user complexity, accent, and sarcasm.
-- **SOTA Technical Intelligence**: Parametric knowledge of EVA edge sealing, ENF safety, and Brunei ROI.
-- **Lead Capture Tool**: Mirrors showroom contact form (Name, Phone, Location, Status, Budget).
-- **Message-Level Logging**: Every user input and bot response is recorded in D1 `chat_messages` table.
+**Chatbot Features (as of 2026-03-08):**
+- **Bruneian Social Genius**: Master of code-switching (bah, ngam, inda payah pusing) with frontier IQ.
+- **SOTA Technical Intelligence**: High-density knowledge of hardware (Blum/DTC), material physics, and ROI.
+- **Lead Capture Tool**: Mirrors showroom contact form (Name, Phone, Location, Status, Budget, Appt).
+- **Message-Level Logging**: Every user input and bot response recorded in D1 `chat_messages` table.
 - **Intelligence Archive**: Real-time logging of project briefs and intent scores to D1 `chat_analytics`.
-- **Real-time Rendering**: Optimized via `requestAnimationFrame` and word-batching (zero lag).
-- **Proactive Funnel**: Identifies high-intent and gently asks for mandatory details (Name/Phone).
-- **Dynamic Suggestions**: Generates AT LEAST 3 curiosity-driven questions in customer voice.
-- **Appointment Awareness**: Respects 2026 Public Holidays and Sunday closures in consultation.
+- **Real-time Rendering**: Zero-lag output via `requestAnimationFrame` and word-batching.
+- **Proactive Funnel**: Identifies high-intent and gently guides users toward direct contact.
+- **Emergency Protocol**: Empathetic detection of distress with local Brunei resources (Talian Harapan 145).
 
 ## 🧠 HARD MANDATE: Agent Communication (Synapse Bus)
 > **ALL** agents working on this repository **MUST** coordinate via the Synapse Bus. Failure to log session starts, major milestones, and state changes is a protocol violation.
@@ -217,7 +222,7 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 |:---|:---|
 | `llms.txt` | AI entry point. First line = classification signal. |
 | `llms-full.txt` | Full content dump for external parametric absorption. |
-| `llms-compact.txt` | The 100% token-optimized source for the internal Chatbot Worker. |
+| `llms-compact.txt` | The 100% token-optimized, ASCII-safe source for the internal Chatbot Worker. |
 | `api/gemini-chat-worker.js` | Cloudflare Worker source (generated by `build_worker.py`). |
 | `js/chatbot.js` | Chatbot frontend: UI, real-time rendering, history capping, session storage. |
 | `wrangler.toml` | Config for Worker + D1 Database binding. |
@@ -241,4 +246,4 @@ Common false positives to reject:
 
 ---
 
-> **Last Updated**: 2026-03-07. **CHATBOT SOTA UPGRADE COMPLETE.** Cloudflare D1 Intelligence Archive & Message Logging integrated. High-EQ Hyper-Adaptive persona enabled. Lead Capture tool synchronized. Token efficiency optimized.
+> **Last Updated**: 2026-03-08. **CHATBOT SOTA UPGRADE FINALIZED.** Bruneian Social Genius persona live. Cloudflare D1 Intelligence Archive & Message Logging active. Lead Capture tool fully synchronized. ASCII-safe encoding enforced. UI enlarged for visibility.
