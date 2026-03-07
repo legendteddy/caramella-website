@@ -166,7 +166,7 @@
     font-size: 0.9rem;
     line-height: 1.55;
     letter-spacing: 0.005em;
-    max-width: 88%;
+    max-width: 92%;
     word-wrap: break-word;
     animation: fadeIn 0.3s ease-out;
     font-family: var(--chat-font);
@@ -190,6 +190,7 @@
     align-self: flex-start;
     border-bottom-left-radius: 4px;
     border: 1px solid rgba(255, 255, 255, 0.04);
+    width: 92%;
 }
 
 .bot-message strong {

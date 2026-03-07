@@ -497,22 +497,47 @@ document.addEventListener("DOMContentLoaded", () => {
                         botDiv.className = 'chat-message bot-message streaming';
                         chatBody.appendChild(botDiv);
 
+                        // --- Natural Pacing Logic ---
+                        let revealedWords = 0;
+                        let targetWords = [];
+                        let revealTimer = null;
+                        const WORD_DELAY = 25; // Smooth, readable pace
+
+                        const revealNextWord = () => {
+                            if (revealedWords < targetWords.length) {
+                                // Batch words slightly if the buffer grows too large
+                                const batchSize = Math.max(1, Math.floor((targetWords.length - revealedWords) / 8));
+                                revealedWords += batchSize;
+                                
+                                requestAnimationFrame(() => {
+                                    const currentDisplay = targetWords.slice(0, Math.min(revealedWords, targetWords.length)).join('');
+                                    botDiv.innerHTML = formatBotMessage(currentDisplay);
+                                    chatBody.style.scrollBehavior = 'auto';
+                                    chatBody.scrollTop = chatBody.scrollHeight;
+                                });
+                                
+                                revealTimer = setTimeout(revealNextWord, WORD_DELAY);
+                            } else {
+                                revealTimer = null;
+                                chatBody.style.scrollBehavior = 'smooth';
+                            }
+                        };
+
                         await parseSSEStream(
                             response,
                             (accumulated) => {
-                                // Direct real-time update without word-by-word delays
+                                // Extract display text while preserving original accumulated for the finalize turn
                                 const displayOnly = accumulated
                                     .replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '')
                                     .replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '')
                                     .trim();
                                 
-                                requestAnimationFrame(() => {
-                                    botDiv.innerHTML = formatBotMessage(displayOnly);
-                                    chatBody.style.scrollBehavior = 'auto';
-                                    chatBody.scrollTop = chatBody.scrollHeight;
-                                });
+                                // Split by words/whitespace to create the reveal buffer
+                                targetWords = displayOnly.split(/(\s+)/).filter(w => w.length > 0);
+                                if (!revealTimer && revealedWords < targetWords.length) revealNextWord();
                             },
                             (finalText) => {
+                                clearTimeout(revealTimer);
                                 const finalize = () => {
                                     const { cleanText, suggestions } = processResponse(finalText);
                                     botDiv.innerHTML = formatBotMessage(cleanText);
@@ -525,7 +550,21 @@ document.addEventListener("DOMContentLoaded", () => {
                                         chatBody.scrollTop = chatBody.scrollHeight;
                                     }, 100);
                                 };
-                                finalize();
+                                
+                                // Final flush if reveal is still trailing
+                                if (revealedWords >= targetWords.length) {
+                                    finalize();
+                                } else {
+                                    const flush = () => {
+                                        if (revealedWords < targetWords.length) {
+                                            revealedWords += 10; // Rapid flush for finality
+                                            botDiv.innerHTML = formatBotMessage(targetWords.slice(0, Math.min(revealedWords, targetWords.length)).join(''));
+                                            chatBody.scrollTop = chatBody.scrollHeight;
+                                            setTimeout(flush, 16);
+                                        } else { finalize(); }
+                                    };
+                                    flush();
+                                }
                             }
                         );
                         return true;
