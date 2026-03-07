@@ -449,25 +449,68 @@ document.addEventListener("DOMContentLoaded", () => {
                 botDiv.className = 'chat-message bot-message streaming';
                 chatBody.appendChild(botDiv);
 
+                // Character reveal state
+                let revealedLength = 0;
+                let targetText = '';
+                let revealTimer = null;
+                const CHAR_DELAY = 12; // ms per character (~83 chars/sec, natural reading pace)
+
+                const revealNextChars = () => {
+                    if (revealedLength < targetText.length) {
+                        // Reveal in small bursts (3-5 chars) for smoother feel
+                        const burst = Math.min(3, targetText.length - revealedLength);
+                        revealedLength += burst;
+                        const displaySlice = targetText.slice(0, revealedLength);
+                        botDiv.innerHTML = formatBotMessage(displaySlice);
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                        revealTimer = setTimeout(revealNextChars, CHAR_DELAY);
+                    }
+                };
+
                 await parseSSEStream(
                     response,
-                    // On each chunk: update the div with accumulated text (strip hidden tags for display)
+                    // On each chunk: update target text (reveal loop catches up)
                     (accumulated) => {
-                        const displayText = accumulated
+                        targetText = accumulated
                             .replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '')
                             .replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '')
                             .trim();
-                        botDiv.innerHTML = formatBotMessage(displayText);
-                        chatBody.scrollTop = chatBody.scrollHeight;
+                        // Start reveal loop if not already running
+                        if (!revealTimer) revealNextChars();
                     },
-                    // On done: process final text
+                    // On done: finish revealing and process
                     (finalText) => {
-                        const { cleanText, suggestions } = processResponse(finalText);
-                        botDiv.innerHTML = formatBotMessage(cleanText);
-                        botDiv.classList.remove('streaming');
-                        chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
-                        renderSuggestionChips(suggestions);
-                        chatBody.scrollTop = chatBody.scrollHeight;
+                        // Let reveal finish, then finalize
+                        const finalize = () => {
+                            if (revealedLength < targetText.length) {
+                                revealedLength = targetText.length;
+                                botDiv.innerHTML = formatBotMessage(targetText);
+                            }
+                            const { cleanText, suggestions } = processResponse(finalText);
+                            botDiv.innerHTML = formatBotMessage(cleanText);
+                            botDiv.classList.remove('streaming');
+                            chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
+                            renderSuggestionChips(suggestions);
+                            chatBody.scrollTop = chatBody.scrollHeight;
+                        };
+                        // Wait for reveal to catch up (max 500ms), then force-finish
+                        if (revealedLength >= targetText.length) {
+                            finalize();
+                        } else {
+                            clearTimeout(revealTimer);
+                            // Quick flush remaining chars
+                            const flushRemaining = () => {
+                                if (revealedLength < targetText.length) {
+                                    revealedLength += 5;
+                                    botDiv.innerHTML = formatBotMessage(targetText.slice(0, Math.min(revealedLength, targetText.length)));
+                                    chatBody.scrollTop = chatBody.scrollHeight;
+                                    setTimeout(flushRemaining, 5);
+                                } else {
+                                    finalize();
+                                }
+                            };
+                            flushRemaining();
+                        }
                     }
                 );
             }
