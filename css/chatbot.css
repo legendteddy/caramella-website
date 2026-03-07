@@ -26,7 +26,8 @@
     -webkit-backdrop-filter: blur(16px);
     display: flex;
     flex-direction: column;
-    z-index: 9999;
+    z-index: 10001;
+    /* Must be higher than WhatsApp's 9999 so the open chat covers it */
     overflow: hidden;
     transform-origin: bottom right;
     transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -334,7 +335,8 @@
     }
 
     .chatbot-toggle-btn {
-        bottom: 16px;
+        bottom: 96px;
+        /* Shifted up to clear WhatsApp on mobile */
         right: 16px;
     }
 }
