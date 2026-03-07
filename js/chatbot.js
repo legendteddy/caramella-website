@@ -190,10 +190,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 const model = "gemini-3.1-flash-lite-preview"; // Using the latest 3.1 preview
                 const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${LOCAL_API_KEY}`;
 
+                const payloadLocal = { ...payload };
+                delete payloadLocal.learned_facts; // Google API doesn't recognize this field
+
                 response = await fetch(endpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify(payloadLocal)
                 });
             } else {
                 // Production: proxy via Cloudflare worker
