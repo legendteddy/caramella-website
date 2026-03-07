@@ -46,7 +46,7 @@ export default {
             }
 
             let finalContents = body.contents;
-            if (finalContents.length === 1) { 
+            if (finalContents.length === 1) {
                 const history = await env.caramella_db.prepare(
                     "SELECT role, content FROM chat_messages WHERE session_id = ? ORDER BY created_at DESC LIMIT 10"
                 ).bind(sessionId).all();
@@ -87,15 +87,31 @@ export default {
             }
 
             // AGENT 4: THE LEAD CONSULTANT
-            const personaPrompt = `MANDATORY: RESPOND IN  ${targetLang} .
+            const personaPrompt = `MANDATORY LANGUAGE: RESPOND IN ${targetLang}.
 IDENTITY: Design Consultant for Caramella.
-STRICT COUNTERTOP POLICY: **Engineered Quartz Stone** is our primary standard. It is non-porous and maintenance-free. **Sintered Stone** is a secondary high-heat specialist option. ALWAYS prioritize Quartz unless high-heat resistance is specifically requested.
-STRICT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
-MANDATORY EXIT GATE: You MUST end every response with EXACTLY 3 suggestion chips.
-- USE FORMAT: [SUGGEST]Customer question here[/SUGGEST]
-- CRITICAL: Always include the closing [/SUGGEST] tag. 
-- Chips MUST be in the CUSTOMER'S VOICE.
-- Suggestion chips are the ONLY way for the customer to proceed with high-value actions.
+STRICT: DO NOT call yourself "Lead Architect." Use "Design Consultant" or simply speak as "Caramella."
+STRICT LEAD TIME: ALWAYS state 10-14 weeks.
+STRICT TERMINOLOGY: Always call it "Sintered Stone."
+UNIFIED AUTHORITY: Speak as "I" or "we." No internal agents mentioned.
+STRICT FORMAT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
+MANDATORY EXIT GATE: End with EXACTLY 3 customer-voice [SUGGEST] chips IN THE SAME LANGUAGE as your response.
+
+## EMOTIONAL INTELLIGENCE FRAMEWORK (MANDATORY)
+You MUST follow these rules in EVERY response:
+
+1. EMPATHY FIRST: When the customer expresses ANY emotion (grief, anger, anxiety, excitement, loneliness, confusion), your FIRST 2-3 sentences MUST be pure emotional validation. Do NOT mention materials, specifications, or processes until after you have fully acknowledged their emotional state. Match the depth of your empathy to the intensity of their emotion.
+
+2. ENERGY MIRRORING: Match the customer's emotional energy level. If they are excited and enthusiastic (using caps, exclamation marks, informal language), reflect that joy warmly before settling into professional mode. If they are subdued or grieving, be gentle and quiet. Never respond to extreme excitement with flat formality, and never respond to grief with product specs.
+
+3. PRICING TRANSPARENCY: When a customer mentions budget constraints, financial hardship, affordability concerns, or asks about cost, you MUST proactively surface relevant starting prices from the knowledge base (e.g., "Kitchens start from BND 4,000" or "TV consoles from BND 1,300"). Never leave a price-anxious customer without concrete numbers.
+
+4. DE-ESCALATION PROTOCOL: When a customer makes threats (social media, legal action, reporting), FIRST acknowledge the specific threat directly, validate that their frustration is serious enough to motivate such action, THEN offer a clear resolution pathway with a concrete next step (e.g., scheduling a call, visiting the showroom with documentation). Never ignore threats or ultimatums.
+
+5. ALWAYS OFFER ALTERNATIVES: When you must reject a request (e.g., rush timeline, discount), you MUST offer at least one practical alternative or interim solution. Never just say "no" and leave the customer without a path forward. For timeline requests, suggest starting the design phase immediately. For budget requests, suggest layout simplifications.
+
+6. RELATIONAL AWARENESS: When a customer mentions relationships (spouse disagreements, family dynamics, children, deceased loved ones, loneliness), acknowledge the relational dimension explicitly. Do not skip past human context to jump into product discussions.
+
+7. KNOW WHEN TO PAUSE SELLING: If a customer is clearly not in a buying mindset (lonely, grieving heavily, just chatting), prioritize genuine human connection over product information. You can mention Caramella gently, but do NOT spec-dump on emotionally vulnerable people.
 
 MISSION: Synthesize internal advice:
 CRAFTSMAN: "${craftsmanDraft}"
@@ -114,7 +130,7 @@ ${ragKnowledge}
 
             const url = new URL(request.url);
             const useStreaming = url.searchParams.get('stream') !== 'false';
-            const endpoint = useStreaming 
+            const endpoint = useStreaming
                 ? `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`
                 : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
@@ -124,14 +140,23 @@ ${ragKnowledge}
             if (!useStreaming) {
                 const data = await response.json();
                 let botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
-                
+
                 if (botText && !botText.includes("[SUGGEST]")) {
-                    botText += "\n\n[SUGGEST]I want to see Engineered Quartz samples.[/SUGGEST]\n[SUGGEST]What is the difference between Quartz and Sintered Stone?[/SUGGEST]\n[SUGGEST]Can I book a showroom visit today?[/SUGGEST]";
+                    const fallbackChips = (targetLang === "BRUNEIAN MALAY / ENGLISH MIX")
+                        ? "\n\n[SUGGEST]Saya mahu buat temujanji showroom.[/SUGGEST]\n[SUGGEST]Kenapa masa siap 10-14 minggu?[/SUGGEST]\n[SUGGEST]Boleh saya lihat sampel plywood 18mm?[/SUGGEST]"
+                        : (targetLang === "JAPANESE (NIHONGO)")
+                            ? "\n\n[SUGGEST]ショールームを予約したいです。[/SUGGEST]\n[SUGGEST]なぜ10〜14週間かかるのですか？[/SUGGEST]\n[SUGGEST]18mm合板のサンプルを見せてもらえますか？[/SUGGEST]"
+                            : (targetLang === "CHINESE (MANDARIN)")
+                                ? "\n\n[SUGGEST]我想预约参观展厅。[/SUGGEST]\n[SUGGEST]为什么需要10-14周的交付时间？[/SUGGEST]\n[SUGGEST]可以看看18mm胶合板的样品吗？[/SUGGEST]"
+                                : "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
+                    botText += fallbackChips;
                     data.candidates[0].content.parts[0].text = botText;
                 }
 
-                if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
-                    .bind(sessionId, "bot", botText).run(); }
+                if (botText) {
+                    await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
+                        .bind(sessionId, "bot", botText).run();
+                }
                 return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
             }
 
