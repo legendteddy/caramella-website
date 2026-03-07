@@ -104,18 +104,66 @@ document.addEventListener("DOMContentLoaded", () => {
     chatForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const message = chatInput.value.trim();
-        if (!message) return;
+        const messageText = chatInput.value.trim();
+        chatInput.value = ''; // Clear input field
 
-        // 1. Display User Message
-        appendMessage(message, 'user');
-        chatInput.value = '';
+        // Handle Image Attachment (if any)
+        const fileInput = document.getElementById('chat-image-upload');
+        let attachedImageBase64 = null;
+        let attachedMimeType = null;
+
+        if (fileInput && fileInput.files.length > 0) {
+            const file = fileInput.files[0];
+            attachedMimeType = file.type;
+            attachedImageBase64 = await new Promise((resolve) => {
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    // Extract base64 data only (remove data url prefix)
+                    const base64String = reader.result.replace(/^data:image\/(png|jpeg|webp);base64,/, "");
+                    resolve(base64String);
+                };
+                reader.readAsDataURL(file);
+            });
+            fileInput.value = ''; // clear input
+        }
+
+        if (!messageText && !attachedImageBase64) {
+            sendBtn.disabled = true;
+            return;
+        }
+
+        // --- Render User Message immediately ---
+        const userMsgDiv = document.createElement('div');
+        userMsgDiv.className = 'chat-message user-message';
+        let userInnerHtml = formatUserMessage(messageText);
+
+        if (attachedImageBase64) {
+            userInnerHtml += `<br><img src="data:${attachedMimeType};base64,${attachedImageBase64}" style="max-width: 100%; border-radius: 4px; margin-top: 8px;">`;
+        }
+        userMsgDiv.innerHTML = userInnerHtml;
+        chatBody.appendChild(userMsgDiv);
+        chatBody.scrollTop = chatBody.scrollHeight;
+
         sendBtn.disabled = true;
 
-        // Add to local history context
+        // --- Setup new message part for Gemini API ---
+        let userParts = [];
+        if (messageText) {
+            userParts.push({ text: messageText });
+        }
+        if (attachedImageBase64) {
+            userParts.push({
+                inlineData: {
+                    mimeType: attachedMimeType,
+                    data: attachedImageBase64
+                }
+            });
+        }
+
+        // --- Append to history ---
         chatHistory.push({
-            "role": "user",
-            "parts": [{ "text": message }]
+            role: "user",
+            parts: userParts
         });
 
         // 2. Show typing indicator
