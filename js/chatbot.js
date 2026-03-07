@@ -332,21 +332,33 @@ document.addEventListener("DOMContentLoaded", () => {
         let cleanText = botText;
         let suggestions = [];
 
-        // Extract [SUGGEST] tags
-        const suggestRegex = /\[SUGGEST\]([\s\S]*?)\[\/SUGGEST\]/g;
-        let match;
-        while ((match = suggestRegex.exec(botText)) !== null) {
-            suggestions.push(match[1].trim());
+        // --- Robust Suggestion Extraction ---
+        // Find all occurrences of [SUGGEST] and extract content until [/SUGGEST], 
+        // the next [SUGGEST], or the end of the text.
+        const suggestParts = botText.split(/\[SUGGEST\]/i);
+        if (suggestParts.length > 1) {
+            // First part is always text before any suggestion
+            cleanText = suggestParts[0];
+            for (let i = 1; i < suggestParts.length; i++) {
+                let content = suggestParts[i].split(/\[\/SUGGEST\]|\[SUGGEST\]/i)[0].trim();
+                if (content) suggestions.push(content);
+            }
         }
-        cleanText = cleanText.replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '').trim();
 
-        // Extract [LEARN] tags
-        const learnRegex = /\[LEARN\]([\s\S]*?)\[\/LEARN\]/g;
+        // Clean up any remaining tags from the display text
+        cleanText = cleanText
+            .replace(/\[SUGGEST\][\s\S]*?(\[\/SUGGEST\]|$)/gi, "")
+            .replace(/\[LEARN\][\s\S]*?(\[\/LEARN\]|$)/gi, "")
+            .trim();
+
+        // Extract [LEARN] tags (Memory)
+        const learnRegex = /\[LEARN\]([\s\S]*?)(\[\/LEARN\]|$)/gi;
         const memories = getMemory();
         let newFacts = false;
-        while ((match = learnRegex.exec(botText)) !== null) {
+        let learnMatch;
+        while ((learnMatch = learnRegex.exec(botText)) !== null) {
             try {
-                const factStr = match[1].trim();
+                const factStr = learnMatch[1].trim();
                 if (factStr.startsWith('{') && factStr.endsWith('}')) {
                     const factObj = JSON.parse(factStr);
                     if (factObj.fact && !memories.some(m => m.fact === factObj.fact)) {
@@ -354,12 +366,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         newFacts = true;
                     }
                 }
-            } catch (e) {
-                console.error("Failed to parse memory:", e);
-            }
+            } catch (e) { /* ignore parse errors */ }
         }
         if (newFacts) saveMemory(memories);
-        cleanText = cleanText.replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '').trim();
 
         return { cleanText, suggestions };
     };
