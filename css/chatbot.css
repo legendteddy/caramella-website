@@ -15,10 +15,10 @@
     position: fixed;
     bottom: 100px;
     right: 2rem;
-    width: 380px;
+    width: 440px;
     max-width: calc(100vw - 3rem);
-    height: 540px;
-    max-height: calc(100vh - 120px);
+    height: 700px;
+    max-height: calc(85vh);
     background: var(--chat-bg);
     border: 1px solid var(--chat-border);
     border-radius: 20px;
