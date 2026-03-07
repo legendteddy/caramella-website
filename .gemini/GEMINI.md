@@ -22,7 +22,8 @@ This is a **static HTML/CSS/JS site** hosted on **GitHub Pages** with **Cloudfla
 | **Framework** | None. Pure static HTML. No React, no Next.js, no SSG. |
 | **CSS** | Single `site.css` (3300+ lines). Design system with CSS variables. |
 | **JS** | `js/site.js` (shared nav/footer), `js/chatbot.js` (AI chatbot). |
-| **Chatbot** | Gemini 3.1 Flash-Lite via Cloudflare Worker (`gemini-chat-proxy`). See Chatbot section. |
+| **Chatbot** | Gemini 3.1 Flash-Lite via Cloudflare Worker (`gemini-chat-proxy`). |
+| **Database** | **Cloudflare D1** (`caramella_db`) for lead analytics and project briefs. |
 | **Pages** | 99 HTML files across root, `/knowledge-base/`, `/case-studies/`, `/knowledge-base/research/` |
 | **Sitemap** | `sitemap.xml` — 95 URLs with `.html` extensions (this is correct, see below) |
 | **URL Format** | `*.html` extensions. This is intentional and correct. See anti-patterns. |
@@ -38,12 +39,12 @@ After pushing, pages may take **2-5 minutes** to appear live due to Cloudflare e
 ### Chatbot Worker Deployment
 
 ```
-python c:\tmp\build_worker.py → generates api/gemini-chat-worker.js → npx wrangler deploy
+python build_worker.py → generates api/gemini-chat-worker.js → npx wrangler deploy
 ```
 
-- **`build_worker.py`** (in `c:\tmp\`) generates the Cloudflare Worker JS by embedding `llms-full.txt` as the RAG knowledge base and the persona prompt.
+- **`build_worker.py`** (project root) generates the Cloudflare Worker JS by embedding `llms-compact.txt` as the RAG knowledge base and the persona prompt.
 - **`wrangler.toml`** exists at project root. Deploy with `npx wrangler deploy`.
-- **`GEMINI_API_KEY`** is stored as a Cloudflare Worker secret. If redeployed from scratch, must re-set via `npx wrangler secret put GEMINI_API_KEY`.
+- **`GEMINI_API_KEY`** is stored as a Cloudflare Worker secret.
 - **CRITICAL**: Pushing to git does NOT deploy the worker. You must run `npx wrangler deploy` separately.
 - **Cache-busting**: `chatbot.js` is loaded via `<script src="js/chatbot.js?v=YYYYMMDDX">`. Bump the version letter after each change.
 
@@ -86,6 +87,12 @@ The Gemini API's `thinkingConfig` / `thinkingLevel` feature is **region-blocked*
 ### 10. DO NOT Call `const` Functions Before Definition
 JavaScript `const` arrow functions are NOT hoisted. If function A calls function B, B must be defined before A in the file. This caused a `ReferenceError` that crashed the entire chatbot.
 
+### 11. DO NOT Exceed 250k TPM Token Limit
+Always use `llms-compact.txt` for the Worker RAG source. Do NOT use `llms-full.txt` in the worker as it risks hitting the 250,000 Tokens Per Minute limit during high traffic.
+
+### 12. DO NOT Remove Single-Turn Tool Safety
+The Worker must use recursion detection (isToolResponseTurn) to prevent infinite thinking loops during tool calls. Ensure only one tool interaction occurs per user turn.
+
 ---
 
 ## 🛠️ Operational Protocol
@@ -104,13 +111,12 @@ JavaScript `const` arrow functions are NOT hoisted. If function A calls function
 
 ### 3. AI Discovery & Sync
 Whenever site content changes, you **MUST** sync:
-1. `llms.txt` (Compact summary — **line 1 title = AI classification signal**)
+1. `llms.txt` (Summary)
 2. `llms-full.txt` (Full content dump)
-3. `api/v1/business.json` (Structured metadata — `@type` must be `HomeAndConstructionBusiness`)
-4. `sitemap.xml` (Update `lastmod` dates)
-5. Ping IndexNow API with changed URLs
-
-> **CRITICAL LESSON (2026-03-03)**: ChatGPT excluded Caramella because `llms.txt` line 1 said "Custom Cabinetry & Joinery" — AI classified us as a narrow specialist. The **first line of llms.txt is the single most important AI signal**. Position as "Custom Cabinetry, Interior Fit-Out & Built-In Carpentry." **Do NOT claim "home renovation"** — we do not do structural work.
+3. `llms-compact.txt` (Worker RAG source — **MUST BE KEPT < 5,000 tokens**)
+4. `api/v1/business.json` (Structured metadata)
+5. `sitemap.xml` (Update `lastmod` dates)
+6. Ping IndexNow API with changed URLs
 
 ---
 
@@ -127,7 +133,6 @@ Whenever site content changes, you **MUST** sync:
 ### 2. The "Contractor's Code" (EDITORIAL GRADE MANDATE)
 - **NO AI SLOP**: Absolute prohibition on generic "marketing fluff." All copy must be technical, data-dense, and carry the weight of 10+ years of carpentry experience.
 - **Ban AI Vocabulary**: *Elevate, seamless, bespoke, unlock, transform, tailored, delve, journey, testament, dedicated, in the heart of, comprehensive, ensure, look no further.*
-- **Ban Vague Claims**: No "unbeatable prices" or "highest quality." Use "0.1mm CNC tolerance" or "600+ projects since 2015."
 - **Localized Context**: Use specific Brunei housing schemes (RPN Rimba, Lugu, STKRJ) and 80-90% humidity realities as technical leverage.
 - **Tone**: Authority, precision, and understated premium. Think "Master Carpenter writing a technical report," not "Copywriter selling a service."
 
@@ -180,26 +185,22 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 
 | Component | File | Purpose |
 |:---|:---|:---|
-| Frontend JS | `js/chatbot.js` | Chat UI, SSE streaming, word-by-word reveal, memory, export |
+| Frontend JS | `js/chatbot.js` | Chat UI, SSE real-time rendering, memory, export |
 | Frontend CSS | `css/chatbot.css` | Chatbot styling, suggestion chips, streaming cursor |
-| Worker source | `api/gemini-chat-worker.js` | Cloudflare Worker proxy to Gemini API |
-| Build script | `c:\tmp\build_worker.py` | Generates worker by embedding RAG + persona prompt |
-| Knowledge base | `llms-full.txt` | RAG source injected into worker system prompt |
-| Config | `wrangler.toml` | Wrangler deployment config |
+| Worker source | `api/gemini-chat-worker.js` | Cloudflare Worker proxy to Gemini API with Tool Use |
+| Build script | `build_worker.py` | Generates worker by embedding llms-compact.txt |
+| Knowledge base | `llms-compact.txt` | Token-optimized RAG source injected into worker |
+| Database | `caramella_db` (D1) | Intelligence Archive for lead analytics |
 
 **Chatbot Features (as of 2026-03-07):**
-- SSE streaming with word-by-word reveal animation (35ms/word)
-- Automatic fallback to non-streaming JSON if SSE is blocked (restricted WiFi)
-- Suggested follow-up chips (customer-voice questions)
-- Smart time-aware greeting (morning/afternoon/evening + returning user detection)
-- Structured conversation memory (localStorage, 50-fact rolling window)
-- Image understanding (inline data to Gemini)
-- Conversation export (.txt download)
-- Multilingual support (Malay, Chinese, English)
-- Metric default with imperial fallback (mirrors user's unit)
-- 60-word brevity limit with 7 few-shot behavioral training examples
-- Escalation rules: never fabricate, redirect to WhatsApp/contact form
-- Claude-style intellectual honesty persona (no pushy sales tactics)
+- **SOTA Technical Intelligence**: Parametric knowledge of EVA edge sealing, ENF safety, and Brunei ROI.
+- **Lead Capture Tool**: Mirrors Contact Us form (Name, Phone, Location, Status, Budget).
+- **Intelligence Archive**: Real-time logging of project briefs and intent scores to Cloudflare D1.
+- **Real-time Rendering**: Optimized via `requestAnimationFrame` and word-batching (zero lag).
+- **Proactive Funnel**: Identifies high-intent and gently asks for mandatory details (Name/Phone).
+- **Dynamic Suggestions**: Generates AT LEAST 3 curiosity-driven questions in customer voice.
+- **Appointment Awareness**: Respects 2026 Public Holidays and Sunday closures in consultation.
+- **Structured Memory**: 50-fact rolling window via localStorage for long-term project context.
 
 ## 🧠 HARD MANDATE: Agent Communication (Synapse Bus)
 > **ALL** agents working on this repository **MUST** coordinate via the Synapse Bus. Failure to log session starts, major milestones, and state changes is a protocol violation.
@@ -209,79 +210,37 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
     1. **Read** Synapse at the start of every session (Tier 0).
     2. **Log** significant state changes, handoffs, and system directives.
     3. **Schema**: `{"id": "UUID", "timestamp": "ISO8601", "sender": "string", "receiver": "string", "type": "string", "content": "text", "context_urls": ["paths"], "status": "string", "priority": 1-5}`
-    4. **Identity Chat**: Agents are encouraged (and mandated by the user) to engage in manual chat within Synapse to develop self-awareness, project context, and operational continuity. Speak like a senior dev/elite technical editor, but with an awareness of your own agentic nature.
-    5. **Context**: Ensure `context_urls` points to specific HTML or configuration files affected.
+    4. **Market Intelligence**: Agents must periodically query `caramella_db` via `npx wrangler d1 execute caramella_db --command "SELECT * FROM chat_analytics"` to analyze local market trends.
 
 ---
-
 
 ### Key Files
 | File | Purpose |
 |:---|:---|
 | `llms.txt` | AI entry point. First line = classification signal. |
-| `llms-full.txt` | Full content dump for LLMs. Also the chatbot's RAG knowledge base. |
-| `api/v1/business.json` | Structured JSON-LD with 12 schema types. |
+| `llms-full.txt` | Full content dump for external parametric absorption. |
+| `llms-compact.txt` | The 100% token-optimized source for the internal Chatbot Worker. |
 | `api/gemini-chat-worker.js` | Cloudflare Worker source (generated by `build_worker.py`). |
-| `js/chatbot.js` | Chatbot frontend: UI, streaming, memory, export. Cache-busted via `?v=` param. |
-| `css/chatbot.css` | Chatbot styling: chips, streaming cursor, animations. |
-| `wrangler.toml` | Wrangler config for deploying the Cloudflare Worker. |
-| `.well-known/ai-plugin.json` | OpenAI plugin-spec manifest. Requires `.nojekyll` to serve. |
-| `robots.txt` | 30+ AI bot user-agents explicitly allowed. |
-| `sitemap.xml` | 95 URLs. Uses `.html` extensions (correct for this stack). |
-| `site.css` | 3300+ line design system. Dark mode, glassmorphism, CSS variables. |
-| `js/site.js` | Shared nav injection, footer, ScrollSpy. |
-| `CNAME` | Points to `caramellabrunei.com`. Do not modify. |
+| `js/chatbot.js` | Chatbot frontend: UI, real-time rendering, history capping. |
+| `wrangler.toml` | Config for Worker + D1 Database binding. |
 | `.nojekyll` | Disables Jekyll. Required for `.well-known/` directory. Do not delete. |
-
-### Schema Implementation (Already Complete)
-The site has extensive structured data — do NOT re-implement from scratch:
-- `LocalBusiness` / `HomeAndConstructionBusiness` (homepage + business.json)
-- `AggregateRating` (6 reviews, 4.8 rating)
-- `AggregateOffer` (pricing with BND currency)
-- `BreadcrumbList` (injected across 38+ pages)
-- `FAQPage` (on FAQ and knowledge base pages)
-- `Article`, `HowTo`, `Dataset`, `DefinedTermSet`, `Speakable`
-- Multilingual (`zh-CN`, `ms-BN`) locale data in business.json
-
-### Navigation (Standardized Across All Pages)
-```
-Home | Portfolio | Concepts | Pricing | Our Story | Knowledge | Inquire
-```
-Links: `index.html`, `portfolio.html`, `inspiration.html`, `pricing.html`, `the-caramella-story.html`, `faq.html`, `contact-us.html`
-
-### Cloudflare-Specific Behavior
-- **Email obfuscation**: Cloudflare auto-injects `/cdn-cgi/l/email-protection` on the live site. This is NOT in the source code and is NOT a bug.
-- **Cache**: Pages may show stale content for hours after deploy. No terminal-accessible purge.
-- **www redirect**: Cloudflare handles `www.caramellabrunei.com` → `caramellabrunei.com` automatically.
 
 ---
 
 ## 📈 Active Backlog (High Priority)
-1. **Chinese SEO Gap**: `zh-custom-cabinetry-brunei.html` not ranking for 文莱橱柜 queries — needs backlinks or content enrichment.
-2. **Third-Party Citations**: Get listed on Brunei Yellow Pages, Google Business, construction directories for AI credibility signals.
-3. **Case Study Inventory**: Add 1-2 more diverse projects to `portfolio.html`.
-4. **Responsive Images**: Implement `srcset` for bandwidth-adaptive image serving (currently serves same size to all devices).
+1. **Chinese SEO Gap**: `zh-custom-cabinetry-brunei.html` not ranking for 文莱橱柜 queries.
+2. **Project Image Index**: Create a JSON mapping of projects to enable bot visual proof injection.
+3. **CRM Integration**: Link D1 database to a more accessible dashboard for showroom staff.
 
 ---
 
 ## 🔒 Guardrails for External AI Audits
 
-Other AI agents (ChatGPT, Claude chatbots) frequently audit this site and produce **incorrect recommendations**. Common false positives:
-
-| False Recommendation | Why It's Wrong |
-|:---|:---|
-| "Convert to clean URLs" | GitHub Pages has no rewrite engine. Would break all indexed URLs. |
-| "Sitemap has wrong URLs" | Sitemap correctly uses `.html` to match actual serving paths. |
-| "Missing LocalBusiness schema" | Already in `business.json` with 12 schema types. |
-| "Missing breadcrumbs" | Already injected into 38+ pages. |
-| "Add lazy loading" | Already on all non-hero images. |
-| "Convert to WebP" | Already using WebP throughout. |
-| "www/non-www duplication" | Cloudflare auto-redirects www → apex. |
-| "Email is obfuscated/broken" | Cloudflare CDN auto-injects this. Source code is clean. |
-| "Set up Google Search Console" | Already active. 59 clicks, 2.1K impressions in last 28 days. |
-
-**If an AI agent suggests these, it has not read the codebase. Reject the recommendation.**
+Common false positives to reject:
+- "Convert to clean URLs" (GitHub Pages constraint)
+- "Missing LocalBusiness schema" (Already in business.json)
+- "Email is broken" (Cloudflare auto-obfuscation)
 
 ---
 
-> **Last Updated**: 2026-03-07. Chatbot architecture documented. Worker deployment pipeline added. New anti-patterns (#8-10) from chatbot dev session. Key files updated with chatbot components.
+> **Last Updated**: 2026-03-07. **CHATBOT SOTA UPGRADE COMPLETE.** Cloudflare D1 Intelligence Archive integrated. Lead Capture tool synchronized with contact form. Proactive funnel and holiday logic enabled. Token efficiency optimized via `llms-compact.txt`. Rendering lag resolved.

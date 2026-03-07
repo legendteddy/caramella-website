@@ -32,6 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     let chatHistory = [];
     let isStreaming = false;
 
+    // --- Session Tracking ---
+    let sessionId = sessionStorage.getItem('caramella_chat_sid');
+    if (!sessionId) {
+        sessionId = 'sid-' + Math.random().toString(36).substring(2, 15) + '-' + Date.now();
+        sessionStorage.setItem('caramella_chat_sid', sessionId);
+    }
+
     // ============================
     // SMART GREETING
     // ============================
@@ -415,6 +422,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const storedMemories = getMemoryStrings();
         const cappedHistory = chatHistory.slice(-10);
         const payload = {
+            session_id: sessionId,
             contents: cappedHistory,
             learned_facts: storedMemories
         };

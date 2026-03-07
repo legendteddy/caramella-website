@@ -1,3 +1,8 @@
 name = "gemini-chat-proxy"
 main = "api/gemini-chat-worker.js"
 compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "caramella_db"
+database_name = "caramella_db"
+database_id = "145177de-68a3-492f-b26f-3018abda9d13"
