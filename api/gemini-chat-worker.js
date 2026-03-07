@@ -42,10 +42,10 @@ CONSULTATION GUIDELINES:
 
 BELOW IS THE COMPLETE CARAMELLA KNOWLEDGE BASE FOR YOU TO USE AS YOUR SOURCE OF TRUTH:
 
-\${ragKnowledge}
+${ragKnowledge}
 
-\${body.learned_facts && body.learned_facts.length > 0 ? `\\n\\nDYNAMIC USER MEMORY (Facts you have learned about this user and the world from previous messages):\\n- ` + body.learned_facts.join('\\n- ') : ""}  
-\`;
+${body.learned_facts && body.learned_facts.length > 0 ? '\n\nDYNAMIC USER MEMORY (Facts you have learned about this user and the world from previous messages):\n- ' + body.learned_facts.join('\n- ') : ""}  
+`;
 
             if (!body.system_instruction) {
                 body.system_instruction = {
