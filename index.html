@@ -1204,18 +1204,28 @@
                     <span class="chatbot-status">Online</span>
                 </div>
             </div>
-            <button id="chatbot-close-btn" class="chatbot-btn" aria-label="Close Chat">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <button id="chatbot-export-btn" class="chatbot-export-btn" aria-label="Download Conversation"
+                    title="Download conversation">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                </button>
+                <button id="chatbot-close-btn" class="chatbot-btn" aria-label="Close Chat">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
         </div>
         <div id="chatbot-body" class="chatbot-body">
             <div class="chat-message bot-message">
-                Welcome to Caramella Brunei. I am your AI Assistant. Whether you are budgeting for a new
-                L-shape kitchen or designing a luxury wardrobe, I am here to ensure your project is engineered for
-                Brunei's humidity with 0.1mm CNC precision. How can I assist you today?
+                Welcome. I'm your Caramella design consultant — here to help with kitchens, wardrobes, or any questions
+                about custom cabinetry in Brunei. What are you working on?
             </div>
         </div>
         <form id="chatbot-form" class="chatbot-footer">

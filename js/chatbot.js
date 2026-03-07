@@ -1,28 +1,25 @@
 /**
- * Caramella Chatbot Integration
+ * Caramella Chatbot — Premium AI Consultant
  * 
- * Secure BFF (Backend-for-Frontend) architecture.
- * This script communicates with a Cloudflare Worker proxy to protect the Gemini API key.
+ * Features:
+ * - Streaming SSE responses (real-time word-by-word rendering)
+ * - Suggested follow-up chips
+ * - Smart time-aware greeting
+ * - Conversation export
+ * - Enhanced structured memory (localStorage)
+ * - Image upload (vision)
+ * - Multilingual auto-detect
  * 
- * NOTE TO DEV: For local testing *strictly*, you can uncomment LOCAL_API_KEY.
- * NEVER push a real API key to GitHub.
+ * Architecture: BFF proxy via Cloudflare Worker → Gemini API
  */
 
 document.addEventListener("DOMContentLoaded", () => {
     // --- CONFIGURATION ---
-
-    // 1. PRODUCTION setting (Cloudflare URL)
-    const WORKER_URL = "https://chat.caramellabrunei.com"; // Live Cloudflare backend routed through main domain
-
-    // 2. INTERNAL OVERRIDE for pure local testing (Do not commit to public reps with a real key!) 
-    // Ensure you use a restricted key if you ever accidentally expose it.
+    const WORKER_URL = "https://chat.caramellabrunei.com";
     const LOCAL_API_KEY = "";
-
-    // ---------------------
-
     const DANGEROUS_LOCAL_TESTING = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && LOCAL_API_KEY;
 
-    // DOM Elements
+    // --- DOM Elements ---
     const chatContainer = document.getElementById('caramella-chatbot');
     const toggleBtn = document.getElementById('chatbot-toggle-btn');
     const closeBtn = document.getElementById('chatbot-close-btn');
@@ -31,10 +28,40 @@ document.addEventListener("DOMContentLoaded", () => {
     const chatInput = document.getElementById('chatbot-input');
     const sendBtn = document.getElementById('chatbot-send-btn');
 
-    // Chat History context
-    // System instructions & RAG knowledge are now injected securely via the Cloudflare Worker!
+    // --- State ---
     let chatHistory = [];
-    // Toggle logic
+    let isStreaming = false;
+
+    // ============================
+    // SMART GREETING
+    // ============================
+    const initSmartGreeting = () => {
+        const hour = new Date().getHours();
+        let greeting;
+        if (hour < 12) greeting = "Good morning";
+        else if (hour < 17) greeting = "Good afternoon";
+        else greeting = "Good evening";
+
+        // Check if returning user
+        const memory = getMemory();
+        const userName = memory.find(m => m.fact && m.fact.toLowerCase().includes("name"));
+
+        const welcomeDiv = chatBody.querySelector('.bot-message');
+        if (welcomeDiv) {
+            if (userName) {
+                const name = userName.fact.replace(/user'?s?\s*name\s*(is|:)\s*/i, '').trim();
+                welcomeDiv.innerHTML = `${greeting}, <strong>${name}</strong>. Welcome back to Caramella. How can I help you today?`;
+            } else {
+                welcomeDiv.innerHTML = `${greeting}. I'm your Caramella design consultant — here to help with kitchens, wardrobes, or any questions about custom cabinetry in Brunei. What are you working on?`;
+            }
+        }
+    };
+
+    initSmartGreeting();
+
+    // ============================
+    // TOGGLE LOGIC
+    // ============================
     const toggleChat = () => {
         const isClosed = chatContainer.classList.contains('closed');
         if (isClosed) {
@@ -42,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
             chatContainer.setAttribute('aria-hidden', 'false');
             toggleBtn.style.opacity = '0';
             toggleBtn.style.pointerEvents = 'none';
-            // Scroll to bottom
             setTimeout(() => {
                 chatBody.scrollTop = chatBody.scrollHeight;
                 chatInput.focus();
@@ -58,32 +84,39 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.addEventListener('click', toggleChat);
     closeBtn.addEventListener('click', toggleChat);
 
-    // Input state
+    // ============================
+    // INPUT STATE
+    // ============================
     chatInput.addEventListener('input', () => {
         sendBtn.disabled = chatInput.value.trim().length === 0;
     });
 
-    // Formatting Helpers
+    // ============================
+    // FORMATTING HELPERS
+    // ============================
     const formatBotMessage = (text) => {
         const escaped = text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
         return escaped
-            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // bold
-            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="text-decoration: underline;">$1</a>') // markdown links
-            .replace(/\n\n/g, "<br><br>") // paragraphs
-            .replace(/\n/g, "<br>"); // lines
+            .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" style="text-decoration: underline;">$1</a>')
+            .replace(/\n\n/g, "<br><br>")
+            .replace(/\n/g, "<br>");
     };
 
     const formatUserMessage = (text) => {
         return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     };
 
-    // Chat Rendering
+    // ============================
+    // CHAT RENDERING
+    // ============================
     const appendMessage = (text, sender) => {
         const div = document.createElement('div');
         div.className = `chat-message ${sender}-message`;
         div.innerHTML = sender === 'bot' ? formatBotMessage(text) : formatUserMessage(text);
         chatBody.appendChild(div);
         chatBody.scrollTop = chatBody.scrollHeight;
+        return div;
     };
 
     const showTyping = () => {
@@ -100,14 +133,195 @@ document.addEventListener("DOMContentLoaded", () => {
         if (indicator) indicator.remove();
     };
 
-    // Handle Form Submit
+    // ============================
+    // SUGGESTION CHIPS
+    // ============================
+    const renderSuggestionChips = (suggestions) => {
+        // Remove any existing chips
+        const existing = chatBody.querySelector('.suggestion-chips');
+        if (existing) existing.remove();
+
+        if (!suggestions || suggestions.length === 0) return;
+
+        const container = document.createElement('div');
+        container.className = 'suggestion-chips';
+
+        suggestions.forEach(text => {
+            const chip = document.createElement('button');
+            chip.className = 'suggestion-chip';
+            chip.textContent = text;
+            chip.addEventListener('click', () => {
+                // Remove chips when clicked
+                container.remove();
+                // Set input value and submit
+                chatInput.value = text;
+                sendBtn.disabled = false;
+                chatForm.dispatchEvent(new Event('submit', { cancelable: true }));
+            });
+            container.appendChild(chip);
+        });
+
+        chatBody.appendChild(container);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    };
+
+    // ============================
+    // MEMORY SYSTEM (Enhanced)
+    // ============================
+    const MEMORY_KEY = 'caramella_learned_facts';
+    const MAX_MEMORIES = 50;
+
+    const getMemory = () => {
+        try {
+            const raw = localStorage.getItem(MEMORY_KEY);
+            if (!raw) return [];
+            const parsed = JSON.parse(raw);
+            // Support both old format (string[]) and new format (object[])
+            if (Array.isArray(parsed) && parsed.length > 0) {
+                if (typeof parsed[0] === 'string') {
+                    // Migrate old format
+                    return parsed.map(fact => ({ fact, ts: Date.now() }));
+                }
+                return parsed;
+            }
+            return [];
+        } catch (e) { return []; }
+    };
+
+    const saveMemory = (memories) => {
+        // Keep only the most recent MAX_MEMORIES
+        const trimmed = memories.slice(-MAX_MEMORIES);
+        localStorage.setItem(MEMORY_KEY, JSON.stringify(trimmed));
+    };
+
+    const getMemoryStrings = () => {
+        return getMemory().map(m => typeof m === 'string' ? m : m.fact);
+    };
+
+    // ============================
+    // CONVERSATION EXPORT
+    // ============================
+    const exportConversation = () => {
+        const messages = chatBody.querySelectorAll('.chat-message');
+        let text = "=== Caramella Design Consultation ===\n";
+        text += `Date: ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}\n`;
+        text += `Time: ${new Date().toLocaleTimeString('en-GB')}\n`;
+        text += "=====================================\n\n";
+
+        messages.forEach(msg => {
+            const sender = msg.classList.contains('user-message') ? 'You' : 'Caramella AI';
+            const content = msg.textContent.trim();
+            text += `[${sender}]\n${content}\n\n`;
+        });
+
+        text += "=====================================\n";
+        text += "Caramella Trading Co. | caramellabrunei.com\n";
+        text += "WhatsApp: +673 718 7185\n";
+
+        const blob = new Blob([text], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `caramella-consultation-${new Date().toISOString().slice(0, 10)}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    };
+
+    // Attach export button if it exists
+    const exportBtn = document.getElementById('chatbot-export-btn');
+    if (exportBtn) exportBtn.addEventListener('click', exportConversation);
+
+    // ============================
+    // STREAMING SSE PARSER
+    // ============================
+    const parseSSEStream = async (response, onChunk, onDone) => {
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let buffer = '';
+        let fullText = '';
+
+        while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+
+            buffer += decoder.decode(value, { stream: true });
+            const lines = buffer.split('\n');
+            buffer = lines.pop(); // Keep incomplete line in buffer
+
+            for (const line of lines) {
+                if (line.startsWith('data: ')) {
+                    const data = line.slice(6).trim();
+                    if (data === '[DONE]') continue;
+                    try {
+                        const parsed = JSON.parse(data);
+                        if (parsed.candidates && parsed.candidates[0]) {
+                            const parts = parsed.candidates[0].content?.parts;
+                            if (parts && parts[0] && parts[0].text) {
+                                fullText += parts[0].text;
+                                onChunk(fullText);
+                            }
+                        }
+                    } catch (e) {
+                        // Skip unparseable chunks
+                    }
+                }
+            }
+        }
+        onDone(fullText);
+    };
+
+    // ============================
+    // PROCESS BOT RESPONSE (extract memory + suggestions)
+    // ============================
+    const processResponse = (botText) => {
+        let cleanText = botText;
+        let suggestions = [];
+
+        // Extract [SUGGEST] tags
+        const suggestRegex = /\[SUGGEST\]([\s\S]*?)\[\/SUGGEST\]/g;
+        let match;
+        while ((match = suggestRegex.exec(botText)) !== null) {
+            suggestions.push(match[1].trim());
+        }
+        cleanText = cleanText.replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '').trim();
+
+        // Extract [LEARN] tags
+        const learnRegex = /\[LEARN\]([\s\S]*?)\[\/LEARN\]/g;
+        const memories = getMemory();
+        let newFacts = false;
+        while ((match = learnRegex.exec(botText)) !== null) {
+            try {
+                const factStr = match[1].trim();
+                if (factStr.startsWith('{') && factStr.endsWith('}')) {
+                    const factObj = JSON.parse(factStr);
+                    if (factObj.fact && !memories.some(m => m.fact === factObj.fact)) {
+                        memories.push({ fact: factObj.fact, ts: Date.now() });
+                        newFacts = true;
+                    }
+                }
+            } catch (e) {
+                console.error("Failed to parse memory:", e);
+            }
+        }
+        if (newFacts) saveMemory(memories);
+        cleanText = cleanText.replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '').trim();
+
+        return { cleanText, suggestions };
+    };
+
+    // ============================
+    // FORM SUBMIT HANDLER
+    // ============================
     chatForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        if (isStreaming) return;
 
         const messageText = chatInput.value.trim();
-        chatInput.value = ''; // Clear input field
+        chatInput.value = '';
 
-        // Handle Image Attachment (if any)
+        // Handle Image Attachment
         const fileInput = document.getElementById('chat-image-upload');
         let attachedImageBase64 = null;
         let attachedMimeType = null;
@@ -118,13 +332,12 @@ document.addEventListener("DOMContentLoaded", () => {
             attachedImageBase64 = await new Promise((resolve) => {
                 const reader = new FileReader();
                 reader.onloadend = () => {
-                    // Extract base64 data only (remove data url prefix)
                     const base64String = reader.result.replace(/^data:image\/(png|jpeg|webp);base64,/, "");
                     resolve(base64String);
                 };
                 reader.readAsDataURL(file);
             });
-            fileInput.value = ''; // clear input
+            fileInput.value = '';
         }
 
         if (!messageText && !attachedImageBase64) {
@@ -132,11 +345,14 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // --- Render User Message immediately ---
+        // Remove existing suggestion chips
+        const existingChips = chatBody.querySelector('.suggestion-chips');
+        if (existingChips) existingChips.remove();
+
+        // Render user message
         const userMsgDiv = document.createElement('div');
         userMsgDiv.className = 'chat-message user-message';
         let userInnerHtml = formatUserMessage(messageText);
-
         if (attachedImageBase64) {
             userInnerHtml += `<br><img src="data:${attachedMimeType};base64,${attachedImageBase64}" style="max-width: 100%; border-radius: 4px; margin-top: 8px;">`;
         }
@@ -145,36 +361,24 @@ document.addEventListener("DOMContentLoaded", () => {
         chatBody.scrollTop = chatBody.scrollHeight;
 
         sendBtn.disabled = true;
+        isStreaming = true;
 
-        // --- Setup new message part for Gemini API ---
+        // Build user parts
         let userParts = [];
-        if (messageText) {
-            userParts.push({ text: messageText });
-        }
+        if (messageText) userParts.push({ text: messageText });
         if (attachedImageBase64) {
             userParts.push({
-                inlineData: {
-                    mimeType: attachedMimeType,
-                    data: attachedImageBase64
-                }
+                inlineData: { mimeType: attachedMimeType, data: attachedImageBase64 }
             });
         }
 
-        // --- Append to history ---
-        chatHistory.push({
-            role: "user",
-            parts: userParts
-        });
+        chatHistory.push({ role: "user", parts: userParts });
 
-        // 2. Show typing indicator
+        // Show typing
         showTyping();
 
-        // 3. Prepare Payload
-        let storedMemories = [];
-        try {
-            storedMemories = JSON.parse(localStorage.getItem('caramella_learned_facts')) || [];
-        } catch (e) { }
-
+        // Prepare payload
+        const storedMemories = getMemoryStrings();
         const payload = {
             contents: chatHistory,
             learned_facts: storedMemories
@@ -182,95 +386,86 @@ document.addEventListener("DOMContentLoaded", () => {
 
         try {
             let response;
-            let responseData;
 
-            // Branch logic depending on local vs cloudflare
             if (DANGEROUS_LOCAL_TESTING) {
-                // Direct to Google API (LOCAL ONLY)
-                const model = "gemini-3.1-flash-lite-preview"; // Using the latest 3.1 preview
+                // Local testing: non-streaming fallback
+                const model = "gemini-3.1-flash-lite-preview";
                 const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${LOCAL_API_KEY}`;
-
                 const payloadLocal = { ...payload };
-                delete payloadLocal.learned_facts; // Google API doesn't recognize this field
+                delete payloadLocal.learned_facts;
 
                 response = await fetch(endpoint, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payloadLocal)
                 });
-            } else {
-                // Production: proxy via Cloudflare worker
-                if (WORKER_URL === "https://your-cloudflare-worker-url.workers.dev") {
-                    throw new Error("Cloudflare worker URL is not configured. (Developer mode check URL constant).");
+
+                const responseData = await response.json();
+                removeTyping();
+
+                let botText = "I'm sorry, I couldn't generate a response.";
+                if (responseData.candidates && responseData.candidates.length > 0) {
+                    const parts = responseData.candidates[0].content.parts;
+                    if (parts && parts.length > 0) botText = parts[0].text;
                 }
+
+                const { cleanText, suggestions } = processResponse(botText);
+                chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
+                appendMessage(cleanText, 'bot');
+                renderSuggestionChips(suggestions);
+
+            } else {
+                // Production: streaming via Cloudflare Worker
                 response = await fetch(WORKER_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(payload)
                 });
-            }
 
-            if (!response.ok) {
-                // Handle different errors
-                let errorText = await response.text();
-                console.error("API Error Details:", errorText);
-                throw new Error(`Server returned ${response.status}`);
-            }
-
-            responseData = await response.json();
-
-            // Extract the generated text from Gemini payload struct
-            let botText = "I'm sorry, I couldn't generate a response.";
-            if (responseData.candidates && responseData.candidates.length > 0) {
-                const parts = responseData.candidates[0].content.parts;
-                if (parts && parts.length > 0) {
-                    botText = parts[0].text;
-
-                    // --- MEMORY EXTRACTION ---
-                    const learnRegex = /\[LEARN\]([\s\S]*?)\[\/LEARN\]/g;
-                    let match;
-                    let newFacts = false;
-                    while ((match = learnRegex.exec(botText)) !== null) {
-                        try {
-                            const factStr = match[1].trim();
-                            // Only parse valid JSON facts
-                            if (factStr.startsWith('{') && factStr.endsWith('}')) {
-                                const factObj = JSON.parse(factStr);
-                                if (factObj.fact && !storedMemories.includes(factObj.fact)) {
-                                    storedMemories.push(factObj.fact);
-                                    newFacts = true;
-                                }
-                            }
-                        } catch (e) {
-                            console.error("Failed to parse learned memory fact:", e);
-                        }
-                    }
-                    if (newFacts) {
-                        localStorage.setItem('caramella_learned_facts', JSON.stringify(storedMemories));
-                    }
-
-                    // Remove hidden memory tags from the text shown to the user
-                    botText = botText.replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, "").trim();
-                    // -------------------------
+                if (!response.ok) {
+                    let errorText = await response.text();
+                    console.error("API Error:", errorText);
+                    throw new Error(`Server returned ${response.status}`);
                 }
+
+                removeTyping();
+
+                // Create bot message div for streaming
+                const botDiv = document.createElement('div');
+                botDiv.className = 'chat-message bot-message streaming';
+                chatBody.appendChild(botDiv);
+
+                await parseSSEStream(
+                    response,
+                    // On each chunk: update the div with accumulated text (strip hidden tags for display)
+                    (accumulated) => {
+                        const displayText = accumulated
+                            .replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '')
+                            .replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '')
+                            .trim();
+                        botDiv.innerHTML = formatBotMessage(displayText);
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                    },
+                    // On done: process final text
+                    (finalText) => {
+                        const { cleanText, suggestions } = processResponse(finalText);
+                        botDiv.innerHTML = formatBotMessage(cleanText);
+                        botDiv.classList.remove('streaming');
+                        chatHistory.push({ role: "model", parts: [{ text: cleanText }] });
+                        renderSuggestionChips(suggestions);
+                        chatBody.scrollTop = chatBody.scrollHeight;
+                    }
+                );
             }
-
-            // Save to context history
-            chatHistory.push({
-                "role": "model",
-                "parts": [{ "text": botText }]
-            });
-
-            removeTyping();
-            appendMessage(botText, 'bot');
-
         } catch (error) {
             console.error("Chat Error:", error);
             removeTyping();
             appendMessage("⚠️ I'm currently disconnected. Please check the backend configuration or contact us directly on WhatsApp.", 'bot');
             const targetDiv = chatBody.lastElementChild;
             targetDiv.classList.add('error-message');
+        } finally {
+            isStreaming = false;
+            sendBtn.disabled = chatInput.value.trim().length === 0;
         }
     });
-
 });
