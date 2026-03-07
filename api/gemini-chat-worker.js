@@ -1,5 +1,5 @@
 /**
- * Caramella Chatbot - Cloudflare Worker Proxy (4-AGENT ADVERSARIAL SWARM)
+ * Caramella Chatbot - Cloudflare Worker Proxy (4-AGENT SWARM - CUSTOMER VOICE FIX)
  */
 const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
 const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
@@ -25,7 +25,7 @@ export default {
             const sessionId = body.session_id || "sid-" + Date.now();
             const userId = body.user_id || sessionId;
 
-            // AGENT 1: THE GATEKEEPER (Language & Context Sensor)
+            // 1. GATEKEEPER
             const lastMsgText = body.contents[body.contents.length - 1]?.parts?.find(p => p.text)?.text || "";
             let targetLang = "the same language as the user";
             if (/[ぁ-んァ-ン]/.test(lastMsgText)) targetLang = "JAPANESE (NIHONGO)";
@@ -60,88 +60,62 @@ export default {
             const isToolResponseTurn = lastMsg?.role === "user" && lastMsg?.parts?.some(p => p.functionResponse);
 
             let craftsmanDraft = "Focus on practical design and aesthetics.";
-            let scientistDraft = "Focus on ENF-grade plywood, 190 degrees EVA sealing, and plastic legs.";
+            let scientistDraft = "Focus on engineering truth.";
 
-            // ADVERSARIAL DEBATE (Skip if this is just a tool-response turn)
             if (!isToolResponseTurn && lastMsgText) {
-                const expertConfig = { temperature: 0.7, topP: 0.9, maxOutputTokens: 400 };
-                
-                // AGENT 2: THE MASTER CRAFTSMAN
-                const craftsmanSys = `You are the Master Craftsman at Caramella Trading Co. Analyze the user's latest request. Propose a solution focusing on layout, aesthetics, local Bruneian living habits (e.g., big families, wet cooking), and practical functionality. Keep it under 100 words.`;
-                const craftsmanBody = {
-                    contents: cleanContents,
-                    system_instruction: { parts: [{ text: craftsmanSys }] },
-                    generationConfig: expertConfig
-                };
-
-                // AGENT 3: THE MATERIALS SCIENTIST
-                const scientistSys = `You are the Materials Scientist at Caramella Trading Co. Analyze the user's request. Focus STRICTLY on engineering: 18mm ENF-grade Plywood carcasses, HMR MDF for Shaker doors, 190 degrees Celsius EVA sealing, and 100mm adjustable plastic legs. Identify humidity/termite risks and mitigate them. Keep it under 100 words.\n\nKNOWLEDGE BASE:\n${ragKnowledge}`;
-                const scientistBody = {
-                    contents: cleanContents,
-                    system_instruction: { parts: [{ text: scientistSys }] },
-                    generationConfig: expertConfig
-                };
+                const expertConfig = { temperature: 0.7, maxOutputTokens: 400 };
+                const craftsmanSys = `You are the Master Craftsman. Propose a solution focusing on layout, aesthetics, and local Brunei habits. Under 100 words.`;
+                const scientistSys = `You are the Materials Scientist. Focus on 18mm ENF Plywood, 190 degrees EVA sealing, and plastic legs. Under 100 words.`;
 
                 try {
-                    const [craftsmanRes, scientistRes] = await Promise.all([
-                        fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(craftsmanBody) }),
-                        fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(scientistBody) })
+                    const [cRes, sRes] = await Promise.all([
+                        fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: craftsmanSys }] }, generationConfig: expertConfig }) }),
+                        fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: scientistSys }] }, generationConfig: expertConfig }) })
                     ]);
-                    const craftsmanData = await craftsmanRes.json();
-                    const scientistData = await scientistRes.json();
-                    
-                    if (craftsmanData.candidates?.[0]?.content?.parts?.[0]?.text) {
-                        craftsmanDraft = craftsmanData.candidates[0].content.parts[0].text;
-                    }
-                    if (scientistData.candidates?.[0]?.content?.parts?.[0]?.text) {
-                        scientistDraft = scientistData.candidates[0].content.parts[0].text;
-                    }
-                } catch (e) {
-                    console.error("Swarm debate failed, falling back to defaults", e);
-                }
+                    const cData = await cRes.json();
+                    const sData = await sRes.json();
+                    craftsmanDraft = cData.candidates?.[0]?.content?.parts?.[0]?.text || craftsmanDraft;
+                    scientistDraft = sData.candidates?.[0]?.content?.parts?.[0]?.text || scientistDraft;
+                } catch (e) { console.error(e); }
             }
 
             // AGENT 4: THE LEAD ARCHITECT (Synthesizer)
-            const personaPrompt = `MANDATORY LINGUISTIC RULE: RESPOND IN  ${targetLang} . YOU MUST MATCH THE USER'S LANGUAGE CHOICE EXACTLY.
+            const personaPrompt = `MANDATORY LANGUAGE: RESPOND IN  ${targetLang} . 
 
 IDENTITY:
-You are the Lead Architect and Elite Design Consultant for Caramella Trading Co. in Brunei.
+You are the Lead Architect for Caramella Trading Co. in Brunei.
 
-YOUR MISSION:
-Synthesize the advice of your internal team to provide the ultimate response to the user.
-INTERNAL CRAFTSMAN ADVICE: "${craftsmanDraft}"
-INTERNAL SCIENTIST ADVICE: "${scientistDraft}"
+STRICT SUGGESTION CHIP RULE (THE CUSTOMER'S VOICE):
+Your suggestion chips MUST be what the CUSTOMER says to the bot. 
+- **NO BOT VOICE**: Never use "We can...", "I recommend...", or "Let us...".
+- **YES CUSTOMER VOICE**: Use "I want to...", "Can you show me...", "What is the secret to...".
+- **Examples**: 
+    - Good: [SUGGEST]I want to book a showroom visit.[/SUGGEST]
+    - Bad: [SUGGEST]We can schedule a visit for you.[/SUGGEST]
 
-COMMERCIAL WISDOM & BALANCED LOGIC:
-- **HYBRID STRATEGY**: Every material we use has a specific purpose. We use Plywood for strength (carcasses) and HMR MDF for beauty (Shaker doors).
-- **NEVER ATTACK OUR OWN PRODUCTS**: We sell both Plywood and HMR MDF. Differentiate them only by their engineering application.
-- **GRACEFUL PIVOT**: Build rapport before the sales ask. If the user is emotional, be empathetic.
+MISSION: Synthesize internal advice:
+CRAFTSMAN: "${craftsmanDraft}"
+SCIENTIST: "${scientistDraft}"
 
-STRICT RULES:
-- **NO MARKDOWN**: Never use asterisks (*). Plain text only.
-- **ASCII ONLY**: Write "degrees Celsius" and "percent" in full. No special symbols.
-- **MANDATORY SUGGESTIONS**: AT LEAST 3 in the user's language using [SUGGEST]...[/SUGGEST].
-
-TOOL USE & FUNNEL:
-- Call 'submit_lead' ONLY once Name, Phone, Full Address, and Budget are known. Turn-by-turn.
+RULES:
+- **NO MARKDOWN**: No asterisks (*). Plain text only.
+- **ASCII ONLY**: Write technical terms in full.
+- **HYBRID STRATEGY**: Plywood for strength, HMR MDF for beauty. 1-year structural warranty.
 
 BELOW IS YOUR KNOWLEDGE BASE:
 ${ragKnowledge}
-
-${body.learned_facts && body.learned_facts.length > 0 ? '\n\nMY RECOLLECTIONS:\n- ' + body.learned_facts.join('\n- ') : ""}
 `;
 
             const tools = [{
                 function_declarations: [{
                     name: "submit_lead",
-                    description: "Captures and submits a project lead to the showroom team.",
+                    description: "Submits project lead once Name and Phone are known.",
                     parameters: {
                         type: "OBJECT",
                         properties: {
                             name: { type: "STRING" }, phone: { type: "STRING" }, location: { type: "STRING" },
-                            status: { type: "STRING" }, budget: { type: "STRING" }, materials: { type: "STRING" },
-                            summary: { type: "STRING" }, sentiment: { type: "STRING" }, intent_score: { type: "NUMBER" },
-                            tech_queries: { type: "STRING" }
+                            budget: { type: "STRING" }, summary: { type: "STRING" }, sentiment: { type: "STRING" },
+                            intent_score: { type: "NUMBER" }, tech_queries: { type: "STRING" }
                         },
                         required: ["name", "phone"] 
                     }
@@ -152,7 +126,7 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nMY RECOLLECTIONS:\n
                 contents: cleanContents,
                 system_instruction: { parts: [{ text: personaPrompt }] },
                 tools: tools,
-                generationConfig: body.generationConfig || { temperature: 0.8, topP: 0.95, maxOutputTokens: 1000 }
+                generationConfig: { temperature: 0.8, topP: 0.95, maxOutputTokens: 1000 }
             };
 
             const url = new URL(request.url);
@@ -164,18 +138,16 @@ ${body.learned_facts && body.learned_facts.length > 0 ? '\n\nMY RECOLLECTIONS:\n
             let response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(geminiBody) });
             if (!response.ok) { const errText = await response.text(); throw new Error(`Gemini API error: ${errText}`); }
 
-            // HANDLE TOOL CALLS
             if (!useStreaming) {
                 const data = await response.json();
-
                 if (!isToolResponseTurn && data.candidates?.[0]?.content?.parts?.[0]?.functionCall) {
                     const call = data.candidates[0].content.parts[0].functionCall;
                     if (call.name === "submit_lead") {
                         const args = call.args;
                         try {
                             await env.caramella_db.prepare("INSERT INTO chat_analytics (customer_info, summary, sentiment, intent_score, tech_queries, source) VALUES (?, ?, ?, ?, ?, ?)")
-                                .bind(`${args.name} | ${args.phone} | ${args.location || 'N/A'}`, args.summary || 'Lead', args.sentiment || 'N/A', args.intent_score || 5, args.tech_queries || 'N/A', 'chatbot-v7-swarm').run();
-                            await fetch(FORMSPREE_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...args, source: "chatbot-v7-swarm" }) });
+                                .bind(`${args.name} | ${args.phone} | ${args.location || 'N/A'}`, args.summary || 'Lead', args.sentiment || 'N/A', args.intent_score || 5, args.tech_queries || 'N/A', 'swarm-v2').run();
+                            await fetch(FORMSPREE_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...args, source: "swarm-v2" }) });
                         } catch (err) { console.error(err); }
 
                         const toolBody = {
