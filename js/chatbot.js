@@ -529,10 +529,13 @@ document.addEventListener("DOMContentLoaded", () => {
                         await parseSSEStream(
                             response,
                             (accumulated) => {
-                                // Extract display text while preserving original accumulated for the finalize turn
+                                // --- Clean Stream Filtering ---
+                                // Aggressively remove tags (including partial ones) from display text
                                 const displayOnly = accumulated
-                                    .replace(/\[SUGGEST\][\s\S]*?\[\/SUGGEST\]/g, '')
-                                    .replace(/\[LEARN\][\s\S]*?\[\/LEARN\]/g, '')
+                                    .replace(/\[SUGGEST\][\s\S]*?(\[\/SUGGEST\]|$)/g, '')
+                                    .replace(/\[LEARN\][\s\S]*?(\[\/LEARN\]|$)/g, '')
+                                    .replace(/\[SUGGEST\]/g, '')
+                                    .replace(/\[LEARN\]/g, '')
                                     .trim();
                                 
                                 // Split by words/whitespace to create the reveal buffer

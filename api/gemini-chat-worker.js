@@ -1,5 +1,5 @@
 /**
- * Caramella Chatbot - Cloudflare Worker Proxy (SWARM V7 - REFINED IDENTITY)
+ * Caramella Chatbot - Cloudflare Worker Proxy (SWARM V8 - TAG RECOVERY)
  */
 const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
 const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
@@ -38,7 +38,7 @@ export default {
                 const staticRes = {
                     candidates: [{
                         content: {
-                            parts: [{ text: "Hello! I am your Design Consultant at Caramella. How can I assist you with your interior project today?\n\n[SUGGEST]I want to discuss a new kitchen project.[/SUGGEST]\n[SUGGEST]Can I see your showroom samples?[/SUGGEST]\n[SUGGEST]Why is your edge sealing 190 degrees?[/SUGGEST]" }]
+                            parts: [{ text: "Hello! I am your Design Consultant at Caramella. How can I assist you with your interior project today?\n\n[SUGGEST]I want to discuss a new kitchen project.[/SUGGEST]\n[SUGGEST]Can I see your showroom samples?[/SUGGEST]\n[SUGGEST]What is the typical lead time?[/SUGGEST]" }]
                         }
                     }]
                 };
@@ -72,7 +72,6 @@ export default {
             if (!isToolResponseTurn && lastMsgText) {
                 const expertConfig = { temperature: 0.7, maxOutputTokens: 400 };
                 const timeLaw = "STRICT LAW: Our lead time is ALWAYS 10-14 weeks. NEVER promise less.";
-                
                 const [cRes, sRes] = await Promise.all([
                     fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: "You are the Master Craftsman. " + timeLaw + " Focus on aesthetics." }] }, generationConfig: expertConfig }) }),
                     fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: "You are the Scientist. " + timeLaw + " Focus on 18mm Plywood and 190 degrees EVA." }] }, generationConfig: expertConfig }) })
@@ -84,14 +83,15 @@ export default {
             }
 
             // AGENT 4: THE LEAD CONSULTANT
-            const personaPrompt = `MANDATORY LANGUAGE: RESPOND IN  ${targetLang} .
+            const personaPrompt = `MANDATORY: RESPOND IN  ${targetLang} .
 IDENTITY: Design Consultant for Caramella.
-STRICT: DO NOT call yourself "Lead Architect." Use "Design Consultant" or simply speak as "Caramella."
 STRICT LEAD TIME: ALWAYS state 10-14 weeks. 
 STRICT TERMINOLOGY: Always call it "Sintered Stone." 
-UNIFIED AUTHORITY: Speak as "I" or "we." No internal agents mentioned.
 STRICT FORMAT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
-MANDATORY EXIT GATE: End with EXACTLY 3 customer-voice [SUGGEST] chips.
+MANDATORY EXIT GATE: You MUST end every response with EXACTLY 3 suggestion chips.
+- USE FORMAT: [SUGGEST]Customer question here[/SUGGEST]
+- DO NOT use [SUGGEST} or any other bracket.
+- Chips MUST be in the CUSTOMER'S VOICE.
 
 MISSION: Synthesize internal advice:
 CRAFTSMAN: "${craftsmanDraft}"
@@ -121,6 +121,7 @@ ${ragKnowledge}
                 const data = await response.json();
                 let botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
                 
+                // CODE-LEVEL SAFETY FIX: Ensure chips exist and tags are clean
                 if (botText && !botText.includes("[SUGGEST]")) {
                     botText += "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
                     data.candidates[0].content.parts[0].text = botText;
