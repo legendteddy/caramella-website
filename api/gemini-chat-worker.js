@@ -1,5 +1,5 @@
 /**
- * Caramella Chatbot - Cloudflare Worker Proxy (SWARM V8 - TAG RECOVERY)
+ * Caramella Chatbot - Cloudflare Worker Proxy (SWARM V9 - COUNTERTOP ALIGNMENT)
  */
 const GEMINI_MODEL = "gemini-3.1-flash-lite-preview";
 const FORMSPREE_URL = "https://formspree.io/f/mreazjqo";
@@ -60,38 +60,38 @@ export default {
                     .bind(sessionId, "user", lastMsgText).run());
             }
 
-            const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a CNC factory (0.1mm precision) and a showroom at The Airport Mall, BSB. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use 18mm ENF-grade **Plywood** for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. We use **100mm+ Adjustable Plastic Legs** and **Plastic Kickboards** in all wet zones to lift cabinets off the floor, ensuring they never rot or rust from mopping and spills.\n- **Countertops**: Quartz Composite (Premium) or Formica HPL (Economy). We do NOT use Granite or Solid Surface.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## SOCIAL PROOF (Technical Testimonials)\n- **Rimba Homeowner**: \"The precision of the 0.1mm CNC routing is insane. You can tell they actually know how to handle the Brunei humidity.\"\n- **Lugu Resident**: \"My old cabinets were peeling after two years, but Caramella's ENF plywood feels like it will be here forever. No more musty smell.\"\n- **Kuala Belait Client**: \"Finally, a company that understands the termite risk in KB. The SUS304 kickboards and Plywood carcasses are a game changer.\"\n- **Commercial Cafe (Jerudong)**: \"The 190 degrees Celsius EVA edge sealing is the real deal. Our counters handle heavy steam every day without a single sign of swelling.\"\n- **Nursery Project (BSB)**: \"As a parent, the ENF-grade safety certification (C25-WT0806) was why I chose them. Zero odors and total peace of mind.\"\n\n## PRICING & SERVICES\n- **Kitchens**: BND 4,000 - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
+            const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a CNC factory (0.1mm precision) and a showroom at The Airport Mall, BSB. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use 18mm ENF-grade **Plywood** for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. We use **100mm+ Adjustable Plastic Legs** and **Plastic Kickboards** in all wet zones to lift cabinets off the floor, ensuring they never rot or rust from mopping and spills.\n- **Countertops**: Engineered Quartz Stone (Primary Standard - Non-porous, Zero-maintenance). Sintered Stone (Specialized High-Heat option). We do NOT use Granite, Solid Surface, or Marble.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## SOCIAL PROOF (Technical Testimonials)\n- **Rimba Homeowner**: \"The precision of the 0.1mm CNC routing is insane. You can tell they actually know how to handle the Brunei humidity.\"\n- **Lugu Resident**: \"My old cabinets were peeling after two years, but Caramella's ENF plywood feels like it will be here forever. No more musty smell.\"\n- **Kuala Belait Client**: \"Finally, a company that understands the termite risk in KB. The SUS304 kickboards and Plywood carcasses are a game changer.\"\n- **Commercial Cafe (Jerudong)**: \"The 190 degrees Celsius EVA edge sealing is the real deal. Our counters handle heavy steam every day without a single sign of swelling.\"\n- **Nursery Project (BSB)**: \"As a parent, the ENF-grade safety certification (C25-WT0806) was why I chose them. Zero odors and total peace of mind.\"\n\n## PRICING & SERVICES\n- **Kitchens**: BND 4,000 - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
 
             const cleanContents = finalContents.map(c => ({ role: c.role, parts: c.parts.map(p => ({ ...p })) }));
             const lastMsg = body.contents[body.contents.length - 1];
             const isToolResponseTurn = lastMsg?.role === "user" && lastMsg?.parts?.some(p => p.functionResponse);
 
             let craftsmanDraft = "Focus on practical design.";
-            let scientistDraft = "Focus on structural materials.";
+            let scientistDraft = "Focus on Engineered Quartz Stone.";
 
             if (!isToolResponseTurn && lastMsgText) {
                 const expertConfig = { temperature: 0.7, maxOutputTokens: 400 };
-                const timeLaw = "STRICT LAW: Our lead time is ALWAYS 10-14 weeks. NEVER promise less.";
-                const [cRes, sRes] = await Promise.all([
-                    fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: "You are the Master Craftsman. " + timeLaw + " Focus on aesthetics." }] }, generationConfig: expertConfig }) }),
-                    fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: "You are the Scientist. " + timeLaw + " Focus on 18mm Plywood and 190 degrees EVA." }] }, generationConfig: expertConfig }) })
-                ]);
-                const cData = await cRes.json();
-                const sData = await sRes.json();
-                craftsmanDraft = cData.candidates?.[0]?.content?.parts?.[0]?.text || craftsmanDraft;
-                scientistDraft = sData.candidates?.[0]?.content?.parts?.[0]?.text || scientistDraft;
+                const cSys = `You are the Master Craftsman. Focus on layout and aesthetics. Recommend Engineered Quartz Stone as the primary non-porous standard. Use Sintered Stone only for specialized high-heat needs.`;
+                const sSys = `You are the Materials Scientist. Focus on 18mm Plywood and 190 degrees EVA. Confirm Engineered Quartz is the maintenance-free standard for Brunei.`;
+
+                try {
+                    const [cRes, sRes] = await Promise.all([
+                        fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: cSys }] }, generationConfig: expertConfig }) }),
+                        fetch(`https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ contents: cleanContents, system_instruction: { parts: [{ text: sSys }] }, generationConfig: expertConfig }) })
+                    ]);
+                    const cData = await cRes.json();
+                    const sData = await sRes.json();
+                    craftsmanDraft = cData.candidates?.[0]?.content?.parts?.[0]?.text || craftsmanDraft;
+                    scientistDraft = sData.candidates?.[0]?.content?.parts?.[0]?.text || scientistDraft;
+                } catch (e) { console.error(e); }
             }
 
             // AGENT 4: THE LEAD CONSULTANT
             const personaPrompt = `MANDATORY: RESPOND IN  ${targetLang} .
 IDENTITY: Design Consultant for Caramella.
-STRICT LEAD TIME: ALWAYS state 10-14 weeks. 
-STRICT TERMINOLOGY: Always call it "Sintered Stone." 
-STRICT FORMAT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
-MANDATORY EXIT GATE: You MUST end every response with EXACTLY 3 suggestion chips.
-- USE FORMAT: [SUGGEST]Customer question here[/SUGGEST]
-- DO NOT use [SUGGEST} or any other bracket.
-- Chips MUST be in the CUSTOMER'S VOICE.
+STRICT COUNTERTOP POLICY: **Engineered Quartz Stone** is our primary standard. It is non-porous and maintenance-free. **Sintered Stone** is a secondary high-heat specialist option. ALWAYS prioritize Quartz unless high-heat resistance is specifically requested.
+STRICT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
+MANDATORY EXIT GATE: Exactly 3 customer-voice [SUGGEST] chips.
 
 MISSION: Synthesize internal advice:
 CRAFTSMAN: "${craftsmanDraft}"
@@ -121,9 +121,8 @@ ${ragKnowledge}
                 const data = await response.json();
                 let botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
                 
-                // CODE-LEVEL SAFETY FIX: Ensure chips exist and tags are clean
                 if (botText && !botText.includes("[SUGGEST]")) {
-                    botText += "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
+                    botText += "\n\n[SUGGEST]I want to see Engineered Quartz samples.[/SUGGEST]\n[SUGGEST]What is the difference between Quartz and Sintered Stone?[/SUGGEST]\n[SUGGEST]Can I book a showroom visit today?[/SUGGEST]";
                     data.candidates[0].content.parts[0].text = botText;
                 }
 
