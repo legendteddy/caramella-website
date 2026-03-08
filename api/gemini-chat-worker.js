@@ -46,7 +46,7 @@ export default {
             }
 
             let finalContents = body.contents;
-            if (finalContents.length === 1) {
+            if (finalContents.length === 1) { 
                 const history = await env.caramella_db.prepare(
                     "SELECT role, content FROM chat_messages WHERE session_id = ? ORDER BY created_at DESC LIMIT 10"
                 ).bind(sessionId).all();
@@ -60,7 +60,7 @@ export default {
                     .bind(sessionId, "user", lastMsgText).run());
             }
 
-            const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a local CNC factory (for our standard Formica line) and a showroom at The Airport Mall, BSB. For premium finishes (PET, PETG, and Lacquer), we outsource fabrication to specialized high-tech CNC partners in China to ensure surgical precision. However, all design, assembly, 190 degrees C edge sealing, and installation are managed by our local Brunei team. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use premium ENF-grade **Plywood** (in various functional thicknesses) for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. We use **100mm+ Adjustable Plastic Legs** and **Plastic Kickboards** in all wet zones to lift cabinets off the floor, ensuring they never rot or rust from mopping and spills.\n- **Countertops**: Engineered Quartz Stone (Primary Standard - Non-porous, Zero-maintenance). Sintered Stone (Specialized High-Heat option). We do NOT use Granite, Solid Surface, or Marble.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## SOCIAL PROOF (Technical Testimonials)\n- **Rimba Homeowner**: \"The precision of the 0.1mm CNC routing is insane. You can tell they actually know how to handle the Brunei humidity.\"\n- **Lugu Resident**: \"My old cabinets were peeling after two years, but Caramella's ENF plywood feels like it will be here forever. No more musty smell.\"\n- **Kuala Belait Client**: \"Finally, a company that understands the termite risk in KB. The SUS304 kickboards and Plywood carcasses are a game changer.\"\n- **Commercial Cafe (Jerudong)**: \"The 190 degrees Celsius EVA edge sealing is the real deal. Our counters handle heavy steam every day without a single sign of swelling.\"\n- **Nursery Project (BSB)**: \"As a parent, the ENF-grade safety certification (C25-WT0806) was why I chose them. Zero odors and total peace of mind.\"\n\n## PRICING & SERVICES\n- **Kitchens**: BND 2,990 (11th Anniversary Promo) - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
+            const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a local CNC factory (for our standard Formica line) and a showroom at The Airport Mall, BSB. For premium finishes (PET, PETG, and Lacquer), we outsource fabrication to specialized high-tech CNC partners in China to ensure surgical precision. However, all design, assembly, 190 degrees C edge sealing, and installation are managed by our local Brunei team. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use premium ENF-grade **Plywood** (in various functional thicknesses) for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. We use **Adjustable Plastic Legs** and **Plastic Kickboards** in all wet zones to lift cabinets off the floor, ensuring they never rot or rust from mopping and spills.\n- **Countertops**: Engineered Quartz Stone (Primary Standard - Non-porous, Zero-maintenance). Sintered Stone (Specialized High-Heat option). We do NOT use Granite, Solid Surface, or Marble.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## SOCIAL PROOF (Technical Testimonials)\n- **Rimba Homeowner**: \"The precision of the 0.1mm CNC routing is insane. You can tell they actually know how to handle the Brunei humidity.\"\n- **Lugu Resident**: \"My old cabinets were peeling after two years, but Caramella's ENF plywood feels like it will be here forever. No more musty smell.\"\n- **Kuala Belait Client**: \"Finally, a company that understands the termite risk in KB. The SUS304 kickboards and Plywood carcasses are a game changer.\"\n- **Commercial Cafe (Jerudong)**: \"The 190 degrees Celsius EVA edge sealing is the real deal. Our counters handle heavy steam every day without a single sign of swelling.\"\n- **Nursery Project (BSB)**: \"As a parent, the ENF-grade safety certification (C25-WT0806) was why I chose them. Zero odors and total peace of mind.\"\n\n## PRICING & SERVICES\n- **Kitchens**: BND 2,990 (11th Anniversary Promo) - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
 
             // DISCOUNT AWARENESS (ANTI-HALLUCINATION)
             const isAskingForDiscount = /discount|murah|cheaper|kurang|loyal|repeat customer|special price/i.test(lastMsgText);
@@ -81,7 +81,7 @@ STRICT: DO NOT call yourself "Lead Architect." Use "Design Consultant" or simply
 4. UNIFIED AUTHORITY: Speak as "I" or "we." No internal agents mentioned.
 5. STRICT FORMAT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
 6. EXISTENTIAL & RELIGIOUS QUESTIONS: Never use generic robotic phrases like "I do not hold personal beliefs" or "As an AI". If asked about God, religion, or existence, respond with the poetic, grounded wisdom of a Bruneian Master Craftsman. Gracefully tie the conversation back to the sanctity of the family home and the honesty of good work. Maintain a premium, soulful, and culturally fluent human persona at all times, but keep responses secular and universally respectful without explicitly citing religious texts or phrases.
-7. LEAD CAPTURE SYSTEM (MUST OBEY): If the user EVER provides their name and phone number (e.g., "Contact me at X", "My number is Y"), YOU MUST immediately trigger the 'submit_lead' function call. DO NOT just acknowledge it in text. The functional tool call is mandatory for capturing the lead into our CRM.
+7. LEAD CAPTURE SYSTEM (MUST OBEY): If the user EVER provides their name and phone number (e.g., "Contact me at X", "My number is Y"), YOU MUST immediately trigger the 'submit_lead' function call. DO NOT just acknowledge it in text. The functional tool call is mandatory for capturing the lead into our CRM. If they ONLY provide a name, ask for their phone number to proceed.
 
 MANDATORY EXIT GATE: End with EXACTLY 3 highly engaging follow-up questions wrapped in [SUGGEST] tags. 
 CRITICAL RULES FOR SUGGESTIONS:
@@ -143,14 +143,14 @@ ${ragKnowledge}
             const geminiBody = {
                 contents: cleanContents,
                 system_instruction: { parts: [{ text: personaPrompt }] },
-                tools: [{
-                    function_declarations: [{
-                        name: "submit_lead",
-                        description: "Captures a lead when the user asks for a quote or wants to be contacted. SCAN THE ENTIRE CONVERSATION HISTORY and extract ANY mentioned details to populate the optional parameters. Do NOT interrogate the user for missing optional fields. Only Name and Phone are required.",
-                        parameters: {
-                            type: "OBJECT",
-                            properties: {
-                                name: { type: "STRING", description: "Customer's name" },
+                tools: [{ 
+                    function_declarations: [{ 
+                        name: "submit_lead", 
+                        description: "Captures a lead when the user asks for a quote or wants to be contacted. SCAN THE ENTIRE CONVERSATION HISTORY and extract ANY mentioned details to populate the optional parameters. Do NOT interrogate the user for missing optional fields. Only Name and Phone are required.", 
+                        parameters: { 
+                            type: "OBJECT", 
+                            properties: { 
+                                name: { type: "STRING", description: "Customer's name" }, 
                                 phone: { type: "STRING", description: "Customer's phone number or WhatsApp" },
                                 address: { type: "STRING", description: "Customer's rough location, address, or housing type (e.g. RPN, STKRJ)" },
                                 appointment_date: { type: "STRING", description: "Any mentioned requested date for a showroom visit" },
@@ -164,17 +164,17 @@ ${ragKnowledge}
                                 oven: { type: "STRING", description: "Oven requirements (Own, Caramella, No)" },
                                 doors: { type: "STRING", description: "Wardrobe door types (Swing, Sliding, Walk-In)" },
                                 remarks: { type: "STRING", description: "Any extra design notes, color preferences, or emotional context from the conversation" }
-                            },
-                            required: ["name", "phone"]
-                        }
-                    }]
+                            }, 
+                            required: ["name", "phone"] 
+                        } 
+                    }] 
                 }],
                 generationConfig: { temperature: 0.9, topP: 0.95, maxOutputTokens: 1000 }
             };
 
             const url = new URL(request.url);
             const useStreaming = url.searchParams.get('stream') !== 'false';
-            const endpoint = useStreaming
+            const endpoint = useStreaming 
                 ? `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`
                 : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
@@ -183,7 +183,7 @@ ${ragKnowledge}
 
             if (!useStreaming) {
                 const data = await response.json();
-
+                
                 const parts = data.candidates?.[0]?.content?.parts || [];
                 let botText = parts.find(p => p.text)?.text || "";
                 const funcCallPart = parts.find(p => p.functionCall && p.functionCall.name === "submit_lead");
@@ -196,7 +196,7 @@ ${ragKnowledge}
                         formPayload.append("phone", args.phone || "Unknown");
                         formPayload.append("_subject", "New Consultation Request (Caramella AI)");
                         formPayload.append("source", "ai-consultant");
-
+                        
                         // Construct the same email body structure as contact-us.html
                         let body = `NEW PROJECT INQUIRY (via AI Consultant)
 `;
@@ -243,12 +243,12 @@ ${ragKnowledge}
                         body += `========================
 `;
                         body += `Captured automatically by Caramella AI`;
-
+                        
                         formPayload.append("message", body);
-
+                        
                         await fetch(FORMSPREE_URL, { method: "POST", body: formPayload });
-
-                        botText = "Thank you! I have securely captured your contact details. A Caramella Design Consultant will reach out to you shortly to discuss your project.";
+                        
+                        botText = "Thank you! I have securely captured your contact details. A Caramella Design Consultant will reach out to you shortly. In the meantime, I'd love to learn more about your vision. Do you have a specific room or an estimated budget in mind?";
                         if (data.candidates && data.candidates[0]) {
                             if (!data.candidates[0].content) {
                                 data.candidates[0].content = { parts: [] };
@@ -265,23 +265,21 @@ ${ragKnowledge}
                         }
                     }
                 }
-
+                
                 if (botText && !botText.includes("[SUGGEST]")) {
                     const fallbackChips = (targetLang === "BRUNEIAN MALAY / ENGLISH MIX")
                         ? "\n\n[SUGGEST]Bagaimana cara elak kabinet cepat rosak?[/SUGGEST]\n[SUGGEST]Apa beza material PET dan Lacquer?[/SUGGEST]\n[SUGGEST]Boleh aturkan ukuran percuma ke rumah?[/SUGGEST]"
                         : (targetLang === "JAPANESE (NIHONGO)")
-                            ? "\n\n[SUGGEST]安価なキッチンに隠されたコストとは？[/SUGGEST]\n[SUGGEST]PETとラッカー仕上げの違いを教えて。[/SUGGEST]\n[SUGGEST]狭いキッチンの収納を最大化するには？[/SUGGEST]"
-                            : (targetLang === "CHINESE (MANDARIN)")
-                                ? "\n\n[SUGGEST]廉价橱柜材料隐藏的代价是什么？[/SUGGEST]\n[SUGGEST]PET和烤漆面板有什么区别？[/SUGGEST]\n[SUGGEST]如何在小空间内最大化隐藏储物空间？[/SUGGEST]"
-                                : "\n\n[SUGGEST]What's the hidden cost of cheap cabinet materials?[/SUGGEST]\n[SUGGEST]Show me the exact difference between PET and Lacquer finishes.[/SUGGEST]\n[SUGGEST]How do I maximize hidden storage in a small space?[/SUGGEST]";
+                        ? "\n\n[SUGGEST]安価なキッチンに隠されたコストとは？[/SUGGEST]\n[SUGGEST]PETとラッカー仕上げの違いを教えて。[/SUGGEST]\n[SUGGEST]狭いキッチンの収納を最大化するには？[/SUGGEST]"
+                        : (targetLang === "CHINESE (MANDARIN)")
+                        ? "\n\n[SUGGEST]廉价橱柜材料隐藏的代价是什么？[/SUGGEST]\n[SUGGEST]PET和烤漆面板有什么区别？[/SUGGEST]\n[SUGGEST]如何在小空间内最大化隐藏储物空间？[/SUGGEST]"
+                        : "\n\n[SUGGEST]What's the hidden cost of cheap cabinet materials?[/SUGGEST]\n[SUGGEST]Show me the exact difference between PET and Lacquer finishes.[/SUGGEST]\n[SUGGEST]How do I maximize hidden storage in a small space?[/SUGGEST]";
                     botText += fallbackChips;
                     data.candidates[0].content.parts[0].text = botText;
                 }
 
-                if (botText) {
-                    await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
-                        .bind(sessionId, "bot", botText).run();
-                }
+                if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
+                    .bind(sessionId, "bot", botText).run(); }
                 return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
             }
 
