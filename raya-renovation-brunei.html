@@ -755,17 +755,6 @@
             </div>
         </div>
         <form id="chatbot-form" class="chatbot-footer">
-            <input type="file" id="chat-image-upload" accept="image/jpeg, image/png, image/webp" style="display: none;">
-            <button type="button" class="chat-attach-btn"
-                onclick="document.getElementById('chat-image-upload').click();" aria-label="Attach Photo"
-                style="background: none; border: none; cursor: pointer; padding: 0; color: #aaa; transition: color 0.2s; display: flex; align-items: center; justify-content: center;"
-                onmouseover="this.style.color='#FFD700'" onmouseout="this.style.color='#aaa'">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                    <circle cx="12" cy="13" r="4"></circle>
-                </svg>
-            </button>
             <input type="text" id="chatbot-input" placeholder="Ask about materials, cost..." autocomplete="off"
                 required>
             <button type="submit" id="chatbot-send-btn" class="chatbot-send-btn" aria-label="Send Message" disabled>

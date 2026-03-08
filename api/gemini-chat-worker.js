@@ -132,7 +132,31 @@ ${ragKnowledge}
 
             if (!useStreaming) {
                 const data = await response.json();
-                let botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
+                
+                const parts = data.candidates?.[0]?.content?.parts || [];
+                let botText = parts.find(p => p.text)?.text || "";
+                const funcCallPart = parts.find(p => p.functionCall && p.functionCall.name === "submit_lead");
+
+                if (funcCallPart) {
+                    const args = funcCallPart.functionCall.args;
+                    try {
+                        const formPayload = new FormData();
+                        formPayload.append("name", args.name || "Unknown");
+                        formPayload.append("phone", args.phone || "Unknown");
+                        formPayload.append("_subject", "New Chatbot Lead!");
+                        await fetch(FORMSPREE_URL, { method: "POST", body: formPayload });
+                        
+                        botText = "Thank you! I have securely captured your contact details. A Caramella Design Consultant will reach out to you shortly to discuss your project.";
+                        if (data.candidates && data.candidates[0]) {
+                            data.candidates[0].content.parts = [{ text: botText }];
+                        }
+                    } catch (e) {
+                        botText = "I tried to capture your details, but our system is currently unreachable. Please contact us directly via WhatsApp.";
+                        if (data.candidates && data.candidates[0]) {
+                            data.candidates[0].content.parts = [{ text: botText }];
+                        }
+                    }
+                }
                 
                 if (botText && !botText.includes("[SUGGEST]")) {
                     const fallbackChips = (targetLang === "BRUNEIAN MALAY / ENGLISH MIX")
