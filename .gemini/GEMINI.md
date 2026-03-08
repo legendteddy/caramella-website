@@ -252,4 +252,4 @@ Common false positives to reject:
 
 ---
 
-> **Last Updated**: 2026-03-08. **CHATBOT ARCHITECTURE UPGRADE COMPLETE.** Replaced legacy 4-Agent Swarm with an ultra-fast, high-EQ Single Agent. Injected Archetype Identification (Budget/Burned/Novice/Luxury). Corrected Material Sourcing transparency (Formica local vs PET China). D1 Intelligence Archive active. ASCII-safe encoding enforced. UI Enlarged.
+> **Last Updated**: 2026-03-08. **CHATBOT ARCHITECTURE UPGRADE COMPLETE.** Replaced legacy 4-Agent Swarm with an ultra-fast, high-EQ Single Agent. Injected Archetype Identification (Budget/Burned/Novice/Luxury). Corrected Material Sourcing transparency (Formica local vs PET China). Scrubbed hallucinated "15-year guarantee", replacing with strict 1-year universal hardware warranty and maximum physical longevity compliance. API Keys rotated to bypass 429 Rate Limits. D1 Intelligence Archive active. ASCII-safe encoding enforced. UI Enlarged.
