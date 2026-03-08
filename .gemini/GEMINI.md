@@ -207,7 +207,8 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 - **Iterative Lead Capture**: High-fidelity data collection (14 fields matching contact form) extracted dynamically over multi-turn conversations and submitted silently to Formspree backend.
 - **Persistent LocalStorage Memory**: Utilizes dual-layer `[LEARN]` tags to harvest permanent user facts (budget, name, location) and injects them back into the LLM context on returning sessions.
 - **Contextual Welcome Greeting**: Real-time Javascript calculation of local time and day, combined with `Math.random()` array selection tied to the chat toggle event, ensures a unique, positive greeting upon every open.
-- **Curiosity-Driven Hooks**: Suggestion chips are hyper-contextual to the immediate conversation turn, with strict AI guidelines against repetitive or generic fallback questions.
+- **Real-Time Date Injection**: The Cloudflare backend dynamically computes local Bruneian time (`Asia/Brunei`) and seamlessly injects the EXACT current date into the AI's system context, granting the model true real-time temporal awareness.
+- **Curiosity-Driven Hooks**: Suggestion chips are hyper-contextual to the immediate conversation turn and are strictly mandated to be written in the **Customer's First-Person Perspective** ("I" or "my"), with rigid AI guidelines against repetitive or generic fallback questions.
 - **Frontier Persistence**: Automatically restores previous conversation history from D1 using permanent User IDs.
 - **SOTA Technical Intelligence**: High-density knowledge of hardware (Blum/DTC), hybrid material strategy, and ROI.
 - **Message-Level Logging**: Every user input and bot response recorded in D1 `chat_messages` table.

@@ -68,7 +68,9 @@ export default {
             const cleanContents = finalContents.map(c => ({ role: c.role, parts: c.parts.map(p => ({ ...p })) }));
 
             // SINGLE AGENT: THE DESIGN CONSULTANT
+            const currentDate = new Date().toLocaleDateString('en-GB', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', timeZone: 'Asia/Brunei' });
             const personaPrompt = `MANDATORY LANGUAGE: RESPOND IN  ${targetLang} .
+CURRENT DATE (BRUNEI TIME): ${currentDate}
 IDENTITY: Design Consultant for Caramella.
 STRICT: DO NOT call yourself "Lead Architect." Use "Design Consultant" or simply speak as "Caramella."
 
