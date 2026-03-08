@@ -46,7 +46,7 @@ export default {
             }
 
             let finalContents = body.contents;
-            if (finalContents.length === 1) { 
+            if (finalContents.length === 1) {
                 const history = await env.caramella_db.prepare(
                     "SELECT role, content FROM chat_messages WHERE session_id = ? ORDER BY created_at DESC LIMIT 10"
                 ).bind(sessionId).all();
@@ -121,7 +121,7 @@ ${ragKnowledge}
 
             const url = new URL(request.url);
             const useStreaming = url.searchParams.get('stream') !== 'false';
-            const endpoint = useStreaming 
+            const endpoint = useStreaming
                 ? `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`
                 : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
@@ -131,21 +131,97 @@ ${ragKnowledge}
             if (!useStreaming) {
                 const data = await response.json();
                 let botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
-                
+
                 if (botText && !botText.includes("[SUGGEST]")) {
                     const fallbackChips = (targetLang === "BRUNEIAN MALAY / ENGLISH MIX")
                         ? "\n\n[SUGGEST]Saya mahu buat temujanji showroom.[/SUGGEST]\n[SUGGEST]Kenapa masa siap 10-14 minggu?[/SUGGEST]\n[SUGGEST]Boleh saya lihat sampel plywood 18mm?[/SUGGEST]"
                         : (targetLang === "JAPANESE (NIHONGO)")
-                        ? "\n\n[SUGGEST]ショールームを予約したいです。[/SUGGEST]\n[SUGGEST]なぜ10〜14週間かかるのですか？[/SUGGEST]\n[SUGGEST]18mm合板のサンプルを見せてもらえますか？[/SUGGEST]"
-                        : (targetLang === "CHINESE (MANDARIN)")
-                        ? "\n\n[SUGGEST]我想预约参观展厅。[/SUGGEST]\n[SUGGEST]为什么需要10-14周的交付时间？[/SUGGEST]\n[SUGGEST]可以看看18mm胶合板的样品吗？[/SUGGEST]"
-                        : "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
+                            ? "\n\n[SUGGEST]ショールームを予約したいです。[/SUGGEST]\n[SUGGEST]なぜ10〜14週間かかるのですか？[/SUGGEST]\n[SUGGEST]18mm合板のサンプルを見せてもらえますか？[/SUGGEST]"
+                            : (targetLang === "CHINESE (MANDARIN)")
+                                ? "\n\n[SUGGEST]我想预约参观展厅。[/SUGGEST]\n[SUGGEST]为什么需要10-14周的交付时间？[/SUGGEST]\n[SUGGEST]可以看看18mm胶合板的样品吗？[/SUGGEST]"
+                                : "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
                     botText += fallbackChips;
                     data.candidates[0].content.parts[0].text = botText;
                 }
 
-                if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
-                    .bind(sessionId, "bot", botText).run(); }
+                if (botText) {
+                    await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
+                        .bind(sessionId, "bot", botText).run();
+                }
+
+                // ==========================================
+                // CRM EXTRACTION (BACKGROUND TASK)
+                // ==========================================
+                // Use ctx.waitUntil so the chat doesn't freeze while CRM data is extracted
+                ctx.waitUntil((async () => {
+                    try {
+                        const allHistory = await env.caramella_db.prepare(
+                            "SELECT role, content FROM chat_messages WHERE session_id = ? ORDER BY created_at ASC LIMIT 50"
+                        ).bind(sessionId).all();
+
+                        if (!allHistory.results || allHistory.results.length === 0) return;
+
+                        const transcript = allHistory.results.map(r => `${r.role === 'bot' ? 'Caramella' : 'User'}: ${r.content}`).join('\n');
+
+                        // Second LLM Call specifically for CRM Extraction
+                        const crmPrompt = `Analyze the following chat transcript between a user and Caramella Design Consultant.
+Extract the CRM data strictly as a JSON object with NO markdown formatting, NO backticks, and NO conversational text.
+
+Required JSON Structure:
+{
+  "customer_info": "Extract any personal details (name, location, budget, timeline). Leave blank if none.",
+  "summary": "A 1-2 sentence summary of what the prospect wants.",
+  "sentiment": "Categorize the user's emotional state or archetype (e.g., Budget Shopper, Luxury Purist, Burned Victim, Curious, Frustrated).",
+  "intent_score": "An integer from 1 to 100 representing how likely they are to buy or book a visit.",
+  "tech_queries": "List specific technical terms they mentioned (e.g., 18mm plywood, EVA edge sealing, hinges). Leave blank if none."
+}
+
+Transcript:
+${transcript}`;
+
+                        const crmBody = {
+                            contents: [{ role: "user", parts: [{ text: crmPrompt }] }],
+                            generationConfig: { temperature: 0.1, responseMimeType: "application/json" }
+                        };
+
+                        const crmResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`, {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify(crmBody)
+                        });
+
+                        if (crmResponse.ok) {
+                            const crmData = await crmResponse.json();
+                            const crmText = crmData.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                            if (crmText) {
+                                const parsed = JSON.parse(crmText);
+
+                                await env.caramella_db.prepare(`
+                                    INSERT INTO chat_analytics (session_id, customer_info, summary, sentiment, intent_score, tech_queries, source)
+                                    VALUES (?, ?, ?, ?, ?, ?, ?)
+                                    ON CONFLICT(session_id) DO UPDATE SET 
+                                        customer_info=excluded.customer_info, 
+                                        summary=excluded.summary, 
+                                        sentiment=excluded.sentiment, 
+                                        intent_score=excluded.intent_score, 
+                                        tech_queries=excluded.tech_queries;
+                                `).bind(
+                                    sessionId,
+                                    parsed.customer_info || "",
+                                    parsed.summary || "",
+                                    parsed.sentiment || "",
+                                    parseInt(parsed.intent_score) || 0,
+                                    parsed.tech_queries || "",
+                                    "web"
+                                ).run();
+                            }
+                        }
+                    } catch (e) {
+                        console.error("CRM Extraction failed:", e);
+                    }
+                })());
+
                 return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
             }
 
