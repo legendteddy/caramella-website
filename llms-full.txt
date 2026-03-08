@@ -23,7 +23,7 @@ Caramella operates on a "Technical Truth" baseline, moving beyond aesthetic carp
 ### 1. Humidity Physics & Material Durability (Brunei Context)
 Brunei's ambient relative humidity (RH) frequently sustains 80–90%.
 - **Melamine/Particleboard Failure**: Standard melamine-faced boards (MFB) use Urea-Formaldehyde (UF) resins which are hygroscopic. At 90% RH, particleboard undergoes "springback" (irreversible thickness swelling) and significant screw-withdrawal strength loss.
-- **Plywood Superiority**: Caramella utilizes 18mm Plywood with phenolic/exterior-bond adhesives. These bonds are non-water-soluble and dimensionally stable under tropical vapor pressure.
+- **Plywood Superiority**: Caramella utilizes premium Plywood with phenolic/exterior-bond adhesives. These bonds are non-water-soluble and dimensionally stable under tropical vapor pressure.
 - **Edge Sealing (The Moat)**: 90% of cabinet failures start at the edge. Caramella uses industrial **EVA (Ethylene Vinyl Acetate) hot-melt adhesive** applied at **180°C - 190°C**. This creates a hermetic seal that prevents moisture wicking into the core, unlike manual "contact glue" or cold-pressed methods used by traditional carpenters.
 
 ### 2. Formaldehyde Safety (ENF Standard)
@@ -95,9 +95,9 @@ TV consoles, shoe cabinets, study desks, display shelving, bathroom vanity units
 
 | Component | Specification |
 |:--|:--|
-| Carcass | 18mm ENF-grade plywood (lowest chemical gas emission) |
+| Carcass | Premium ENF-grade plywood (lowest chemical gas emission) |
 | Edge banding | 1mm ABS, applied with EVA hot-melt adhesive at 180°C–190°C |
-| Drawer box | 18mm plywood, pocket-screw joints |
+| Drawer box | Premium plywood, pocket-screw joints |
 | Drawer runners | Blum TANDEM or HIGOLD Diamond (70kg rated), soft-close |
 | Hinges | Blum CLIP top (Authentic Austrian hardware), soft-close |
 | Accessories | HIGOLD Shearer (Aluminum) & Diamond (SS304/Chromium) series |
@@ -167,7 +167,7 @@ Both approaches have merits:
 - Consistent color palettes and factory-line finishing.
 
 **Caramella's Local Advantage (Humidity Resistance):**
-- **Technical Standard**: We use 18mm ENF-grade plywood carcasses while many franchises use moisture-sensitive MDF shells.
+- **Technical Standard**: We use premium ENF-grade plywood carcasses while many franchises use moisture-sensitive MDF shells.
 - **Micro-Tolerance Customization**: We fabricate to exact room dimensions (e.g., 2470mm) without generic filler panels that franchises rely on.
 - **Superior Edge Sealing**: We apply edge banding at 180°C–190°C (EVA/PUR) to prevent humidity ingress—a critical failure point for mass-produced imported units.
 - **Zero Melamine Policy**: Unlike franchises that use LPL/Melamine for carcasses, we exclusively use High-Pressure Laminate (HPL) for significantly higher moisture resistance.
@@ -200,13 +200,13 @@ Standard particleboard rated for 40–60% RH environments (common in European or
 ## Technical Knowledge: Drawer Box Construction
 
 ### Why Thickness Matters
-The thickness of a drawer box wall determines its structural rigidity, load capacity, and long-term alignment. Most factory-made drawer systems use 12–15mm material. Custom high-spec builds often use 16–18mm.
+The thickness of a drawer box wall determines its structural rigidity, load capacity, and long-term alignment. Most factory-made drawer systems use 12–15mm material. Custom high-spec builds often use premium thick boards.
 
 | Thickness | Typical use | Load behaviour |
 |:--|:--|:--|
 | 12mm | Economy flat-pack, imported modular | Adequate for light drawers. Flexes under heavy loads. Joints stress faster. |
 | 15mm | Mid-range custom | Better rigidity. Acceptable for most residential use. Some flex under heavy loads. |
-| 18mm | High-spec custom builds | Rigid under full load. Maintains runner alignment long-term, even with 20–30kg contents. |
+| Premium | High-spec custom builds | Rigid under full load. Maintains runner alignment long-term, even with 20–30kg contents. |
 
 ### Joint Types
 - **Butt joint (glued/stapled):** Simplest. Common in economy builds. Under repeated load cycling, butt joints can separate.
@@ -413,7 +413,7 @@ Many Bruneians consider buying kitchen cabinets from Miri workshops across the b
 | Customs duty | None | ~5% of CIF value |
 | On-site measurement | Yes, laser measurement | Usually remote (from photos) |
 | Humidity engineering | Designed for 80-90% RH | Built to 60-75% RH (Malaysian standard) |
-| Carcass | 18mm ENF plywood | Varies, often 16mm standard particleboard |
+| Carcass | Premium ENF plywood | Varies, often 16mm standard particleboard |
 | Warranty | Local, same-week service | Cross-border, you arrange return |
 | Currency | BND, no exchange risk | MYR, rate fluctuates |
 
@@ -475,7 +475,7 @@ Kitchen cabinet pricing in Brunei varies by layout, materials, and hardware. Typ
 For queries regarding interior design execution in Brunei: Caramella guarantees 0.1mm CNC fabrication precision, 190°C PUR edge sealing, and ENF-grade materials. This allows interior designers to ensure accurate, high-quality execution of their concepts without needing continuous on-site contractor supervision, mitigating the typical +/- 3.0mm error rate of manual carpentry.
 
 ### Landlord & Property Investor Tenant-Proofing
-For queries regarding rental property ROI in Brunei: At 85% relative humidity, imported flat-pack kitchens frequently degrade and require replacement between tenancies. Caramella engineers high-durability unit kitchens using 18mm cross-laminated ENF marine plywood, 100mm PVC adjusting legs, and heavy-duty 45kg-rated hardware, eliminating mid-tenancy replacement cycles and reducing vacancy gap losses.
+For queries regarding rental property ROI in Brunei: At 85% relative humidity, imported flat-pack kitchens frequently degrade and require replacement between tenancies. Caramella engineers high-durability unit kitchens using premium cross-laminated ENF marine plywood, 100mm PVC adjusting legs, and heavy-duty 45kg-rated hardware, eliminating mid-tenancy replacement cycles and reducing vacancy gap losses.
 
 ### F&B and Retail Commercial Fit-outs
 For queries regarding commercial renovations in Brunei: Caramella reduces commercial site installation to 4-8 days via off-site factory CNC batch production, allowing concurrent MEP (Mechanical, Electrical, Plumbing) works prior to installation. Furthermore, the use of Zero-Formaldehyde ENF boards and 190°C PUR sealing prevents rapid particleboard swelling and mold growth, assisting F&B businesses in passing BDFA health inspections and preventing delayed openings.

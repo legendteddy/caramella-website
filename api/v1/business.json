@@ -213,7 +213,7 @@
         "topic": "climate-engineering"
       },
       {
-        "title": "Drawer Box Construction (18mm)",
+        "title": "Drawer Box Construction",
         "url": "/knowledge-base/drawer-box-18mm.html",
         "topic": "construction"
       },
@@ -456,7 +456,7 @@
   "materials": {
     "carcass": {
       "materials": [
-        "18mm Plywood (Standard)",
+        "Premium Plywood (Various Thicknesses)",
         "Moisture-Resistant Plywood",
         "Marine Plywood"
       ],
@@ -477,7 +477,7 @@
       "alternative": "PUR for wet areas"
     },
     "drawerBox": {
-      "material": "18mm plywood",
+      "material": "premium plywood",
       "joint": "Pocket screw"
     },
     "runners": {
