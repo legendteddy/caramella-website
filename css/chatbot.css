@@ -13,12 +13,12 @@
 
 .chatbot-container {
     position: fixed;
-    bottom: 85px;
+    bottom: 24px;
     right: 2rem;
     width: 500px;
     max-width: calc(100vw - 3rem);
-    height: 680px;
-    max-height: calc(100vh - 180px);
+    height: 850px;
+    max-height: calc(100vh - 120px);
     background: var(--chat-bg);
     border: 1px solid var(--chat-border);
     border-radius: 24px;
