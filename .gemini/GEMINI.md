@@ -204,8 +204,10 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 - **Material Sourcing Truth**: Truthfully communicates that standard Formica is CNC-cut locally in Brunei, while high-end PET/Lacquer are outsourced to China for surgical precision (with 190°C sealing handled locally).
 - **Dynamic Language Sensor**: Perfectly matches user language choice (Japanese, Chinese, Malay, English) with 100% precision.
 - **Bruneian Social Genius**: Master of professional local nuances (bah, ngam, inda payah pusing) with Graceful Pivot logic.
-- **Iterative Lead Capture**: High-fidelity data collection (Name, Phone, Full Address, Budget) turn-by-turn.
-- **Curiosity-Driven Hooks**: Suggestion chips use provocative technical questions to drive engagement.
+- **Iterative Lead Capture**: High-fidelity data collection (14 fields matching contact form) extracted dynamically over multi-turn conversations and submitted silently to Formspree backend.
+- **Persistent LocalStorage Memory**: Utilizes dual-layer `[LEARN]` tags to harvest permanent user facts (budget, name, location) and injects them back into the LLM context on returning sessions.
+- **Contextual Welcome Greeting**: Real-time Javascript calculation of local time and day, combined with `Math.random()` array selection tied to the chat toggle event, ensures a unique, positive greeting upon every open.
+- **Curiosity-Driven Hooks**: Suggestion chips are hyper-contextual to the immediate conversation turn, with strict AI guidelines against repetitive or generic fallback questions.
 - **Frontier Persistence**: Automatically restores previous conversation history from D1 using permanent User IDs.
 - **SOTA Technical Intelligence**: High-density knowledge of hardware (Blum/DTC), hybrid material strategy, and ROI.
 - **Message-Level Logging**: Every user input and bot response recorded in D1 `chat_messages` table.
@@ -251,4 +253,4 @@ Common false positives to reject:
 - "Missing LocalBusiness schema" (Already in business.json)
 - "Email is broken" (Cloudflare auto-obfuscation)
 
-> **Last Updated**: 2026-03-08. **CHATBOT ARCHITECTURE UPGRADE COMPLETE.** Deployed the Cloudflare D1 Automated CRM Integration backend. Background LLM threads (`ctx.waitUntil`) now silently score intent and extract CRM data into `chat_analytics`. Implemented the Direct Communication Framework to prevent verbose philosophizing. Updated RAG knowledge base to explicitly promote Free Consultation, 3D Renders, Measurement, Delivery, and Installation. Web UI height increased.
+> **Last Updated**: 2026-03-08. **CHATBOT ARCHITECTURE UPGRADE COMPLETE.** Deployed the Cloudflare D1 Automated CRM Integration backend. Background LLM threads (`ctx.waitUntil`) now silently score intent and extract CRM data into `chat_analytics`. Implemented the Direct Communication Framework to prevent verbose philosophizing. **LATEST UPDATES:** Deployed the Formspree Backend proxy for 14-field silent lead submission. Activated the dual-layer `[LEARN]` persistent memory system using browser `localStorage`. Rewrote the AI exit gate to mandate hyper-contextual suggestion chips. Implemented randomized, time-and-day aware dynamic greetings tied to the toggle event. Web UI height increased and chips converted to vertical layout.
