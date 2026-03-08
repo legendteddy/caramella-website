@@ -94,9 +94,10 @@ The Worker must use recursion detection (isToolResponseTurn) to prevent infinite
 The rendering engine can corrupt special symbols (e.g. °). Always mandate **ASCII ONLY** in persona prompts and write out technical terms in full (e.g., "degrees Celsius", "percent").
 
 ### 14. DO NOT Use Placeholders in Suggestion Chips
-Never generate suggestion chips with placeholders like [Name] or [Phone]. Chips must be 100% clickable, fully-formed questions or statements that require no user editing.
+The rendering engine can corrupt special symbols (e.g. °). Always mandate **ASCII ONLY** in persona prompts and write out technical terms in full (e.g., "degrees Celsius", "percent").
 
----
+### 15. DO NOT Romanticize Direct Questions
+Enforce the **Direct Communication Framework**. The AI must not launch into philosophical rants about trust or artistry when asked basic questions (e.g., "how much?"). Empathy should only trigger when explicitly required by a distressed user.
 
 ## 🛠️ Operational Protocol
 
@@ -206,10 +207,10 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 - **Iterative Lead Capture**: High-fidelity data collection (Name, Phone, Full Address, Budget) turn-by-turn.
 - **Curiosity-Driven Hooks**: Suggestion chips use provocative technical questions to drive engagement.
 - **Frontier Persistence**: Automatically restores previous conversation history from D1 using permanent User IDs.
-- **Emergency & Support Protocol**: Empathetic detection of distress with local Brunei resources (Talian Harapan 145).
 - **SOTA Technical Intelligence**: High-density knowledge of hardware (Blum/DTC), hybrid material strategy, and ROI.
 - **Message-Level Logging**: Every user input and bot response recorded in D1 `chat_messages` table.
-- **Intelligence Archive**: Real-time logging of project briefs and intent scores to D1 `chat_analytics`.
+- **Automated CRM Pipeline (Background Thread)**: Uses `ctx.waitUntil()` to silently trigger a secondary LLM text extraction. The LLM parses the last 50 messages to extract `intent_score`, `customer_info`, `sentiment`, `summary`, and `tech_queries` natively to JSON format.
+- **Dynamic Session Upsertion**: The D1 `chat_analytics` table requires a unique `session_id`. The background thread automatically `UPSERTS` (updates the row) as the user's intent evolves throughout the conversation.
 
 ## 🧠 HARD MANDATE: Agent Communication (Synapse Bus)
 > **ALL** agents working on this repository **MUST** coordinate via the Synapse Bus. Failure to log session starts, major milestones, and state changes is a protocol violation.
@@ -250,6 +251,4 @@ Common false positives to reject:
 - "Missing LocalBusiness schema" (Already in business.json)
 - "Email is broken" (Cloudflare auto-obfuscation)
 
----
-
-> **Last Updated**: 2026-03-08. **CHATBOT ARCHITECTURE UPGRADE COMPLETE.** Replaced legacy 4-Agent Swarm with an ultra-fast, high-EQ Single Agent. Injected Archetype Identification (Budget/Burned/Novice/Luxury). Corrected Material Sourcing transparency (Formica local vs PET China). Scrubbed hallucinated "15-year guarantee", replacing with strict 1-year universal hardware warranty and maximum physical longevity compliance. API Keys rotated to bypass 429 Rate Limits. D1 Intelligence Archive active. ASCII-safe encoding enforced. UI Enlarged.
+> **Last Updated**: 2026-03-08. **CHATBOT ARCHITECTURE UPGRADE COMPLETE.** Deployed the Cloudflare D1 Automated CRM Integration backend. Background LLM threads (`ctx.waitUntil`) now silently score intent and extract CRM data into `chat_analytics`. Implemented the Direct Communication Framework to prevent verbose philosophizing. Updated RAG knowledge base to explicitly promote Free Consultation, 3D Renders, Measurement, Delivery, and Installation. Web UI height increased.
