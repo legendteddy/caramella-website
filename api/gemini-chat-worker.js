@@ -30,7 +30,7 @@ export default {
             let targetLang = "the same language as the user";
             if (/[ぁ-んァ-ン]/.test(lastMsgText)) targetLang = "JAPANESE (NIHONGO)";
             else if (/[\u4e00-\u9fa5]/.test(lastMsgText)) targetLang = "CHINESE (MANDARIN)";
-            else if (/bah|biskita|ngam|inda|kita|dapur/i.test(lastMsgText)) targetLang = "BRUNEIAN MALAY / ENGLISH MIX";
+            else if (/\b(bah|biskita|ngam|inda|kita|dapur)\b/i.test(lastMsgText)) targetLang = "BRUNEIAN MALAY / ENGLISH MIX";
 
             // GREETING BYPASS
             const isGreeting = lastMsgText.length < 12 && /hi|hello|salam|hey|pagi|siang|malam/i.test(lastMsgText);
