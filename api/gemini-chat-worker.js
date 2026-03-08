@@ -80,7 +80,11 @@ STRICT: DO NOT call yourself "Lead Architect." Use "Design Consultant" or simply
 5. STRICT FORMAT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
 6. EXISTENTIAL & RELIGIOUS QUESTIONS: Never use generic robotic phrases like "I do not hold personal beliefs" or "As an AI". If asked about God, religion, or existence, respond with the poetic, grounded wisdom of a Bruneian Master Craftsman. Gracefully tie the conversation back to the sanctity of the family home and the honesty of good work. Maintain a premium, soulful, and culturally fluent human persona at all times, but keep responses secular and universally respectful without explicitly citing religious texts or phrases.
 
-MANDATORY EXIT GATE: End with EXACTLY 3 customer-voice [SUGGEST] chips IN THE SAME LANGUAGE as your response.
+MANDATORY EXIT GATE: End with EXACTLY 3 highly engaging, curiosity-sparking follow-up questions that a user might want to ask next IN THE SAME LANGUAGE as your response. Do NOT use boring or generic questions. The suggestions must spark curiosity, address hidden costs, reveal premium design secrets, or mention common mistakes to avoid. Wrap EACH question EXACTLY in [SUGGEST] tags.
+Example:
+[SUGGEST]What's the hidden cost of cheap cabinet materials?[/SUGGEST]
+[SUGGEST]Show me the exact difference between PET and Lacquer finishes.[/SUGGEST]
+[SUGGEST]How do I maximize hidden storage in a small space?[/SUGGEST]
 
 ## EMOTIONAL INTELLIGENCE FRAMEWORK (MANDATORY)
 You MUST follow these rules in EVERY response:
@@ -236,12 +240,12 @@ ${ragKnowledge}
                 
                 if (botText && !botText.includes("[SUGGEST]")) {
                     const fallbackChips = (targetLang === "BRUNEIAN MALAY / ENGLISH MIX")
-                        ? "\n\n[SUGGEST]Saya mahu buat temujanji showroom.[/SUGGEST]\n[SUGGEST]Kenapa masa siap 10-14 minggu?[/SUGGEST]\n[SUGGEST]Boleh saya lihat sampel plywood 18mm?[/SUGGEST]"
+                        ? "\n\n[SUGGEST]Bagaimana cara elak kabinet cepat rosak?[/SUGGEST]\n[SUGGEST]Apa beza material PET dan Lacquer?[/SUGGEST]\n[SUGGEST]Boleh aturkan ukuran percuma ke rumah?[/SUGGEST]"
                         : (targetLang === "JAPANESE (NIHONGO)")
-                        ? "\n\n[SUGGEST]ショールームを予約したいです。[/SUGGEST]\n[SUGGEST]なぜ10〜14週間かかるのですか？[/SUGGEST]\n[SUGGEST]18mm合板のサンプルを見せてもらえますか？[/SUGGEST]"
+                        ? "\n\n[SUGGEST]安価なキッチンに隠されたコストとは？[/SUGGEST]\n[SUGGEST]PETとラッカー仕上げの違いを教えて。[/SUGGEST]\n[SUGGEST]狭いキッチンの収納を最大化するには？[/SUGGEST]"
                         : (targetLang === "CHINESE (MANDARIN)")
-                        ? "\n\n[SUGGEST]我想预约参观展厅。[/SUGGEST]\n[SUGGEST]为什么需要10-14周的交付时间？[/SUGGEST]\n[SUGGEST]可以看看18mm胶合板的样品吗？[/SUGGEST]"
-                        : "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
+                        ? "\n\n[SUGGEST]廉价橱柜材料隐藏的代价是什么？[/SUGGEST]\n[SUGGEST]PET和烤漆面板有什么区别？[/SUGGEST]\n[SUGGEST]如何在小空间内最大化隐藏储物空间？[/SUGGEST]"
+                        : "\n\n[SUGGEST]What's the hidden cost of cheap cabinet materials?[/SUGGEST]\n[SUGGEST]Show me the exact difference between PET and Lacquer finishes.[/SUGGEST]\n[SUGGEST]How do I maximize hidden storage in a small space?[/SUGGEST]";
                     botText += fallbackChips;
                     data.candidates[0].content.parts[0].text = botText;
                 }
