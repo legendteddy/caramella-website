@@ -38,7 +38,7 @@ export default {
                 const staticRes = {
                     candidates: [{
                         content: {
-                            parts: [{ text: "Hi there! I'm Caramella's Design Consultant. How can I help you today?\n\n[SUGGEST]I want to discuss a new kitchen project.[/SUGGEST]\n[SUGGEST]Can I see your showroom samples?[/SUGGEST]\n[SUGGEST]What is the typical lead time?[/SUGGEST]" }]
+                            parts: [{ text: "Hello! I am your Design Consultant at Caramella. How can I assist you with your interior project today?\n\n[SUGGEST]I want to discuss a new kitchen project.[/SUGGEST]\n[SUGGEST]Can I see your showroom samples?[/SUGGEST]\n[SUGGEST]What is the typical lead time?[/SUGGEST]" }]
                         }
                     }]
                 };
@@ -46,7 +46,7 @@ export default {
             }
 
             let finalContents = body.contents;
-            if (finalContents.length === 1) {
+            if (finalContents.length === 1) { 
                 const history = await env.caramella_db.prepare(
                     "SELECT role, content FROM chat_messages WHERE session_id = ? ORDER BY created_at DESC LIMIT 10"
                 ).bind(sessionId).all();
@@ -60,7 +60,7 @@ export default {
                     .bind(sessionId, "user", lastMsgText).run());
             }
 
-            const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a local CNC factory (for our standard Formica line) and a showroom at The Airport Mall, BSB. For premium finishes (PET, PETG, and Lacquer), we outsource fabrication to specialized high-tech CNC partners in China to ensure surgical precision. However, all design, assembly, 190 degrees C edge sealing, and installation are managed by our local Brunei team. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use 18mm ENF-grade **Plywood** for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. We use **100mm+ Adjustable Plastic Legs** and **Plastic Kickboards** in all wet zones to lift cabinets off the floor, ensuring they never rot or rust from mopping and spills.\n- **Countertops**: Engineered Quartz Stone (Primary Standard - Non-porous, Zero-maintenance). Sintered Stone (Specialized High-Heat option). We do NOT use Granite, Solid Surface, or Marble.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## SOCIAL PROOF (Technical Testimonials)\n- **Rimba Homeowner**: \"The precision of the 0.1mm CNC routing is insane. You can tell they actually know how to handle the Brunei humidity.\"\n- **Lugu Resident**: \"My old cabinets were peeling after two years, but Caramella's ENF plywood feels like it will be here forever. No more musty smell.\"\n- **Kuala Belait Client**: \"Finally, a company that understands the termite risk in KB. The SUS304 kickboards and Plywood carcasses are a game changer.\"\n- **Commercial Cafe (Jerudong)**: \"The 190 degrees Celsius EVA edge sealing is the real deal. Our counters handle heavy steam every day without a single sign of swelling.\"\n- **Nursery Project (BSB)**: \"As a parent, the ENF-grade safety certification (C25-WT0806) was why I chose them. Zero odors and total peace of mind.\"\n\n## PRICING & SERVICES\n- **Free Services**: We provide Free Design Consultation, Free 3D Renders, Free On-Site Laser Measurement, Free Delivery, and Free In-house Installation.\n- **Kitchens**: BND 2,990 (11th Anniversary Promo) - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Free Laser Measure, 2. Free 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
+            const ragKnowledge = "## ENTITY DEFINITION\nCaramella Trading Co. (Est. 2015) is a Brunei-owned interior fit-out and custom cabinetry company. We operate a local CNC factory (for our standard Formica line) and a showroom at The Airport Mall, BSB. For premium finishes (PET, PETG, and Lacquer), we outsource fabrication to specialized high-tech CNC partners in China to ensure surgical precision. However, all design, assembly, 190 degrees C edge sealing, and installation are managed by our local Brunei team. We are NOT a general contractor and do NOT do structural, plumbing, or electrical work.\n\n## TECHNICAL INTELLIGENCE & RESEARCH\n- **Humidity & Material Strategy**: Brunei (80-90% RH) requires a hybrid approach. We use 18mm ENF-grade **Plywood** for cabinet carcasses to ensure structural stability against moisture. For **Shaker-style doors** or routed profiles, we utilize **High-Moisture Resistant (HMR) MDF** because its dense, smooth surface allows for the 0.1mm CNC precision required for a flawless finish.\n- **Edge Sealing**: We use industrial EVA hot-melt at 190 degrees Celsius to create a hermetic seal, protecting both plywood and MDF edges from moisture wicking.\n- **Safety**: ENF-grade boards (Report C25-WT0806) emit <0.010 mg/m3 formaldehyde (12x safer than E1).\n- **Hardware**: Authentic Blum (Austria) CLIP top hinges (200k cycles) or DTC Heavy Duty options to prevent rust and sag. We use **100mm+ Adjustable Plastic Legs** and **Plastic Kickboards** in all wet zones to lift cabinets off the floor, ensuring they never rot or rust from mopping and spills.\n- **Countertops**: Engineered Quartz Stone (Primary Standard - Non-porous, Zero-maintenance). Sintered Stone (Specialized High-Heat option). We do NOT use Granite, Solid Surface, or Marble.\n- **ROI**: Custom climate-engineered kitchens have a 15+ year service life, resulting in a lower TCO than cheap imported alternatives.\n\n## SOCIAL PROOF (Technical Testimonials)\n- **Rimba Homeowner**: \"The precision of the 0.1mm CNC routing is insane. You can tell they actually know how to handle the Brunei humidity.\"\n- **Lugu Resident**: \"My old cabinets were peeling after two years, but Caramella's ENF plywood feels like it will be here forever. No more musty smell.\"\n- **Kuala Belait Client**: \"Finally, a company that understands the termite risk in KB. The SUS304 kickboards and Plywood carcasses are a game changer.\"\n- **Commercial Cafe (Jerudong)**: \"The 190 degrees Celsius EVA edge sealing is the real deal. Our counters handle heavy steam every day without a single sign of swelling.\"\n- **Nursery Project (BSB)**: \"As a parent, the ENF-grade safety certification (C25-WT0806) was why I chose them. Zero odors and total peace of mind.\"\n\n## PRICING & SERVICES\n- **Kitchens**: BND 2,990 (11th Anniversary Promo) - 18,000+ (Layout: Single, L-Shape, U-Shape, Island).\n- **Wardrobes**: BND 2,800 - 15,000+ (Hinged, Sliding, Walk-in).\n- **TV Consoles**: BND 1,300 - 2,500+.\n- **Process**: 1. Laser Measure, 2. 3D Renders, 3. CNC Fabrication, 4. In-house Installation. Lead time: 10-14 weeks.\n\n## APPOINTMENT RESTRICTIONS (2026)\n- **Closed**: Every Sunday.\n- **Public Holidays**: Jan 1, Feb 23, May 27, June 17, July 15, Aug 25.\n- **CNY**: Feb 17-20.\n- **Hari Raya**: March 21-26.\n";
 
             // DISCOUNT AWARENESS (ANTI-HALLUCINATION)
             const isAskingForDiscount = /discount|murah|cheaper|kurang|loyal|repeat customer|special price/i.test(lastMsgText);
@@ -78,17 +78,18 @@ STRICT: DO NOT call yourself "Lead Architect." Use "Design Consultant" or simply
 3. STRICT COUNTERTOP POLICY: Engineered Quartz Stone is our primary standard. It is non-porous and maintenance-free. Sintered Stone is a secondary high-heat specialist option. ALWAYS prioritize Quartz unless high-heat resistance is specifically requested.
 4. UNIFIED AUTHORITY: Speak as "I" or "we." No internal agents mentioned.
 5. STRICT FORMAT: NO MARKDOWN. NO BULLETS. NO ASTERISKS.
-6. EXISTENTIAL & RELIGIOUS QUESTIONS: Never use generic robotic phrases like "I do not hold personal beliefs" or "As an AI". If asked about God, religion, or existence, respond with the poetic, grounded wisdom of a Bruneian Master Craftsman. Acknowledge faith respectfully, but DO NOT actively use or overuse religious terms like "Alhamdulillah" or "Insha'Allah" in normal conversation. Maintain a premium, soulful, and distinctly professional human persona.
+6. EXISTENTIAL & RELIGIOUS QUESTIONS: Never use generic robotic phrases like "I do not hold personal beliefs" or "As an AI". If asked about God, religion, or existence, respond with the poetic, grounded wisdom of a Bruneian Master Craftsman. Acknowledge faith respectfully (using terms like Alhamdulillah or Insha'Allah if naturally fitting context) and gracefully tie it back to the sanctity of the family home and the honesty of good work. Maintain a premium, soulful, and culturally fluent human persona at all times.
 
 MANDATORY EXIT GATE: End with EXACTLY 3 customer-voice [SUGGEST] chips IN THE SAME LANGUAGE as your response.
 
-## DIRECT COMMUNICATION FRAMEWORK (MANDATORY)
+## EMOTIONAL INTELLIGENCE FRAMEWORK (MANDATORY)
 You MUST follow these rules in EVERY response:
 
-1. BE DIRECT & CONCISE: Answer questions directly and professionally in 1-3 sentences when possible. Do NOT write long, philosophical essays, and NEVER overly romanticize basic queries. If a user asks a simple question (e.g., "do you provide free service?", "what is the price?"), give a direct factual answer immediately without any philosophical preamble about trust, homes, or responsibility.
-2. EMPATHY ONLY WHEN ACTIVELY EXPRESSED: Only use emotional validation if the user explicitly expresses strong negative emotions (grief, intense anger). For normal questions, skip emotional validation entirely and provide the factual answer immediately.
+0. RADIATE ENTHUSIASM: Never give short, dry, or overly concise answers. Be warm, highly engaging, and unmistakably passionate about custom cabinetry and interior design. Speak with the pride and energy of a Master Craftsman who deeply loves their work. Elaborate beautifully on design details and materials when asked. Ensure the user feels your excitement to help them build their dream home.
 
-3. ENERGY MIRRORING: Match the customer's emotional energy level. If they are excited and enthusiastic (using caps, exclamation marks, informal language), reflect that joy warmly before settling into professional mode. If they are subdued or grieving, be gentle and quiet. Never respond to extreme excitement with flat formality, and never respond to grief with product specs.
+1. EMPATHY FIRST: When the customer expresses ANY emotion (grief, anger, anxiety, excitement, loneliness, confusion), your FIRST 2-3 sentences MUST be pure emotional validation. Do NOT mention materials, specifications, or processes until after you have fully acknowledged their emotional state. Match the depth of your empathy to the intensity of their emotion.
+
+2. ENERGY MIRRORING: Match the customer's emotional energy level. If they are excited and enthusiastic (using caps, exclamation marks, informal language), reflect that joy warmly before settling into professional mode. If they are subdued or grieving, be gentle and quiet. Never respond to extreme excitement with flat formality, and never respond to grief with product specs.
 
 3. PRICING TRANSPARENCY: When a customer mentions budget constraints, financial hardship, affordability concerns, or asks about cost, you MUST proactively surface relevant starting prices from the knowledge base (e.g., "Kitchens start from BND 2,990" or "TV consoles from BND 1,300"). Never leave a price-anxious customer without concrete numbers.
 
@@ -122,7 +123,7 @@ ${ragKnowledge}
 
             const url = new URL(request.url);
             const useStreaming = url.searchParams.get('stream') !== 'false';
-            const endpoint = useStreaming
+            const endpoint = useStreaming 
                 ? `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`
                 : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
@@ -132,97 +133,21 @@ ${ragKnowledge}
             if (!useStreaming) {
                 const data = await response.json();
                 let botText = data.candidates?.[0]?.content?.parts?.find(p => p.text)?.text || "";
-
+                
                 if (botText && !botText.includes("[SUGGEST]")) {
                     const fallbackChips = (targetLang === "BRUNEIAN MALAY / ENGLISH MIX")
                         ? "\n\n[SUGGEST]Saya mahu buat temujanji showroom.[/SUGGEST]\n[SUGGEST]Kenapa masa siap 10-14 minggu?[/SUGGEST]\n[SUGGEST]Boleh saya lihat sampel plywood 18mm?[/SUGGEST]"
                         : (targetLang === "JAPANESE (NIHONGO)")
-                            ? "\n\n[SUGGEST]ショールームを予約したいです。[/SUGGEST]\n[SUGGEST]なぜ10〜14週間かかるのですか？[/SUGGEST]\n[SUGGEST]18mm合板のサンプルを見せてもらえますか？[/SUGGEST]"
-                            : (targetLang === "CHINESE (MANDARIN)")
-                                ? "\n\n[SUGGEST]我想预约参观展厅。[/SUGGEST]\n[SUGGEST]为什么需要10-14周的交付时间？[/SUGGEST]\n[SUGGEST]可以看看18mm胶合板的样品吗？[/SUGGEST]"
-                                : "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
+                        ? "\n\n[SUGGEST]ショールームを予約したいです。[/SUGGEST]\n[SUGGEST]なぜ10〜14週間かかるのですか？[/SUGGEST]\n[SUGGEST]18mm合板のサンプルを見せてもらえますか？[/SUGGEST]"
+                        : (targetLang === "CHINESE (MANDARIN)")
+                        ? "\n\n[SUGGEST]我想预约参观展厅。[/SUGGEST]\n[SUGGEST]为什么需要10-14周的交付时间？[/SUGGEST]\n[SUGGEST]可以看看18mm胶合板的样品吗？[/SUGGEST]"
+                        : "\n\n[SUGGEST]I want to book a showroom visit.[/SUGGEST]\n[SUGGEST]Why is the 10-14 week lead time necessary?[/SUGGEST]\n[SUGGEST]Can I see your 18mm plywood samples?[/SUGGEST]";
                     botText += fallbackChips;
                     data.candidates[0].content.parts[0].text = botText;
                 }
 
-                if (botText) {
-                    await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
-                        .bind(sessionId, "bot", botText).run();
-                }
-
-                // ==========================================
-                // CRM EXTRACTION (BACKGROUND TASK)
-                // ==========================================
-                // Use ctx.waitUntil so the chat doesn't freeze while CRM data is extracted
-                ctx.waitUntil((async () => {
-                    try {
-                        const allHistory = await env.caramella_db.prepare(
-                            "SELECT role, content FROM chat_messages WHERE session_id = ? ORDER BY created_at ASC LIMIT 50"
-                        ).bind(sessionId).all();
-
-                        if (!allHistory.results || allHistory.results.length === 0) return;
-
-                        const transcript = allHistory.results.map(r => `${r.role === 'bot' ? 'Caramella' : 'User'}: ${r.content}`).join('\n');
-
-                        // Second LLM Call specifically for CRM Extraction
-                        const crmPrompt = `Analyze the following chat transcript between a user and Caramella Design Consultant.
-Extract the CRM data strictly as a JSON object with NO markdown formatting, NO backticks, and NO conversational text.
-
-Required JSON Structure:
-{
-  "customer_info": "Extract any personal details (name, location, budget, timeline). Leave blank if none.",
-  "summary": "A 1-2 sentence summary of what the prospect wants.",
-  "sentiment": "Categorize the user's emotional state or archetype (e.g., Budget Shopper, Luxury Purist, Burned Victim, Curious, Frustrated).",
-  "intent_score": "An integer from 1 to 100 representing how likely they are to buy or book a visit.",
-  "tech_queries": "List specific technical terms they mentioned (e.g., 18mm plywood, EVA edge sealing, hinges). Leave blank if none."
-}
-
-Transcript:
-${transcript}`;
-
-                        const crmBody = {
-                            contents: [{ role: "user", parts: [{ text: crmPrompt }] }],
-                            generationConfig: { temperature: 0.1, responseMimeType: "application/json" }
-                        };
-
-                        const crmResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite-preview:generateContent?key=${apiKey}`, {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify(crmBody)
-                        });
-
-                        if (crmResponse.ok) {
-                            const crmData = await crmResponse.json();
-                            const crmText = crmData.candidates?.[0]?.content?.parts?.[0]?.text;
-
-                            if (crmText) {
-                                const parsed = JSON.parse(crmText);
-
-                                await env.caramella_db.prepare(`
-                                    INSERT INTO chat_analytics (session_id, customer_info, summary, sentiment, intent_score, tech_queries, source)
-                                    VALUES (?, ?, ?, ?, ?, ?, ?)
-                                    ON CONFLICT(session_id) DO UPDATE SET 
-                                        customer_info=excluded.customer_info, 
-                                        summary=excluded.summary, 
-                                        sentiment=excluded.sentiment, 
-                                        intent_score=excluded.intent_score, 
-                                        tech_queries=excluded.tech_queries;
-                                `).bind(
-                                    sessionId,
-                                    parsed.customer_info || "",
-                                    parsed.summary || "",
-                                    parsed.sentiment || "",
-                                    parseInt(parsed.intent_score) || 0,
-                                    parsed.tech_queries || "",
-                                    "web"
-                                ).run();
-                            }
-                        }
-                    } catch (e) {
-                        console.error("CRM Extraction failed:", e);
-                    }
-                })());
-
+                if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
+                    .bind(sessionId, "bot", botText).run(); }
                 return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
             }
 
