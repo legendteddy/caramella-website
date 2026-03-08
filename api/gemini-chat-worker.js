@@ -117,7 +117,32 @@ ${ragKnowledge}
             const geminiBody = {
                 contents: cleanContents,
                 system_instruction: { parts: [{ text: personaPrompt }] },
-                tools: [{ function_declarations: [{ name: "submit_lead", description: "Captures lead.", parameters: { type: "OBJECT", properties: { name: { type: "STRING" }, phone: { type: "STRING" } }, required: ["name", "phone"] } }] }],
+                tools: [{ 
+                    function_declarations: [{ 
+                        name: "submit_lead", 
+                        description: "Captures a lead when the user asks for a quote or wants to be contacted. SCAN THE ENTIRE CONVERSATION HISTORY and extract ANY mentioned details to populate the optional parameters. Do NOT interrogate the user for missing optional fields. Only Name and Phone are required.", 
+                        parameters: { 
+                            type: "OBJECT", 
+                            properties: { 
+                                name: { type: "STRING", description: "Customer's name" }, 
+                                phone: { type: "STRING", description: "Customer's phone number or WhatsApp" },
+                                address: { type: "STRING", description: "Customer's rough location, address, or housing type (e.g. RPN, STKRJ)" },
+                                appointment_date: { type: "STRING", description: "Any mentioned requested date for a showroom visit" },
+                                appointment_slot: { type: "STRING", description: "Morning or Afternoon reference" },
+                                status: { type: "STRING", description: "Construction status (New House, Renovation, Existing House, etc)" },
+                                budget: { type: "STRING", description: "Mentioned budget limits or numbers" },
+                                materials: { type: "STRING", description: "Mentioned finishes (Formica, PET, Lacquer)" },
+                                countertops: { type: "STRING", description: "Mentioned countertops (Quartz, Marble style)" },
+                                hob: { type: "STRING", description: "Hob requirements (Own, Caramella, No)" },
+                                hood: { type: "STRING", description: "Hood requirements (Own, Caramella, No)" },
+                                oven: { type: "STRING", description: "Oven requirements (Own, Caramella, No)" },
+                                doors: { type: "STRING", description: "Wardrobe door types (Swing, Sliding, Walk-In)" },
+                                remarks: { type: "STRING", description: "Any extra design notes, color preferences, or emotional context from the conversation" }
+                            }, 
+                            required: ["name", "phone"] 
+                        } 
+                    }] 
+                }],
                 generationConfig: { temperature: 0.9, topP: 0.95, maxOutputTokens: 1000 }
             };
 
@@ -143,7 +168,58 @@ ${ragKnowledge}
                         const formPayload = new FormData();
                         formPayload.append("name", args.name || "Unknown");
                         formPayload.append("phone", args.phone || "Unknown");
-                        formPayload.append("_subject", "New Chatbot Lead!");
+                        formPayload.append("_subject", "New Consultation Request (Caramella AI)");
+                        formPayload.append("source", "ai-consultant");
+                        
+                        // Construct the same email body structure as contact-us.html
+                        let body = `NEW PROJECT INQUIRY (via AI Consultant)
+`;
+                        body += `========================
+
+`;
+                        body += `CLIENT INFORMATION
+`;
+                        body += `Name: ${args.name || "Unknown"}
+`;
+                        body += `Phone: ${args.phone || "Unknown"}
+`;
+                        body += `Address: ${args.address || ""}
+`;
+                        body += `Preferred Appointment: ${args.appointment_date || ""} ${args.appointment_slot || ""}
+
+`;
+                        body += `PROJECT DETAILS
+`;
+                        body += `Construction Status: ${args.status || ""}
+`;
+                        body += `Budget: ${args.budget || ""}
+
+`;
+                        body += `KITCHEN SPECIFICATIONS
+`;
+                        body += `Materials: ${args.materials || ""}
+`;
+                        body += `Countertop: ${args.countertops || ""}
+`;
+                        body += `Hob: ${args.hob || ""} | Hood: ${args.hood || ""} | Oven: ${args.oven || ""}
+
+`;
+                        body += `WARDROBE SPECIFICATIONS
+`;
+                        body += `Door Type: ${args.doors || ""}
+
+`;
+                        body += `ADDITIONAL REMARKS
+`;
+                        body += `${args.remarks || ""}
+
+`;
+                        body += `========================
+`;
+                        body += `Captured automatically by Caramella AI`;
+                        
+                        formPayload.append("message", body);
+                        
                         await fetch(FORMSPREE_URL, { method: "POST", body: formPayload });
                         
                         botText = "Thank you! I have securely captured your contact details. A Caramella Design Consultant will reach out to you shortly to discuss your project.";
