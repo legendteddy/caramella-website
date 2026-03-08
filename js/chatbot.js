@@ -389,6 +389,13 @@ document.addEventListener("DOMContentLoaded", () => {
             .replace(/\[LEARN\][\s\S]*?(\[\/LEARN\]|$)/gi, "")
             .trim();
 
+        // Fallback to prevent completely blank bubbles if AI only returned tags
+        if (!cleanText && suggestions.length > 0) {
+            cleanText = "I have noted that down. Here are some follow-up thoughts:";
+        } else if (!cleanText) {
+            cleanText = "Got it. How else can I help you today?";
+        }
+
         // Extract [LEARN] tags (Memory)
         const learnRegex = /\[LEARN\]([\s\S]*?)(\[\/LEARN\]|$)/gi;
         const memories = getMemory();
