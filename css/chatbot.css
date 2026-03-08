@@ -322,25 +322,18 @@
 /* Suggestion Chips */
 .suggestion-chips {
     display: flex;
-    flex-wrap: nowrap;
-    gap: 10px;
-    padding: 10px 20px 24px 20px;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align chips to the right, similar to user messages, or stretch them */
+    gap: 8px;
+    padding: 10px 16px 20px 16px;
     margin-top: -6px;
-    margin-left: -20px;
-    margin-right: -20px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
     animation: fadeIn 0.4s ease-out;
 }
 
-.suggestion-chips::-webkit-scrollbar {
-    display: none;
-}
-
 .suggestion-chip {
-    flex: 0 0 auto;
-    max-width: 85%;
+    width: auto;
+    max-width: 90%;
     background: rgba(255, 215, 0, 0.08);
     border: 1px solid rgba(255, 215, 0, 0.25);
     color: var(--chat-accent);
