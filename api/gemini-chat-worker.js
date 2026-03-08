@@ -46,7 +46,7 @@ export default {
             }
 
             let finalContents = body.contents;
-            if (finalContents.length === 1) { 
+            if (finalContents.length === 1) {
                 const history = await env.caramella_db.prepare(
                     "SELECT role, content FROM chat_messages WHERE session_id = ? ORDER BY created_at DESC LIMIT 10"
                 ).bind(sessionId).all();
@@ -143,14 +143,14 @@ ${ragKnowledge}
             const geminiBody = {
                 contents: cleanContents,
                 system_instruction: { parts: [{ text: personaPrompt }] },
-                tools: [{ 
-                    function_declarations: [{ 
-                        name: "submit_lead", 
-                        description: "Captures a lead when the user asks for a quote or wants to be contacted. SCAN THE ENTIRE CONVERSATION HISTORY and extract ANY mentioned details to populate the optional parameters. Do NOT interrogate the user for missing optional fields. Only Name and Phone are required.", 
-                        parameters: { 
-                            type: "OBJECT", 
-                            properties: { 
-                                name: { type: "STRING", description: "Customer's name" }, 
+                tools: [{
+                    function_declarations: [{
+                        name: "submit_lead",
+                        description: "Captures a lead when the user asks for a quote or wants to be contacted. SCAN THE ENTIRE CONVERSATION HISTORY and extract ANY mentioned details to populate the optional parameters. Do NOT interrogate the user for missing optional fields. Only Name and Phone are required.",
+                        parameters: {
+                            type: "OBJECT",
+                            properties: {
+                                name: { type: "STRING", description: "Customer's name" },
                                 phone: { type: "STRING", description: "Customer's phone number or WhatsApp" },
                                 address: { type: "STRING", description: "Customer's rough location, address, or housing type (e.g. RPN, STKRJ)" },
                                 appointment_date: { type: "STRING", description: "Any mentioned requested date for a showroom visit" },
@@ -164,17 +164,17 @@ ${ragKnowledge}
                                 oven: { type: "STRING", description: "Oven requirements (Own, Caramella, No)" },
                                 doors: { type: "STRING", description: "Wardrobe door types (Swing, Sliding, Walk-In)" },
                                 remarks: { type: "STRING", description: "Any extra design notes, color preferences, or emotional context from the conversation" }
-                            }, 
-                            required: ["name", "phone"] 
-                        } 
-                    }] 
+                            },
+                            required: ["name", "phone"]
+                        }
+                    }]
                 }],
                 generationConfig: { temperature: 0.9, topP: 0.95, maxOutputTokens: 1000 }
             };
 
             const url = new URL(request.url);
             const useStreaming = url.searchParams.get('stream') !== 'false';
-            const endpoint = useStreaming 
+            const endpoint = useStreaming
                 ? `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:streamGenerateContent?alt=sse&key=${apiKey}`
                 : `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent?key=${apiKey}`;
 
@@ -183,7 +183,7 @@ ${ragKnowledge}
 
             if (!useStreaming) {
                 const data = await response.json();
-                
+
                 const parts = data.candidates?.[0]?.content?.parts || [];
                 let botText = parts.find(p => p.text)?.text || "";
                 const funcCallPart = parts.find(p => p.functionCall && p.functionCall.name === "submit_lead");
@@ -196,7 +196,7 @@ ${ragKnowledge}
                         formPayload.append("phone", args.phone || "Unknown");
                         formPayload.append("_subject", "New Consultation Request (Caramella AI)");
                         formPayload.append("source", "ai-consultant");
-                        
+
                         // Construct the same email body structure as contact-us.html
                         let body = `NEW PROJECT INQUIRY (via AI Consultant)
 `;
@@ -243,37 +243,45 @@ ${ragKnowledge}
                         body += `========================
 `;
                         body += `Captured automatically by Caramella AI`;
-                        
+
                         formPayload.append("message", body);
-                        
+
                         await fetch(FORMSPREE_URL, { method: "POST", body: formPayload });
-                        
+
                         botText = "Thank you! I have securely captured your contact details. A Caramella Design Consultant will reach out to you shortly to discuss your project.";
                         if (data.candidates && data.candidates[0]) {
+                            if (!data.candidates[0].content) {
+                                data.candidates[0].content = { parts: [] };
+                            }
                             data.candidates[0].content.parts = [{ text: botText }];
                         }
                     } catch (e) {
                         botText = "I tried to capture your details, but our system is currently unreachable. Please contact us directly via WhatsApp.";
                         if (data.candidates && data.candidates[0]) {
+                            if (!data.candidates[0].content) {
+                                data.candidates[0].content = { parts: [] };
+                            }
                             data.candidates[0].content.parts = [{ text: botText }];
                         }
                     }
                 }
-                
+
                 if (botText && !botText.includes("[SUGGEST]")) {
                     const fallbackChips = (targetLang === "BRUNEIAN MALAY / ENGLISH MIX")
                         ? "\n\n[SUGGEST]Bagaimana cara elak kabinet cepat rosak?[/SUGGEST]\n[SUGGEST]Apa beza material PET dan Lacquer?[/SUGGEST]\n[SUGGEST]Boleh aturkan ukuran percuma ke rumah?[/SUGGEST]"
                         : (targetLang === "JAPANESE (NIHONGO)")
-                        ? "\n\n[SUGGEST]安価なキッチンに隠されたコストとは？[/SUGGEST]\n[SUGGEST]PETとラッカー仕上げの違いを教えて。[/SUGGEST]\n[SUGGEST]狭いキッチンの収納を最大化するには？[/SUGGEST]"
-                        : (targetLang === "CHINESE (MANDARIN)")
-                        ? "\n\n[SUGGEST]廉价橱柜材料隐藏的代价是什么？[/SUGGEST]\n[SUGGEST]PET和烤漆面板有什么区别？[/SUGGEST]\n[SUGGEST]如何在小空间内最大化隐藏储物空间？[/SUGGEST]"
-                        : "\n\n[SUGGEST]What's the hidden cost of cheap cabinet materials?[/SUGGEST]\n[SUGGEST]Show me the exact difference between PET and Lacquer finishes.[/SUGGEST]\n[SUGGEST]How do I maximize hidden storage in a small space?[/SUGGEST]";
+                            ? "\n\n[SUGGEST]安価なキッチンに隠されたコストとは？[/SUGGEST]\n[SUGGEST]PETとラッカー仕上げの違いを教えて。[/SUGGEST]\n[SUGGEST]狭いキッチンの収納を最大化するには？[/SUGGEST]"
+                            : (targetLang === "CHINESE (MANDARIN)")
+                                ? "\n\n[SUGGEST]廉价橱柜材料隐藏的代价是什么？[/SUGGEST]\n[SUGGEST]PET和烤漆面板有什么区别？[/SUGGEST]\n[SUGGEST]如何在小空间内最大化隐藏储物空间？[/SUGGEST]"
+                                : "\n\n[SUGGEST]What's the hidden cost of cheap cabinet materials?[/SUGGEST]\n[SUGGEST]Show me the exact difference between PET and Lacquer finishes.[/SUGGEST]\n[SUGGEST]How do I maximize hidden storage in a small space?[/SUGGEST]";
                     botText += fallbackChips;
                     data.candidates[0].content.parts[0].text = botText;
                 }
 
-                if (botText) { await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
-                    .bind(sessionId, "bot", botText).run(); }
+                if (botText) {
+                    await env.caramella_db.prepare("INSERT INTO chat_messages (session_id, role, content) VALUES (?, ?, ?)")
+                        .bind(sessionId, "bot", botText).run();
+                }
                 return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" } });
             }
 

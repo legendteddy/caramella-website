@@ -497,7 +497,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         // PRODUCTION: Try streaming, but allow non-streaming for tool calls
                         // We use a small trick: if the user mentions "send", "email", or "contact", 
                         // we force non-streaming for that turn to handle the tool-call reliably.
-                        const forceNonStreaming = messageText && /send|email|contact|book|number|phone|718/i.test(messageText);
+                        // Use aggressive regex to catch ANY digits resembling a phone number, or intent phrases
+                        const forceNonStreaming = messageText && (/send|email|contact|book|number|phone|tel|call me|whatsapp|my name is/i.test(messageText) || /(?:\+?673)?\s*[78][\d\s-]{6,}/i.test(messageText));
 
                         if (forceNonStreaming) {
                             console.log("Forcing non-streaming for lead-capture turn.");
@@ -608,6 +609,10 @@ document.addEventListener("DOMContentLoaded", () => {
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(payload)
                         });
+                        if (!response.ok) {
+                            const errText = await response.text();
+                            throw new Error(`Worker responded ${response.status}: ${errText}`);
+                        }
                         const data = await response.json();
                         removeTyping();
 
