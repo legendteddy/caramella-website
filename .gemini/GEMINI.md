@@ -191,13 +191,16 @@ User → chatbot.js (frontend) → chat.caramellabrunei.com (Cloudflare Worker) 
 |:---|:---|:---|
 | Frontend JS | `js/chatbot.js` | Chat UI, Real-time rendering, persistent User ID tracking |
 | Frontend CSS | `css/chatbot.css` | Chatbot styling, suggestion chips, enlarged UI (500px x 800px) |
-| Worker source | `api/gemini-chat-worker.js` | 4-Agent Adversarial Swarm (Gatekeeper, Craftsman, Scientist, Architect) |
+| Worker source | `api/gemini-chat-worker.js` | Single "Lead Consultant" Agent with specialized EQ Framework |
 | Build script | `build_worker.py` | Generates worker by embedding sanitized llms-compact.txt |
 | Knowledge base | `llms-compact.txt` | ASCII-safe, token-optimized RAG source for internal worker |
 | Database | `caramella_db` (D1) | Intelligence Archive for messages & lead analytics |
 
 **Chatbot Features (as of 2026-03-08):**
-- **4-Agent Adversarial Swarm**: Internal debate loop between technical and creative experts ensuring peak technical reasoning.
+- **Single-Agent Consolidation**: Lightning-fast, hyper-empathetic "Lead Consultant" persona executing in a single API pass (no noisy multi-agent swarm).
+- **Dynamic Archetype Identification**: Automatically detects 4 rigid customer types (Budget, Burned, Novice, Luxury) and pivots lead capture strategy accordingly.
+- **Dynamic Empathy Override**: Circumvents rigid discount algorithms to show profound emotional intelligence (e.g. validating a flooded house) while strictly enforcing zero-discounts.
+- **Material Sourcing Truth**: Truthfully communicates that standard Formica is CNC-cut locally in Brunei, while high-end PET/Lacquer are outsourced to China for surgical precision (with 190°C sealing handled locally).
 - **Dynamic Language Sensor**: Perfectly matches user language choice (Japanese, Chinese, Malay, English) with 100% precision.
 - **Bruneian Social Genius**: Master of professional local nuances (bah, ngam, inda payah pusing) with Graceful Pivot logic.
 - **Iterative Lead Capture**: High-fidelity data collection (Name, Phone, Full Address, Budget) turn-by-turn.
@@ -249,4 +252,4 @@ Common false positives to reject:
 
 ---
 
-> **Last Updated**: 2026-03-08. **CHATBOT FRONTIER UPGRADE COMPLETE.** 4-Agent Adversarial Swarm (Gatekeeper, Craftsman, Scientist, Architect) live. Universal Multilingual Mirroring active. D1 Intelligence Archive & Message Logging active. Lead Capture tool fully synchronized. ASCII-safe encoding enforced. UI Enlarged (500x800) with Natural Pacing. Technical materials strategy corrected.
+> **Last Updated**: 2026-03-08. **CHATBOT ARCHITECTURE UPGRADE COMPLETE.** Replaced legacy 4-Agent Swarm with an ultra-fast, high-EQ Single Agent. Injected Archetype Identification (Budget/Burned/Novice/Luxury). Corrected Material Sourcing transparency (Formica local vs PET China). D1 Intelligence Archive active. ASCII-safe encoding enforced. UI Enlarged.
