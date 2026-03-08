@@ -115,7 +115,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    initSmartGreeting();
+    // We intentionally do NOT call initSmartGreeting() here on page load anymore.
+    // It is now called dynamically inside toggleChat() every time the user opens the window.
 
     // ============================
     // TOGGLE LOGIC
@@ -123,6 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleChat = () => {
         const isClosed = chatContainer.classList.contains('closed');
         if (isClosed) {
+            // Generate a fresh random greeting EVERY time it opens
+            initSmartGreeting();
+
             chatContainer.classList.remove('closed');
             chatContainer.setAttribute('aria-hidden', 'false');
             toggleBtn.style.opacity = '0';
