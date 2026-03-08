@@ -49,13 +49,40 @@ document.addEventListener("DOMContentLoaded", () => {
     // SMART GREETING
     // ============================
     const initSmartGreeting = () => {
-        const hour = new Date().getHours();
-        let greeting;
-        if (hour < 12) greeting = "Good morning";
-        else if (hour < 17) greeting = "Good afternoon";
-        else greeting = "Good evening";
+        const now = new Date();
+        const hour = now.getHours();
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const dayOfWeek = days[now.getDay()];
 
-        // Check if returning user (inline read — getMemory not yet defined at this point)
+        // Time-aware positive openers
+        const morningVibes = [
+            `Good morning! It's a beautiful ${dayOfWeek} to start planning your dream space.`,
+            `Rise and shine! Ready to explore some premium cabinetry designs this ${dayOfWeek} morning?`,
+            `Good morning! Let's make today the day we breathe life into your home vision.`,
+            `A fresh ${dayOfWeek} morning brings fresh design perspectives. How can I inspire you today?`
+        ];
+        const afternoonVibes = [
+            `Good afternoon! Hope you're having a productive ${dayOfWeek}. Let's design something extraordinary.`,
+            `Good afternoon! Ready to elevate your home interior?`,
+            `Happy ${dayOfWeek} afternoon! Whether it's a new kitchen or a walk-in wardrobe, I'm here to help.`,
+            `Good afternoon! The best time to start your custom joinery project is right now. How can I assist?`
+        ];
+        const eveningVibes = [
+            `Good evening. Winding down for the day? It’s the perfect time to dream up your ideal kitchen.`,
+            `Good evening. Let's draft some beautiful concepts for your home tonight.`,
+            `A peaceful ${dayOfWeek} evening to you. How can Caramella transform your living space?`,
+            `Good evening! Dreaming of a new wardrobe or kitchen? Let's discuss your vision tonight.`
+        ];
+
+        let vibesArray;
+        if (hour < 12) vibesArray = morningVibes;
+        else if (hour < 17) vibesArray = afternoonVibes;
+        else vibesArray = eveningVibes;
+
+        // Select a random vibe text
+        const randomVibe = vibesArray[Math.floor(Math.random() * vibesArray.length)];
+
+        // Check if returning user
         let userName = null;
         try {
             const raw = localStorage.getItem('caramella_learned_facts');
@@ -76,9 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if (welcomeDiv) {
             if (userName) {
                 const name = userName.fact.replace(/user'?s?\s*name\s*(is|:)\s*/i, '').trim();
-                welcomeDiv.innerHTML = `${greeting}, <strong>${name}</strong>. Welcome back to Caramella. How can I help you today?`;
+                const welcomeBacks = [
+                    `Welcome back, <strong>${name}</strong>! ${randomVibe}`,
+                    `It is a pleasure to see you again, <strong>${name}</strong>. ${randomVibe}`,
+                    `Hello again, <strong>${name}</strong>. I've been looking forward to our next chat. ${randomVibe}`
+                ];
+                welcomeDiv.innerHTML = welcomeBacks[Math.floor(Math.random() * welcomeBacks.length)];
             } else {
-                welcomeDiv.innerHTML = `${greeting}. I'm your Caramella design consultant — here to help with kitchens, wardrobes, or any questions about custom cabinetry in Brunei. What are you working on?`;
+                welcomeDiv.innerHTML = `${randomVibe} I'm your Caramella design consultant. What are you working on?`;
             }
         }
     };
